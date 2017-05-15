@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6F87FFA6-AE4D-4B28-BE5A-FE4D3BA21885" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/View/HomePage.cs">
     <Files>
-      <File FileName="MahechaBJJ/App.xaml" Line="2" Column="7" />
+      <File FileName="MahechaBJJ/App.xaml" Line="7" Column="1" />
       <File FileName="MahechaBJJ/App.xaml.cs" Line="12" Column="48" />
       <File FileName="MahechaBJJ/MahechaBJJPage.xaml" Line="5" Column="1" />
       <File FileName="MahechaBJJ/MahechaBJJPage.xaml.cs" Line="1" Column="1" />
