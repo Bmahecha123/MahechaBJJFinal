@@ -10,12 +10,19 @@ namespace MahechaBJJ.View
         {
             Title = "Search Page";
             Padding = 30;
-            Content = new StackLayout
+
+            var searchBar = new SearchBar
             {
-                Children = {
-                    new Label { Text = "Hello SearchPage" }
-                }
+                Placeholder = "Enter technique to search for..."
             };
+
+            var searchLayout = new StackLayout
+            {
+                Children = { searchBar }
+            };
+            //TO DO.... ADD LISTVIEW IMPLEMENTATION TO CONNECT WITH VIEW MODEL
+
+            Content = searchLayout;
         }
     }
 }
