@@ -55,3 +55,5 @@
 /Users/brianm/Desktop/Projects/MahechaBJJ/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.App.xaml.g.cs
 /Users/brianm/Desktop/Projects/MahechaBJJ/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.exe
 /Users/brianm/Desktop/Projects/MahechaBJJ/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.pdb
+/Users/brianm/Desktop/Projects/MahechaBJJ/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
+/Users/brianm/Desktop/Projects/MahechaBJJ/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.xml

@@ -1,12 +1,12 @@
 ﻿using System;
-
+using MahechaBJJ.Model;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.View
 {
     public class HomePage : ContentPage
     {
-        public HomePage()
+        public HomePage(BaseInfo VimeoInfo)
         {
             Title = "Home";
             Padding = 30;
@@ -28,13 +28,13 @@ namespace MahechaBJJ.View
             {
                 Text = "What's New"
             };
-            var video1 = new Label
+            var video1 = new Image
             {
-                Text = "Video 1"
-            };
-            var video2 = new Label
+				Source = VimeoInfo.data[0].pictures.sizes[2].link
+			};
+            var video2 = new Image
             {
-                Text = "Video 2"
+                Source = VimeoInfo.data[1].pictures.sizes[2].link
             };
             var playlistLbl = new Label
             {

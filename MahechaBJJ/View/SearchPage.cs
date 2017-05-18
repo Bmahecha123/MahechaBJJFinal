@@ -1,12 +1,12 @@
 ﻿using System;
-
+using MahechaBJJ.Model;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.View
 {
     public class SearchPage : ContentPage
     {
-        public SearchPage()
+        public SearchPage(BaseInfo VimeoInfo)
         {
             Title = "Search Page";
             Padding = 30;
