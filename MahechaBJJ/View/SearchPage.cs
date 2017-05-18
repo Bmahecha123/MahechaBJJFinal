@@ -16,6 +16,8 @@ namespace MahechaBJJ.View
                 Placeholder = "Enter technique to search for..."
             };
 
+            searchBar.SearchButtonPressed += SearchTechnique;
+
             var searchLayout = new StackLayout
             {
                 Children = { searchBar }
@@ -23,6 +25,10 @@ namespace MahechaBJJ.View
             //TO DO.... ADD LISTVIEW IMPLEMENTATION TO CONNECT WITH VIEW MODEL
 
             Content = searchLayout;
+        }
+
+        public void SearchTechnique (object Sender, EventArgs e) {
+            DisplayAlert("test", "this shit is testing search functionality..", "cool..", "sucks");
         }
     }
 }
