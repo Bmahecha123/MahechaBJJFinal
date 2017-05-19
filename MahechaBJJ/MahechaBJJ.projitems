@@ -26,6 +26,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\VimeoAPI.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\VimeoAPIService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignInPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SearchPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
