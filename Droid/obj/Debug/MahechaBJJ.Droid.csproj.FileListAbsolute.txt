@@ -68,3 +68,5 @@
 /Users/brianm/Desktop/Projects/MahechaBJJ/Droid/bin/Debug/Xamarin.Forms.Core.dll.mdb
 /Users/brianm/Desktop/Projects/MahechaBJJ/Droid/bin/Debug/Xamarin.Forms.Platform.Android.dll.mdb
 /Users/brianm/Desktop/Projects/MahechaBJJ/Droid/bin/Debug/Xamarin.Forms.Xaml.dll.mdb
+/Users/brianm/Desktop/Projects/MahechaBJJ/Droid/bin/Debug/Newtonsoft.Json.dll
+/Users/brianm/Desktop/Projects/MahechaBJJ/Droid/bin/Debug/Newtonsoft.Json.xml

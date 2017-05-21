@@ -100,6 +100,7 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "MahechaBJJ.Droid.dll" comes first in this list. */
 		"MahechaBJJ.Droid.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Annotations.dll",
 		"Xamarin.Android.Support.Compat.dll",

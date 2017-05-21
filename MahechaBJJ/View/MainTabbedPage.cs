@@ -10,7 +10,7 @@ namespace MahechaBJJ.View
         {
             Children.Add(new HomePage(VimeoInfo));
             Children.Add(new BrowsePage(VimeoInfo));
-            Children.Add(new SearchPage(VimeoInfo));
+            Children.Add(new SearchPage());
             Children.Add(new ProfilePage());
         }
     }
