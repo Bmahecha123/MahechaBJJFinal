@@ -1,21 +1,18 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6F87FFA6-AE4D-4B28-BE5A-FE4D3BA21885" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/View/VideoDetailPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/View/SearchPage.cs">
     <Files>
-      <File FileName="MahechaBJJ/View/SearchPage.cs" Line="94" Column="38" />
-      <File FileName="MahechaBJJ/View/SearchResultsPage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Model/VimeoAPI.cs" Line="114" Column="3" />
-      <File FileName="MahechaBJJ/App.xaml" Line="7" Column="1" />
-      <File FileName="MahechaBJJ/App.xaml.cs" Line="12" Column="48" />
-      <File FileName="MahechaBJJ/View/MainTabbedPage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/View/ProfilePage.cs" Line="9" Column="28" />
-      <File FileName="MahechaBJJ/View/EntryPage.cs" Line="55" Column="47" />
-      <File FileName="MahechaBJJ/View/GoogleSignInPage.cs" Line="46" Column="5" />
+      <File FileName="MahechaBJJ/View/SearchPage.cs" Line="127" Column="18" />
+      <File FileName="MahechaBJJ/View/MainTabbedPage.cs" Line="11" Column="19" />
       <File FileName="MahechaBJJ/View/HomePage.cs" Line="15" Column="14" />
-      <File FileName="MahechaBJJ/View/FaceBookSignInPage.cs" Line="54" Column="3" />
+      <File FileName="MahechaBJJ/View/EntryPage.cs" Line="55" Column="47" />
+      <File FileName="MahechaBJJ/View/GoogleSignInPage.cs" Line="46" Column="106" />
+      <File FileName="MahechaBJJ/View/FaceBookSignInPage.cs" Line="14" Column="26" />
+      <File FileName="MahechaBJJ/View/VideoDetailPage.cs" Line="43" Column="42" />
+      <File FileName="MahechaBJJ/View/SearchResultsPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/ViewModel/SignInPageViewModel.cs" Line="1" Column="1" />
       <File FileName="MahechaBJJ/ViewModel/SearchPageViewModel.cs" Line="31" Column="74" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="MahechaBJJ/View/VideoDetailPage.cs" Line="11" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />

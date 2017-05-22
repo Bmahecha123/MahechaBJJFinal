@@ -43,7 +43,7 @@ namespace MahechaBJJ.View
 		//functions
 		private async void CallVimeoApi(object sender, EventArgs e)
 		{
-			string url = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952";
+			string url = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
 			await _signInPageViewModel.GetVimeo(url);
 			SetPageContent(_signInPageViewModel.VimeoInfo);
 		}
