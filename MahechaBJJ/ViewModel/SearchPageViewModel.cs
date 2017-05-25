@@ -26,6 +26,19 @@ namespace MahechaBJJ.ViewModel
             _vimeoApiService = new VimeoAPIService();
         }
 
+        public async Task<bool> IsNextPageNullOrNot(String nextPage) {
+            bool nextPageNull;
+            _searchedVideos = await _vimeoApiService.GetVimeoInfo(nextPage);
+            if (_searchedVideos == null) {
+                nextPageNull = true;
+            }
+            else {
+                nextPageNull = false;
+            }
+            return nextPageNull;
+            
+        }
+
         public async Task SearchVideo(String query) {
 
             _searchedVideos = await _vimeoApiService.GetVimeoInfo(query);
