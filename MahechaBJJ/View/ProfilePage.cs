@@ -6,12 +6,22 @@ namespace MahechaBJJ.View
 {
     public class ProfilePage : ContentPage
     {
+        //declare objects
+        Grid grid;
+        Image profileImage;
+        Label nameLbl;
+        Label nameTextLbl;
+        Label emailLbl;
+        Label emailTextLbl;
+        Button cancelSubBtn;
+        Button logOutBtn;
+
         public ProfilePage()
         {
             Title = "Profile";
             Padding = 30;
             //grid definiton
-            var grid = new Grid
+            grid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection {
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
@@ -27,33 +37,33 @@ namespace MahechaBJJ.View
             };
 
             //view Objects
-            var profileImage = new Image
+            profileImage = new Image
             {
                 Source = ImageSource.FromFile("mahechabjj.jpg"),
                 Aspect = Aspect.AspectFit
             };
-            var nameLbl = new Label
+            nameLbl = new Label
             {
                 Text = "Name:"
             };
-            var nameTextLbl = new Label
+            nameTextLbl = new Label
             {
                 Text = "TODO ADD NAME"
             };
-            var emailLbl = new Label
+            emailLbl = new Label
             {
                 Text = "Email:"
             };
-            var emailTextLbl = new Label
+            emailTextLbl = new Label
             {
                 Text = "TODO ADD EMAIL"
             };
-            var cancelSubBtn = new Button
+            cancelSubBtn = new Button
             {
                 BackgroundColor = Color.Orange,
                 Text = "Cancel Subscription"
             };
-            var logOutBtn = new Button
+            logOutBtn = new Button
             {
                 BackgroundColor = Color.Orange,
                 Text = "Log Out"

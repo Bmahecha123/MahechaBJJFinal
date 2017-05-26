@@ -9,11 +9,16 @@ namespace MahechaBJJ.View
     {
 		private readonly SignInPageViewModel _signInPageViewModel = new SignInPageViewModel();
 
+        //declare objects
+        Grid grid;
+        Image mahechaLogo;
+        Button signUpBtn;
+
 		public GoogleSignInPage()
         {
             Padding = 30;
 			//Grid view definition
-			var grid = new Grid
+			grid = new Grid
 			{
 				RowDefinitions = new RowDefinitionCollection {
 					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
@@ -21,12 +26,12 @@ namespace MahechaBJJ.View
 				}
 			};
             //View objects
-            var mahechaLogo = new Image
+            mahechaLogo = new Image
             {
                 Source = ImageSource.FromFile("mahechabjj.jpg"),
                 Aspect = Aspect.AspectFit
             };
-            var signUpBtn = new Button
+            signUpBtn = new Button
             {
                 Text = "Sign Up",
                 BackgroundColor = Color.Orange,

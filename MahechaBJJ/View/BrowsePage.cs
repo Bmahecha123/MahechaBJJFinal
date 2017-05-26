@@ -6,12 +6,18 @@ namespace MahechaBJJ.View
 {
     public class BrowsePage : ContentPage
     {
+        //declare objects
+        Grid grid;
+        Button bottomBtn;
+        Button topBtn;
+        Button standUpBtn;
+
         public BrowsePage(BaseInfo VimeoInfo)
         {
             Title = "Browse";
             Padding = 30;
 
-            var grid = new Grid
+            grid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
@@ -22,18 +28,18 @@ namespace MahechaBJJ.View
             };
 
             //view objects
-            var bottomBtn = new Button
+            bottomBtn = new Button
             {
                 Text = "Bottom Techniques",
                 BackgroundColor = Color.Orange
             };
-            var topBtn = new Button
+            topBtn = new Button
             {
 				Text = "Top Techniques",
 				BackgroundColor = Color.Orange
 
 			};
-            var standUpBtn = new Button
+            standUpBtn = new Button
             {
 				Text = "Stand Up Techniques",
 				BackgroundColor = Color.Orange

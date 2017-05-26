@@ -6,12 +6,23 @@ namespace MahechaBJJ.View
 {
     public class HomePage : ContentPage
     {
+        Grid grid;
+        Label whatsNewLbl;
+        Image video1;
+        Image video2;
+        Label playListLbl;
+        Label playList1;
+        Label playList2;
+        Label playList3;
+        StackLayout stackLayout;
+        ScrollView playListScrollView
+
         public HomePage(BaseInfo VimeoInfo)
         {
             Title = "Home";
             Padding = 30;
 
-            var grid = new Grid
+            grid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection {
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
@@ -24,40 +35,40 @@ namespace MahechaBJJ.View
                 }
             };
             //View objects
-            var whatsNewLbl = new Label
+            whatsNewLbl = new Label
             {
                 Text = "What's New"
             };
-            var video1 = new Image
+            video1 = new Image
             {
 				Source = VimeoInfo.data[0].pictures.sizes[2].link
 			};
-            var video2 = new Image
+            video2 = new Image
             {
                 Source = VimeoInfo.data[1].pictures.sizes[2].link
             };
-            var playlistLbl = new Label
+            playListLbl = new Label
             {
                 Text = "Playlists"
             };
-            var playList1 = new Label
+            playList1 = new Label
             {
                 Text = "Playlist1"
             };
-            var playList2 = new Label
+            playList2 = new Label
             {
                 Text = "Playlist2"
             };
-            var playList3 = new Label
+            playList3 = new Label
             {
                 Text = "Playlist3"
             };
-            var stackLayout = new StackLayout
+            stackLayout = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
                 Children = { playList1, playList2, playList3 }
             };
-			var playListScrollView = new ScrollView
+			playListScrollView = new ScrollView
 			{
 				Orientation = ScrollOrientation.Horizontal,
                 Content = stackLayout

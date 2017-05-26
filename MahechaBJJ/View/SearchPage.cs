@@ -11,8 +11,18 @@ namespace MahechaBJJ.View
     {
         private readonly SearchPageViewModel _searchPageViewModel = new SearchPageViewModel();
         private ObservableCollection<VideoData> searchedVideos = new ObservableCollection<VideoData>();
-        ActivityIndicator activityInidicator;
+        ActivityIndicator activityIndicator;
         SearchBar searchBar;
+        Button loadBtn;
+        ListView videoListView;
+        Image techniqueImage;
+        Label title;
+        StackLayout searchLayout;
+
+        //CONSTS
+        private const string VIMEOVIDEOS = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952";
+        private const string VIDEOSPERPAGE = "&per_page=100";
+        private const string QUERY = "&query=";
 
         public SearchPage()
         {
@@ -29,23 +39,23 @@ namespace MahechaBJJ.View
                 Placeholder = "Enter technique to search for..."
             };
 
-            var loadBtn = new Button
+            loadBtn = new Button
             {
                 Text = "Load More...",
                 IsVisible = false
             };
 
-            var videoListView = new ListView
+            videoListView = new ListView
             {
                 ItemsSource = searchedVideos,
                 HasUnevenRows = true,
                 SeparatorVisibility = SeparatorVisibility.None,
                 ItemTemplate = new DataTemplate(() => 
                 {
-					var techniqueImage = new Image();
+					techniqueImage = new Image();
 					techniqueImage.SetBinding(Image.SourceProperty, "pictures.sizes[3].link");
 
-					var title = new Label();
+					title = new Label();
                     title.FontAttributes = FontAttributes.Bold;
                     title.HorizontalOptions = LayoutOptions.CenterAndExpand;
 					title.SetBinding(Label.TextProperty, "name");
@@ -67,7 +77,7 @@ namespace MahechaBJJ.View
                 })
             };
 
-			var searchLayout = new StackLayout
+			searchLayout = new StackLayout
             {
                 Children = 
                 { 
@@ -87,7 +97,7 @@ namespace MahechaBJJ.View
             {
                
                 activityIndicator.IsRunning = true;
-                string url = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=100&query=";
+                string url = VIMEOVIDEOS + VIDEOSPERPAGE + QUERY ;
                 await _searchPageViewModel.SearchVideo(url + searchBar.Text);
                 if (searchedVideos != null) {
                     searchedVideos.Clear();
@@ -116,8 +126,8 @@ namespace MahechaBJJ.View
                 }
                 Navigation.PushModalAsync(new VideoDetailPage(video));
             }
-            }
-        }
-    }
+         }
+     }
+}
 
 

@@ -6,11 +6,19 @@ namespace MahechaBJJ.View
 {
     public class EntryPage : ContentPage
     {
+        //declare objects
+        Grid grid;
+        Image mahechaLogo;
+        Label signInLabel;
+        Button googleBtn;
+        Button facebookBtn;
+
+
         public EntryPage()
         {
             Padding = 30;
             //Grid view definition
-            var grid = new Grid
+            grid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection {
                     new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
@@ -21,25 +29,25 @@ namespace MahechaBJJ.View
             };
 
             //view objects
-            var mahechaLogo = new Image
+            mahechaLogo = new Image
             {
                 Source = ImageSource.FromFile("mahechabjj.jpg"),
                 Aspect = Aspect.AspectFit
             };
-            var signInLabel = new Label
+            signInLabel = new Label
             {
                 Text = "Sign up with",
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center
 
             };
-            var googleBtn = new Button
+            googleBtn = new Button
             {
                 Text = "Google",
                 BackgroundColor = Color.Orange,
                 TextColor = Color.Black
             };
-            var facebookBtn = new Button
+            facebookBtn = new Button
             {
                 Text = "Facebook",
                 BackgroundColor = Color.Orange,

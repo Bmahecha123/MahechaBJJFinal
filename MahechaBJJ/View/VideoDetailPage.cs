@@ -7,29 +7,35 @@ namespace MahechaBJJ
 {
     public class VideoDetailPage : ContentPage
     {
+        //declare objects
+        Button backBtn;
+        Label testLabel;
+        Image image;
+        StackLayout layout;
+
         public VideoDetailPage(VideoData video)
         {
             Padding = 30;
             Title = video.name;
 
-            var backBtn = new Button
+            backBtn = new Button
             {
                 Text = "Back",
                 HorizontalOptions = LayoutOptions.Start,
                 VerticalOptions = LayoutOptions.Start
             };
-            var testLabel = new Label
+            testLabel = new Label
             {
                 Text = video.name
             };
 
-            var image = new Image
+            image = new Image
             {
                 Source = video.pictures.sizes[3].link,
                 Aspect = Aspect.AspectFit
             };
 
-            var layout = new StackLayout
+            layout = new StackLayout
             {
                 Children = {
                     backBtn,
