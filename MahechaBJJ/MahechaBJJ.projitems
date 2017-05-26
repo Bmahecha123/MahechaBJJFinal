@@ -15,24 +15,28 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)View\EntryPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\GoogleSignInPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\FaceBookSignInPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\HomePage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\BrowsePage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\SearchPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\ProfilePage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\MainTabbedPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GoogleSignInPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FaceBookSignInPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\BrowsePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SearchPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ProfilePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabbedPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\VimeoAPI.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\VimeoAPIService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignInPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SearchPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\VideoDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\VideoDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderer\Video.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderer\VideoRendererIos.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
-    <Folder Include="$(MSBuildThisFileDirectory)View\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Renderer\" />
   </ItemGroup>
 </Project>
