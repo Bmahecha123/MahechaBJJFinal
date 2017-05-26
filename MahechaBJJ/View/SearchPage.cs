@@ -11,18 +11,20 @@ namespace MahechaBJJ.View
     {
         private readonly SearchPageViewModel _searchPageViewModel = new SearchPageViewModel();
         private ObservableCollection<VideoData> searchedVideos = new ObservableCollection<VideoData>();
+        ActivityIndicator activityInidicator;
+        SearchBar searchBar;
 
         public SearchPage()
         {
             Title = "Search";
             Padding = 30;
             //View Objects
-            var activityIndicator = new ActivityIndicator
+            activityIndicator = new ActivityIndicator
             {
                 IsRunning = false,
             };
 
-            var searchBar = new SearchBar
+            searchBar = new SearchBar
             {
                 Placeholder = "Enter technique to search for..."
             };
