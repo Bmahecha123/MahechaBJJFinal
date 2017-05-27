@@ -125,7 +125,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -136,6 +135,8 @@
     <AndroidResource Include="Resources\drawable-hdpi\mahechabjj.jpg" />
     <AndroidResource Include="Resources\drawable-xhdpi\mahechabjj.jpg" />
     <AndroidResource Include="Resources\drawable-xxhdpi\mahechabjj.jpg" />
+    <AndroidResource Include="Resources\layout\Tabbar.axml" />
+    <AndroidResource Include="Resources\layout\VideoPlayer.axml" />
   </ItemGroup>
   <Import Project="..\MahechaBJJ\MahechaBJJ.projitems" Label="Shared" Condition="Exists('..\MahechaBJJ\MahechaBJJ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

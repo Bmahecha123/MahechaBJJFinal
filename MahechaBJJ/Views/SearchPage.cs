@@ -124,6 +124,7 @@ namespace MahechaBJJ.Views
                 if (e.SelectedItem == null){
                     return;
                 }
+                ((ListView)Sender).SelectedItem = null;
                 Navigation.PushModalAsync(new VideoDetailPage(video));
             }
          }

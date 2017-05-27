@@ -2,7 +2,7 @@
 
 namespace MahechaBJJ
 {
-	public class ShowVideoPlayerArguments
+	/*public class ShowVideoPlayerArguments
 	{
 		public string Url { get; private set; }
 
@@ -10,7 +10,7 @@ namespace MahechaBJJ
 		{
 			Url = url;
 		}
-	}
+	}  */
 
     public partial class App : Application
     {

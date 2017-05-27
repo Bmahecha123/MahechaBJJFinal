@@ -4,6 +4,8 @@ using System.Linq;
 using AVFoundation;
 using AVKit;
 using Foundation;
+using MahechaBJJ.Services;
+using MahechaBJJ.Views;
 using UIKit;
 using Xamarin.Forms;
 
@@ -19,7 +21,7 @@ namespace MahechaBJJ.iOS
             LoadApplication(new App());
 
             //adding messsaging center
-            MessagingCenter.Subscribe<Page, ShowVideoPlayerArguments>(this, "ShowVideoPlayer", HandleShowVideoPlayerMessage);
+            MessagingCenter.Subscribe<VideoDetailPage, ShowVideoPlayerArguments>(this, "ShowVideoPlayer", HandleShowVideoPlayerMessage);
 
             return base.FinishedLaunching(app, options);
         }

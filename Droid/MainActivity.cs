@@ -7,6 +7,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
+using MahechaBJJ.Views;
+using MahechaBJJ.Services;
 
 namespace MahechaBJJ.Droid
 {
@@ -22,7 +25,19 @@ namespace MahechaBJJ.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-            LoadApplication(new App());
+			//adding messsaging center
+			MessagingCenter.Subscribe<VideoDetailPage, ShowVideoPlayerArguments>(this, "ShowVideoPlayer", HandleShowVideoPlayerMessage);
+
+			LoadApplication(new App());
         }
-    }
+
+		private void HandleShowVideoPlayerMessage(Page page, ShowVideoPlayerArguments arguments)
+        {
+            var videoView = FindViewById<VideoView>(Resource.Id.VideoPlayer);
+            var uri = Android.Net.Uri.Parse(arguments.Url);
+            videoView.SetVideoURI(uri);
+            videoView.Start();
+        }
+
+	}
 }

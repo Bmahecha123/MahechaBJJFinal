@@ -2757,6 +2757,9 @@ namespace MahechaBJJ.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f0800b2
+			public const int VideoPlayer = 2131230898;
+			
 			// aapt resource value: 0x7f08009c
 			public const int action0 = 2131230876;
 			
@@ -2979,8 +2982,8 @@ namespace MahechaBJJ.Droid
 			// aapt resource value: 0x7f080048
 			public const int list_item = 2131230792;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int masked = 2131230899;
+			// aapt resource value: 0x7f0800b4
+			public const int masked = 2131230900;
 			
 			// aapt resource value: 0x7f08009f
 			public const int media_actions = 2131230879;
@@ -3285,8 +3288,8 @@ namespace MahechaBJJ.Droid
 			// aapt resource value: 0x7f08000e
 			public const int view_offset_helper = 2131230734;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int visible = 2131230898;
+			// aapt resource value: 0x7f0800b3
+			public const int visible = 2131230899;
 			
 			// aapt resource value: 0x7f080091
 			public const int volume_item_container = 2131230865;
@@ -3581,6 +3584,9 @@ namespace MahechaBJJ.Droid
 			
 			// aapt resource value: 0x7f030043
 			public const int Toolbar = 2130903107;
+			
+			// aapt resource value: 0x7f030044
+			public const int VideoPlayer = 2130903108;
 			
 			static Layout()
 			{

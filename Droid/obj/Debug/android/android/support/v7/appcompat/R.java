@@ -2987,6 +2987,7 @@ containing a value of this type.
         public static final int notify_panel_notification_icon_bg=0x7f02010c;
     }
     public static final class id {
+        public static final int VideoPlayer=0x7f0800b2;
         public static final int action0=0x7f08009c;
         public static final int action_bar=0x7f080064;
         public static final int action_bar_activity_content=0x7f080001;
@@ -3061,7 +3062,7 @@ containing a value of this type.
         public static final int line3=0x7f0800ad;
         public static final int listMode=0x7f08000f;
         public static final int list_item=0x7f080048;
-        public static final int masked=0x7f0800b3;
+        public static final int masked=0x7f0800b4;
         public static final int media_actions=0x7f08009f;
         public static final int middle=0x7f080022;
         public static final int mini=0x7f08003e;
@@ -3163,7 +3164,7 @@ containing a value of this type.
         public static final int up=0x7f080009;
         public static final int useLogo=0x7f080018;
         public static final int view_offset_helper=0x7f08000e;
-        public static final int visible=0x7f0800b2;
+        public static final int visible=0x7f0800b3;
         public static final int volume_item_container=0x7f080091;
         public static final int withText=0x7f080027;
         public static final int wrap_content=0x7f08001f;
@@ -3255,6 +3256,7 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f030041;
         public static final int tabbar=0x7f030042;
         public static final int toolbar=0x7f030043;
+        public static final int videoplayer=0x7f030044;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f090015;

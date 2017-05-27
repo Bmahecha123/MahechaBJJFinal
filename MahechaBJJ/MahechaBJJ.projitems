@@ -28,15 +28,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignInPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SearchPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\VideoDetailPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Renderer\Video.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Renderer\VideoRendererIos.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MyPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ShowVideoPlayerArguments.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Renderer\" />
   </ItemGroup>
 </Project>
