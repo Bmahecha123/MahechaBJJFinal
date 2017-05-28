@@ -1,22 +1,28 @@
 ﻿<Properties StartupConfiguration="{4A7FB70C-C450-4C8F-A39E-EE1FFC1B294B}|Default">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6F87FFA6-AE4D-4B28-BE5A-FE4D3BA21885" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Renderer/VideoRendererIos.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/VideoPlayerService_Android.cs">
     <Files>
-      <File FileName="MahechaBJJ/App.xaml.cs" Line="24" Column="1" />
-      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="127" Column="56" />
-      <File FileName="MahechaBJJ/Views/VideoDetailPage.cs" Line="44" Column="37" />
-      <File FileName="MahechaBJJ/Services/ShowVideoPlayerArguments.cs" Line="2" Column="30" />
-      <File FileName="iOS/AppDelegate.cs" Line="41" Column="9" />
-      <File FileName="Droid/MainActivity.cs" Line="39" Column="31" />
+      <File FileName="MahechaBJJ/App.xaml.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/VideoDetailPage.cs" Line="77" Column="1" />
+      <File FileName="MahechaBJJ/Services/ShowVideoPlayerArguments.cs" Line="1" Column="1" />
+      <File FileName="iOS/AppDelegate.cs" Line="1" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="32" Column="1" />
       <File FileName="Droid/VideoPlayer.cs" Line="1" Column="1" />
       <File FileName="MahechaBJJ/Renderer/VideoRendererIos.cs" Line="3" Column="7" />
+      <File FileName="MahechaBJJ/Services/IVideoPlayerService.cs" Line="6" Column="41" />
+      <File FileName="Droid/VideoPlayerService_Android.cs" Line="14" Column="31" />
+      <File FileName="MahechaBJJ/Views/MyPage.cs" Line="2" Column="7" />
+      <File FileName="Droid/packages.config" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJ/Droid/MainActivity.cs" relfile="Droid/MainActivity.cs" line="29" column="1" />
+      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJ/Droid/VideoPlayerService_Android.cs" relfile="Droid/VideoPlayerService_Android.cs" line="32" column="1" />
+      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJ/Droid/VideoPlayerService_Android.cs" relfile="Droid/VideoPlayerService_Android.cs" line="23" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

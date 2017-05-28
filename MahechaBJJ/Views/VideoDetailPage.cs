@@ -1,6 +1,5 @@
-﻿using System;
+﻿﻿using System;
 using MahechaBJJ.Model;
-using MahechaBJJ.Renderer;
 using MahechaBJJ.Services;
 /*#if __IOS__
 using Xamarin.Forms.Platform.iOS;
@@ -19,17 +18,6 @@ namespace MahechaBJJ.Views
 {
     public class VideoDetailPage : ContentPage
     {
-        //renderer stuff..
-
-        //declare objects
-        //video objects
-        /*#if __IOS__
-                private MPMoviePlayerController moviePlayer;
-                private AVPlayer player;
-                private AVPlayerLayer playerLayer;
-                private AVAsset asset;
-                private AVPlayerItem playerItem;
-        #endif */
         string videoUrl;
         Button backBtn;
         Label testLabel;
@@ -44,11 +32,6 @@ namespace MahechaBJJ.Views
             videoUrl = video.files[0].link;
             Padding = 30;
             Title = video.name;
-/*#if __IOS__
-            var playMovie = new UIButton();
-            playMovie.SetTitle("Video Test", UIControlState.Normal);
-            playMovie.BackgroundColor = UIColor.Blue;
-#endif */
 
             backBtn = new Button
             {
@@ -85,8 +68,16 @@ namespace MahechaBJJ.Views
             {
                 Navigation.PopModalAsync();
             };
+#if __IOS__
             playVideo.Clicked += (sender, e) => MessagingCenter.Send(this, "ShowVideoPlayer", new ShowVideoPlayerArguments(videoUrl));
-
+#endif
+#if __ANDROID__
+            playVideo.Clicked += (sender, args) =>
+			{
+				var VideoPlayerService = DependencyService.Get<IVideoPlayerService>();
+                VideoPlayerService.PlayVimeoVideo(videoUrl);
+			};
+            #endif
 			//button3.Clicked += (sender, e) => MessagingCenter.Send(MainPage, "ShowVideoPlayer", new ShowVideoPlayerArguments(VideoUrl));
 
 
@@ -120,7 +111,7 @@ namespace MahechaBJJ.Views
 #endif */
 
 
-			Content = layout;
+            Content = layout;
         }
     }
 }

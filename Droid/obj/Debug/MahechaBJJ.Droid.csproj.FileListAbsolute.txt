@@ -70,3 +70,4 @@
 /Users/brianm/Desktop/Projects/MahechaBJJ/Droid/bin/Debug/Xamarin.Forms.Xaml.dll.mdb
 /Users/brianm/Desktop/Projects/MahechaBJJ/Droid/bin/Debug/Newtonsoft.Json.dll
 /Users/brianm/Desktop/Projects/MahechaBJJ/Droid/bin/Debug/Newtonsoft.Json.xml
+/Users/brianm/Desktop/Projects/MahechaBJJ/Droid/obj/Debug/res/layout/videoplayer.xml

@@ -28,8 +28,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignInPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SearchPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\VideoDetailPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\MyPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ShowVideoPlayerArguments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IVideoPlayerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
