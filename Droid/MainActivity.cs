@@ -9,7 +9,7 @@ using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
 using MahechaBJJ.Views;
-using MahechaBJJ.Services;
+using MahechaBJJ.Service;
 
 namespace MahechaBJJ.Droid
 {
@@ -37,6 +37,15 @@ namespace MahechaBJJ.Droid
             var uri = Android.Net.Uri.Parse(arguments.Url);
             videoView.SetVideoURI(uri);
             videoView.Start();
+        }
+
+        private Android.Widget.RelativeLayout Test(VideoView _videoView) {
+            Android.Widget.RelativeLayout layout = new Android.Widget.RelativeLayout(this.BaseContext);
+			layout.SetHorizontalGravity(Android.Views.GravityFlags.CenterHorizontal);
+			layout.AddView(_videoView);
+
+            return layout;
+            
         }
 
 	}

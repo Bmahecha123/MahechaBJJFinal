@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
-using MahechaBJJ.Services;
+using MahechaBJJ.Service;
 
 namespace MahechaBJJ.ViewModel
 {

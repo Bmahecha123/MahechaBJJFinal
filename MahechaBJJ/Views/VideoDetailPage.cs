@@ -1,6 +1,6 @@
 ﻿﻿using System;
 using MahechaBJJ.Model;
-using MahechaBJJ.Services;
+using MahechaBJJ.Service;
 /*#if __IOS__
 using Xamarin.Forms.Platform.iOS;
 using UIKit;
@@ -18,6 +18,8 @@ namespace MahechaBJJ.Views
 {
     public class VideoDetailPage : ContentPage
     {
+#if __ANDROID__
+#endif
         string videoUrl;
         Button backBtn;
         Label testLabel;
@@ -60,7 +62,7 @@ namespace MahechaBJJ.Views
                     backBtn,
                     testLabel,
                     image,
-                    playVideo
+                    playVideo,
                 }
             };
             //Events
@@ -73,45 +75,15 @@ namespace MahechaBJJ.Views
 #endif
 #if __ANDROID__
             playVideo.Clicked += (sender, args) =>
+            {
+            };
+          /*  playVideo.Clicked += (sender, args) =>
 			{
 				var VideoPlayerService = DependencyService.Get<IVideoPlayerService>();
                 VideoPlayerService.PlayVimeoVideo(videoUrl);
-			};
-            #endif
-			//button3.Clicked += (sender, e) => MessagingCenter.Send(MainPage, "ShowVideoPlayer", new ShowVideoPlayerArguments(VideoUrl));
-
-
-
-			/* #if __IOS__
-						playMovie.TouchUpInside += delegate
-						{
-							/*uiView = new UIViewController();
-							window = new UIWindow(UIScreen.MainScreen.Bounds);
-							moviePlayer = new MPMoviePlayerController(NSUrl.FromFilename("spider.mp4"));
-							window.RootViewController = uiView;
-							uiView.ShowViewController(uiView, null);
-
-
-							//moviePlayer.SetFullscreen(true, true);
-							window.MakeKeyAndVisible();
-							moviePlayer.Play(); */
-
-			/*   asset = AVAsset.FromUrl(NSUrl.FromFilename("spider.mp4"));
-			   playerItem = new AVPlayerItem(asset);
-
-			   player = new AVPlayer(playerItem);
-
-			   playerLayer = AVPlayerLayer.FromPlayer(player);
-			   uiView = new UIViewController();
-			   playerLayer.Frame = uiView.View.Frame;
-			   uiView.View.Layer.AddSublayer(playerLayer);
-
-			   player.Play();
-		   };
-#endif */
-
-
-            Content = layout;
+			}; */
+#endif
+        Content = layout;
         }
     }
 }

@@ -10,6 +10,9 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NativeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -24,17 +27,19 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\ProfilePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabbedPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\VimeoAPI.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\VimeoAPIService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\VimeoAPIService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignInPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SearchPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\VideoDetailPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\ShowVideoPlayerArguments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\IVideoPlayerService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\ShowVideoPlayerArguments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NativeView.xaml.cs">
+      <DependentUpon>NativeView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Service\" />
   </ItemGroup>
 </Project>

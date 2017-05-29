@@ -4,7 +4,7 @@ using System.Linq;
 using AVFoundation;
 using AVKit;
 using Foundation;
-using MahechaBJJ.Services;
+using MahechaBJJ.Service;
 using MahechaBJJ.Views;
 using UIKit;
 using Xamarin.Forms;
