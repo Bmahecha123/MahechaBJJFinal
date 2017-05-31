@@ -27,7 +27,7 @@ namespace MahechaBJJ.Views
         public SearchPage()
         {
             Title = "Search";
-            Padding = 30;
+            Padding = new Thickness(10,30,10,10);
             //View Objects
             activityIndicator = new ActivityIndicator
             {
@@ -36,7 +36,7 @@ namespace MahechaBJJ.Views
 
             searchBar = new SearchBar
             {
-                Placeholder = "Enter technique to search for..."
+                Placeholder = "Enter technique to search for...",
             };
 
             loadBtn = new Button
@@ -53,7 +53,7 @@ namespace MahechaBJJ.Views
                 ItemTemplate = new DataTemplate(() => 
                 {
 					techniqueImage = new Image();
-					techniqueImage.SetBinding(Image.SourceProperty, "pictures.sizes[3].link");
+					techniqueImage.SetBinding(Image.SourceProperty, "pictures.sizes[4].link");
 
 					title = new Label();
                     title.FontAttributes = FontAttributes.Bold;

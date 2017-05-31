@@ -16,7 +16,7 @@ namespace MahechaBJJ.Views
 
         public EntryPage()
         {
-            Padding = 30;
+            Padding = new Thickness(10, 30, 10, 10);
             //Grid view definition
             grid = new Grid
             {

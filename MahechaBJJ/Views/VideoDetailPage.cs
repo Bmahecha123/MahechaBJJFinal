@@ -32,7 +32,7 @@ namespace MahechaBJJ.Views
         public VideoDetailPage(VideoData video)
         {
             videoUrl = video.files[0].link;
-            Padding = 30;
+            Padding = new Thickness(10, 30, 10, 10);
             Title = video.name;
 
             backBtn = new Button
@@ -48,7 +48,7 @@ namespace MahechaBJJ.Views
 
             image = new Image
             {
-                Source = video.pictures.sizes[3].link,
+                Source = video.pictures.sizes[4].link,
                 Aspect = Aspect.AspectFit
             };
             playVideo = new Button
@@ -76,6 +76,8 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
             playVideo.Clicked += (sender, args) =>
             {
+                //Navigation.PushModalAsync(new NativeView(video));
+                Navigation.PushModalAsync(new AndroidVideoViewPage(video));
             };
           /*  playVideo.Clicked += (sender, args) =>
 			{

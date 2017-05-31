@@ -20,7 +20,7 @@ namespace MahechaBJJ.Views
         public HomePage(BaseInfo VimeoInfo)
         {
             Title = "Home";
-            Padding = 30;
+            Padding = new Thickness(10, 30, 10, 10);
 
             grid = new Grid
             {

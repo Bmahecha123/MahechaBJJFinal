@@ -19,7 +19,7 @@ namespace MahechaBJJ.Views
         public ProfilePage()
         {
             Title = "Profile";
-            Padding = 30;
+            Padding = new Thickness(10, 30, 10, 10);
             //grid definiton
             grid = new Grid
             {
