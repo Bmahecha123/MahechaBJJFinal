@@ -1,9 +1,10 @@
 ﻿using System;
-using Android.Widget;
 using MahechaBJJ.Model;
 using Xamarin.Forms;
+#if __ANDROID__
+using Android.Widget;
 using Xamarin.Forms.Platform.Android;
-
+#endif
 namespace MahechaBJJ.Views
 {
     public class AndroidVideoPage : ContentPage
