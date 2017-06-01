@@ -118,3 +118,5 @@
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/bin/iPhoneSimulator/Debug/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/bin/iPhoneSimulator/Debug/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/bin/iPhoneSimulator/Debug/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.Views.AndroidVideoViewPage.xaml.g.cs
+/Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.Views.AndroidViewPage.xaml.g.cs

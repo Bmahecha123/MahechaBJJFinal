@@ -128,7 +128,6 @@
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/XbdMerge/Xamarin.Android.Support.v7.MediaRouter.dll.stamp
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.csproj.CoreCompileInputs.cache
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.App.xaml.g.cs
-/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.Views.NativeView.xaml.g.cs
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.dll
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.pdb
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/android/bin/com.mahechabjj.mahecha_bjj.apk
@@ -146,4 +145,3 @@
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/res/layout/videoplayer.xml
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/R.cs.flag
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/uploadflags.txt
-/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.AndroidVideoViewPage.xaml.g.cs

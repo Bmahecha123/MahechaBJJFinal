@@ -1,43 +1,45 @@
-﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default">
+﻿<Properties StartupConfiguration="{4A7FB70C-C450-4C8F-A39E-EE1FFC1B294B}|Default">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6F87FFA6-AE4D-4B28-BE5A-FE4D3BA21885" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/AndroidVideoViewPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/AndroidVideoPage.cs">
     <Files>
-      <File FileName="MahechaBJJ/Views/VideoDetailPage.cs" Line="51" Column="48" NotebookId="3" />
-      <File FileName="Droid/MainActivity.cs" Line="53" Column="1" NotebookId="3" />
-      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="56" Column="71" NotebookId="3" />
-      <File FileName="MahechaBJJ/Views/BrowsePage.cs" Line="18" Column="50" NotebookId="3" />
-      <File FileName="MahechaBJJ/App.xaml" Line="7" Column="1" NotebookId="3" />
-      <File FileName="MahechaBJJ/App.xaml.cs" Line="19" Column="10" NotebookId="3" />
-      <File FileName="Droid/obj/Debug/MahechaBJJ.Droid.Views.NativeView.xaml.g.cs" Line="22" Column="2" NotebookId="3" />
-      <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="1" Column="1" NotebookId="3" />
-      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="16" Column="9" NotebookId="3" />
-      <File FileName="MahechaBJJ/Views/FaceBookSignInPage.cs" Line="19" Column="53" NotebookId="3" />
-      <File FileName="MahechaBJJ/Views/GoogleSignInPage.cs" Line="19" Column="53" NotebookId="3" />
-      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="23" Column="53" NotebookId="3" />
-      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="22" Column="53" NotebookId="3" />
-      <File FileName="MahechaBJJ/AndroidVideoViewPage.xaml" Line="6" Column="1" NotebookId="3" />
-      <File FileName="MahechaBJJ/AndroidVideoViewPage.xaml.cs" Line="1" Column="1" NotebookId="3" />
+      <File FileName="MahechaBJJ/Views/VideoDetailPage.cs" Line="79" Column="58" NotebookId="2" />
+      <File FileName="Droid/MainActivity.cs" Line="16" Column="190" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="117" Column="53" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/BrowsePage.cs" Line="18" Column="50" NotebookId="2" />
+      <File FileName="MahechaBJJ/App.xaml" Line="7" Column="1" NotebookId="2" />
+      <File FileName="MahechaBJJ/App.xaml.cs" Line="22" Column="5" NotebookId="2" />
+      <File FileName="Droid/obj/Debug/MahechaBJJ.Droid.Views.NativeView.xaml.g.cs" Line="22" Column="2" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="1" Column="1" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="16" Column="9" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/FaceBookSignInPage.cs" Line="19" Column="53" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/GoogleSignInPage.cs" Line="19" Column="53" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="23" Column="53" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="22" Column="53" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/AndroidVideoViewPage.xaml" Line="11" Column="1" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/AndroidVideoViewPage.xaml.cs" Line="34" Column="1" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/VideoView.xaml" Line="7" Column="1" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/VideoView.xaml.cs" Line="15" Column="25" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/AndroidViewPage.xaml" Line="11" Column="1" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/AndroidViewPage.xaml.cs" Line="33" Column="22" NotebookId="2" />
+      <File FileName="iOS/Info.plist" NotebookId="2" />
+      <File FileName="iOS/AppDelegate.cs" Line="45" Column="1" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/AndroidVideoViewPage.cs" Line="17" Column="7" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/AndroidVideoPage.cs" Line="1" Column="1" NotebookId="2" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="518" Y="73" Width="640" Height="480">
+      <FloatingWindow WindowId="1" X="727" Y="168" Width="640" Height="480">
         <Files>
-          <File FileName="iOS/AppDelegate.cs" Line="28" Column="9" />
-          <File FileName="MahechaBJJ/Views/AndroidView.cs" Line="9" Column="9" />
+          <File FileName="MahechaBJJ/Views/NativeView.xaml.cs" Line="43" Column="1" />
         </Files>
       </FloatingWindow>
-      <FloatingWindow WindowId="2" X="800" Y="23" Width="640" Height="480">
+      <FloatingWindow WindowId="2" X="805" Y="244" Width="640" Height="480">
         <Files>
-          <File FileName="MahechaBJJ/Views/NativeView.xaml.cs" Line="40" Column="1" NotebookId="1" />
-        </Files>
-      </FloatingWindow>
-      <FloatingWindow WindowId="3" X="800" Y="342" Width="640" Height="480">
-        <Files>
-          <File FileName="MahechaBJJ/Views/NativeView.xaml" Line="12" Column="15" NotebookId="2" />
+          <File FileName="MahechaBJJ/Views/NativeView.xaml" Line="12" Column="15" NotebookId="1" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>

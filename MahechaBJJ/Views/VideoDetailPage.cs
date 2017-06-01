@@ -76,16 +76,10 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
             playVideo.Clicked += (sender, args) =>
             {
-                //Navigation.PushModalAsync(new NativeView(video));
-                Navigation.PushModalAsync(new AndroidVideoViewPage(video));
+                Navigation.PushModalAsync(new AndroidVideoPage(video));
             };
-          /*  playVideo.Clicked += (sender, args) =>
-			{
-				var VideoPlayerService = DependencyService.Get<IVideoPlayerService>();
-                VideoPlayerService.PlayVimeoVideo(videoUrl);
-			}; */
 #endif
-        Content = layout;
+            Content = layout;
         }
     }
 }

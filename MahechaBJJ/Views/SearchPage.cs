@@ -115,8 +115,6 @@ namespace MahechaBJJ.Views
 					}
                 }
                 activityIndicator.IsRunning = false;
-
-                await DisplayAlert("test", searchedVideos.Count.ToString(), "works!");
             }
 
             void LoadVideo(object Sender, SelectedItemChangedEventArgs e) {
