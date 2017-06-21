@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using MahechaBJJ.Model;
 using Xamarin.Forms;
 #if __ANDROID__
@@ -20,9 +20,9 @@ namespace MahechaBJJ.Views
 #endif
 		public AndroidVideoPage(VideoData video)
         {
-            SizeChanged += OnSizeChanged;
 			BackgroundColor = Color.Black;
 #if __ANDROID__
+            SizeChanged += OnSizeChanged;
 			videoView = new VideoView(Forms.Context);
 			mediaController = new MediaController(Forms.Context, false);
 			uriHd = Android.Net.Uri.Parse(video.files[1].link);
