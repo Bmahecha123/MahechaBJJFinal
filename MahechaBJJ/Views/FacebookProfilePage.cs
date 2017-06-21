@@ -1,60 +1,59 @@
 ﻿using System;
+using System.Linq;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel;
 using Xamarin.Forms;
+using Device = Xamarin.Forms.Device;
 
 namespace MahechaBJJ.Views
 {
-    public class FacebookProfilePage : ContentPage
-    {
-        FacebookPageViewModel _facebookViewModel = new FacebookPageViewModel();
-        private string clientId = "602878376580983";
-       
-        WebView webView;
+	public class FacebookProfilePage : ContentPage
+	{
 
-        StackLayout layout;
+		/// <summary>
+		/// Make sure to get a new ClientId from:
+		/// https://developers.facebook.com/apps/
+		/// </summary>
+		private string ClientId = "602878376580983";
 
-        public FacebookProfilePage()
-        {
-			var facebookApiRequest = "https://www.facebook.com/dialog/oauth?client_id="
-				+ clientId
-				+ "&display=popup&response_type=token&redirect_uri=https://www.facebook.com/connect/login_success.html";
-            
-            webView = new WebView
-            {
-                Source = facebookApiRequest,
-                HeightRequest = 1
-            };
+		public FacebookProfilePage()
+		{
 
-            webView.Navigated += WebViewOnNavigated;
+			BindingContext = new FacebookPageViewModel();
 
-            Content = webView;
-        }
+			Title = "Facebook Profile";
+			BackgroundColor = Color.White;
 
-        private async void WebViewOnNavigated(object sender, WebNavigatedEventArgs e)
-        {
-            var accessToken = ExtractAccessTokenFromUrl(e.Url);
+			var apiRequest =
+				"https://www.facebook.com/dialog/oauth?client_id="
+				+ ClientId
+				+ "&display=popup&response_type=token&redirect_uri=http://www.facebook.com/connect/login_success.html";
 
-            if (accessToken != "")
-            {
-                await _facebookViewModel.SetFacebookUserProfileAsync(accessToken);
+			var webView = new WebView
+			{
+				Source = apiRequest,
+				HeightRequest = 1
+			};
 
-                SetPageContent(_facebookViewModel.FacebookProfile);
-            }
-        }
+			webView.Navigated += WebViewOnNavigated;
 
-        private String ExtractAccessTokenFromUrl(string url)
-        {
-            if (url.Contains("access_token") && url.Contains("&expires_in="))
-            {
-                var at = url.Replace("https://www.facebook.com/connect/login_success.html#access_token=", "");
+			Content = webView;
+		}
 
-                var accessToken = at.Remove(at.IndexOf("&expires_in="));
-                DisplayAlert("access token", accessToken, "nice");
-                return accessToken;
-            }
-            return string.Empty;
-        }
+		private async void WebViewOnNavigated(object sender, WebNavigatedEventArgs e)
+		{
+
+			var accessToken = ExtractAccessTokenFromUrl(e.Url);
+
+			if (accessToken != "")
+			{
+				var vm = BindingContext as FacebookPageViewModel;
+
+				await vm.SetFacebookUserProfileAsync(accessToken);
+
+				SetPageContent(vm.FacebookProfile);
+			}
+		}
 
 		private void SetPageContent(FacebookProfile facebookProfile)
 		{
@@ -83,8 +82,8 @@ namespace MahechaBJJ.Views
 						FontSize = 22,
 					},
 					new Label
-                    {
-                        Text = facebookProfile.Devices[0].ToString(),
+					{
+						Text = Enumerable.FirstOrDefault(facebookProfile.Devices).Os,
 						TextColor = Color.Black,
 						FontSize = 22,
 					},
@@ -100,14 +99,14 @@ namespace MahechaBJJ.Views
 						TextColor = Color.Black,
 						FontSize = 22,
 					},
-					new Label
-					{
-						Text = facebookProfile.Picture.Data.Url,
-						TextColor = Color.Black,
-						FontSize = 22,
-					},
-					new Label
-					{
+                    new Label
+                    {
+                        Text = facebookProfile.Picture.Data.Url,
+                        TextColor = Color.Black,
+                        FontSize = 22,
+                    },
+                    new Label
+                    {
 						Text = facebookProfile.Cover.Source,
 						TextColor = Color.Black,
 						FontSize = 22,
@@ -115,6 +114,25 @@ namespace MahechaBJJ.Views
 				}
 			};
 		}
-    }
+
+		private string ExtractAccessTokenFromUrl(string url)
+		{
+			if (url.Contains("access_token") && url.Contains("&expires_in="))
+			{
+				var at = url.Replace("https://www.facebook.com/connect/login_success.html#access_token=", "");
+
+				if (Device.OS == TargetPlatform.WinPhone || Device.OS == TargetPlatform.Windows)
+				{
+					at = url.Replace("http://www.facebook.com/connect/login_success.html#access_token=", "");
+				}
+
+				var accessToken = at.Remove(at.IndexOf("&expires_in="));
+
+				return accessToken;
+			}
+
+			return string.Empty;
+		}
+	}
 }
 

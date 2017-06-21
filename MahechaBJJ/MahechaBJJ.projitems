@@ -30,11 +30,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\VideoDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\ShowVideoPlayerArguments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AndroidVideoPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\FacebookPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\FacebookProfilePage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\FacebookProfile.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Service\FacebookService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\FacebookPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\HomePageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

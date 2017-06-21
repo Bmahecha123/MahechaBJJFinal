@@ -12,16 +12,18 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
 		VideoView videoView;
 		MediaController mediaController;
-		ContentView contentView;
+		ContentView portraitContentView;
+        ContentView landscapeContentView;
 		Android.Net.Uri uriHd;
+        int currentPosition;
 
 #endif
 		public AndroidVideoPage(VideoData video)
         {
+            SizeChanged += OnSizeChanged;
 			BackgroundColor = Color.Black;
 #if __ANDROID__
 			videoView = new VideoView(Forms.Context);
-			contentView = new ContentView();
 			mediaController = new MediaController(Forms.Context, false);
 			uriHd = Android.Net.Uri.Parse(video.files[1].link);
 
@@ -33,11 +35,22 @@ namespace MahechaBJJ.Views
 			videoView.SetFitsSystemWindows(false);
 			videoView.SetVideoURI(uriHd);
 
-			contentView.Content = videoView.ToView();
-			contentView.HorizontalOptions = LayoutOptions.CenterAndExpand;
-			contentView.VerticalOptions = LayoutOptions.CenterAndExpand;
+            portraitContentView = new ContentView();
+			portraitContentView.Content = videoView.ToView();
+			portraitContentView.HorizontalOptions = LayoutOptions.FillAndExpand;
+            portraitContentView.VerticalOptions = LayoutOptions.CenterAndExpand;
 
-			Content = contentView;
+            landscapeContentView = new ContentView();
+            landscapeContentView.Content = videoView.ToView();
+            landscapeContentView.HorizontalOptions = LayoutOptions.FillAndExpand;
+            landscapeContentView.VerticalOptions = LayoutOptions.FillAndExpand;
+
+            void OnSizeChanged (object sender, EventArgs e) {
+                currentPosition = videoView.CurrentPosition;
+                Content = (Height > Width) ? portraitContentView : landscapeContentView;
+                videoView.SeekTo(currentPosition);
+                videoView.Start();
+            }
 			videoView.Start();
 #endif
 		}

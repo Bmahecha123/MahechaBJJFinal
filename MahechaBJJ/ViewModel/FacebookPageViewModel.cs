@@ -6,8 +6,8 @@ using MahechaBJJ.Model;
 
 namespace MahechaBJJ.ViewModel
 {
-    public class FacebookPageViewModel : INotifyPropertyChanged
-    {
+	public class FacebookPageViewModel : INotifyPropertyChanged
+	{
 		private FacebookProfile _facebookProfile;
 
 		public FacebookProfile FacebookProfile
@@ -22,9 +22,9 @@ namespace MahechaBJJ.ViewModel
 
 		public async Task SetFacebookUserProfileAsync(string accessToken)
 		{
-			var facebookService = new FacebookService();
+			var facebookServices = new FacebookService();
 
-			FacebookProfile = await facebookService.GetFacebookProfileAsync(accessToken);
+			FacebookProfile = await facebookServices.GetFacebookProfileAsync(accessToken);
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -33,6 +33,5 @@ namespace MahechaBJJ.ViewModel
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
-
 	}
 }

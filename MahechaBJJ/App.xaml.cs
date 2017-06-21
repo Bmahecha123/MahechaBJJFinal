@@ -8,9 +8,8 @@ namespace MahechaBJJ
         public App()
         {
 			 InitializeComponent();
-
-            MainPage = new NavigationPage(new FacebookPage());
-			 //MainPage = new NavigationPage(new Views.EntryPage());
+            //MainPage = new MainTabbedPage(new Model.BaseInfo());
+			 MainPage = new NavigationPage(new Views.EntryPage());
         }
 
         protected override void OnStart()

@@ -4,8 +4,8 @@ using Xamarin.Forms;
 
 namespace MahechaBJJ.Model
 {
-    public class FacebookProfile : ContentPage
-    {
+	public class FacebookProfile
+	{
 		public string Name { get; set; }
 		public Picture Picture { get; set; }
 		public string Locale { get; set; }
@@ -21,7 +21,7 @@ namespace MahechaBJJ.Model
 		public string Gender { get; set; }
 		public bool IsVerified { get; set; }
 		public string Id { get; set; }
-    }
+	}
 
 	public class Picture
 	{
@@ -52,4 +52,3 @@ namespace MahechaBJJ.Model
 	}
 
 }
-

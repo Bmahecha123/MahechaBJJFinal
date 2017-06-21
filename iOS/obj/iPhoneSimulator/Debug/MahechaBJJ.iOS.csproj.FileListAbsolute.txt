@@ -58,10 +58,6 @@
 /Users/brianm/Desktop/Projects/MahechaBJJ/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
 /Users/brianm/Desktop/Projects/MahechaBJJ/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.xml
 /Users/brianm/Desktop/Projects/MahechaBJJ/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.Views.NativeView.xaml.g.cs
-/Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3/ibtool/_BundleResourceWithLogicalName.items
-/Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3/actool/_PartialAppManifest.items
-/Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3/actool/_BundleResourceWithLogicalName.items
-/Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3/optimized/
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.csprojResolveAssemblyReference.cache
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.csproj.CoreCompileInputs.cache
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.App.xaml.g.cs
@@ -117,3 +113,7 @@
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/bin/iPhoneSimulator/Debug/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/bin/iPhoneSimulator/Debug/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/bin/iPhoneSimulator/Debug/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/ibtool/_BundleResourceWithLogicalName.items
+/Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/actool/_PartialAppManifest.items
+/Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/actool/_BundleResourceWithLogicalName.items
+/Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/

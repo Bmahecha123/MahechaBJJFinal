@@ -1,25 +1,34 @@
 ﻿﻿using System;
 using MahechaBJJ.Model;
+using MahechaBJJ.ViewModel;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
 {
     public class HomePage : ContentPage
     {
+        HomePageViewModel _homePageViewModel = new HomePageViewModel();
         Grid grid;
+        BoxView whatsNewBoxView;
+        Image video1Btn;
+        Image video2Btn;
         Label whatsNewLbl;
-        Image video1;
-        Image video2;
         Label playListLbl;
-        Label playList1;
-        Label playList2;
-        Label playList3;
+        Button playList1Btn;
+        Button playList2Btn;
+        Button playList3Btn;
+        Button playList4Btn;
+        Button playList5Btn;
+        Button playList6Btn;
+        Button addPlaylistBtn;
         StackLayout stackLayout;
         ScrollView playListScrollView;
 
         public HomePage(BaseInfo VimeoInfo)
         {
+            //TODO REPLACE RESOURCE FILE WITH PNG IMAGE FROM CHRISTINE
             Title = "Home";
+            BackgroundColor = Color.Azure;
             Padding = new Thickness(10, 30, 10, 10);
 
             grid = new Grid
@@ -35,38 +44,100 @@ namespace MahechaBJJ.Views
                 }
             };
             //View objects
+            whatsNewBoxView = new BoxView
+            {
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                BackgroundColor = Color.Black,
+                Opacity = .5
+
+            };
             whatsNewLbl = new Label
             {
-                Text = "What's New"
+                Text = "What's New",
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                FontSize = 50
             };
-            video1 = new Image
+            video1Btn = new Image
             {
-				Source = VimeoInfo.data[0].pictures.sizes[2].link
-			};
-            video2 = new Image
+                Source = VimeoInfo.data[0].pictures.sizes[4].link,
+				HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand
+            };
+            video2Btn = new Image
             {
-                Source = VimeoInfo.data[1].pictures.sizes[2].link
+                Source = VimeoInfo.data[1].pictures.sizes[4].link,
+				HorizontalOptions = LayoutOptions.FillAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand
             };
             playListLbl = new Label
             {
-                Text = "Playlists"
+                Text = "Playlists",
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center,
+				FontSize = 50
             };
-            playList1 = new Label
+            playList1Btn = new Button
             {
-                Text = "Playlist1"
+                Text = "Playlist1",
+				HorizontalOptions = LayoutOptions.FillAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				BorderWidth = 2.5,
+				BorderColor = Color.Black
             };
-            playList2 = new Label
+            playList2Btn = new Button
             {
-                Text = "Playlist2"
+                Text = "Playlist2",
+				HorizontalOptions = LayoutOptions.FillAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				BorderWidth = 2.5,
+				BorderColor = Color.Black
             };
-            playList3 = new Label
+            playList3Btn = new Button
             {
-                Text = "Playlist3"
+                Text = "Playlist3",
+				HorizontalOptions = LayoutOptions.FillAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				BorderWidth = 2.5,
+				BorderColor = Color.Black
+            };
+			playList4Btn = new Button
+			{
+				Text = "Playlist3",
+				HorizontalOptions = LayoutOptions.FillAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				BorderWidth = 2.5,
+				BorderColor = Color.Black
+			};
+            playList5Btn = new Button
+			{
+				Text = "Playlist3",
+				HorizontalOptions = LayoutOptions.FillAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				BorderWidth = 2.5,
+				BorderColor = Color.Black
+			};
+            playList6Btn = new Button
+			{
+				Text = "Playlist3",
+				HorizontalOptions = LayoutOptions.FillAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				BorderWidth = 2.5,
+				BorderColor = Color.Black
+			};
+            addPlaylistBtn = new Button
+            {
+                Text = "Add Playlist!",
+				HorizontalOptions = LayoutOptions.FillAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				BorderWidth = 2.5,
+				BorderColor = Color.Black
             };
             stackLayout = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
-                Children = { playList1, playList2, playList3 }
+                Children = { playList1Btn, playList2Btn, playList3Btn, playList4Btn, playList5Btn, playList6Btn, addPlaylistBtn }
             };
 			playListScrollView = new ScrollView
 			{
@@ -76,13 +147,14 @@ namespace MahechaBJJ.Views
 
             grid.Children.Add(whatsNewLbl, 0, 0);
             Grid.SetColumnSpan(whatsNewLbl, 2);
-            grid.Children.Add(video1, 0, 1);
-            grid.Children.Add(video2, 1, 1);
+            grid.Children.Add(video1Btn, 0, 1);
+            grid.Children.Add(video2Btn, 1, 1);
             grid.Children.Add(playListLbl, 0, 2);
             Grid.SetColumnSpan(playListLbl, 2);
             grid.Children.Add(playListScrollView, 0, 3);
             Grid.SetColumnSpan(playListScrollView, 2);
 
+          
             Content = grid;
 
         }
