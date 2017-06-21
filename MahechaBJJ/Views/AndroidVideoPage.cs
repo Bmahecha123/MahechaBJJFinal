@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
 using MahechaBJJ.Model;
 using Xamarin.Forms;
 #if __ANDROID__

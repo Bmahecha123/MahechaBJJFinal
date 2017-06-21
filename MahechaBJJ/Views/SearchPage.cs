@@ -32,6 +32,8 @@ namespace MahechaBJJ.Views
             activityIndicator = new ActivityIndicator
             {
                 IsRunning = false,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand
             };
 
             searchBar = new SearchBar
@@ -94,6 +96,7 @@ namespace MahechaBJJ.Views
 
             async void SearchVimeo(object Sender, EventArgs e)
             {
+                searchLayout.Children.Remove(videoListView);
                 searchLayout.Children.Add(activityIndicator);
                 activityIndicator.IsRunning = true;
                 string url = VIMEOVIDEOS + VIDEOSPERPAGE + QUERY ;
@@ -114,6 +117,7 @@ namespace MahechaBJJ.Views
 					}
                 }
                 searchLayout.Children.Remove(activityIndicator);
+                searchLayout.Children.Add(videoListView);
                 activityIndicator.IsRunning = false;
             }
 

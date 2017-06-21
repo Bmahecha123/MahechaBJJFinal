@@ -68,15 +68,23 @@ namespace MahechaBJJ.Views
             //Events
             backBtn.Clicked += (sender, e) =>
             {
+                backBtn.IsEnabled = false;
                 Navigation.PopModalAsync();
             };
 #if __IOS__
-            playVideo.Clicked += (sender, e) => MessagingCenter.Send(this, "ShowVideoPlayer", new ShowVideoPlayerArguments(videoUrl));
+            playVideo.Clicked += (sender, e) =>
+            {
+                playVideo.IsEnabled = false;
+                MessagingCenter.Send(this, "ShowVideoPlayer", new ShowVideoPlayerArguments(videoUrl));
+                playVideo.IsEnabled = true;
+            };
 #endif
 #if __ANDROID__
-            playVideo.Clicked += (sender, args) =>
+            playVideo.Clicked += async (sender, args) =>
             {
-                Navigation.PushModalAsync(new AndroidVideoPage(video));
+                playVideo.IsEnabled = false;
+                await Navigation.PushModalAsync(new AndroidVideoPage(video));
+                playVideo.IsEnabled = true;
             };
 #endif
             Content = layout;

@@ -1,9 +1,11 @@
 ﻿<Properties StartupConfiguration="{4A7FB70C-C450-4C8F-A39E-EE1FFC1B294B}|Default">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6F87FFA6-AE4D-4B28-BE5A-FE4D3BA21885" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/AndroidVideoPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/VideoDetailPage.cs">
     <Files>
       <File FileName="MahechaBJJ/apiTest.cs" Line="42" Column="1" />
-      <File FileName="MahechaBJJ/Views/AndroidVideoPage.cs" Line="48" Column="27" />
+      <File FileName="MahechaBJJ/Views/AndroidVideoPage.cs" Line="25" Column="1" />
+      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="36" Column="64" />
+      <File FileName="MahechaBJJ/Views/VideoDetailPage.cs" Line="81" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
