@@ -9,7 +9,6 @@ namespace MahechaBJJ.Views
         //declare objects
         Grid outerGrid;
         Grid innerGrid;
-        StackLayout layout;
         Image mahechaLogo;
         Button loginBtn;
         Button signUpBtn;
@@ -40,15 +39,20 @@ namespace MahechaBJJ.Views
                 Source = ImageSource.FromFile("mahechabjj.jpg"),
                 Aspect = Aspect.AspectFit
             };
+            var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
             loginBtn = new Button
             {
                 Text = "Login",
+                FontFamily = "ChalkboardSE-Bold",
+                FontSize = size * 2,
                 BackgroundColor = Color.Orange,
                 TextColor = Color.Black
             };
             signUpBtn = new Button
             {
                 Text = "Sign Up",
+                FontFamily = "ChalkboardSE-Bold",
+                FontSize = size * 2,
                 BackgroundColor = Color.Orange,
 				TextColor = Color.Black
             };
@@ -90,7 +94,7 @@ namespace MahechaBJJ.Views
                 innerGrid.Children.Add(signUpBtn, 1, 0);
                 innerGrid.Children.Add(loginBtn, 1, 1);
             } else {
-                Padding = new Thickness(10, 30, 10, 10);
+				Padding = new Thickness(10, 30, 10, 10);
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star)});
