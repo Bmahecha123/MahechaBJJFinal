@@ -16,8 +16,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\GoogleSignInPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\FaceBookSignInPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LoginPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\HomePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\BrowsePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\SearchPage.cs" />

@@ -32,6 +32,7 @@
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/android/assets/mscorlib.dll
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/android/assets/System.Runtime.dll
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/android/assets/System.ComponentModel.Composition.dll
+/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/android/assets/System.Resources.ResourceManager.dll
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/android/assets/System.IO.dll
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/android/assets/System.Runtime.Numerics.dll
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/android/assets/System.Numerics.dll

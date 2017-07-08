@@ -7,25 +7,31 @@ namespace MahechaBJJ.Views
     public class EntryPage : ContentPage
     {
         //declare objects
-        Grid grid;
+        Grid outerGrid;
+        Grid innerGrid;
+        StackLayout layout;
         Image mahechaLogo;
-        Label signInLabel;
-        Button googleBtn;
-        Button facebookBtn;
-
+        Button loginBtn;
+        Button signUpBtn;
 
         public EntryPage()
         {
             Padding = new Thickness(10, 30, 10, 10);
-            //Grid view definition
-            grid = new Grid
+            //outer Grid
+            outerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
+            };
+            //inner Grid
+            innerGrid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection {
                     new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }  
+                }
             };
 
             //view objects
@@ -34,43 +40,69 @@ namespace MahechaBJJ.Views
                 Source = ImageSource.FromFile("mahechabjj.jpg"),
                 Aspect = Aspect.AspectFit
             };
-            signInLabel = new Label
+            loginBtn = new Button
             {
-                Text = "Sign up with",
-                HorizontalTextAlignment = TextAlignment.Center,
-                VerticalTextAlignment = TextAlignment.Center
-
-            };
-            googleBtn = new Button
-            {
-                Text = "Google",
+                Text = "Login",
                 BackgroundColor = Color.Orange,
                 TextColor = Color.Black
             };
-            facebookBtn = new Button
+            signUpBtn = new Button
             {
-                Text = "Facebook Videooo",
+                Text = "Sign Up",
                 BackgroundColor = Color.Orange,
-                TextColor = Color.Black
+				TextColor = Color.Black
             };
             //Button events
-            googleBtn.Clicked += (sender, args) =>
+            loginBtn.Clicked += (sender, args) =>
             {
-                Navigation.PushAsync(new GoogleSignInPage());
+                Navigation.PushAsync(new LoginPage());
             };
-            facebookBtn.Clicked += (sender, args) =>
+            signUpBtn.Clicked += (sender, args) =>
             {
-                Navigation.PushAsync(new FaceBookSignInPage());
+                Navigation.PushAsync(new SignUpPage());
             };
 
-            //adding children to grid
-            grid.Children.Add(mahechaLogo, 0, 0);
-            grid.Children.Add(signInLabel, 0, 1);
-            grid.Children.Add(googleBtn, 0, 2);
-            grid.Children.Add(facebookBtn, 0 , 3);
 
-			Content = grid;
-        }
-    }
+            innerGrid.Children.Add(mahechaLogo, 0, 0);
+            innerGrid.Children.Add(signUpBtn, 0, 1);
+            innerGrid.Children.Add(loginBtn, 0, 2);
+
+            outerGrid.Children.Add(innerGrid);
+
+            Content = outerGrid;
+		}
+
+		protected override void OnSizeAllocated(double width, double height)
+		{
+			base.OnSizeAllocated(width, height); //must be called
+
+            if (width > height) {
+                Padding = new Thickness(10, 10, 10, 10);
+                innerGrid.RowDefinitions.Clear();
+                innerGrid.ColumnDefinitions.Clear();
+                innerGrid.RowDefinitions.Add(new RowDefinition{ Height = new GridLength(1, GridUnitType.Star)});
+                innerGrid.RowDefinitions.Add(new RowDefinition{ Height = new GridLength(1, GridUnitType.Star)});
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
+                innerGrid.Children.Clear();
+                innerGrid.Children.Add(mahechaLogo, 0, 0);
+                Grid.SetRowSpan(mahechaLogo, 2);
+                innerGrid.Children.Add(signUpBtn, 1, 0);
+                innerGrid.Children.Add(loginBtn, 1, 1);
+            } else {
+                Padding = new Thickness(10, 30, 10, 10);
+                innerGrid.RowDefinitions.Clear();
+                innerGrid.ColumnDefinitions.Clear();
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star)});
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
+                innerGrid.Children.Clear();
+                innerGrid.Children.Add(mahechaLogo, 0, 0);
+                innerGrid.Children.Add(loginBtn, 0, 1);
+                innerGrid.Children.Add(signUpBtn, 0, 2);
+            }
+		}
+
+	}
 }
 

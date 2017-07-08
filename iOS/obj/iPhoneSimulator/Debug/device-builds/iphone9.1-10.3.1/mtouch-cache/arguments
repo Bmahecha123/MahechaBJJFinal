@@ -25,7 +25,7 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Newtonsoft.Json.10.0.2/lib/netstandard1.3/Newtonsoft.Json.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Newtonsoft.Json.10.0.3/lib/netstandard1.3/Newtonsoft.Json.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r \
@@ -313,7 +313,7 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Newtonsoft.Json.10.0.2/lib/netstandard1.3/Newtonsoft.Json.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Newtonsoft.Json.10.0.3/lib/netstandard1.3/Newtonsoft.Json.dll \
 	-r \
 	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \
