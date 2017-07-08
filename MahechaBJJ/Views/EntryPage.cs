@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 
 using Xamarin.Forms;
 
@@ -43,7 +43,9 @@ namespace MahechaBJJ.Views
             loginBtn = new Button
             {
                 Text = "Login",
+#if __IOS__
                 FontFamily = "ChalkboardSE-Bold",
+#endif
                 FontSize = size * 2,
                 BackgroundColor = Color.Orange,
                 TextColor = Color.Black
@@ -51,7 +53,9 @@ namespace MahechaBJJ.Views
             signUpBtn = new Button
             {
                 Text = "Sign Up",
+#if __IOS__
                 FontFamily = "ChalkboardSE-Bold",
+#endif
                 FontSize = size * 2,
                 BackgroundColor = Color.Orange,
 				TextColor = Color.Black
