@@ -36,7 +36,7 @@ namespace MahechaBJJ.Views
             //view objects
             mahechaLogo = new Image
             {
-                Source = ImageSource.FromFile("mahechabjj.jpg"),
+                Source = ImageSource.FromResource("mahechabjjlogo.png"),
                 Aspect = Aspect.AspectFit
             };
             var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));

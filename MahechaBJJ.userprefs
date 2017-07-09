@@ -4,15 +4,16 @@
     <Files>
       <File FileName="MahechaBJJ/Views/VideoDetailPage.cs" Line="81" Column="4" NotebookId="1" />
       <File FileName="../../../../../Library/Frameworks/Mono.framework/Versions/5.0.1/lib/mono/msbuild/15.0/bin/Microsoft.Common.CurrentVersion.targets" Line="1980" Column="21" NotebookId="1" />
-      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="74" Column="34" NotebookId="1" />
-      <File FileName="MahechaBJJ/Views/LoginPage.cs" Line="31" Column="61" NotebookId="1" />
+      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="39" Column="62" NotebookId="1" />
+      <File FileName="MahechaBJJ/Views/LoginPage.cs" Line="15" Column="35" NotebookId="1" />
       <File FileName="MahechaBJJ/Views/SignUpPage.cs" Line="17" Column="26" NotebookId="1" />
       <File FileName="MahechaBJJ/Views/HomePage.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="MahechaBJJ/Views/BrowsePage.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="800" Y="41" Width="640" Height="480">
+      <FloatingWindow WindowId="1" X="754" Y="26" Width="640" Height="480">
         <Files>
-          <File FileName="MahechaBJJ/Views/AndroidVideoPage.cs" Line="52" Column="35" />
+          <File FileName="MahechaBJJ/Views/AndroidVideoPage.cs" Line="60" Column="1" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
