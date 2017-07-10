@@ -57,3 +57,11 @@
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/actool/_PartialAppManifest.items
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/actool/_BundleResourceWithLogicalName.items
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/
+C:\Users\bmahe\Desktop\MahechaBJJFinal\iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\bmahe\Desktop\MahechaBJJFinal\iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+C:\Users\bmahe\Desktop\MahechaBJJFinal\iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\bmahe\Desktop\MahechaBJJFinal\iOS\obj\iPhoneSimulator\Debug\optimized\
+C:\Users\bmahe\Desktop\MahechaBJJFinal\iOS\obj\iPhoneSimulator\Debug\MahechaBJJ.iOS.csprojResolveAssemblyReference.cache
+C:\Users\bmahe\Desktop\MahechaBJJFinal\iOS\obj\iPhoneSimulator\Debug\MahechaBJJ.iOS.App.xaml.g.cs
+C:\Users\bmahe\Desktop\MahechaBJJFinal\iOS\obj\iPhoneSimulator\Debug\MahechaBJJ.iOS.exe
+C:\Users\bmahe\Desktop\MahechaBJJFinal\iOS\obj\iPhoneSimulator\Debug\MahechaBJJ.iOS.pdb
