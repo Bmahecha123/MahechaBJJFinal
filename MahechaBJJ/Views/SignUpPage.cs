@@ -12,6 +12,13 @@ namespace MahechaBJJ.Views
         //declare objects
         Grid grid;
         Image mahechaLogo;
+        Label firstNameLbl;
+        Entry firstNameEntry;
+        Label lastNameLbl;
+        Entry lastNameEntry;
+        Label emailAddressLbl;
+        Entry emailAddressEntry;
+
         Button signUpBtn;
 
         public SignUpPage()
