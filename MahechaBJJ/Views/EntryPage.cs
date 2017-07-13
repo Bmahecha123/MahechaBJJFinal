@@ -1,5 +1,9 @@
-﻿using System;
-
+﻿﻿using System;
+using System.Diagnostics;
+using System.Linq;
+using MahechaBJJ.Model;
+using Newtonsoft.Json;
+using Xamarin.Auth;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
@@ -12,9 +16,16 @@ namespace MahechaBJJ.Views
         Image mahechaLogo;
         Button loginBtn;
         Button signUpBtn;
+        //Xam Auth
+        Account account;
+        AccountStore store;
 
         public EntryPage()
         {
+			//XAM AUTH
+			store = AccountStore.Create();
+			account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
+
             Padding = new Thickness(10, 30, 10, 10);
             //outer Grid
             outerGrid = new Grid
@@ -63,6 +74,7 @@ namespace MahechaBJJ.Views
             //Button events
             loginBtn.Clicked += (sender, args) =>
             {
+                OnLoginClicked(sender, args);
                 Navigation.PushAsync(new LoginPage());
             };
             signUpBtn.Clicked += (sender, args) =>
@@ -103,14 +115,95 @@ namespace MahechaBJJ.Views
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star)});
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.Children.Clear();
                 innerGrid.Children.Add(mahechaLogo, 0, 0);
                 innerGrid.Children.Add(loginBtn, 0, 1);
                 innerGrid.Children.Add(signUpBtn, 0, 2);
             }
 		}
+		void OnLoginClicked(object sender, EventArgs e)
+		{
+			string clientId = null;
+			string redirectUri = null;
 
+			switch (Device.RuntimePlatform)
+			{
+				case Device.iOS:
+					clientId = Constants.iOSClientId;
+					redirectUri = Constants.iOSRedirectUrl;
+					break;
+
+				case Device.Android:
+					clientId = Constants.AndroidClientId;
+					redirectUri = Constants.AndroidRedirectUrl;
+					break;
+			}
+
+			var authenticator = new OAuth2Authenticator(
+				clientId,
+				null,
+				Constants.Scope,
+				new Uri(Constants.AuthorizeUrl),
+				new Uri(redirectUri),
+				new Uri(Constants.AccessTokenUrl),
+				null,
+				true);
+
+			authenticator.Completed += OnAuthCompleted;
+			authenticator.Error += OnAuthError;
+
+			AuthenticationState.Authenticator = authenticator;
+
+			var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+			presenter.Login(authenticator);
+		}
+
+		async void OnAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
+		{
+			var authenticator = sender as OAuth2Authenticator;
+			if (authenticator != null)
+			{
+				authenticator.Completed -= OnAuthCompleted;
+				authenticator.Error -= OnAuthError;
+			}
+
+			User user = null;
+			if (e.IsAuthenticated)
+			{
+				// If the user is authenticated, request their basic user data from Google
+				// UserInfoUrl = https://www.googleapis.com/oauth2/v2/userinfo
+				var request = new OAuth2Request("GET", new Uri(Constants.UserInfoUrl), null, e.Account);
+				var response = await request.GetResponseAsync();
+				if (response != null)
+				{
+					// Deserialize the data and store it in the account store
+					// The users email address will be used to identify data in SimpleDB
+					string userJson = await response.GetResponseTextAsync();
+					user = JsonConvert.DeserializeObject<User>(userJson);
+				}
+
+				if (account != null)
+				{
+					store.Delete(account, Constants.AppName);
+				}
+
+				await store.SaveAsync(account = e.Account, Constants.AppName);
+				await DisplayAlert("Email address", user.Email, "OK");
+			}
+		}
+
+		void OnAuthError(object sender, AuthenticatorErrorEventArgs e)
+		{
+			var authenticator = sender as OAuth2Authenticator;
+			if (authenticator != null)
+			{
+				authenticator.Completed -= OnAuthCompleted;
+				authenticator.Error -= OnAuthError;
+			}
+
+			Debug.WriteLine("Authentication error: " + e.Message);
+		}
 	}
 }
 

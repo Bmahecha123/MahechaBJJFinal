@@ -1,25 +1,30 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6F87FFA6-AE4D-4B28-BE5A-FE4D3BA21885" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/EntryPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Model/User.cs">
     <Files>
-      <File FileName="MahechaBJJ/Views/VideoDetailPage.cs" Line="81" Column="4" NotebookId="1" />
-      <File FileName="../../../../../Library/Frameworks/Mono.framework/Versions/5.0.1/lib/mono/msbuild/15.0/bin/Microsoft.Common.CurrentVersion.targets" Line="1980" Column="21" NotebookId="1" />
-      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="39" Column="62" NotebookId="1" />
-      <File FileName="MahechaBJJ/Views/LoginPage.cs" Line="15" Column="35" NotebookId="1" />
-      <File FileName="MahechaBJJ/Views/SignUpPage.cs" Line="17" Column="26" NotebookId="1" />
-      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="MahechaBJJ/Views/BrowsePage.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="MahechaBJJ/Views/VideoDetailPage.cs" Line="81" Column="4" />
+      <File FileName="../../../../../Library/Frameworks/Mono.framework/Versions/5.0.1/lib/mono/msbuild/15.0/bin/Microsoft.Common.CurrentVersion.targets" Line="1980" Column="21" />
+      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="160" Column="6" />
+      <File FileName="MahechaBJJ/Views/LoginPage.cs" Line="55" Column="9" />
+      <File FileName="MahechaBJJ/Views/SignUpPage.cs" Line="22" Column="21" />
+      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/BrowsePage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/ViewModel/EmptyClass.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/ViewModel/HomePageViewModel.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/ViewModel/SearchPageViewModel.cs" Line="33" Column="9" />
+      <File FileName="MahechaBJJ/ViewModel/SignInPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Service/VimeoAPIService.cs" Line="1" Column="1" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="iOS/AppDelegate.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="17" Column="32" />
+      <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Model/Constants.cs" Line="22" Column="3" />
+      <File FileName="MahechaBJJ/Model/AuthenticationState.cs" Line="8" Column="36" />
+      <File FileName="MahechaBJJ/Model/User.cs" Line="8" Column="10" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="754" Y="26" Width="640" Height="480">
-        <Files>
-          <File FileName="MahechaBJJ/Views/AndroidVideoPage.cs" Line="60" Column="1" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
-  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/VideoPlayerService_Android.cs" relfile="Droid/VideoPlayerService_Android.cs" line="33" column="1" />

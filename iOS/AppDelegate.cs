@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using AVFoundation;
@@ -17,8 +17,9 @@ namespace MahechaBJJ.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+			global::Xamarin.Auth.Presenters.XamarinIOS.AuthenticationConfiguration.Init();
 
-            LoadApplication(new App());
+			LoadApplication(new App());
 
             //adding messsaging center
             MessagingCenter.Subscribe<VideoDetailPage, ShowVideoPlayerArguments>(this, "ShowVideoPlayer", HandleShowVideoPlayerMessage);

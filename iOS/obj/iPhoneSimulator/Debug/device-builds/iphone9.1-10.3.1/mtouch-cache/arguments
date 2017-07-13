@@ -27,15 +27,31 @@
 	-r \
 	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Newtonsoft.Json.10.0.3/lib/netstandard1.3/Newtonsoft.Json.dll \
 	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PCLCrypto.2.0.147/lib/xamarinios10/PCLCrypto.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.BCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Kernel32.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.NCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.NCrypt.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Windows.Core.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll \
+	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.IO.Compression.dll \
 	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Json.dll \
+	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Net.Http.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Validation.2.2.8/lib/dotnet/Validation.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Xamarin.Auth.1.5.0.3/lib/Xamarin.iOS10/Xamarin.Auth.dll \
 	-r \
 	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \
@@ -314,6 +330,20 @@
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll \
 	-r \
 	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Newtonsoft.Json.10.0.3/lib/netstandard1.3/Newtonsoft.Json.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PCLCrypto.2.0.147/lib/xamarinios10/PCLCrypto.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.BCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Kernel32.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.NCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.NCrypt.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Windows.Core.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Validation.2.2.8/lib/dotnet/Validation.dll \
+	-r \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Xamarin.Auth.1.5.0.3/lib/Xamarin.iOS10/Xamarin.Auth.dll \
 	-r \
 	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \

@@ -34,6 +34,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Service\ShowVideoPlayerArguments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AndroidVideoPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\HomePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\AuthenticationState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
