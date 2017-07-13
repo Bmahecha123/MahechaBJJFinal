@@ -64,6 +64,7 @@ namespace MahechaBJJ.Views
             //TODO DEFINE OBJECTS
             firstNameLbl = new Label
             {
+                
 
             };
             firstNameEntry = new Entry

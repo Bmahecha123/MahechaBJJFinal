@@ -18,6 +18,6 @@ namespace MahechaBJJ.Model
 		//????
 		//Set these to reversed iOS/Android client ids, with :/oauth2redirect appended
 		public static string iOSRedirectUrl = "com.googleusercontent.apps.938356160819-pqs05o2cdddnoc0en6sel7t79v3upflt:/oauth2redirect";
-		public static string AndroidRedirectUrl = "";
+		public static string AndroidRedirectUrl = "com.googleusercontent.apps.938356160819-pqs05o2cdddnoc0en6sel7t79v3upflt:/oauth2redirect";
 	}
 }
