@@ -145,3 +145,4 @@
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/res/drawable-hdpi/mahechabjj.png
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/res/drawable-xhdpi/mahechabjj.png
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/res/drawable-xxhdpi/mahechabjj.png
+/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/XbdMerge/Xamarin.Android.Support.CustomTabs.dll.stamp

@@ -72,11 +72,12 @@ namespace MahechaBJJ.Views
 				TextColor = Color.Black
             };
             //Button events
-            loginBtn.Clicked += (sender, args) =>
+            /*loginBtn.Clicked += (sender, args) =>
             {
                 OnLoginClicked(sender, args);
                 Navigation.PushAsync(new LoginPage());
-            };
+            }; */
+            loginBtn.Clicked += OnLoginClicked;
             signUpBtn.Clicked += (sender, args) =>
             {
                 Navigation.PushAsync(new SignUpPage());

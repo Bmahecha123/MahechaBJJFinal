@@ -29,13 +29,13 @@
 	-r \
 	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PCLCrypto.2.0.147/lib/xamarinios10/PCLCrypto.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.BCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.BCrypt.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.BCrypt.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Kernel32.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Kernel32.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.Kernel32.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.NCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.NCrypt.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.NCrypt.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.NCrypt.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Windows.Core.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Windows.Core.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.Windows.Core.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r \
@@ -49,7 +49,7 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Validation.2.2.8/lib/dotnet/Validation.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Validation.2.4.15/lib/netstandard1.3/Validation.dll \
 	-r \
 	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Xamarin.Auth.1.5.0.3/lib/Xamarin.iOS10/Xamarin.Auth.dll \
 	-r \
@@ -333,15 +333,15 @@
 	-r \
 	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PCLCrypto.2.0.147/lib/xamarinios10/PCLCrypto.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.BCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.BCrypt.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.BCrypt.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Kernel32.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Kernel32.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.Kernel32.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.NCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.NCrypt.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.NCrypt.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.NCrypt.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Windows.Core.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/PInvoke.Windows.Core.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.Windows.Core.dll \
 	-r \
-	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Validation.2.2.8/lib/dotnet/Validation.dll \
+	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Validation.2.4.15/lib/netstandard1.3/Validation.dll \
 	-r \
 	/Users/brianm/Desktop/Projects/MahechaBJJFinal/packages/Xamarin.Auth.1.5.0.3/lib/Xamarin.iOS10/Xamarin.Auth.dll \
 	-r \

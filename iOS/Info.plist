@@ -44,5 +44,20 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLTypes</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>Mahecha BJJ</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.938356160819-pqs05o2cdddnoc0en6sel7t79v3upflt</string>
+			</array>
+			<key>CFBundleURLIconFile</key>
+			<string>mahechabjj</string>
+		</dict>
+	</array>
 </dict>
 </plist>
