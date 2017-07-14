@@ -18,12 +18,14 @@ namespace MahechaBJJ.Views
         private Label passwordLbl;
         private Entry passwordEntry;
         private Button loginBtn;
+        private User user;
 
 
         public LoginPage()
         {
             Padding = new Thickness(10, 30, 10, 10);
             var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+            user = new User();
             //Grid view definition
             outerGrid = new Grid
             {
@@ -64,6 +66,7 @@ namespace MahechaBJJ.Views
 #endif
 				FontSize = size
             };
+            user.Email = emailEntry.Text;
             passwordLbl = new Label
             {
                 Text = "Password",
@@ -80,6 +83,7 @@ namespace MahechaBJJ.Views
 #endif
 				FontSize = size
             };
+            user.Password = passwordEntry.Text;
             loginBtn = new Button
             {
                 Text = "Login",
@@ -108,12 +112,12 @@ namespace MahechaBJJ.Views
 		{
             string url = VIMEOURL;
 			await _signInPageViewModel.GetVimeo(url);
-			SetPageContent(_signInPageViewModel.VimeoInfo);
+			SetPageContent(_signInPageViewModel.VimeoInfo, user);
 		}
 
-		private void SetPageContent(BaseInfo Output)
+		private void SetPageContent(BaseInfo output, User user)
 		{
-			Navigation.PushModalAsync(new MainTabbedPage(Output));
+            Navigation.PushModalAsync(new MainTabbedPage(output, user));
 		}
 
 		protected override void OnSizeAllocated(double width, double height)

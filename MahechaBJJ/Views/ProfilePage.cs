@@ -1,5 +1,5 @@
 ﻿﻿using System;
-
+using MahechaBJJ.Model;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
@@ -16,7 +16,7 @@ namespace MahechaBJJ.Views
         Button cancelSubBtn;
         Button logOutBtn;
 
-        public ProfilePage()
+        public ProfilePage(User user)
         {
             Title = "Profile";
             Padding = new Thickness(10, 30, 10, 10);
@@ -39,7 +39,7 @@ namespace MahechaBJJ.Views
             //view Objects
             profileImage = new Image
             {
-                Source = ImageSource.FromFile("mahechabjj.jpg"),
+                Source = user.Picture,
                 Aspect = Aspect.AspectFit
             };
             nameLbl = new Label
@@ -48,7 +48,7 @@ namespace MahechaBJJ.Views
             };
             nameTextLbl = new Label
             {
-                Text = "TODO ADD NAME"
+                Text = user.Name
             };
             emailLbl = new Label
             {
@@ -56,7 +56,7 @@ namespace MahechaBJJ.Views
             };
             emailTextLbl = new Label
             {
-                Text = "TODO ADD EMAIL"
+                Text = user.Email
             };
             cancelSubBtn = new Button
             {
@@ -73,8 +73,9 @@ namespace MahechaBJJ.Views
             cancelSubBtn.Clicked += (sender, e) => {
                 DisplayAlert("Subscription Cancellation", "Are you you want to cancel your subscription?!", "Yess D8<!", "Never >8D!");
             };
-            logOutBtn.Clicked += (sender, e) => {
-                DisplayAlert("Log out Button", "Are you sure you want to log out?", "Log out", "Cancel");
+            logOutBtn.Clicked += async (sender, e) => {
+                var logOut = await DisplayAlert("Log out Button", "Are you sure you want to log out?", "Log out", "Cancel");
+
             };
             //Building Grid
             grid.Children.Add(profileImage, 0, 0);

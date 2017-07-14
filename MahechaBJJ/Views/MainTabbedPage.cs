@@ -6,12 +6,12 @@ namespace MahechaBJJ.Views
 {
     public class MainTabbedPage : TabbedPage
     {
-        public MainTabbedPage(BaseInfo VimeoInfo)
+        public MainTabbedPage(BaseInfo VimeoInfo, User user)
         {
             Children.Add(new HomePage(VimeoInfo));
             Children.Add(new BrowsePage(VimeoInfo));
             Children.Add(new SearchPage());
-            Children.Add(new ProfilePage());
+            Children.Add(new ProfilePage(user));
         }
     }
 }

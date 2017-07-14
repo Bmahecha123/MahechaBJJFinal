@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using MahechaBJJ.Model;
+using MahechaBJJ.ViewModel;
 using Newtonsoft.Json;
 using Xamarin.Auth;
 using Xamarin.Forms;
@@ -10,19 +11,26 @@ namespace MahechaBJJ.Views
 {
     public class EntryPage : ContentPage
     {
+		//viewModel
+		private readonly SignInPageViewModel _signInPageViewModel = new SignInPageViewModel();
+        private const String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
         //declare objects
-        Grid outerGrid;
-        Grid innerGrid;
-        Image mahechaLogo;
-        Button loginBtn;
-        Button signUpBtn;
-        Button googleSignInBtn;
+        private Grid outerGrid;
+        private Grid innerGrid;
+        private Image mahechaLogo;
+        private Button loginBtn;
+        private Button signUpBtn;
+        private Button googleSignInBtn;
         //Xam Auth
-        Account account;
-        AccountStore store;
+        private Account account;
+        private AccountStore store;
+        private User user;
 
         public EntryPage()
         {
+            if (Navigation.ModalStack.Count > 0){
+                Navigation.PopToRootAsync();
+            }
 			//XAM AUTH
 			store = AccountStore.Create();
 			account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
@@ -105,6 +113,7 @@ namespace MahechaBJJ.Views
             Content = outerGrid;
 		}
 
+        //Orientation
 		protected override void OnSizeAllocated(double width, double height)
 		{
 			base.OnSizeAllocated(width, height); //must be called
@@ -139,6 +148,19 @@ namespace MahechaBJJ.Views
                 innerGrid.Children.Add(googleSignInBtn, 0, 3);
             }
 		}
+		//functions
+		private async void CallVimeoApi()
+		{
+			string url = VIMEOURL;
+			await _signInPageViewModel.GetVimeo(url);
+            SetPageContent(_signInPageViewModel.VimeoInfo, user);
+		}
+
+		private void SetPageContent(BaseInfo Output, User user)
+		{
+            Navigation.PushModalAsync(new MainTabbedPage(Output, user));
+		}
+
 		void OnLoginClicked(object sender, EventArgs e)
 		{
 			string clientId = null;
@@ -185,7 +207,7 @@ namespace MahechaBJJ.Views
 				authenticator.Error -= OnAuthError;
 			}
 
-			User user = null;
+			user = null;
 			if (e.IsAuthenticated)
 			{
 				// If the user is authenticated, request their basic user data from Google
@@ -207,6 +229,7 @@ namespace MahechaBJJ.Views
 				await DisplayAlert("Email address", user.Email, "OK");
 
 				await store.SaveAsync(account = e.Account, Constants.AppName);
+                CallVimeoApi();
 				await DisplayAlert("Email address", user.Email, "OK");
 			}
 		}

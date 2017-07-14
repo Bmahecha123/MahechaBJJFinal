@@ -32,5 +32,11 @@ namespace MahechaBJJ.Model
 
 		[JsonProperty("gender")]
 		public string Gender { get; set; }
+
+        public string Password
+        {
+            get;
+            set;
+        }
 	}
 }

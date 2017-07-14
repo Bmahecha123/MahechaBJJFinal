@@ -37,6 +37,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\AuthenticationState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

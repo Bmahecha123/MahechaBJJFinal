@@ -10,24 +10,26 @@ namespace MahechaBJJ.Views
         private readonly SignInPageViewModel _signInPageViewModel = new SignInPageViewModel();
 
         //declare objects
-        Grid innerGrid;
-        Grid outerGrid;
-        Image mahechaLogo;
-        Label firstNameLbl;
-        Entry firstNameEntry;
-        Label lastNameLbl;
-        Entry lastNameEntry;
-        Label emailAddressLbl;
-        Entry emailAddressEntry;
-        Label passWordLbl;
-        Entry passWordEntry;
-        Label passWordRepeatLbl;
-        Entry passWordRepeatEntry;
-        Button signUpBtn;
+        private Grid innerGrid;
+        private Grid outerGrid;
+        private Image mahechaLogo;
+        private Label firstNameLbl;
+        private Entry firstNameEntry;
+        private Label lastNameLbl;
+        private Entry lastNameEntry;
+        private Label emailAddressLbl;
+        private Entry emailAddressEntry;
+        private Label passWordLbl;
+        private Entry passWordEntry;
+        private Label passWordRepeatLbl;
+        private Entry passWordRepeatEntry;
+        private Button signUpBtn;
+        private User user;
 
         public SignUpPage()
         {
             Padding = new Thickness(10, 30, 10, 10);
+            user = new User();
             var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
             //Grid view definition
             outerGrid = new Grid
@@ -71,6 +73,7 @@ namespace MahechaBJJ.Views
             {
 
             };
+
             lastNameLbl = new Label
             {
 
@@ -79,6 +82,8 @@ namespace MahechaBJJ.Views
             {
 
             };
+            user.Name = firstNameEntry.Text + " " + lastNameEntry.Text;
+            user.FamilyName = lastNameEntry.Text;
             emailAddressLbl = new Label
             {
 
@@ -87,6 +92,8 @@ namespace MahechaBJJ.Views
             {
 
             };
+            user.Email = emailAddressEntry.Text;
+            user.Password = passWordEntry.Text;
 			signUpBtn = new Button
 			{
 				Text = "Sign Up",
@@ -119,12 +126,12 @@ namespace MahechaBJJ.Views
 		{
 			string url = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
 			await _signInPageViewModel.GetVimeo(url);
-            SetPageContent(_signInPageViewModel.VimeoInfo);
+            SetPageContent(_signInPageViewModel.VimeoInfo, user);
 		}
 
-		private void SetPageContent(BaseInfo Output)
+		private void SetPageContent(BaseInfo Output, User user)
 		{
-            Navigation.PushModalAsync(new MainTabbedPage(Output));
+            Navigation.PushModalAsync(new MainTabbedPage(Output, user));
 		}
     }
 }
