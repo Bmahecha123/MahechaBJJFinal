@@ -57,12 +57,18 @@ namespace MahechaBJJ.Views
 #if __IOS__
                 FontFamily = "ChalkboardSE-Bold"
 #endif
-            };
+#if __ANDROID__
+				FontFamily = "Roboto Bold",
+#endif
+			};
             emailEntry = new Entry
             {
                 Placeholder = "SpiderGuard123@gmail.com",
 #if __IOS__
 				FontFamily = "ChalkboardSE-Bold",
+#endif
+#if __ANDROID__
+				FontFamily = "Roboto Bold",
 #endif
 				FontSize = size
             };
@@ -74,12 +80,19 @@ namespace MahechaBJJ.Views
 #if __IOS__
 				FontFamily = "ChalkboardSE-Bold"
 #endif
+#if __ANDROID__
+				FontFamily = "Roboto Bold",
+#endif
 			};
             passwordEntry = new Entry
             {
 				Placeholder = "SpiderGuard123@gmail.com",
+                IsPassword = true,
 #if __IOS__
 				FontFamily = "ChalkboardSE-Bold",
+#endif
+#if __ANDROID__
+				FontFamily = "Roboto Bold",
 #endif
 				FontSize = size
             };
@@ -90,6 +103,9 @@ namespace MahechaBJJ.Views
                 FontSize = size * 2,
 #if __IOS__
 				FontFamily = "ChalkboardSE-Bold",
+#endif
+#if __ANDROID__
+				FontFamily = "Roboto Bold",
 #endif
 				BackgroundColor = Color.Orange,
                 TextColor = Color.Black

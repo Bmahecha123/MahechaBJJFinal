@@ -1,19 +1,20 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6F87FFA6-AE4D-4B28-BE5A-FE4D3BA21885" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/ProfilePage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/App.xaml.cs">
     <Files>
       <File FileName="iOS/Info.plist" NotebookId="2" />
-      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="161" Column="73" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="35" Column="1" NotebookId="2" />
       <File FileName="MahechaBJJ/Model/Constants.cs" Line="21" Column="134" NotebookId="2" />
       <File FileName="Droid/MainActivity.cs" Line="16" Column="192" NotebookId="2" />
-      <File FileName="MahechaBJJ/Views/LoginPage.cs" Line="118" Column="55" NotebookId="2" />
-      <File FileName="MahechaBJJ/ViewModel/EntryPageViewModel.cs" Line="18" Column="5" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/LoginPage.cs" Line="87" Column="38" NotebookId="2" />
+      <File FileName="MahechaBJJ/ViewModel/EntryPageViewModel.cs" Line="73" Column="1" NotebookId="2" />
       <File FileName="MahechaBJJ/ViewModel/SignInPageViewModel.cs" Line="10" Column="62" NotebookId="2" />
-      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="42" Column="38" NotebookId="2" />
+      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="87" Column="62" NotebookId="2" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" NotebookId="2" />
       <File FileName="MahechaBJJ/App.xaml.cs" Line="1" Column="1" NotebookId="2" />
       <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="14" Column="45" NotebookId="2" />
       <File FileName="MahechaBJJ/Views/HomePage.cs" Line="1" Column="1" NotebookId="2" />
+      <File FileName="MahechaBJJ/App.xaml" Line="7" Column="1" NotebookId="2" />
     </Files>
     <FloatingWindows>
       <FloatingWindow WindowId="1" X="1995" Y="199" Width="1017" Height="680">
@@ -23,12 +24,13 @@
       </FloatingWindow>
       <FloatingWindow WindowId="2" X="3465" Y="209" Width="640" Height="480">
         <Files>
-          <File FileName="MahechaBJJ/Views/SignUpPage.cs" Line="123" Column="14" NotebookId="1" />
+          <File FileName="MahechaBJJ/Views/SignUpPage.cs" Line="85" Column="71" NotebookId="1" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/VideoPlayerService_Android.cs" relfile="Droid/VideoPlayerService_Android.cs" line="33" column="1" />
@@ -44,7 +46,8 @@
       <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="35" column="1" />
       <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="36" column="1" />
       <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="38" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPage.cs" line="164" column="1" />
+      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPage.cs" line="30" column="1" />
+      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPage.cs" line="32" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

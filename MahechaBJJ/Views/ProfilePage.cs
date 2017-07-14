@@ -1,5 +1,7 @@
 ﻿﻿using System;
+using System.Linq;
 using MahechaBJJ.Model;
+using Xamarin.Auth;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
@@ -15,9 +17,15 @@ namespace MahechaBJJ.Views
         Label emailTextLbl;
         Button cancelSubBtn;
         Button logOutBtn;
+		private Account account;
+		private AccountStore store;
 
         public ProfilePage(User user)
         {
+			//XAM AUTH
+			store = AccountStore.Create();
+			account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
+
             Title = "Profile";
             Padding = new Thickness(10, 30, 10, 10);
             //grid definiton
@@ -74,7 +82,12 @@ namespace MahechaBJJ.Views
                 DisplayAlert("Subscription Cancellation", "Are you you want to cancel your subscription?!", "Yess D8<!", "Never >8D!");
             };
             logOutBtn.Clicked += async (sender, e) => {
-                var logOut = await DisplayAlert("Log out Button", "Are you sure you want to log out?", "Log out", "Cancel");
+                var logOut = await DisplayAlert("Log out Button", account.ToString(), "Log out", "Cancel");
+                if (logOut) {
+                    await Navigation.PushModalAsync(new NavigationPage(new EntryPage()));
+                    await store.DeleteAsync(account, Constants.AppName);
+					account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
+				}
 
             };
             //Building Grid

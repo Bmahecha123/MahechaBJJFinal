@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 using MahechaBJJ.Model;
@@ -11,8 +11,8 @@ namespace MahechaBJJ.Views
 {
     public class EntryPage : ContentPage
     {
-		//viewModel
-		private readonly SignInPageViewModel _signInPageViewModel = new SignInPageViewModel();
+        //viewModel
+        private readonly EntryPageViewModel _entryPageViewModel = new EntryPageViewModel();
         private const String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
         //declare objects
         private Grid outerGrid;
@@ -24,16 +24,15 @@ namespace MahechaBJJ.Views
         //Xam Auth
         private Account account;
         private AccountStore store;
-        private User user;
 
         public EntryPage()
         {
-            if (Navigation.ModalStack.Count > 0){
-                Navigation.PopToRootAsync();
-            }
-			//XAM AUTH
-			store = AccountStore.Create();
-			account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
+            if (Navigation.NavigationStack.Count > 0) {
+				Navigation.PopToRootAsync();
+			}
+            //XAM AUTH
+            store = AccountStore.Create();
+            account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
 
             Padding = new Thickness(10, 30, 10, 10);
             //outer Grid
@@ -67,6 +66,9 @@ namespace MahechaBJJ.Views
 #if __IOS__
                 FontFamily = "ChalkboardSE-Bold",
 #endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
                 FontSize = size * 2,
                 BackgroundColor = Color.Orange,
                 TextColor = Color.Black
@@ -77,7 +79,10 @@ namespace MahechaBJJ.Views
 #if __IOS__
                 FontFamily = "ChalkboardSE-Bold",
 #endif
-                FontSize = size * 2,
+#if __ANDROID__
+				FontFamily = "Roboto Bold",
+#endif
+				FontSize = size * 2,
                 BackgroundColor = Color.Orange,
 				TextColor = Color.Black
             };
@@ -87,7 +92,10 @@ namespace MahechaBJJ.Views
 #if __IOS__
                 FontFamily = "ChalkboardSE-Bold",
 #endif
-                FontSize = size * 2,
+#if __ANDROID__
+				FontFamily = "Roboto Bold",
+#endif
+				FontSize = size * 2,
                 BackgroundColor = Color.Orange,
                 TextColor = Color.Black
 			};
@@ -97,6 +105,7 @@ namespace MahechaBJJ.Views
                 Navigation.PushAsync(new LoginPage());
             };
             googleSignInBtn.Clicked += OnLoginClicked;
+
             signUpBtn.Clicked += (sender, args) =>
             {
                 Navigation.PushAsync(new SignUpPage());
@@ -152,16 +161,16 @@ namespace MahechaBJJ.Views
 		private async void CallVimeoApi()
 		{
 			string url = VIMEOURL;
-			await _signInPageViewModel.GetVimeo(url);
-            SetPageContent(_signInPageViewModel.VimeoInfo, user);
+            await _entryPageViewModel.GetVimeo(url);
+            SetPageContent(_entryPageViewModel.VimeoInfo, _entryPageViewModel.User);
 		}
 
 		private void SetPageContent(BaseInfo Output, User user)
 		{
-            Navigation.PushModalAsync(new MainTabbedPage(Output, user));
+            Navigation.PushModalAsync(new MainTabbedPage(Output, _entryPageViewModel.User));
 		}
 
-		void OnLoginClicked(object sender, EventArgs e)
+		private void OnLoginClicked(object sender, EventArgs e)
 		{
 			string clientId = null;
 			string redirectUri = null;
@@ -207,30 +216,29 @@ namespace MahechaBJJ.Views
 				authenticator.Error -= OnAuthError;
 			}
 
-			user = null;
+            _entryPageViewModel.User = null;
 			if (e.IsAuthenticated)
 			{
 				// If the user is authenticated, request their basic user data from Google
 				// UserInfoUrl = https://www.googleapis.com/oauth2/v2/userinfo
 				var request = new OAuth2Request("GET", new Uri(Constants.UserInfoUrl), null, e.Account);
-				var response = await request.GetResponseAsync();
+                /*var response = await request.GetResponseAsync();
 				if (response != null)
 				{
 					// Deserialize the data and store it in the account store
 					// The users email address will be used to identify data in SimpleDB
 					string userJson = await response.GetResponseTextAsync();
 					user = JsonConvert.DeserializeObject<User>(userJson);
-				}
-
-				if (account != null)
+				} */
+                await _entryPageViewModel.GetGoogleInfo(request);
+                if (account != null)
 				{
 					store.Delete(account, Constants.AppName);
 				}
-				await DisplayAlert("Email address", user.Email, "OK");
-
+                await DisplayAlert("Email address", _entryPageViewModel.User.Email, "OK");
 				await store.SaveAsync(account = e.Account, Constants.AppName);
+                await DisplayAlert("values of account", account.ToString().Split('&')[1], "Next");
                 CallVimeoApi();
-				await DisplayAlert("Email address", user.Email, "OK");
 			}
 		}
 
