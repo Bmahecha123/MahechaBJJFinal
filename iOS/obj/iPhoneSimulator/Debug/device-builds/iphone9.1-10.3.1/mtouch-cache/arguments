@@ -20,6 +20,8 @@
 	--symbollist \
 	/Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/mtouch-symbols.list \
 	--dsym=no \
+	--gcc_flags \
+	"-Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/brianm/Desktop/Projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/Entitlements.xcent" \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll \
 	-r \
