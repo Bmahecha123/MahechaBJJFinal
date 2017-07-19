@@ -27,7 +27,6 @@ namespace MahechaBJJ.Views
 
         public EntryPage()
         {
-			//NavigationPage.SetHasNavigationBar(this, false);
             //XAM AUTH
             store = AccountStore.Create();
             account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
@@ -100,13 +99,13 @@ namespace MahechaBJJ.Views
             //Button events
             loginBtn.Clicked += (sender, args) =>
             {
-                Navigation.PushAsync(new LoginPage());
+                Navigation.PushModalAsync(new LoginPage());
             };
             googleSignInBtn.Clicked += OnLoginClicked;
 
             signUpBtn.Clicked += (sender, args) =>
             {
-                Navigation.PushAsync(new SignUpPage());
+                Navigation.PushModalAsync(new SignUpPage());
             };
 
 

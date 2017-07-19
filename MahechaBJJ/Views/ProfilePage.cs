@@ -20,7 +20,7 @@ namespace MahechaBJJ.Views
 		private Account account;
 		private AccountStore store;
 
-        public ProfilePage(User user)
+        public ProfilePage()
         {
 			//XAM AUTH
 			store = AccountStore.Create();

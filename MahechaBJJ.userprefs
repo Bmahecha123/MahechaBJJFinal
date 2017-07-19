@@ -1,22 +1,16 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6F87FFA6-AE4D-4B28-BE5A-FE4D3BA21885" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/HomePage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.cs">
     <Files>
-      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="240" Column="19" />
+      <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="18" Column="1" />
+      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="187" Column="49" />
+      <File FileName="MahechaBJJ/ViewModel/BaseViewModel.cs" Line="16" Column="25" />
+      <File FileName="MahechaBJJ/ViewModel/EntryPageViewModel.cs" Line="62" Column="4" />
       <File FileName="MahechaBJJ/App.xaml.cs" Line="13" Column="1" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="28" Column="1" />
-      <File FileName="MahechaBJJ/ViewModel/MainTabbedPageViewModel.cs" Line="43" Column="4" />
-      <File FileName="MahechaBJJ/ViewModel/EntryPageViewModel.cs" Line="64" Column="31" />
-      <File FileName="MahechaBJJ/Views/LoginPage.cs" Line="11" Column="30" />
-      <File FileName="MahechaBJJ/ViewModel/HomePageViewModel.cs" Line="36" Column="1" />
-      <File FileName="MahechaBJJ/ViewModel/SignInPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/SignUpPage.cs" Line="104" Column="15" />
-      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="46" Column="1" />
-      <File FileName="MahechaBJJ/Views/BrowsePage.cs" Line="15" Column="27" />
-      <File FileName="MahechaBJJ/Service/VimeoAPIService.cs" Line="23" Column="1" />
-      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="67" Column="19" />
       <File FileName="iOS/AppDelegate.cs" Line="29" Column="1" />
+      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="26" Column="36" />
+      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="91" Column="81" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -36,11 +30,6 @@
       <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="35" column="1" />
       <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="36" column="1" />
       <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="38" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/App.xaml.cs" relfile="MahechaBJJ/App.xaml.cs" line="12" column="77" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/HomePage.cs" relfile="MahechaBJJ/Views/HomePage.cs" line="32" column="25" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/HomePage.cs" relfile="MahechaBJJ/Views/HomePage.cs" line="39" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/HomePage.cs" relfile="MahechaBJJ/Views/HomePage.cs" line="42" column="15" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/HomePage.cs" relfile="MahechaBJJ/Views/HomePage.cs" line="47" column="45" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

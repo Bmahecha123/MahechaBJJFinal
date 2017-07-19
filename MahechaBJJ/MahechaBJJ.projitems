@@ -39,6 +39,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainTabbedPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BaseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

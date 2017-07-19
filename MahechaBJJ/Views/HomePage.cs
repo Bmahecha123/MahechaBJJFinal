@@ -1,13 +1,16 @@
 ﻿﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel;
+using Xamarin.Auth;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
 {
     public class HomePage : ContentPage
     {
+        BaseViewModel _baseViewModel = new BaseViewModel();
         HomePageViewModel _homePageViewModel = new HomePageViewModel();
         private const String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
         BaseInfo VimeoInfo;
@@ -26,20 +29,25 @@ namespace MahechaBJJ.Views
         Button addPlaylistBtn;
         StackLayout stackLayout;
         ScrollView playListScrollView;
+		//Xam Auth
+		private Account account;
+		private AccountStore store;
 
         public HomePage()
         {
             LoadVimeo(VIMEOURL);
+			//XAM AUTH
+			store = AccountStore.Create();
+			account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
             Title = "Home";
             BackgroundColor = Color.Azure;
             Padding = new Thickness(10, 30, 10, 10);
-
-
         }
         private async Task LoadVimeo(string url)
         {
             await _homePageViewModel.GetVimeo(url);
             SetContent();
+            LoggedIn();
         }
 
         private void SetContent()
@@ -171,6 +179,13 @@ namespace MahechaBJJ.Views
 
             Content = grid;
         }
+
+        private async void LoggedIn(){
+			account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
+            if (account == null) {
+                await Navigation.PushModalAsync(new EntryPage());
+            }
+		}
     }
 }
 
