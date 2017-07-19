@@ -12,9 +12,9 @@ namespace MahechaBJJ.Views
         Button topBtn;
         Button standUpBtn;
 
-        public BrowsePage(BaseInfo VimeoInfo)
+        public BrowsePage()
         {
-            Title = "Browse";
+			Title = "Browse";
             Padding = new Thickness(10,30,10,10);
 
             grid = new Grid

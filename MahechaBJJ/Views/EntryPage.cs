@@ -27,9 +27,7 @@ namespace MahechaBJJ.Views
 
         public EntryPage()
         {
-            if (Navigation.NavigationStack.Count > 0) {
-				Navigation.PopToRootAsync();
-			}
+			//NavigationPage.SetHasNavigationBar(this, false);
             //XAM AUTH
             store = AccountStore.Create();
             account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
@@ -158,17 +156,18 @@ namespace MahechaBJJ.Views
             }
 		}
 		//functions
-		private async void CallVimeoApi()
+		/*private async void CallVimeoApi()
 		{
 			string url = VIMEOURL;
             await _entryPageViewModel.GetVimeo(url);
             SetPageContent(_entryPageViewModel.VimeoInfo, _entryPageViewModel.User);
 		}
 
-		private void SetPageContent(BaseInfo Output, User user)
+		private async void SetPageContent(BaseInfo Output, User user)
 		{
-            Navigation.PushModalAsync(new MainTabbedPage(Output, _entryPageViewModel.User));
-		}
+            Navigation.InsertPageBefore(new MainTabbedPage(Output, _entryPageViewModel.User), this);
+            await Navigation.PopAsync().ConfigureAwait(false);
+		} */
 
 		private void OnLoginClicked(object sender, EventArgs e)
 		{
@@ -238,7 +237,7 @@ namespace MahechaBJJ.Views
                 await DisplayAlert("Email address", _entryPageViewModel.User.Email, "OK");
 				await store.SaveAsync(account = e.Account, Constants.AppName);
                 await DisplayAlert("values of account", account.ToString().Split('&')[1], "Next");
-                CallVimeoApi();
+                //CallVimeoApi();
 			}
 		}
 

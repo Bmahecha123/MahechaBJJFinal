@@ -1,4 +1,5 @@
 ﻿﻿using System;
+using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel;
 using Xamarin.Forms;
@@ -8,6 +9,8 @@ namespace MahechaBJJ.Views
     public class HomePage : ContentPage
     {
         HomePageViewModel _homePageViewModel = new HomePageViewModel();
+        private const String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
+        BaseInfo VimeoInfo;
         Grid grid;
         BoxView whatsNewBoxView;
         Image video1Btn;
@@ -24,14 +27,25 @@ namespace MahechaBJJ.Views
         StackLayout stackLayout;
         ScrollView playListScrollView;
 
-        public HomePage(BaseInfo VimeoInfo)
+        public HomePage()
         {
-            //TODO REPLACE RESOURCE FILE WITH PNG IMAGE FROM CHRISTINE
+            LoadVimeo(VIMEOURL);
             Title = "Home";
             BackgroundColor = Color.Azure;
             Padding = new Thickness(10, 30, 10, 10);
 
-            grid = new Grid
+
+        }
+        private async Task LoadVimeo(string url)
+        {
+            await _homePageViewModel.GetVimeo(url);
+            SetContent();
+        }
+
+        private void SetContent()
+        {
+			VimeoInfo = _homePageViewModel.VimeoInfo;
+			grid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection {
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
@@ -62,88 +76,88 @@ namespace MahechaBJJ.Views
             video1Btn = new Image
             {
                 Source = VimeoInfo.data[0].pictures.sizes[4].link,
-				HorizontalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
             video2Btn = new Image
             {
                 Source = VimeoInfo.data[1].pictures.sizes[4].link,
-				HorizontalOptions = LayoutOptions.FillAndExpand,
-				VerticalOptions = LayoutOptions.FillAndExpand
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand
             };
             playListLbl = new Label
             {
                 Text = "Playlists",
-				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center,
-				FontSize = 50
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                FontSize = 50
             };
             playList1Btn = new Button
             {
                 Text = "Playlist1",
-				HorizontalOptions = LayoutOptions.FillAndExpand,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				BorderWidth = 2.5,
-				BorderColor = Color.Black
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                BorderWidth = 2.5,
+                BorderColor = Color.Black
             };
             playList2Btn = new Button
             {
                 Text = "Playlist2",
-				HorizontalOptions = LayoutOptions.FillAndExpand,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				BorderWidth = 2.5,
-				BorderColor = Color.Black
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                BorderWidth = 2.5,
+                BorderColor = Color.Black
             };
             playList3Btn = new Button
             {
                 Text = "Playlist3",
-				HorizontalOptions = LayoutOptions.FillAndExpand,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				BorderWidth = 2.5,
-				BorderColor = Color.Black
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                BorderWidth = 2.5,
+                BorderColor = Color.Black
             };
-			playList4Btn = new Button
-			{
-				Text = "Playlist3",
-				HorizontalOptions = LayoutOptions.FillAndExpand,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				BorderWidth = 2.5,
-				BorderColor = Color.Black
-			};
+            playList4Btn = new Button
+            {
+                Text = "Playlist3",
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                BorderWidth = 2.5,
+                BorderColor = Color.Black
+            };
             playList5Btn = new Button
-			{
-				Text = "Playlist3",
-				HorizontalOptions = LayoutOptions.FillAndExpand,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				BorderWidth = 2.5,
-				BorderColor = Color.Black
-			};
+            {
+                Text = "Playlist3",
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                BorderWidth = 2.5,
+                BorderColor = Color.Black
+            };
             playList6Btn = new Button
-			{
-				Text = "Playlist3",
-				HorizontalOptions = LayoutOptions.FillAndExpand,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				BorderWidth = 2.5,
-				BorderColor = Color.Black
-			};
+            {
+                Text = "Playlist3",
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                BorderWidth = 2.5,
+                BorderColor = Color.Black
+            };
             addPlaylistBtn = new Button
             {
                 Text = "Add Playlist!",
-				HorizontalOptions = LayoutOptions.FillAndExpand,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				BorderWidth = 2.5,
-				BorderColor = Color.Black
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                BorderWidth = 2.5,
+                BorderColor = Color.Black
             };
             stackLayout = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
                 Children = { playList1Btn, playList2Btn, playList3Btn, playList4Btn, playList5Btn, playList6Btn, addPlaylistBtn }
             };
-			playListScrollView = new ScrollView
-			{
-				Orientation = ScrollOrientation.Horizontal,
+            playListScrollView = new ScrollView
+            {
+                Orientation = ScrollOrientation.Horizontal,
                 Content = stackLayout
-			};
+            };
 
             grid.Children.Add(whatsNewLbl, 0, 0);
             Grid.SetColumnSpan(whatsNewLbl, 2);
@@ -154,9 +168,8 @@ namespace MahechaBJJ.Views
             grid.Children.Add(playListScrollView, 0, 3);
             Grid.SetColumnSpan(playListScrollView, 2);
 
-          
-            Content = grid;
 
+            Content = grid;
         }
     }
 }

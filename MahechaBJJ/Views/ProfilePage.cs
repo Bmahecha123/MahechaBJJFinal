@@ -47,7 +47,7 @@ namespace MahechaBJJ.Views
             //view Objects
             profileImage = new Image
             {
-                Source = user.Picture,
+                //Source = user.Picture,
                 Aspect = Aspect.AspectFit
             };
             nameLbl = new Label
@@ -56,7 +56,7 @@ namespace MahechaBJJ.Views
             };
             nameTextLbl = new Label
             {
-                Text = user.Name
+                //Text = user.Name
             };
             emailLbl = new Label
             {
@@ -64,7 +64,7 @@ namespace MahechaBJJ.Views
             };
             emailTextLbl = new Label
             {
-                Text = user.Email
+                //Text = user.Email
             };
             cancelSubBtn = new Button
             {
@@ -81,12 +81,15 @@ namespace MahechaBJJ.Views
             cancelSubBtn.Clicked += (sender, e) => {
                 DisplayAlert("Subscription Cancellation", "Are you you want to cancel your subscription?!", "Yess D8<!", "Never >8D!");
             };
+            //TODO FIGURE OUT HOW TO LOGOUT AND REMOVE THE PREVIOUS STACK SO THE USER CANT GO BACK
             logOutBtn.Clicked += async (sender, e) => {
                 var logOut = await DisplayAlert("Log out Button", account.ToString(), "Log out", "Cancel");
                 if (logOut) {
-                    await Navigation.PushModalAsync(new NavigationPage(new EntryPage()));
+                    await Navigation.PushAsync(new EntryPage());
+                    Navigation.RemovePage(this);
                     await store.DeleteAsync(account, Constants.AppName);
 					account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
+					await DisplayAlert("page stack", Navigation.NavigationStack.Count.ToString(), "cool");
 				}
 
             };

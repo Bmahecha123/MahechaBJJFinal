@@ -26,7 +26,7 @@ namespace MahechaBJJ.Views
 
         public SearchPage()
         {
-            Title = "Search";
+			Title = "Search";
             Padding = new Thickness(10,30,10,10);
             //View Objects
             activityIndicator = new ActivityIndicator

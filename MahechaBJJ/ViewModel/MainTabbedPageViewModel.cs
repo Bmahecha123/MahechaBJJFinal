@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -7,7 +7,7 @@ using MahechaBJJ.Service;
 
 namespace MahechaBJJ.ViewModel
 {
-    public class HomePageViewModel : INotifyPropertyChanged
+    public class MainTabbedPageViewModel : INotifyPropertyChanged
     {
 		private VimeoAPIService _vimeoApiService;
 
@@ -25,10 +25,10 @@ namespace MahechaBJJ.ViewModel
 			}
 		}
 
-        public HomePageViewModel()
+        public MainTabbedPageViewModel()
         {
-            _vimeoApiService = new VimeoAPIService();
-        }
+			_vimeoApiService = new VimeoAPIService();
+		}
 
         public async Task GetVimeo(string url)
 		{

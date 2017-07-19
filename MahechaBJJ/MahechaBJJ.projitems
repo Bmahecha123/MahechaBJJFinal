@@ -38,6 +38,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\AuthenticationState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainTabbedPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

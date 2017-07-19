@@ -101,7 +101,7 @@ namespace MahechaBJJ.Views
 				TextColor = Color.Black
 			};
             //Button Events
-            signUpBtn.Clicked += CallVimeoApi;
+            //signUpBtn.Clicked += CallVimeoApi;
 
             innerGrid.Children.Add(firstNameLbl, 0, 0);
             innerGrid.Children.Add(firstNameEntry, 1, 0);
@@ -122,7 +122,7 @@ namespace MahechaBJJ.Views
         }
 
 		//functions
-		private async void CallVimeoApi(object sender, EventArgs e)
+		/*private async void CallVimeoApi(object sender, EventArgs e)
 		{
 			string url = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
 			await _signInPageViewModel.GetVimeo(url);
@@ -132,7 +132,7 @@ namespace MahechaBJJ.Views
 		private void SetPageContent(BaseInfo Output, User user)
 		{
             Navigation.PushModalAsync(new MainTabbedPage(Output, user));
-		}
+		}*/
     }
 }
 
