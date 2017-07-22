@@ -21,6 +21,7 @@ namespace MahechaBJJ.Views
         private Button loginBtn;
         private Button signUpBtn;
         private Button googleSignInBtn;
+        private Button backBtn;
         //Xam Auth
         private Account account;
         private AccountStore store;
@@ -46,7 +47,8 @@ namespace MahechaBJJ.Views
                     new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
             };
 
@@ -96,6 +98,19 @@ namespace MahechaBJJ.Views
                 BackgroundColor = Color.Orange,
                 TextColor = Color.Black
 			};
+            backBtn = new Button
+            {
+                Text = "Back",
+#if __IOS__
+				FontFamily = "ChalkboardSE-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = size * 2,
+				BackgroundColor = Color.Orange,
+				TextColor = Color.Black
+            };
             //Button events
             loginBtn.Clicked += (sender, args) =>
             {
@@ -108,11 +123,18 @@ namespace MahechaBJJ.Views
                 Navigation.PushModalAsync(new SignUpPage());
             };
 
+            backBtn.Clicked += (sender, args) =>
+            {
+                Navigation.PopModalAsync();
+            };
+
 
             innerGrid.Children.Add(mahechaLogo, 0, 0);
             innerGrid.Children.Add(signUpBtn, 0, 1);
             innerGrid.Children.Add(loginBtn, 0, 2);
             innerGrid.Children.Add(googleSignInBtn, 0, 3);
+            innerGrid.Children.Add(backBtn, 0, 4);
+
 
             outerGrid.Children.Add(innerGrid);
 
@@ -130,15 +152,17 @@ namespace MahechaBJJ.Views
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
                 innerGrid.Children.Clear();
-                innerGrid.Children.Add(mahechaLogo, 0, 0);
+                innerGrid.Children.Add(backBtn, 0, 0);
+                innerGrid.Children.Add(mahechaLogo, 0, 1);
                 Grid.SetRowSpan(mahechaLogo, 3);
-                innerGrid.Children.Add(signUpBtn, 1, 0);
-                innerGrid.Children.Add(loginBtn, 1, 1);
-                innerGrid.Children.Add(googleSignInBtn, 1, 2);
+                innerGrid.Children.Add(signUpBtn, 1, 2);
+                innerGrid.Children.Add(loginBtn, 1, 2);
+                innerGrid.Children.Add(googleSignInBtn, 1, 3);
             } else {
 				Padding = new Thickness(10, 30, 10, 10);
                 innerGrid.RowDefinitions.Clear();
@@ -147,11 +171,13 @@ namespace MahechaBJJ.Views
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-                innerGrid.Children.Clear();
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.Children.Clear();
                 innerGrid.Children.Add(mahechaLogo, 0, 0);
                 innerGrid.Children.Add(loginBtn, 0, 1);
                 innerGrid.Children.Add(signUpBtn, 0, 2);
                 innerGrid.Children.Add(googleSignInBtn, 0, 3);
+                innerGrid.Children.Add(backBtn, 0, 4);
             }
 		}
 		//functions
