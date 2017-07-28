@@ -1,38 +1,50 @@
-﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default">
-  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6F87FFA6-AE4D-4B28-BE5A-FE4D3BA21885" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/EntryPage.cs">
+﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A1F474E0-DFAD-4433-B68F-697A133AB7F2" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/ViewModel/BaseViewModel.cs">
     <Files>
-      <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="18" Column="1" />
-      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="186" Column="66" />
-      <File FileName="MahechaBJJ/ViewModel/BaseViewModel.cs" Line="16" Column="25" />
-      <File FileName="MahechaBJJ/ViewModel/EntryPageViewModel.cs" Line="62" Column="4" />
-      <File FileName="MahechaBJJ/App.xaml.cs" Line="13" Column="1" />
-      <File FileName="iOS/AppDelegate.cs" Line="49" Column="3" />
-      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="205" Column="1" />
-      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="91" Column="81" />
+      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/SignUpPage.cs" Line="121" Column="15" />
+      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="31" Column="39" />
+      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/App.xaml.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Model/User.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/VideoDetailPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/AndroidVideoPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Model/VimeoAPI.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/ViewModel/EntryPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="26" Column="60" />
+      <File FileName="iOS/AppDelegate.cs" Line="21" Column="1" />
+      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="80" Column="75" />
+      <File FileName="../../../../../Library/Frameworks/Xamarin.Android.framework/Versions/7.3.1-2/lib/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1391" Column="2" />
+      <File FileName="MahechaBJJ/App.xaml" Line="7" Column="1" />
+      <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Service/UserManager.cs" Line="99" Column="1" />
+      <File FileName="MahechaBJJ/Resources/Constants.cs" Line="6" Column="79" />
+      <File FileName="MahechaBJJ/ViewModel/BaseViewModel.cs" Line="34" Column="4" />
+      <File FileName="MahechaBJJ/ViewModel/SearchPageViewModel.cs" Line="1" Column="1" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="MahechaBJJ/Views/LoginPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/ViewModel/HomePageViewModel.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/VideoPlayerService_Android.cs" relfile="Droid/VideoPlayerService_Android.cs" line="33" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/VideoPlayerService_Android.cs" relfile="Droid/VideoPlayerService_Android.cs" line="24" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/AndroidView.cs" relfile="MahechaBJJ/Views/AndroidView.cs" line="7" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/AndroidView.cs" relfile="MahechaBJJ/Views/AndroidView.cs" line="10" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/VideoViewRenderer2.cs" relfile="Droid/VideoViewRenderer2.cs" line="22" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/VideoViewRenderer2.cs" relfile="Droid/VideoViewRenderer2.cs" line="17" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/VideoViewRenderer2.cs" relfile="Droid/VideoViewRenderer2.cs" line="40" column="13" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/VideoViewRenderer.cs" relfile="Droid/VideoViewRenderer.cs" line="22" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/VideoRenderer3.cs" relfile="Droid/VideoRenderer3.cs" line="18" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/VideoRenderer3.cs" relfile="Droid/VideoRenderer3.cs" line="15" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="35" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="36" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="38" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPage.cs" line="197" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPage.cs" line="199" column="1" />
-      <Breakpoint file="/Users/brianm/Desktop/Projects/MahechaBJJFinal/MahechaBJJ/Views/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPage.cs" line="204" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/VideoPlayerService_Android.cs" relfile="Droid/VideoPlayerService_Android.cs" line="33" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/VideoPlayerService_Android.cs" relfile="Droid/VideoPlayerService_Android.cs" line="24" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/AndroidView.cs" relfile="MahechaBJJ/Views/AndroidView.cs" line="7" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/AndroidView.cs" relfile="MahechaBJJ/Views/AndroidView.cs" line="10" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/VideoViewRenderer2.cs" relfile="Droid/VideoViewRenderer2.cs" line="22" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/VideoViewRenderer2.cs" relfile="Droid/VideoViewRenderer2.cs" line="17" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/VideoViewRenderer2.cs" relfile="Droid/VideoViewRenderer2.cs" line="40" column="13" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/VideoViewRenderer.cs" relfile="Droid/VideoViewRenderer.cs" line="22" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/VideoRenderer3.cs" relfile="Droid/VideoRenderer3.cs" line="18" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/VideoRenderer3.cs" relfile="Droid/VideoRenderer3.cs" line="15" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="35" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="36" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="38" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Service/UserManager.cs" relfile="MahechaBJJ/Service/UserManager.cs" line="96" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Service/UserManager.cs" relfile="MahechaBJJ/Service/UserManager.cs" line="97" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

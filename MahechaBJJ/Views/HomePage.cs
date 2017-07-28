@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
@@ -29,16 +29,10 @@ namespace MahechaBJJ.Views
         Button addPlaylistBtn;
         StackLayout stackLayout;
         ScrollView playListScrollView;
-		//Xam Auth
-		private Account account;
-		private AccountStore store;
 
         public HomePage()
         {
             LoadVimeo(VIMEOURL);
-			//XAM AUTH
-			store = AccountStore.Create();
-			account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
             Title = "Home";
             BackgroundColor = Color.Azure;
             Padding = new Thickness(10, 30, 10, 10);
@@ -180,11 +174,9 @@ namespace MahechaBJJ.Views
             Content = grid;
         }
 
-        private async void LoggedIn(){
-			account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
-            if (account == null) {
+        private async void LoggedIn()
+        {
                 await Navigation.PushModalAsync(new EntryPage());
-            }
 		}
     }
 }
