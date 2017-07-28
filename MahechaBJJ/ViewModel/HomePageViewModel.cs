@@ -1,14 +1,45 @@
 ﻿﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using MahechaBJJ.Model;
+using MahechaBJJ.Service;
+
 namespace MahechaBJJ.ViewModel
 {
-    public class HomePageViewModel
+    public class HomePageViewModel : INotifyPropertyChanged
     {
+		private VimeoAPIService _vimeoApiService;
+
+		private BaseInfo _baseInfo;
+		public BaseInfo VimeoInfo
+		{
+			get
+			{
+				return _baseInfo;
+			}
+			set
+			{
+				_baseInfo = value;
+				OnPropertyChanged();
+			}
+		}
+
         public HomePageViewModel()
         {
+            _vimeoApiService = new VimeoAPIService();
         }
 
-        //TODO load video into video detail page when one of the "whats new" items is clicked.
+        public async Task GetVimeo(string url)
+		{
+			_baseInfo = await _vimeoApiService.GetVimeoInfo(url);
+		}
 
-        //TODO load up Playlist, search for videos that playlist contains
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		}
     }
 }

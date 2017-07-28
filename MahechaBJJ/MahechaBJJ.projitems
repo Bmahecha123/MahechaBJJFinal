@@ -10,14 +10,17 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\mahechabjjlogo.png">
+      <LogicalName>mahechabjjlogo.png</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\GoogleSignInPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\FaceBookSignInPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LoginPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\HomePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\BrowsePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\SearchPage.cs" />
@@ -31,11 +34,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Service\ShowVideoPlayerArguments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AndroidVideoPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\HomePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\AuthenticationState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainTabbedPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BaseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
     <Folder Include="$(MSBuildThisFileDirectory)Service\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Resources\" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,7 @@
 ﻿﻿using System;
-
+using System.Linq;
+using MahechaBJJ.Model;
+using Xamarin.Auth;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
@@ -15,9 +17,15 @@ namespace MahechaBJJ.Views
         Label emailTextLbl;
         Button cancelSubBtn;
         Button logOutBtn;
+		private Account account;
+		private AccountStore store;
 
         public ProfilePage()
         {
+			//XAM AUTH
+			store = AccountStore.Create();
+			account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
+
             Title = "Profile";
             Padding = new Thickness(10, 30, 10, 10);
             //grid definiton
@@ -39,7 +47,7 @@ namespace MahechaBJJ.Views
             //view Objects
             profileImage = new Image
             {
-                Source = ImageSource.FromFile("mahechabjj.jpg"),
+                //Source = user.Picture,
                 Aspect = Aspect.AspectFit
             };
             nameLbl = new Label
@@ -48,7 +56,7 @@ namespace MahechaBJJ.Views
             };
             nameTextLbl = new Label
             {
-                Text = "TODO ADD NAME"
+                //Text = user.Name
             };
             emailLbl = new Label
             {
@@ -56,7 +64,7 @@ namespace MahechaBJJ.Views
             };
             emailTextLbl = new Label
             {
-                Text = "TODO ADD EMAIL"
+                //Text = user.Email
             };
             cancelSubBtn = new Button
             {
@@ -73,8 +81,17 @@ namespace MahechaBJJ.Views
             cancelSubBtn.Clicked += (sender, e) => {
                 DisplayAlert("Subscription Cancellation", "Are you you want to cancel your subscription?!", "Yess D8<!", "Never >8D!");
             };
-            logOutBtn.Clicked += (sender, e) => {
-                DisplayAlert("Log out Button", "Are you sure you want to log out?", "Log out", "Cancel");
+            //TODO FIGURE OUT HOW TO LOGOUT AND REMOVE THE PREVIOUS STACK SO THE USER CANT GO BACK
+            logOutBtn.Clicked += async (sender, e) => {
+                var logOut = await DisplayAlert("Log out Button", account.ToString(), "Log out", "Cancel");
+                if (logOut) {
+                    await Navigation.PushAsync(new EntryPage());
+                    Navigation.RemovePage(this);
+                    await store.DeleteAsync(account, Constants.AppName);
+					account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
+					await DisplayAlert("page stack", Navigation.NavigationStack.Count.ToString(), "cool");
+				}
+
             };
             //Building Grid
             grid.Children.Add(profileImage, 0, 0);

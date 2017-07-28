@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 
 using Android.App;
 using Android.Content;
@@ -25,9 +25,6 @@ namespace MahechaBJJ.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-			//adding messsaging center
-			MessagingCenter.Subscribe<VideoDetailPage, ShowVideoPlayerArguments>(this, "ShowVideoPlayer", HandleShowVideoPlayerMessage);
-
 			LoadApplication(new App());
         }
 
@@ -38,15 +35,5 @@ namespace MahechaBJJ.Droid
             videoView.SetVideoURI(uri);
             videoView.Start();
         }
-
-        private Android.Widget.RelativeLayout Test(VideoView _videoView) {
-            Android.Widget.RelativeLayout layout = new Android.Widget.RelativeLayout(this.BaseContext);
-			layout.SetHorizontalGravity(Android.Views.GravityFlags.CenterHorizontal);
-			layout.AddView(_videoView);
-
-            return layout;
-            
-        }
-
 	}
 }

@@ -1,9 +1,10 @@
-﻿using System;
+﻿﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using AVFoundation;
 using AVKit;
 using Foundation;
+using MahechaBJJ.Model;
 using MahechaBJJ.Service;
 using MahechaBJJ.Views;
 using UIKit;
@@ -18,7 +19,7 @@ namespace MahechaBJJ.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
-            LoadApplication(new App());
+			LoadApplication(new App());
 
             //adding messsaging center
             MessagingCenter.Subscribe<VideoDetailPage, ShowVideoPlayerArguments>(this, "ShowVideoPlayer", HandleShowVideoPlayerMessage);
