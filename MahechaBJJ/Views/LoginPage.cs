@@ -96,7 +96,6 @@ namespace MahechaBJJ.Views
 #endif
 				FontSize = size
             };
-            user.Password = passwordEntry.Text;
             loginBtn = new Button
             {
                 Text = "Login",

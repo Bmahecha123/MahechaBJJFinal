@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel;
 using Newtonsoft.Json;
@@ -20,18 +21,9 @@ namespace MahechaBJJ.Views
         private Image mahechaLogo;
         private Button loginBtn;
         private Button signUpBtn;
-        private Button googleSignInBtn;
-        private Button backBtn;
-        //Xam Auth
-        private Account account;
-        private AccountStore store;
-
+        private Button aboutBtn;
         public EntryPage()
         {
-            //XAM AUTH
-            store = AccountStore.Create();
-            account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
-
             Padding = new Thickness(10, 30, 10, 10);
             //outer Grid
             outerGrid = new Grid
@@ -47,9 +39,8 @@ namespace MahechaBJJ.Views
                     new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
+				}
             };
 
             //view objects
@@ -85,22 +76,9 @@ namespace MahechaBJJ.Views
                 BackgroundColor = Color.Orange,
 				TextColor = Color.Black
             };
-            googleSignInBtn = new Button
+            aboutBtn = new Button
             {
-                Text = "Google Sign Up",
-#if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
-#endif
-#if __ANDROID__
-				FontFamily = "Roboto Bold",
-#endif
-				FontSize = size * 2,
-                BackgroundColor = Color.Orange,
-                TextColor = Color.Black
-			};
-            backBtn = new Button
-            {
-                Text = "Back",
+                Text = "Learn More",
 #if __IOS__
 				FontFamily = "ChalkboardSE-Bold",
 #endif
@@ -110,31 +88,23 @@ namespace MahechaBJJ.Views
 				FontSize = size * 2,
 				BackgroundColor = Color.Orange,
 				TextColor = Color.Black
-            };
+			};
             //Button events
-            loginBtn.Clicked += (sender, args) =>
+            loginBtn.Clicked += (object sender, EventArgs e) =>
             {
                 Navigation.PushModalAsync(new LoginPage());
             };
-            googleSignInBtn.Clicked += OnLoginClicked;
 
             signUpBtn.Clicked += (sender, args) =>
             {
                 Navigation.PushModalAsync(new SignUpPage());
             };
 
-            backBtn.Clicked += (sender, args) =>
-            {
-                Navigation.PopModalAsync();
-            };
-
 
             innerGrid.Children.Add(mahechaLogo, 0, 0);
             innerGrid.Children.Add(signUpBtn, 0, 1);
             innerGrid.Children.Add(loginBtn, 0, 2);
-            innerGrid.Children.Add(googleSignInBtn, 0, 3);
-            innerGrid.Children.Add(backBtn, 0, 4);
-
+            innerGrid.Children.Add(aboutBtn, 0, 3);
 
             outerGrid.Children.Add(innerGrid);
 
@@ -150,19 +120,17 @@ namespace MahechaBJJ.Views
                 Padding = new Thickness(10, 10, 10, 10);
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
                 innerGrid.Children.Clear();
-                innerGrid.Children.Add(backBtn, 0, 0);
-                innerGrid.Children.Add(mahechaLogo, 0, 1);
+                innerGrid.Children.Add(mahechaLogo, 0, 0);
                 Grid.SetRowSpan(mahechaLogo, 3);
-                innerGrid.Children.Add(signUpBtn, 1, 2);
-                innerGrid.Children.Add(loginBtn, 1, 2);
-                innerGrid.Children.Add(googleSignInBtn, 1, 3);
+                innerGrid.Children.Add(signUpBtn, 1, 0);
+                innerGrid.Children.Add(loginBtn, 1, 1);
+                innerGrid.Children.Add(aboutBtn, 1, 2);
             } else {
 				Padding = new Thickness(10, 30, 10, 10);
                 innerGrid.RowDefinitions.Clear();
@@ -170,14 +138,12 @@ namespace MahechaBJJ.Views
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star)});
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
 				innerGrid.Children.Clear();
                 innerGrid.Children.Add(mahechaLogo, 0, 0);
                 innerGrid.Children.Add(loginBtn, 0, 1);
                 innerGrid.Children.Add(signUpBtn, 0, 2);
-                innerGrid.Children.Add(googleSignInBtn, 0, 3);
-                innerGrid.Children.Add(backBtn, 0, 4);
+                innerGrid.Children.Add(aboutBtn, 0, 3);
             }
 		}
 		//functions
@@ -193,90 +159,6 @@ namespace MahechaBJJ.Views
             Navigation.InsertPageBefore(new MainTabbedPage(Output, _entryPageViewModel.User), this);
             await Navigation.PopAsync().ConfigureAwait(false);
 		} */
-
-		private void OnLoginClicked(object sender, EventArgs e)
-		{
-			string clientId = null;
-			string redirectUri = null;
-
-			switch (Device.RuntimePlatform)
-			{
-				case Device.iOS:
-					clientId = Constants.iOSClientId;
-					redirectUri = Constants.iOSRedirectUrl;
-					break;
-
-				case Device.Android:
-					clientId = Constants.AndroidClientId;
-					redirectUri = Constants.AndroidRedirectUrl;
-					break;
-			}
-
-			var authenticator = new OAuth2Authenticator(
-				clientId,
-				null,
-				Constants.Scope,
-				new Uri(Constants.AuthorizeUrl),
-				new Uri(redirectUri),
-				new Uri(Constants.AccessTokenUrl),
-				null,
-				true);
-
-			authenticator.Completed += OnAuthCompleted;
-			authenticator.Error += OnAuthError;
-
-			AuthenticationState.Authenticator = authenticator;
-
-			var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
-			presenter.Login(authenticator);
-		}
-
-		async void OnAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
-		{
-			var authenticator = sender as OAuth2Authenticator;
-			if (authenticator != null)
-			{
-				authenticator.Completed -= OnAuthCompleted;
-				authenticator.Error -= OnAuthError;
-			}
-
-            _entryPageViewModel.User = null;
-			if (e.IsAuthenticated)
-			{
-				// If the user is authenticated, request their basic user data from Google
-				// UserInfoUrl = https://www.googleapis.com/oauth2/v2/userinfo
-				var request = new OAuth2Request("GET", new Uri(Constants.UserInfoUrl), null, e.Account);
-                /*var response = await request.GetResponseAsync();
-				if (response != null)
-				{
-					// Deserialize the data and store it in the account store
-					// The users email address will be used to identify data in SimpleDB
-					string userJson = await response.GetResponseTextAsync();
-					user = JsonConvert.DeserializeObject<User>(userJson);
-				} */
-                await _entryPageViewModel.GetGoogleInfo(request);
-                if (account != null)
-				{
-					store.Delete(account, Constants.AppName);
-				}
-                await DisplayAlert("Email address", _entryPageViewModel.User.Email, "OK");
-				await store.SaveAsync(account = e.Account, Constants.AppName);
-                await DisplayAlert("values of account", account.ToString().Split('&')[1], "Next");
-                //CallVimeoApi();
-			}
-		}
-
-		void OnAuthError(object sender, AuthenticatorErrorEventArgs e)
-		{
-			var authenticator = sender as OAuth2Authenticator;
-			if (authenticator != null)
-			{
-				authenticator.Completed -= OnAuthCompleted;
-				authenticator.Error -= OnAuthError;
-			}
-
-			Debug.WriteLine("Authentication error: " + e.Message);
-		}
 	}
 }
 

@@ -17,14 +17,9 @@ namespace MahechaBJJ.Views
         Label emailTextLbl;
         Button cancelSubBtn;
         Button logOutBtn;
-		private Account account;
-		private AccountStore store;
 
         public ProfilePage()
         {
-			//XAM AUTH
-			store = AccountStore.Create();
-			account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
 
             Title = "Profile";
             Padding = new Thickness(10, 30, 10, 10);
@@ -83,15 +78,8 @@ namespace MahechaBJJ.Views
             };
             //TODO FIGURE OUT HOW TO LOGOUT AND REMOVE THE PREVIOUS STACK SO THE USER CANT GO BACK
             logOutBtn.Clicked += async (sender, e) => {
-                var logOut = await DisplayAlert("Log out Button", account.ToString(), "Log out", "Cancel");
-                if (logOut) {
-                    await Navigation.PushAsync(new EntryPage());
-                    Navigation.RemovePage(this);
-                    await store.DeleteAsync(account, Constants.AppName);
-					account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
-					await DisplayAlert("page stack", Navigation.NavigationStack.Count.ToString(), "cool");
-				}
 
+                await DisplayAlert("test", "implement this shit later", "ok");
             };
             //Building Grid
             grid.Children.Add(profileImage, 0, 0);

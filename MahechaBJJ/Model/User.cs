@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace MahechaBJJ.Model
@@ -12,31 +13,13 @@ namespace MahechaBJJ.Model
 		[JsonProperty("email")]
 		public string Email { get; set; }
 
-		[JsonProperty("verified_email")]
-		public bool VerifiedEmail { get; set; }
-
 		[JsonProperty("name")]
 		public string Name { get; set; }
 
-		[JsonProperty("given_name")]
-		public string GivenName { get; set; }
+        [JsonProperty("secretQuestions")]
+        public Dictionary<String, String> SecretQuestions;
 
-		[JsonProperty("family_name")]
-		public string FamilyName { get; set; }
-
-		[JsonProperty("link")]
-		public string Link { get; set; }
-
-		[JsonProperty("picture")]
-		public string Picture { get; set; }
-
-		[JsonProperty("gender")]
-		public string Gender { get; set; }
-
-        public string Password
-        {
-            get;
-            set;
-        }
+        [JsonProperty("password")]
+        public string password { get; set; }
 	}
 }
