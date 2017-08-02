@@ -3,11 +3,19 @@ using System.Collections.ObjectModel;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel;
 using Xamarin.Forms;
+using Xamarin.Auth;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace MahechaBJJ.Views
 {
     public class SignUpPage : ContentPage
     {
+        //ViewModel
+        private SignUpPageViewModel _signUpPageViewModel = new SignUpPageViewModel();
+        private BaseViewModel _baseViewModel = new BaseViewModel();
+        private const string CREATEUSER = "http://localhost:8080/user/create";
         //declare objects
         private Grid innerGrid;
         private Grid outerGrid;
@@ -31,6 +39,8 @@ namespace MahechaBJJ.Views
         private User user;
         private ObservableCollection<string> secretQuestionList1;
         private ObservableCollection<string> secretQuestionList2;
+        //Xam Auth
+        Account account;
 
         public SignUpPage()
         {
@@ -198,9 +208,9 @@ namespace MahechaBJJ.Views
                 Placeholder = "Answer for your own security!"
 			};
             secretQuestionList2 = new ObservableCollection<string>();
-            secretQuestionList2.Add("What is your favorite guard in Jiu Jitsu?");
-            secretQuestionList2.Add("What is your favorite takedown in Jiu Jitsu?");
-            secretQuestionList2.Add("Which federation has your favorite ruleset?");
+            secretQuestionList2.Add("What is your favorite guard?");
+            secretQuestionList2.Add("What is your favorite takedown?");
+            secretQuestionList2.Add("Federation with best ruleset?");
             secretQuestionPicker2 = new Picker
             {
                 Title = "Select another secret question to answer!",
@@ -226,7 +236,9 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
                 Text = "Sign Up!",
-                FontSize = size
+                FontSize = size,
+				BackgroundColor = Color.Orange,
+				TextColor = Color.Black
 			};
             backBtn = new Button
             {
@@ -237,7 +249,9 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
                 Text = "Back",
-                FontSize = size
+                FontSize = size,
+				BackgroundColor = Color.Orange,
+				TextColor = Color.Black
 			};
             clearBtn = new Button
             {
@@ -248,13 +262,16 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
                 Text = "Clear",
-                FontSize = size
+                FontSize = size,
+				BackgroundColor = Color.Orange,
+				TextColor = Color.Black
 			};
 
             //Events
-            signUpBtn.Clicked += test;
+            signUpBtn.Clicked += Validate;
             backBtn.Clicked += GoBack;
             passWordRepeatEntry.Unfocused += PasswordMatch;
+            //TODO add specific validation events to make sure entries are correct.
 
             innerGrid.Children.Add(mahechaLogo, 0, 0);
             Grid.SetColumnSpan(mahechaLogo, 2);
@@ -294,11 +311,29 @@ namespace MahechaBJJ.Views
 
 		//functions
 
-        private async void test(object sender, EventArgs e)
+        private void Validate(object sender, EventArgs e)
+        {
+            if (nameEntry.Text != null && nameEntry.Text != "" && emailAddressEntry.Text != null && passWordEntry != null && 
+                secretQuestionEntry1 != null && secretQuestionEntry2 != null) 
+            {
+                SignUp(sender, e);
+            }
+            else {
+                DisplayAlert("Sign Up Error", "Make sure all fields are filled in!", "Okay, got it.");
+            }
+        }
+
+        private async void SignUp(object sender, EventArgs e)
         {
             signUpBtn.IsEnabled = false;
-            //user = new User(nameEntry.Text, );
-            await DisplayAlert("user info!", nameEntry.Text, "nice!");
+            user = await _signUpPageViewModel.CreateUser(nameEntry.Text, emailAddressEntry.Text, passWordEntry.Text, secretQuestionPicker1.SelectedItem.ToString(), 
+            secretQuestionEntry1.Text, secretQuestionPicker2.SelectedItem.ToString(), secretQuestionEntry2.Text);
+            _signUpPageViewModel.SaveCredentials(user.Email, user.password, user.Id);
+            account = _baseViewModel.GetAccountInformation();
+            await DisplayAlert("account test", account.Username, "Xam Auth works!");
+            await DisplayAlert("user info!", user.Id + " " + user.Email, "nice!");
+            signUpBtn.IsEnabled = true;
+            Application.Current.MainPage = new MainTabbedPage();
         }
 
         private void PasswordMatch(object sender, EventArgs e)
@@ -315,18 +350,7 @@ namespace MahechaBJJ.Views
         {
             Navigation.PopModalAsync();
         }
-		/*private async void CallVimeoApi(object sender, EventArgs e)
-		{
-			string url = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
-			await _signInPageViewModel.GetVimeo(url);
-            SetPageContent(_signInPageViewModel.VimeoInfo, user);
-		}
-
-		private void SetPageContent(BaseInfo Output, User user)
-		{
-            Navigation.PushModalAsync(new MainTabbedPage(Output, user));
-		}*/
-
+		
 		//Orientation
 		protected override void OnSizeAllocated(double width, double height)
 		{

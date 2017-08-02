@@ -29,23 +29,25 @@ namespace MahechaBJJ.Views
         Button addPlaylistBtn;
         StackLayout stackLayout;
         ScrollView playListScrollView;
+        //Xam Auth
+        Account account;
 
         public HomePage()
         {
-            LoadVimeo(VIMEOURL);
+            //TODO add loading screen to cover up main page while the login page loads. MAybe Mahecha bjj logo???
+            LoadVimeo();
             Title = "Home";
             BackgroundColor = Color.Azure;
             Padding = new Thickness(10, 30, 10, 10);
         }
-        private async Task LoadVimeo(string url)
+        private void LoadVimeo()
         {
-            await _homePageViewModel.GetVimeo(url);
             SetContent();
-            LoggedIn();
         }
 
-        private void SetContent()
+        private async void SetContent()
         {
+            await _homePageViewModel.GetVimeo(VIMEOURL);
 			VimeoInfo = _homePageViewModel.VimeoInfo;
 			grid = new Grid
             {
@@ -176,7 +178,14 @@ namespace MahechaBJJ.Views
 
         private async void LoggedIn()
         {
-                await Navigation.PushModalAsync(new EntryPage());
+            account = _baseViewModel.GetAccountInformation();
+            if (account == null){
+                await DisplayAlert("Test", "You're not logged in!", "OK");
+				await Navigation.PushModalAsync(new EntryPage());
+			}
+            else {
+                await DisplayAlert("Welcome!", "Welcome : " + account.Username, "Hey!");
+            }
 		}
     }
 }

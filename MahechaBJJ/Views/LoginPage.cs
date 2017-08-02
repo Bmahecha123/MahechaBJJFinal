@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel;
 using Xamarin.Forms;
@@ -8,7 +9,9 @@ namespace MahechaBJJ.Views
     public class LoginPage : ContentPage
     {
         private readonly SignInPageViewModel _signInPageViewModel = new SignInPageViewModel();
-        private const String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
+        private readonly BaseViewModel _baseViewModel = new BaseViewModel();
+        private const string VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
+        private const string FINDUSER = "http://localhost:8080/user/findByEmail/";
         //declare objects
         private Grid outerGrid;
         private Grid innerGrid;
@@ -25,7 +28,6 @@ namespace MahechaBJJ.Views
         {
             Padding = new Thickness(10, 30, 10, 10);
             var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
-            user = new User();
             //Grid view definition
             outerGrid = new Grid
             {
@@ -72,7 +74,6 @@ namespace MahechaBJJ.Views
 #endif
 				FontSize = size
             };
-            user.Email = emailEntry.Text;
             passwordLbl = new Label
             {
                 Text = "Password",
@@ -110,7 +111,7 @@ namespace MahechaBJJ.Views
                 TextColor = Color.Black
             };
             //Events
-            //loginBtn.Clicked += CallVimeoApi;
+            loginBtn.Clicked += Login;
 
             innerGrid.Children.Add(mahechaLogo, 0, 0);
             innerGrid.Children.Add(emailLbl, 0, 1);
@@ -123,17 +124,26 @@ namespace MahechaBJJ.Views
             Content = outerGrid;
         }
 		//functions
-		/*private async void CallVimeoApi(object sender, EventArgs e)
-		{
-            string url = VIMEOURL;
-			await _signInPageViewModel.GetVimeo(url);
-			SetPageContent(_signInPageViewModel.VimeoInfo, user);
-		}
+        private async void Login(object sender, EventArgs e)
+        {
+            user = await _baseViewModel.FindUserByEmailAsync(FINDUSER, emailEntry.Text);
+            if (user == null) {
+                await DisplayAlert("User Not Found", "User " + emailEntry.Text + " does not exist.", "Got It");
+            }
+            else 
+            {
+				if (user.password == passwordEntry.Text)
+				{
+					_baseViewModel.SaveCredentials(user.Email, user.password, user.Id);
+					Application.Current.MainPage = new MainTabbedPage();
+				}
+				else
+				{
+					await DisplayAlert("Wrong Password!", "Password for " + emailEntry.Text + " is incorrect.", "Ok");
+				}
+            }
 
-		private void SetPageContent(BaseInfo output, User user)
-		{
-            Navigation.PushModalAsync(new MainTabbedPage(output, user));
-		}*/
+        }
 
 		protected override void OnSizeAllocated(double width, double height)
 		{

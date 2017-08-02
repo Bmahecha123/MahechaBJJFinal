@@ -147,18 +147,7 @@ namespace MahechaBJJ.Views
             }
 		}
 		//functions
-		/*private async void CallVimeoApi()
-		{
-			string url = VIMEOURL;
-            await _entryPageViewModel.GetVimeo(url);
-            SetPageContent(_entryPageViewModel.VimeoInfo, _entryPageViewModel.User);
-		}
-
-		private async void SetPageContent(BaseInfo Output, User user)
-		{
-            Navigation.InsertPageBefore(new MainTabbedPage(Output, _entryPageViewModel.User), this);
-            await Navigation.PopAsync().ConfigureAwait(false);
-		} */
+	
 	}
 }
 

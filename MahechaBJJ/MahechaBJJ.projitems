@@ -38,6 +38,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainTabbedPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignUpPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

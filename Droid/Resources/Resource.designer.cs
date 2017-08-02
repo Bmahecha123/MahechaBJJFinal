@@ -26,11 +26,15 @@ namespace MahechaBJJ.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::PCLCrypto.Resource.String.ApplicationName = global::MahechaBJJ.Droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::MahechaBJJ.Droid.Resource.String.Hello;
 			global::Xamarin.Auth.Resource.Animation.slide_in_right = global::MahechaBJJ.Droid.Resource.Animation.slide_in_right;
 			global::Xamarin.Auth.Resource.Animation.slide_out_left = global::MahechaBJJ.Droid.Resource.Animation.slide_out_left;
 			global::Xamarin.Auth.Resource.Drawable.ic_arrow_back = global::MahechaBJJ.Droid.Resource.Drawable.ic_arrow_back;
 			global::Xamarin.Auth.Resource.Id.webview = global::MahechaBJJ.Droid.Resource.Id.webview;
 			global::Xamarin.Auth.Resource.Layout.activity_webview = global::MahechaBJJ.Droid.Resource.Layout.activity_webview;
+			global::Xamarin.Auth.Resource.String.ApplicationName = global::MahechaBJJ.Droid.Resource.String.ApplicationName;
+			global::Xamarin.Auth.Resource.String.Hello = global::MahechaBJJ.Droid.Resource.String.Hello;
 			global::Xamarin.Auth.Resource.String.title_activity_webview = global::MahechaBJJ.Droid.Resource.String.title_activity_webview;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::MahechaBJJ.Droid.Resource.Attribute.actionBarSize;
 		}
@@ -3639,6 +3643,12 @@ namespace MahechaBJJ.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f070040
+			public const int ApplicationName = 2131165248;
+			
+			// aapt resource value: 0x7f07003f
+			public const int Hello = 2131165247;
 			
 			// aapt resource value: 0x7f070016
 			public const int abc_action_bar_home_description = 2131165206;
