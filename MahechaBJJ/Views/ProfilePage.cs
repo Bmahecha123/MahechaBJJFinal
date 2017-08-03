@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
@@ -14,13 +14,13 @@ namespace MahechaBJJ.Views
 		private const string FINDUSER = "http://localhost:8080/user/findById/";
 		//declare objects
 		BaseViewModel _baseViewModel = new BaseViewModel();
-        Grid grid;
-        Image profileImage;
+        Grid outerGrid;
+        Grid innerGrid;
         Label nameLbl;
         Label nameTextLbl;
         Label emailLbl;
         Label emailTextLbl;
-        Button cancelSubBtn;
+        Button contactUsBtn;
         Button logOutBtn;
         Account account;
         User user;
@@ -39,10 +39,11 @@ namespace MahechaBJJ.Views
         }
 
         public async void SetContent(){
-            //load User
-            user = await _baseViewModel.FindUserByIdAsync(FINDUSER, account.Properties["Id"]);
+			//load User
+			var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+			user = await _baseViewModel.FindUserByIdAsync(FINDUSER, account.Properties["Id"]);
 			//grid definiton
-			grid = new Grid
+			innerGrid = new Grid
 			{
 				RowDefinitions = new RowDefinitionCollection {
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
@@ -51,54 +52,98 @@ namespace MahechaBJJ.Views
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(2, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(2, GridUnitType.Star)}
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection {
-					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
 				}
 			};
-
-			//view Objects
-			profileImage = new Image
-			{
-				//Source = user.Picture,
-				Aspect = Aspect.AspectFit
-			};
+            outerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection {
+				    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+				}
+            };
 			nameLbl = new Label
 			{
-				Text = "Name:"
+				Text = "Name",
+#if __IOS__
+				FontFamily = "ChalkboardSE-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+                FontSize = size * 2,
+                HorizontalOptions = LayoutOptions.CenterAndExpand
 			};
 
 			nameTextLbl = new Label
 			{
-				Text = user.Name
+				Text = user.Name,
+#if __IOS__
+				FontFamily = "ChalkboardSE-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = size,
+				HorizontalOptions = LayoutOptions.CenterAndExpand
 			};
 			emailLbl = new Label
 			{
-				Text = "Email:"
+				Text = "E-Mail",
+#if __IOS__
+				FontFamily = "ChalkboardSE-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = size * 2,
+				HorizontalOptions = LayoutOptions.CenterAndExpand
 			};
 			emailTextLbl = new Label
 			{
-				Text = user.Email
+				Text = user.Email,
+#if __IOS__
+				FontFamily = "ChalkboardSE-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = size,
+                HorizontalOptions = LayoutOptions.CenterAndExpand
 			};
-			cancelSubBtn = new Button
+			contactUsBtn = new Button
 			{
+				Text = "Contact Us",
+#if __IOS__
+				FontFamily = "ChalkboardSE-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = size * 2,
 				BackgroundColor = Color.Orange,
-				Text = "Cancel Subscription"
+				TextColor = Color.Black
 			};
 			logOutBtn = new Button
 			{
+				Text = "Log Out",
+#if __IOS__
+				FontFamily = "ChalkboardSE-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = size * 2,
 				BackgroundColor = Color.Orange,
-				Text = "Log Out"
+				TextColor = Color.Black
 			};
 			//Events
-			//TODO Enable account logout functionality with either Google and/or Facebook
-			cancelSubBtn.Clicked += (sender, e) =>
+            //TODO enable email sending when Contact button is sent
+			contactUsBtn.Clicked += (sender, e) =>
 			{
 				DisplayAlert("Subscription Cancellation", "Are you you want to cancel your subscription?!", "Yess D8<!", "Never >8D!");
 			};
 			logOutBtn.Clicked += async (sender, e) =>
 			{
-				bool logout = await DisplayAlert("Logout", "Are you sure you want to log out " + user.Email + "?", "Yes, I'll be back friend.", "No");
+				bool logout = await DisplayAlert("Logout", "Are you sure you want to log out " + user.Email + "?", "Yes, I'll be back friend.", "No, I'll stay!");
 				if (logout)
 				{
 					_baseViewModel.DeleteCredentials();
@@ -108,18 +153,15 @@ namespace MahechaBJJ.Views
 				}
 			};
 			//Building Grid
-			grid.Children.Add(profileImage, 0, 0);
-			Grid.SetRowSpan(profileImage, 4);
-			grid.Children.Add(nameLbl, 1, 0);
-			grid.Children.Add(nameTextLbl, 1, 1);
-			grid.Children.Add(emailLbl, 1, 2);
-			grid.Children.Add(emailTextLbl, 1, 3);
-			grid.Children.Add(cancelSubBtn, 0, 4);
-			Grid.SetColumnSpan(cancelSubBtn, 2);
-			grid.Children.Add(logOutBtn, 0, 5);
-			Grid.SetColumnSpan(logOutBtn, 2);
+            innerGrid.Children.Add(nameLbl, 0, 0);
+            innerGrid.Children.Add(nameTextLbl, 0, 1);
+            innerGrid.Children.Add(emailLbl, 0, 2);
+            innerGrid.Children.Add(emailTextLbl, 0, 3);
+            innerGrid.Children.Add(contactUsBtn, 0, 4);
+            innerGrid.Children.Add(logOutBtn, 0, 5);
+            outerGrid.Children.Add(innerGrid);
 
-			Content = grid;
+			Content = innerGrid;
         }
     }
 }

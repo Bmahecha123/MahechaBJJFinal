@@ -1,4 +1,4 @@
-﻿﻿﻿using System;
+﻿﻿﻿﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
@@ -20,12 +20,6 @@ namespace MahechaBJJ.Views
         Image video2Btn;
         Label whatsNewLbl;
         Label playListLbl;
-        Button playList1Btn;
-        Button playList2Btn;
-        Button playList3Btn;
-        Button playList4Btn;
-        Button playList5Btn;
-        Button playList6Btn;
         Button addPlaylistBtn;
         StackLayout stackLayout;
         ScrollView playListScrollView;
@@ -96,54 +90,6 @@ namespace MahechaBJJ.Views
                 HorizontalTextAlignment = TextAlignment.Center,
                 FontSize = 50
             };
-            playList1Btn = new Button
-            {
-                Text = "Playlist1",
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                BorderWidth = 2.5,
-                BorderColor = Color.Black
-            };
-            playList2Btn = new Button
-            {
-                Text = "Playlist2",
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                BorderWidth = 2.5,
-                BorderColor = Color.Black
-            };
-            playList3Btn = new Button
-            {
-                Text = "Playlist3",
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                BorderWidth = 2.5,
-                BorderColor = Color.Black
-            };
-            playList4Btn = new Button
-            {
-                Text = "Playlist3",
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                BorderWidth = 2.5,
-                BorderColor = Color.Black
-            };
-            playList5Btn = new Button
-            {
-                Text = "Playlist3",
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                BorderWidth = 2.5,
-                BorderColor = Color.Black
-            };
-            playList6Btn = new Button
-            {
-                Text = "Playlist3",
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                BorderWidth = 2.5,
-                BorderColor = Color.Black
-            };
             addPlaylistBtn = new Button
             {
                 Text = "Add Playlist!",
@@ -155,11 +101,12 @@ namespace MahechaBJJ.Views
             stackLayout = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
-                Children = { playList1Btn, playList2Btn, playList3Btn, playList4Btn, playList5Btn, playList6Btn, addPlaylistBtn }
+                Children = { addPlaylistBtn }
             };
             playListScrollView = new ScrollView
             {
                 Orientation = ScrollOrientation.Horizontal,
+                 
                 Content = stackLayout
             };
 
