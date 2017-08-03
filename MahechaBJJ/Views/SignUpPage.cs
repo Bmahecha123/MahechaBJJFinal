@@ -313,8 +313,8 @@ namespace MahechaBJJ.Views
 
         private void Validate(object sender, EventArgs e)
         {
-            if (nameEntry.Text != null && nameEntry.Text != "" && emailAddressEntry.Text != null && passWordEntry != null && 
-                secretQuestionEntry1 != null && secretQuestionEntry2 != null) 
+            if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null || 
+                passWordRepeatEntry.Text != null || secretQuestionEntry1.Text != null || secretQuestionEntry2.Text != null) 
             {
                 SignUp(sender, e);
             }
@@ -325,6 +325,7 @@ namespace MahechaBJJ.Views
 
         private async void SignUp(object sender, EventArgs e)
         {
+            await DisplayAlert("test", emailAddressEntry.Text+nameEntry.Text+passWordEntry.Text, "ok");
             signUpBtn.IsEnabled = false;
             user = await _signUpPageViewModel.CreateUser(nameEntry.Text, emailAddressEntry.Text, passWordEntry.Text, secretQuestionPicker1.SelectedItem.ToString(), 
             secretQuestionEntry1.Text, secretQuestionPicker2.SelectedItem.ToString(), secretQuestionEntry2.Text);
@@ -391,8 +392,8 @@ namespace MahechaBJJ.Views
                 innerGrid.Children.Add(secretQuestionEntry2, 1, 6);
                 Grid.SetColumnSpan(secretQuestionEntry1, 2);
                 Grid.SetColumnSpan(secretQuestionEntry2, 2);
-                innerGrid.Children.Add(signUpBtn, 0, 7);
-                innerGrid.Children.Add(backBtn, 1, 7);
+                innerGrid.Children.Add(signUpBtn, 1, 7);
+                innerGrid.Children.Add(backBtn, 0, 7);
                 innerGrid.Children.Add(clearBtn, 2, 7);
 			}
 			else
@@ -446,8 +447,8 @@ namespace MahechaBJJ.Views
 				Grid.SetColumnSpan(secretQuestionPicker2, 2);
 				innerGrid.Children.Add(secretQuestionEntry2, 0, 13);
 				Grid.SetColumnSpan(secretQuestionEntry2, 2);
-				innerGrid.Children.Add(signUpBtn, 0, 14);
-				innerGrid.Children.Add(backBtn, 1, 14);
+				innerGrid.Children.Add(signUpBtn, 1, 14);
+				innerGrid.Children.Add(backBtn, 0, 14);
 			}
 		}
     }

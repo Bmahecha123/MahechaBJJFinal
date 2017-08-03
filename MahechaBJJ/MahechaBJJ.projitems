@@ -40,6 +40,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignUpPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\PlayList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Video.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

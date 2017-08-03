@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 
 namespace MahechaBJJ.Model
@@ -17,9 +18,12 @@ namespace MahechaBJJ.Model
 		public string Name { get; set; }
 
         [JsonProperty("secretQuestions")]
-        public Dictionary<String, String> SecretQuestions;
+        public Dictionary<String, String> SecretQuestions { get; set; }
 
         [JsonProperty("password")]
         public string password { get; set; }
+
+        [JsonProperty("playlists")]
+        public ObservableCollection<PlayList> PlayLists { get; set; }
 	}
 }

@@ -65,6 +65,7 @@ namespace MahechaBJJ.ViewModel
             HttpClient client = new HttpClient();
             string jsonObject = JsonConvert.SerializeObject(_user);
             StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+
             HttpResponseMessage response = await client.PostAsync("http://localhost:8080/user/create", content);
 
             _user = JsonConvert.DeserializeObject<User>(await response.Content.ReadAsStringAsync());
