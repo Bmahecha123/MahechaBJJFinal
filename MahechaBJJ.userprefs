@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A1F474E0-DFAD-4433-B68F-697A133AB7F2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/ProfilePage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/EntryPage.cs">
     <Files>
-      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="77" Column="12" NotebookId="1" />
+      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="70" Column="26" NotebookId="1" />
       <File FileName="MahechaBJJ/ViewModel/BaseViewModel.cs" Line="121" Column="1" NotebookId="1" />
       <File FileName="MahechaBJJ/ViewModel/SignUpPageViewModel.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="MahechaBJJ/ViewModel/SearchPageViewModel.cs" Line="12" Column="23" NotebookId="1" />
@@ -20,11 +20,12 @@
       <File FileName="MahechaBJJ/Model/PlayList.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="MahechaBJJ/Model/Video.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="MahechaBJJ/Model/VimeoAPI.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="50" Column="42" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="800" Y="23" Width="640" Height="480">
+      <FloatingWindow WindowId="1" X="752" Y="43" Width="640" Height="480">
         <Files>
-          <File FileName="MahechaBJJ/Views/SignUpPage.cs" Line="1" Column="1" />
+          <File FileName="MahechaBJJ/Views/SignUpPage.cs" Line="100" Column="6" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
@@ -47,8 +48,6 @@
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/NativeView.xaml.cs" relfile="MahechaBJJ/Views/NativeView.xaml.cs" line="38" column="1" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Service/UserManager.cs" relfile="MahechaBJJ/Service/UserManager.cs" line="96" column="1" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Service/UserManager.cs" relfile="MahechaBJJ/Service/UserManager.cs" line="97" column="1" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/ProfilePage.cs" relfile="MahechaBJJ/Views/ProfilePage.cs" line="44" column="1" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/ProfilePage.cs" relfile="MahechaBJJ/Views/ProfilePage.cs" line="37" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

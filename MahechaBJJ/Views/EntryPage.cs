@@ -106,7 +106,7 @@ namespace MahechaBJJ.Views
             innerGrid.Children.Add(loginBtn, 0, 2);
             innerGrid.Children.Add(aboutBtn, 0, 3);
 
-            outerGrid.Children.Add(innerGrid);
+            outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = outerGrid;
 		}
