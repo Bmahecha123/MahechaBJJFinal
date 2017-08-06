@@ -24,6 +24,8 @@ namespace MahechaBJJ.Views
         Image video2Image;
         Label video1Lbl;
         Label video2Lbl;
+        TapGestureRecognizer video1Tap;
+        TapGestureRecognizer video2Tap;
         Label whatsNewLbl;
         Label playListLbl;
         Button addPlaylistBtn;
@@ -107,20 +109,13 @@ namespace MahechaBJJ.Views
 				HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.White
 			};
-			video2Lbl = new Label
+			video1Tap = new TapGestureRecognizer();
+			video1Tap.Tapped += (sender, e) =>
 			{
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-				Text = "Spider Guard Stuff!",
-                FontSize = lblSize,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.White
+                VideoData video = VimeoInfo.data[0];
+				Navigation.PushModalAsync(new VideoDetailPage(video));
 			};
+            video1Lbl.GestureRecognizers.Add(video1Tap);
 			video2Image = new Image
 			{
 				Aspect = Aspect.AspectFill
@@ -133,6 +128,27 @@ namespace MahechaBJJ.Views
                 HasShadow = false,
 				Padding = 3
             };
+			video2Lbl = new Label
+			{
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				Text = "Spider Guard Stuff!",
+				FontSize = lblSize,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center,
+				TextColor = Color.White
+			};
+			video2Tap = new TapGestureRecognizer();
+			video2Tap.Tapped += (sender, e) =>
+			{
+				VideoData video = VimeoInfo.data[1];
+				Navigation.PushModalAsync(new VideoDetailPage(video));
+			};
+			video2Lbl.GestureRecognizers.Add(video2Tap);
 			playListLbl = new Label
 			{
 				Text = "Playlists",
@@ -176,6 +192,8 @@ namespace MahechaBJJ.Views
                 BackgroundColor = Color.Orange,
                 TextColor = Color.Black
 			};
+
+            //events
 
 			innerGrid.Children.Add(whatsNewLbl, 0, 0);
             Grid.SetColumnSpan(whatsNewLbl, 2);
