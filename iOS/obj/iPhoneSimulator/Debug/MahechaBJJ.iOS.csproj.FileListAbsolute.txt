@@ -155,3 +155,4 @@ C:/Users/bmahe/Desktop/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.App.xaml.g.cs
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.exe
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.pdb
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.csprojResolveAssemblyReference.cache

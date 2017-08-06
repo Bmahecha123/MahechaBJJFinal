@@ -54,7 +54,7 @@ namespace MahechaBJJ.Views
             {
                 Text = "Login",
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
+                FontFamily = "DamascusBold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",

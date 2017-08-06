@@ -51,7 +51,7 @@ namespace MahechaBJJ.ViewModel
         }
 
         public async Task<User> CreateUser(string name, string email, string password, string secretQuestion1,
-                               string secretQuestionAnswer1, string secretQuestion2, string secretQuestionAnswer2)
+                               string secretQuestionAnswer1, string secretQuestion2, string secretQuestionAnswer2, string beltColor)
         {
             _user = new User();
             _user.Name = name;
@@ -61,6 +61,7 @@ namespace MahechaBJJ.ViewModel
             secretQuestions.Add(secretQuestion1, secretQuestionAnswer1);
             secretQuestions.Add(secretQuestion2, secretQuestionAnswer2);
             _user.SecretQuestions = secretQuestions;
+            _user.Belt = beltColor;
 
             HttpClient client = new HttpClient();
             string jsonObject = JsonConvert.SerializeObject(_user);
