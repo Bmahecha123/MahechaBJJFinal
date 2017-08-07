@@ -194,6 +194,7 @@ namespace MahechaBJJ.Views
 			};
 
             //events
+            addPlaylistBtn.Clicked += CreatePlaylist;
 
 			innerGrid.Children.Add(whatsNewLbl, 0, 0);
             Grid.SetColumnSpan(whatsNewLbl, 2);
@@ -214,6 +215,7 @@ namespace MahechaBJJ.Views
 
             Content = outerGrid;
         }
+        //functions
         private void LoadVimeo()
         {
             SetContent();
@@ -233,6 +235,11 @@ namespace MahechaBJJ.Views
             video2Lbl.Text = VimeoInfo.data[1].name;
             activityIndicator.IsRunning = false;
             Content = outerGrid;
+        }
+
+        private void CreatePlaylist(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new PlaylistCreatePage());
         }
 
 		//Orientation

@@ -7,6 +7,8 @@ namespace MahechaBJJ.Model
     {
         public string Name { get; set; }
 
+        public string Description { get; set; }
+
         public ObservableCollection<Video> Videos { get; set; }
     }
 }

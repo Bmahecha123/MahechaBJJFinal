@@ -42,6 +42,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\PlayList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Video.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PlaylistCreatePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
