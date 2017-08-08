@@ -1,4 +1,8 @@
 ﻿using System;
+using MahechaBJJ.Model;
+using MahechaBJJ.Resources;
+using MahechaBJJ.ViewModel;
+using Xamarin.Auth;
 
 using Xamarin.Forms;
 
@@ -6,6 +10,9 @@ namespace MahechaBJJ.Views
 {
     public class PlaylistCreatePage : ContentPage
     {
+        BaseViewModel _baseViewModel = new BaseViewModel();
+        PlaylistCreatePageViewModel _playlistCreatePageViewModel = new PlaylistCreatePageViewModel();
+        string FINDUSER = Constants.FINDUSER;
         Grid outerGrid;
         Grid innerGrid;
         Label playListNameLbl;
@@ -15,6 +22,9 @@ namespace MahechaBJJ.Views
         Frame editorFrame;
         Button backBtn;
         Button createBtn;
+        Account account;
+        User user;
+        PlayList playlist;
 
         public PlaylistCreatePage()
         {
@@ -175,9 +185,19 @@ namespace MahechaBJJ.Views
 
         public async void CreatePlaylist(object sender, EventArgs e)
         {
-            //TODO pull in account information with Account object
-            //TODO look up user with that information
-            //TODO update the backend with the updated User object
+            if (playListNameEntry.Text != null){
+				playlist = new PlayList();
+				playlist.Name = playListNameEntry.Text;
+				playlist.Description = playListDescriptionEditor.Text;
+				account = _baseViewModel.GetAccountInformation();
+				user = await _baseViewModel.FindUserByIdAsync(FINDUSER, account.Properties["Id"]);
+				_playlistCreatePageViewModel.CreatePlaylist(playlist, user.Id);
+                await DisplayAlert("Playlist Added", playlist.Name + " has been successfully added!", "Ok");
+            }
+            else {
+                await DisplayAlert("Error", "Name cannot be empty, fill it in!", "Ok");
+                playListNameEntry.Focus();
+            }
         }
 
 		//Orientation
@@ -191,11 +211,11 @@ namespace MahechaBJJ.Views
 				innerGrid.RowDefinitions.Clear();
 				innerGrid.ColumnDefinitions.Clear();
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.Children.Clear();
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                innerGrid.Children.Clear();
                 innerGrid.Children.Add(playListNameLbl, 0, 0);
                 innerGrid.Children.Add(playListNameEntry, 1, 0);
                 innerGrid.Children.Add(playListDescriptionLbl, 0, 1);

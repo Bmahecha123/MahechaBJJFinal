@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
+using MahechaBJJ.Service;
 using Newtonsoft.Json;
 using Xamarin.Auth;
 using Xamarin.Forms;
@@ -17,6 +18,8 @@ namespace MahechaBJJ.ViewModel
     public class SignUpPageViewModel : INotifyPropertyChanged
     {
         private Dictionary<String, string> secretQuestions;
+        private UserService _userService;
+        private AccountService _accountService;
 
         private Account _account;
         public Account Account
@@ -48,6 +51,8 @@ namespace MahechaBJJ.ViewModel
 
         public SignUpPageViewModel()
         {
+            _userService = new UserService();
+            _accountService = new AccountService();
         }
 
         public async Task<User> CreateUser(string name, string email, string password, string secretQuestion1,
@@ -63,13 +68,7 @@ namespace MahechaBJJ.ViewModel
             _user.SecretQuestions = secretQuestions;
             _user.Belt = beltColor;
 
-            HttpClient client = new HttpClient();
-            string jsonObject = JsonConvert.SerializeObject(_user);
-            StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
-
-            HttpResponseMessage response = await client.PostAsync("http://localhost:8080/user/create", content);
-
-            _user = JsonConvert.DeserializeObject<User>(await response.Content.ReadAsStringAsync());
+            _user = await _userService.CreateUser(_user);
 
             return User;
         }
@@ -79,12 +78,8 @@ namespace MahechaBJJ.ViewModel
             _account = new Account();
             _account.Username = userName;
             _account.Properties.Add("Id", id);
-#if __IOS__
-            AccountStore.Create().Save(_account, Constants.AppName);
-#endif
-#if __ANDROID__
-            AccountStore.Create(Forms.Context).Save(_account, Constants.AppName);
-#endif
+
+            _accountService.SaveCredentials(_account);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -43,6 +43,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\PlayList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Video.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\PlaylistCreatePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistCreatePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\UserService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\AccountService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PlaylistViewPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

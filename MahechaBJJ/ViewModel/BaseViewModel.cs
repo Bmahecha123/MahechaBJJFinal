@@ -19,6 +19,8 @@ namespace MahechaBJJ.ViewModel
     {
         //members
 		private VimeoAPIService _vimeoApiService;
+        private UserService _userService;
+        private AccountService _accountService;
 
 		private BaseInfo _baseInfo;
 		public BaseInfo VimeoInfo
@@ -33,17 +35,6 @@ namespace MahechaBJJ.ViewModel
 				OnPropertyChanged();
 			}
 		}
-
-        private bool _isBusy;
-        public bool IsBusy
-        {
-            get { return _isBusy; }
-            set
-            {
-                _isBusy = value;
-                OnPropertyChanged();
-            }
-        }
 
         private User _user;
         public User User
@@ -75,6 +66,8 @@ namespace MahechaBJJ.ViewModel
         public BaseViewModel()
         {
             _vimeoApiService = new VimeoAPIService();
+            _userService = new UserService();
+            _accountService = new AccountService();
         }
 
         //methods
@@ -85,38 +78,19 @@ namespace MahechaBJJ.ViewModel
 
         public Account GetAccountInformation()
         {
-#if __IOS__
-            _account = AccountStore.Create().FindAccountsForService(Constants.AppName).FirstOrDefault();
-#endif
-#if __ANDROID__
-            _account = AccountStore.Create(Forms.Context).FindAccountsForService(Constants.AppName).FirstOrDefault();
-#endif
+            _account = _accountService.GetAccountInformation();
+
             return Account;
         }
 
         public void DeleteCredentials()
         {
-#if __IOS__
-            _account = AccountStore.Create().FindAccountsForService(Constants.AppName).FirstOrDefault();
-            if (_account != null)
-            {
-                AccountStore.Create().Delete(_account, Constants.AppName);
-            }
-#endif
-#if __ANDROID__
-            _account = AccountStore.Create(Forms.Context).FindAccountsForService(Constants.AppName).FirstOrDefault();
-            if (_account != null)
-            {
-                AccountStore.Create(Forms.Context).Delete(_account, Constants.AppName);
-            }
-#endif
+            _accountService.DeleteCredentials();
         }
 
         public async Task<User> FindUserByIdAsync(string url, string id)
         {
-            HttpClient client = new HttpClient();
-            var userJson = await client.GetStringAsync(url + id);
-            _user = JsonConvert.DeserializeObject<User>(userJson);
+            _user = await _userService.FindUserByIdAsync(url, id);
 
             return User;
         }
@@ -126,25 +100,13 @@ namespace MahechaBJJ.ViewModel
 			_account = new Account();
 			_account.Username = userName;
 			_account.Properties.Add("Id", id);
-#if __IOS__
-			AccountStore.Create().Save(_account, Constants.AppName);
-#endif
-#if __ANDROID__
-            AccountStore.Create(Forms.Context).Save(_account, Constants.AppName);
-#endif
+
+            _accountService.SaveCredentials(_account);
 		}
 
         public async Task<User> FindUserByEmailAsync(string url, string email)
         {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("X-Email", email);
-            try{
-				var userJson = await client.GetStringAsync(url);
-				_user = JsonConvert.DeserializeObject<User>(userJson);
-			}
-            catch(HttpRequestException exception){
-                Console.WriteLine(exception.StackTrace); 
-            }
+            _user = await _userService.FindUserByEmailAsync(url, email);
             return User;
         }
 
