@@ -158,7 +158,50 @@ namespace MahechaBJJ.Views
         public void LoadPlaylist(object sender, SelectedItemChangedEventArgs e)
         {
             DisplayAlert("Test", "Selected", "cool!");
+            PlayList playlist = (PlayList)((ListView)sender).SelectedItem;
+            if (e.SelectedItem == null) 
+            {
+                return;
+            }
+            ((ListView)sender).SelectedItem = null;
+            Navigation.PushModalAsync(new PlaylistDetailPage(playlist));
         }
+
+		//Orientation
+		protected override void OnSizeAllocated(double width, double height)
+		{
+			base.OnSizeAllocated(width, height); //must be called
+
+			if (width > height)
+			{
+				Padding = new Thickness(10, 10, 10, 10);
+				innerGrid.RowDefinitions.Clear();
+				innerGrid.ColumnDefinitions.Clear();
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
+				innerGrid.Children.Clear();
+                innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
+                innerGrid.Children.Add(backBtn, 0, 2);
+                innerGrid.Children.Add(playlistView, 1, 0);
+                Grid.SetRowSpan(playlistView, 3);
+			}
+			else
+			{
+				Padding = new Thickness(10, 30, 10, 10);
+				innerGrid.RowDefinitions.Clear();
+				innerGrid.ColumnDefinitions.Clear();
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(7, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.Children.Clear();
+				innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
+				innerGrid.Children.Add(playlistView, 0, 1);
+				innerGrid.Children.Add(backBtn, 0, 2);
+			}
+		}
     }
 }
 

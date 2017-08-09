@@ -122,8 +122,9 @@ namespace MahechaBJJ.Views
             }
 
             void LoadVideo(object Sender, SelectedItemChangedEventArgs e) {
-                VideoData video = (MahechaBJJ.Model.VideoData)((ListView)Sender).SelectedItem;
-                if (e.SelectedItem == null){
+                VideoData video = (VideoData)((ListView)Sender).SelectedItem;
+                if (e.SelectedItem == null)
+                {
                     return;
                 }
                 ((ListView)Sender).SelectedItem = null;

@@ -287,6 +287,7 @@ namespace MahechaBJJ.Views
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                innerGrid.Children.Clear();
 				innerGrid.Children.Add(whatsNewLbl, 0, 0);
 				Grid.SetColumnSpan(whatsNewLbl, 2);
 				innerGrid.Children.Add(video1Frame, 0, 1);
