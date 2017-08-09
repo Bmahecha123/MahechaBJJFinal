@@ -195,6 +195,7 @@ namespace MahechaBJJ.Views
 
             //events
             addPlaylistBtn.Clicked += CreatePlaylist;
+            viewPlaylistBtn.Clicked += ViewPlaylists;
 
 			innerGrid.Children.Add(whatsNewLbl, 0, 0);
             Grid.SetColumnSpan(whatsNewLbl, 2);
@@ -240,6 +241,10 @@ namespace MahechaBJJ.Views
         private void CreatePlaylist(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new PlaylistCreatePage());
+        }
+        private void ViewPlaylists(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new PlaylistViewPage());
         }
 
 		//Orientation

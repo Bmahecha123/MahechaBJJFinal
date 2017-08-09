@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -62,6 +63,14 @@ namespace MahechaBJJ.Service
             StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
 
             await client.PutAsync(Constants.ADDPLAYLIST + id, content);
+        }
+
+        public async Task<ObservableCollection<PlayList>> GetPlaylists(string url)
+        {
+            var playListData = await client.GetStringAsync(url);
+            ObservableCollection<PlayList> playLists = JsonConvert.DeserializeObject<ObservableCollection<PlayList>>(playListData);
+
+            return playLists;
         }
 	}
 }
