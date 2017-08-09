@@ -187,6 +187,39 @@ namespace MahechaBJJ.Views
 			((ListView)Sender).SelectedItem = null;
 			Navigation.PushModalAsync(new VideoDetailPage(video));
 		}
+
+		//Orientation
+		protected override void OnSizeAllocated(double width, double height)
+		{
+			base.OnSizeAllocated(width, height); //must be called
+
+			if (width > height)
+			{
+				Padding = new Thickness(10, 10, 10, 10);
+				innerGrid.RowDefinitions.Clear();
+				innerGrid.ColumnDefinitions.Clear();
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
+				innerGrid.Children.Clear();
+                innerGrid.Children.Add(searchBar, 0, 0);
+                innerGrid.Children.Add(videoListView, 1, 0);
+                Grid.SetRowSpan(videoListView, 3);
+			}
+			else
+			{
+				Padding = new Thickness(10, 30, 10, 10);
+				innerGrid.RowDefinitions.Clear();
+				innerGrid.ColumnDefinitions.Clear();
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(10, GridUnitType.Star) });
+				innerGrid.Children.Clear();
+				innerGrid.Children.Add(searchBar, 0, 0);
+				innerGrid.Children.Add(videoListView, 0, 1);
+			}
+		}
      }
 }
 
