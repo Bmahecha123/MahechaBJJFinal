@@ -129,7 +129,7 @@ namespace MahechaBJJ.Views
                 playlistLbl.FontFamily = "AmericanTypewriter-Bold";
 #endif
 #if __ANDROID__
-                playListBtn.FontFamily = "Roboto Bold";
+                playListLbl.FontFamily = "Roboto Bold";
 #endif
 
 				playlistFrame = new Frame();

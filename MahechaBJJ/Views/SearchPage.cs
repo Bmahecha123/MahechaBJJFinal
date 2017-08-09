@@ -18,6 +18,13 @@ namespace MahechaBJJ.Views
         Image techniqueImage;
         Label title;
         StackLayout searchLayout;
+        private Grid innerGrid;
+        private Grid outerGrid;
+        private Grid videoGrid;
+        private Label videoLbl;
+        private Image videoImage;
+        private Frame videoFrame;
+
 
         //CONSTS
         private const string VIMEOVIDEOS = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952";
@@ -36,7 +43,25 @@ namespace MahechaBJJ.Views
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
 
-            searchBar = new SearchBar
+			//View Objects
+			innerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection
+				{
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(10, GridUnitType.Star)}
+				}
+			};
+			outerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection
+				{
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+				}
+			};
+
+
+			searchBar = new SearchBar
             {
                 Placeholder = "Enter technique to search for...",
             };
@@ -54,25 +79,47 @@ namespace MahechaBJJ.Views
                 SeparatorVisibility = SeparatorVisibility.None,
                 ItemTemplate = new DataTemplate(() => 
                 {
-					techniqueImage = new Image();
-					techniqueImage.SetBinding(Image.SourceProperty, "pictures.sizes[4].link");
+                    videoGrid = new Grid();
+                    videoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
+                    
+					videoImage = new Image();
+					videoImage.SetBinding(Image.SourceProperty, "pictures.sizes[3].link");
+                    videoImage.Aspect = Aspect.Fill;
 
-					title = new Label();
-                    title.FontAttributes = FontAttributes.Bold;
-                    title.HorizontalOptions = LayoutOptions.CenterAndExpand;
-					title.SetBinding(Label.TextProperty, "name");
+					videoLbl = new Label();
+					videoLbl.SetBinding(Label.TextProperty, "name");
+					videoLbl.VerticalTextAlignment = TextAlignment.Center;
+					videoLbl.HorizontalTextAlignment = TextAlignment.Center;
+                    videoLbl.TextColor = Color.White;
+					videoLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+#if __IOS__
+					videoLbl.FontFamily = "AmericanTypewriter-Bold";
+#endif
+#if __ANDROID__
+                    videoLbl.FontFamily = "Roboto Bold";
+#endif
 
-                    //return a ViewCell
-                    return new ViewCell
+                    videoFrame = new Frame();
+                    videoFrame.Content = videoImage;
+                    videoFrame.OutlineColor = Color.Black;
+                    videoFrame.BackgroundColor = Color.Black;
+                    videoFrame.HasShadow = false;
+                    videoFrame.Padding = 3;
+
+                    //building grid
+                    videoGrid.Children.Add(videoFrame, 0, 0);
+                    videoGrid.Children.Add(videoLbl, 0, 0);
+
+					//return a ViewCell
+					return new ViewCell
                     {
                         View = new StackLayout
                         {
                             Orientation = StackOrientation.Vertical,
                             Spacing = 0,
-                            Padding = new Thickness(0, 20, 0, 20),
+                            Padding = new Thickness(0, 5, 0, 5),
                             Children = {
-                                techniqueImage,
-                                title
+                                videoGrid
                             }
                         }
                     };
@@ -92,45 +139,54 @@ namespace MahechaBJJ.Views
 			searchBar.SearchButtonPressed += SearchVimeo;
             videoListView.ItemSelected += LoadVideo;
 
-            Content = searchLayout;
+            //Building grid
+            innerGrid.Children.Add(searchBar, 0, 0);
+            innerGrid.Children.Add(videoListView, 0, 1);
 
-            async void SearchVimeo(object Sender, EventArgs e)
-            {
-                searchLayout.Children.Remove(videoListView);
-                searchLayout.Children.Add(activityIndicator);
-                activityIndicator.IsRunning = true;
-                string url = VIMEOVIDEOS + VIDEOSPERPAGE + QUERY ;
-                await _searchPageViewModel.SearchVideo(url + searchBar.Text);
-                if (searchedVideos != null) {
-                    searchedVideos.Clear();
-                }
+            outerGrid.Children.Add(innerGrid, 0, 0);
 
-                for (int i = 0; i < _searchPageViewModel.Videos.data.Length; i++) {
-                   searchedVideos.Add(_searchPageViewModel.Videos.data[i]);
-                }
-
-                 while(_searchPageViewModel.Videos.paging.next != null) {
-                    await _searchPageViewModel.SearchVideo("https://api.vimeo.com" + _searchPageViewModel.Videos.paging.next);
-					for (int i = 0; i < _searchPageViewModel.Videos.data.Length; i++)
-					{
-						searchedVideos.Add(_searchPageViewModel.Videos.data[i]);
-					}
-                }
-                searchLayout.Children.Remove(activityIndicator);
-                searchLayout.Children.Add(videoListView);
-                activityIndicator.IsRunning = false;
-            }
-
-            void LoadVideo(object Sender, SelectedItemChangedEventArgs e) {
-                VideoData video = (VideoData)((ListView)Sender).SelectedItem;
-                if (e.SelectedItem == null)
-                {
-                    return;
-                }
-                ((ListView)Sender).SelectedItem = null;
-                Navigation.PushModalAsync(new VideoDetailPage(video));
-            }
+            Content = outerGrid;
          }
+		public async void SearchVimeo(object Sender, EventArgs e)
+		{
+			innerGrid.Children.Remove(videoListView);
+			innerGrid.Children.Add(activityIndicator, 0, 1);
+			activityIndicator.IsRunning = true;
+			string url = VIMEOVIDEOS + VIDEOSPERPAGE + QUERY;
+			await _searchPageViewModel.SearchVideo(url + searchBar.Text);
+			if (searchedVideos != null)
+			{
+				searchedVideos.Clear();
+			}
+
+			for (int i = 0; i < _searchPageViewModel.Videos.data.Length; i++)
+			{
+				searchedVideos.Add(_searchPageViewModel.Videos.data[i]);
+			}
+
+			while (_searchPageViewModel.Videos.paging.next != null)
+			{
+				await _searchPageViewModel.SearchVideo("https://api.vimeo.com" + _searchPageViewModel.Videos.paging.next);
+				for (int i = 0; i < _searchPageViewModel.Videos.data.Length; i++)
+				{
+					searchedVideos.Add(_searchPageViewModel.Videos.data[i]);
+				}
+			}
+			innerGrid.Children.Remove(activityIndicator);
+			innerGrid.Children.Add(videoListView, 0, 1);
+			activityIndicator.IsRunning = false;
+		}
+
+		public void LoadVideo(object Sender, SelectedItemChangedEventArgs e)
+		{
+			VideoData video = (VideoData)((ListView)Sender).SelectedItem;
+			if (e.SelectedItem == null)
+			{
+				return;
+			}
+			((ListView)Sender).SelectedItem = null;
+			Navigation.PushModalAsync(new VideoDetailPage(video));
+		}
      }
 }
 
