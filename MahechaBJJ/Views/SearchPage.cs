@@ -15,8 +15,6 @@ namespace MahechaBJJ.Views
         SearchBar searchBar;
         Button loadBtn;
         ListView videoListView;
-        Image techniqueImage;
-        Label title;
         StackLayout searchLayout;
         private Grid innerGrid;
         private Grid outerGrid;
@@ -149,9 +147,6 @@ namespace MahechaBJJ.Views
          }
 		public async void SearchVimeo(object Sender, EventArgs e)
 		{
-			innerGrid.Children.Remove(videoListView);
-			innerGrid.Children.Add(activityIndicator, 0, 1);
-			activityIndicator.IsRunning = true;
 			string url = VIMEOVIDEOS + VIDEOSPERPAGE + QUERY;
 			await _searchPageViewModel.SearchVideo(url + searchBar.Text);
 			if (searchedVideos != null)
@@ -172,9 +167,6 @@ namespace MahechaBJJ.Views
 					searchedVideos.Add(_searchPageViewModel.Videos.data[i]);
 				}
 			}
-			innerGrid.Children.Remove(activityIndicator);
-			innerGrid.Children.Add(videoListView, 0, 1);
-			activityIndicator.IsRunning = false;
 		}
 
 		public void LoadVideo(object Sender, SelectedItemChangedEventArgs e)
@@ -199,14 +191,14 @@ namespace MahechaBJJ.Views
 				innerGrid.RowDefinitions.Clear();
 				innerGrid.ColumnDefinitions.Clear();
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(10, GridUnitType.Star) });
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 				innerGrid.Children.Clear();
                 innerGrid.Children.Add(searchBar, 0, 0);
-                innerGrid.Children.Add(videoListView, 1, 0);
-                Grid.SetRowSpan(videoListView, 3);
+                Grid.SetColumnSpan(searchBar, 3);
+                innerGrid.Children.Add(videoListView, 1, 1);
 			}
 			else
 			{
