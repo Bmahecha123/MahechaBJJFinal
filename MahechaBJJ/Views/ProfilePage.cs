@@ -65,119 +65,125 @@ namespace MahechaBJJ.Views
 			{
 				Text = "Name:",
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size * 1.5,
-				HorizontalOptions = LayoutOptions.StartAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+				FontSize = size,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
 			};
 
 			nameTextLbl = new Label
 			{
 				Text = "Jon",
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = size,
-				HorizontalOptions = LayoutOptions.StartAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
 			};
 			emailLbl = new Label
 			{
 				Text = "E-Mail:",
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size * 1.5,
-				HorizontalOptions = LayoutOptions.StartAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand
+				FontSize = size,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
 			};
 			emailTextLbl = new Label
 			{
 				Text = "Doe",
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = size,
-				HorizontalOptions = LayoutOptions.StartAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
 			};
             beltLbl = new Label
             {
                 Text = "Belt:",
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-				FontSize = size * 1.5,
-				HorizontalOptions = LayoutOptions.StartAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand
-            };
-            beltTextLbl = new Label
-            {
-                Text = "White",
-#if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = size,
-				HorizontalOptions = LayoutOptions.StartAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
+            };
+            beltTextLbl = new Label
+            {
+                Text = "White",
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = size,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
             };
 			contactUsBtn = new Button
 			{
 				Text = "Contact Us",
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = size * 2,
 				BackgroundColor = Color.Orange,
-				TextColor = Color.Black
+				TextColor = Color.Black,
+				BorderWidth = 3,
+				BorderColor = Color.Black,
 			};
 			logOutBtn = new Button
 			{
 				Text = "Log Out",
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = size * 2,
 				BackgroundColor = Color.Orange,
-				TextColor = Color.Black
+				TextColor = Color.Black,
+				BorderWidth = 3,
+				BorderColor = Color.Black,
 			};
             settingsBtn = new Button
             {
                 Text = "Settings",
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                FontSize = size * 2,
+				FontSize = size * 2,
                 BackgroundColor = Color.Orange,
-                TextColor = Color.Black
+                TextColor = Color.Black,
+				BorderWidth = 3,
+				BorderColor = Color.Black,
             };
 			//Events
 			//TODO enable email sending when Contact button is sent

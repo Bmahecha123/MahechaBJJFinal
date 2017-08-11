@@ -219,7 +219,6 @@ namespace MahechaBJJ.Views
 
         public async void LoadMoreVideos(object sender, EventArgs e)
         {
-            await DisplayAlert("Test", _searchPageViewModel.Videos.paging.next, "cool!");
             await _searchPageViewModel.SearchVideo(VIMEOBASEURL + _searchPageViewModel.Videos.paging.next);
 
             for (int i = 0; i < _searchPageViewModel.Videos.data.Length; i++)

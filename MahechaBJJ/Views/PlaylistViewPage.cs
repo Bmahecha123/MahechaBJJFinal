@@ -20,7 +20,6 @@ namespace MahechaBJJ.Views
         private Grid outerGrid;
         private Label playlistLbl;
         private Frame playlistFrame;
-        private Grid playlistGrid;
         private Button backBtn;
 
         public PlaylistViewPage()

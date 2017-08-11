@@ -34,6 +34,7 @@ namespace MahechaBJJ.Model
 	{
 		public string uri { get; set; }
 		public string name { get; set; }
+        public string description { get; set; }
 		public string link { get; set; }
 		public int width { get; set; }
 		public int height { get; set; }
