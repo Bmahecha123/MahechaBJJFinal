@@ -29,7 +29,7 @@ namespace MahechaBJJ.Views
                 RowDefinitions = new RowDefinitionCollection 
                 {
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(7, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(10, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
             };
@@ -68,6 +68,7 @@ namespace MahechaBJJ.Views
 
                     videoImage = new Image();
                     videoImage.SetBinding(Image.SourceProperty, "Image");
+                    videoImage.Aspect = Aspect.Fill;
 
                     videoLbl = new Label();
 #if __IOS__
@@ -98,7 +99,7 @@ namespace MahechaBJJ.Views
                         {
                             Orientation = StackOrientation.Vertical,
                             Spacing = 0,
-                            Padding = new Thickness(0, 20, 0, 20),
+                            Padding = new Thickness(0, 5, 0, 5),
                             Children = {
                                 videoGrid
                             }
@@ -124,6 +125,7 @@ namespace MahechaBJJ.Views
 
             //Events
             backBtn.Clicked += GoBack;
+            videosListView.ItemSelected += LoadVideo;
 
             //Building Grid
             innerGrid.Children.Add(playlistNameLbl, 0, 0);
@@ -140,6 +142,19 @@ namespace MahechaBJJ.Views
         {
             Navigation.PopModalAsync();
         }
+
+        public void LoadVideo(object sender, SelectedItemChangedEventArgs e)
+        {
+            Video video = (Video)((ListView)sender).SelectedItem;
+            if (e.SelectedItem == null)
+            {
+                return;
+            }
+			VideoData videoData = new VideoData(video.Name, video.Description, video.Link, video.Image);
+			((ListView)sender).SelectedItem = null;
+			Navigation.PushModalAsync(new VideoDetailPage(videoData));
+
+		}
 
         //Orientation
         protected override void OnSizeAllocated(double width, double height)

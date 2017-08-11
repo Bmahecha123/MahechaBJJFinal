@@ -27,6 +27,20 @@ namespace MahechaBJJ.ViewModel
 			}
 		}
 
+        private bool _successful;
+        public bool Successful
+        {
+            get 
+            {
+                return _successful;
+            }
+            set
+            {
+                _successful = value;
+                OnPropertyChanged();
+            }
+        }
+
         public VideoDetailPageViewModel()
         {
 			_userService = new UserService();
@@ -37,6 +51,11 @@ namespace MahechaBJJ.ViewModel
 		{
 			_playlist = await _userService.GetPlaylists(url + id);
 		}
+
+        public async Task UpdateUserPlaylist(string url, string id, PlayList playlist)
+        {
+            _successful = await _userService.UpdateUserPlaylists(url + id, playlist);
+        }
 
 		public event PropertyChangedEventHandler PropertyChanged;
 

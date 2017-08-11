@@ -72,5 +72,16 @@ namespace MahechaBJJ.Service
 
             return playLists;
         }
+
+        public async Task<bool> UpdateUserPlaylists(string url, PlayList playlist)
+        {
+            string jsonObject = JsonConvert.SerializeObject(playlist);
+            StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(url, content);
+
+            return response.IsSuccessStatusCode;
+            //add a status code value to view model
+        }
 	}
 }

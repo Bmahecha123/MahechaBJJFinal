@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace MahechaBJJ.Model
 {
 	public class BaseInfo
@@ -43,6 +45,33 @@ namespace MahechaBJJ.Model
 		public Pictures pictures { get; set; }
 		public string resource_key { get; set; }
 		public File[] files { get; set; }
+
+        public VideoData() {
+            
+        }
+
+        public VideoData(string name, string description, string link, string image)
+        {
+            File file = new File();
+            file.link = link;
+            List<File> fileList = new List<File>();
+            fileList.Add(file);
+            Size size = new Size();
+            size.link = image;
+            List<Size> videoSizes = new List<Size>();
+            videoSizes.Add(size);
+            videoSizes.Add(size);
+			videoSizes.Add(size);
+			videoSizes.Add(size);
+			videoSizes.Add(size);
+			Pictures picture = new Pictures();
+            picture.sizes = videoSizes.ToArray();
+
+			this.name = name;
+			this.description = description;
+			files = fileList.ToArray();
+			pictures = picture;
+		}
 	}
 
 	public class Embed
@@ -104,6 +133,11 @@ namespace MahechaBJJ.Model
 		public string type { get; set; }
 		public Size[] sizes { get; set; }
 		public string resource_key { get; set; }
+
+        public Pictures()
+        {
+            
+        }
 	}
 
 	public class Size
@@ -112,5 +146,10 @@ namespace MahechaBJJ.Model
 		public int height { get; set; }
 		public string link { get; set; }
 		public string link_with_play_button { get; set; }
+
+        public Size() 
+        {
+            
+        }
 	}
 }

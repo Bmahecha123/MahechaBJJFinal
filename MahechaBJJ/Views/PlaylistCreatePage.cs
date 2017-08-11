@@ -193,6 +193,7 @@ namespace MahechaBJJ.Views
 				user = await _baseViewModel.FindUserByIdAsync(FINDUSER, account.Properties["Id"]);
 				_playlistCreatePageViewModel.CreatePlaylist(playlist, user.Id);
                 await DisplayAlert("Playlist Added", playlist.Name + " has been successfully added!", "Ok");
+                await Navigation.PopModalAsync();
             }
             else {
                 await DisplayAlert("Error", "Name cannot be empty, fill it in!", "Ok");

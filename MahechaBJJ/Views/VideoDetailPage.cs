@@ -1,7 +1,13 @@
 ﻿﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
 using MahechaBJJ.Model;
+using MahechaBJJ.Resources;
 using MahechaBJJ.Service;
 using MahechaBJJ.ViewModel;
+using Xamarin.Auth;
 /*#if __IOS__
 using Xamarin.Forms.Platform.iOS;
 using UIKit;
@@ -18,7 +24,10 @@ namespace MahechaBJJ.Views
     {
         private BaseViewModel _baseViewModel = new BaseViewModel();
         private VideoDetailPageViewModel _videoDetailPageViewModel = new VideoDetailPageViewModel();
-        private string videoUrl;
+		private ObservableCollection<PlayList> userPlaylists = new ObservableCollection<PlayList>();
+        private ObservableCollection<Video> videos;
+        private Account account;
+		private string videoUrl;
         private Button backBtn;
         private Label videoNameLbl;
         private Label videoDescription;
@@ -213,15 +222,66 @@ namespace MahechaBJJ.Views
             Navigation.PopModalAsync();
         }
 
-        //TODO add video to playlist functionality
         public async void AddVideoToPlaylist(object sender, EventArgs e)
         {
-            await DisplayAlert("test", "yo", "ok");
-            //create view model
             //get user info
-            //create action sheet with playlist names and option to create new one
-                //using same method in view playlist view model
-            //create backend endpoint to take playlist object and add it to user object
+            account = _baseViewModel.GetAccountInformation();
+            //Get playlist information
+            await _videoDetailPageViewModel.GetUserPlaylists(Constants.GETPLAYLIST, account.Properties["Id"]);
+            userPlaylists = _videoDetailPageViewModel.Playlist;
+
+            List<string> playlistNames = GetPlaylistNames(userPlaylists);
+            string answer = await DisplayActionSheet("Add to Playlist", "Cancel", null, playlistNames.ToArray());
+            if (answer == playlistNames[0])
+            {
+                await Navigation.PushModalAsync(new PlaylistCreatePage());
+            } else if (answer != "Cancel")
+            {
+                UpdatePlaylist(userPlaylists, answer);
+			}
+        }
+
+        public List<string> GetPlaylistNames(ObservableCollection<PlayList> playlists)
+        {
+            List<string> playlistNames = new List<string>();
+            playlistNames.Add("Create New Playlist");
+            foreach (PlayList playlist in playlists)
+            {
+                playlistNames.Add(playlist.Name);
+            }
+            return playlistNames;
+        }
+
+        public async void UpdatePlaylist(ObservableCollection<PlayList> playlists, string playlistName)
+        {
+			Video videoToBeAdded = new Video(videoTechnique.name, videoTechnique.pictures.sizes[3].link, videoTechnique.files[0].link, videoTechnique.description);
+			PlayList playlist = playlists.FirstOrDefault(x => x.Name == playlistName);
+
+            foreach (Video userVideo in playlist.Videos)
+            {
+                if (userVideo.Name.Contains(videoToBeAdded.Name))
+				{
+                    await DisplayAlert("Video Already in Playlist", videoToBeAdded.Name + " already part of " + playlist.Name, "Ok");
+                    return;
+				}
+            }
+
+			if (playlist.Videos == null)
+			{
+				videos = new ObservableCollection<Video>();
+			}
+			else
+			{
+				videos = playlist.Videos;
+			}
+			videos.Add(videoToBeAdded);
+			playlist.Videos = videos;
+
+			await _videoDetailPageViewModel.UpdateUserPlaylist(Constants.UPDATEPLAYLIST, account.Properties["Id"], playlist);
+			if (_videoDetailPageViewModel.Successful == true)
+			{
+				await DisplayAlert("Video Added", videoTechnique.name + " has been added to " + playlist.Name, "Ok");
+			}
         }
 
         //Orientation
