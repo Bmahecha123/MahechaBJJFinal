@@ -23,6 +23,7 @@ namespace MahechaBJJ.iOS
 
             //adding messsaging center
             MessagingCenter.Subscribe<VideoDetailPage, ShowVideoPlayerArguments>(this, "ShowVideoPlayer", HandleShowVideoPlayerMessage);
+            MessagingCenter.Subscribe<PlaylistVideoPage, ShowVideoPlayerArguments>(this, "ShowVideoPlayer", HandleShowVideoPlayerMessage);
 
             return base.FinishedLaunching(app, options);
         }

@@ -16,10 +16,18 @@ namespace MahechaBJJ.Service
         }
 
         public async Task<BaseInfo> GetVimeoInfo(string url) {
-            
-            var videoJson = await client.GetStringAsync(url);
-            var vimeoJson = JsonConvert.DeserializeObject<BaseInfo>(videoJson);
-            return vimeoJson;
+
+            try 
+            {
+				var videoJson = await client.GetStringAsync(url);
+				var vimeoJson = JsonConvert.DeserializeObject<BaseInfo>(videoJson);
+				return vimeoJson;
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
         }
 
     }

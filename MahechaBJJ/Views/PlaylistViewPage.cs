@@ -14,17 +14,19 @@ namespace MahechaBJJ.Views
         private PlaylistViewPageViewModel _playlistViewPageViewModel = new PlaylistViewPageViewModel();
         private BaseViewModel _baseViewModel = new BaseViewModel();
         private Label viewPlaylistLbl;
-        private ObservableCollection<PlayList> userPlaylists = new ObservableCollection<PlayList>();
         private ListView playlistView;
         private Grid innerGrid;
         private Grid outerGrid;
         private Label playlistLbl;
         private Frame playlistFrame;
         private Button backBtn;
+        private StackLayout layout;
+        private Account account;
+        private string id;
 
         public PlaylistViewPage()
         {
-            Title = "User playlists";
+            Title = "User Playlists";
             Padding = new Thickness(10, 30, 10, 10);
             FindPlaylists();
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
@@ -105,25 +107,23 @@ namespace MahechaBJJ.Views
         }
         public async void FindPlaylists()
         {
-            Account account = _baseViewModel.GetAccountInformation();
-            string id = account.Properties["Id"];
-            UserService testService = new UserService();
+            account = _baseViewModel.GetAccountInformation();
+            id = account.Properties["Id"];
             await _playlistViewPageViewModel.GetUserPlaylists(Constants.GETPLAYLIST, id);
-            userPlaylists = _playlistViewPageViewModel.Playlist;
-            //userPlaylists = await testService.GetPlaylists(Constants.GETPLAYLIST + id);
-            SetViewContents(userPlaylists);
+            SetViewContents();
         }
-        public void SetViewContents(ObservableCollection<PlayList> playlists)
+        public void SetViewContents()
         {
-            playlistView.ItemsSource = userPlaylists;
+            playlistView.ItemsSource = _playlistViewPageViewModel.Playlist;
             playlistView.ItemTemplate = new DataTemplate(() =>
             {
-                playlistLbl = new Label();
+				playlistLbl = new Label();
                 playlistLbl.SetBinding(Label.TextProperty, "Name");
                 playlistLbl.VerticalTextAlignment = TextAlignment.Center;
                 playlistLbl.HorizontalTextAlignment = TextAlignment.Center;
                 playlistLbl.TextColor = Color.Black;
                 playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 2;
+                playlistLbl.LineBreakMode = LineBreakMode.WordWrap;
 #if __IOS__
                 playlistLbl.FontFamily = "AmericanTypewriter-Bold";
 #endif
@@ -132,31 +132,32 @@ namespace MahechaBJJ.Views
 #endif
 
 				playlistFrame = new Frame();
-                playlistFrame.BackgroundColor = Color.SkyBlue;
+                playlistFrame.BackgroundColor = Color.SeaGreen;
 				playlistFrame.HasShadow = false;
 				playlistFrame.OutlineColor = Color.Black;
 				//playlistFrame.Padding = 3;
                 playlistFrame.Content = playlistLbl;
                 playlistFrame.Padding = new Thickness(10, 10, 10, 10);
 
-                return new ViewCell
+                layout = new StackLayout
                 {
-                    View = new StackLayout
-                    {
-                        Orientation = StackOrientation.Vertical,
-                        Spacing = 0,
-                        Padding = new Thickness(0, 5, 0, 5),
-                        Children = {
+                    Orientation = StackOrientation.Vertical,
+                    Spacing = 0,
+                    Padding = new Thickness(0, 5, 0, 5),
+                    Children = {
                             playlistFrame
                         }
-                    }
                 };
+
+                ViewCell viewCell = new ViewCell();
+                viewCell.View = layout;
+
+                return viewCell;
             });
         }
 
         public void LoadPlaylist(object sender, SelectedItemChangedEventArgs e)
         {
-            DisplayAlert("Test", "Selected", "cool!");
             PlayList playlist = (PlayList)((ListView)sender).SelectedItem;
             if (e.SelectedItem == null) 
             {
@@ -165,6 +166,15 @@ namespace MahechaBJJ.Views
             ((ListView)sender).SelectedItem = null;
             Navigation.PushModalAsync(new PlaylistDetailPage(playlist));
         }
+
+		//page reloading
+		protected override async void OnAppearing()
+		{
+			base.OnAppearing();
+			await _playlistViewPageViewModel.GetUserPlaylists(Constants.GETPLAYLIST, id);
+			SetViewContents();
+
+		}
 
 		//Orientation
 		protected override void OnSizeAllocated(double width, double height)
@@ -196,9 +206,9 @@ namespace MahechaBJJ.Views
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(7, GridUnitType.Star) });
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.Children.Clear();
-				innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
-				innerGrid.Children.Add(playlistView, 0, 1);
-				innerGrid.Children.Add(backBtn, 0, 2);
+                innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
+                innerGrid.Children.Add(playlistView, 0, 1);
+                innerGrid.Children.Add(backBtn, 0, 2);
 			}
 		}
     }

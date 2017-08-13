@@ -212,7 +212,7 @@ namespace MahechaBJJ.Views
         public async void PlayAndroidVideo(object sender, EventArgs e)
         {
             playBtn.IsEnabled = false;
-            await Navigation.PushModalAsync(new AndroidVideoPage(videoTechnique));
+            await Navigation.PushModalAsync(new AndroidVideoPage(videoTechnique.files[1].link));
             playBtn.IsEnabled = true;
         }
 

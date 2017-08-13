@@ -112,7 +112,8 @@ namespace MahechaBJJ.Views
 #endif
 				FontSize = size,
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+                LineBreakMode = LineBreakMode.TailTruncation
 			};
             beltLbl = new Label
             {

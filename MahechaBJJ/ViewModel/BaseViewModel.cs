@@ -63,6 +63,20 @@ namespace MahechaBJJ.ViewModel
             }
         }
 
+        private bool _successful;
+        public bool Successful
+        {
+            get 
+            {
+                return _successful;
+            }
+            set
+            {
+                _successful = value;
+                OnPropertyChanged();
+            }
+        }
+
         public BaseViewModel()
         {
             _vimeoApiService = new VimeoAPIService();
@@ -74,6 +88,13 @@ namespace MahechaBJJ.ViewModel
 		public async Task GetVimeo(string url)
 		{
 			_baseInfo = await _vimeoApiService.GetVimeoInfo(url);
+
+            if (_baseInfo != null)
+            {
+                _successful = true;
+            } else {
+                _successful = false;
+            }
 		}
 
         public Account GetAccountInformation()
@@ -92,6 +113,15 @@ namespace MahechaBJJ.ViewModel
         {
             _user = await _userService.FindUserByIdAsync(url, id);
 
+			if (_user != null)
+			{
+				_successful = true;
+			}
+			else
+			{
+				_successful = false;
+			}
+
             return User;
         }
 
@@ -107,6 +137,16 @@ namespace MahechaBJJ.ViewModel
         public async Task<User> FindUserByEmailAsync(string url, string email)
         {
             _user = await _userService.FindUserByEmailAsync(url, email);
+
+			if (_user != null)
+			{
+				_successful = true;
+			}
+			else
+			{
+				_successful = false;
+			}
+
             return User;
         }
 

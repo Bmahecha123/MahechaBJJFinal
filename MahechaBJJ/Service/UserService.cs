@@ -22,55 +22,101 @@ namespace MahechaBJJ.Service
 
 		public async Task<User> FindUserByIdAsync(string url, string id)
 		{
-			var userJson = await client.GetStringAsync(url + id);
-			var user = JsonConvert.DeserializeObject<User>(userJson);
-
-            return user;
+            try 
+            {
+				var userJson = await client.GetStringAsync(url + id);
+				var user = JsonConvert.DeserializeObject<User>(userJson);
+				return user;
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+			
 		}
 
 		public async Task<User> FindUserByEmailAsync(string url, string email)
 		{
-            User user = null;
-			client.DefaultRequestHeaders.Add("X-Email", email);
 			try
 			{
+				client.DefaultRequestHeaders.Add("X-Email", email);
 				var userJson = await client.GetStringAsync(url);
-				user = JsonConvert.DeserializeObject<User>(userJson);
+				var user = JsonConvert.DeserializeObject<User>(userJson);
+                return user;
 			}
 			catch (HttpRequestException exception)
 			{
 				Console.WriteLine(exception.StackTrace);
+				return null;
 			}
-			return user;
 		}
 
 		public async Task<User> CreateUser(User user)
 		{
-			
- 			string jsonObject = JsonConvert.SerializeObject(user);
-			StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
-
-			HttpResponseMessage response = await client.PostAsync(Constants.CREATEUSER, content);
-
-			user = JsonConvert.DeserializeObject<User>(await response.Content.ReadAsStringAsync());
-
-			return user;
+			try 
+            {
+				string jsonObject = JsonConvert.SerializeObject(user);
+				StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+				HttpResponseMessage response = await client.PostAsync(Constants.CREATEUSER, content);
+				user = JsonConvert.DeserializeObject<User>(await response.Content.ReadAsStringAsync());
+				return user;
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
 		}
 
-        public async void AddPlaylist(PlayList playlist, string id)
+        public async Task<bool> AddPlaylist(PlayList playlist, string id)
         {
-            string jsonObject = JsonConvert.SerializeObject(playlist);
-            StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
-
-            await client.PutAsync(Constants.ADDPLAYLIST + id, content);
+            try 
+            {
+				string jsonObject = JsonConvert.SerializeObject(playlist);
+				StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+				var response = await client.PutAsync(Constants.ADDPLAYLIST + id, content);
+                return response.IsSuccessStatusCode;
+            }
+            catch ( HttpRequestException ex)
+            {
+				Console.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         public async Task<ObservableCollection<PlayList>> GetPlaylists(string url)
         {
-            var playListData = await client.GetStringAsync(url);
-            ObservableCollection<PlayList> playLists = JsonConvert.DeserializeObject<ObservableCollection<PlayList>>(playListData);
+            try 
+            {
+				var playListData = await client.GetStringAsync(url);
+				ObservableCollection<PlayList> playLists = JsonConvert.DeserializeObject<ObservableCollection<PlayList>>(playListData);
+				return playLists;
+            }
+            catch (HttpRequestException ex)
+            {
+				Console.WriteLine(ex.Message);
+				return null;
+            }
 
-            return playLists;
+        }
+
+        public async Task<PlayList> GetPlaylist(string url, string playlistName)
+        {
+            client.DefaultRequestHeaders.Add("X-playlistName", playlistName);
+
+            try
+            {
+				var playListData = await client.GetStringAsync(url);
+				PlayList playlist = JsonConvert.DeserializeObject<PlayList>(playListData);
+				return playlist;
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+
         }
 
         public async Task<bool> UpdateUserPlaylists(string url, PlayList playlist)
@@ -78,10 +124,36 @@ namespace MahechaBJJ.Service
             string jsonObject = JsonConvert.SerializeObject(playlist);
             StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
 
-            var response = await client.PostAsync(url, content);
+            try
+            {
+				var response = await client.PostAsync(url, content);
+				return response.IsSuccessStatusCode;
+			}
+            catch (HttpRequestException ex)
+            {
+				Console.WriteLine(ex.Message);
+				return false;
+            }
 
-            return response.IsSuccessStatusCode;
-            //add a status code value to view model
         }
+
+        public async Task<bool> DeleteVideoFromPlaylist(string url, PlayList playlist, string videoName)
+        {
+            string jsonObject = JsonConvert.SerializeObject(playlist);
+            StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+
+            client.DefaultRequestHeaders.Add("X-videoName", videoName);
+
+            try 
+            {
+				var response = await client.PostAsync(url, content);
+				return response.IsSuccessStatusCode;
+            } 
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+		}
 	}
 }

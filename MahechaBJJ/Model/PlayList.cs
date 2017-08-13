@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace MahechaBJJ.Model
 {
@@ -14,5 +15,6 @@ namespace MahechaBJJ.Model
 
 		[JsonProperty("videos")]
 		public ObservableCollection<Video> Videos { get; set; }
+
     }
 }

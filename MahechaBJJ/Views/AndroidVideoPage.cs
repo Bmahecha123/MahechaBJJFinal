@@ -18,14 +18,15 @@ namespace MahechaBJJ.Views
         int currentPosition;
 
 #endif
-		public AndroidVideoPage(VideoData video)
+        //added string link instead of passing whole video
+		public AndroidVideoPage(string url)
         {
 			BackgroundColor = Color.Black;
 #if __ANDROID__
             SizeChanged += OnSizeChanged;
 			videoView = new VideoView(Forms.Context);
 			mediaController = new MediaController(Forms.Context, false);
-			uriHd = Android.Net.Uri.Parse(video.files[1].link);
+			uriHd = Android.Net.Uri.Parse(url);
 
 			mediaController.SetMediaPlayer(videoView);
 			mediaController.SetAnchorView(videoView);
