@@ -1,4 +1,4 @@
-﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
@@ -11,8 +11,6 @@ namespace MahechaBJJ.Views
 {
     public class ProfilePage : ContentPage
     {
-		private const string FINDUSER = "http://localhost:8080/user/findById/";
-		//declare objects
 		BaseViewModel _baseViewModel = new BaseViewModel();
         Grid outerGrid;
         Grid innerGrid;
@@ -233,7 +231,7 @@ namespace MahechaBJJ.Views
         }
 
         public async void SetContent(){
-			user = await _baseViewModel.FindUserByIdAsync(FINDUSER, account.Properties["Id"]);
+            user = await _baseViewModel.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]);
             nameTextLbl.Text = user.Name;
             emailTextLbl.Text = user.Email;
             beltTextLbl.Text = user.Belt;
@@ -335,7 +333,6 @@ namespace MahechaBJJ.Views
 				Grid.SetColumnSpan(settingsBtn, 3);
 				innerGrid.Children.Add(logOutBtn, 0, 5);
 				Grid.SetColumnSpan(logOutBtn, 3);
-
 			}
 		}
     }
