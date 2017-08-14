@@ -162,6 +162,26 @@
     <AndroidResource Include="Resources\drawable-hdpi\mahechabjj.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\mahechabjj.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\mahechabjj.png" />
+    <AndroidResource Include="Resources\drawable\001-interface.png" />
+    <AndroidResource Include="Resources\drawable\002-open-book.png" />
+    <AndroidResource Include="Resources\drawable\003-settings.png" />
+    <AndroidResource Include="Resources\drawable\004-search.png" />
+    <AndroidResource Include="Resources\drawable\005-construction.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\001-interface.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\002-open-book.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\003-settings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\004-search.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\005-construction.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\001-interface.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\002-open-book.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\003-settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\004-search.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\005-construction.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\001-interface.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\002-open-book.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\003-settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\004-search.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\005-construction.png" />
   </ItemGroup>
   <Import Project="..\MahechaBJJ\MahechaBJJ.projitems" Label="Shared" Condition="Exists('..\MahechaBJJ\MahechaBJJ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

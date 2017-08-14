@@ -7,17 +7,32 @@ namespace MahechaBJJ.Views
     public class BrowsePage : ContentPage
     {
         //declare objects
-        Grid grid;
+        Grid outerGrid;
+        Grid innerGrid;
+        private Frame bottomFrame;
+        private Label bottomLbl;
+        private Image buttomImage;
+        private Frame topFrame;
+        private Label topLbl;
+        private Image topImage;
+        private Frame standUpFrame;
+        private Label standUpLbl;
+        private Image standUpImage;
         Button bottomBtn;
         Button topBtn;
         Button standUpBtn;
 
+
         public BrowsePage()
         {
 			Title = "Browse";
+            Icon = "002-open-book.png";
             Padding = new Thickness(10,30,10,10);
 
-            grid = new Grid
+			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+
+            innerGrid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
@@ -27,43 +42,51 @@ namespace MahechaBJJ.Views
                 }
             };
 
-            //view objects
-            bottomBtn = new Button
+            outerGrid = new Grid
             {
-                Text = "Bottom Techniques",
-                BackgroundColor = Color.Orange
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
             };
-            topBtn = new Button
-            {
-				Text = "Top Techniques",
-				BackgroundColor = Color.Orange
 
+            topLbl = new Label
+            {
+				Text = "Top",
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = lblSize * 2,
+                TextColor = Color.White,
+                VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
+            };
+            topImage = new Image
+            {
+                Aspect = Aspect.AspectFill,
+                Source = ImageSource.FromFile("kevin.JPG")
 			};
-            standUpBtn = new Button
-            {
-				Text = "Stand Up Techniques",
-				BackgroundColor = Color.Orange
-
+			topFrame = new Frame
+			{
+                Content = topImage,
+				OutlineColor = Color.Black,
+				BackgroundColor = Color.Black,
+				HasShadow = false,
+				Padding = 3
 			};
 
             //Events
-            //TODO Add search query with Vimeo API
-            bottomBtn.Clicked += (sender, e) => {
-                bottomBtn.Text = "Clicked!";
-            };
-            topBtn.Clicked += (sender, e) => {
-                topBtn.Text = "Clicked!";
-            };
-            standUpBtn.Clicked += (sender, e) => {
-                standUpBtn.Text = "Clicked!";
-            };
 
             //adding children
-            grid.Children.Add(bottomBtn, 0, 0);
-            grid.Children.Add(topBtn, 0, 1);
-            grid.Children.Add(standUpBtn, 0, 2);
+            innerGrid.Children.Add(topFrame, 0, 0);
+            innerGrid.Children.Add(topLbl, 0, 0);
 
-            Content = grid;
+            outerGrid.Children.Add(innerGrid, 0, 0);
+
+            Content = innerGrid;
         }
     }
 }

@@ -151,12 +151,19 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\spider.mp4" />
-    <BundleResource Include="Resources\second.png" />
     <BundleResource Include="Resources\mahechabjj.png" />
-    <BundleResource Include="Resources\Icon.png" />
-    <BundleResource Include="Resources\Icon%402x.png" />
-    <BundleResource Include="Resources\home.png" />
-    <BundleResource Include="Resources\test.png" />
+    <BundleResource Include="Resources\001-interface.png" />
+    <BundleResource Include="Resources\002-open-book.png" />
+    <BundleResource Include="Resources\003-settings.png" />
+    <BundleResource Include="Resources\004-search.png" />
+    <BundleResource Include="Resources\005-construction.png" />
+    <BundleResource Include="Resources\001-interface%402x.png" />
+    <BundleResource Include="Resources\002-open-book%402x.png" />
+    <BundleResource Include="Resources\003-settings%402x.png" />
+    <BundleResource Include="Resources\004-search%402x.png" />
+    <BundleResource Include="Resources\005-construction%402x.png" />
+    <BundleResource Include="Resources\kevin.JPG" />
+    <BundleResource Include="Resources\kevin%402x.JPG" />
   </ItemGroup>
   <Import Project="..\MahechaBJJ\MahechaBJJ.projitems" Label="Shared" Condition="Exists('..\MahechaBJJ\MahechaBJJ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

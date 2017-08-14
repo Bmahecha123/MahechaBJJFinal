@@ -30,6 +30,7 @@ namespace MahechaBJJ.Views
         {
             LoadUser();
             Title = "Profile";
+            Icon = "003-settings.png";
             Padding = new Thickness(10, 30, 10, 10);
 
 			outerGrid = new Grid

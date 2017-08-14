@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using MahechaBJJ.Model;
@@ -34,6 +34,7 @@ namespace MahechaBJJ.Views
         public SearchPage()
         {
 			Title = "Search";
+            Icon = "004-search.png";
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			Padding = new Thickness(10,30,10,10);
             //View Objects

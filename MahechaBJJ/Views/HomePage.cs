@@ -37,7 +37,8 @@ namespace MahechaBJJ.Views
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
             //View objects
             Title = "Home";
-            //Icon = "test.png";
+            Icon = "005-construction.png";
+            //Icon = "brian.png";
 			LoadVimeo();
 
             Padding = new Thickness(10, 10, 10, 10);
