@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
@@ -54,40 +54,46 @@ namespace MahechaBJJ.Views
             {
                 Text = "Login",
 #if __IOS__
-                FontFamily = "DamascusBold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                FontSize = size * 2,
+				FontSize = size * 2,
                 BackgroundColor = Color.Orange,
-                TextColor = Color.Black
+                TextColor = Color.Black,
+                BorderWidth = 3,
+				BorderColor = Color.Black
             };
             signUpBtn = new Button
             {
                 Text = "Sign Up",
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
-				FontFamily = "Roboto Bold",
+                FontFamily = "Roboto Bold",
 #endif
 				FontSize = size * 2,
                 BackgroundColor = Color.Orange,
-				TextColor = Color.Black
+				TextColor = Color.Black,
+				BorderWidth = 3,
+				BorderColor = Color.Black
             };
             aboutBtn = new Button
             {
                 Text = "Learn More",
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = size * 2,
 				BackgroundColor = Color.Orange,
-				TextColor = Color.Black
+				TextColor = Color.Black,
+				BorderWidth = 3,
+				BorderColor = Color.Black
 			};
             //Button events
             loginBtn.Clicked += (object sender, EventArgs e) =>

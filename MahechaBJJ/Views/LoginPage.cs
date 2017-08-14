@@ -28,7 +28,9 @@ namespace MahechaBJJ.Views
         public LoginPage()
         {
             Padding = new Thickness(10, 30, 10, 10);
-            var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+            var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+            var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+            var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));
             //Grid view definition
             outerGrid = new Grid
             {
@@ -60,56 +62,61 @@ namespace MahechaBJJ.Views
             emailLbl = new Label
             {
                 Text = "E-Mail Address",
-                FontSize = size * 2,
+                FontSize = lblSize * 2,
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold"
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
-				FontFamily = "Roboto Bold",
+                FontFamily = "Roboto Bold",
 #endif
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
+
 			};
             emailEntry = new Entry
             {
                 Placeholder = "SpiderGuard123@gmail.com",
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
-				FontFamily = "Roboto Bold",
+                FontFamily = "Roboto Bold",
 #endif
-				FontSize = size
+				FontSize = entrySize,
             };
             passwordLbl = new Label
             {
                 Text = "Password",
-				FontSize = size * 2,
+                FontSize = lblSize * 2,
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold"
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
-				FontFamily = "Roboto Bold",
+                FontFamily = "Roboto Bold",
 #endif
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
 			};
             passwordEntry = new Entry
             {
                 IsPassword = true,
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
-				FontFamily = "Roboto Bold",
+                FontFamily = "Roboto Bold",
 #endif
-				FontSize = size
+				FontSize = entrySize
             };
             loginBtn = new Button
             {
                 Text = "Login",
-                FontSize = size * 2,
+                FontSize = btnSize * 2,
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
-				FontFamily = "Roboto Bold",
+                FontFamily = "Roboto Bold",
 #endif
 				BackgroundColor = Color.Orange,
                 TextColor = Color.Black
@@ -117,9 +124,9 @@ namespace MahechaBJJ.Views
             backBtn = new Button
             {
 				Text = "Back",
-				FontSize = size * 2,
+                FontSize = btnSize * 2,
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",

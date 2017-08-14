@@ -237,12 +237,6 @@ namespace MahechaBJJ.Views
             beltTextLbl.Text = user.Belt;
 		}
 
-        public async void SelectImage(object sender, EventArgs e)
-        {
-           var test = await DisplayActionSheet("Select Profile Image", "Cancel", "Destruction", "Brian", "Kevin", "Christine");
-            await DisplayAlert("Result of ActionSheet", test, "cool");
-        }
-
 		//Orientation
 		protected override void OnSizeAllocated(double width, double height)
 		{

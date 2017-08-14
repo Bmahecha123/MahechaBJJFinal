@@ -156,3 +156,9 @@ C:/Users/bmahe/Desktop/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.exe
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.csprojResolveAssemblyReference.cache
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/second.png
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/home.png
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/mahechabjj.png
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/Icon.png
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/Icon@2x.png
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/test.png

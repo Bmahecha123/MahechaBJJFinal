@@ -49,8 +49,9 @@ namespace MahechaBJJ.Views
         {
             Padding = new Thickness(10, 30, 10, 10);
             user = new User();
-            var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
-			//Grid view definition
+            var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+			var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));			//Grid view definition
 			outerGrid = new Grid
 			{
 				RowDefinitions = new RowDefinitionCollection 
@@ -93,12 +94,14 @@ namespace MahechaBJJ.Views
             {
                 Text = "Belt",
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                FontSize = size
+				FontSize = lblSize,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
 			};
             beltList = new ObservableCollection<string>();
             beltList.Add("White");
@@ -115,102 +118,112 @@ namespace MahechaBJJ.Views
             {
 
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "Name",
-                FontSize = size
+				Text = "Name",
+                FontSize = lblSize,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
 			};
             nameEntry = new Entry
             {
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Placeholder = "Brian Mahecha",
-                FontSize = size
+				Placeholder = "Brian Mahecha",
+                FontSize = entrySize
             };
             emailAddressLbl = new Label
             {
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "E-Mail Address",
-                FontSize = size
+				Text = "E-Mail Address",
+                FontSize = lblSize,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
 
             };
             emailAddressEntry = new Entry
             {
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Placeholder = "admin@Mahechabjj.com",
-                FontSize = size
+				Placeholder = "admin@Mahechabjj.com",
+                FontSize = entrySize
             };
             passWordLbl = new Label
             {
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "Password",
-                FontSize = size
+				Text = "Password",
+                FontSize = lblSize,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
             };
             passWordEntry = new Entry
             {
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                IsPassword = true,
-                FontSize = size
+				IsPassword = true,
+                FontSize = entrySize
             };
             passWordRepeatLbl = new Label
             {
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "Re-Enter Password",
-                FontSize = size
+				Text = "Re-Enter Password",
+                FontSize = lblSize,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
             };
             passWordRepeatEntry = new Entry
             {
 #if __IOS__
-                FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                IsPassword = true,
-                FontSize = size
+				IsPassword = true,
+                FontSize = entrySize
             };
             secretQuestionLbl = new Label
             {
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                FontSize = size,
-                Text = "Secret Questions"
+				FontSize = lblSize,
+                Text = "Secret Questions",
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
 			};
             secretQuestionList1 = new ObservableCollection<String>();
             secretQuestionList1.Add("What city were you born in?");
@@ -224,12 +237,12 @@ namespace MahechaBJJ.Views
             secretQuestionEntry1 = new Entry
             {
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                FontSize = size,
+				FontSize = entrySize,
                 Placeholder = "Answer for your own security!"
 			};
             secretQuestionList2 = new ObservableCollection<string>();
@@ -244,52 +257,58 @@ namespace MahechaBJJ.Views
             secretQuestionEntry2 = new Entry
             {
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                FontSize = size,
+				FontSize = entrySize,
                 Placeholder = "Answer again for even more security!"
 			};
             signUpBtn = new Button
             {
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "Sign Up!",
-                FontSize = size,
+				Text = "Sign Up!",
+                FontSize = btnSize,
 				BackgroundColor = Color.Orange,
-				TextColor = Color.Black
+				TextColor = Color.Black,
+				BorderWidth = 3,
+				BorderColor = Color.Black
 			};
             backBtn = new Button
             {
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "Back",
-                FontSize = size,
+				Text = "Back",
+                FontSize = btnSize,
 				BackgroundColor = Color.Orange,
-				TextColor = Color.Black
+				TextColor = Color.Black,
+				BorderWidth = 3,
+				BorderColor = Color.Black
 			};
             clearBtn = new Button
             {
 #if __IOS__
-				FontFamily = "ChalkboardSE-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "Clear",
-                FontSize = size,
+				Text = "Clear",
+                FontSize = btnSize,
 				BackgroundColor = Color.Orange,
-				TextColor = Color.Black
+				TextColor = Color.Black,
+				BorderWidth = 3,
+				BorderColor = Color.Black
 			};
 
             //Events

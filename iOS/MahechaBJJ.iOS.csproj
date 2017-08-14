@@ -151,9 +151,12 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\spider.mp4" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mahechabjj.png" />
+    <BundleResource Include="Resources\second.png" />
+    <BundleResource Include="Resources\mahechabjj.png" />
+    <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\test.png" />
   </ItemGroup>
   <Import Project="..\MahechaBJJ\MahechaBJJ.projitems" Label="Shared" Condition="Exists('..\MahechaBJJ\MahechaBJJ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
