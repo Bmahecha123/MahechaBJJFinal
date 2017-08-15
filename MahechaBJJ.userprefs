@@ -1,13 +1,23 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A1F474E0-DFAD-4433-B68F-697A133AB7F2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/LoginPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/VideoDetailPage.cs">
     <Files>
-      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="42" Column="12" />
+      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="17" Column="1" />
       <File FileName="MahechaBJJ/ViewModel/HomePageViewModel.cs" Line="54" Column="36" />
-      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="237" Column="14" />
+      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="27" Column="17" />
       <File FileName="MahechaBJJ/ViewModel/BaseViewModel.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="84" Column="14" />
+      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="25" Column="9" />
       <File FileName="MahechaBJJ/Views/LoginPage.cs" Line="133" Column="7" />
+      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="191" Column="51" />
+      <File FileName="MahechaBJJ/Views/AndroidVideoPage.cs" Line="26" Column="31" />
+      <File FileName="MahechaBJJ/Views/BrowsePage.cs" Line="23" Column="17" />
+      <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="14" Column="42" />
+      <File FileName="MahechaBJJ/Views/PlaylistCreatePage.cs" Line="27" Column="17" />
+      <File FileName="MahechaBJJ/Views/PlaylistDetailPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/PlaylistVideoPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/PlaylistViewPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/SignUpPage.cs" Line="325" Column="14" />
+      <File FileName="MahechaBJJ/Views/VideoDetailPage.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

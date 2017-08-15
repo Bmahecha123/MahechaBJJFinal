@@ -7,8 +7,8 @@ namespace MahechaBJJ.Views
     public class BrowsePage : ContentPage
     {
         //declare objects
-        Grid outerGrid;
-        Grid innerGrid;
+        private Grid outerGrid;
+        private Grid innerGrid;
         private Frame bottomFrame;
         private Label bottomLbl;
         private Image buttomImage;
@@ -18,9 +18,9 @@ namespace MahechaBJJ.Views
         private Frame standUpFrame;
         private Label standUpLbl;
         private Image standUpImage;
-        Button bottomBtn;
-        Button topBtn;
-        Button standUpBtn;
+        private Button bottomBtn;
+        private Button topBtn;
+        private Button standUpBtn;
 
 
         public BrowsePage()

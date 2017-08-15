@@ -10,26 +10,25 @@ namespace MahechaBJJ.Views
 {
     public class HomePage : ContentPage
     {
-        BaseViewModel _baseViewModel = new BaseViewModel();
-        HomePageViewModel _homePageViewModel = new HomePageViewModel();
+        private BaseViewModel _baseViewModel = new BaseViewModel();
+        private HomePageViewModel _homePageViewModel = new HomePageViewModel();
         private const String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
-        BaseInfo VimeoInfo;
-        ActivityIndicator activityIndicator;
-        Grid outerGrid;
-        Grid innerGrid;
-        BoxView whatsNewBoxView;
-        Frame video1Frame;
-        Frame video2Frame;
-        Image video1Image;
-        Image video2Image;
-        Label video1Lbl;
-        Label video2Lbl;
-        TapGestureRecognizer video1Tap;
-        TapGestureRecognizer video2Tap;
-        Label whatsNewLbl;
-        Label playListLbl;
-        Button addPlaylistBtn;
-        Button viewPlaylistBtn;
+        private BaseInfo VimeoInfo;
+        private Grid outerGrid;
+        private Grid innerGrid;
+        private BoxView whatsNewBoxView;
+        private Frame video1Frame;
+        private Frame video2Frame;
+        private Image video1Image;
+        private Image video2Image;
+        private Label video1Lbl;
+        private Label video2Lbl;
+        private TapGestureRecognizer video1Tap;
+        private TapGestureRecognizer video2Tap;
+        private Label whatsNewLbl;
+        private Label playListLbl;
+        private Button addPlaylistBtn;
+        private Button viewPlaylistBtn;
 
         public HomePage()
         {

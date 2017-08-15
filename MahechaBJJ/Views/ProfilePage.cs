@@ -11,20 +11,20 @@ namespace MahechaBJJ.Views
 {
     public class ProfilePage : ContentPage
     {
-		BaseViewModel _baseViewModel = new BaseViewModel();
-        Grid outerGrid;
-        Grid innerGrid;
-        Label nameLbl;
-        Label nameTextLbl;
-        Label emailLbl;
-        Label emailTextLbl;
-        Label beltLbl;
-        Label beltTextLbl;
-        Button contactUsBtn;
-        Button logOutBtn;
-        Button settingsBtn;
-        Account account;
-        User user;
+		private BaseViewModel _baseViewModel = new BaseViewModel();
+        private Grid outerGrid;
+        private Grid innerGrid;
+        private Label nameLbl;
+        private Label nameTextLbl;
+        private Label emailLbl;
+        private Label emailTextLbl;
+        private Label beltLbl;
+        private Label beltTextLbl;
+        private Button contactUsBtn;
+        private Button logOutBtn;
+        private Button settingsBtn;
+        private Account account;
+        private User user;
 
         public ProfilePage()
         {

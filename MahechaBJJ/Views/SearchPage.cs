@@ -11,12 +11,12 @@ namespace MahechaBJJ.Views
     {
         private readonly SearchPageViewModel _searchPageViewModel = new SearchPageViewModel();
         private ObservableCollection<VideoData> searchedVideos = new ObservableCollection<VideoData>();
-        ActivityIndicator activityIndicator;
-        SearchBar searchBar;
-        Button loadBtn;
+        private ActivityIndicator activityIndicator;
+        private SearchBar searchBar;
+        private Button loadBtn;
         private bool moreToLoad = false;
-        ListView videoListView;
-        StackLayout searchLayout;
+        private ListView videoListView;
+        private StackLayout searchLayout;
         private Grid innerGrid;
         private Grid outerGrid;
         private Grid videoGrid;
@@ -67,7 +67,14 @@ namespace MahechaBJJ.Views
 			searchBar = new SearchBar
             {
                 Placeholder = "Enter technique to search for...",
-            };
+                CancelButtonColor = Color.Red,
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+			};
 
             loadBtn = new Button
             {
@@ -178,6 +185,11 @@ namespace MahechaBJJ.Views
 		public async void SearchVimeo(object Sender, EventArgs e)
 		{
 			string url = VIMEOVIDEOS + VIDEOSPERPAGE + QUERY;
+
+			if (searchBar.Text == " ")
+            {
+                url = VIMEOVIDEOS + VIDEOSPERPAGE;
+            }
 			await _searchPageViewModel.SearchVideo(url + searchBar.Text);
 			if (searchedVideos != null)
 			{

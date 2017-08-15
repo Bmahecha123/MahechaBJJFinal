@@ -22,6 +22,7 @@ namespace MahechaBJJ.Views
         private Button loginBtn;
         private Button signUpBtn;
         private Button aboutBtn;
+
         public EntryPage()
         {
             Padding = new Thickness(10, 30, 10, 10);
