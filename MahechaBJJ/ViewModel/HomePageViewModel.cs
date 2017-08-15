@@ -25,6 +25,20 @@ namespace MahechaBJJ.ViewModel
 			}
 		}
 
+        private bool _successful;
+        public bool Successful
+        {
+            get
+            {
+                return _successful;
+            }
+            set
+            {
+                _successful = value;
+                OnPropertyChanged();
+            }
+        }
+
         public HomePageViewModel()
         {
             _vimeoApiService = new VimeoAPIService();
@@ -33,6 +47,12 @@ namespace MahechaBJJ.ViewModel
         public async Task GetVimeo(string url)
 		{
 			_baseInfo = await _vimeoApiService.GetVimeoInfo(url);
+            if (_baseInfo == null)
+            {
+                _successful = false;
+            } else {
+                _successful = true;
+            }
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;

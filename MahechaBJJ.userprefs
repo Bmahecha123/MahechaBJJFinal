@@ -1,40 +1,13 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A1F474E0-DFAD-4433-B68F-697A133AB7F2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/BrowsePage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/LoginPage.cs">
     <Files>
-      <File FileName="MahechaBJJ/Views/PlaylistDetailPage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Model/Video.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/PlaylistViewPage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/PlaylistCarouselPage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Model/User.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Model/PlayList.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Model/VimeoAPI.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="84" Column="14" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="MahechaBJJ/Views/PlaylistVideoPage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/AndroidVideoPage.cs" Line="1" Column="1" />
-      <File FileName="iOS/AppDelegate.cs" Line="28" Column="1" />
-      <File FileName="MahechaBJJ/Service/ShowVideoPlayerArguments.cs" Line="10" Column="13" />
-      <File FileName="MahechaBJJ/ViewModel/PlaylistVideoPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/ViewModel/VideoDetailPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/ViewModel/PlaylistDetailPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Resources/Constants.cs" Line="7" Column="79" />
-      <File FileName="MahechaBJJ/Service/UserService.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/ViewModel/PlaylistViewPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/ViewModel/SearchPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/ViewModel/PlaylistCreatePageViewModel.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/PlaylistCreatePage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="42" Column="12" />
+      <File FileName="MahechaBJJ/ViewModel/HomePageViewModel.cs" Line="54" Column="36" />
+      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="237" Column="14" />
       <File FileName="MahechaBJJ/ViewModel/BaseViewModel.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Service/VimeoAPIService.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Service/AccountService.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="305" Column="33" />
-      <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="14" Column="42" />
-      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="40" Column="15" />
+      <File FileName="MahechaBJJ/Views/EntryPage.cs" Line="84" Column="14" />
       <File FileName="MahechaBJJ/Views/LoginPage.cs" Line="133" Column="7" />
-      <File FileName="MahechaBJJ/Views/SignUpPage.cs" Line="325" Column="14" />
-      <File FileName="MahechaBJJ/Views/BrowsePage.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -227,18 +227,18 @@ namespace MahechaBJJ.Views
 
         private async void SetContent()
         {
-			activityIndicator = new ActivityIndicator();
-            activityIndicator.IsRunning = true;
-            Content = activityIndicator;
 			await _homePageViewModel.GetVimeo(VIMEOURL);
-			VimeoInfo = _homePageViewModel.VimeoInfo;
-
-            video1Image.Source = VimeoInfo.data[0].pictures.sizes[4].link;
-            video2Image.Source = VimeoInfo.data[1].pictures.sizes[4].link;
-            video1Lbl.Text = VimeoInfo.data[0].name;
-            video2Lbl.Text = VimeoInfo.data[1].name;
-            activityIndicator.IsRunning = false;
-            Content = outerGrid;
+            if (_homePageViewModel.Successful)
+            {
+				VimeoInfo = _homePageViewModel.VimeoInfo;
+				video1Image.Source = VimeoInfo.data[0].pictures.sizes[4].link;
+				video2Image.Source = VimeoInfo.data[1].pictures.sizes[4].link;
+				video1Lbl.Text = VimeoInfo.data[0].name;
+				video2Lbl.Text = VimeoInfo.data[1].name;
+            } else {
+                SetContent();
+            }
+			
         }
 
         private void CreatePlaylist(object sender, EventArgs e)

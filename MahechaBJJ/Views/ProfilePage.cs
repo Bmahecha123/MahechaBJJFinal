@@ -233,9 +233,15 @@ namespace MahechaBJJ.Views
 
         public async void SetContent(){
             user = await _baseViewModel.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]);
-            nameTextLbl.Text = user.Name;
-            emailTextLbl.Text = user.Email;
-            beltTextLbl.Text = user.Belt;
+            if (_baseViewModel.Successful)
+            {
+				nameTextLbl.Text = user.Name;
+				emailTextLbl.Text = user.Email;
+				beltTextLbl.Text = user.Belt;
+            } else {
+                SetContent();
+            }
+
 		}
 
 		//Orientation
