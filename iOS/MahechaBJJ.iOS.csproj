@@ -162,6 +162,12 @@
     <BundleResource Include="Resources\003-settings%402x.png" />
     <BundleResource Include="Resources\004-search%402x.png" />
     <BundleResource Include="Resources\005-construction%402x.png" />
+    <BundleResource Include="Resources\blog.jpeg" />
+    <BundleResource Include="Resources\top.jpg" />
+    <BundleResource Include="Resources\bottom.jpg" />
+    <BundleResource Include="Resources\blog%402x.jpeg" />
+    <BundleResource Include="Resources\bottom%402x.jpg" />
+    <BundleResource Include="Resources\top%402x.jpg" />
     <BundleResource Include="Resources\kevin.JPG" />
     <BundleResource Include="Resources\kevin%402x.JPG" />
   </ItemGroup>

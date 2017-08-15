@@ -10,12 +10,12 @@ namespace MahechaBJJ.Views
     public class AndroidVideoPage : ContentPage
     {
 #if __ANDROID__
-		VideoView videoView;
-		MediaController mediaController;
-		ContentView portraitContentView;
-        ContentView landscapeContentView;
-		Android.Net.Uri uriHd;
-        int currentPosition;
+		private VideoView videoView;
+		private MediaController mediaController;
+		private ContentView portraitContentView;
+        private ContentView landscapeContentView;
+		private Android.Net.Uri uriHd;
+        private int currentPosition;
 
 #endif
         //added string link instead of passing whole video

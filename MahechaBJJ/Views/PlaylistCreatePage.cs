@@ -10,21 +10,21 @@ namespace MahechaBJJ.Views
 {
     public class PlaylistCreatePage : ContentPage
     {
-        BaseViewModel _baseViewModel = new BaseViewModel();
-        PlaylistCreatePageViewModel _playlistCreatePageViewModel = new PlaylistCreatePageViewModel();
-        string FINDUSER = Constants.FINDUSER;
-        Grid outerGrid;
-        Grid innerGrid;
-        Label playListNameLbl;
-        Entry playListNameEntry;
-        Label playListDescriptionLbl;
-        Editor playListDescriptionEditor;
-        Frame editorFrame;
-        Button backBtn;
-        Button createBtn;
-        Account account;
-        User user;
-        PlayList playlist;
+        private BaseViewModel _baseViewModel = new BaseViewModel();
+        private PlaylistCreatePageViewModel _playlistCreatePageViewModel = new PlaylistCreatePageViewModel();
+        private string FINDUSER = Constants.FINDUSER;
+        private Grid outerGrid;
+        private Grid innerGrid;
+        private Label playListNameLbl;
+        private Entry playListNameEntry;
+        private Label playListDescriptionLbl;
+        private Editor playListDescriptionEditor;
+        private Frame editorFrame;
+        private Button backBtn;
+        private Button createBtn;
+        private Account account;
+        private User user;
+        private PlayList playlist;
 
         public PlaylistCreatePage()
         {

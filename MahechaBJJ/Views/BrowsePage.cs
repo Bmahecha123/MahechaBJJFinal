@@ -1,5 +1,6 @@
 ﻿﻿using System;
 using MahechaBJJ.Model;
+using MahechaBJJ.Views.Blog;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
@@ -11,16 +12,15 @@ namespace MahechaBJJ.Views
         private Grid innerGrid;
         private Frame bottomFrame;
         private Label bottomLbl;
-        private Image buttomImage;
+        private Image bottomImage;
         private Frame topFrame;
         private Label topLbl;
         private Image topImage;
-        private Frame standUpFrame;
-        private Label standUpLbl;
-        private Image standUpImage;
+        private Frame blogFrame;
+        private Label blogLbl;
+        private Image blogImage;
         private Button bottomBtn;
         private Button topBtn;
-        private Button standUpBtn;
 
 
         public BrowsePage()
@@ -67,7 +67,7 @@ namespace MahechaBJJ.Views
             topImage = new Image
             {
                 Aspect = Aspect.AspectFill,
-                Source = ImageSource.FromFile("kevin.JPG")
+                Source = ImageSource.FromFile("kevin.jpg")
 			};
 			topFrame = new Frame
 			{
@@ -78,12 +78,74 @@ namespace MahechaBJJ.Views
 				Padding = 3
 			};
 
+			//bottom objects
+            bottomLbl = new Label
+			{
+				Text = "Top",
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = lblSize * 2,
+				TextColor = Color.White,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
+			};
+			bottomImage = new Image
+			{
+				Aspect = Aspect.AspectFill,
+				Source = ImageSource.FromFile("bottom.jpg")
+			};
+			bottomFrame = new Frame
+			{
+				Content = topImage,
+				OutlineColor = Color.Black,
+				BackgroundColor = Color.Black,
+				HasShadow = false,
+				Padding = 3
+			};
+
+			//blog objects
+			blogLbl = new Label
+			{
+				Text = "Blog",
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = lblSize * 2,
+				TextColor = Color.White,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
+			};
+			blogImage = new Image
+			{
+                Aspect = Aspect.AspectFill,
+				Source = ImageSource.FromFile("blog.jpeg")
+			};
+			blogFrame = new Frame
+			{
+				Content = blogImage,
+				OutlineColor = Color.Black,
+				BackgroundColor = Color.Black,
+				HasShadow = false,
+				Padding = 3
+			};
+
+
             //Events
 
             //adding children
             innerGrid.Children.Add(topFrame, 0, 0);
             innerGrid.Children.Add(topLbl, 0, 0);
-
+            innerGrid.Children.Add(bottomFrame, 0, 1);
+            innerGrid.Children.Add(bottomLbl, 0, 1);
+            innerGrid.Children.Add(blogFrame, 0, 2);
+            innerGrid.Children.Add(blogLbl, 0, 2);
             outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = innerGrid;

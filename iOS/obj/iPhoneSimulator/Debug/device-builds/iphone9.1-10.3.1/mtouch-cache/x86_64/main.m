@@ -16,7 +16,7 @@ void xamarin_register_assemblies_impl ()
 
 }
 
-void xamarin_create_classes_Xamarin_iOS();
+extern "C" void xamarin_create_classes_Xamarin_iOS();
 void xamarin_setup_impl ()
 {
 	xamarin_create_classes_Xamarin_iOS();
@@ -34,7 +34,7 @@ void xamarin_setup_impl ()
 int main (int argc, char **argv)
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	int rv = xamarin_main (argc, argv, false);
+	int rv = xamarin_main (argc, argv, XamarinLaunchModeApp);
 	[pool drain];
 	return rv;
 }
