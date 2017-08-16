@@ -12,5 +12,6 @@ namespace MahechaBJJ.Resources
         public static string UPDATEPLAYLIST = "http://localhost:8080/user/updateplaylists/";
         public static string DELETEPLAYLIST = "http://localhost:8080/user/deleteplaylist/";
         public static string DELETEVIDEOFROMPLAYLIST = "http://localhost:8080/user/deleteVideo/";
+        public static string LOADBLOGPOSTS = "https://api.tumblr.com/v2/blog/mahechabjj/posts?api_key=vPbcUP6WSBbQ6RiVQC5ZO9paNGQE7QT4kXGefQXKlkM2jBJdos";
 	}
 }

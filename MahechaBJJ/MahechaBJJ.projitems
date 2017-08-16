@@ -54,6 +54,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistVideoPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistDetailPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Blog\BlogDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Blog\BlogViewPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\BlogService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BlogPosts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Blog\BlogViewPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -62,5 +66,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Service\" />
     <Folder Include="$(MSBuildThisFileDirectory)Resources\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Blog\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Blog\" />
   </ItemGroup>
 </Project>

@@ -21,6 +21,7 @@ namespace MahechaBJJ.Views
         private Image blogImage;
         private Button bottomBtn;
         private Button topBtn;
+        private TapGestureRecognizer blogTap;
 
 
         public BrowsePage()
@@ -60,7 +61,7 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = lblSize * 2,
-                TextColor = Color.White,
+                TextColor = Color.YellowGreen,
                 VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
             };
@@ -81,7 +82,7 @@ namespace MahechaBJJ.Views
 			//bottom objects
             bottomLbl = new Label
 			{
-				Text = "Top",
+				Text = "Bottom",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -89,7 +90,7 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = lblSize * 2,
-				TextColor = Color.White,
+                TextColor = Color.YellowGreen,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
 			};
@@ -100,7 +101,7 @@ namespace MahechaBJJ.Views
 			};
 			bottomFrame = new Frame
 			{
-				Content = topImage,
+				Content = bottomImage,
 				OutlineColor = Color.Black,
 				BackgroundColor = Color.Black,
 				HasShadow = false,
@@ -118,10 +119,16 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = lblSize * 2,
-				TextColor = Color.White,
+                TextColor = Color.YellowGreen,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
 			};
+			blogTap = new TapGestureRecognizer();
+			blogTap.Tapped += (sender, e) =>
+			{
+                Navigation.PushModalAsync(new BlogViewPage());
+			};
+			blogLbl.GestureRecognizers.Add(blogTap);
 			blogImage = new Image
 			{
                 Aspect = Aspect.AspectFill,
@@ -138,6 +145,7 @@ namespace MahechaBJJ.Views
 
 
             //Events
+
 
             //adding children
             innerGrid.Children.Add(topFrame, 0, 0);
