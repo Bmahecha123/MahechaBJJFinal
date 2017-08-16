@@ -61,7 +61,7 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = lblSize * 2,
-                TextColor = Color.YellowGreen,
+                TextColor = Color.White,
                 VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
             };
@@ -90,7 +90,7 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = lblSize * 2,
-                TextColor = Color.YellowGreen,
+                TextColor = Color.White,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
 			};
@@ -119,7 +119,7 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = lblSize * 2,
-                TextColor = Color.YellowGreen,
+                TextColor = Color.White,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
 			};

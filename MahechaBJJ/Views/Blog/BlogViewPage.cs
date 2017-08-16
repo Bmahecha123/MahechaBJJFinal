@@ -122,15 +122,16 @@ namespace MahechaBJJ.Views.Blog
             blogListView.ItemTemplate = new DataTemplate(() =>
             {
                 listViewGrid = new Grid();
-                listViewGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
+                listViewGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star)});
+				listViewGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
 
 				blogLbl = new Label();
                 blogLbl.SetBinding(Label.TextProperty, "summary");
                 blogLbl.VerticalTextAlignment = TextAlignment.Center;
                 blogLbl.HorizontalTextAlignment = TextAlignment.Center;
-                blogLbl.TextColor = Color.YellowGreen;
+                blogLbl.TextColor = Color.Black;
                 blogLbl.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
-                blogLbl.LineBreakMode = LineBreakMode.TailTruncation;
+                blogLbl.LineBreakMode = LineBreakMode.WordWrap;
 #if __IOS__
 				blogLbl.FontFamily = "AmericanTypewriter-Bold";
 #endif
@@ -151,7 +152,7 @@ namespace MahechaBJJ.Views.Blog
 
                 //building Grid
                 listViewGrid.Children.Add(blogFrame, 0, 0);
-                listViewGrid.Children.Add(blogLbl, 0, 0);
+                listViewGrid.Children.Add(blogLbl, 0, 1);
 
                 layout = new StackLayout
                 {
