@@ -58,7 +58,7 @@ namespace MahechaBJJ.Views.Blog
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "Mahecha BJJ Blog",
-				FontSize = lblSize * 2,
+				FontSize = lblSize * 1.5,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
             };
@@ -106,7 +106,13 @@ namespace MahechaBJJ.Views.Blog
 
 		public void LoadBlogpost(object sender, SelectedItemChangedEventArgs e)
 		{
-			throw new NotImplementedException();
+            BlogPosts.Post blogPost = (BlogPosts.Post)((ListView)sender).SelectedItem;
+            if (e.SelectedItem == null)
+            {
+                return;
+            }
+            ((ListView)sender).SelectedItem = null;
+            Navigation.PushModalAsync(new BlogDetailPage(blogPost));
 		}
 
         public async void FindBlogPosts()
@@ -170,6 +176,44 @@ namespace MahechaBJJ.Views.Blog
                 return viewCell;
 			});
         }
+
+		//Orientation
+		protected override void OnSizeAllocated(double width, double height)
+		{
+			base.OnSizeAllocated(width, height); //must be called
+
+			if (width > height)
+			{
+				Padding = new Thickness(10, 10, 10, 10);
+				innerGrid.RowDefinitions.Clear();
+				innerGrid.ColumnDefinitions.Clear();
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+				innerGrid.Children.Clear();
+				//building grid
+				innerGrid.Children.Add(viewBlogLbl, 0, 0);
+				innerGrid.Children.Add(blogListView, 1, 0);
+                Grid.SetRowSpan(blogListView, 3);
+				innerGrid.Children.Add(backBtn, 0, 2);
+			}
+			else
+			{
+				Padding = new Thickness(10, 30, 10, 10);
+				innerGrid.RowDefinitions.Clear();
+				innerGrid.ColumnDefinitions.Clear();
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(7, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.Children.Clear();
+				//building grid
+				innerGrid.Children.Add(viewBlogLbl, 0, 0);
+				innerGrid.Children.Add(blogListView, 0, 1);
+				innerGrid.Children.Add(backBtn, 0, 2);
+			}
+		}
     }
 }
 

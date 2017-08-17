@@ -235,7 +235,10 @@ namespace MahechaBJJ.Views
 				video1Lbl.Text = VimeoInfo.data[0].name;
 				video2Lbl.Text = VimeoInfo.data[1].name;
             } else {
-                SetContent();
+                bool tryAgain = await DisplayAlert("Unable to Load Content", "Unable to load content, Try again?", "Try Again", "No");
+                if (tryAgain){
+					SetContent();
+				}
             }
 			
         }
