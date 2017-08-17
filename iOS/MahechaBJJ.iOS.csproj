@@ -170,6 +170,8 @@
     <BundleResource Include="Resources\top%402x.jpg" />
     <BundleResource Include="Resources\kevin.JPG" />
     <BundleResource Include="Resources\kevin%402x.JPG" />
+    <BundleResource Include="Resources\karate.png" />
+    <BundleResource Include="Resources\karate%402x.png" />
   </ItemGroup>
   <Import Project="..\MahechaBJJ\MahechaBJJ.projitems" Label="Shared" Condition="Exists('..\MahechaBJJ\MahechaBJJ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

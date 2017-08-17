@@ -167,3 +167,5 @@ C:/Users/bmahe/Desktop/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/003-settings@2x.png
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/004-search@2x.png
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/005-construction@2x.png
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/karate.png
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/optimized/karate@2x.png

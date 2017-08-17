@@ -177,6 +177,15 @@ namespace MahechaBJJ.Views.Blog
 			});
         }
 
+		//page reloading
+		protected override async void OnAppearing()
+		{
+			base.OnAppearing();
+			await _blogViewPageViewModel.GetBlogPosts(Constants.LOADBLOGPOSTS);
+			SetViewContents();
+
+		}
+
 		//Orientation
 		protected override void OnSizeAllocated(double width, double height)
 		{
