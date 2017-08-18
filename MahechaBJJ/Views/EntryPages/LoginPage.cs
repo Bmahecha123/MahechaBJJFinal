@@ -4,7 +4,7 @@ using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel;
 using Xamarin.Forms;
 
-namespace MahechaBJJ.Views
+namespace MahechaBJJ.Views.EntryPages
 {
     public class LoginPage : ContentPage
     {

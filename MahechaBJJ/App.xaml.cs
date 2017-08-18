@@ -2,6 +2,7 @@
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel;
 using MahechaBJJ.Views;
+using MahechaBJJ.Views.EntryPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
 
@@ -9,8 +10,6 @@ namespace MahechaBJJ
 {
     public partial class App : Application
     {
-		private const string VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
-		private const string FINDUSER = "http://localhost:8080/user/findByEmail/";
 		BaseViewModel _baseViewModel = new BaseViewModel();
         Account account;
 

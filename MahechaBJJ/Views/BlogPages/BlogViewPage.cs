@@ -4,7 +4,7 @@ using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.Blog;
 using Xamarin.Forms;
 
-namespace MahechaBJJ.Views.Blog
+namespace MahechaBJJ.Views.BlogPages
 {
     public class BlogViewPage : ContentPage
     {

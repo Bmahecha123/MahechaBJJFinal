@@ -7,7 +7,7 @@ using MahechaBJJ.ViewModel;
 using Xamarin.Auth;
 using Xamarin.Forms;
 
-namespace MahechaBJJ.Views
+namespace MahechaBJJ.Views.PlaylistPages
 {
     public class PlaylistVideoPage : ContentPage
     {

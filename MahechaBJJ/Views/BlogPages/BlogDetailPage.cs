@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using MahechaBJJ.Model;
 using Xamarin.Forms;
 
-namespace MahechaBJJ.Views.Blog
+namespace MahechaBJJ.Views.BlogPages
 {
     public class BlogDetailPage : ContentPage
     {

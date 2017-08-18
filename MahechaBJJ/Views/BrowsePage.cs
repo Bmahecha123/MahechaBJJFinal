@@ -1,6 +1,6 @@
 ﻿﻿using System;
 using MahechaBJJ.Model;
-using MahechaBJJ.Views.Blog;
+using MahechaBJJ.Views.BlogPages;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
@@ -19,8 +19,6 @@ namespace MahechaBJJ.Views
         private Frame blogFrame;
         private Label blogLbl;
         private Image blogImage;
-        private Button bottomBtn;
-        private Button topBtn;
         private TapGestureRecognizer blogTap;
 
 
@@ -199,9 +197,9 @@ namespace MahechaBJJ.Views
 				innerGrid.Children.Add(topFrame, 0, 0);
 				innerGrid.Children.Add(topLbl, 0, 0);
 				innerGrid.Children.Add(bottomFrame, 0, 1);
-				innerGrid.Children.Add(bottomLbl, 0, 1);
-				innerGrid.Children.Add(blogFrame, 0, 2);
-				innerGrid.Children.Add(blogLbl, 0, 2);
+                innerGrid.Children.Add(bottomLbl, 0, 1);
+                innerGrid.Children.Add(blogFrame, 0, 2);
+                innerGrid.Children.Add(blogLbl, 0, 2);
 			}
 		}
     }

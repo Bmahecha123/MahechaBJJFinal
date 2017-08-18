@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using Xamarin.Auth;
 using Xamarin.Forms;
 
-namespace MahechaBJJ.Views
+namespace MahechaBJJ.Views.EntryPages
 {
     public class EntryPage : ContentPage
     {

@@ -8,7 +8,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
 
-namespace MahechaBJJ.Views
+namespace MahechaBJJ.Views.EntryPages
 {
     public class SignUpPage : ContentPage
     {

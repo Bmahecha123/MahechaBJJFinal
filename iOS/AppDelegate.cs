@@ -7,6 +7,7 @@ using Foundation;
 using MahechaBJJ.Model;
 using MahechaBJJ.Service;
 using MahechaBJJ.Views;
+using MahechaBJJ.Views.PlaylistPages;
 using UIKit;
 using Xamarin.Forms;
 
