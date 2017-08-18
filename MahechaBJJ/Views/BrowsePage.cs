@@ -132,7 +132,7 @@ namespace MahechaBJJ.Views
 			blogImage = new Image
 			{
                 Aspect = Aspect.AspectFill,
-				Source = ImageSource.FromFile("blog.jpeg")
+				Source = ImageSource.FromFile("blog.jpg")
 			};
 			blogFrame = new Frame
 			{
@@ -156,8 +156,54 @@ namespace MahechaBJJ.Views
             innerGrid.Children.Add(blogLbl, 0, 2);
             outerGrid.Children.Add(innerGrid, 0, 0);
 
-            Content = innerGrid;
+            Content = outerGrid;
         }
+
+		//Functions
+
+		//Orientation
+		protected override void OnSizeAllocated(double width, double height)
+		{
+			base.OnSizeAllocated(width, height); //must be called
+
+			if (width > height)
+			{
+				Padding = new Thickness(10, 10, 10, 10);
+				innerGrid.RowDefinitions.Clear();
+				innerGrid.ColumnDefinitions.Clear();
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+				innerGrid.Children.Clear();
+				//building grid
+				innerGrid.Children.Add(topFrame, 0, 0);
+				innerGrid.Children.Add(topLbl, 0, 0);
+				innerGrid.Children.Add(bottomFrame, 0, 1);
+				innerGrid.Children.Add(bottomLbl, 0, 1);
+				innerGrid.Children.Add(blogFrame, 1, 0);
+				Grid.SetRowSpan(blogFrame, 2);
+				innerGrid.Children.Add(blogLbl, 1, 0);
+				Grid.SetRowSpan(blogLbl, 2);
+			}
+			else
+			{
+				Padding = new Thickness(10, 30, 10, 10);
+				innerGrid.RowDefinitions.Clear();
+				innerGrid.ColumnDefinitions.Clear();
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.Children.Clear();
+				//building grid
+				innerGrid.Children.Add(topFrame, 0, 0);
+				innerGrid.Children.Add(topLbl, 0, 0);
+				innerGrid.Children.Add(bottomFrame, 0, 1);
+				innerGrid.Children.Add(bottomLbl, 0, 1);
+				innerGrid.Children.Add(blogFrame, 0, 2);
+				innerGrid.Children.Add(blogLbl, 0, 2);
+			}
+		}
     }
 }
 
