@@ -275,7 +275,6 @@ namespace MahechaBJJ.Views
                 innerGrid.Children.Add(searchBar, 0, 0);
                 innerGrid.Children.Add(videoListView, 1, 0);
 				Grid.SetRowSpan(videoListView, 3);
-                //TODO ADD CONDITIONALS TO CHECK IF VIDEOS IS NULL OR NOT IF NULL THEN NO LOAD IF NOT THE NADD LOAD
                 if(moreToLoad)
                 {
                     innerGrid.Children.Add(loadBtn, 0, 2);
@@ -294,7 +293,6 @@ namespace MahechaBJJ.Views
 				innerGrid.Children.Clear();
 				innerGrid.Children.Add(searchBar, 0, 0);
 				innerGrid.Children.Add(videoListView, 0, 1);
-				//TODO ADD CONDITIONALS TO CHECK IF VIDEOS IS NULL OR NOT IF NULL THEN NO LOAD IF NOT THE NADD LOAD
 				if (moreToLoad)
 				{
 					innerGrid.Children.Add(loadBtn, 0, 2);

@@ -58,6 +58,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\EntryPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\LoginPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\SignUpPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\LearnMorePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
