@@ -41,14 +41,10 @@ namespace MahechaBJJ.Views
             Icon = "005-construction.png";
 			Padding = new Thickness(10, 10, 10, 10);
 			BuildPageObjects();
-			LoadVimeo();
+            SetContent();
         }
 
         //functions
-        private void LoadVimeo()
-        {
-            SetContent();
-        }
 
         private void BuildPageObjects()
         {
@@ -130,7 +126,8 @@ namespace MahechaBJJ.Views
                 VideoData video = VimeoInfo.data[0];
                 Navigation.PushModalAsync(new VideoDetailPage(video));
             };
-            video2Image = new Image
+			video1Lbl.GestureRecognizers.Add(video1Tap);
+			video2Image = new Image
             {
                 Aspect = Aspect.AspectFill
             };
@@ -162,7 +159,9 @@ namespace MahechaBJJ.Views
                 VideoData video = VimeoInfo.data[1];
                 Navigation.PushModalAsync(new VideoDetailPage(video));
             };
-            playListLbl = new Label
+			video2Lbl.GestureRecognizers.Add(video2Tap);
+
+			playListLbl = new Label
             {
                 Text = "Playlists",
 #if __IOS__
@@ -245,6 +244,10 @@ namespace MahechaBJJ.Views
                 IsVisible = true
             };
 
+			//events
+			addPlaylistBtn.Clicked += CreatePlaylist;
+			viewPlaylistBtn.Clicked += ViewPlaylists;
+
 			outerGrid.Children.Add(innerGrid, 0, 0);
 			Content = outerGrid;
         }
@@ -257,7 +260,8 @@ namespace MahechaBJJ.Views
             innerGrid.Children.Add(activityIndicator, 0, 0);
             Grid.SetRowSpan(activityIndicator, 5);
             Grid.SetColumnSpan(activityIndicator, 2);
-            if (_homePageViewModel.VimeoInfo == null){
+            if (_homePageViewModel.VimeoInfo == null)
+            {
 				await _homePageViewModel.GetVimeo(VIMEOURL);
 			}
             if (_homePageViewModel.Successful)
@@ -268,11 +272,6 @@ namespace MahechaBJJ.Views
 				video2Image.Source = VimeoInfo.data[1].pictures.sizes[4].link;
 				video1Lbl.Text = VimeoInfo.data[0].name;
 				video2Lbl.Text = VimeoInfo.data[1].name;
-				video1Lbl.GestureRecognizers.Add(video1Tap);
-				video2Lbl.GestureRecognizers.Add(video2Tap);
-				//events
-			    addPlaylistBtn.Clicked += CreatePlaylist;
-				viewPlaylistBtn.Clicked += ViewPlaylists;
 
 				innerGrid.Children.Clear();
 				innerGrid.Children.Add(whatsNewLbl, 0, 0);
