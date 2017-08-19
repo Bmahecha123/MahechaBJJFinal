@@ -43,6 +43,7 @@ namespace MahechaBJJ.Views
 			BuildPageObjects();
 			LoadVimeo();
         }
+
         //functions
         private void LoadVimeo()
         {
