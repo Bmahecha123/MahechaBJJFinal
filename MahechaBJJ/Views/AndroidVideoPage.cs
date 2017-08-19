@@ -12,7 +12,7 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
 		private VideoView videoView;
 		private MediaController mediaController;
-		private ContentView portraitContentView;
+        private ContentView contentView;
         private ContentView landscapeContentView;
 		private Android.Net.Uri uriHd;
         private int currentPosition;
@@ -22,39 +22,49 @@ namespace MahechaBJJ.Views
 		public AndroidVideoPage(string url)
         {
 			BackgroundColor = Color.Black;
+            BuildPageObjects(url);
+		}
+
+        public void BuildPageObjects(string url)
+        {
 #if __ANDROID__
-            SizeChanged += OnSizeChanged;
-			videoView = new VideoView(Forms.Context);
-			mediaController = new MediaController(Forms.Context, false);
-			uriHd = Android.Net.Uri.Parse(url);
+            videoView = new VideoView(Forms.Context);
+            mediaController = new MediaController(Forms.Context, false);
+            uriHd = Android.Net.Uri.Parse(url);
 
-			mediaController.SetMediaPlayer(videoView);
-			mediaController.SetAnchorView(videoView);
-			mediaController.SetMinimumWidth(videoView.Width);
+            mediaController.SetMediaPlayer(videoView);
+            mediaController.SetAnchorView(videoView);
+            mediaController.SetMinimumWidth(videoView.Width);
 
-			videoView.SetMediaController(mediaController);
-			videoView.SetFitsSystemWindows(false);
-			videoView.SetVideoURI(uriHd);
+            videoView.SetMediaController(mediaController);
+            videoView.SetFitsSystemWindows(false);
+            videoView.SetVideoURI(uriHd);
 
-            portraitContentView = new ContentView();
-			portraitContentView.Content = videoView.ToView();
-			portraitContentView.HorizontalOptions = LayoutOptions.FillAndExpand;
-            portraitContentView.VerticalOptions = LayoutOptions.CenterAndExpand;
+            contentView = new ContentView();
+            contentView.Content = videoView.ToView();
+            contentView.HorizontalOptions = LayoutOptions.FillAndExpand;
+            contentView.VerticalOptions = LayoutOptions.CenterAndExpand;
 
-            landscapeContentView = new ContentView();
-            landscapeContentView.Content = videoView.ToView();
-            landscapeContentView.HorizontalOptions = LayoutOptions.FillAndExpand;
-            landscapeContentView.VerticalOptions = LayoutOptions.FillAndExpand;
-
-            void OnSizeChanged (object sender, EventArgs e) {
-                currentPosition = videoView.CurrentPosition;
-                Content = (Height > Width) ? portraitContentView : landscapeContentView;
-                videoView.SeekTo(currentPosition);
-                videoView.Start();
-            }
-			videoView.Start();
+            videoView.Start();
 #endif
 		}
+
+        //Orientation
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height); //must be called
+
+            if (width > height)
+            {
+                contentView.HorizontalOptions = LayoutOptions.FillAndExpand;
+                contentView.VerticalOptions = LayoutOptions.FillAndExpand;
+            }
+            else
+            {
+                contentView.HorizontalOptions = LayoutOptions.FillAndExpand;
+                contentView.VerticalOptions = LayoutOptions.CenterAndExpand;
+            }
+        }
     }
 }
 
