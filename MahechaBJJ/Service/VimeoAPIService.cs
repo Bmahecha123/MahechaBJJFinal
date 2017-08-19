@@ -15,7 +15,8 @@ namespace MahechaBJJ.Service
             client = new HttpClient();
         }
 
-        public async Task<BaseInfo> GetVimeoInfo(string url) {
+        public async Task<BaseInfo> GetVimeoInfo(string url) 
+        {
 
             try 
             {

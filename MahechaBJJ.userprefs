@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A1F474E0-DFAD-4433-B68F-697A133AB7F2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/ViewModel/Blog/BlogViewPageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/ViewModel/BaseViewModel.cs">
     <Files>
       <File FileName="MahechaBJJ/App.xaml.cs" Line="30" Column="1" NotebookId="1" />
       <File FileName="MahechaBJJ/Views/BrowsePage.cs" Line="23" Column="9" NotebookId="1" />
@@ -15,21 +15,22 @@
       <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="11" Column="23" NotebookId="1" />
       <File FileName="MahechaBJJ/Views/EntryPages/LoginPage.cs" Line="7" Column="38" NotebookId="1" />
       <File FileName="MahechaBJJ/Views/EntryPages/SignUpPage.cs" Line="12" Column="2" NotebookId="1" />
-      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="204" Column="6" NotebookId="1" />
+      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="236" Column="44" NotebookId="1" />
       <File FileName="MahechaBJJ/Views/EntryPages/LearnMorePage.cs" Line="13" Column="27" NotebookId="1" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" NotebookId="1" />
       <File FileName="MahechaBJJ/ViewModel/HomePageViewModel.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="18" Column="1" NotebookId="1" />
-      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="183" Column="14" NotebookId="1" />
+      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="222" Column="10" NotebookId="1" />
       <File FileName="MahechaBJJ/Service/UserService.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="MahechaBJJ/Service/VimeoAPIService.cs" Line="22" Column="1" NotebookId="1" />
-      <File FileName="MahechaBJJ/ViewModel/SearchPageViewModel.cs" Line="43" Column="18" NotebookId="1" />
+      <File FileName="MahechaBJJ/ViewModel/SearchPageViewModel.cs" Line="53" Column="5" NotebookId="1" />
       <File FileName="MahechaBJJ/ViewModel/Blog/BlogViewPageViewModel.cs" Line="59" Column="14" NotebookId="1" />
+      <File FileName="MahechaBJJ/ViewModel/BaseViewModel.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="735" Y="34" Width="640" Height="480">
+      <FloatingWindow WindowId="1" X="829" Y="34" Width="640" Height="480">
         <Files>
-          <File FileName="MahechaBJJ/Views/HomePage.cs" Line="263" Column="1" />
+          <File FileName="MahechaBJJ/Views/HomePage.cs" Line="259" Column="24" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
@@ -54,9 +55,7 @@
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Service/UserManager.cs" relfile="MahechaBJJ/Service/UserManager.cs" line="97" column="1" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Service/AzureStorageService.cs" relfile="MahechaBJJ/Service/AzureStorageService.cs" line="44" column="1" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/ViewModel/PlaylistVideoPageViewModel.cs" relfile="MahechaBJJ/ViewModel/PlaylistVideoPageViewModel.cs" line="36" column="1" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/HomePage.cs" relfile="MahechaBJJ/Views/HomePage.cs" line="270" column="1" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/HomePage.cs" relfile="MahechaBJJ/Views/HomePage.cs" line="258" column="1" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/HomePage.cs" relfile="MahechaBJJ/Views/HomePage.cs" line="263" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/Views/ProfilePage.cs" relfile="MahechaBJJ/Views/ProfilePage.cs" line="236" column="45" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
