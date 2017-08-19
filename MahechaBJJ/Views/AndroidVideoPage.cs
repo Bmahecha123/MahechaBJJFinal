@@ -48,7 +48,7 @@ namespace MahechaBJJ.Views
             videoView.Start();
 #endif
 		}
-
+#if __ANDROID__
         //Orientation
         protected override void OnSizeAllocated(double width, double height)
         {
@@ -65,6 +65,8 @@ namespace MahechaBJJ.Views
                 contentView.VerticalOptions = LayoutOptions.CenterAndExpand;
             }
         }
-    }
+#endif
+
+	}
 }
 
