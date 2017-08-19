@@ -10,17 +10,34 @@ namespace MahechaBJJ.ViewModel
     public class SearchPageViewModel
     {
 		private VimeoAPIService _vimeoApiService;
-		private BaseInfo _searchedVideos;
 
+		private BaseInfo _searchedVideos;
         public BaseInfo Videos {
-            get {
+            get 
+            {
                 return _searchedVideos;
             }
-            set {
+            set 
+            {
                 _searchedVideos = value;
                 OnPropertyChanged();
             }
         }
+
+        private bool _successful;
+        public bool Successful
+        {
+            get 
+            {
+                return _successful;
+            }
+            set
+            {
+                _successful = value;
+                OnPropertyChanged();
+            }
+        }
+
         public SearchPageViewModel()
         {
             _vimeoApiService = new VimeoAPIService();
@@ -29,6 +46,15 @@ namespace MahechaBJJ.ViewModel
         public async Task SearchVideo(String query) {
 
             _searchedVideos = await _vimeoApiService.GetVimeoInfo(query);
+
+			if (_searchedVideos != null)
+			{
+				_successful = true;
+			}
+			else
+			{
+				_successful = false;
+			}
         }
 
 		public event PropertyChangedEventHandler PropertyChanged;
