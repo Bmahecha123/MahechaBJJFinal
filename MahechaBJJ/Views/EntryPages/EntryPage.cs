@@ -26,64 +26,39 @@ namespace MahechaBJJ.Views.EntryPages
         public EntryPage()
         {
             Padding = new Thickness(10, 30, 10, 10);
-            //outer Grid
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-            //inner Grid
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection {
-                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+            BuildPageObjects();
+		}
+
+        public void BuildPageObjects()
+        {
+			//outer Grid
+			outerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection {
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
 				}
-            };
+			};
+			//inner Grid
+			innerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection {
+					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+				}
+			};
 
-            //view objects
-            mahechaLogo = new Image
-            {
-                Source = ImageSource.FromResource("mahechabjjlogo.png"),
-                Aspect = Aspect.AspectFit
-            };
-            var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
-            loginBtn = new Button
-            {
-                Text = "Login",
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-				FontSize = size * 2,
-                BackgroundColor = Color.Orange,
-                TextColor = Color.Black,
-                BorderWidth = 3,
-				BorderColor = Color.Black
-            };
-            signUpBtn = new Button
-            {
-                Text = "Sign Up",
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-				FontSize = size * 2,
-                BackgroundColor = Color.Orange,
-				TextColor = Color.Black,
-				BorderWidth = 3,
-				BorderColor = Color.Black
-            };
-            aboutBtn = new Button
-            {
-                Text = "Learn More",
+			//view objects
+			mahechaLogo = new Image
+			{
+				Source = ImageSource.FromResource("mahechabjjlogo.png"),
+				Aspect = Aspect.AspectFit
+			};
+			var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+			loginBtn = new Button
+			{
+				Text = "Login",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -96,27 +71,57 @@ namespace MahechaBJJ.Views.EntryPages
 				BorderWidth = 3,
 				BorderColor = Color.Black
 			};
-            //Button events
-            loginBtn.Clicked += (object sender, EventArgs e) =>
-            {
-                Navigation.PushModalAsync(new LoginPage());
-            };
+			signUpBtn = new Button
+			{
+				Text = "Sign Up",
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = size * 2,
+				BackgroundColor = Color.Orange,
+				TextColor = Color.Black,
+				BorderWidth = 3,
+				BorderColor = Color.Black
+			};
+			aboutBtn = new Button
+			{
+				Text = "Learn More",
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				FontSize = size * 2,
+				BackgroundColor = Color.Orange,
+				TextColor = Color.Black,
+				BorderWidth = 3,
+				BorderColor = Color.Black
+			};
+			//Button events
+			loginBtn.Clicked += (object sender, EventArgs e) =>
+			{
+				Navigation.PushModalAsync(new LoginPage());
+			};
 
-            signUpBtn.Clicked += (sender, args) =>
-            {
-                Navigation.PushModalAsync(new SignUpPage());
-            };
+			signUpBtn.Clicked += (sender, args) =>
+			{
+				Navigation.PushModalAsync(new SignUpPage());
+			};
 
 
-            innerGrid.Children.Add(mahechaLogo, 0, 0);
-            innerGrid.Children.Add(signUpBtn, 0, 1);
-            innerGrid.Children.Add(loginBtn, 0, 2);
-            innerGrid.Children.Add(aboutBtn, 0, 3);
+			innerGrid.Children.Add(mahechaLogo, 0, 0);
+			innerGrid.Children.Add(signUpBtn, 0, 1);
+			innerGrid.Children.Add(loginBtn, 0, 2);
+			innerGrid.Children.Add(aboutBtn, 0, 3);
 
-            outerGrid.Children.Add(innerGrid, 0, 0);
+			outerGrid.Children.Add(innerGrid, 0, 0);
 
-            Content = outerGrid;
-		}
+			Content = outerGrid;
+        }
 
         //Orientation
 		protected override void OnSizeAllocated(double width, double height)
