@@ -26,10 +26,10 @@ namespace MahechaBJJ.Views.EntryPages
         public EntryPage()
         {
             Padding = new Thickness(10, 30, 10, 10);
-            BuildPageObjects();
+            SetContent();
 		}
 
-        public void BuildPageObjects()
+        public void SetContent()
         {
 			//outer Grid
 			outerGrid = new Grid

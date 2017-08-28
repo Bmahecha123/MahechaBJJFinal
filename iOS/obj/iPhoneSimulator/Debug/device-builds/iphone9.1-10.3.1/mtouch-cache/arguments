@@ -1,6 +1,6 @@
-# Version: 10.12.0.18 (d15-3: 4a279c9a)
+# Version: 10.12.0.20 (d15-3: 80b8487d)
 # [first argument, ignore] # --cache
-/Library/Frameworks/Xamarin.iOS.framework/Versions/10.12.0.18/lib/mtouch/mtouch.exe \
+/Library/Frameworks/Xamarin.iOS.framework/Versions/10.12.0.20/lib/mtouch/mtouch.exe \
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/mtouch-cache \
 	--sim \
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/MahechaBJJ.iOS.app \
@@ -31,13 +31,13 @@
 	-r \
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PCLCrypto.2.0.147/lib/xamarinios10/PCLCrypto.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.BCrypt.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.BCrypt.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.BCrypt.0.5.97/lib/portable-net45+win8+wpa81/PInvoke.BCrypt.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.Kernel32.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.Kernel32.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.Kernel32.0.5.97/lib/portable-net45+win8+wpa81/PInvoke.Kernel32.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.NCrypt.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.NCrypt.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.NCrypt.0.5.97/lib/portable-net45+win8+wpa81/PInvoke.NCrypt.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.Windows.Core.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.Windows.Core.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.Windows.Core.0.5.97/lib/portable-net45+win8+wpa81/PInvoke.Windows.Core.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r \
@@ -55,13 +55,13 @@
 	-r \
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Auth.1.5.0.3/lib/Xamarin.iOS10/Xamarin.Auth.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll \
 	-r \
@@ -343,93 +343,93 @@
 	-r \
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PCLCrypto.2.0.147/lib/xamarinios10/PCLCrypto.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.BCrypt.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.BCrypt.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.BCrypt.0.5.97/lib/portable-net45+win8+wpa81/PInvoke.BCrypt.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.Kernel32.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.Kernel32.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.Kernel32.0.5.97/lib/portable-net45+win8+wpa81/PInvoke.Kernel32.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.NCrypt.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.NCrypt.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.NCrypt.0.5.97/lib/portable-net45+win8+wpa81/PInvoke.NCrypt.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.Windows.Core.0.5.86/lib/portable-net45+win8+wpa81/PInvoke.Windows.Core.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/PInvoke.Windows.Core.0.5.97/lib/portable-net45+win8+wpa81/PInvoke.Windows.Core.dll \
 	-r \
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Validation.2.4.15/lib/netstandard1.3/Validation.dll \
 	-r \
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Auth.1.5.0.3/lib/Xamarin.iOS10/Xamarin.Auth.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/ar/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/ar/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/ca/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/ca/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/cs/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/cs/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/da/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/da/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/de/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/de/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/el/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/el/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/es/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/es/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/fi/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/fi/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/fr/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/fr/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/he/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/he/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/hi/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/hi/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/hr/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/hr/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/hu/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/hu/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/id/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/id/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/it/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/it/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/ja/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/ja/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/ko/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/ko/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/ms/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/ms/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/nb/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/nb/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/nl/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/nl/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/ro/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/ro/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/ru/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/ru/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/sk/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/sk/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/sv/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/sv/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/th/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/th/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/tr/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/tr/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/uk/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/uk/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/vi/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/vi/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll \
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/packages/Xamarin.Forms.2.3.4.267/lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll \
 	--target-framework \
 	"Xamarin.iOS,v1.0" \
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhoneSimulator/Debug/MahechaBJJ.iOS.exe \

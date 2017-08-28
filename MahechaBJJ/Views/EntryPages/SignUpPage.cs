@@ -48,24 +48,32 @@ namespace MahechaBJJ.Views.EntryPages
         public SignUpPage()
         {
             Padding = new Thickness(10, 30, 10, 10);
-            user = new User();
-            var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+            SetContent();
+        }
+
+		//functions
+        private void SetContent()
+        {
+			user = new User();
+			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-			var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));			//Grid view definition
+			var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));            
+
+            //Grid view definition
 			outerGrid = new Grid
 			{
-				RowDefinitions = new RowDefinitionCollection 
-                {
+				RowDefinitions = new RowDefinitionCollection
+				{
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
 				}
 			};
 
 			innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection {
-                    new RowDefinition { Height = new GridLength(2, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-				    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+			{
+				RowDefinitions = new RowDefinitionCollection {
+					new RowDefinition { Height = new GridLength(2, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
@@ -79,20 +87,20 @@ namespace MahechaBJJ.Views.EntryPages
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
 				},
-                ColumnDefinitions = new ColumnDefinitionCollection {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-                }
+				ColumnDefinitions = new ColumnDefinitionCollection {
+					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
+				}
 			};
-            //View objects
-            mahechaLogo = new Image
-            {
-                Source = ImageSource.FromResource("mahechabjjlogo.png"),
-                Aspect = Aspect.AspectFit
+			//View objects
+			mahechaLogo = new Image
+			{
+				Source = ImageSource.FromResource("mahechabjjlogo.png"),
+				Aspect = Aspect.AspectFit
 			};
-            beltLbl = new Label
-            {
-                Text = "Belt",
+			beltLbl = new Label
+			{
+				Text = "Belt",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -103,19 +111,19 @@ namespace MahechaBJJ.Views.EntryPages
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
 			};
-            beltList = new ObservableCollection<string>();
-            beltList.Add("White");
-            beltList.Add("Blue");
-            beltList.Add("Purple");
-            beltList.Add("Brown");
-            beltList.Add("Black");
-            beltPicker = new Picker
-            {
-                Title = "Choose Your Rank",
-                ItemsSource = beltList
-            };
-            nameLbl = new Label
-            {
+			beltList = new ObservableCollection<string>();
+			beltList.Add("White");
+			beltList.Add("Blue");
+			beltList.Add("Purple");
+			beltList.Add("Brown");
+			beltList.Add("Black");
+			beltPicker = new Picker
+			{
+				Title = "Choose Your Rank",
+				ItemsSource = beltList
+			};
+			nameLbl = new Label
+			{
 
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
@@ -124,12 +132,12 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "Name",
-                FontSize = lblSize,
+				FontSize = lblSize,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
 			};
-            nameEntry = new Entry
-            {
+			nameEntry = new Entry
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -137,10 +145,10 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Placeholder = "Brian Mahecha",
-                FontSize = entrySize
-            };
-            emailAddressLbl = new Label
-            {
+				FontSize = entrySize
+			};
+			emailAddressLbl = new Label
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -148,13 +156,13 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "E-Mail Address",
-                FontSize = lblSize,
+				FontSize = lblSize,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
 
-            };
-            emailAddressEntry = new Entry
-            {
+			};
+			emailAddressEntry = new Entry
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -162,10 +170,10 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Placeholder = "admin@Mahechabjj.com",
-                FontSize = entrySize
-            };
-            passWordLbl = new Label
-            {
+				FontSize = entrySize
+			};
+			passWordLbl = new Label
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -173,12 +181,12 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "Password",
-                FontSize = lblSize,
+				FontSize = lblSize,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
-            };
-            passWordEntry = new Entry
-            {
+			};
+			passWordEntry = new Entry
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -186,10 +194,10 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				IsPassword = true,
-                FontSize = entrySize
-            };
-            passWordRepeatLbl = new Label
-            {
+				FontSize = entrySize
+			};
+			passWordRepeatLbl = new Label
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -197,12 +205,12 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "Re-Enter Password",
-                FontSize = lblSize,
+				FontSize = lblSize,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
-            };
-            passWordRepeatEntry = new Entry
-            {
+			};
+			passWordRepeatEntry = new Entry
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -210,10 +218,10 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				IsPassword = true,
-                FontSize = entrySize
-            };
-            secretQuestionLbl = new Label
-            {
+				FontSize = entrySize
+			};
+			secretQuestionLbl = new Label
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -221,21 +229,21 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = lblSize,
-                Text = "Secret Questions",
+				Text = "Secret Questions",
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
 			};
-            secretQuestionList1 = new ObservableCollection<String>();
-            secretQuestionList1.Add("What city were you born in?");
-            secretQuestionList1.Add("What city was your high school?");
-            secretQuestionList1.Add("Name of favorite instructor.");
-            secretQuestionPicker1 = new Picker
-            {
-                Title = "Select a secret question to answer!",
-                ItemsSource = secretQuestionList1
-            };
-            secretQuestionEntry1 = new Entry
-            {
+			secretQuestionList1 = new ObservableCollection<String>();
+			secretQuestionList1.Add("What city were you born in?");
+			secretQuestionList1.Add("What city was your high school?");
+			secretQuestionList1.Add("Name of favorite instructor.");
+			secretQuestionPicker1 = new Picker
+			{
+				Title = "Select a secret question to answer!",
+				ItemsSource = secretQuestionList1
+			};
+			secretQuestionEntry1 = new Entry
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -243,19 +251,19 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = entrySize,
-                Placeholder = "Answer for your own security!"
+				Placeholder = "Answer for your own security!"
 			};
-            secretQuestionList2 = new ObservableCollection<string>();
-            secretQuestionList2.Add("What is your favorite guard?");
-            secretQuestionList2.Add("What is your favorite takedown?");
-            secretQuestionList2.Add("Federation with best ruleset?");
-            secretQuestionPicker2 = new Picker
-            {
-                Title = "Select another secret question to answer!",
-                ItemsSource = secretQuestionList2
-            };
-            secretQuestionEntry2 = new Entry
-            {
+			secretQuestionList2 = new ObservableCollection<string>();
+			secretQuestionList2.Add("What is your favorite guard?");
+			secretQuestionList2.Add("What is your favorite takedown?");
+			secretQuestionList2.Add("Federation with best ruleset?");
+			secretQuestionPicker2 = new Picker
+			{
+				Title = "Select another secret question to answer!",
+				ItemsSource = secretQuestionList2
+			};
+			secretQuestionEntry2 = new Entry
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -263,10 +271,10 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = entrySize,
-                Placeholder = "Answer again for even more security!"
+				Placeholder = "Answer again for even more security!"
 			};
-            signUpBtn = new Button
-            {
+			signUpBtn = new Button
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -274,14 +282,14 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "Sign Up!",
-                FontSize = btnSize,
+				FontSize = btnSize,
 				BackgroundColor = Color.Orange,
 				TextColor = Color.Black,
 				BorderWidth = 3,
 				BorderColor = Color.Black
 			};
-            backBtn = new Button
-            {
+			backBtn = new Button
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -289,14 +297,14 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "Back",
-                FontSize = btnSize,
+				FontSize = btnSize,
 				BackgroundColor = Color.Orange,
 				TextColor = Color.Black,
 				BorderWidth = 3,
 				BorderColor = Color.Black
 			};
-            clearBtn = new Button
-            {
+			clearBtn = new Button
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -304,56 +312,54 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "Clear",
-                FontSize = btnSize,
+				FontSize = btnSize,
 				BackgroundColor = Color.Orange,
 				TextColor = Color.Black,
 				BorderWidth = 3,
 				BorderColor = Color.Black
 			};
 
-            //Events
-            signUpBtn.Clicked += Validate;
-            backBtn.Clicked += GoBack;
-            passWordRepeatEntry.Unfocused += PasswordMatch;
-            //TODO add specific validation events to make sure entries are correct.
+			//Events
+			signUpBtn.Clicked += Validate;
+			backBtn.Clicked += GoBack;
+			passWordRepeatEntry.Unfocused += PasswordMatch;
+			//TODO add specific validation events to make sure entries are correct.
 
-            innerGrid.Children.Add(mahechaLogo, 0, 0);
-            Grid.SetColumnSpan(mahechaLogo, 2);
-            innerGrid.Children.Add(nameLbl, 0, 1);
-            innerGrid.Children.Add(nameEntry, 0, 2);
-            innerGrid.Children.Add(beltLbl, 1, 1);
-            innerGrid.Children.Add(beltPicker, 1, 2);
+			innerGrid.Children.Add(mahechaLogo, 0, 0);
+			Grid.SetColumnSpan(mahechaLogo, 2);
+			innerGrid.Children.Add(nameLbl, 0, 1);
+			innerGrid.Children.Add(nameEntry, 0, 2);
+			innerGrid.Children.Add(beltLbl, 1, 1);
+			innerGrid.Children.Add(beltPicker, 1, 2);
 			innerGrid.Children.Add(emailAddressLbl, 0, 3);
-            Grid.SetColumnSpan(emailAddressLbl, 2);
+			Grid.SetColumnSpan(emailAddressLbl, 2);
 			innerGrid.Children.Add(emailAddressEntry, 0, 4);
-            Grid.SetColumnSpan(emailAddressEntry, 2);
+			Grid.SetColumnSpan(emailAddressEntry, 2);
 			innerGrid.Children.Add(passWordLbl, 0, 5);
-            Grid.SetColumnSpan(passWordLbl, 2);
+			Grid.SetColumnSpan(passWordLbl, 2);
 			innerGrid.Children.Add(passWordEntry, 0, 6);
-            Grid.SetColumnSpan(passWordEntry, 2);
+			Grid.SetColumnSpan(passWordEntry, 2);
 			innerGrid.Children.Add(passWordRepeatLbl, 0, 7);
-            Grid.SetColumnSpan(passWordRepeatLbl, 2);
+			Grid.SetColumnSpan(passWordRepeatLbl, 2);
 			innerGrid.Children.Add(passWordRepeatEntry, 0, 8);
-            Grid.SetColumnSpan(passWordRepeatEntry, 2);
+			Grid.SetColumnSpan(passWordRepeatEntry, 2);
 			innerGrid.Children.Add(secretQuestionLbl, 0, 9);
-            Grid.SetColumnSpan(secretQuestionLbl, 2);
+			Grid.SetColumnSpan(secretQuestionLbl, 2);
 			innerGrid.Children.Add(secretQuestionPicker1, 0, 10);
 			Grid.SetColumnSpan(secretQuestionPicker1, 2);
 			innerGrid.Children.Add(secretQuestionEntry1, 0, 11);
-            Grid.SetColumnSpan(secretQuestionEntry1, 2);
+			Grid.SetColumnSpan(secretQuestionEntry1, 2);
 			innerGrid.Children.Add(secretQuestionPicker2, 0, 12);
 			Grid.SetColumnSpan(secretQuestionPicker2, 2);
 			innerGrid.Children.Add(secretQuestionEntry2, 0, 13);
-            Grid.SetColumnSpan(secretQuestionEntry2, 2);
+			Grid.SetColumnSpan(secretQuestionEntry2, 2);
 			innerGrid.Children.Add(signUpBtn, 0, 14);
-            innerGrid.Children.Add(backBtn, 1, 14);
+			innerGrid.Children.Add(backBtn, 1, 14);
 
-            outerGrid.Children.Add(innerGrid, 0, 0);
+			outerGrid.Children.Add(innerGrid, 0, 0);
 
-            Content = outerGrid;
+			Content = outerGrid;
         }
-
-		//functions
 
         private void Validate(object sender, EventArgs e)
         {

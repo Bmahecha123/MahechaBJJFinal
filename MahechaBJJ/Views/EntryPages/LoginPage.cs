@@ -8,9 +8,7 @@ namespace MahechaBJJ.Views.EntryPages
 {
     public class LoginPage : ContentPage
     {
-        private readonly SignInPageViewModel _signInPageViewModel = new SignInPageViewModel();
         private readonly BaseViewModel _baseViewModel = new BaseViewModel();
-        private const string VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
         private const string FINDUSER = "http://localhost:8080/user/findByEmail/";
         //declare objects
         private Grid outerGrid;
@@ -28,41 +26,47 @@ namespace MahechaBJJ.Views.EntryPages
         public LoginPage()
         {
             Padding = new Thickness(10, 30, 10, 10);
-            var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
-            var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-            var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));
-            //Grid view definition
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection {
-                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+            SetContent();
+        }
+
+		//functions
+        private void SetContent()
+        {
+			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+			var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));
+			//Grid view definition
+			outerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection {
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+				}
+			};
+			innerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection {
+					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                },
-                ColumnDefinitions = new ColumnDefinitionCollection {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-                }  
-            };
-            //View objects
-            mahechaLogo = new Image
-            {
-                Source = ImageSource.FromResource("mahechabjjlogo.png"),
-                Aspect = Aspect.AspectFit
-            };
-            emailLbl = new Label
-            {
-                Text = "E-Mail Address",
-                FontSize = lblSize * 2,
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+				},
+				ColumnDefinitions = new ColumnDefinitionCollection {
+					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
+				}
+			};
+			//View objects
+			mahechaLogo = new Image
+			{
+				Source = ImageSource.FromResource("mahechabjjlogo.png"),
+				Aspect = Aspect.AspectFit
+			};
+			emailLbl = new Label
+			{
+				Text = "E-Mail Address",
+				FontSize = lblSize * 2,
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -73,9 +77,9 @@ namespace MahechaBJJ.Views.EntryPages
 				HorizontalTextAlignment = TextAlignment.Center
 
 			};
-            emailEntry = new Entry
-            {
-                Placeholder = "SpiderGuard123@gmail.com",
+			emailEntry = new Entry
+			{
+				Placeholder = "SpiderGuard123@gmail.com",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -83,11 +87,11 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = entrySize,
-            };
-            passwordLbl = new Label
-            {
-                Text = "Password",
-                FontSize = lblSize * 2,
+			};
+			passwordLbl = new Label
+			{
+				Text = "Password",
+				FontSize = lblSize * 2,
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -97,9 +101,9 @@ namespace MahechaBJJ.Views.EntryPages
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
 			};
-            passwordEntry = new Entry
-            {
-                IsPassword = true,
+			passwordEntry = new Entry
+			{
+				IsPassword = true,
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -107,54 +111,58 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = entrySize
-            };
-            loginBtn = new Button
-            {
-                Text = "Login",
-                FontSize = btnSize * 2,
+			};
+			loginBtn = new Button
+			{
+				Text = "Login",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
+                FontSize = btnSize * 2,
 				BackgroundColor = Color.Orange,
-                TextColor = Color.Black
-            };
-            backBtn = new Button
-            {
+				TextColor = Color.Black,
+				BorderWidth = 3,
+				BorderColor = Color.Black
+			};
+			backBtn = new Button
+			{
 				Text = "Back",
-                FontSize = btnSize * 2,
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				BackgroundColor = Color.Orange,
-				TextColor = Color.Black
-            };
-            //Events
-            loginBtn.Clicked += Validate;
-            backBtn.Clicked += GoBack;
+                FontSize = btnSize * 2,
+                BackgroundColor = Color.Orange,
+                TextColor = Color.Black,
+                BorderWidth = 3,
+                BorderColor = Color.Black
+			};
+			//Events
+			loginBtn.Clicked += Validate;
+			backBtn.Clicked += GoBack;
 
-            innerGrid.Children.Add(mahechaLogo, 0, 0);
-            Grid.SetColumnSpan(mahechaLogo, 2);
-            innerGrid.Children.Add(emailLbl, 0, 1);
-            Grid.SetColumnSpan(emailLbl, 2);
-            innerGrid.Children.Add(emailEntry, 0, 2);
-            Grid.SetColumnSpan(emailEntry, 2);
+			innerGrid.Children.Add(mahechaLogo, 0, 0);
+			Grid.SetColumnSpan(mahechaLogo, 2);
+			innerGrid.Children.Add(emailLbl, 0, 1);
+			Grid.SetColumnSpan(emailLbl, 2);
+			innerGrid.Children.Add(emailEntry, 0, 2);
+			Grid.SetColumnSpan(emailEntry, 2);
 			innerGrid.Children.Add(passwordLbl, 0, 3);
-            Grid.SetColumnSpan(passwordLbl, 2);
+			Grid.SetColumnSpan(passwordLbl, 2);
 			innerGrid.Children.Add(passwordEntry, 0, 4);
-            Grid.SetColumnSpan(passwordEntry, 2);
+			Grid.SetColumnSpan(passwordEntry, 2);
 			innerGrid.Children.Add(backBtn, 0, 5);
 			innerGrid.Children.Add(loginBtn, 1, 5);
-            outerGrid.Children.Add(innerGrid, 0, 0);
+			outerGrid.Children.Add(innerGrid, 0, 0);
 
-            Content = outerGrid;
+			Content = outerGrid;
         }
-		//functions
+
         private void Validate(object sender, EventArgs e)
         {
             if(emailEntry.Text != null || passwordEntry.Text != null)

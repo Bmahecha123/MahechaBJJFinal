@@ -49,160 +49,165 @@ namespace MahechaBJJ.Views
             Padding = new Thickness(10, 30, 10, 10);
             Title = video.name;
             videoTechnique = video;
+            SetContent();
+        }
 
-            var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-            var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+        //Functions
+        public void SetContent() 
+        {
 
-            //view objects
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                },
-                ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-                }
-            };
+			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
+			//view objects
+			innerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection
+				{
+					new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+				},
+				ColumnDefinitions = new ColumnDefinitionCollection
+				{
+					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
+				}
+			};
 
-            backBtn = new Button
-            {
-                Text = "Back",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
+			outerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection
+				{
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+				}
+			};
+
+			backBtn = new Button
+			{
+				Text = "Back",
+				BorderWidth = 3,
+				BorderColor = Color.Black,
+				TextColor = Color.Black,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                FontSize = btnSize * 2,
-                BackgroundColor = Color.Orange
-            };
-            videoNameLbl = new Label
-            {
-                Text = video.name,
+				FontSize = btnSize * 2,
+				BackgroundColor = Color.Orange
+			};
+			videoNameLbl = new Label
+			{
+				Text = videoTechnique.name,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                FontSize = lblSize,
-                TextColor = Color.White
-            };
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center,
+				FontSize = lblSize,
+				TextColor = Color.White
+			};
 
-            videoDescription = new Label
-            {
-                Text = video.description,
+			videoDescription = new Label
+			{
+				Text = videoTechnique.description,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                VerticalTextAlignment = TextAlignment.Start,
-                HorizontalTextAlignment = TextAlignment.Start,
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
-                LineBreakMode = LineBreakMode.WordWrap,
+				VerticalTextAlignment = TextAlignment.Start,
+				HorizontalTextAlignment = TextAlignment.Start,
+				FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
+				LineBreakMode = LineBreakMode.WordWrap,
 
-            };
+			};
 
-            videoDescriptionScrollView = new ScrollView
-            {
-                Padding = 0,
-                Content = videoDescription,
-                Orientation = ScrollOrientation.Vertical
-            };
+			videoDescriptionScrollView = new ScrollView
+			{
+				Padding = 0,
+				Content = videoDescription,
+				Orientation = ScrollOrientation.Vertical
+			};
 
-            videoImage = new Image
-            {
-                Source = video.pictures.sizes[4].link,
-                Aspect = Aspect.AspectFill
-            };
-            videoFrame = new Frame
-            {
-                Content = videoImage,
-                OutlineColor = Color.Black,
-                BackgroundColor = Color.Black,
-                HasShadow = false,
-                Padding = 3
+			videoImage = new Image
+			{
+				Source = videoTechnique.pictures.sizes[4].link,
+				Aspect = Aspect.AspectFill
+			};
+			videoFrame = new Frame
+			{
+				Content = videoImage,
+				OutlineColor = Color.Black,
+				BackgroundColor = Color.Black,
+				HasShadow = false,
+				Padding = 3
 
-            };
-            playBtn = new Button
-            {
-                Text = "Play",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
+			};
+			playBtn = new Button
+			{
+				Text = "Play",
+				BorderWidth = 3,
+				BorderColor = Color.Black,
+				TextColor = Color.Black,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                FontSize = btnSize * 2,
-                BackgroundColor = Color.Orange
-            };
-            addBtn = new Button
-            {
-                Text = "Add",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
+				FontSize = btnSize * 2,
+				BackgroundColor = Color.Orange
+			};
+			addBtn = new Button
+			{
+				Text = "Add",
+				BorderWidth = 3,
+				BorderColor = Color.Black,
+				TextColor = Color.Black,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                FontSize = btnSize * 2,
-                BackgroundColor = Color.Orange
-            };
+				FontSize = btnSize * 2,
+				BackgroundColor = Color.Orange
+			};
 
-            //Events
-            backBtn.Clicked += GoBack;
-            addBtn.Clicked += AddVideoToPlaylist;
+			//Events
+			backBtn.Clicked += GoBack;
+			addBtn.Clicked += AddVideoToPlaylist;
 #if __IOS__
-            playBtn.Clicked += PlayIOSVideo;
+			playBtn.Clicked += PlayIOSVideo;
 #endif
 #if __ANDROID__
             playVideo.Clicked += PlayAndroidVideo;
 #endif
-            //building grid
-            innerGrid.Children.Add(videoFrame, 0, 0);
-            Grid.SetColumnSpan(videoFrame, 2);
-            innerGrid.Children.Add(videoNameLbl, 0, 0);
-            Grid.SetColumnSpan(videoNameLbl, 2);
-            innerGrid.Children.Add(playBtn, 0, 1);
-            innerGrid.Children.Add(addBtn, 1, 1);
-            innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-            Grid.SetColumnSpan(videoDescriptionScrollView, 2);
-            innerGrid.Children.Add(backBtn, 0, 3);
-            Grid.SetColumnSpan(backBtn, 2);
+			//building grid
+			innerGrid.Children.Add(videoFrame, 0, 0);
+			Grid.SetColumnSpan(videoFrame, 2);
+			innerGrid.Children.Add(videoNameLbl, 0, 0);
+			Grid.SetColumnSpan(videoNameLbl, 2);
+			innerGrid.Children.Add(playBtn, 0, 1);
+			innerGrid.Children.Add(addBtn, 1, 1);
+			innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
+			Grid.SetColumnSpan(videoDescriptionScrollView, 2);
+			innerGrid.Children.Add(backBtn, 0, 3);
+			Grid.SetColumnSpan(backBtn, 2);
 
-            outerGrid.Children.Add(innerGrid, 0, 0);
+			outerGrid.Children.Add(innerGrid, 0, 0);
 
-            Content = outerGrid;
+			Content = outerGrid;
         }
 
-        //Functions
         public void PlayIOSVideo(object sender, EventArgs e)
         {
             playBtn.IsEnabled = false;
