@@ -15,12 +15,14 @@ namespace MahechaBJJ.Views.BlogPages
         private Button backBtn;
         private Label blogContentLbl;
         private ScrollView scrollView;
+        private BlogPosts.Post globalBlogPost;
 
         public BlogDetailPage(BlogPosts.Post blogPost)
         {
 			Title = "Blog Post";
             blogString = StripHtml(blogPost.caption);
             Padding = new Thickness(10, 30, 10, 10);
+            globalBlogPost = blogPost;
             SetContent();
 
         }
@@ -52,7 +54,7 @@ namespace MahechaBJJ.Views.BlogPages
 			blogImage = new Image
 			{
 				Aspect = Aspect.Fill,
-				Source = blogPost.photos[0].alt_sizes[1].url
+                Source = globalBlogPost.photos[0].alt_sizes[1].url
 			};
 			blogFrame = new Frame
 			{
@@ -108,6 +110,7 @@ namespace MahechaBJJ.Views.BlogPages
 
 			Content = outerGrid;
         }
+
 
 		public void GoBack(object sender, EventArgs e)
 		{

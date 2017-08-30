@@ -1,25 +1,22 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A1F474E0-DFAD-4433-B68F-697A133AB7F2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/EntryPages/EntryPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/PlaylistPages/PlaylistVideoPage.cs">
     <Files>
-      <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="29" Column="20" />
-      <File FileName="MahechaBJJ/Views/EntryPages/LearnMorePage.cs" Line="34" Column="31" />
-      <File FileName="MahechaBJJ/Views/EntryPages/LoginPage.cs" Line="140" Column="40" />
-      <File FileName="MahechaBJJ/Views/EntryPages/SignUpPage.cs" Line="50" Column="16" />
-      <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistCreatePage.cs" Line="36" Column="26" />
-      <File FileName="MahechaBJJ/Views/HomePage.cs" Line="44" Column="17" />
-      <File FileName="MahechaBJJ/Views/MainTabbedPage.cs" Line="18" Column="1" />
-      <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistDetailPage.cs" Line="38" Column="26" />
-      <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistVideoPage.cs" Line="39" Column="26" />
-      <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistViewPage.cs" Line="32" Column="26" />
-      <File FileName="MahechaBJJ/Views/AndroidVideoPage.cs" Line="25" Column="23" />
-      <File FileName="MahechaBJJ/Views/BrowsePage.cs" Line="30" Column="23" />
-      <File FileName="MahechaBJJ/Views/ProfilePage.cs" Line="40" Column="20" />
-      <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="38" Column="23" />
-      <File FileName="MahechaBJJ/Views/VideoDetailPage.cs" Line="214" Column="49" />
-      <File FileName="MahechaBJJ/Views/BlogPages/BlogDetailPage.cs" Line="25" Column="13" />
-      <File FileName="MahechaBJJ/Views/BlogPages/BlogViewPage.cs" Line="36" Column="4" />
+      <File FileName="MahechaBJJ/Views/BlogPages/BlogDetailPage.cs" Line="34" Column="16" NotebookId="1" />
+      <File FileName="MahechaBJJ/Views/BlogPages/BlogViewPage.cs" Line="240" Column="21" NotebookId="1" />
+      <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistViewPage.cs" Line="272" Column="20" NotebookId="1" />
+      <File FileName="MahechaBJJ/ViewModel/PlaylistViewPageViewModel.cs" Line="57" Column="36" NotebookId="1" />
+      <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistVideoPage.cs" Line="92" Column="17" NotebookId="1" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="854" Y="23" Width="640" Height="480">
+        <Files>
+          <File FileName="MahechaBJJ/Views/HomePage.cs" Line="276" Column="23" />
+          <File FileName="MahechaBJJ/Views/SearchPage.cs" Line="232" Column="14" />
+          <File FileName="MahechaBJJ/ViewModel/HomePageViewModel.cs" Line="34" Column="14" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

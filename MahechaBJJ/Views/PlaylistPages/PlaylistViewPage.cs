@@ -23,17 +23,22 @@ namespace MahechaBJJ.Views.PlaylistPages
         private StackLayout layout;
         private Account account;
         private string id;
+		private Label timeOutLbl;
+		private Frame timeOutFrame;
+		private TapGestureRecognizer timeOutTap;
+		private ActivityIndicator activityIndicator;
 
         public PlaylistViewPage()
         {
             Title = "User Playlists";
             Padding = new Thickness(10, 30, 10, 10);
             FindPlaylists();
+            BuildPageObjects();
             SetContent();
         }
 
         //Functions
-        public void SetContent()
+        public void BuildPageObjects()
         {
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
@@ -90,18 +95,82 @@ namespace MahechaBJJ.Views.PlaylistPages
 				BorderWidth = 3,
 				TextColor = Color.Black
 			};
+
+			timeOutLbl = new Label
+			{
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+				Text = "Network Has Timed Out! \n Click To Try Again!",
+				LineBreakMode = LineBreakMode.WordWrap,
+				FontSize = lblSize,
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center,
+				HorizontalOptions = LayoutOptions.CenterAndExpand,
+				VerticalOptions = LayoutOptions.CenterAndExpand,
+				TextColor = Color.White
+			};
+			timeOutFrame = new Frame
+			{
+				Content = timeOutLbl,
+				OutlineColor = Color.Black,
+				BackgroundColor = Color.Black,
+				HasShadow = false,
+				Padding = 3,
+				HorizontalOptions = LayoutOptions.CenterAndExpand,
+				VerticalOptions = LayoutOptions.CenterAndExpand
+			};
+			timeOutTap = new TapGestureRecognizer();
+			timeOutTap.Tapped += (sender, e) =>
+			{
+				SetContent();
+			};
+			timeOutLbl.GestureRecognizers.Add(timeOutTap);
+			activityIndicator = new ActivityIndicator
+			{
+				IsRunning = false,
+				IsEnabled = true,
+				IsVisible = true
+			};
+
 			//Events
 			backBtn.Clicked += GoBack;
 			playlistView.ItemSelected += LoadPlaylist;
 
-			//building grid
-			innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
-			innerGrid.Children.Add(playlistView, 0, 1);
-			innerGrid.Children.Add(backBtn, 0, 2);
-
 			outerGrid.Children.Add(innerGrid, 0, 0);
 
 			Content = outerGrid;
+        }
+
+        private void SetContent()
+        {
+            innerGrid.Children.Clear();
+            activityIndicator.IsRunning = true;
+            innerGrid.Children.Add(activityIndicator, 0, 0);
+            Grid.SetRowSpan(activityIndicator, 3);
+
+            if (_playlistViewPageViewModel.Playlist == null)
+            {
+                FindPlaylists();
+            }
+            if (_playlistViewPageViewModel.Successful)
+            {
+                SetListView();
+
+				//building grid
+				innerGrid.Children.Clear();
+				innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
+				innerGrid.Children.Add(playlistView, 0, 1);
+				innerGrid.Children.Add(backBtn, 0, 2);
+
+            } else {
+				innerGrid.Children.Clear();
+				innerGrid.Children.Add(timeOutFrame, 0, 0);
+                Grid.SetRowSpan(timeOutFrame, 3);
+            }
         }
 
         public void GoBack(object sender, EventArgs e)
@@ -115,9 +184,9 @@ namespace MahechaBJJ.Views.PlaylistPages
             account = _baseViewModel.GetAccountInformation();
             id = account.Properties["Id"];
             await _playlistViewPageViewModel.GetUserPlaylists(Constants.GETPLAYLIST, id);
-            SetViewContents();
+            //SetListView();
         }
-        public void SetViewContents()
+        public void SetListView()
         {
             playlistView.ItemsSource = _playlistViewPageViewModel.Playlist;
             playlistView.ItemTemplate = new DataTemplate(() =>
@@ -177,8 +246,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 		{
 			base.OnAppearing();
 			await _playlistViewPageViewModel.GetUserPlaylists(Constants.GETPLAYLIST, id);
-			SetViewContents();
-
+			SetListView();
 		}
 
 		//Orientation
@@ -188,32 +256,38 @@ namespace MahechaBJJ.Views.PlaylistPages
 
 			if (width > height)
 			{
-				Padding = new Thickness(10, 10, 10, 10);
-				innerGrid.RowDefinitions.Clear();
-				innerGrid.ColumnDefinitions.Clear();
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
-				innerGrid.Children.Clear();
-                innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
-                innerGrid.Children.Add(backBtn, 0, 2);
-                innerGrid.Children.Add(playlistView, 1, 0);
-                Grid.SetRowSpan(playlistView, 3);
+                if (_playlistViewPageViewModel.Playlist != null)
+                {
+					Padding = new Thickness(10, 10, 10, 10);
+					innerGrid.RowDefinitions.Clear();
+					innerGrid.ColumnDefinitions.Clear();
+					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+					innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+					innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
+					innerGrid.Children.Clear();
+					innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
+					innerGrid.Children.Add(backBtn, 0, 2);
+					innerGrid.Children.Add(playlistView, 1, 0);
+					Grid.SetRowSpan(playlistView, 3);
+                }
 			}
 			else
 			{
-				Padding = new Thickness(10, 30, 10, 10);
-				innerGrid.RowDefinitions.Clear();
-				innerGrid.ColumnDefinitions.Clear();
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(7, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.Children.Clear();
-                innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
-                innerGrid.Children.Add(playlistView, 0, 1);
-                innerGrid.Children.Add(backBtn, 0, 2);
+                if (_playlistViewPageViewModel.Playlist != null)
+                {
+					Padding = new Thickness(10, 30, 10, 10);
+					innerGrid.RowDefinitions.Clear();
+					innerGrid.ColumnDefinitions.Clear();
+					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(7, GridUnitType.Star) });
+					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+					innerGrid.Children.Clear();
+					innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
+					innerGrid.Children.Add(playlistView, 0, 1);
+					innerGrid.Children.Add(backBtn, 0, 2);
+                }
 			}
 		}
     }

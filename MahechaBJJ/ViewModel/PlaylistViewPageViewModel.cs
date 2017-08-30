@@ -13,6 +13,20 @@ namespace MahechaBJJ.ViewModel
         private UserService _userService;
         private AccountService _accountService;
 
+		private bool _successful;
+		public bool Successful
+		{
+			get
+			{
+				return _successful;
+			}
+			set
+			{
+				_successful = value;
+				OnPropertyChanged();
+			}
+		}
+
 		private ObservableCollection<PlayList> _playlist;
 		public ObservableCollection<PlayList> Playlist
 		{
@@ -36,6 +50,12 @@ namespace MahechaBJJ.ViewModel
         public async Task GetUserPlaylists(string url, string id)
         {
             _playlist = await _userService.GetPlaylists(url + id);
+            if (_playlist == null)
+            {
+                _successful = false;
+            } else {
+                _successful = true;
+            }
         }
 
 		public event PropertyChangedEventHandler PropertyChanged;

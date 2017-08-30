@@ -36,12 +36,12 @@ namespace MahechaBJJ.Views.PlaylistPages
             Title = video.Name;
 			videoTechnique = video;
             userPlaylist = playlist;
-            SetContent();
+            SetContent(video, playlist);
 			
         }
 
 		//Functions
-        public void SetContent()
+        public void SetContent(Video video, PlayList playlist)
         {
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
