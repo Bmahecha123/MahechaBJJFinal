@@ -22,10 +22,10 @@ namespace MahechaBJJ.Views
 		public AndroidVideoPage(string url)
         {
 			BackgroundColor = Color.Black;
-            BuildPageObjects(url);
+            SetContent(url);
 		}
 
-        public void BuildPageObjects(string url)
+        public void SetContent(string url)
         {
 #if __ANDROID__
             videoView = new VideoView(Forms.Context);

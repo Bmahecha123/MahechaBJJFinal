@@ -29,29 +29,35 @@ namespace MahechaBJJ.Views.PlaylistPages
             Title = "User Playlists";
             Padding = new Thickness(10, 30, 10, 10);
             FindPlaylists();
+            SetContent();
+        }
+
+        //Functions
+        public void SetContent()
+        {
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 
 			//View Objects
 			innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection 
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+			{
+				RowDefinitions = new RowDefinitionCollection
+				{
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(7, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
 				}
-            };
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
+			};
+			outerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection
+				{
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+				}
+			};
 
-            viewPlaylistLbl = new Label
-            {
+			viewPlaylistLbl = new Label
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -60,45 +66,44 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 				Text = "View Playlists",
 				FontSize = lblSize * 2,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center
-            };
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
+			};
 
-            playlistView = new ListView
-            {
-                HasUnevenRows = true,
-                SeparatorVisibility = SeparatorVisibility.None
-            };
+			playlistView = new ListView
+			{
+				HasUnevenRows = true,
+				SeparatorVisibility = SeparatorVisibility.None
+			};
 
-            backBtn = new Button
-            {
+			backBtn = new Button
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "Back",
-                FontSize = btnSize * 2,
-                BackgroundColor = Color.Orange,
-                BorderWidth = 3,
-                TextColor = Color.Black
+				Text = "Back",
+				FontSize = btnSize * 2,
+				BackgroundColor = Color.Orange,
+				BorderWidth = 3,
+				TextColor = Color.Black
 			};
-            //Events
-            backBtn.Clicked += GoBack;
-            playlistView.ItemSelected += LoadPlaylist;
+			//Events
+			backBtn.Clicked += GoBack;
+			playlistView.ItemSelected += LoadPlaylist;
 
-            //building grid
-            innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
-            innerGrid.Children.Add(playlistView, 0, 1);
-            innerGrid.Children.Add(backBtn, 0, 2);
+			//building grid
+			innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
+			innerGrid.Children.Add(playlistView, 0, 1);
+			innerGrid.Children.Add(backBtn, 0, 2);
 
-            outerGrid.Children.Add(innerGrid, 0, 0);
+			outerGrid.Children.Add(innerGrid, 0, 0);
 
-            Content = outerGrid;
+			Content = outerGrid;
         }
 
-        //Functions
         public void GoBack(object sender, EventArgs e)
         {
             backBtn.IsEnabled = false;

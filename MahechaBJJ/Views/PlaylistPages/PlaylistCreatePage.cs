@@ -28,19 +28,27 @@ namespace MahechaBJJ.Views.PlaylistPages
 
         public PlaylistCreatePage()
         {
-			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+			
 			//View objects
 			Title = "Create Playlist";
 			Padding = new Thickness(10, 30, 10, 10);
 
-            //Layout
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+            SetContent();
+        }
+
+        //functions
+        public void SetContent()
+        {
+			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+
+			//Layout
+			innerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection
+				{
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
@@ -51,76 +59,76 @@ namespace MahechaBJJ.Views.PlaylistPages
 
 
 				},
-                ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
+				ColumnDefinitions = new ColumnDefinitionCollection
+				{
+					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
+				}
+			};
+			outerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection
+				{
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+				}
+			};
 
-            //View objects
-            playListNameLbl = new Label
-            {
+			//View objects
+			playListNameLbl = new Label
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "Name:",
-                FontSize = lblSize * 2
+				Text = "Name:",
+				FontSize = lblSize * 2
 			};
-            playListNameEntry = new Entry
-            {
+			playListNameEntry = new Entry
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Placeholder = "Leg Lasso List",
-                FontSize = lblSize,
-				
-			};
-            playListDescriptionLbl = new Label
-            {
-                Text = "Description:",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-                FontSize = lblSize * 2
+				Placeholder = "Leg Lasso List",
+				FontSize = lblSize,
 
 			};
-            playListDescriptionEditor = new Editor
-            {
-                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Editor)),
+			playListDescriptionLbl = new Label
+			{
+				Text = "Description:",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                 
+				FontSize = lblSize * 2
+
+			};
+			playListDescriptionEditor = new Editor
+			{
+				FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Editor)),
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+
 			};
 			editorFrame = new Frame
 			{
-                Content = playListDescriptionEditor,
+				Content = playListDescriptionEditor,
 				OutlineColor = Color.Black,
 				BackgroundColor = Color.Black,
 				HasShadow = false,
 				Padding = 3
 			};
-            backBtn = new Button
+			backBtn = new Button
 			{
 				Text = "Back",
 				BorderWidth = 3,
@@ -135,8 +143,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 				BackgroundColor = Color.Orange,
 				TextColor = Color.Black
 			};
-            createBtn = new Button
-            {
+			createBtn = new Button
+			{
 				Text = "Create",
 				BorderWidth = 3,
 				BorderColor = Color.Black,
@@ -151,33 +159,32 @@ namespace MahechaBJJ.Views.PlaylistPages
 				TextColor = Color.Black
 			};
 
-            //events
-            backBtn.Clicked += GoBack;
-            createBtn.Clicked += CreatePlaylist;
+			//events
+			backBtn.Clicked += GoBack;
+			createBtn.Clicked += CreatePlaylist;
 
-            //building grid
-            innerGrid.Children.Add(playListNameLbl, 0, 0);
-            playListNameLbl.VerticalTextAlignment = TextAlignment.Center;
-            playListNameLbl.HorizontalTextAlignment = TextAlignment.Center;
-            Grid.SetColumnSpan(playListNameLbl, 2);
-            innerGrid.Children.Add(playListNameEntry, 0, 1);
-            Grid.SetColumnSpan(playListNameEntry, 2);
-            innerGrid.Children.Add(playListDescriptionLbl, 0, 2);
-            Grid.SetColumnSpan(playListDescriptionLbl, 2);
-            playListDescriptionLbl.VerticalTextAlignment = TextAlignment.Center;
-            playListDescriptionLbl.HorizontalTextAlignment = TextAlignment.Center;
-            innerGrid.Children.Add(editorFrame, 0, 3);
-            Grid.SetRowSpan(editorFrame, 3);
-            Grid.SetColumnSpan(editorFrame, 2);
-            innerGrid.Children.Add(backBtn, 0, 7);
-            innerGrid.Children.Add(createBtn, 1, 7);
+			//building grid
+			innerGrid.Children.Add(playListNameLbl, 0, 0);
+			playListNameLbl.VerticalTextAlignment = TextAlignment.Center;
+			playListNameLbl.HorizontalTextAlignment = TextAlignment.Center;
+			Grid.SetColumnSpan(playListNameLbl, 2);
+			innerGrid.Children.Add(playListNameEntry, 0, 1);
+			Grid.SetColumnSpan(playListNameEntry, 2);
+			innerGrid.Children.Add(playListDescriptionLbl, 0, 2);
+			Grid.SetColumnSpan(playListDescriptionLbl, 2);
+			playListDescriptionLbl.VerticalTextAlignment = TextAlignment.Center;
+			playListDescriptionLbl.HorizontalTextAlignment = TextAlignment.Center;
+			innerGrid.Children.Add(editorFrame, 0, 3);
+			Grid.SetRowSpan(editorFrame, 3);
+			Grid.SetColumnSpan(editorFrame, 2);
+			innerGrid.Children.Add(backBtn, 0, 7);
+			innerGrid.Children.Add(createBtn, 1, 7);
 
-            outerGrid.Children.Add(innerGrid, 0, 0);
+			outerGrid.Children.Add(innerGrid, 0, 0);
 
-            Content = outerGrid;
+			Content = outerGrid;
         }
 
-        //functions
         public void GoBack(object sender, EventArgs e) 
         {
             Navigation.PopModalAsync();

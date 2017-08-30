@@ -31,7 +31,7 @@ namespace MahechaBJJ.Views.EntryPages
 		}
 
         //functions
-        public void BuildViewObjects()
+        public void SetContent()
         {
             innerGrid = new Grid
             {

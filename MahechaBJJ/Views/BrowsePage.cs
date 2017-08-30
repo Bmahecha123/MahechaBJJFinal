@@ -27,12 +27,12 @@ namespace MahechaBJJ.Views
 			Title = "Browse";
             Icon = "002-open-book.png";
             Padding = new Thickness(10,30,10,10);
-            BuildPageObjects();
+            SetContent();
 			
         }
 
 		//Functions
-        private void BuildPageObjects()
+        private void SetContent()
         {
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));

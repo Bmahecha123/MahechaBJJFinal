@@ -21,52 +21,59 @@ namespace MahechaBJJ.Views.BlogPages
 			Title = "Blog Post";
             blogString = StripHtml(blogPost.caption);
             Padding = new Thickness(10, 30, 10, 10);
+            SetContent();
+
+        }
+
+		//functions
+        public void SetContent()
+        {
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 
-            //view objects
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(6, GridUnitType.Star)},
+			//view objects
+			innerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection
+				{
+					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(6, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
 				}
-            };
-            outerGrid = new Grid
-            {
+			};
+			outerGrid = new Grid
+			{
 				RowDefinitions = new RowDefinitionCollection
 				{
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
 				}
-            };
+			};
 
-            blogImage = new Image
-            {
-                Aspect = Aspect.Fill,
-                Source = blogPost.photos[0].alt_sizes[1].url
-            };
-            blogFrame = new Frame
-            {
+			blogImage = new Image
+			{
+				Aspect = Aspect.Fill,
+				Source = blogPost.photos[0].alt_sizes[1].url
+			};
+			blogFrame = new Frame
+			{
 				BackgroundColor = Color.Black,
-			    HasShadow = false,
-			    OutlineColor = Color.Black,
-			    Padding = 3,
-			    Content = blogImage
-            };
+				HasShadow = false,
+				OutlineColor = Color.Black,
+				Padding = 3,
+				Content = blogImage
+			};
 			blogContentLbl = new Label
-            {
-                Text = blogString,
+			{
+				Text = blogString,
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                VerticalTextAlignment = TextAlignment.Start,
-                HorizontalTextAlignment = TextAlignment.Start,
-                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label))
+				VerticalTextAlignment = TextAlignment.Start,
+				HorizontalTextAlignment = TextAlignment.Start,
+				FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label))
 			};
 
 			backBtn = new Button
@@ -83,26 +90,25 @@ namespace MahechaBJJ.Views.BlogPages
 				BorderWidth = 3,
 				TextColor = Color.Black
 			};
-            scrollView = new ScrollView
-            {
-                Content = blogContentLbl
-            };
+			scrollView = new ScrollView
+			{
+				Content = blogContentLbl
+			};
 
 
-            //Events
-            backBtn.Clicked += GoBack;
+			//Events
+			backBtn.Clicked += GoBack;
 
 			//building Grid
 			innerGrid.Children.Add(blogFrame, 0, 0);
-            innerGrid.Children.Add(scrollView, 0, 1);
-            innerGrid.Children.Add(backBtn, 0, 2);
+			innerGrid.Children.Add(scrollView, 0, 1);
+			innerGrid.Children.Add(backBtn, 0, 2);
 
-            outerGrid.Children.Add(innerGrid, 0, 0);
+			outerGrid.Children.Add(innerGrid, 0, 0);
 
-            Content = outerGrid;
+			Content = outerGrid;
         }
 
-		//functions
 		public void GoBack(object sender, EventArgs e)
 		{
 			backBtn.IsEnabled = false;

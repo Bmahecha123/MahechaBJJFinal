@@ -35,70 +35,76 @@ namespace MahechaBJJ.Views.PlaylistPages
             Padding = new Thickness(10, 30, 10, 10);
 			userPlaylist = playlist;
 			FindPlaylist();
+            SetContent();
+		}
+
+        //Functions
+        public void SetContent() 
+        {
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 
-            //View Objects
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection 
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+			//View Objects
+			innerGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection
+				{
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(10, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                },
-                ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+				},
+				ColumnDefinitions = new ColumnDefinitionCollection
+				{
+					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
 					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
 				}
-            };
+			};
 
-            outerGrid = new Grid
-            {
+			outerGrid = new Grid
+			{
 				RowDefinitions = new RowDefinitionCollection
 				{
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
 				}
-            };
+			};
 
-            playlistNameLbl = new Label
-            {
+			playlistNameLbl = new Label
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = playlist.Name,
+				Text = userPlaylist.Name,
 				FontSize = lblSize * 2,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
-            };
+			};
 
-            playlistDescriptionLbl = new Label
-            {
+			playlistDescriptionLbl = new Label
+			{
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
+				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = playlist.Description,
-                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center
-            };
+				Text = userPlaylist.Description,
+				FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+				VerticalTextAlignment = TextAlignment.Center,
+				HorizontalTextAlignment = TextAlignment.Center
+			};
 
-            videosListView = new ListView
-            {
-                HasUnevenRows = true,
-                SeparatorVisibility = SeparatorVisibility.None
-            };
+			videosListView = new ListView
+			{
+				HasUnevenRows = true,
+				SeparatorVisibility = SeparatorVisibility.None
+			};
 
-            backBtn = new Button
-            {
+			backBtn = new Button
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -110,10 +116,10 @@ namespace MahechaBJJ.Views.PlaylistPages
 				BackgroundColor = Color.Orange,
 				BorderWidth = 3,
 				TextColor = Color.Black
-            };
+			};
 
-            deleteBtn = new Button
-            {
+			deleteBtn = new Button
+			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -122,30 +128,29 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 				Text = "Delete",
 				FontSize = btnSize * 2,
-                BackgroundColor = Color.Red,
+				BackgroundColor = Color.Red,
 				BorderWidth = 3,
-                TextColor = Color.White
-            };
+				TextColor = Color.White
+			};
 
-            //Events
-            backBtn.Clicked += GoBack;
-            deleteBtn.Clicked += DeletePlaylist;
-            videosListView.ItemSelected += LoadVideo;
+			//Events
+			backBtn.Clicked += GoBack;
+			deleteBtn.Clicked += DeletePlaylist;
+			videosListView.ItemSelected += LoadVideo;
 
-            //Building Grid
-            innerGrid.Children.Add(playlistNameLbl, 0, 0);
-            Grid.SetColumnSpan(playlistNameLbl, 2);
-            innerGrid.Children.Add(videosListView, 0, 1);
-            Grid.SetColumnSpan(videosListView, 2);
-            innerGrid.Children.Add(backBtn, 0, 2);
-            innerGrid.Children.Add(deleteBtn, 1, 2);
+			//Building Grid
+			innerGrid.Children.Add(playlistNameLbl, 0, 0);
+			Grid.SetColumnSpan(playlistNameLbl, 2);
+			innerGrid.Children.Add(videosListView, 0, 1);
+			Grid.SetColumnSpan(videosListView, 2);
+			innerGrid.Children.Add(backBtn, 0, 2);
+			innerGrid.Children.Add(deleteBtn, 1, 2);
 
-            outerGrid.Children.Add(innerGrid, 0, 0);
+			outerGrid.Children.Add(innerGrid, 0, 0);
 
-            Content = outerGrid;
-		}
+			Content = outerGrid;
+        }
 
-        //Functions
         public void GoBack(object sender, EventArgs e)
         {
             Navigation.PopModalAsync();

@@ -35,11 +35,11 @@ namespace MahechaBJJ.Views
 			Title = "Search";
             Icon = "004-search.png";
 			Padding = new Thickness(10, 30, 10, 10);
-            BuildPageObjects();
+            SetContent();
          }
 
         //Functions
-        public void BuildPageObjects()
+        public void SetContent()
         {
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			//View Objects

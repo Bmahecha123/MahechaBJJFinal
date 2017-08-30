@@ -36,7 +36,13 @@ namespace MahechaBJJ.Views.PlaylistPages
             Title = video.Name;
 			videoTechnique = video;
             userPlaylist = playlist;
+            SetContent();
+			
+        }
 
+		//Functions
+        public void SetContent()
+        {
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 
@@ -121,7 +127,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 
 			videoImage = new Image
 			{
-                Source = video.Image,
+				Source = video.Image,
 				Aspect = Aspect.AspectFill
 			};
 			videoFrame = new Frame
@@ -153,7 +159,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 				Text = "Delete From Playlist",
 				BorderWidth = 3,
 				BorderColor = Color.Black,
-                TextColor = Color.White,
+				TextColor = Color.White,
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -161,12 +167,12 @@ namespace MahechaBJJ.Views.PlaylistPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = btnSize * 1.5,
-                BackgroundColor = Color.Red
+				BackgroundColor = Color.Red
 			};
 
 			//Events
 			backBtn.Clicked += GoBack;
-            deleteBtn.Clicked += DeleteFromPlaylist;
+			deleteBtn.Clicked += DeleteFromPlaylist;
 #if __IOS__
 			playBtn.Clicked += PlayIOSVideo;
 #endif
@@ -179,11 +185,11 @@ namespace MahechaBJJ.Views.PlaylistPages
 			innerGrid.Children.Add(videoNameLbl, 0, 0);
 			Grid.SetColumnSpan(videoNameLbl, 2);
 			innerGrid.Children.Add(playBtn, 0, 1);
-            Grid.SetColumnSpan(playBtn, 2);
+			Grid.SetColumnSpan(playBtn, 2);
 			innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
 			Grid.SetColumnSpan(videoDescriptionScrollView, 2);
-            innerGrid.Children.Add(deleteBtn, 0, 3);
-            Grid.SetColumnSpan(deleteBtn, 2);
+			innerGrid.Children.Add(deleteBtn, 0, 3);
+			Grid.SetColumnSpan(deleteBtn, 2);
 			innerGrid.Children.Add(backBtn, 0, 4);
 			Grid.SetColumnSpan(backBtn, 2);
 
@@ -192,7 +198,6 @@ namespace MahechaBJJ.Views.PlaylistPages
 			Content = outerGrid;
         }
 
-		//Functions
 		public void PlayIOSVideo(object sender, EventArgs e)
 		{
 			playBtn.IsEnabled = false;
