@@ -33,11 +33,11 @@ namespace MahechaBJJ.Views.PlaylistPages
 			Title = "Create Playlist";
 			Padding = new Thickness(10, 30, 10, 10);
 
-            SetContent();
+            BuildPageObjects();
         }
 
         //functions
-        public void SetContent()
+        public void BuildPageObjects()
         {
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));

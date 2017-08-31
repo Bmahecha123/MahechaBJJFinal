@@ -26,11 +26,11 @@ namespace MahechaBJJ.Views.EntryPages
         public LoginPage()
         {
             Padding = new Thickness(10, 30, 10, 10);
-            SetContent();
+            BuildPageObjects();
         }
 
 		//functions
-        private void SetContent()
+        private void BuildPageObjects()
         {
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));

@@ -23,12 +23,12 @@ namespace MahechaBJJ.Views.BlogPages
             blogString = StripHtml(blogPost.caption);
             Padding = new Thickness(10, 30, 10, 10);
             globalBlogPost = blogPost;
-            SetContent();
+            BuildPageObjects();
 
         }
 
 		//functions
-        public void SetContent()
+        public void BuildPageObjects()
         {
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));

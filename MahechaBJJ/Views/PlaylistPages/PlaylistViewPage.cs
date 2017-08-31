@@ -27,13 +27,14 @@ namespace MahechaBJJ.Views.PlaylistPages
 		private Frame timeOutFrame;
 		private TapGestureRecognizer timeOutTap;
 		private ActivityIndicator activityIndicator;
+        private ObservableCollection<PlayList> userPlaylist;
 
         public PlaylistViewPage()
         {
             Title = "User Playlists";
             Padding = new Thickness(10, 30, 10, 10);
-            FindPlaylists();
-            BuildPageObjects();
+			BuildPageObjects();
+			//FindPlaylists();
             SetContent();
         }
 
@@ -158,7 +159,6 @@ namespace MahechaBJJ.Views.PlaylistPages
             }
             if (_playlistViewPageViewModel.Successful)
             {
-                SetListView();
 
 				//building grid
 				innerGrid.Children.Clear();
@@ -184,11 +184,13 @@ namespace MahechaBJJ.Views.PlaylistPages
             account = _baseViewModel.GetAccountInformation();
             id = account.Properties["Id"];
             await _playlistViewPageViewModel.GetUserPlaylists(Constants.GETPLAYLIST, id);
-            //SetListView();
-        }
+            userPlaylist = _playlistViewPageViewModel.Playlist;
+			SetListView();
+		}
+
         public void SetListView()
         {
-            playlistView.ItemsSource = _playlistViewPageViewModel.Playlist;
+            playlistView.ItemsSource = userPlaylist;
             playlistView.ItemTemplate = new DataTemplate(() =>
             {
 				playlistLbl = new Label();
@@ -245,8 +247,9 @@ namespace MahechaBJJ.Views.PlaylistPages
 		protected override async void OnAppearing()
 		{
 			base.OnAppearing();
-			await _playlistViewPageViewModel.GetUserPlaylists(Constants.GETPLAYLIST, id);
-			SetListView();
+            PlaylistViewPageViewModel vm = new PlaylistViewPageViewModel();
+			await vm.GetUserPlaylists(Constants.GETPLAYLIST, id);
+            playlistView.ItemsSource = vm.Playlist;
 		}
 
 		//Orientation
