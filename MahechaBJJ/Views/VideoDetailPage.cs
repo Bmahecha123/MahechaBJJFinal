@@ -23,9 +23,9 @@ namespace MahechaBJJ.Views
 {
     public class VideoDetailPage : ContentPage
     {
-        private BaseViewModel _baseViewModel = new BaseViewModel();
-        private VideoDetailPageViewModel _videoDetailPageViewModel = new VideoDetailPageViewModel();
-		private ObservableCollection<PlayList> userPlaylists = new ObservableCollection<PlayList>();
+        private BaseViewModel _baseViewModel;
+        private VideoDetailPageViewModel _videoDetailPageViewModel;
+        private ObservableCollection<PlayList> userPlaylists;
         private ObservableCollection<Video> videos;
         private Account account;
 		private string videoUrl;
@@ -45,6 +45,9 @@ namespace MahechaBJJ.Views
 
         public VideoDetailPage(VideoData video)
         {
+            _baseViewModel = new BaseViewModel();
+            _videoDetailPageViewModel = new VideoDetailPageViewModel();
+            userPlaylists = new ObservableCollection<PlayList>();
             videoUrl = video.files[0].link;
             Padding = new Thickness(10, 30, 10, 10);
             Title = video.name;

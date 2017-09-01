@@ -9,7 +9,7 @@ namespace MahechaBJJ.Service
 {
     public class BlogService
     {
-        HttpClient client;
+        private HttpClient client;
 
         public BlogService()
         {

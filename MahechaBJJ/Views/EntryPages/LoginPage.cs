@@ -8,7 +8,7 @@ namespace MahechaBJJ.Views.EntryPages
 {
     public class LoginPage : ContentPage
     {
-        private readonly BaseViewModel _baseViewModel = new BaseViewModel();
+        private readonly BaseViewModel _baseViewModel;
         private const string FINDUSER = "http://localhost:8080/user/findByEmail/";
         //declare objects
         private Grid outerGrid;
@@ -25,6 +25,7 @@ namespace MahechaBJJ.Views.EntryPages
 
         public LoginPage()
         {
+            _baseViewModel = new BaseViewModel();
             Padding = new Thickness(10, 30, 10, 10);
             BuildPageObjects();
         }

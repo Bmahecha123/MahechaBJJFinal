@@ -11,8 +11,8 @@ namespace MahechaBJJ.Views
 {
     public class HomePage : ContentPage
     {
-        private BaseViewModel _baseViewModel = new BaseViewModel();
-        private HomePageViewModel _homePageViewModel = new HomePageViewModel();
+        private BaseViewModel _baseViewModel;
+        private HomePageViewModel _homePageViewModel;
         private const String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
         private BaseInfo VimeoInfo;
         private Grid outerGrid;
@@ -37,6 +37,8 @@ namespace MahechaBJJ.Views
 
         public HomePage()
         {
+            _baseViewModel = new BaseViewModel();
+            _homePageViewModel = new HomePageViewModel();
             Title = "Home";
             Icon = "005-construction.png";
 			Padding = new Thickness(10, 10, 10, 10);

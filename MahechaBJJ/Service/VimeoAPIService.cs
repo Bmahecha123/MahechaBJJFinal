@@ -8,7 +8,7 @@ namespace MahechaBJJ.Service
 {
     public class VimeoAPIService
     {
-        HttpClient client;
+        private HttpClient client;
 
         public VimeoAPIService()
         {

@@ -10,8 +10,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 {
     public class PlaylistCreatePage : ContentPage
     {
-        private BaseViewModel _baseViewModel = new BaseViewModel();
-        private PlaylistCreatePageViewModel _playlistCreatePageViewModel = new PlaylistCreatePageViewModel();
+        private BaseViewModel _baseViewModel;
+        private PlaylistCreatePageViewModel _playlistCreatePageViewModel;
         private string FINDUSER = Constants.FINDUSER;
         private Grid outerGrid;
         private Grid innerGrid;
@@ -28,7 +28,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 
         public PlaylistCreatePage()
         {
-			
+            _baseViewModel = new BaseViewModel();
+            _playlistCreatePageViewModel = new PlaylistCreatePageViewModel();
 			//View objects
 			Title = "Create Playlist";
 			Padding = new Thickness(10, 30, 10, 10);

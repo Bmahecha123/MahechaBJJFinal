@@ -9,8 +9,8 @@ namespace MahechaBJJ.Views
 {
     public class SearchPage : ContentPage
     {
-        private readonly SearchPageViewModel _searchPageViewModel = new SearchPageViewModel();
-        private ObservableCollection<VideoData> searchedVideos = new ObservableCollection<VideoData>();
+        private readonly SearchPageViewModel _searchPageViewModel;
+        private ObservableCollection<VideoData> searchedVideos;
         private ActivityIndicator activityIndicator;
         private SearchBar searchBar;
         private Button loadBtn;
@@ -32,6 +32,8 @@ namespace MahechaBJJ.Views
 
         public SearchPage()
         {
+            _searchPageViewModel = new SearchPageViewModel();
+            searchedVideos = new ObservableCollection<VideoData>();
 			Title = "Search";
             Icon = "004-search.png";
 			Padding = new Thickness(10, 30, 10, 10);

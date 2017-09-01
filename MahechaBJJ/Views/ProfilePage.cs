@@ -12,7 +12,7 @@ namespace MahechaBJJ.Views
 {
     public class ProfilePage : ContentPage
     {
-		private BaseViewModel _baseViewModel = new BaseViewModel();
+        private BaseViewModel _baseViewModel;
         private Grid outerGrid;
         private Grid innerGrid;
         private Label nameLbl;
@@ -33,6 +33,7 @@ namespace MahechaBJJ.Views
 
         public ProfilePage()
         {
+            _baseViewModel = new BaseViewModel();
             Title = "Profile";
             Icon = "karate.png";
             Padding = new Thickness(10, 30, 10, 10);

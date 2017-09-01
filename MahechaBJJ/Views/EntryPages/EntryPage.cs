@@ -13,7 +13,7 @@ namespace MahechaBJJ.Views.EntryPages
     public class EntryPage : ContentPage
     {
         //viewModel
-        private readonly EntryPageViewModel _entryPageViewModel = new EntryPageViewModel();
+        private EntryPageViewModel _entryPageViewModel;
         private const String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
         //declare objects
         private Grid outerGrid;
@@ -25,6 +25,7 @@ namespace MahechaBJJ.Views.EntryPages
 
         public EntryPage()
         {
+            _entryPageViewModel = new EntryPageViewModel();
             Padding = new Thickness(10, 30, 10, 10);
             BuildPageObjects();
 		}

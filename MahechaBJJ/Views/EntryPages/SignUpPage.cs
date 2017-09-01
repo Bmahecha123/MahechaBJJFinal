@@ -13,8 +13,8 @@ namespace MahechaBJJ.Views.EntryPages
     public class SignUpPage : ContentPage
     {
         //ViewModel
-        private SignUpPageViewModel _signUpPageViewModel = new SignUpPageViewModel();
-        private BaseViewModel _baseViewModel = new BaseViewModel();
+        private SignUpPageViewModel _signUpPageViewModel;
+        private BaseViewModel _baseViewModel;
         private const string CREATEUSER = "http://localhost:8080/user/create";
         //declare objects
         private Grid innerGrid;
@@ -47,6 +47,8 @@ namespace MahechaBJJ.Views.EntryPages
 
         public SignUpPage()
         {
+            _signUpPageViewModel = new SignUpPageViewModel();
+            _baseViewModel = new BaseViewModel();
             Padding = new Thickness(10, 30, 10, 10);
             SetContent();
         }

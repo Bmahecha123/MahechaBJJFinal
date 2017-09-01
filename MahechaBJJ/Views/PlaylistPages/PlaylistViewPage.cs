@@ -11,8 +11,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 {
     public class PlaylistViewPage : ContentPage
     {
-        private PlaylistViewPageViewModel _playlistViewPageViewModel = new PlaylistViewPageViewModel();
-        private BaseViewModel _baseViewModel = new BaseViewModel();
+        private PlaylistViewPageViewModel _playlistViewPageViewModel;
+        private BaseViewModel _baseViewModel;
         private Label viewPlaylistLbl;
         private ListView playlistView;
         private Grid innerGrid;
@@ -31,6 +31,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 
         public PlaylistViewPage()
         {
+            _playlistViewPageViewModel = new PlaylistViewPageViewModel();
+            _baseViewModel = new BaseViewModel();
             Title = "User Playlists";
             Padding = new Thickness(10, 30, 10, 10);
 			BuildPageObjects();
@@ -246,10 +248,10 @@ namespace MahechaBJJ.Views.PlaylistPages
 		//page reloading
 		protected override async void OnAppearing()
 		{
-			base.OnAppearing();
-            PlaylistViewPageViewModel vm = new PlaylistViewPageViewModel();
-			await vm.GetUserPlaylists(Constants.GETPLAYLIST, id);
-            playlistView.ItemsSource = vm.Playlist;
+				base.OnAppearing();
+				PlaylistViewPageViewModel vm = new PlaylistViewPageViewModel();
+				await vm.GetUserPlaylists(Constants.GETPLAYLIST, id);
+				playlistView.ItemsSource = vm.Playlist;
 		}
 
 		//Orientation

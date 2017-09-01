@@ -11,8 +11,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 {
     public class PlaylistVideoPage : ContentPage
     {
-		private BaseViewModel _baseViewModel = new BaseViewModel();
-        private PlaylistVideoPageViewModel _playListVideoPageViewModel = new PlaylistVideoPageViewModel();
+        private BaseViewModel _baseViewModel;
+        private PlaylistVideoPageViewModel _playListVideoPageViewModel;
 		private Account account;
         private string id;
 		private string videoUrl;
@@ -31,6 +31,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 
         public PlaylistVideoPage(Video video, PlayList playlist)
         {
+            _baseViewModel = new BaseViewModel();
+            _playListVideoPageViewModel = new PlaylistVideoPageViewModel();
             videoUrl = video.Link;
 			Padding = new Thickness(10, 30, 10, 10);
             Title = video.Name;

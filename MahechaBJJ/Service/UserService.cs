@@ -13,7 +13,7 @@ namespace MahechaBJJ.Service
 {
     public class UserService
     {
-        HttpClient client;
+        private HttpClient client;
 
         public UserService()
         {
