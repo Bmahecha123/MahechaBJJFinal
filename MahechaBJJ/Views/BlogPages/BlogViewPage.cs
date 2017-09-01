@@ -244,11 +244,12 @@ namespace MahechaBJJ.Views.BlogPages
         }
 
 		//page reloading
-		protected override void OnAppearing()
+		protected override async void OnAppearing()
 		{
 			base.OnAppearing();
-			//await _blogViewPageViewModel.GetBlogPosts(Constants.LOADBLOGPOSTS);
-			SetContent();
+            BlogViewPageViewModel vm = new BlogViewPageViewModel();
+            await vm.GetBlogPosts(Constants.LOADBLOGPOSTS);
+            blogListView.ItemsSource = vm.BlogPosts.response.posts;
 
 		}
 

@@ -383,8 +383,6 @@ namespace MahechaBJJ.Views.EntryPages
                                                          secretQuestionEntry1.Text, secretQuestionPicker2.SelectedItem.ToString(), secretQuestionEntry2.Text, beltPicker.SelectedItem.ToString());
             _signUpPageViewModel.SaveCredentials(user.Email, user.password, user.Id);
             account = _baseViewModel.GetAccountInformation();
-            await DisplayAlert("account test", account.Username, "Xam Auth works!");
-            await DisplayAlert("user info!", user.Id + " " + user.Email, "nice!");
             signUpBtn.IsEnabled = true;
             Application.Current.MainPage = new MainTabbedPage();
         }

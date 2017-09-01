@@ -166,9 +166,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 await _playListDetailPageViewModel.DeleteUserPlaylist(Constants.DELETEPLAYLIST, id, userPlaylist);
                 if (_playListDetailPageViewModel.Successful)
                 {
-                    
-					await DisplayAlert("Playlist Deleted", userPlaylist.Name + " has been deleted.", "Ok");
-					await Navigation.PopModalAsync();
+                    await Navigation.PopModalAsync();
                 } else {
 					await DisplayAlert("Unable To Delete", userPlaylist.Name + " has not been deleted. Try again.", "Ok");
 				}

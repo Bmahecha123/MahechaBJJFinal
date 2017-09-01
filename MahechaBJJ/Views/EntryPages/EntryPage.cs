@@ -21,7 +21,6 @@ namespace MahechaBJJ.Views.EntryPages
         private Image mahechaLogo;
         private Button loginBtn;
         private Button signUpBtn;
-        private Button aboutBtn;
 
         public EntryPage()
         {
@@ -45,9 +44,7 @@ namespace MahechaBJJ.Views.EntryPages
 				RowDefinitions = new RowDefinitionCollection {
 					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-				}
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}				}
 			};
 
 			//view objects
@@ -87,21 +84,6 @@ namespace MahechaBJJ.Views.EntryPages
 				BorderWidth = 3,
 				BorderColor = Color.Black
 			};
-			aboutBtn = new Button
-			{
-				Text = "Learn More",
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-				FontSize = size * 2,
-				BackgroundColor = Color.Orange,
-				TextColor = Color.Black,
-				BorderWidth = 3,
-				BorderColor = Color.Black
-			};
 			//Button events
 			loginBtn.Clicked += (object sender, EventArgs e) =>
 			{
@@ -113,11 +95,9 @@ namespace MahechaBJJ.Views.EntryPages
 				Navigation.PushModalAsync(new SignUpPage());
 			};
 
-
 			innerGrid.Children.Add(mahechaLogo, 0, 0);
 			innerGrid.Children.Add(signUpBtn, 0, 1);
 			innerGrid.Children.Add(loginBtn, 0, 2);
-			innerGrid.Children.Add(aboutBtn, 0, 3);
 
 			outerGrid.Children.Add(innerGrid, 0, 0);
 
@@ -135,7 +115,6 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.ColumnDefinitions.Clear();
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
                 innerGrid.Children.Clear();
@@ -143,7 +122,6 @@ namespace MahechaBJJ.Views.EntryPages
                 Grid.SetRowSpan(mahechaLogo, 3);
                 innerGrid.Children.Add(signUpBtn, 1, 0);
                 innerGrid.Children.Add(loginBtn, 1, 1);
-                innerGrid.Children.Add(aboutBtn, 1, 2);
             } else {
 				Padding = new Thickness(10, 30, 10, 10);
                 innerGrid.RowDefinitions.Clear();
@@ -151,12 +129,10 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star)});
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
 				innerGrid.Children.Clear();
                 innerGrid.Children.Add(mahechaLogo, 0, 0);
                 innerGrid.Children.Add(loginBtn, 0, 1);
                 innerGrid.Children.Add(signUpBtn, 0, 2);
-                innerGrid.Children.Add(aboutBtn, 0, 3);
             }
 		}
 		//functions

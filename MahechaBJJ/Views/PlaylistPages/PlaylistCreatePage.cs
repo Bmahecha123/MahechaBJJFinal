@@ -202,7 +202,6 @@ namespace MahechaBJJ.Views.PlaylistPages
 				await _playlistCreatePageViewModel.CreatePlaylist(playlist, user.Id);
                 if (_playlistCreatePageViewModel.Successful)
                 {
-					await DisplayAlert("Playlist Added", playlist.Name + " has been successfully added!", "Ok");
 					await Navigation.PopModalAsync();
                 } else {
                     await DisplayAlert("Playlist Not Added", playlist.Name + " has not been added. Check your network connectivity!", "Ok");
