@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Service;
 
-namespace MahechaBJJ.ViewModel
+namespace MahechaBJJ.ViewModel.PlaylistPages
 {
     public class PlaylistViewPageViewModel : INotifyPropertyChanged
     {

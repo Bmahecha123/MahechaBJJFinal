@@ -5,22 +5,21 @@ using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Service;
 
-namespace MahechaBJJ.ViewModel
+namespace MahechaBJJ.ViewModel.MainTabPages
 {
-    public class PlaylistCreatePageViewModel : INotifyPropertyChanged
+    public class SearchPageViewModel
     {
-        private UserService _userService;
+		private VimeoAPIService _vimeoApiService;
 
-        private PlayList _playlist;
-        public PlayList Playlist
-        {
-            get
+		private BaseInfo _searchedVideos;
+        public BaseInfo Videos {
+            get 
             {
-                return _playlist;
+                return _searchedVideos;
             }
-            set
+            set 
             {
-                _playlist = value;
+                _searchedVideos = value;
                 OnPropertyChanged();
             }
         }
@@ -28,25 +27,34 @@ namespace MahechaBJJ.ViewModel
         private bool _successful;
         public bool Successful
         {
-            get
+            get 
             {
                 return _successful;
             }
-            set 
+            set
             {
                 _successful = value;
                 OnPropertyChanged();
             }
         }
 
-        public PlaylistCreatePageViewModel()
+        public SearchPageViewModel()
         {
-            _userService = new UserService();
+            _vimeoApiService = new VimeoAPIService();
         }
 
-        public async Task CreatePlaylist(PlayList playlist, string id)
-        {
-            _successful = await _userService.AddPlaylist(playlist, id);
+        public async Task SearchVideo(String query) {
+
+            _searchedVideos = await _vimeoApiService.GetVimeoInfo(query);
+
+			if (_searchedVideos != null)
+			{
+				_successful = true;
+			}
+			else
+			{
+				_successful = false;
+			}
         }
 
 		public event PropertyChangedEventHandler PropertyChanged;

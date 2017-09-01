@@ -1,7 +1,8 @@
 ﻿﻿using System;
 using System.Collections.ObjectModel;
 using MahechaBJJ.Model;
-using MahechaBJJ.ViewModel;
+using MahechaBJJ.ViewModel.CommonPages;
+using MahechaBJJ.ViewModel.EntryPages;
 using Xamarin.Forms;
 using Xamarin.Auth;
 using System.Net.Http;

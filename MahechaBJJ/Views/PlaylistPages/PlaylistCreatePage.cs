@@ -1,7 +1,8 @@
 ﻿using System;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
-using MahechaBJJ.ViewModel;
+using MahechaBJJ.ViewModel.CommonPages;
+using MahechaBJJ.ViewModel.PlaylistPages;
 using Xamarin.Auth;
 
 using Xamarin.Forms;

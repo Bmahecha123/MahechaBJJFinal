@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 using Xamarin.Auth;
 using Xamarin.Forms;
 
-namespace MahechaBJJ.ViewModel
+namespace MahechaBJJ.ViewModel.EntryPages
 {
     public class SignUpPageViewModel : INotifyPropertyChanged
     {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Service;
 
-namespace MahechaBJJ.ViewModel
+namespace MahechaBJJ.ViewModel.MainTabPages
 {
     public class HomePageViewModel : INotifyPropertyChanged
     {

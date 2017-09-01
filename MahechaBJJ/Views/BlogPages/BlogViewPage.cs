@@ -1,7 +1,7 @@
 ﻿using System;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
-using MahechaBJJ.ViewModel.Blog;
+using MahechaBJJ.ViewModel.BlogPages;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views.BlogPages

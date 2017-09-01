@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using MahechaBJJ.Model;
-using MahechaBJJ.ViewModel;
+using MahechaBJJ.ViewModel.EntryPages;
 using Newtonsoft.Json;
 using Xamarin.Auth;
 using Xamarin.Forms;

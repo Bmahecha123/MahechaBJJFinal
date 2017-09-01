@@ -6,55 +6,55 @@ using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Service;
 
-namespace MahechaBJJ.ViewModel
+namespace MahechaBJJ.ViewModel.CommonPages
 {
-    public class PlaylistDetailPageViewModel : INotifyPropertyChanged
+    public class VideoDetailPageViewModel : INotifyPropertyChanged
     {
 		private UserService _userService;
 		private AccountService _accountService;
 
-		private bool _successful;
-		public bool Successful
+		private ObservableCollection<PlayList> _playlist;
+		public ObservableCollection<PlayList> Playlist
 		{
 			get
 			{
-				return _successful;
+				return _playlist;
 			}
 			set
 			{
-				_successful = value;
+				_playlist = value;
 				OnPropertyChanged();
 			}
 		}
 
-        private PlayList _playlist;
-        public PlayList Playlist
+        private bool _successful;
+        public bool Successful
         {
-            get
+            get 
             {
-                return _playlist;
+                return _successful;
             }
             set
             {
-                _playlist = value;
+                _successful = value;
                 OnPropertyChanged();
             }
         }
 
-        public PlaylistDetailPageViewModel()
-		{
+        public VideoDetailPageViewModel()
+        {
 			_userService = new UserService();
 			_accountService = new AccountService();
-		}
-
-        public async Task DeleteUserPlaylist(string url, string id, PlayList playlist)
-        {
-            _successful = await _userService.UpdateUserPlaylists(url + id, playlist);
         }
 
-        public async Task FindUserPlaylist(string url, string id, string playListName)
+		public async Task GetUserPlaylists(string url, string id)
+		{
+			_playlist = await _userService.GetPlaylists(url + id);
+		}
+
+        public async Task UpdateUserPlaylist(string url, string id, PlayList playlist)
         {
-            _playlist = await _userService.GetPlaylist(url + id, playListName);
+            _successful = await _userService.UpdateUserPlaylists(url + id, playlist);
         }
 
 		public event PropertyChangedEventHandler PropertyChanged;

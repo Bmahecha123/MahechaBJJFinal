@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using MahechaBJJ.Model;
-using MahechaBJJ.ViewModel;
+using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views;
 using MahechaBJJ.Views.EntryPages;
 using Xamarin.Auth;

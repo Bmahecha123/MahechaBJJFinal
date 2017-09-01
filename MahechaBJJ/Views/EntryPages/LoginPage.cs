@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
-using MahechaBJJ.ViewModel;
+using MahechaBJJ.ViewModel.CommonPages;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views.EntryPages

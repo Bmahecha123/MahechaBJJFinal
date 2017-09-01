@@ -7,7 +7,7 @@ using MahechaBJJ.Model;
 using MahechaBJJ.Service;
 using static MahechaBJJ.Model.BlogPosts;
 
-namespace MahechaBJJ.ViewModel.Blog
+namespace MahechaBJJ.ViewModel.BlogPages
 {
     public class BlogViewPageViewModel : INotifyPropertyChanged
     {

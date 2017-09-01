@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.Service;
-using MahechaBJJ.ViewModel;
+using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.PlaylistPages;
 using Xamarin.Auth;
 /*#if __IOS__

@@ -18,39 +18,20 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\HomePage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\BrowsePage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\SearchPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\ProfilePage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabbedPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\VimeoAPI.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\VimeoAPIService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignInPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SearchPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\VideoDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\ShowVideoPlayerArguments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\AndroidVideoPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\HomePageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainTabbedPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BaseViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignUpPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\PlayList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Video.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistCreatePageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\UserService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\AccountService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistViewPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\VideoDetailPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistVideoPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistDetailPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\BlogPages\BlogDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\BlogPages\BlogViewPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\BlogService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BlogPosts.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Blog\BlogViewPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BlogPages\BlogViewPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\PlaylistPages\PlaylistCreatePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\PlaylistPages\PlaylistDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\PlaylistPages\PlaylistVideoPage.cs" />
@@ -58,6 +39,24 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\EntryPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\LoginPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\SignUpPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistPages\PlaylistCreatePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistPages\PlaylistDetailPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistPages\PlaylistVideoPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistPages\PlaylistViewPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPages\EntryPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPages\SignInPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPages\SignUpPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainTabPages\HomePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainTabPages\SearchPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CommonPages\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CommonPages\VideoDetailPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabPages\BrowsePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabPages\HomePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabPages\MainTabbedPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabPages\ProfilePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabPages\SearchPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\AndroidVideoPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\VideoDetailPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -66,8 +65,14 @@
     <Folder Include="$(MSBuildThisFileDirectory)Service\" />
     <Folder Include="$(MSBuildThisFileDirectory)Resources\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\BlogPages\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Blog\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\BlogPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\PlaylistPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\EntryPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\EntryPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\MainTabPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\CommonPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\MainTabPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\CommonPages\" />
   </ItemGroup>
 </Project>

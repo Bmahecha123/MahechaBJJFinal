@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using MahechaBJJ.Model;
-using MahechaBJJ.ViewModel;
+using MahechaBJJ.ViewModel.MainTabPages;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views

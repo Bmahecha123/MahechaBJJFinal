@@ -2,7 +2,8 @@
 using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
-using MahechaBJJ.ViewModel;
+using MahechaBJJ.ViewModel.CommonPages;
+using MahechaBJJ.ViewModel.MainTabPages;
 using MahechaBJJ.Views.PlaylistPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
