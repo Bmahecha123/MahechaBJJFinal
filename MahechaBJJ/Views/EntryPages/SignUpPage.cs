@@ -16,7 +16,6 @@ namespace MahechaBJJ.Views.EntryPages
         //ViewModel
         private SignUpPageViewModel _signUpPageViewModel;
         private BaseViewModel _baseViewModel;
-        private const string CREATEUSER = "http://localhost:8080/user/create";
         //declare objects
         private Grid innerGrid;
         private Grid outerGrid;

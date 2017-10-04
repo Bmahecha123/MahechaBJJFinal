@@ -16,7 +16,6 @@ namespace MahechaBJJ
         public App()
         {
             InitializeComponent();
-
             if (LoginCheck())
             {
                 MainPage = new MainTabbedPage();

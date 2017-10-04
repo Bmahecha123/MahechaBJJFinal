@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
@@ -14,10 +15,13 @@ namespace MahechaBJJ.Service
     public class UserService
     {
         private HttpClient client;
+        private TimeSpan timeSpan;
 
         public UserService()
         {
             client = new HttpClient();
+            timeSpan = new TimeSpan(0, 0, 20);
+            client.Timeout = timeSpan;
         }
 
 		public async Task<User> FindUserByIdAsync(string url, string id)
@@ -36,11 +40,12 @@ namespace MahechaBJJ.Service
 			
 		}
 
-		public async Task<User> FindUserByEmailAsync(string url, string email)
+		public async Task<User> FindUserByEmailAsync(string url, string email, string password)
 		{
 			try
 			{
 				client.DefaultRequestHeaders.Add("X-Email", email);
+                client.DefaultRequestHeaders.Add("X-Password", password);
 				var userJson = await client.GetStringAsync(url);
 				var user = JsonConvert.DeserializeObject<User>(userJson);
                 return user;
@@ -96,7 +101,7 @@ namespace MahechaBJJ.Service
             catch (HttpRequestException ex)
             {
 				Console.WriteLine(ex.Message);
-				return null;
+                return null;
             }
 
         }

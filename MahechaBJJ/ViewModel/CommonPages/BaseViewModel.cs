@@ -134,9 +134,9 @@ namespace MahechaBJJ.ViewModel.CommonPages
             _accountService.SaveCredentials(_account);
 		}
 
-        public async Task<User> FindUserByEmailAsync(string url, string email)
+        public async Task<User> FindUserByEmailAsync(string url, string email, string password)
         {
-            _user = await _userService.FindUserByEmailAsync(url, email);
+            _user = await _userService.FindUserByEmailAsync(url, email, password);
 
 			if (_user != null)
 			{

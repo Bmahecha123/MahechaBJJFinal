@@ -9,9 +9,11 @@ namespace MahechaBJJ.Views.EntryPages
     public class LoginPage : ContentPage
     {
         private readonly BaseViewModel _baseViewModel;
+       // private const string FINDUSER = "https://mahechabjj.cfapps.io/user/findByEmail/";
         private const string FINDUSER = "http://localhost:8080/user/findByEmail/";
-        //declare objects
-        private Grid outerGrid;
+
+		//declare objects
+		private Grid outerGrid;
         private Grid innerGrid;
         private Image mahechaLogo;
         private Label emailLbl;
@@ -178,21 +180,14 @@ namespace MahechaBJJ.Views.EntryPages
 
         private async void Login(object sender, EventArgs e)
         {
-            user = await _baseViewModel.FindUserByEmailAsync(FINDUSER, emailEntry.Text);
+            user = await _baseViewModel.FindUserByEmailAsync(FINDUSER, emailEntry.Text, passwordEntry.Text);
             if (user == null) {
-                await DisplayAlert("User Not Found", "User " + emailEntry.Text + " does not exist.", "Got It");
+                await DisplayAlert("User Not Found", "Wrong Email address or Password, please try again.", "Got It");
             }
             else 
             {
-				if (user.password == passwordEntry.Text)
-				{
 					_baseViewModel.SaveCredentials(user.Email, user.password, user.Id);
 					Application.Current.MainPage = new MainTabbedPage();
-				}
-				else
-				{
-					await DisplayAlert("Wrong Password!", "Password for " + emailEntry.Text + " is incorrect.", "Ok");
-				}
             }
 
         }

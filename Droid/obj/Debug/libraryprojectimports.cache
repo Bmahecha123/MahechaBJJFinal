@@ -11,10 +11,7 @@
     <ResolvedResourceDirectory>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/__library_projects__/Xamarin.Android.Support.v7.RecyclerView/library_project_imports/res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/__library_projects__/Xamarin.Auth/library_project_imports/res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
-  <ResolvedAssetDirectories>
-    <ResolvedAssetDirectory>obj/Debug/__library_projects__/PCLCrypto/library_project_imports/assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>obj/Debug/__library_projects__/Xamarin.Auth/library_project_imports/assets</ResolvedAssetDirectory>
-  </ResolvedAssetDirectories>
+  <ResolvedAssetDirectories />
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
     <ResolvedResourceDirectoryStamp>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/__library_projects__/PCLCrypto.stamp</ResolvedResourceDirectoryStamp>
