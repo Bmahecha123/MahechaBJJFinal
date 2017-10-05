@@ -42,6 +42,7 @@ namespace MahechaBJJ.Service
 
 		public async Task<User> FindUserByEmailAsync(string url, string email, string password)
 		{
+			client.DefaultRequestHeaders.Clear();
 			try
 			{
 				client.DefaultRequestHeaders.Add("X-Email", email);
