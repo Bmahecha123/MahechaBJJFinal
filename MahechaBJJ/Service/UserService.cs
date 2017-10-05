@@ -109,7 +109,8 @@ namespace MahechaBJJ.Service
 
         public async Task<PlayList> GetPlaylist(string url, string playlistName)
         {
-            client.DefaultRequestHeaders.Add("X-playlistName", playlistName);
+			client.DefaultRequestHeaders.Clear();
+			client.DefaultRequestHeaders.Add("X-playlistName", playlistName);
 
             try
             {
