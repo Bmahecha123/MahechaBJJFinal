@@ -57,7 +57,7 @@ namespace MahechaBJJ.Views
 
 			topLbl = new Label
 			{
-				Text = "Top",
+				Text = "Gi",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -72,7 +72,7 @@ namespace MahechaBJJ.Views
 			topImage = new Image
 			{
 				Aspect = Aspect.AspectFill,
-				Source = ImageSource.FromFile("kevin.jpg")
+				Source = ImageSource.FromFile("bottom.jpg")
 			};
 			topFrame = new Frame
 			{
@@ -86,7 +86,7 @@ namespace MahechaBJJ.Views
 			//bottom objects
 			bottomLbl = new Label
 			{
-				Text = "Bottom",
+				Text = "No-Gi",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -101,7 +101,7 @@ namespace MahechaBJJ.Views
 			bottomImage = new Image
 			{
 				Aspect = Aspect.AspectFill,
-				Source = ImageSource.FromFile("bottom.jpg")
+				Source = ImageSource.FromFile("nogi.png")
 			};
 			bottomFrame = new Frame
 			{

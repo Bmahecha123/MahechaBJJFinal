@@ -97,7 +97,7 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = btnSize * 1.5,
-				BackgroundColor = Color.Orange
+				BackgroundColor = Color.FromRgb(58, 93, 174)
 
 			};
 

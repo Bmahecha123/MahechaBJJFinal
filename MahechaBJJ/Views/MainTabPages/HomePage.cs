@@ -190,7 +190,7 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
                 FontSize = btnSize * 1.5,
-                BackgroundColor = Color.Orange
+                BackgroundColor = Color.FromRgb(58, 93, 174)
             };
             viewPlaylistBtn = new Button
             {
@@ -204,7 +204,7 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
                 FontSize = btnSize * 1.5,
-                BackgroundColor = Color.Orange,
+                BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black
             };
             timeOutLbl = new Label

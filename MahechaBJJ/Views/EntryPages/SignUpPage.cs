@@ -285,7 +285,7 @@ namespace MahechaBJJ.Views.EntryPages
 #endif
 				Text = "Sign Up!",
 				FontSize = btnSize,
-				BackgroundColor = Color.Orange,
+				BackgroundColor = Color.FromRgb(58, 93, 174),
 				TextColor = Color.Black,
 				BorderWidth = 3,
 				BorderColor = Color.Black
@@ -300,7 +300,7 @@ namespace MahechaBJJ.Views.EntryPages
 #endif
 				Text = "Back",
 				FontSize = btnSize,
-				BackgroundColor = Color.Orange,
+				BackgroundColor = Color.FromRgb(58, 93, 174),
 				TextColor = Color.Black,
 				BorderWidth = 3,
 				BorderColor = Color.Black

@@ -64,7 +64,7 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = size * 2,
-				BackgroundColor = Color.Orange,
+				BackgroundColor = Color.FromRgb(58, 93, 174),
 				TextColor = Color.Black,
 				BorderWidth = 3,
 				BorderColor = Color.Black
@@ -79,7 +79,7 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = size * 2,
-				BackgroundColor = Color.Orange,
+				BackgroundColor = Color.FromRgb(58, 93, 174),
 				TextColor = Color.Black,
 				BorderWidth = 3,
 				BorderColor = Color.Black
