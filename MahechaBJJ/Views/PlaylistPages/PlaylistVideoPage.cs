@@ -88,7 +88,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = btnSize * 2,
-				BackgroundColor = Color.Orange
+                BackgroundColor = Color.FromRgb(124, 37, 41)
 			};
 			videoNameLbl = new Label
 			{
@@ -155,7 +155,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = btnSize * 2,
-				BackgroundColor = Color.Orange
+                BackgroundColor = Color.FromRgb(58, 93, 174)
 			};
 			deleteBtn = new Button
 			{
@@ -223,6 +223,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 
         public async void DeleteFromPlaylist(object sender, EventArgs e)
         {
+            deleteBtn.IsEnabled = false;
             bool deleteVideo = await DisplayAlert("Delete Video From Playlist", "Remove " + videoTechnique.Name + " from " + userPlaylist.Name + "?", "Yes", "No");
 
             if (deleteVideo)
@@ -236,6 +237,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                     await Navigation.PopModalAsync();
                 } else {
 					await DisplayAlert("Video Not Deleted From Playlist", videoTechnique.Name + " has not been deleted from " + userPlaylist.Name + ". Try again!", "Ok");
+                    deleteBtn.IsEnabled = true;
 				}
             } else {
                 return;

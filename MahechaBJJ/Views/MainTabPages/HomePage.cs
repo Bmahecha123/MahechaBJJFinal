@@ -305,11 +305,15 @@ namespace MahechaBJJ.Views
 
         private void CreatePlaylist(object sender, EventArgs e)
         {
+            addPlaylistBtn.IsEnabled = false;
             Navigation.PushModalAsync(new PlaylistCreatePage());
+            addPlaylistBtn.IsEnabled = true;
         }
         private void ViewPlaylists(object sender, EventArgs e)
         {
+            viewPlaylistBtn.IsEnabled = false;
             Navigation.PushModalAsync(new PlaylistViewPage());
+            viewPlaylistBtn.IsEnabled = true;
         }
 
 		//Orientation

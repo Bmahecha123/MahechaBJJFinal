@@ -116,7 +116,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 				Text = "Back",
 				FontSize = btnSize * 2,
-				BackgroundColor = Color.Orange,
+				BackgroundColor = Color.FromRgb(124, 37, 41),
 				BorderWidth = 3,
 				TextColor = Color.Black
 			};
@@ -156,11 +156,13 @@ namespace MahechaBJJ.Views.PlaylistPages
 
         public void GoBack(object sender, EventArgs e)
         {
+            backBtn.IsEnabled = false;
             Navigation.PopModalAsync();
         }
 
         public async void DeletePlaylist(object sender, EventArgs e)
         {
+            deleteBtn.IsEnabled = false;
             bool delete = await DisplayAlert("Delete Playlist", "Are you sure you want to delete " + userPlaylist.Name + "?", "Yes", "No");
             if (delete)
             {
@@ -170,6 +172,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                     await Navigation.PopModalAsync();
                 } else {
 					await DisplayAlert("Unable To Delete", userPlaylist.Name + " has not been deleted. Try again.", "Ok");
+                    deleteBtn.IsEnabled = true;
 				}
             } else {
                 return;

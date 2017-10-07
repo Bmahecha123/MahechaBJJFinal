@@ -300,7 +300,7 @@ namespace MahechaBJJ.Views.EntryPages
 #endif
 				Text = "Back",
 				FontSize = btnSize,
-				BackgroundColor = Color.FromRgb(58, 93, 174),
+				BackgroundColor = Color.FromRgb(124, 37, 41),
 				TextColor = Color.Black,
 				BorderWidth = 3,
 				BorderColor = Color.Black
@@ -315,7 +315,7 @@ namespace MahechaBJJ.Views.EntryPages
 #endif
 				Text = "Clear",
 				FontSize = btnSize,
-				BackgroundColor = Color.Orange,
+                BackgroundColor = Color.Red,
 				TextColor = Color.Black,
 				BorderWidth = 3,
 				BorderColor = Color.Black
@@ -365,6 +365,7 @@ namespace MahechaBJJ.Views.EntryPages
 
         private void Validate(object sender, EventArgs e)
         {
+            signUpBtn.IsEnabled = false;
             if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null || 
                 passWordRepeatEntry.Text != null || secretQuestionEntry1.Text != null || secretQuestionEntry2.Text != null) 
             {
@@ -373,6 +374,7 @@ namespace MahechaBJJ.Views.EntryPages
             else {
                 DisplayAlert("Sign Up Error", "Make sure all fields are filled in!", "Okay, got it.");
             }
+            signUpBtn.IsEnabled = true;
         }
 
         private async void SignUp(object sender, EventArgs e)
@@ -399,6 +401,7 @@ namespace MahechaBJJ.Views.EntryPages
 
         private void GoBack(object sender, EventArgs e)
         {
+            backBtn.IsEnabled = false;
             Navigation.PopModalAsync();
         }
 		

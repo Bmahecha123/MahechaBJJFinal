@@ -88,7 +88,7 @@ namespace MahechaBJJ.Views.BlogPages
 #endif
 				Text = "Back",
 				FontSize = btnSize * 2,
-				BackgroundColor = Color.Orange,
+                BackgroundColor = Color.FromRgb(124, 37, 41),
 				BorderWidth = 3,
 				TextColor = Color.Black
 			};

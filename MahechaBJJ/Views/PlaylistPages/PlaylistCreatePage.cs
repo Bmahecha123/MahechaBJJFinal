@@ -142,7 +142,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = btnSize * 2,
-				BackgroundColor = Color.Orange,
+				BackgroundColor = Color.FromRgb(124, 37, 41),
 				TextColor = Color.Black
 			};
 			createBtn = new Button
@@ -157,7 +157,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = btnSize * 2,
-				BackgroundColor = Color.Orange,
+				BackgroundColor = Color.FromRgb(58, 93, 174),
 				TextColor = Color.Black
 			};
 
@@ -189,11 +189,13 @@ namespace MahechaBJJ.Views.PlaylistPages
 
         public void GoBack(object sender, EventArgs e) 
         {
+            backBtn.IsEnabled = false;
             Navigation.PopModalAsync();
         }
 
         public async void CreatePlaylist(object sender, EventArgs e)
         {
+            createBtn.IsEnabled = false;
             if (playListNameEntry.Text != null){
 				playlist = new PlayList();
 				playlist.Name = playListNameEntry.Text;
@@ -212,6 +214,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 await DisplayAlert("Error", "Name cannot be empty, fill it in!", "Ok");
                 playListNameEntry.Focus();
             }
+            createBtn.IsEnabled = true;
         }
 
 		//Orientation

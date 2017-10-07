@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>get-task-allow</key>
-	<false/>
+	<true/>
 	<key>application-identifier</key>
 	<string>P6282GF84Z.com.mahechabjj.mahecha-bjj</string>
 	<key>com.apple.developer.team-identifier</key>

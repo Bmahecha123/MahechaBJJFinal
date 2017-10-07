@@ -100,7 +100,7 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = btnSize * 2,
-				BackgroundColor = Color.Orange
+				BackgroundColor = Color.FromRgb(124, 37, 41)
 			};
 			videoNameLbl = new Label
 			{
@@ -167,7 +167,7 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = btnSize * 2,
-				BackgroundColor = Color.Orange
+				BackgroundColor = Color.FromRgb(58, 93, 174)
 			};
 			addBtn = new Button
 			{
@@ -182,7 +182,7 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = btnSize * 2,
-				BackgroundColor = Color.Orange
+				BackgroundColor = Color.FromRgb(58, 93, 174)
 			};
 
 			//Events
@@ -233,6 +233,7 @@ namespace MahechaBJJ.Views
 
         public async void AddVideoToPlaylist(object sender, EventArgs e)
         {
+            addBtn.IsEnabled = false;
             //get user info
             account = _baseViewModel.GetAccountInformation();
             //Get playlist information
@@ -248,6 +249,7 @@ namespace MahechaBJJ.Views
             {
                 UpdatePlaylist(userPlaylists, answer);
 			}
+            addBtn.IsEnabled = true;
         }
 
         public List<string> GetPlaylistNames(ObservableCollection<PlayList> playlists)
