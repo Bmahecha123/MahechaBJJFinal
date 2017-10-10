@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
+using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using Xamarin.Forms;
 
@@ -9,8 +10,6 @@ namespace MahechaBJJ.Views.EntryPages
     public class LoginPage : ContentPage
     {
         private readonly BaseViewModel _baseViewModel;
-       // private const string FINDUSER = "https://mahechabjj.cfapps.io/user/findByEmail/";
-        private const string FINDUSER = "http://localhost:8080/user/findByEmail/";
 
 		//declare objects
 		private Grid outerGrid;
@@ -178,7 +177,7 @@ namespace MahechaBJJ.Views.EntryPages
 
         private async void Login(object sender, EventArgs e)
         {
-            user = await _baseViewModel.FindUserByEmailAsync(FINDUSER, emailEntry.Text, passwordEntry.Text);
+            user = await _baseViewModel.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, emailEntry.Text, passwordEntry.Text);
             if (user == null) {
                 await DisplayAlert("User Not Found", "Wrong Email address or Password, please try again.", "Got It");
             }
