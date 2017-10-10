@@ -17,6 +17,8 @@ namespace MahechaBJJ.Views.EntryPages
         private SignUpPageViewModel _signUpPageViewModel;
         private BaseViewModel _baseViewModel;
         //declare objects
+        private StackLayout lblLayout;
+        private StackLayout entryLayout;
         private Grid innerGrid;
         private Grid outerGrid;
         private Image mahechaLogo;
@@ -42,8 +44,20 @@ namespace MahechaBJJ.Views.EntryPages
         private User user;
         private ObservableCollection<string> secretQuestionList1;
         private ObservableCollection<string> secretQuestionList2;
-        //Xam Auth
-        Account account;
+        private TableView tableView;
+        private StackLayout stackLayout;
+        private StackLayout buttonLayout;
+        private StackLayout nameLayout;
+        private StackLayout beltPickerLayout;
+        private StackLayout passwordLayout;
+        private StackLayout repeatPasswordLayout;
+        private StackLayout emailLayout;
+        private StackLayout secretQuestionLblLayout;
+        private StackLayout secretQuestion1Layout;
+        private StackLayout secretQuestion2Layout;
+        private Grid buttonGrid;
+		//Xam Auth
+		Account account;
 
         public SignUpPage()
         {
@@ -111,7 +125,9 @@ namespace MahechaBJJ.Views.EntryPages
 #endif
 				FontSize = lblSize,
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			beltList = new ObservableCollection<string>();
 			beltList.Add("White");
@@ -136,7 +152,9 @@ namespace MahechaBJJ.Views.EntryPages
 				Text = "Name",
 				FontSize = lblSize,
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			nameEntry = new Entry
 			{
@@ -147,7 +165,9 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Placeholder = "Brian Mahecha",
-				FontSize = entrySize
+				FontSize = entrySize,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			emailAddressLbl = new Label
 			{
@@ -160,7 +180,9 @@ namespace MahechaBJJ.Views.EntryPages
 				Text = "E-Mail Address",
 				FontSize = lblSize,
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 
 			};
 			emailAddressEntry = new Entry
@@ -172,7 +194,9 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Placeholder = "admin@Mahechabjj.com",
-				FontSize = entrySize
+				FontSize = entrySize,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			passWordLbl = new Label
 			{
@@ -185,7 +209,9 @@ namespace MahechaBJJ.Views.EntryPages
 				Text = "Password",
 				FontSize = lblSize,
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			passWordEntry = new Entry
 			{
@@ -196,7 +222,9 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				IsPassword = true,
-				FontSize = entrySize
+				FontSize = entrySize,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			passWordRepeatLbl = new Label
 			{
@@ -209,7 +237,9 @@ namespace MahechaBJJ.Views.EntryPages
 				Text = "Re-Enter Password",
 				FontSize = lblSize,
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			passWordRepeatEntry = new Entry
 			{
@@ -220,7 +250,9 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				IsPassword = true,
-				FontSize = entrySize
+				FontSize = entrySize,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			secretQuestionLbl = new Label
 			{
@@ -233,7 +265,9 @@ namespace MahechaBJJ.Views.EntryPages
 				FontSize = lblSize,
 				Text = "Secret Questions",
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			secretQuestionList1 = new ObservableCollection<String>();
 			secretQuestionList1.Add("What city were you born in?");
@@ -253,7 +287,9 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = entrySize,
-				Placeholder = "Answer for your own security!"
+				Placeholder = "Answer for your own security!",
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			secretQuestionList2 = new ObservableCollection<string>();
 			secretQuestionList2.Add("What is your favorite guard?");
@@ -273,7 +309,9 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				FontSize = entrySize,
-				Placeholder = "Answer again for even more security!"
+				Placeholder = "Answer again for even more security!",
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			signUpBtn = new Button
 			{
@@ -284,11 +322,13 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "Sign Up!",
-				FontSize = btnSize,
+				FontSize = btnSize * 1.5,
 				BackgroundColor = Color.FromRgb(58, 93, 174),
 				TextColor = Color.Black,
 				BorderWidth = 3,
-				BorderColor = Color.Black
+				BorderColor = Color.Black,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			backBtn = new Button
 			{
@@ -299,11 +339,13 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "Back",
-				FontSize = btnSize,
+				FontSize = btnSize * 1.5,
 				BackgroundColor = Color.FromRgb(124, 37, 41),
 				TextColor = Color.Black,
 				BorderWidth = 3,
-				BorderColor = Color.Black
+				BorderColor = Color.Black,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			clearBtn = new Button
 			{
@@ -360,7 +402,152 @@ namespace MahechaBJJ.Views.EntryPages
 
 			outerGrid.Children.Add(innerGrid, 0, 0);
 
-			Content = outerGrid;
+            nameLayout = new StackLayout
+            {
+                Children = {
+                    nameLbl,
+                    nameEntry
+                },
+                Orientation = StackOrientation.Horizontal
+            };
+            emailLayout = new StackLayout
+            {
+                Children = {
+                    emailAddressLbl,
+                    emailAddressEntry
+                },
+                Orientation = StackOrientation.Horizontal
+            };
+            beltPickerLayout = new StackLayout
+            {
+                Children = {
+                    beltLbl,
+                    beltPicker
+                },
+                Orientation = StackOrientation.Horizontal
+            };
+            passwordLayout = new StackLayout
+            {
+                Children = {
+                    passWordLbl,
+                    passWordEntry
+                },
+                Orientation = StackOrientation.Horizontal
+            };
+            repeatPasswordLayout = new StackLayout
+            {
+                Children = {
+                    passWordRepeatLbl,
+                    passWordRepeatEntry
+                },
+                Orientation = StackOrientation.Horizontal
+            };
+            secretQuestion1Layout = new StackLayout
+            {
+                Children = {
+                    secretQuestionPicker1,
+                    secretQuestionEntry1
+                },
+                Orientation = StackOrientation.Horizontal
+            };
+            secretQuestion2Layout = new StackLayout
+            {
+                Children = {
+                    secretQuestionPicker2,
+                    secretQuestionEntry2
+                },
+                Orientation = StackOrientation.Horizontal
+            };
+            secretQuestionLblLayout = new StackLayout
+            {
+                Children = {
+                    secretQuestionLbl
+                },
+                Orientation = StackOrientation.Horizontal
+            };
+
+
+            tableView = new TableView();
+            tableView.Intent = TableIntent.Form;
+            tableView.BackgroundColor = Color.White;
+            tableView.Root = new TableRoot()
+            {
+                new TableSection() {
+                    new ViewCell {
+                        View = nameLbl
+                    },
+                    new ViewCell {
+                        View = nameEntry
+                    },
+                    new ViewCell {
+                        View = emailAddressLbl
+                    },
+                    new ViewCell {
+                        View = emailAddressEntry
+                    },
+                    new ViewCell {
+                        View = beltLbl
+                    },
+                    new ViewCell {
+                        View = beltPicker
+                    },
+                    new ViewCell {
+                        View = passWordLbl
+                    },
+                    new ViewCell {
+                        View = passWordEntry
+                    },
+                    new ViewCell {
+                        View = passWordRepeatLbl
+                    },
+                    new ViewCell {
+                        View = passWordRepeatEntry
+                    },
+                    new ViewCell {
+                        View = secretQuestionLbl
+                    },
+                    new ViewCell {
+                        View = secretQuestionPicker1
+                    },
+                    new ViewCell {
+                        View = secretQuestionEntry1
+                    },
+                    new ViewCell {
+                        View = secretQuestionPicker2
+                    },
+                    new ViewCell {
+                        View = secretQuestionEntry2
+                    }
+                }
+            };
+            buttonLayout = new StackLayout();
+            buttonLayout.Children.Add(backBtn);
+            buttonLayout.Children.Add(signUpBtn);
+            buttonLayout.Orientation = StackOrientation.Horizontal;
+            buttonGrid = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection
+				{
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+				},
+                ColumnDefinitions = new ColumnDefinitionCollection
+                {
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
+				}
+			};
+            buttonGrid.Children.Add(backBtn, 0, 0);
+            buttonGrid.Children.Add(signUpBtn, 1, 0);
+            ScrollView scrollView = new ScrollView();
+            stackLayout = new StackLayout
+            {
+                Children = {
+                    tableView,
+                    buttonGrid
+                }
+            };
+            scrollView.Content = stackLayout;
+            Content = stackLayout;
         }
 
         private void Validate(object sender, EventArgs e)
@@ -406,7 +593,7 @@ namespace MahechaBJJ.Views.EntryPages
         }
 		
 		//Orientation
-		protected override void OnSizeAllocated(double width, double height)
+		/*protected override void OnSizeAllocated(double width, double height)
 		{
 			base.OnSizeAllocated(width, height); //must be called
 
@@ -486,7 +673,7 @@ namespace MahechaBJJ.Views.EntryPages
 				innerGrid.Children.Add(signUpBtn, 0, 14);
 				innerGrid.Children.Add(backBtn, 1, 14);
 			}
-		}
+		}*/
     }
 }
 

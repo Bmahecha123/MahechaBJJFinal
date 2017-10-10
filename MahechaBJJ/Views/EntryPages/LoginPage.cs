@@ -156,8 +156,6 @@ namespace MahechaBJJ.Views.EntryPages
 
 
             scrollView.Content = stackLayout;
-            scrollView.HorizontalOptions = LayoutOptions.Fill;
-            scrollView.VerticalOptions = LayoutOptions.Fill;
             Content = scrollView;
         }
 
