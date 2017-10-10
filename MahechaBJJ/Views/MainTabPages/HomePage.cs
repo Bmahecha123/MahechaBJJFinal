@@ -5,7 +5,6 @@ using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.MainTabPages;
 using MahechaBJJ.Views.PlaylistPages;
-using Xamarin.Auth;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
@@ -35,7 +34,6 @@ namespace MahechaBJJ.Views
         private Frame timeOutFrame;
         private TapGestureRecognizer timeOutTap;
         private ActivityIndicator activityIndicator;
-
         public HomePage()
         {
             _baseViewModel = new BaseViewModel();
@@ -177,6 +175,7 @@ namespace MahechaBJJ.Views
                 HorizontalTextAlignment = TextAlignment.Center,
                 FontSize = lblSize * 2
             };
+
             addPlaylistBtn = new Button
             {
                 Text = "Create",

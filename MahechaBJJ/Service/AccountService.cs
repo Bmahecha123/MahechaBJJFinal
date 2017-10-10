@@ -2,6 +2,8 @@
 using System.Linq;
 using MahechaBJJ.Resources;
 using Xamarin.Auth;
+using Xamarin.Forms;
+
 namespace MahechaBJJ.Service
 {
     public class AccountService

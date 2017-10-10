@@ -180,7 +180,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 			playBtn.Clicked += PlayIOSVideo;
 #endif
 #if __ANDROID__
-            playVideo.Clicked += PlayAndroidVideo;
+            playBtn.Clicked += PlayAndroidVideo;
 #endif
 			//building grid
 			innerGrid.Children.Add(videoFrame, 0, 0);

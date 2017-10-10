@@ -27,7 +27,7 @@ namespace MahechaBJJ.Views
         //CONSTS
         private const string VIMEOBASEURL = "https://api.vimeo.com";
         private const string VIMEOVIDEOS = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952";
-        private const string VIDEOSPERPAGE = "&per_page=20";
+        private const string VIDEOSPERPAGE = "&per_page=5";
         private const string QUERY = "&query=";
 
         public SearchPage()
@@ -37,11 +37,21 @@ namespace MahechaBJJ.Views
 			Title = "Search";
             Icon = "004-search.png";
 			Padding = new Thickness(10, 30, 10, 10);
-            SetContent();
+            SetContent(false);
          }
 
+        public SearchPage(string giOrNoGi, string techniqueCategory, string bottomOrTop)
+        {
+			_searchPageViewModel = new SearchPageViewModel();
+			searchedVideos = new ObservableCollection<VideoData>();
+			Title = "Search";
+			Icon = "004-search.png";
+			Padding = new Thickness(10, 30, 10, 10);
+			SetContent(true);
+		}
+
         //Functions
-        public void SetContent()
+        public void SetContent(bool modal)
         {
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			//View Objects
@@ -158,6 +168,7 @@ namespace MahechaBJJ.Views
 
 			//Events
 			searchBar.SearchButtonPressed += SearchVimeo;
+            searchBar.Focused += FocusSearchBar;
 			videoListView.ItemSelected += LoadVideo;
 			loadBtn.Clicked += LoadMoreVideos;
 
@@ -269,6 +280,12 @@ namespace MahechaBJJ.Views
                     Grid.SetRowSpan(videoListView, 2);
                 }
             }
+        }
+
+        //deals with searchBar being unfocused
+        private void FocusSearchBar(object sender, EventArgs e)
+        {
+            searchBar.Text = " ";
         }
 
 		//Orientation

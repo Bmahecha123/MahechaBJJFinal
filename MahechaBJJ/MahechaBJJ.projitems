@@ -57,6 +57,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabPages\SearchPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\AndroidVideoPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\VideoDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\BrowseDetailPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

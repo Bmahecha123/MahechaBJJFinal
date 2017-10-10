@@ -23,6 +23,10 @@ namespace MahechaBJJ.Views.EntryPages
         private Button loginBtn;
         private Button backBtn;
         private User user;
+        private ScrollView scrollView;
+        private StackLayout stackLayout;
+        private StackLayout innerStackLayout;
+        private StackLayout buttonLayout;
 
 
         public LoginPage()
@@ -38,29 +42,13 @@ namespace MahechaBJJ.Views.EntryPages
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 			var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));
-			//Grid view definition
-			outerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-				}
-			};
-			innerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection {
-					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-				}
-			};
-			//View objects
+			
+            scrollView = new ScrollView();
+            stackLayout = new StackLayout();
+            buttonLayout = new StackLayout();
+			innerStackLayout = new StackLayout();
+
+            //View objects
 			mahechaLogo = new Image
 			{
 				Source = ImageSource.FromResource("mahechabjjlogo.png"),
@@ -129,7 +117,9 @@ namespace MahechaBJJ.Views.EntryPages
                 BackgroundColor = Color.FromRgb(58, 93, 174),
 				TextColor = Color.Black,
 				BorderWidth = 3,
-				BorderColor = Color.Black
+				BorderColor = Color.Black,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			backBtn = new Button
 			{
@@ -145,27 +135,31 @@ namespace MahechaBJJ.Views.EntryPages
                 BackgroundColor = Color.FromRgb(124, 37, 41),
                 TextColor = Color.Black,
                 BorderWidth = 3,
-                BorderColor = Color.Black
+                BorderColor = Color.Black,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			//Events
 			loginBtn.Clicked += Validate;
 			backBtn.Clicked += GoBack;
 
-			innerGrid.Children.Add(mahechaLogo, 0, 0);
-			Grid.SetColumnSpan(mahechaLogo, 2);
-			innerGrid.Children.Add(emailLbl, 0, 1);
-			Grid.SetColumnSpan(emailLbl, 2);
-			innerGrid.Children.Add(emailEntry, 0, 2);
-			Grid.SetColumnSpan(emailEntry, 2);
-			innerGrid.Children.Add(passwordLbl, 0, 3);
-			Grid.SetColumnSpan(passwordLbl, 2);
-			innerGrid.Children.Add(passwordEntry, 0, 4);
-			Grid.SetColumnSpan(passwordEntry, 2);
-			innerGrid.Children.Add(backBtn, 0, 5);
-			innerGrid.Children.Add(loginBtn, 1, 5);
-			outerGrid.Children.Add(innerGrid, 0, 0);
+			buttonLayout.Children.Add(backBtn);
+			buttonLayout.Children.Add(loginBtn);
+			buttonLayout.Orientation = StackOrientation.Horizontal;
+			innerStackLayout.Children.Add(emailLbl);
+			innerStackLayout.Children.Add(emailEntry);
+			innerStackLayout.Children.Add(passwordLbl);
+			innerStackLayout.Children.Add(passwordEntry);
+			innerStackLayout.Children.Add(buttonLayout);
+            stackLayout.Children.Add(mahechaLogo);
+            stackLayout.Children.Add(innerStackLayout);
+            stackLayout.Orientation = StackOrientation.Vertical;
 
-			Content = outerGrid;
+
+            scrollView.Content = stackLayout;
+            scrollView.HorizontalOptions = LayoutOptions.Fill;
+            scrollView.VerticalOptions = LayoutOptions.Fill;
+            Content = scrollView;
         }
 
         private void Validate(object sender, EventArgs e)
@@ -209,50 +203,19 @@ namespace MahechaBJJ.Views.EntryPages
             if (width > height)
             {
                 Padding = new Thickness(10, 10, 10, 10);
-                innerGrid.RowDefinitions.Clear();
-                innerGrid.ColumnDefinitions.Clear();
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                innerGrid.Children.Clear();
-                innerGrid.Children.Add(mahechaLogo, 0, 0);
-                Grid.SetRowSpan(mahechaLogo, 3);
-                innerGrid.Children.Add(emailLbl, 1, 0);
-                innerGrid.Children.Add(emailEntry, 2, 0);
-                innerGrid.Children.Add(passwordLbl, 1, 1);
-                innerGrid.Children.Add(passwordEntry, 2, 1);
-                innerGrid.Children.Add(backBtn, 1, 2);
-                innerGrid.Children.Add(loginBtn, 2, 2);
+                mahechaLogo.Scale = 0;
+                mahechaLogo.IsVisible = false;
+				stackLayout.Orientation = StackOrientation.Horizontal;
+                stackLayout.HorizontalOptions = LayoutOptions.CenterAndExpand;
+                stackLayout.VerticalOptions = LayoutOptions.CenterAndExpand;
+                buttonLayout.VerticalOptions = LayoutOptions.EndAndExpand;
             }
             else
             {
+                mahechaLogo.Scale = 1;
+                mahechaLogo.IsVisible = true;
                 Padding = new Thickness(10, 30, 10, 10);
-                innerGrid.RowDefinitions.Clear();
-                innerGrid.ColumnDefinitions.Clear();
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.Children.Clear();
-                innerGrid.Children.Add(mahechaLogo, 0, 0);
-                Grid.SetColumnSpan(mahechaLogo, 2);
-                innerGrid.Children.Add(emailLbl, 0, 1);
-                Grid.SetColumnSpan(emailLbl, 2);
-                innerGrid.Children.Add(emailEntry, 0, 2);
-                Grid.SetColumnSpan(emailEntry, 2);
-				innerGrid.Children.Add(passwordLbl, 0, 3);
-                Grid.SetColumnSpan(passwordLbl, 2);
-				innerGrid.Children.Add(passwordEntry, 0, 4);
-                Grid.SetColumnSpan(passwordEntry, 2);
-                innerGrid.Children.Add(backBtn, 0, 5);
-				innerGrid.Children.Add(loginBtn, 1, 5);
+				stackLayout.Orientation = StackOrientation.Vertical;
             }
 		}
     }

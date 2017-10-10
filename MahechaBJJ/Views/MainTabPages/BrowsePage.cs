@@ -1,6 +1,7 @@
 ﻿﻿using System;
 using MahechaBJJ.Model;
 using MahechaBJJ.Views.BlogPages;
+using MahechaBJJ.Views.CommonPages;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
@@ -10,12 +11,14 @@ namespace MahechaBJJ.Views
         //declare objects
         private Grid outerGrid;
         private Grid innerGrid;
-        private Frame bottomFrame;
-        private Label bottomLbl;
-        private Image bottomImage;
-        private Frame topFrame;
-        private Label topLbl;
-        private Image topImage;
+        private Frame giFrame;
+        private Label giLbl;
+        private Image giImage;
+        private TapGestureRecognizer giTap;
+        private Frame noGiFrame;
+        private Label noGiLbl;
+        private Image noGiImage;
+        private TapGestureRecognizer noGiTap;
         private Frame blogFrame;
         private Label blogLbl;
         private Image blogImage;
@@ -55,7 +58,7 @@ namespace MahechaBJJ.Views
 				}
 			};
 
-			topLbl = new Label
+			noGiLbl = new Label
 			{
 				Text = "Gi",
 #if __IOS__
@@ -69,14 +72,22 @@ namespace MahechaBJJ.Views
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
 			};
-			topImage = new Image
+
+			noGiTap = new TapGestureRecognizer();
+			noGiTap.Tapped += (sender, e) =>
+			{
+                Navigation.PushModalAsync(new BrowseDetailPage(noGiLbl.Text));
+			};
+			noGiLbl.GestureRecognizers.Add(noGiTap);
+
+			noGiImage = new Image
 			{
 				Aspect = Aspect.AspectFill,
 				Source = ImageSource.FromFile("bottom.jpg")
 			};
-			topFrame = new Frame
+			noGiFrame = new Frame
 			{
-				Content = topImage,
+				Content = noGiImage,
 				OutlineColor = Color.Black,
 				BackgroundColor = Color.Black,
 				HasShadow = false,
@@ -84,7 +95,7 @@ namespace MahechaBJJ.Views
 			};
 
 			//bottom objects
-			bottomLbl = new Label
+			giLbl = new Label
 			{
 				Text = "No-Gi",
 #if __IOS__
@@ -98,14 +109,22 @@ namespace MahechaBJJ.Views
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center
 			};
-			bottomImage = new Image
+
+			giTap = new TapGestureRecognizer();
+			giTap.Tapped += (sender, e) =>
+			{
+				Navigation.PushModalAsync(new BrowseDetailPage(giLbl.Text));
+			};
+			giLbl.GestureRecognizers.Add(giTap);
+
+			giImage = new Image
 			{
 				Aspect = Aspect.AspectFill,
 				Source = ImageSource.FromFile("nogi.png")
 			};
-			bottomFrame = new Frame
+			giFrame = new Frame
 			{
-				Content = bottomImage,
+				Content = giImage,
 				OutlineColor = Color.Black,
 				BackgroundColor = Color.Black,
 				HasShadow = false,
@@ -152,10 +171,10 @@ namespace MahechaBJJ.Views
 
 
 			//adding children
-			innerGrid.Children.Add(topFrame, 0, 0);
-			innerGrid.Children.Add(topLbl, 0, 0);
-			innerGrid.Children.Add(bottomFrame, 0, 1);
-			innerGrid.Children.Add(bottomLbl, 0, 1);
+			innerGrid.Children.Add(noGiFrame, 0, 0);
+			innerGrid.Children.Add(noGiLbl, 0, 0);
+			innerGrid.Children.Add(giFrame, 0, 1);
+			innerGrid.Children.Add(giLbl, 0, 1);
 			innerGrid.Children.Add(blogFrame, 0, 2);
 			innerGrid.Children.Add(blogLbl, 0, 2);
 			outerGrid.Children.Add(innerGrid, 0, 0);
@@ -179,10 +198,10 @@ namespace MahechaBJJ.Views
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 				innerGrid.Children.Clear();
 				//building grid
-				innerGrid.Children.Add(topFrame, 0, 0);
-				innerGrid.Children.Add(topLbl, 0, 0);
-				innerGrid.Children.Add(bottomFrame, 0, 1);
-				innerGrid.Children.Add(bottomLbl, 0, 1);
+				innerGrid.Children.Add(noGiFrame, 0, 0);
+				innerGrid.Children.Add(noGiLbl, 0, 0);
+				innerGrid.Children.Add(giFrame, 0, 1);
+				innerGrid.Children.Add(giLbl, 0, 1);
 				innerGrid.Children.Add(blogFrame, 1, 0);
 				Grid.SetRowSpan(blogFrame, 2);
 				innerGrid.Children.Add(blogLbl, 1, 0);
@@ -198,10 +217,10 @@ namespace MahechaBJJ.Views
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 				innerGrid.Children.Clear();
 				//building grid
-				innerGrid.Children.Add(topFrame, 0, 0);
-				innerGrid.Children.Add(topLbl, 0, 0);
-				innerGrid.Children.Add(bottomFrame, 0, 1);
-                innerGrid.Children.Add(bottomLbl, 0, 1);
+				innerGrid.Children.Add(noGiFrame, 0, 0);
+				innerGrid.Children.Add(noGiLbl, 0, 0);
+				innerGrid.Children.Add(giFrame, 0, 1);
+                innerGrid.Children.Add(giLbl, 0, 1);
                 innerGrid.Children.Add(blogFrame, 0, 2);
                 innerGrid.Children.Add(blogLbl, 0, 2);
 			}
