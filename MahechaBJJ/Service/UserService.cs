@@ -93,18 +93,17 @@ namespace MahechaBJJ.Service
 
         public async Task<ObservableCollection<PlayList>> GetPlaylists(string url)
         {
-            try 
-            {
-				var playListData = await client.GetStringAsync(url);
-				ObservableCollection<PlayList> playLists = JsonConvert.DeserializeObject<ObservableCollection<PlayList>>(playListData);
-				return playLists;
-            }
-            catch (HttpRequestException ex)
-            {
-				Console.WriteLine(ex.Message);
-                return null;
-            }
-
+                try
+                {
+                    var playListData = await client.GetStringAsync(url);
+                    ObservableCollection<PlayList> playLists = JsonConvert.DeserializeObject<ObservableCollection<PlayList>>(playListData);
+                    return playLists;
+                }
+                catch (HttpRequestException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return null;
+                }
         }
 
         public async Task<PlayList> GetPlaylist(string url, string playlistName)

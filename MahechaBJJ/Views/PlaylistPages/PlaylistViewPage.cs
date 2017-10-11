@@ -95,7 +95,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 				Text = "Back",
 				FontSize = btnSize * 2,
-				BackgroundColor = Color.Orange,
+				BackgroundColor = Color.FromRgb(124, 37, 41),
 				BorderWidth = 3,
 				TextColor = Color.Black
 			};
@@ -211,7 +211,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 
 				playlistFrame = new Frame();
-                playlistFrame.BackgroundColor = Color.SeaGreen;
+                playlistFrame.BackgroundColor = Color.FromRgb(58, 93, 174);
 				playlistFrame.HasShadow = false;
 				playlistFrame.OutlineColor = Color.Black;
 				//playlistFrame.Padding = 3;

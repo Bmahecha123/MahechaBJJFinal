@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Service;
@@ -43,19 +44,22 @@ namespace MahechaBJJ.ViewModel.PlaylistPages
 
         public PlaylistViewPageViewModel()
         {
+            _successful = true;
             _userService = new UserService();
             _accountService = new AccountService();
         }
 
         public async Task GetUserPlaylists(string url, string id)
         {
-            _playlist = await _userService.GetPlaylists(url + id);
-            if (_playlist == null)
-            {
-                _successful = false;
-            } else {
-                _successful = true;
-            }
+				_playlist = await _userService.GetPlaylists(url + id);
+				if (_playlist == null)
+				{
+					_successful = false;
+				}
+				else
+				{
+					_successful = true;
+				}
         }
 
 		public event PropertyChangedEventHandler PropertyChanged;
