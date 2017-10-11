@@ -19,9 +19,6 @@ namespace MahechaBJJ.Views.EntryPages
         //declare objects
         private StackLayout lblLayout;
         private StackLayout entryLayout;
-        private Grid innerGrid;
-        private Grid outerGrid;
-        private Image mahechaLogo;
         private Label nameLbl;
         private Entry nameEntry;
         private Label beltLbl;
@@ -47,14 +44,6 @@ namespace MahechaBJJ.Views.EntryPages
         private TableView tableView;
         private StackLayout stackLayout;
         private StackLayout buttonLayout;
-        private StackLayout nameLayout;
-        private StackLayout beltPickerLayout;
-        private StackLayout passwordLayout;
-        private StackLayout repeatPasswordLayout;
-        private StackLayout emailLayout;
-        private StackLayout secretQuestionLblLayout;
-        private StackLayout secretQuestion1Layout;
-        private StackLayout secretQuestion2Layout;
         private Grid buttonGrid;
 		//Xam Auth
 		Account account;
@@ -74,46 +63,8 @@ namespace MahechaBJJ.Views.EntryPages
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 			var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));            
-
-            //Grid view definition
-			outerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection
-				{
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-				}
-			};
-
-			innerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition { Height = new GridLength(2, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection {
-					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-				}
-			};
+			
 			//View objects
-			mahechaLogo = new Image
-			{
-				Source = ImageSource.FromResource("mahechabjjlogo.png"),
-				Aspect = Aspect.AspectFit
-			};
 			beltLbl = new Label
 			{
 				Text = "Belt",
@@ -369,104 +320,6 @@ namespace MahechaBJJ.Views.EntryPages
 			passWordRepeatEntry.Unfocused += PasswordMatch;
 			//TODO add specific validation events to make sure entries are correct.
 
-			innerGrid.Children.Add(mahechaLogo, 0, 0);
-			Grid.SetColumnSpan(mahechaLogo, 2);
-			innerGrid.Children.Add(nameLbl, 0, 1);
-			innerGrid.Children.Add(nameEntry, 0, 2);
-			innerGrid.Children.Add(beltLbl, 1, 1);
-			innerGrid.Children.Add(beltPicker, 1, 2);
-			innerGrid.Children.Add(emailAddressLbl, 0, 3);
-			Grid.SetColumnSpan(emailAddressLbl, 2);
-			innerGrid.Children.Add(emailAddressEntry, 0, 4);
-			Grid.SetColumnSpan(emailAddressEntry, 2);
-			innerGrid.Children.Add(passWordLbl, 0, 5);
-			Grid.SetColumnSpan(passWordLbl, 2);
-			innerGrid.Children.Add(passWordEntry, 0, 6);
-			Grid.SetColumnSpan(passWordEntry, 2);
-			innerGrid.Children.Add(passWordRepeatLbl, 0, 7);
-			Grid.SetColumnSpan(passWordRepeatLbl, 2);
-			innerGrid.Children.Add(passWordRepeatEntry, 0, 8);
-			Grid.SetColumnSpan(passWordRepeatEntry, 2);
-			innerGrid.Children.Add(secretQuestionLbl, 0, 9);
-			Grid.SetColumnSpan(secretQuestionLbl, 2);
-			innerGrid.Children.Add(secretQuestionPicker1, 0, 10);
-			Grid.SetColumnSpan(secretQuestionPicker1, 2);
-			innerGrid.Children.Add(secretQuestionEntry1, 0, 11);
-			Grid.SetColumnSpan(secretQuestionEntry1, 2);
-			innerGrid.Children.Add(secretQuestionPicker2, 0, 12);
-			Grid.SetColumnSpan(secretQuestionPicker2, 2);
-			innerGrid.Children.Add(secretQuestionEntry2, 0, 13);
-			Grid.SetColumnSpan(secretQuestionEntry2, 2);
-			innerGrid.Children.Add(signUpBtn, 0, 14);
-			innerGrid.Children.Add(backBtn, 1, 14);
-
-			outerGrid.Children.Add(innerGrid, 0, 0);
-
-            nameLayout = new StackLayout
-            {
-                Children = {
-                    nameLbl,
-                    nameEntry
-                },
-                Orientation = StackOrientation.Horizontal
-            };
-            emailLayout = new StackLayout
-            {
-                Children = {
-                    emailAddressLbl,
-                    emailAddressEntry
-                },
-                Orientation = StackOrientation.Horizontal
-            };
-            beltPickerLayout = new StackLayout
-            {
-                Children = {
-                    beltLbl,
-                    beltPicker
-                },
-                Orientation = StackOrientation.Horizontal
-            };
-            passwordLayout = new StackLayout
-            {
-                Children = {
-                    passWordLbl,
-                    passWordEntry
-                },
-                Orientation = StackOrientation.Horizontal
-            };
-            repeatPasswordLayout = new StackLayout
-            {
-                Children = {
-                    passWordRepeatLbl,
-                    passWordRepeatEntry
-                },
-                Orientation = StackOrientation.Horizontal
-            };
-            secretQuestion1Layout = new StackLayout
-            {
-                Children = {
-                    secretQuestionPicker1,
-                    secretQuestionEntry1
-                },
-                Orientation = StackOrientation.Horizontal
-            };
-            secretQuestion2Layout = new StackLayout
-            {
-                Children = {
-                    secretQuestionPicker2,
-                    secretQuestionEntry2
-                },
-                Orientation = StackOrientation.Horizontal
-            };
-            secretQuestionLblLayout = new StackLayout
-            {
-                Children = {
-                    secretQuestionLbl
-                },
-                Orientation = StackOrientation.Horizontal
-            };
-
-
             tableView = new TableView();
             tableView.Intent = TableIntent.Form;
             tableView.BackgroundColor = Color.White;
@@ -593,87 +446,27 @@ namespace MahechaBJJ.Views.EntryPages
         }
 		
 		//Orientation
-		/*protected override void OnSizeAllocated(double width, double height)
+		protected override void OnSizeAllocated(double width, double height)
 		{
+			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+			var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));
 			base.OnSizeAllocated(width, height); //must be called
 
 			if (width > height)
 			{
-				Padding = new Thickness(10, 10, 10, 10);
-				innerGrid.RowDefinitions.Clear();
-				innerGrid.ColumnDefinitions.Clear();
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.Children.Clear();
-                innerGrid.Children.Add(mahechaLogo, 0, 0);
-                Grid.SetRowSpan(mahechaLogo, 4);
-                innerGrid.Children.Add(nameLbl, 1, 0);
-                innerGrid.Children.Add(nameEntry, 2, 0);
-                innerGrid.Children.Add(beltLbl, 1, 1);
-                innerGrid.Children.Add(beltPicker, 2, 1);
-                innerGrid.Children.Add(emailAddressLbl, 1, 2);
-                innerGrid.Children.Add(emailAddressEntry, 2, 2);
-                innerGrid.Children.Add(passWordLbl, 1, 3);
-                innerGrid.Children.Add(passWordEntry, 2, 3);
-                innerGrid.Children.Add(passWordRepeatLbl, 1, 4);
-                innerGrid.Children.Add(passWordRepeatEntry, 2, 4);
-                innerGrid.Children.Add(secretQuestionLbl, 1, 5);
-                Grid.SetColumnSpan(secretQuestionLbl, 2);
-                innerGrid.Children.Add(secretQuestionPicker1, 0, 6);
-                innerGrid.Children.Add(secretQuestionEntry1, 1, 6);
-                innerGrid.Children.Add(secretQuestionPicker2, 0, 7);
-                innerGrid.Children.Add(secretQuestionEntry2, 1, 7);
-                Grid.SetColumnSpan(secretQuestionEntry1, 2);
-                Grid.SetColumnSpan(secretQuestionEntry2, 2);
-                innerGrid.Children.Add(signUpBtn, 1, 8);
-                innerGrid.Children.Add(backBtn, 0, 8);
-                innerGrid.Children.Add(clearBtn, 2, 8);
+                Padding = new Thickness(10, 10, 10, 0);
+                backBtn.FontSize = btnSize;
+                signUpBtn.FontSize = btnSize;
+                stackLayout.Spacing = 0;
 			}
 			else
 			{
 				Padding = new Thickness(10, 30, 10, 10);
-				innerGrid.Children.Add(mahechaLogo, 0, 0);
-				Grid.SetColumnSpan(mahechaLogo, 2);
-				innerGrid.Children.Add(nameLbl, 0, 1);
-				innerGrid.Children.Add(nameEntry, 0, 2);
-				innerGrid.Children.Add(beltLbl, 1, 1);
-				innerGrid.Children.Add(beltPicker, 1, 2);
-				innerGrid.Children.Add(emailAddressLbl, 0, 3);
-				Grid.SetColumnSpan(emailAddressLbl, 2);
-				innerGrid.Children.Add(emailAddressEntry, 0, 4);
-				Grid.SetColumnSpan(emailAddressEntry, 2);
-				innerGrid.Children.Add(passWordLbl, 0, 5);
-				Grid.SetColumnSpan(passWordLbl, 2);
-				innerGrid.Children.Add(passWordEntry, 0, 6);
-				Grid.SetColumnSpan(passWordEntry, 2);
-				innerGrid.Children.Add(passWordRepeatLbl, 0, 7);
-				Grid.SetColumnSpan(passWordRepeatLbl, 2);
-				innerGrid.Children.Add(passWordRepeatEntry, 0, 8);
-				Grid.SetColumnSpan(passWordRepeatEntry, 2);
-				innerGrid.Children.Add(secretQuestionLbl, 0, 9);
-				Grid.SetColumnSpan(secretQuestionLbl, 2);
-				innerGrid.Children.Add(secretQuestionPicker1, 0, 10);
-				Grid.SetColumnSpan(secretQuestionPicker1, 2);
-				innerGrid.Children.Add(secretQuestionEntry1, 0, 11);
-				Grid.SetColumnSpan(secretQuestionEntry1, 2);
-				innerGrid.Children.Add(secretQuestionPicker2, 0, 12);
-				Grid.SetColumnSpan(secretQuestionPicker2, 2);
-				innerGrid.Children.Add(secretQuestionEntry2, 0, 13);
-				Grid.SetColumnSpan(secretQuestionEntry2, 2);
-				innerGrid.Children.Add(signUpBtn, 0, 14);
-				innerGrid.Children.Add(backBtn, 1, 14);
+                backBtn.FontSize = btnSize * 1.5;
+                signUpBtn.FontSize = btnSize * 1.5;
 			}
-		}*/
+		}
     }
 }
 

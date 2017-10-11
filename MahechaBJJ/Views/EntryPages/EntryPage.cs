@@ -119,7 +119,7 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
                 innerGrid.Children.Clear();
                 innerGrid.Children.Add(mahechaLogo, 0, 0);
-                Grid.SetRowSpan(mahechaLogo, 3);
+                Grid.SetRowSpan(mahechaLogo, 2);
                 innerGrid.Children.Add(signUpBtn, 1, 0);
                 innerGrid.Children.Add(loginBtn, 1, 1);
             } else {
