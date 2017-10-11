@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F0696696-6BD5-4B7C-8E74-11C6B987E472" identitySerialNumber="110657C3E2B5A950">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="V3PWVTNK6M" TeamId="P6282GF84Z" />
   </MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/App.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Resources/Constants.cs">
     <Files>
       <File FileName="MahechaBJJ/Views/MainTabPages/SearchPage.cs" Line="170" Column="1" />
       <File FileName="MahechaBJJ/Views/MainTabPages/BrowsePage.cs" Line="4" Column="1" />
@@ -25,7 +25,7 @@
       <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistVideoPage.cs" Line="183" Column="20" />
       <File FileName="MahechaBJJ/ViewModel/EntryPages/EntryPageViewModel.cs" Line="1" Column="1" />
       <File FileName="MahechaBJJ/ViewModel/PlaylistPages/PlaylistDetailPageViewModel.cs" Line="55" Column="34" />
-      <File FileName="MahechaBJJ/App.xaml.cs" Line="19" Column="1" />
+      <File FileName="MahechaBJJ/App.xaml.cs" Line="45" Column="42" />
       <File FileName="MahechaBJJ/Service/AccountService.cs" Line="27" Column="34" />
       <File FileName="MahechaBJJ/Service/BlogService.cs" Line="20" Column="10" />
       <File FileName="MahechaBJJ/Views/CommonPages/VideoDetailPage.cs" Line="195" Column="36" />

@@ -30,6 +30,7 @@ namespace MahechaBJJ.Views
 		private Frame timeOutFrame;
 		private TapGestureRecognizer timeOutTap;
 		private ActivityIndicator activityIndicator;
+        private StackLayout userCredentialStack;
 
         public ProfilePage()
         {
@@ -56,19 +57,14 @@ namespace MahechaBJJ.Views
 			innerGrid = new Grid
 			{
 				RowDefinitions = new RowDefinitionCollection {
+					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(2, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(2, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(2, GridUnitType.Star)}
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection {
-					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
+					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
 				}
 			};
+
+            userCredentialStack = new StackLayout();
 
 			//load User
 			var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
@@ -76,16 +72,18 @@ namespace MahechaBJJ.Views
 
 			nameLbl = new Label
 			{
-				Text = "Name:",
+				Text = "Name",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size,
+				FontSize = size * 1.5,
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 
 			nameTextLbl = new Label
@@ -99,20 +97,24 @@ namespace MahechaBJJ.Views
 #endif
 				FontSize = size,
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			emailLbl = new Label
 			{
-				Text = "E-Mail:",
+				Text = "E-Mail",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size,
+				FontSize = size * 1.5,
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			emailTextLbl = new Label
 			{
@@ -126,20 +128,24 @@ namespace MahechaBJJ.Views
 				FontSize = size,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center,
-				LineBreakMode = LineBreakMode.TailTruncation
+				LineBreakMode = LineBreakMode.TailTruncation,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			beltLbl = new Label
 			{
-				Text = "Belt:",
+				Text = "Belt",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size,
+				FontSize = size * 1.5,
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			beltTextLbl = new Label
 			{
@@ -152,7 +158,9 @@ namespace MahechaBJJ.Views
 #endif
 				FontSize = size,
 				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			contactUsBtn = new Button
 			{
@@ -285,132 +293,75 @@ namespace MahechaBJJ.Views
 				nameTextLbl.Text = user.Name;
 				emailTextLbl.Text = user.Email;
 				beltTextLbl.Text = user.Belt;
-
-				//Building Grid
-				innerGrid.Children.Add(nameLbl, 0, 0);
-				innerGrid.Children.Add(nameTextLbl, 1, 0);
-				Grid.SetColumnSpan(nameTextLbl, 2);
-				innerGrid.Children.Add(beltLbl, 0, 1);
-				innerGrid.Children.Add(beltTextLbl, 1, 1);
-				Grid.SetColumnSpan(beltTextLbl, 2);
-				innerGrid.Children.Add(emailLbl, 0, 2);
-				innerGrid.Children.Add(emailTextLbl, 1, 2);
-				Grid.SetColumnSpan(emailTextLbl, 2);
-				innerGrid.Children.Add(contactUsBtn, 0, 3);
-				Grid.SetColumnSpan(contactUsBtn, 3);
-				innerGrid.Children.Add(settingsBtn, 0, 4);
-				Grid.SetColumnSpan(settingsBtn, 3);
-				innerGrid.Children.Add(logOutBtn, 0, 5);
-				Grid.SetColumnSpan(logOutBtn, 3);
+                //Building Stack
+                userCredentialStack.Children.Add(nameLbl);
+                userCredentialStack.Children.Add(nameTextLbl);
+                userCredentialStack.Children.Add(beltLbl);
+                userCredentialStack.Children.Add(beltTextLbl);
+                userCredentialStack.Children.Add(emailLbl);
+                userCredentialStack.Children.Add(emailTextLbl);
+                //Building Grid
+                innerGrid.Children.Clear();
+                innerGrid.Children.Add(userCredentialStack, 0, 0);
+				innerGrid.Children.Add(contactUsBtn, 0, 1);
+				innerGrid.Children.Add(settingsBtn, 0, 2);
+				innerGrid.Children.Add(logOutBtn, 0, 3);
             } else {
 				innerGrid.Children.Clear();
 				innerGrid.Children.Add(timeOutFrame, 0, 0);
-				Grid.SetRowSpan(timeOutFrame, 6);
-				Grid.SetRowSpan(timeOutLbl, 3);
-				Grid.SetColumnSpan(timeOutFrame, 6);
-				Grid.SetColumnSpan(timeOutLbl, 3);
+				Grid.SetRowSpan(timeOutFrame, 4);
+				Grid.SetRowSpan(timeOutLbl, 4);
             }
 
 		}
 
-		//Orientation
-		protected override void OnSizeAllocated(double width, double height)
-		{
-			base.OnSizeAllocated(width, height); //must be called
+        //Orientation
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height); //must be called
 
-			if (width > height)
-			{
+            if (width > height)
+            {
                 if (_baseViewModel.User != null)
                 {
-					Padding = new Thickness(10, 10, 10, 10);
-					innerGrid.RowDefinitions.Clear();
-					innerGrid.ColumnDefinitions.Clear();
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-					innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-					innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-					//Layout Options
-					nameLbl.HorizontalOptions = LayoutOptions.CenterAndExpand;
-					nameLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					nameTextLbl.HorizontalOptions = LayoutOptions.CenterAndExpand;
-					nameTextLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					beltLbl.HorizontalOptions = LayoutOptions.CenterAndExpand;
-					beltLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					beltTextLbl.HorizontalOptions = LayoutOptions.CenterAndExpand;
-					beltTextLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					emailLbl.HorizontalOptions = LayoutOptions.CenterAndExpand;
-					emailLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					emailTextLbl.HorizontalOptions = LayoutOptions.CenterAndExpand;
-					emailTextLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					//Building Grid
-					innerGrid.Children.Clear();
-					innerGrid.Children.Add(nameLbl, 0, 0);
-					innerGrid.Children.Add(nameTextLbl, 0, 1);
-					innerGrid.Children.Add(emailLbl, 0, 2);
-					innerGrid.Children.Add(emailTextLbl, 0, 3);
-					innerGrid.Children.Add(beltLbl, 0, 4);
-					innerGrid.Children.Add(beltTextLbl, 0, 5);
-					innerGrid.Children.Add(contactUsBtn, 1, 0);
-					Grid.SetRowSpan(contactUsBtn, 2);
-					innerGrid.Children.Add(settingsBtn, 1, 2);
-					Grid.SetRowSpan(settingsBtn, 2);
-					innerGrid.Children.Add(logOutBtn, 1, 4);
-					Grid.SetRowSpan(logOutBtn, 2);
+                    Padding = new Thickness(10, 10, 10, 10);
+                    innerGrid.RowDefinitions.Clear();
+                    innerGrid.ColumnDefinitions.Clear();
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                    //Layout Options
+                    //Building Grid
+                    innerGrid.Children.Clear();
+                    innerGrid.Children.Add(userCredentialStack, 0, 0);
+                    Grid.SetRowSpan(userCredentialStack, 3);
+                    innerGrid.Children.Add(contactUsBtn, 1, 0);
+                    innerGrid.Children.Add(settingsBtn, 1, 1);
+                    innerGrid.Children.Add(logOutBtn, 1, 2);
                 }
-			}
-			else
-			{
+            }
+            else
+            {
                 if (_baseViewModel.User != null)
                 {
-					Padding = new Thickness(10, 30, 10, 10);
-					innerGrid.RowDefinitions.Clear();
-					innerGrid.ColumnDefinitions.Clear();
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-					innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-					innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-					innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-					innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-					innerGrid.Children.Clear();
-					//Layout Options
-					nameLbl.HorizontalOptions = LayoutOptions.StartAndExpand;
-					nameLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					nameTextLbl.HorizontalOptions = LayoutOptions.StartAndExpand;
-					nameTextLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					beltLbl.HorizontalOptions = LayoutOptions.StartAndExpand;
-					beltLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					beltTextLbl.HorizontalOptions = LayoutOptions.StartAndExpand;
-					beltTextLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					emailLbl.HorizontalOptions = LayoutOptions.StartAndExpand;
-					emailLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					emailTextLbl.HorizontalOptions = LayoutOptions.StartAndExpand;
-					emailTextLbl.VerticalOptions = LayoutOptions.CenterAndExpand;
-					//Building Grid
-					innerGrid.Children.Add(nameLbl, 0, 0);
-					innerGrid.Children.Add(nameTextLbl, 1, 0);
-					Grid.SetColumnSpan(nameTextLbl, 2);
-					innerGrid.Children.Add(beltLbl, 0, 1);
-					innerGrid.Children.Add(beltTextLbl, 1, 1);
-					Grid.SetColumnSpan(beltTextLbl, 2);
-					innerGrid.Children.Add(emailLbl, 0, 2);
-					innerGrid.Children.Add(emailTextLbl, 1, 2);
-					Grid.SetColumnSpan(emailTextLbl, 2);
-					innerGrid.Children.Add(contactUsBtn, 0, 3);
-					Grid.SetColumnSpan(contactUsBtn, 3);
-					innerGrid.Children.Add(settingsBtn, 0, 4);
-					Grid.SetColumnSpan(settingsBtn, 3);
-					innerGrid.Children.Add(logOutBtn, 0, 5);
-					Grid.SetColumnSpan(logOutBtn, 3);
+                    Padding = new Thickness(10, 30, 10, 10);
+                    innerGrid.RowDefinitions.Clear();
+                    innerGrid.ColumnDefinitions.Clear();
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    //Building Grid
+                    innerGrid.Children.Clear();
+                    innerGrid.Children.Add(userCredentialStack, 0, 0);
+                    innerGrid.Children.Add(contactUsBtn, 0, 1);
+                    innerGrid.Children.Add(settingsBtn, 0, 2);
+                    innerGrid.Children.Add(logOutBtn, 0, 3);
                 }
-			}
-		}
-    }
+            }
+        }
+	}
 }
 
