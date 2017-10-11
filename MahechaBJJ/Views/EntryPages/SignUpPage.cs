@@ -419,10 +419,16 @@ namespace MahechaBJJ.Views.EntryPages
 
         private async void SignUp(object sender, EventArgs e)
         {
-            await DisplayAlert("test", emailAddressEntry.Text+nameEntry.Text+passWordEntry.Text, "ok");
             signUpBtn.IsEnabled = false;
             user = await _signUpPageViewModel.CreateUser(nameEntry.Text, emailAddressEntry.Text, passWordEntry.Text, secretQuestionPicker1.SelectedItem.ToString(), 
                                                          secretQuestionEntry1.Text, secretQuestionPicker2.SelectedItem.ToString(), secretQuestionEntry2.Text, beltPicker.SelectedItem.ToString());
+            if (user == null)
+            {
+                await DisplayAlert("Account Exists", $"An account with the email {emailAddressEntry.Text} already exists. Use a different email address.", "Ok");
+                emailAddressEntry.Text = "";
+                signUpBtn.IsEnabled = true;
+                return;
+            }
             _signUpPageViewModel.SaveCredentials(user.Email, user.password, user.Id);
             account = _baseViewModel.GetAccountInformation();
             signUpBtn.IsEnabled = true;
