@@ -8,6 +8,7 @@ using MahechaBJJ.Model;
 using MahechaBJJ.Service;
 using MahechaBJJ.Views;
 using MahechaBJJ.Views.PlaylistPages;
+using MessageUI;
 using UIKit;
 using Xamarin.Forms;
 
@@ -16,6 +17,8 @@ namespace MahechaBJJ.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
+        private MFMailComposeViewController mailController;
+
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
@@ -25,6 +28,7 @@ namespace MahechaBJJ.iOS
             //adding messsaging center
             MessagingCenter.Subscribe<VideoDetailPage, ShowVideoPlayerArguments>(this, "ShowVideoPlayer", HandleShowVideoPlayerMessage);
             MessagingCenter.Subscribe<PlaylistVideoPage, ShowVideoPlayerArguments>(this, "ShowVideoPlayer", HandleShowVideoPlayerMessage);
+            MessagingCenter.Subscribe<ProfilePage, EmailMessage>(this, "Send EMail", SendEmail);
 
             return base.FinishedLaunching(app, options);
         }
@@ -53,5 +57,28 @@ namespace MahechaBJJ.iOS
             return viewController;
         }
 
+        private void SendEmail(Page page, EmailMessage emailMessage)
+        {
+            var presentingViewController = GetMostPresentedViewController();
+
+            if (MFMailComposeViewController.CanSendMail)
+            {
+                mailController = new MFMailComposeViewController();
+                mailController.SetToRecipients(new string[]{"admin@mahechabjj.com"});
+                mailController.SetSubject(emailMessage.Subject);
+                mailController.Finished += (object s, MFComposeResultEventArgs args) =>
+                {
+                    Console.WriteLine("result: " + args.Result.ToString());
+                    BeginInvokeOnMainThread(() => {
+                        args.Controller.DismissViewController(true, null);
+                    });
+                };
+
+                presentingViewController.PresentViewController(mailController, animated: true, completionHandler: null);
+
+            } else {
+                Console.WriteLine("E-Mail is not supported on this device.");
+            }
+        }
     }
 }

@@ -28,16 +28,6 @@ namespace MahechaBJJ.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
 			LoadApplication(new App());
-
-			Xamarin.Forms.Application.Current.On<Xamarin.Forms.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
-
-			if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
-			{
-				Window.DecorView.SystemUiVisibility = 0;
-				var statusBarHeightInfo = typeof(FormsAppCompatActivity).GetField("_statusBarHeight", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
-				statusBarHeightInfo.SetValue(this, 0);
-				Window.SetStatusBarColor(new Android.Graphics.Color(0, 0, 0, 255)); // Change color as required.
-			}
 		}
 
 		private void HandleShowVideoPlayerMessage(Page page, ShowVideoPlayerArguments arguments)

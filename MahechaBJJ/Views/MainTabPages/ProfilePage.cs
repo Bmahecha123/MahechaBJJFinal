@@ -248,10 +248,13 @@ namespace MahechaBJJ.Views
 			};
 
 			//Events
-			//TODO enable email sending when Contact button is sent
 			contactUsBtn.Clicked += (sender, e) =>
 			{
-				DisplayAlert("Subscription Cancellation", "Are you you want to cancel your subscription?!", "Yess D8<!", "Never >8D!");
+                contactUsBtn.IsEnabled = false;
+                var emailMessage = new EmailMessage();
+                emailMessage.Subject = "Mahecha BJJ - <Insert Subject Here>";
+                MessagingCenter.Send(this, "Send EMail", emailMessage);
+                contactUsBtn.IsEnabled = true;
 			};
 			logOutBtn.Clicked += async (sender, e) =>
 			{

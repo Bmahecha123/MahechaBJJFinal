@@ -39,7 +39,7 @@ namespace MahechaBJJ.Views
             _baseViewModel = new BaseViewModel();
             _homePageViewModel = new HomePageViewModel();
             Title = "Home";
-            Icon = "005-construction.png";
+            Icon = "construction.png";
 			Padding = new Thickness(10, 10, 10, 10);
 			BuildPageObjects();
             SetContent();

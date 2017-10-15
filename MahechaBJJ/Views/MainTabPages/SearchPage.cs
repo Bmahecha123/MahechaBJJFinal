@@ -35,7 +35,7 @@ namespace MahechaBJJ.Views
             _searchPageViewModel = new SearchPageViewModel();
             searchedVideos = new ObservableCollection<VideoData>();
 			Title = "Search";
-            Icon = "004-search.png";
+            Icon = "search.png";
 			Padding = new Thickness(10, 30, 10, 10);
             SetContent(false);
          }

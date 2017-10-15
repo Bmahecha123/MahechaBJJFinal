@@ -28,7 +28,7 @@ namespace MahechaBJJ.Views
         public BrowsePage()
         {
 			Title = "Browse";
-            Icon = "002-open-book.png";
+            Icon = "openbook.png";
             Padding = new Thickness(10,30,10,10);
             SetContent();
 			

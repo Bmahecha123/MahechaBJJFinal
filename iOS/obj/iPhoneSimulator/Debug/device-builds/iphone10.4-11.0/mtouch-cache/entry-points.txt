@@ -1,6 +1,26 @@
-Function=xamarin_start_wwan
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/Xamarin.iOS.dll
+Function=xamarin_timezone_get_names
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_timezone_get_data
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_GetFolderPath
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_log
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_get_locale_country_code
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/mscorlib.dll
+Function=CreateZStream
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/System.dll
+Function=CloseZStream
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/System.dll
+Function=Flush
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/System.dll
+Function=ReadZStream
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/System.dll
+Function=WriteZStream
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/System.dll
+Function=xamarin_start_wwan
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/System.dll
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/Xamarin.iOS.dll
 Function=xamarin_localized_string_format
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/Xamarin.iOS.dll
 Function=xamarin_localized_string_format_1
@@ -23,9 +43,9 @@ Function=xamarin_localized_string_format_9
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/Xamarin.iOS.dll
 Function=xamarin_init_nsthread
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/Xamarin.iOS.dll
-Function=xamarin_get_block_descriptor
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/Xamarin.iOS.dll
 Function=UIApplicationMain
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/Xamarin.iOS.dll
+Function=xamarin_get_block_descriptor
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/Xamarin.iOS.dll
 Function=xamarin_simd__NMatrix4_objc_msgSend
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/Xamarin.iOS.dll
@@ -815,26 +835,6 @@ Function=xamarin_CGPoint__VNNormalizedFaceBoundingBoxPointForLandmarkPoint_Vecto
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/Xamarin.iOS.dll
 Function=xamarin_CGPoint__VNImagePointForFaceLandmarkPoint_Vector2_CGRect_nuint_nuint_string
 	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/Xamarin.iOS.dll
-Function=CreateZStream
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/System.dll
-Function=CloseZStream
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/System.dll
-Function=Flush
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/System.dll
-Function=ReadZStream
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/System.dll
-Function=WriteZStream
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/System.dll
-Function=xamarin_timezone_get_names
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/mscorlib.dll
-Function=xamarin_timezone_get_data
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/mscorlib.dll
-Function=xamarin_GetFolderPath
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/mscorlib.dll
-Function=xamarin_log
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/mscorlib.dll
-Function=xamarin_get_locale_country_code
-	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache/Link/mscorlib.dll
 Function=mono_pmip
 Function=xamarin_dyn_objc_msgSend
 Function=xamarin_dyn_objc_msgSendSuper
