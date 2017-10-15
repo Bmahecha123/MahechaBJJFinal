@@ -15,12 +15,12 @@
       <File FileName="MahechaBJJ/ViewModel/EntryPages/SignInPageViewModel.cs" Line="1" Column="1" />
       <File FileName="MahechaBJJ/ViewModel/CommonPages/BaseViewModel.cs" Line="139" Column="1" />
       <File FileName="MahechaBJJ/Service/UserService.cs" Line="69" Column="1" />
-      <File FileName="MahechaBJJ/Resources/Constants.cs" Line="21" Column="3" />
+      <File FileName="MahechaBJJ/Resources/Constants.cs" Line="19" Column="149" />
       <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="122" Column="47" />
       <File FileName="MahechaBJJ/Views/EntryPages/SignUpPage.cs" Line="427" Column="1" />
       <File FileName="MahechaBJJ/ViewModel/EntryPages/SignUpPageViewModel.cs" Line="71" Column="46" />
       <File FileName="MahechaBJJ/Views/MainTabPages/MainTabbedPage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/MainTabPages/ProfilePage.cs" Line="197" Column="49" />
+      <File FileName="MahechaBJJ/Views/MainTabPages/ProfilePage.cs" Line="37" Column="50" />
       <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistCreatePage.cs" Line="160" Column="48" />
       <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistVideoPage.cs" Line="183" Column="20" />
       <File FileName="MahechaBJJ/ViewModel/EntryPages/EntryPageViewModel.cs" Line="1" Column="1" />
