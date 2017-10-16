@@ -13,6 +13,10 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\mahechabjjlogo.png">
       <LogicalName>mahechabjjlogo.png</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\openbook.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\search.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\construction.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\karate.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -76,5 +80,8 @@
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\CommonPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\MainTabPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\CommonPages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="$(MSBuildThisFileDirectory)Resources\mahechabjj.png" />
   </ItemGroup>
 </Project>

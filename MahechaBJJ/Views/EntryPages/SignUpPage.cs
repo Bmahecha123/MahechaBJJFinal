@@ -317,7 +317,7 @@ namespace MahechaBJJ.Views.EntryPages
 			//Events
 			signUpBtn.Clicked += Validate;
 			backBtn.Clicked += GoBack;
-			passWordRepeatEntry.Unfocused += PasswordMatch;
+			//passWordRepeatEntry.Unfocused += PasswordMatch;
 			//TODO add specific validation events to make sure entries are correct.
 
             tableView = new TableView();
@@ -420,7 +420,7 @@ namespace MahechaBJJ.Views.EntryPages
         private async void SignUp(object sender, EventArgs e)
         {
             signUpBtn.IsEnabled = false;
-            user = await _signUpPageViewModel.CreateUser(nameEntry.Text, emailAddressEntry.Text, passWordEntry.Text, secretQuestionPicker1.SelectedItem.ToString(), 
+            user = await _signUpPageViewModel.CreateUser(nameEntry.Text, emailAddressEntry.Text.ToLower(), passWordEntry.Text, secretQuestionPicker1.SelectedItem.ToString(), 
                                                          secretQuestionEntry1.Text, secretQuestionPicker2.SelectedItem.ToString(), secretQuestionEntry2.Text, beltPicker.SelectedItem.ToString());
             if (user == null)
             {
@@ -435,7 +435,7 @@ namespace MahechaBJJ.Views.EntryPages
             Application.Current.MainPage = new MainTabbedPage();
         }
 
-        private void PasswordMatch(object sender, EventArgs e)
+       /* private void PasswordMatch(object sender, EventArgs e)
         {
             if(passWordEntry.Text != passWordRepeatEntry.Text){
                 DisplayAlert("Password Mismatch!", "Error! Passwords don't match!", "Ok, I'll fix it!");
@@ -443,7 +443,7 @@ namespace MahechaBJJ.Views.EntryPages
                 passWordRepeatEntry.Text = "";
                 passWordEntry.Focus();
             }
-        }
+        } */
 
         private void GoBack(object sender, EventArgs e)
         {

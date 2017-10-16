@@ -1,4 +1,4 @@
-﻿﻿﻿﻿using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
@@ -39,8 +39,13 @@ namespace MahechaBJJ.Views
             _baseViewModel = new BaseViewModel();
             _homePageViewModel = new HomePageViewModel();
             Title = "Home";
+#if __IOS__
             Icon = "construction.png";
-			Padding = new Thickness(10, 10, 10, 10);
+#endif
+#if __ANDROID__
+            Icon = "construction.png";
+#endif
+            Padding = new Thickness(10, 10, 10, 10);
 			BuildPageObjects();
             SetContent();
         }

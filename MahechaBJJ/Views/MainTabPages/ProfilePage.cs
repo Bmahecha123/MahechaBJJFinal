@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
@@ -26,17 +26,22 @@ namespace MahechaBJJ.Views
         private Button settingsBtn;
         private Account account;
         private User user;
-		private Label timeOutLbl;
-		private Frame timeOutFrame;
-		private TapGestureRecognizer timeOutTap;
-		private ActivityIndicator activityIndicator;
+        private Label timeOutLbl;
+        private Frame timeOutFrame;
+        private TapGestureRecognizer timeOutTap;
+        private ActivityIndicator activityIndicator;
         private StackLayout userCredentialStack;
 
         public ProfilePage()
         {
             _baseViewModel = new BaseViewModel();
             Title = "Profile";
+#if __IOS__
             Icon = "karate.png";
+#endif
+#if __ANDROID__
+            Icon = "karate.png";
+#endif
             Padding = new Thickness(10, 30, 10, 10);
             BuildPageObjects();
             SetContent();

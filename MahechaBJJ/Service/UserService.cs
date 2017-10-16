@@ -20,6 +20,9 @@ namespace MahechaBJJ.Service
         public UserService()
         {
             client = new HttpClient();
+            client.DefaultRequestHeaders.ConnectionClose = true;
+            client.BaseAddress = new Uri(Constants.pivotalHost);
+            //client.BaseAddress = new Uri(Constants.localHost);
             timeSpan = new TimeSpan(0, 0, 20);
             client.Timeout = timeSpan;
         }
@@ -28,13 +31,14 @@ namespace MahechaBJJ.Service
 		{
             try 
             {
-				var userJson = await client.GetStringAsync(url + id);
+                client.DefaultRequestHeaders.Add("X-Id", id);
+				var userJson = await client.GetStringAsync(url);
 				var user = JsonConvert.DeserializeObject<User>(userJson);
 				return user;
             }
             catch (HttpRequestException ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
                 return null;
             }
 			

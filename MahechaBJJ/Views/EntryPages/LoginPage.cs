@@ -175,7 +175,7 @@ namespace MahechaBJJ.Views.EntryPages
 
         private async void Login(object sender, EventArgs e)
         {
-            user = await _baseViewModel.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, emailEntry.Text, passwordEntry.Text);
+            user = await _baseViewModel.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, emailEntry.Text.ToLower(), passwordEntry.Text);
             if (user == null) {
                 await DisplayAlert("User Not Found", "Wrong Email address or Password, please try again.", "Got It");
             }

@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using MahechaBJJ.Model;
 using MahechaBJJ.Views.BlogPages;
 using MahechaBJJ.Views.CommonPages;
@@ -27,8 +27,13 @@ namespace MahechaBJJ.Views
 
         public BrowsePage()
         {
-			Title = "Browse";
+            Title = "Browse";
+#if __IOS__
             Icon = "openbook.png";
+#endif
+#if __ANDROID__
+            Icon = "openbook.png";
+#endif
             Padding = new Thickness(10,30,10,10);
             SetContent();
 			

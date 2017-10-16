@@ -16,6 +16,7 @@ namespace MahechaBJJ
         public App()
         {
             InitializeComponent();
+            //_baseViewModel.DeleteCredentials();
             if (LoginCheck())
             {
                 MainPage = new MainTabbedPage();

@@ -183,6 +183,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\blog.jpg" />
     <AndroidResource Include="Resources\drawable-xhdpi\blog.jpg" />
     <AndroidResource Include="Resources\drawable-xxhdpi\blog.jpg" />
+    <AndroidResource Include="Resources\drawable\karate.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\karate.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\karate.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\karate.png" />
   </ItemGroup>
   <Import Project="..\MahechaBJJ\MahechaBJJ.projitems" Label="Shared" Condition="Exists('..\MahechaBJJ\MahechaBJJ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

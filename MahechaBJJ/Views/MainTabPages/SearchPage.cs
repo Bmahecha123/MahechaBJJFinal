@@ -1,4 +1,4 @@
-﻿﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using MahechaBJJ.Model;
@@ -34,9 +34,16 @@ namespace MahechaBJJ.Views
         {
             _searchPageViewModel = new SearchPageViewModel();
             searchedVideos = new ObservableCollection<VideoData>();
-			Title = "Search";
+
+            Title = "Search";
+#if __IOS__
             Icon = "search.png";
-			Padding = new Thickness(10, 30, 10, 10);
+#endif
+#if __ANDROID__
+            Icon = "search.png";
+#endif
+
+            Padding = new Thickness(10, 30, 10, 10);
             SetContent(false);
          }
 
