@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
+using MahechaBJJ.Views.CommonPages;
 using MahechaBJJ.Views.EntryPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
@@ -45,220 +46,226 @@ namespace MahechaBJJ.Views
             Padding = new Thickness(10, 30, 10, 10);
             BuildPageObjects();
             SetContent();
-		}
+        }
 
         //functions
         public void BuildPageObjects()
         {
-			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+            var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+            var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 
-			outerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-				}
-			};
-			innerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-				}
-			};
+            outerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
+            };
+            innerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection {
+                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
+            };
 
             userCredentialStack = new StackLayout();
 
-			//load User
-			var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
-			//grid definiton
+            //load User
+            var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+            //grid definiton
 
-			nameLbl = new Label
-			{
-				Text = "Name",
+            nameLbl = new Label
+            {
+                Text = "Name",
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size * 1.5,
-				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center,
+                FontSize = size * 1.5,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
-			};
+            };
 
-			nameTextLbl = new Label
-			{
-				Text = "Jon",
+            nameTextLbl = new Label
+            {
+                Text = "Jon",
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size,
-				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				HorizontalOptions = LayoutOptions.FillAndExpand
-			};
-			emailLbl = new Label
-			{
-				Text = "E-Mail",
+                FontSize = size,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+            emailLbl = new Label
+            {
+                Text = "E-Mail",
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size * 1.5,
-				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				HorizontalOptions = LayoutOptions.FillAndExpand
-			};
-			emailTextLbl = new Label
-			{
-				Text = "Doe",
+                FontSize = size * 1.5,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+            emailTextLbl = new Label
+            {
+                Text = "Doe",
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size,
-				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center,
-				LineBreakMode = LineBreakMode.TailTruncation,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				HorizontalOptions = LayoutOptions.FillAndExpand
-			};
-			beltLbl = new Label
-			{
-				Text = "Belt",
+                FontSize = size,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                LineBreakMode = LineBreakMode.TailTruncation,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+            beltLbl = new Label
+            {
+                Text = "Belt",
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size * 1.5,
-				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				HorizontalOptions = LayoutOptions.FillAndExpand
-			};
-			beltTextLbl = new Label
-			{
-				Text = "White",
+                FontSize = size * 1.5,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+            beltTextLbl = new Label
+            {
+                Text = "White",
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size,
-				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				HorizontalOptions = LayoutOptions.FillAndExpand
-			};
-			contactUsBtn = new Button
-			{
-				Text = "Contact Us",
+                FontSize = size,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+            contactUsBtn = new Button
+            {
+                Text = "Contact Us",
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size * 2,
-				BackgroundColor = Color.FromRgb(58, 93, 174),
-				TextColor = Color.Black,
-				BorderWidth = 3,
-				BorderColor = Color.Black,
-			};
-			logOutBtn = new Button
-			{
-				Text = "Log Out",
+                FontSize = size * 2,
+                BackgroundColor = Color.FromRgb(58, 93, 174),
+                TextColor = Color.Black,
+                BorderWidth = 3,
+                BorderColor = Color.Black,
+            };
+            logOutBtn = new Button
+            {
+                Text = "Log Out",
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size * 2,
-				BackgroundColor = Color.FromRgb(58, 93, 174),
-				TextColor = Color.Black,
-				BorderWidth = 3,
-				BorderColor = Color.Black,
-			};
-			settingsBtn = new Button
-			{
-				Text = "Settings",
+                FontSize = size * 2,
+                BackgroundColor = Color.FromRgb(58, 93, 174),
+                TextColor = Color.Black,
+                BorderWidth = 3,
+                BorderColor = Color.Black,
+            };
+            settingsBtn = new Button
+            {
+                Text = "Settings",
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = size * 2,
-				BackgroundColor = Color.FromRgb(58, 93, 174),
-				TextColor = Color.Black,
-				BorderWidth = 3,
-				BorderColor = Color.Black,
-			};
-			timeOutLbl = new Label
-			{
+                FontSize = size * 2,
+                BackgroundColor = Color.FromRgb(58, 93, 174),
+                TextColor = Color.Black,
+                BorderWidth = 3,
+                BorderColor = Color.Black,
+            };
+            timeOutLbl = new Label
+            {
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				Text = "Network Has Timed Out! \n Click To Try Again!",
-				LineBreakMode = LineBreakMode.WordWrap,
-				FontSize = lblSize,
-				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center,
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand,
-				TextColor = Color.White
-			};
-			timeOutFrame = new Frame
-			{
-				Content = timeOutLbl,
-				OutlineColor = Color.Black,
-				BackgroundColor = Color.Black,
-				HasShadow = false,
-				Padding = 3,
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand
-			};
-			timeOutTap = new TapGestureRecognizer();
-			timeOutTap.Tapped += (sender, e) =>
-			{
-				SetContent();
-			};
-			timeOutLbl.GestureRecognizers.Add(timeOutTap);
-			activityIndicator = new ActivityIndicator
-			{
-				IsRunning = false,
-				IsEnabled = true,
-				IsVisible = true
-			};
+                Text = "Network Has Timed Out! \n Click To Try Again!",
+                LineBreakMode = LineBreakMode.WordWrap,
+                FontSize = lblSize,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                TextColor = Color.White
+            };
+            timeOutFrame = new Frame
+            {
+                Content = timeOutLbl,
+                OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                HasShadow = false,
+                Padding = 3,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+            timeOutTap = new TapGestureRecognizer();
+            timeOutTap.Tapped += (sender, e) =>
+            {
+                SetContent();
+            };
+            timeOutLbl.GestureRecognizers.Add(timeOutTap);
+            activityIndicator = new ActivityIndicator
+            {
+                IsRunning = false,
+                IsEnabled = true,
+                IsVisible = true
+            };
 
-			//Events
-			contactUsBtn.Clicked += (sender, e) =>
-			{
+            //Events
+            contactUsBtn.Clicked += (sender, e) =>
+            {
                 contactUsBtn.IsEnabled = false;
                 var emailMessage = new EmailMessage();
                 emailMessage.Subject = "Mahecha BJJ - <Insert Subject Here>";
+#if __IOS__
                 MessagingCenter.Send(this, "Send EMail", emailMessage);
+#endif
+#if __ANDROID__
+                Xamarin.Forms.DependencyService.Register<IEmailService>();
+                DependencyService.Get<IEmailService>().StartEmailActivity(emailMessage);
+#endif
                 contactUsBtn.IsEnabled = true;
 			};
 			logOutBtn.Clicked += async (sender, e) =>

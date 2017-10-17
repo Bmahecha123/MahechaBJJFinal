@@ -143,6 +143,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\EmailService_Android.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -187,6 +188,9 @@
     <AndroidResource Include="Resources\drawable-hdpi\karate.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\karate.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\karate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service\" />
   </ItemGroup>
   <Import Project="..\MahechaBJJ\MahechaBJJ.projitems" Label="Shared" Condition="Exists('..\MahechaBJJ\MahechaBJJ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

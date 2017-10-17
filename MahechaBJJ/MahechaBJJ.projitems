@@ -63,6 +63,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\VideoDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\BrowseDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\EmailMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\IEmailService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
