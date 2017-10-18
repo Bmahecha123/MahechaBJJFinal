@@ -169,9 +169,6 @@
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/res/drawable-xxhdpi/mahechabjj.png
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/R.cs.flag
 /Users/brianm/Desktop/Projects/MahechaBJJFinal/Droid/obj/Debug/uploadflags.txt
-/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.csprojResolveAssemblyReference.cache
-/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.csproj.CoreCompileInputs.cache
-/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.App.xaml.g.cs
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/bin/Debug/MahechaBJJ.Droid.dll
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/bin/Debug/MahechaBJJ.Droid.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/bin/Debug/com.mahechabjj.mahecha_bjj.apk
@@ -225,6 +222,9 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/bin/Debug/Xamarin.Forms.Xaml.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/bin/Debug/Xamarin.Forms.Xaml.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/bin/Debug/Xamarin.Forms.Xaml.xml
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.csprojResolveAssemblyReference.cache
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.csproj.CoreCompileInputs.cache
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.App.xaml.g.cs
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.dll
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/MahechaBJJ.Droid.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/android/bin/com.mahechabjj.mahecha_bjj.apk

@@ -273,10 +273,7 @@ namespace MahechaBJJ.Views
 				bool logout = await DisplayAlert("Logout", "Are you sure you want to log out " + user.Email + "?", "Yes, I'll be back friend.", "No, I'll stay!");
 				if (logout)
 				{
-					_baseViewModel.DeleteCredentials();
-					var entryPage = new NavigationPage(new EntryPage());
-					NavigationPage.SetHasNavigationBar(entryPage.CurrentPage, false);
-					Application.Current.MainPage = entryPage;
+                    LogOut();
 				}
 			};
 
@@ -322,13 +319,22 @@ namespace MahechaBJJ.Views
 				innerGrid.Children.Add(settingsBtn, 0, 2);
 				innerGrid.Children.Add(logOutBtn, 0, 3);
             } else {
-				innerGrid.Children.Clear();
+				/*innerGrid.Children.Clear();
 				innerGrid.Children.Add(timeOutFrame, 0, 0);
 				Grid.SetRowSpan(timeOutFrame, 4);
-				Grid.SetRowSpan(timeOutLbl, 4);
+				Grid.SetRowSpan(timeOutLbl, 4); */
+                LogOut();
             }
 
 		}
+
+        private void LogOut()
+        {
+            _baseViewModel.DeleteCredentials();
+            var entryPage = new NavigationPage(new EntryPage());
+            NavigationPage.SetHasNavigationBar(entryPage.CurrentPage, false);
+            Application.Current.MainPage = entryPage;
+        }
 
         //Orientation
         protected override void OnSizeAllocated(double width, double height)

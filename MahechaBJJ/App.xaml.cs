@@ -10,8 +10,9 @@ namespace MahechaBJJ
 {
     public partial class App : Application
     {
-		BaseViewModel _baseViewModel = new BaseViewModel();
-        Account account;
+		private BaseViewModel _baseViewModel = new BaseViewModel();
+        private Account account;
+        private User user;
 
         public App()
         {

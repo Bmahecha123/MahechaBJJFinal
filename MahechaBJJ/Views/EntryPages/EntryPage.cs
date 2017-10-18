@@ -61,7 +61,7 @@ namespace MahechaBJJ.Views.EntryPages
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold",
+                //FontFamily = "Roboto Bold",
 #endif
 				FontSize = size * 2,
 				BackgroundColor = Color.FromRgb(58, 93, 174),
