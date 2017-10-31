@@ -20,8 +20,11 @@ namespace MahechaBJJ.Model
         [JsonProperty("belt")]
         public string Belt { get; set; }
 
-        [JsonProperty("secretQuestions")]
-        public Dictionary<String, String> SecretQuestions { get; set; }
+        [JsonProperty("secretQuestion")]
+        public string SecretQuestion { get; set; }
+
+        [JsonProperty("secretQuestionAnswer")]
+        public string SecretQuestionAnswer { get; set; }
 
         [JsonProperty("password")]
         public string password { get; set; }

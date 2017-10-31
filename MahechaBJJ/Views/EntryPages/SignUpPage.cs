@@ -17,8 +17,6 @@ namespace MahechaBJJ.Views.EntryPages
         private SignUpPageViewModel _signUpPageViewModel;
         private BaseViewModel _baseViewModel;
         //declare objects
-        private StackLayout lblLayout;
-        private StackLayout entryLayout;
         private Label nameLbl;
         private Entry nameEntry;
         private Label beltLbl;
@@ -31,19 +29,15 @@ namespace MahechaBJJ.Views.EntryPages
         private Label passWordRepeatLbl;
         private Entry passWordRepeatEntry;
         private Label secretQuestionLbl;
-        private Picker secretQuestionPicker1;
-        private Entry secretQuestionEntry1;
-        private Picker secretQuestionPicker2;
-        private Entry secretQuestionEntry2;
+        private Picker secretQuestionPicker;
+        private Entry secretQuestionEntry;
         private Button signUpBtn;
         private Button backBtn;
         private Button clearBtn;
         private User user;
-        private ObservableCollection<string> secretQuestionList1;
-        private ObservableCollection<string> secretQuestionList2;
+        private ObservableCollection<string> secretQuestionList;
         private TableView tableView;
         private StackLayout stackLayout;
-        private StackLayout buttonLayout;
         private Grid buttonGrid;
 		//Xam Auth
 		Account account;
@@ -74,7 +68,7 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = lblSize,
+				FontSize = lblSize * 1.5,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center,
 				VerticalOptions = LayoutOptions.FillAndExpand,
@@ -101,7 +95,7 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "Name",
-				FontSize = lblSize,
+				FontSize = lblSize * 1.5,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center,
 				VerticalOptions = LayoutOptions.FillAndExpand,
@@ -129,7 +123,7 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "E-Mail Address",
-				FontSize = lblSize,
+				FontSize = lblSize * 1.5,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center,
 				VerticalOptions = LayoutOptions.FillAndExpand,
@@ -158,41 +152,13 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
 #endif
 				Text = "Password",
-				FontSize = lblSize,
+				FontSize = lblSize * 1.5,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center,
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			passWordEntry = new Entry
-			{
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-				IsPassword = true,
-				FontSize = entrySize,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				HorizontalOptions = LayoutOptions.FillAndExpand
-			};
-			passWordRepeatLbl = new Label
-			{
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-				Text = "Re-Enter Password",
-				FontSize = lblSize,
-				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center,
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				HorizontalOptions = LayoutOptions.FillAndExpand
-			};
-			passWordRepeatEntry = new Entry
 			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
@@ -213,23 +179,23 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = lblSize,
+				FontSize = lblSize * 1.5,
 				Text = "Secret Questions",
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center,
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
-			secretQuestionList1 = new ObservableCollection<String>();
-			secretQuestionList1.Add("What city were you born in?");
-			secretQuestionList1.Add("What city was your high school?");
-			secretQuestionList1.Add("Name of favorite instructor.");
-			secretQuestionPicker1 = new Picker
+			secretQuestionList = new ObservableCollection<String>();
+			secretQuestionList.Add("What city were you born in?");
+			secretQuestionList.Add("What city was your high school?");
+			secretQuestionList.Add("Name of favorite instructor.");
+			secretQuestionPicker = new Picker
 			{
 				Title = "Select a secret question to answer!",
-				ItemsSource = secretQuestionList1
+				ItemsSource = secretQuestionList
 			};
-			secretQuestionEntry1 = new Entry
+			secretQuestionEntry = new Entry
 			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
@@ -239,28 +205,6 @@ namespace MahechaBJJ.Views.EntryPages
 #endif
 				FontSize = entrySize,
 				Placeholder = "Answer for your own security!",
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				HorizontalOptions = LayoutOptions.FillAndExpand
-			};
-			secretQuestionList2 = new ObservableCollection<string>();
-			secretQuestionList2.Add("What is your favorite guard?");
-			secretQuestionList2.Add("What is your favorite takedown?");
-			secretQuestionList2.Add("Federation with best ruleset?");
-			secretQuestionPicker2 = new Picker
-			{
-				Title = "Select another secret question to answer!",
-				ItemsSource = secretQuestionList2
-			};
-			secretQuestionEntry2 = new Entry
-			{
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-				FontSize = entrySize,
-				Placeholder = "Answer again for even more security!",
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
@@ -351,32 +295,16 @@ namespace MahechaBJJ.Views.EntryPages
                         View = passWordEntry
                     },
                     new ViewCell {
-                        View = passWordRepeatLbl
-                    },
-                    new ViewCell {
-                        View = passWordRepeatEntry
-                    },
-                    new ViewCell {
                         View = secretQuestionLbl
                     },
                     new ViewCell {
-                        View = secretQuestionPicker1
+                        View = secretQuestionPicker
                     },
                     new ViewCell {
-                        View = secretQuestionEntry1
-                    },
-                    new ViewCell {
-                        View = secretQuestionPicker2
-                    },
-                    new ViewCell {
-                        View = secretQuestionEntry2
+                        View = secretQuestionEntry
                     }
                 }
             };
-            buttonLayout = new StackLayout();
-            buttonLayout.Children.Add(backBtn);
-            buttonLayout.Children.Add(signUpBtn);
-            buttonLayout.Orientation = StackOrientation.Horizontal;
             buttonGrid = new Grid
 			{
 				RowDefinitions = new RowDefinitionCollection
@@ -407,7 +335,7 @@ namespace MahechaBJJ.Views.EntryPages
         {
             signUpBtn.IsEnabled = false;
             if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null || 
-                passWordRepeatEntry.Text != null || secretQuestionEntry1.Text != null || secretQuestionEntry2.Text != null) 
+                passWordRepeatEntry.Text != null || secretQuestionEntry.Text != null) 
             {
                 SignUp(sender, e);
             }
@@ -420,8 +348,8 @@ namespace MahechaBJJ.Views.EntryPages
         private async void SignUp(object sender, EventArgs e)
         {
             signUpBtn.IsEnabled = false;
-            user = await _signUpPageViewModel.CreateUser(nameEntry.Text, emailAddressEntry.Text.ToLower(), passWordEntry.Text, secretQuestionPicker1.SelectedItem.ToString(), 
-                                                         secretQuestionEntry1.Text, secretQuestionPicker2.SelectedItem.ToString(), secretQuestionEntry2.Text, beltPicker.SelectedItem.ToString());
+            user = await _signUpPageViewModel.CreateUser(nameEntry.Text, emailAddressEntry.Text.ToLower(), passWordEntry.Text, secretQuestionPicker.SelectedItem.ToString(), 
+                                                         secretQuestionEntry.Text, beltPicker.SelectedItem.ToString());
             if (user == null)
             {
                 await DisplayAlert("Account Exists", $"An account with the email {emailAddressEntry.Text} already exists. Use a different email address.", "Ok");

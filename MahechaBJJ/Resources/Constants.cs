@@ -17,5 +17,6 @@ namespace MahechaBJJ.Resources
 		public static string DELETEPLAYLIST = "user/deleteplaylist/";
 		public static string DELETEVIDEOFROMPLAYLIST = "user/deleteVideo/";
 		public static string LOADBLOGPOSTS = "https://api.tumblr.com/v2/blog/mahechabjj/posts?api_key=vPbcUP6WSBbQ6RiVQC5ZO9paNGQE7QT4kXGefQXKlkM2jBJdos";
+        public static string CHANGEPASSWORD = "user/edit/";
 	}
 }

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
+using MahechaBJJ.Service;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.CommonPages;
 using MahechaBJJ.Views.EntryPages;
@@ -276,6 +277,15 @@ namespace MahechaBJJ.Views
                     LogOut();
 				}
 			};
+            settingsBtn.Clicked += async (sender, e) =>
+            {
+                string[] settings = { "Change Password" };
+                string settingSelection = await DisplayActionSheet("Settings", "Cancel", null, settings);
+                if (settingSelection.Equals("Change Password"))
+                {
+                    await Navigation.PushModalAsync(new ChangePasswordPage(user));
+                }
+            };
 
 			outerGrid.Children.Add(innerGrid, 0, 0);
 

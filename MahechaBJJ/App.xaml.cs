@@ -12,7 +12,6 @@ namespace MahechaBJJ
     {
 		private BaseViewModel _baseViewModel = new BaseViewModel();
         private Account account;
-        private User user;
 
         public App()
         {

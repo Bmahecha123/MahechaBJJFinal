@@ -2,6 +2,7 @@
 using Android.Content;
 using MahechaBJJ.Droid.Service;
 using MahechaBJJ.Model;
+using MahechaBJJ.Service;
 using MahechaBJJ.Views.CommonPages;
 using Xamarin.Forms;
 

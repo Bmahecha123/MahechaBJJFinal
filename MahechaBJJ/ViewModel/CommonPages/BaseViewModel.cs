@@ -150,6 +150,12 @@ namespace MahechaBJJ.ViewModel.CommonPages
             return User;
         }
 
+        public async Task<bool> ChangePassword(string url, User user)
+        {
+            bool success = await _userService.ChangePassword(url, user);
+            return success;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

@@ -21,8 +21,8 @@ namespace MahechaBJJ.Service
         {
             client = new HttpClient();
             client.DefaultRequestHeaders.ConnectionClose = true;
-            client.BaseAddress = new Uri(Constants.pivotalHost);
-            //client.BaseAddress = new Uri(Constants.localHost);
+            //client.BaseAddress = new Uri(Constants.pivotalHost);
+            client.BaseAddress = new Uri(Constants.localHost);
             timeSpan = new TimeSpan(0, 0, 20);
             client.Timeout = timeSpan;
         }
@@ -165,5 +165,22 @@ namespace MahechaBJJ.Service
                 return false;
             }
 		}
+
+        public async Task<bool> ChangePassword(string url, User user)
+        {
+            string jsonObject = JsonConvert.SerializeObject(user);
+            StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+
+            try
+            {
+                var response = await client.PutAsync(url, content);
+                return response.IsSuccessStatusCode;
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
 	}
 }

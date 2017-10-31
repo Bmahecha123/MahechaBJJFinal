@@ -55,19 +55,17 @@ namespace MahechaBJJ.ViewModel.EntryPages
             _accountService = new AccountService();
         }
 
-        public async Task<User> CreateUser(string name, string email, string password, string secretQuestion1,
-                               string secretQuestionAnswer1, string secretQuestion2, string secretQuestionAnswer2, string beltColor)
+        public async Task<User> CreateUser(string name, string email, string password, string secretQuestion,
+                               string secretQuestionAnswer, string beltColor)
         {
             _user = new User();
             _user.Name = name;
             _user.Email = email;
             _user.password = password;
-            secretQuestions = new Dictionary<string, string>();
-            secretQuestions.Add(secretQuestion1, secretQuestionAnswer1);
-            secretQuestions.Add(secretQuestion2, secretQuestionAnswer2);
-            _user.SecretQuestions = secretQuestions;
+            _user.SecretQuestion = 
             _user.Belt = beltColor;
-
+            _user.SecretQuestion = secretQuestion;
+            _user.SecretQuestionAnswer = secretQuestionAnswer;
             _user = await _userService.CreateUser(_user);
 
             return User;
