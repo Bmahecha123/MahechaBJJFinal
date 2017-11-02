@@ -150,9 +150,9 @@ namespace MahechaBJJ.ViewModel.CommonPages
             return User;
         }
 
-        public async Task<bool> ChangePassword(string url, User user)
+        public async Task<bool> ChangePassword(string id, string answer, string password)
         {
-            bool success = await _userService.ChangePassword(url, user);
+            bool success = await _userService.ChangePassword(id, answer, password);
             return success;
         }
 

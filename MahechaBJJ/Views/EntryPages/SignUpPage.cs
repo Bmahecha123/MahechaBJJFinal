@@ -349,7 +349,7 @@ namespace MahechaBJJ.Views.EntryPages
         {
             signUpBtn.IsEnabled = false;
             user = await _signUpPageViewModel.CreateUser(nameEntry.Text, emailAddressEntry.Text.ToLower(), passWordEntry.Text, secretQuestionPicker.SelectedItem.ToString(), 
-                                                         secretQuestionEntry.Text, beltPicker.SelectedItem.ToString());
+                                                         secretQuestionEntry.Text.ToLower(), beltPicker.SelectedItem.ToString());
             if (user == null)
             {
                 await DisplayAlert("Account Exists", $"An account with the email {emailAddressEntry.Text} already exists. Use a different email address.", "Ok");
@@ -362,16 +362,6 @@ namespace MahechaBJJ.Views.EntryPages
             signUpBtn.IsEnabled = true;
             Application.Current.MainPage = new MainTabbedPage();
         }
-
-       /* private void PasswordMatch(object sender, EventArgs e)
-        {
-            if(passWordEntry.Text != passWordRepeatEntry.Text){
-                DisplayAlert("Password Mismatch!", "Error! Passwords don't match!", "Ok, I'll fix it!");
-                passWordEntry.Text = "";
-                passWordRepeatEntry.Text = "";
-                passWordEntry.Focus();
-            }
-        } */
 
         private void GoBack(object sender, EventArgs e)
         {

@@ -166,14 +166,14 @@ namespace MahechaBJJ.Service
             }
 		}
 
-        public async Task<bool> ChangePassword(string url, User user)
+        public async Task<bool> ChangePassword(string id, string answer, string password)
         {
-            string jsonObject = JsonConvert.SerializeObject(user);
-            StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
-
+            client.DefaultRequestHeaders.Add("X-ID", id);
+            client.DefaultRequestHeaders.Add("X-ANSWER", answer);
+            client.DefaultRequestHeaders.Add("X-PASSWORD", password);
             try
             {
-                var response = await client.PutAsync(url, content);
+                var response = await client.PostAsync(Constants.CHANGEPASSWORD, null);
                 return response.IsSuccessStatusCode;
             }
             catch (HttpRequestException ex)

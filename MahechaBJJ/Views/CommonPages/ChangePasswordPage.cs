@@ -1,11 +1,13 @@
 ﻿using System;
 using MahechaBJJ.Model;
+using MahechaBJJ.ViewModel.CommonPages;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views.CommonPages
 {
     public class ChangePasswordPage : ContentPage
     {
+        private BaseViewModel _baseViewModel;
         private StackLayout stackLayout;
         private ScrollView scrollView;
         private Label headerLbl;
@@ -20,6 +22,7 @@ namespace MahechaBJJ.Views.CommonPages
 
         public ChangePasswordPage(User user)
         {
+            _baseViewModel = new BaseViewModel();
             Padding = new Thickness(10, 30, 10, 10);
             Title = "Change Password";
             _user = user;
@@ -186,9 +189,18 @@ namespace MahechaBJJ.Views.CommonPages
         }
 
         //Events
-        public void ChangePassword(object sender, EventArgs e) 
+        public async void ChangePassword(object sender, EventArgs e) 
         {
-            DisplayAlert("test", "test", "ok");
+            submitBtn.IsEnabled = false;
+            bool success = await _baseViewModel.ChangePassword(_user.Id, secretQuestionEntry.Text.ToLower(), newPasswordEntry.Text);
+            if (success)
+            {
+                await DisplayAlert("Password Updated", "Password has been successfully updated.", "Ok");
+                await Navigation.PopModalAsync();
+            } else {
+                await DisplayAlert("Password Not Updated", "Password has not been updated, please try again.", "Ok");
+            }
+            submitBtn.IsEnabled = true;
         }
     }
 }
