@@ -7,6 +7,7 @@ namespace MahechaBJJ.Resources
 		public static string localHost = "http://localhost:8080/";
 		public static string AppName = "mahechabjj";
 
+        public static string GETUSER = "user/getUser";
 		public static string CREATEUSER = "user/create";
 		public static string FINDUSER = "user/findById/";
         public static string FINDUSERBYEMAIL = "user/findByEmail/";

@@ -182,5 +182,27 @@ namespace MahechaBJJ.Service
                 return false;
             }
         }
+
+        public async Task<User> GetUser(string email)
+        {
+            client.DefaultRequestHeaders.Add("X-EMAIL", email);
+
+            try
+            {
+                var response = await client.GetStringAsync(Constants.GETUSER);
+                var user = JsonConvert.DeserializeObject<User>(response);
+                if (user != null)
+                {
+                    return user;
+                } else {
+                    return null;
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
 	}
 }

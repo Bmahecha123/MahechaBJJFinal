@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
+using MahechaBJJ.Views.CommonPages;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views.EntryPages
@@ -21,6 +22,7 @@ namespace MahechaBJJ.Views.EntryPages
         private Entry passwordEntry;
         private Button loginBtn;
         private Button backBtn;
+        private Button forgotPasswordBtn;
         private User user;
         private ScrollView scrollView;
         private StackLayout stackLayout;
@@ -138,12 +140,32 @@ namespace MahechaBJJ.Views.EntryPages
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
 			};
+            forgotPasswordBtn = new Button
+            {
+                Text = "?",
+#if __IOS__
+                FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+                FontSize = btnSize * 2,
+                //BackgroundColor = Color.Orange,
+                BackgroundColor = Color.FromRgb(58, 93, 174),
+                TextColor = Color.Black,
+                BorderWidth = 3,
+                BorderColor = Color.Black,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
 			//Events
 			loginBtn.Clicked += Validate;
 			backBtn.Clicked += GoBack;
+            forgotPasswordBtn.Clicked += ForgotPasswordForm;
 
 			buttonLayout.Children.Add(backBtn);
 			buttonLayout.Children.Add(loginBtn);
+            buttonLayout.Children.Add(forgotPasswordBtn);
 			buttonLayout.Orientation = StackOrientation.Horizontal;
 			innerStackLayout.Children.Add(emailLbl);
 			innerStackLayout.Children.Add(emailEntry);
@@ -153,7 +175,6 @@ namespace MahechaBJJ.Views.EntryPages
             stackLayout.Children.Add(mahechaLogo);
             stackLayout.Children.Add(innerStackLayout);
             stackLayout.Orientation = StackOrientation.Vertical;
-
 
             scrollView.Content = stackLayout;
             Content = scrollView;
@@ -191,6 +212,13 @@ namespace MahechaBJJ.Views.EntryPages
         {
             backBtn.IsEnabled = false;
             Navigation.PopModalAsync();
+        }
+
+        private void ForgotPasswordForm(object sender, EventArgs e)
+        {
+            forgotPasswordBtn.IsEnabled = false;
+            Navigation.PushModalAsync(new ForgotPasswordPage());
+            forgotPasswordBtn.IsEnabled = true;
         }
 
 		protected override void OnSizeAllocated(double width, double height)

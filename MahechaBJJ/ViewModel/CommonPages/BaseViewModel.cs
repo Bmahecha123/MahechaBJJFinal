@@ -156,6 +156,12 @@ namespace MahechaBJJ.ViewModel.CommonPages
             return success;
         }
 
+        public async Task<User> GetUser(string email)
+        {
+            var user = await _userService.GetUser(email);
+            return user;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
