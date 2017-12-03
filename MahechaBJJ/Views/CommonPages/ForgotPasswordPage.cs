@@ -86,7 +86,7 @@ namespace MahechaBJJ.Views.CommonPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                FontSize = entrySize * 1.5,
+                FontSize = entrySize * 1.25,
                 Placeholder = "Enter E-Mail"
             };
 

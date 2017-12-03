@@ -2,13 +2,14 @@
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C75ECE75-D320-4E79-85BA-E3AB618B5D39" identitySerialNumber="110657C3E2B5A950">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="V3PWVTNK6M" TeamId="P6282GF84Z" />
   </MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/EntryPages/LoginPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Service/UserService.cs">
     <Files>
-      <File FileName="MahechaBJJ/Views/CommonPages/ForgotPasswordPage.cs" Line="141" Column="35" />
+      <File FileName="MahechaBJJ/Views/CommonPages/ForgotPasswordPage.cs" Line="98" Column="16" />
       <File FileName="MahechaBJJ/Views/EntryPages/SignUpPage.cs" Line="60" Column="4" />
       <File FileName="MahechaBJJ/Views/CommonPages/ChangePasswordPage.cs" Line="100" Column="15" />
-      <File FileName="MahechaBJJ/Views/EntryPages/LoginPage.cs" Line="204" Column="18" />
+      <File FileName="MahechaBJJ/Views/EntryPages/LoginPage.cs" Line="177" Column="65" />
       <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="28" Column="26" />
+      <File FileName="MahechaBJJ/Service/UserService.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
