@@ -42,7 +42,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\PlaylistPages\PlaylistViewPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\EntryPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\LoginPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\SignUpPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistPages\PlaylistCreatePageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistPages\PlaylistDetailPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistPages\PlaylistVideoPageViewModel.cs" />
@@ -66,8 +65,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\ChangePasswordPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\IEmailService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\ForgotPasswordPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\PackagePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Packages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Package.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\SummaryPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\SignUpPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\PackagePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -85,6 +87,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\CommonPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\MainTabPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\CommonPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\SignUpPages\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="$(MSBuildThisFileDirectory)Resources\mahechabjj.png" />

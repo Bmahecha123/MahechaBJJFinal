@@ -1,11 +1,13 @@
 ﻿using System;
+using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.CommonPages;
 using Xamarin.Forms;
 
-namespace MahechaBJJ.Views.EntryPages
+namespace MahechaBJJ.Views.SignUpPages
 {
     public class PackagePage : ContentPage
     {
+        private Package package;
         private Grid innerGrid;
         private Grid outerGrid;
         private Frame giFrame;
@@ -15,6 +17,8 @@ namespace MahechaBJJ.Views.EntryPages
         private ScrollView noGiScrollView;
         private StackLayout giStackLayout;
         private StackLayout noGiStackLayout;
+        private TapGestureRecognizer giTap;
+        private TapGestureRecognizer noGiTap;
         private Label giTitle;
         private Label giPrice;
         private Label giBody;
@@ -98,6 +102,13 @@ namespace MahechaBJJ.Views.EntryPages
                 FontAttributes = FontAttributes.Bold
             };
 
+            giTap = new TapGestureRecognizer();
+            giTap.Tapped += (sender, e) =>
+            {
+                Navigation.PushModalAsync(new SignUpPage(Package.Gi));
+            };
+            giStackLayout.GestureRecognizers.Add(giTap);
+
             giScrollView = new ScrollView
             {
                 Content = giStackLayout
@@ -151,6 +162,14 @@ namespace MahechaBJJ.Views.EntryPages
                 TextColor = Color.Black,
                 FontAttributes = FontAttributes.Bold
             };
+
+            noGiTap = new TapGestureRecognizer();
+            noGiTap.Tapped += (sender, e) =>
+            {
+                Navigation.PushModalAsync(new SignUpPage(Package.NoGi));
+            };
+            noGiStackLayout.GestureRecognizers.Add(giTap);
+
 
             noGiScrollView = new ScrollView
             {

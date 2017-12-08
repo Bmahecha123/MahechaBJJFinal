@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.EntryPages;
+using MahechaBJJ.Views.SignUpPages;
 using Newtonsoft.Json;
 using Xamarin.Auth;
 using Xamarin.Forms;
@@ -129,8 +130,8 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star)});
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-				innerGrid.Children.Clear();
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.Children.Clear();
                 innerGrid.Children.Add(mahechaLogo, 0, 0);
                 innerGrid.Children.Add(loginBtn, 0, 1);
                 innerGrid.Children.Add(signUpBtn, 0, 2);

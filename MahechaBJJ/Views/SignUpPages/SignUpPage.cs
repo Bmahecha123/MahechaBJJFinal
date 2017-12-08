@@ -8,8 +8,9 @@ using Xamarin.Auth;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
+using MahechaBJJ.Views.SignUpPages;
 
-namespace MahechaBJJ.Views.EntryPages
+namespace MahechaBJJ.Views.SignUpPages
 {
     public class SignUpPage : ContentPage
     {
@@ -17,6 +18,7 @@ namespace MahechaBJJ.Views.EntryPages
         private SignUpPageViewModel _signUpPageViewModel;
         private BaseViewModel _baseViewModel;
         //declare objects
+        private Package package;
         private Label nameLbl;
         private Entry nameEntry;
         private Label beltLbl;
@@ -31,7 +33,7 @@ namespace MahechaBJJ.Views.EntryPages
         private Label secretQuestionLbl;
         private Picker secretQuestionPicker;
         private Entry secretQuestionEntry;
-        private Button signUpBtn;
+        private Button nextBtn;
         private Button backBtn;
         private Button clearBtn;
         private User user;
@@ -42,11 +44,12 @@ namespace MahechaBJJ.Views.EntryPages
 		//Xam Auth
 		Account account;
 
-        public SignUpPage()
+        public SignUpPage(Package package)
         {
             _signUpPageViewModel = new SignUpPageViewModel();
             _baseViewModel = new BaseViewModel();
             Padding = new Thickness(10, 30, 10, 10);
+            this.package = package;
             SetContent();
         }
 
@@ -208,7 +211,7 @@ namespace MahechaBJJ.Views.EntryPages
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
-			signUpBtn = new Button
+			nextBtn = new Button
 			{
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
@@ -216,7 +219,7 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				Text = "Sign Up!",
+				Text = "Next",
 				FontSize = btnSize * 1.5,
 				BackgroundColor = Color.FromRgb(58, 93, 174),
 				TextColor = Color.Black,
@@ -259,7 +262,9 @@ namespace MahechaBJJ.Views.EntryPages
 			};
 
 			//Events
-			signUpBtn.Clicked += Validate;
+            nextBtn.Clicked += (object sender, EventArgs e) => {
+                Navigation.PushModalAsync(new SummaryPage(package));
+            };
 			backBtn.Clicked += GoBack;
 			//passWordRepeatEntry.Unfocused += PasswordMatch;
 			//TODO add specific validation events to make sure entries are correct.
@@ -318,7 +323,7 @@ namespace MahechaBJJ.Views.EntryPages
 				}
 			};
             buttonGrid.Children.Add(backBtn, 0, 0);
-            buttonGrid.Children.Add(signUpBtn, 1, 0);
+            buttonGrid.Children.Add(nextBtn, 1, 0);
             ScrollView scrollView = new ScrollView();
             stackLayout = new StackLayout
             {
@@ -333,7 +338,7 @@ namespace MahechaBJJ.Views.EntryPages
 
         private void Validate(object sender, EventArgs e)
         {
-            signUpBtn.IsEnabled = false;
+            nextBtn.IsEnabled = false;
             if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null || 
                 passWordRepeatEntry.Text != null || secretQuestionEntry.Text != null) 
             {
@@ -342,24 +347,24 @@ namespace MahechaBJJ.Views.EntryPages
             else {
                 DisplayAlert("Sign Up Error", "Make sure all fields are filled in!", "Okay, got it.");
             }
-            signUpBtn.IsEnabled = true;
+            nextBtn.IsEnabled = true;
         }
 
         private async void SignUp(object sender, EventArgs e)
         {
-            signUpBtn.IsEnabled = false;
+            nextBtn.IsEnabled = false;
             user = await _signUpPageViewModel.CreateUser(nameEntry.Text, emailAddressEntry.Text.ToLower(), passWordEntry.Text, secretQuestionPicker.SelectedItem.ToString(), 
                                                          secretQuestionEntry.Text.ToLower(), beltPicker.SelectedItem.ToString());
             if (user == null)
             {
                 await DisplayAlert("Account Exists", $"An account with the email {emailAddressEntry.Text} already exists. Use a different email address.", "Ok");
                 emailAddressEntry.Text = "";
-                signUpBtn.IsEnabled = true;
+                nextBtn.IsEnabled = true;
                 return;
             }
             _signUpPageViewModel.SaveCredentials(user.Email, user.Password, user.Id);
             account = _baseViewModel.GetAccountInformation();
-            signUpBtn.IsEnabled = true;
+            nextBtn.IsEnabled = true;
             Application.Current.MainPage = new MainTabbedPage();
         }
 
@@ -381,14 +386,14 @@ namespace MahechaBJJ.Views.EntryPages
 			{
                 Padding = new Thickness(10, 10, 10, 0);
                 backBtn.FontSize = btnSize;
-                signUpBtn.FontSize = btnSize;
+                nextBtn.FontSize = btnSize;
                 stackLayout.Spacing = 0;
 			}
 			else
 			{
 				Padding = new Thickness(10, 30, 10, 10);
                 backBtn.FontSize = btnSize * 1.5;
-                signUpBtn.FontSize = btnSize * 1.5;
+                nextBtn.FontSize = btnSize * 1.5;
 			}
 		}
     }
