@@ -357,7 +357,7 @@ namespace MahechaBJJ.Views.EntryPages
                 signUpBtn.IsEnabled = true;
                 return;
             }
-            _signUpPageViewModel.SaveCredentials(user.Email, user.password, user.Id);
+            _signUpPageViewModel.SaveCredentials(user.Email, user.Password, user.Id);
             account = _baseViewModel.GetAccountInformation();
             signUpBtn.IsEnabled = true;
             Application.Current.MainPage = new MainTabbedPage();

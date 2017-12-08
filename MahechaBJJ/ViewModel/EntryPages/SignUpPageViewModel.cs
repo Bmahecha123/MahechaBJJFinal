@@ -61,7 +61,7 @@ namespace MahechaBJJ.ViewModel.EntryPages
             _user = new User();
             _user.Name = name;
             _user.Email = email;
-            _user.password = password;
+            _user.Password = password;
             _user.SecretQuestion = 
             _user.Belt = beltColor;
             _user.SecretQuestion = secretQuestion;

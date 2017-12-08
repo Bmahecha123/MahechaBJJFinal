@@ -2,14 +2,22 @@
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C75ECE75-D320-4E79-85BA-E3AB618B5D39" identitySerialNumber="110657C3E2B5A950">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="V3PWVTNK6M" TeamId="P6282GF84Z" />
   </MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Service/UserService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/EntryPages/PackagePage.cs">
     <Files>
-      <File FileName="MahechaBJJ/Views/CommonPages/ForgotPasswordPage.cs" Line="98" Column="16" />
-      <File FileName="MahechaBJJ/Views/EntryPages/SignUpPage.cs" Line="60" Column="4" />
+      <File FileName="MahechaBJJ/Views/CommonPages/ForgotPasswordPage.cs" Line="89" Column="44" />
+      <File FileName="MahechaBJJ/Views/EntryPages/SignUpPage.cs" Line="244" Column="6" />
       <File FileName="MahechaBJJ/Views/CommonPages/ChangePasswordPage.cs" Line="100" Column="15" />
-      <File FileName="MahechaBJJ/Views/EntryPages/LoginPage.cs" Line="177" Column="65" />
-      <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="28" Column="26" />
+      <File FileName="MahechaBJJ/Views/EntryPages/LoginPage.cs" Line="229" Column="14" />
+      <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="96" Column="62" />
       <File FileName="MahechaBJJ/Service/UserService.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/EntryPages/PackagePage.cs" Line="121" Column="17" />
+      <File FileName="MahechaBJJ/ViewModel/EntryPages/EntryPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/ViewModel/EntryPages/SignInPageViewModel.cs" Line="23" Column="10" />
+      <File FileName="MahechaBJJ/Model/User.cs" Line="30" Column="27" />
+      <File FileName="MahechaBJJ/Model/PlayList.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Model/Packages.cs" Line="6" Column="13" />
+      <File FileName="MahechaBJJ/Views/MainTabPages/HomePage.cs" Line="50" Column="20" />
+      <File FileName="MahechaBJJ/ViewModel/EntryPages/SignUpPageViewModel.cs" Line="68" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

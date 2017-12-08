@@ -66,6 +66,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\ChangePasswordPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\IEmailService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\ForgotPasswordPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\EntryPages\PackagePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Packages.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

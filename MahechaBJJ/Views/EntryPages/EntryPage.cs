@@ -92,7 +92,8 @@ namespace MahechaBJJ.Views.EntryPages
 
 			signUpBtn.Clicked += (sender, args) =>
 			{
-				Navigation.PushModalAsync(new SignUpPage());
+				//Navigation.PushModalAsync(new SignUpPage());
+                Navigation.PushModalAsync(new PackagePage());
 			};
 
 			innerGrid.Children.Add(mahechaLogo, 0, 0);

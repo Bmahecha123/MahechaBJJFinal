@@ -27,9 +27,12 @@ namespace MahechaBJJ.Model
         public string SecretQuestionAnswer { get; set; }
 
         [JsonProperty("password")]
-        public string password { get; set; }
+        public string Password { get; set; }
 
         [JsonProperty("playlists")]
         public ObservableCollection<PlayList> PlayLists { get; set; }
+
+        [JsonProperty("packages")]
+        public Packages Packages { get; set; }
 	}
 }
