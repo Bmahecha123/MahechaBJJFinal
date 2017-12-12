@@ -48,7 +48,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistPages\PlaylistViewPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPages\EntryPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPages\SignInPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EntryPages\SignUpPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainTabPages\HomePageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainTabPages\SearchPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CommonPages\BaseViewModel.cs" />
@@ -70,6 +69,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\SummaryPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\SignUpPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\PackagePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignUpPages\SummaryPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -88,6 +88,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Views\MainTabPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\CommonPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\SignUpPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\SignUpPages\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="$(MSBuildThisFileDirectory)Resources\mahechabjj.png" />

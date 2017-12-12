@@ -15,7 +15,6 @@ namespace MahechaBJJ.Views.SignUpPages
     public class SignUpPage : ContentPage
     {
         //ViewModel
-        private SignUpPageViewModel _signUpPageViewModel;
         private BaseViewModel _baseViewModel;
         //declare objects
         private Package package;
@@ -28,8 +27,6 @@ namespace MahechaBJJ.Views.SignUpPages
         private Entry emailAddressEntry;
         private Label passWordLbl;
         private Entry passWordEntry;
-        private Label passWordRepeatLbl;
-        private Entry passWordRepeatEntry;
         private Label secretQuestionLbl;
         private Picker secretQuestionPicker;
         private Entry secretQuestionEntry;
@@ -41,12 +38,10 @@ namespace MahechaBJJ.Views.SignUpPages
         private TableView tableView;
         private StackLayout stackLayout;
         private Grid buttonGrid;
-		//Xam Auth
-		Account account;
 
         public SignUpPage(Package package)
         {
-            _signUpPageViewModel = new SignUpPageViewModel();
+            //_signUpPageViewModel = new SignUpPageViewModel();
             _baseViewModel = new BaseViewModel();
             Padding = new Thickness(10, 30, 10, 10);
             this.package = package;
@@ -56,7 +51,7 @@ namespace MahechaBJJ.Views.SignUpPages
 		//functions
         private void SetContent()
         {
-			user = new User();
+			
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 			var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));            
@@ -263,7 +258,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
 			//Events
             nextBtn.Clicked += (object sender, EventArgs e) => {
-                Navigation.PushModalAsync(new SummaryPage(package));
+                Validate();
             };
 			backBtn.Clicked += GoBack;
 			//passWordRepeatEntry.Unfocused += PasswordMatch;
@@ -336,13 +331,14 @@ namespace MahechaBJJ.Views.SignUpPages
             Content = stackLayout;
         }
 
-        private void Validate(object sender, EventArgs e)
+        private void Validate()
         {
             nextBtn.IsEnabled = false;
-            if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null || 
-                passWordRepeatEntry.Text != null || secretQuestionEntry.Text != null) 
+            if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null 
+                || secretQuestionEntry.Text != null) 
             {
-                SignUp(sender, e);
+                CreateUser();
+                Navigation.PushModalAsync(new SummaryPage(user));
             }
             else {
                 DisplayAlert("Sign Up Error", "Make sure all fields are filled in!", "Okay, got it.");
@@ -350,7 +346,7 @@ namespace MahechaBJJ.Views.SignUpPages
             nextBtn.IsEnabled = true;
         }
 
-        private async void SignUp(object sender, EventArgs e)
+        /*private async void SignUp(object sender, EventArgs e)
         {
             nextBtn.IsEnabled = false;
             user = await _signUpPageViewModel.CreateUser(nameEntry.Text, emailAddressEntry.Text.ToLower(), passWordEntry.Text, secretQuestionPicker.SelectedItem.ToString(), 
@@ -366,12 +362,33 @@ namespace MahechaBJJ.Views.SignUpPages
             account = _baseViewModel.GetAccountInformation();
             nextBtn.IsEnabled = true;
             Application.Current.MainPage = new MainTabbedPage();
-        }
+        }*/
 
         private void GoBack(object sender, EventArgs e)
         {
             backBtn.IsEnabled = false;
             Navigation.PopModalAsync();
+        }
+
+        private void CreateUser() 
+        {
+            user = new User();
+            user.Name = nameEntry.Text;
+            user.Email = emailAddressEntry.Text;
+            Packages packages = new Packages();
+            if (package == Package.Gi) 
+            {
+                packages.GiJiuJitsu = true;
+            }
+            if (package == Package.NoGi)
+            {
+                packages.NoGiJiuJitsu = false;
+            }
+            user.Packages = packages;
+            user.Password = passWordEntry.Text;
+            user.SecretQuestion = secretQuestionPicker.SelectedItem.ToString();
+            user.SecretQuestionAnswer = secretQuestionEntry.Text.ToLower();
+            user.Belt = beltPicker.SelectedItem.ToString();
         }
 		
 		//Orientation
