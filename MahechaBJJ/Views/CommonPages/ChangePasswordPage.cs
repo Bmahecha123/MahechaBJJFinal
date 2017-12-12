@@ -1,6 +1,7 @@
 ﻿using System;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.CommonPages;
+using MahechaBJJ.Views.EntryPages;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views.CommonPages
@@ -196,7 +197,12 @@ namespace MahechaBJJ.Views.CommonPages
             if (success)
             {
                 await DisplayAlert("Password Updated", "Password has been successfully updated.", "Ok");
-                await Navigation.PopModalAsync();
+                if(Navigation.ModalStack.Count > 1)
+                {
+                    Application.Current.MainPage = new EntryPage();
+                } else {
+                    await Navigation.PopModalAsync();
+                }
             } else {
                 await DisplayAlert("Password Not Updated", "Password has not been updated, please try again.", "Ok");
             }

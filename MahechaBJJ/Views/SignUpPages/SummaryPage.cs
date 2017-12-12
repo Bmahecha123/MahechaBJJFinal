@@ -290,6 +290,10 @@ namespace MahechaBJJ.Views.SignUpPages
             backBtn.Clicked += (sender, e) => {
                 GoBack();
             };
+            signUpBtn.Clicked += (sender, e) =>
+            {
+                SignUp();
+            };
             buttonGrid.Children.Add(backBtn, 0, 0);
             buttonGrid.Children.Add(signUpBtn, 1, 0);
 
@@ -309,7 +313,7 @@ namespace MahechaBJJ.Views.SignUpPages
             Content = innerGrid;
         }
 
-        private async void SignUp(object sender, EventArgs e)
+        private async void SignUp()
         {
             signUpBtn.IsEnabled = false;
             await _summaryPageViewModel.CreateUser(user);

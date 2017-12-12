@@ -155,7 +155,7 @@ namespace MahechaBJJ.Views.CommonPages
             nextBtn.IsEnabled = false;
             //logic to check if email exists
             if (emailEntry.Text != null){
-                user = await _baseViewModel.GetUser(emailEntry.Text);
+                user = await _baseViewModel.GetUser(emailEntry.Text.ToLower());
                 if (user != null)
                 {
                     await Navigation.PushModalAsync(new ChangePasswordPage(user));

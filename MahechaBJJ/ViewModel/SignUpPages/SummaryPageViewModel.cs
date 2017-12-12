@@ -57,6 +57,8 @@ namespace MahechaBJJ.ViewModel.SignUpPages
 
         public async Task CreateUser(User user)
         {
+            user.Email = user.Email.ToLower();
+            user.SecretQuestionAnswer = user.SecretQuestionAnswer.ToLower();
             _user = await _userService.CreateUser(user);
         }
 
