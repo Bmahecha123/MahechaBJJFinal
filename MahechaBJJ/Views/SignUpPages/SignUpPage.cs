@@ -380,9 +380,13 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 packages.GiJiuJitsu = true;
             }
-            if (package == Package.NoGi)
+            else if (package == Package.NoGi)
+            { 
+                packages.NoGiJiuJitsu = true;
+            }
+            else
             {
-                packages.NoGiJiuJitsu = false;
+                packages.GiAndNoGiJiuJitsu = true;
             }
             user.Packages = packages;
             user.Password = passWordEntry.Text;

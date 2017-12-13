@@ -10,5 +10,8 @@ namespace MahechaBJJ.Model
 
         [JsonProperty("giJiuJitsu")]
         public bool GiJiuJitsu { get; set; }
+
+        [JsonProperty("giAndNoGiJiuJitsu")]
+        public bool GiAndNoGiJiuJitsu { get; set; }
     }
 }

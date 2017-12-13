@@ -84,6 +84,11 @@ namespace MahechaBJJ.Views.SignUpPages
                 packageName = "No-Gi Jiu-Jitsu Package";
                 packagePrice = "$19.99";
             }
+            if (user.Packages.GiAndNoGiJiuJitsu == true)
+            {
+                packageName = "Complete Jiu-Jitsu Package";
+                packagePrice = "$29.99";
+            }
 
             packageLbl = new Label
             {

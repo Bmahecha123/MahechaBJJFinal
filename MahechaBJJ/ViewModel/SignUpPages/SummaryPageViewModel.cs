@@ -67,6 +67,18 @@ namespace MahechaBJJ.ViewModel.SignUpPages
             _account = new Account();
             _account.Username = _user.Email;
             _account.Properties.Add("Id", _user.Id);
+            if (_user.Packages.GiJiuJitsu == true)
+            {
+                _account.Properties.Add("Package", "Gi");
+            }
+            else if (_user.Packages.NoGiJiuJitsu == true)
+            {
+                _account.Properties.Add("Package", "NoGi");
+            }
+            else 
+            {
+                _account.Properties.Add("Package", "GiAndNoGi");
+            }
 
             _accountService.SaveCredentials(_account);
         }

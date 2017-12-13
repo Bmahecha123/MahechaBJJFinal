@@ -12,19 +12,26 @@ namespace MahechaBJJ.Views.SignUpPages
         private Grid outerGrid;
         private Frame giFrame;
         private Frame noGiFrame;
+        private Frame giAndNoGiFrame;
         private Button backBtn;
         private ScrollView giScrollView;
         private ScrollView noGiScrollView;
+        private ScrollView giAndNoGiScrollView;
         private StackLayout giStackLayout;
         private StackLayout noGiStackLayout;
+        private StackLayout giAndNoGiStackLayout;
         private TapGestureRecognizer giTap;
         private TapGestureRecognizer noGiTap;
+        private TapGestureRecognizer giAndNoGiTap;
         private Label giTitle;
         private Label giPrice;
         private Label giBody;
         private Label noGiTitle;
         private Label noGiPrice;
         private Label noGiBody;
+        private Label giAndNoGiTitle;
+        private Label giAndNoGiPrice;
+        private Label giAndNoGiBody;
 
         public PackagePage()
         {
@@ -39,6 +46,7 @@ namespace MahechaBJJ.Views.SignUpPages
             var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
             var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));
 
+            giAndNoGiStackLayout = new StackLayout();
             giStackLayout = new StackLayout();
             noGiStackLayout = new StackLayout();
 
@@ -59,7 +67,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
-
+            #region GI
             giTitle = new Label
             {
                 #if __IOS__
@@ -120,7 +128,8 @@ namespace MahechaBJJ.Views.SignUpPages
                 Content = giScrollView,
                 HasShadow = false
             };
-
+            #endregion
+            #region NOGI
             noGiTitle = new Label
             {
                 #if __IOS__
@@ -170,7 +179,6 @@ namespace MahechaBJJ.Views.SignUpPages
             };
             noGiStackLayout.GestureRecognizers.Add(giTap);
 
-
             noGiScrollView = new ScrollView
             {
                 Content = noGiStackLayout
@@ -179,10 +187,73 @@ namespace MahechaBJJ.Views.SignUpPages
             noGiFrame = new Frame
             {
                 OutlineColor = Color.Black,
-                HasShadow = false,
-                Content = noGiScrollView
+                Content = noGiScrollView,
+                HasShadow = false
+            };
+            #endregion
+            #region GIANDNOGI
+            giAndNoGiTitle = new Label
+            {
+#if __IOS__
+                FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+                Text = "Complete Jiu-Jitsu",
+                FontSize = lblSize * 2,
+                TextColor = Color.Black,
+                FontAttributes = FontAttributes.Bold
             };
 
+            giAndNoGiPrice = new Label
+            {
+#if __IOS__
+                FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+                Text = "$29.99",
+                FontSize = lblSize * 1.5,
+                TextColor = Color.Black,
+                FontAttributes = FontAttributes.Bold
+            };
+
+            giAndNoGiBody = new Label
+            {
+#if __IOS__
+                FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+                Text = "",
+                FontSize = lblSize,
+                TextColor = Color.Black,
+                FontAttributes = FontAttributes.Bold
+            };
+
+            giAndNoGiTap = new TapGestureRecognizer();
+            giAndNoGiTap.Tapped += (sender, e) =>
+            {
+                Navigation.PushModalAsync(new SignUpPage(Package.GiAndNoGi));
+            };
+            giAndNoGiStackLayout.GestureRecognizers.Add(giAndNoGiTap);
+
+
+            giAndNoGiScrollView = new ScrollView
+            {
+                Content = giAndNoGiStackLayout
+            };
+
+            giAndNoGiFrame = new Frame
+            {
+                OutlineColor = Color.Black,
+                HasShadow = false,
+                Content = giAndNoGiScrollView
+            };
+#endregion
             outerGrid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection
@@ -194,6 +265,7 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
+                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
@@ -210,6 +282,10 @@ namespace MahechaBJJ.Views.SignUpPages
 
         private void SetContent() 
         {
+            giAndNoGiStackLayout.Children.Add(giAndNoGiTitle);
+            giAndNoGiStackLayout.Children.Add(giAndNoGiPrice);
+            giAndNoGiStackLayout.Children.Add(giAndNoGiBody);
+            giAndNoGiStackLayout.Orientation = StackOrientation.Vertical;
             giStackLayout.Children.Add(giTitle);
             giStackLayout.Children.Add(giPrice);
             giStackLayout.Children.Add(giBody);
@@ -218,9 +294,10 @@ namespace MahechaBJJ.Views.SignUpPages
             noGiStackLayout.Children.Add(noGiPrice);
             noGiStackLayout.Children.Add(noGiBody);
             noGiStackLayout.Orientation = StackOrientation.Vertical;
-            innerGrid.Children.Add(giFrame, 0, 0);
-            innerGrid.Children.Add(noGiFrame, 0, 1);
-            innerGrid.Children.Add(backBtn, 0, 2);
+            innerGrid.Children.Add(giAndNoGiFrame, 0, 0);
+            innerGrid.Children.Add(giFrame, 0, 1);
+            innerGrid.Children.Add(noGiFrame, 0, 2);
+            innerGrid.Children.Add(backBtn, 0, 3);
             outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = outerGrid;
@@ -243,10 +320,14 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
-                innerGrid.Children.Add(giFrame, 0, 0);
+                innerGrid.Children.Add(giAndNoGiFrame, 0, 0);
                 Grid.SetColumnSpan(giFrame, 2);
-                innerGrid.Children.Add(noGiFrame, 2, 0);
+                innerGrid.Children.Add(giFrame, 2, 0);
+                Grid.SetColumnSpan(giFrame, 2);
+                innerGrid.Children.Add(noGiFrame, 4, 0);
                 Grid.SetColumnSpan(noGiFrame, 2);
                 innerGrid.Children.Add(backBtn, 1, 1);
                 Grid.SetColumnSpan(backBtn, 2);
@@ -260,11 +341,13 @@ namespace MahechaBJJ.Views.SignUpPages
 
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
-                innerGrid.Children.Add(giFrame, 0, 0);
-                innerGrid.Children.Add(noGiFrame, 0, 1);
-                innerGrid.Children.Add(backBtn, 0, 2);
+                innerGrid.Children.Add(giAndNoGiFrame, 0, 0);
+                innerGrid.Children.Add(giFrame, 0, 1);
+                innerGrid.Children.Add(noGiFrame, 0, 2);
+                innerGrid.Children.Add(backBtn, 0, 3);
             }
         }
     }

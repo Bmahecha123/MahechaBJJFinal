@@ -4,6 +4,7 @@ namespace MahechaBJJ.Model
     public enum Package
     {
         Gi,
-        NoGi
+        NoGi,
+        GiAndNoGi
     }
 }
