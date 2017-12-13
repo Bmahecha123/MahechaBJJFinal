@@ -83,7 +83,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             sweepTap = new TapGestureRecognizer();
             sweepTap.Tapped += (sender, e) => {
-                Navigation.PushModalAsync(new SearchPage(type, sweepLbl.Text, "bottom"));
+                Navigation.PushModalAsync(new SearchPage(sweepLbl.Text));
             };
             sweepLbl.GestureRecognizers.Add(sweepTap);
 
@@ -114,7 +114,7 @@ namespace MahechaBJJ.Views.CommonPages
 
 			takeDownTap = new TapGestureRecognizer();
             takeDownTap.Tapped += (sender, e) => {
-				Navigation.PushModalAsync(new SearchPage(type, takeDownLbl.Text, "top"));
+				Navigation.PushModalAsync(new SearchPage(takeDownLbl.Text));
 			};
 			takeDownLbl.GestureRecognizers.Add(takeDownTap);
 
@@ -146,7 +146,7 @@ namespace MahechaBJJ.Views.CommonPages
 
 			submissionTap = new TapGestureRecognizer();
 			submissionTap.Tapped += (sender, e) => {
-				Navigation.PushModalAsync(new SearchPage(type, submissionLbl.Text, "none"));
+				Navigation.PushModalAsync(new SearchPage(submissionLbl.Text));
 			};
 			submissionLbl.GestureRecognizers.Add(submissionTap);
 
@@ -178,7 +178,7 @@ namespace MahechaBJJ.Views.CommonPages
 
 			guardPassTap = new TapGestureRecognizer();
 			guardPassTap.Tapped += (sender, e) => {
-				Navigation.PushModalAsync(new SearchPage(type, guardPassLbl.Text, "top"));
+				Navigation.PushModalAsync(new SearchPage(guardPassLbl.Text));
 			};
 			guardPassLbl.GestureRecognizers.Add(guardPassTap);
 
@@ -210,7 +210,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             defenseTap = new TapGestureRecognizer();
             defenseTap.Tapped += (sender, e) => {
-				Navigation.PushModalAsync(new SearchPage(type, defenseLbl.Text, "none"));
+				Navigation.PushModalAsync(new SearchPage(defenseLbl.Text));
 			};
             defenseLbl.GestureRecognizers.Add(defenseTap);
 
@@ -242,7 +242,7 @@ namespace MahechaBJJ.Views.CommonPages
 
 			backTakeTap = new TapGestureRecognizer();
 			backTakeTap.Tapped += (sender, e) => {
-				Navigation.PushModalAsync(new SearchPage(type, backTakeLbl.Text, "none"));
+				Navigation.PushModalAsync(new SearchPage(backTakeLbl.Text));
 			};
 			backTakeLbl.GestureRecognizers.Add(backTakeTap);
 
