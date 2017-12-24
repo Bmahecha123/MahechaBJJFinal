@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using MahechaBJJ.Model;
+using MahechaBJJ.Resources;
+using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.MainTabPages;
+using Xamarin.Auth;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
 {
     public class SearchPage : ContentPage
     {
-        private readonly SearchPageViewModel _searchPageViewModel;
+        private SearchPageViewModel _searchPageViewModel;
+        private BaseViewModel _baseViewModel;
+        private Account account;
         private ObservableCollection<VideoData> searchedVideos;
         private ActivityIndicator activityIndicator;
         private SearchBar searchBar;
@@ -27,14 +32,18 @@ namespace MahechaBJJ.Views
 
 
         //CONSTS
+        private string ALBUM;
+        private string USERBASEURL = "https://api.vimeo.com/me/albums/";
         private const string VIMEOBASEURL = "https://api.vimeo.com";
-        private const string VIMEOVIDEOS = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952";
+        //private string VIMEOVIDEOS = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952";
+        private string VIMEOVIDEOS;
         private const string VIDEOSPERPAGE = "&per_page=5";
         private const string QUERY = "&query=";
 
         public SearchPage()
         {
             _searchPageViewModel = new SearchPageViewModel();
+            _baseViewModel = new BaseViewModel();
             searchedVideos = new ObservableCollection<VideoData>();
             this.modal = false;
             Title = "Search";
@@ -46,21 +55,51 @@ namespace MahechaBJJ.Views
 #endif
 
             Padding = new Thickness(10, 30, 10, 10);
+            SetSearch();
             SetContent(false);
          }
 
-        public SearchPage(string techniqueCategory)
+        public SearchPage(Album album)
         {
 			_searchPageViewModel = new SearchPageViewModel();
+            _baseViewModel = new BaseViewModel();
 			searchedVideos = new ObservableCollection<VideoData>();
             this.modal = true;
 			Title = "Search";
 			Icon = "004-search.png";
 			Padding = new Thickness(10, 30, 10, 10);
+            SetSearch(album);
 			SetContent(true);
+            SearchVimeo(true);
+
 		}
 
         //Functions
+        private void SetSearch() 
+        {
+            account = _baseViewModel.GetAccountInformation();
+            var package = account.Properties["Package"];
+
+            if (package == "Gi")
+            {
+                VIMEOVIDEOS = Constants.VIMEOGIALBUM;
+            } 
+            else if (package == "NoGi")
+            {
+                VIMEOVIDEOS = Constants.VIMEONOGIALBUM;
+            } 
+            else 
+            {
+                VIMEOVIDEOS = Constants.VIMEOGIANDNOGIALBUM;
+            }
+        }
+
+        private void SetSearch(Album album)
+        {
+            VIMEOVIDEOS = Constants.GetAlbum($"VIMEO{album.ToString()}ALBUM");
+
+        }
+
         public void SetContent(bool modal)
         {
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
@@ -84,13 +123,6 @@ namespace MahechaBJJ.Views
 					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
 				}
 			};
-
-            if(modal)
-            {
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}); 
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star)}); 
-
-            }
 
 			outerGrid = new Grid
 			{
@@ -204,7 +236,9 @@ namespace MahechaBJJ.Views
 			};
 
 			//Events
-			searchBar.SearchButtonPressed += SearchVimeo;
+            searchBar.SearchButtonPressed += (object sender, EventArgs e) => {
+                SearchVimeo(false);
+            };
             searchBar.Focused += FocusSearchBar;
 			videoListView.ItemSelected += LoadVideo;
             backBtn.Clicked += (object sender, EventArgs e) => {
@@ -216,65 +250,61 @@ namespace MahechaBJJ.Views
             if (modal)
             {
                 innerGrid.Children.Add(backBtn, 0, 0);
-                innerGrid.Children.Add(searchBar, 1, 0);
-                innerGrid.Children.Add(videoListView, 0, 1);
-                Grid.SetColumnSpan(videoListView, 2);
-
-                if (moreToLoad)
-                {
-                    innerGrid.Children.Add(loadBtn, 0, 2);
-                    Grid.SetColumnSpan(loadBtn, 2);
-                    Grid.SetRowSpan(videoListView, 1);
-                }
-                else
-                {
-                    innerGrid.Children.Remove(loadBtn);
-                    Grid.SetRowSpan(videoListView, 2);
-                }
-                innerGrid.Children.Add(activityIndicator, 0, 0);
-                Grid.SetRowSpan(activityIndicator, 3);
-                Grid.SetColumnSpan(activityIndicator, 2);
             }
             else
             {
                 innerGrid.Children.Add(searchBar, 0, 0);
-                innerGrid.Children.Add(videoListView, 0, 1);
-                if (moreToLoad)
-                {
-                    innerGrid.Children.Add(loadBtn, 0, 2);
-                    Grid.SetRowSpan(videoListView, 1);
-                }
-                else
-                {
-                    innerGrid.Children.Remove(loadBtn);
-                    Grid.SetRowSpan(videoListView, 2);
-                }
-                innerGrid.Children.Add(activityIndicator, 0, 0);
-                Grid.SetRowSpan(activityIndicator, 3);
             }
+
+            innerGrid.Children.Add(videoListView, 0, 1);
+            if (moreToLoad)
+            {
+                innerGrid.Children.Add(loadBtn, 0, 2);
+                Grid.SetRowSpan(videoListView, 1);
+            }
+            else
+            {
+                innerGrid.Children.Remove(loadBtn);
+                Grid.SetRowSpan(videoListView, 2);
+            }
+            innerGrid.Children.Add(activityIndicator, 0, 0);
+            Grid.SetRowSpan(activityIndicator, 3);
 
 			outerGrid.Children.Add(innerGrid, 0, 0);
 
 			Content = outerGrid;
         }
 
-		public async void SearchVimeo(object Sender, EventArgs e)
+		public async void SearchVimeo(bool modal)
 		{
             activityIndicator.IsRunning = true;
             activityIndicator.IsEnabled = true;
             activityIndicator.IsVisible = true;
-            
-			string url = VIMEOVIDEOS + VIDEOSPERPAGE + QUERY;
 
-			if (searchBar.Text == " ")
+            string url;
+
+            if (modal)
             {
                 url = VIMEOVIDEOS + VIDEOSPERPAGE;
+
+                await _searchPageViewModel.SearchVideo(url);
             }
-			await _searchPageViewModel.SearchVideo(url + searchBar.Text);
+            else
+            {
+                url = VIMEOVIDEOS + VIDEOSPERPAGE + QUERY;
+
+                if (searchBar.Text == " ")
+                {
+                    url = VIMEOVIDEOS + VIDEOSPERPAGE;
+                }
+                await _searchPageViewModel.SearchVideo(url + searchBar.Text);
+            }
+			
 			activityIndicator.IsRunning = false;
 			activityIndicator.IsEnabled = false;
 			activityIndicator.IsVisible = false;
-            if (_searchPageViewModel.Successful){
+            if (_searchPageViewModel.Successful)
+            {
 				if (searchedVideos != null)
 				{
 					searchedVideos.Clear();
@@ -290,7 +320,6 @@ namespace MahechaBJJ.Views
 				{
 					moreToLoad = true;
 					innerGrid.Children.Add(loadBtn, 0, 2);
-                    Grid.SetColumnSpan(loadBtn, 2);
 					if (Application.Current.MainPage.Width < Application.Current.MainPage.Height)
 					{
 						Grid.SetRowSpan(videoListView, 1);
@@ -364,21 +393,25 @@ namespace MahechaBJJ.Views
 				Padding = new Thickness(10, 10, 10, 10);
 				innerGrid.RowDefinitions.Clear();
 				innerGrid.ColumnDefinitions.Clear();
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(8, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
 				innerGrid.Children.Clear();
-                innerGrid.Children.Add(searchBar, 0, 0);
-                innerGrid.Children.Add(videoListView, 1, 0);
-                Grid.SetRowSpan(videoListView, 4);
 
-                if(modal) 
+                if (this.modal) 
                 {
-                    innerGrid.Children.Add(backBtn, 0, 3);
+                    innerGrid.Children.Add(backBtn, 0, 0);
                 }
+                else 
+                {
+                    innerGrid.Children.Add(searchBar, 0, 0);
+                }
+
+                innerGrid.Children.Add(videoListView, 1, 0);
+                Grid.SetRowSpan(videoListView, 3);
+
                 if(moreToLoad)
                 {
                     innerGrid.Children.Add(loadBtn, 0, 2);
@@ -386,7 +419,7 @@ namespace MahechaBJJ.Views
                     innerGrid.Children.Remove(loadBtn);
                 }
 				innerGrid.Children.Add(activityIndicator, 0, 0);
-				Grid.SetRowSpan(activityIndicator, 4);
+				Grid.SetRowSpan(activityIndicator, 3);
                 Grid.SetColumnSpan(activityIndicator, 2);
 			}
 			else
@@ -397,51 +430,31 @@ namespace MahechaBJJ.Views
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(10, GridUnitType.Star) });
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                if(modal) 
-                {
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star) });
-                }
 				innerGrid.Children.Clear();
+
                 if (modal)
                 {
                     innerGrid.Children.Add(backBtn, 0, 0);
-                    innerGrid.Children.Add(searchBar, 1, 0);
-                    innerGrid.Children.Add(videoListView, 0, 1);
-                    Grid.SetColumnSpan(videoListView, 2);
-
-                    if (moreToLoad)
-                    {
-                        innerGrid.Children.Add(loadBtn, 0, 2);
-                        Grid.SetColumnSpan(loadBtn, 2);
-                        Grid.SetRowSpan(videoListView, 1);
-                    }
-                    else
-                    {
-                        innerGrid.Children.Remove(loadBtn);
-                        Grid.SetRowSpan(videoListView, 2);
-                    }
-                    innerGrid.Children.Add(activityIndicator, 0, 0);
-                    Grid.SetRowSpan(activityIndicator, 3);
-                    Grid.SetColumnSpan(activityIndicator, 2);
                 }
                 else
                 {
                     innerGrid.Children.Add(searchBar, 0, 0);
-                    innerGrid.Children.Add(videoListView, 0, 1);
-                    if (moreToLoad)
-                    {
-                        innerGrid.Children.Add(loadBtn, 0, 2);
-                        Grid.SetRowSpan(videoListView, 1);
-                    }
-                    else
-                    {
-                        innerGrid.Children.Remove(loadBtn);
-                        Grid.SetRowSpan(videoListView, 2);
-                    }
-                    innerGrid.Children.Add(activityIndicator, 0, 0);
-                    Grid.SetRowSpan(activityIndicator, 3);
                 }
+
+                innerGrid.Children.Add(videoListView, 0, 1);
+
+                if (moreToLoad)
+                {
+                    innerGrid.Children.Add(loadBtn, 0, 2);
+                    Grid.SetRowSpan(videoListView, 1);
+                }
+                else
+                {
+                    innerGrid.Children.Remove(loadBtn);
+                    Grid.SetRowSpan(videoListView, 2);
+                }
+                innerGrid.Children.Add(activityIndicator, 0, 0);
+                Grid.SetRowSpan(activityIndicator, 3);
 			}
 		}
      }

@@ -125,11 +125,23 @@ namespace MahechaBJJ.ViewModel.CommonPages
             return User;
         }
 
-		public void SaveCredentials(string userName, string password, string id)
+		public void SaveCredentials(User user)
 		{
-			_account = new Account();
-			_account.Username = userName;
-			_account.Properties.Add("Id", id);
+            _account = new Account();
+            _account.Username = user.Email;
+            _account.Properties.Add("Id", user.Id);
+            if (user.Packages.GiJiuJitsu == true)
+            {
+                _account.Properties.Add("Package", "Gi");
+            }
+            else if (user.Packages.NoGiJiuJitsu == true)
+            {
+                _account.Properties.Add("Package", "NoGi");
+            }
+            else
+            {
+                _account.Properties.Add("Package", "GiAndNoGi");
+            }
 
             _accountService.SaveCredentials(_account);
 		}

@@ -202,7 +202,7 @@ namespace MahechaBJJ.Views.EntryPages
             }
             else 
             {
-					_baseViewModel.SaveCredentials(user.Email, user.Password, user.Id);
+					_baseViewModel.SaveCredentials(user);
 					Application.Current.MainPage = new MainTabbedPage();
             }
 

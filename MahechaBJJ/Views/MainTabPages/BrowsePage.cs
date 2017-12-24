@@ -1,7 +1,9 @@
 ﻿using System;
 using MahechaBJJ.Model;
+using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.BlogPages;
 using MahechaBJJ.Views.CommonPages;
+using Xamarin.Auth;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
@@ -9,6 +11,8 @@ namespace MahechaBJJ.Views
     public class BrowsePage : ContentPage
     {
         //declare objects
+        private BaseViewModel _baseViewModel;
+        private Account account;
         private Grid outerGrid;
         private Grid innerGrid;
         private StackLayout stackLayout;
@@ -31,6 +35,9 @@ namespace MahechaBJJ.Views
         private Frame submissionFrame;
         private Label submissionLbl;
         private TapGestureRecognizer submissionTap;
+        private Frame drillsFrame;
+        private Label drillsLbl;
+        private TapGestureRecognizer drillsTap;
         private Frame blogFrame;
         private Label blogLbl;
         private Image blogImage;
@@ -39,6 +46,8 @@ namespace MahechaBJJ.Views
 
         public BrowsePage()
         {
+            _baseViewModel = new BaseViewModel();
+            account = _baseViewModel.GetAccountInformation();
             Title = "Browse";
 #if __IOS__
             Icon = "openbook.png";
@@ -62,7 +71,7 @@ namespace MahechaBJJ.Views
 				RowDefinitions = new RowDefinitionCollection
 				{
 					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+					new RowDefinition { Height = new GridLength(2, GridUnitType.Star)}
 				}
 			};
 
@@ -95,7 +104,18 @@ namespace MahechaBJJ.Views
 
             sweepTap = new TapGestureRecognizer();
             sweepTap.Tapped += (sender, e) => {
-                Navigation.PushModalAsync(new SearchPage(sweepLbl.Text));
+                if (account.Properties["Package"] == "Gi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.GiSweep));
+                }
+                else if (account.Properties["Package"] == "NoGi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.NoGiSweep));
+                }
+                else 
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.Sweep));
+                }
             };
             sweepLbl.GestureRecognizers.Add(sweepTap);
 
@@ -126,7 +146,18 @@ namespace MahechaBJJ.Views
 
             takeDownTap = new TapGestureRecognizer();
             takeDownTap.Tapped += (sender, e) => {
-                Navigation.PushModalAsync(new SearchPage(takeDownLbl.Text));
+                if (account.Properties["Package"] == "Gi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.GiTakeDown));
+                }
+                else if (account.Properties["Package"] == "NoGi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.NoGiTakeDown));
+                }
+                else
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.TakeDown));
+                }
             };
             takeDownLbl.GestureRecognizers.Add(takeDownTap);
 
@@ -158,7 +189,18 @@ namespace MahechaBJJ.Views
 
             submissionTap = new TapGestureRecognizer();
             submissionTap.Tapped += (sender, e) => {
-                Navigation.PushModalAsync(new SearchPage(submissionLbl.Text));
+                if (account.Properties["Package"] == "Gi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.GiSubmission));
+                }
+                else if (account.Properties["Package"] == "NoGi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.NoGiSubmission));
+                }
+                else
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.Submission));
+                }
             };
             submissionLbl.GestureRecognizers.Add(submissionTap);
 
@@ -190,7 +232,18 @@ namespace MahechaBJJ.Views
 
             guardPassTap = new TapGestureRecognizer();
             guardPassTap.Tapped += (sender, e) => {
-                Navigation.PushModalAsync(new SearchPage(guardPassLbl.Text));
+                if (account.Properties["Package"] == "Gi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.GiGuardPass));
+                }
+                else if (account.Properties["Package"] == "NoGi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.NoGiGuardPass));
+                }
+                else
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.GuardPass));
+                }
             };
             guardPassLbl.GestureRecognizers.Add(guardPassTap);
 
@@ -222,7 +275,18 @@ namespace MahechaBJJ.Views
 
             defenseTap = new TapGestureRecognizer();
             defenseTap.Tapped += (sender, e) => {
-                Navigation.PushModalAsync(new SearchPage(defenseLbl.Text));
+                if (account.Properties["Package"] == "Gi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.GiDefense));
+                }
+                else if (account.Properties["Package"] == "NoGi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.NoGiDefense));
+                }
+                else
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.Defense));
+                }
             };
             defenseLbl.GestureRecognizers.Add(defenseTap);
 
@@ -254,7 +318,18 @@ namespace MahechaBJJ.Views
 
             backTakeTap = new TapGestureRecognizer();
             backTakeTap.Tapped += (sender, e) => {
-                Navigation.PushModalAsync(new SearchPage(backTakeLbl.Text));
+                if (account.Properties["Package"] == "Gi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.GiBackTake));
+                }
+                else if (account.Properties["Package"] == "NoGi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.NoGiBackTake));
+                }
+                else
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.BackTake));
+                }
             };
             backTakeLbl.GestureRecognizers.Add(backTakeTap);
 
@@ -265,6 +340,48 @@ namespace MahechaBJJ.Views
                 HasShadow = false,
                 OutlineColor = Color.Black,
                 Content = backTakeLbl,
+                Padding = new Thickness(10, 10, 10, 10)
+            };
+
+            drillsLbl = new Label
+            {
+                Text = "Drills",
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                TextColor = Color.Black,
+                FontSize = lblSize,
+                LineBreakMode = LineBreakMode.NoWrap,
+#if __IOS__
+                FontFamily = "AmericanTypewriter-Bold"
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold"
+#endif
+            };
+
+            drillsTap = new TapGestureRecognizer();
+            drillsTap.Tapped += (object sender, EventArgs e) => {
+                if (account.Properties["Package"] == "Gi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.GiDrills));
+                }
+                else if (account.Properties["Package"] == "NoGi")
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.NoGiDrills));
+                }
+                else
+                {
+                    Navigation.PushModalAsync(new SearchPage(Album.Drills));
+                }
+            };
+            drillsLbl.GestureRecognizers.Add(drillsTap);
+
+            drillsFrame = new Frame
+            {
+                BackgroundColor = Color.FromRgb(58, 93, 174),
+                HasShadow = false,
+                OutlineColor = Color.Black,
+                Content = drillsLbl,
                 Padding = new Thickness(10, 10, 10, 10)
             };
 
@@ -314,6 +431,7 @@ namespace MahechaBJJ.Views
             stackLayout.Children.Add(guardPassFrame);
             stackLayout.Children.Add(defenseFrame);
             stackLayout.Children.Add(backTakeFrame);
+            stackLayout.Children.Add(drillsFrame);
             scrollView.Content = stackLayout;
 
             innerGrid.Children.Add(scrollView, 0, 0);
@@ -351,7 +469,7 @@ namespace MahechaBJJ.Views
 				innerGrid.RowDefinitions.Clear();
 				innerGrid.ColumnDefinitions.Clear();
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
 				innerGrid.Children.Clear();
                 //building grid
                 innerGrid.Children.Add(scrollView, 0, 0);

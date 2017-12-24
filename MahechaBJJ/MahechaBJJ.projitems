@@ -59,7 +59,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabPages\SearchPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\AndroidVideoPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\VideoDetailPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\BrowseDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\EmailMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\ChangePasswordPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\IEmailService.cs" />
@@ -70,6 +69,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\SignUpPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\PackagePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignUpPages\SummaryPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Album.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

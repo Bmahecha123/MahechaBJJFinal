@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
   <Jars>
-    <Jar>obj/Debug/lp/10/jl/support-annotations.jar</Jar>
     <Jar>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/lp/0/jl/formsviewgroup.jar</Jar>
     <Jar>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/lp/10/jl/support-annotations.jar</Jar>
     <Jar>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/lp/11/jl/bin/classes.jar</Jar>
@@ -19,6 +18,9 @@
     <Jar>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/lp/23/jl/bin/classes.jar</Jar>
     <Jar>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/lp/24/jl/bin/classes.jar</Jar>
     <Jar>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/lp/25/jl/bin/classes.jar</Jar>
+    <Jar>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/lp/31/jl/arch-core-common.jar</Jar>
+    <Jar>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/lp/32/jl/arch-lifecycle-common.jar</Jar>
+    <Jar>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/lp/33/jl/bin/classes.jar</Jar>
     <Jar>/Users/bmahecha/Desktop/projects/MahechaBJJFinal/Droid/obj/Debug/lp/9/jl/bin/classes.jar</Jar>
   </Jars>
   <ResolvedResourceDirectories>
