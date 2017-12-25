@@ -172,7 +172,8 @@ namespace MahechaBJJ.Views.PlaylistPages
             } else {
 				innerGrid.Children.Clear();
 				innerGrid.Children.Add(timeOutFrame, 0, 0);
-                Grid.SetRowSpan(timeOutFrame, 3);
+                Grid.SetRowSpan(timeOutFrame, 2);
+                innerGrid.Children.Add(backBtn, 0, 2);
             }
         }
 
