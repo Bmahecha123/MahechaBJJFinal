@@ -70,6 +70,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\PackagePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignUpPages\SummaryPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Album.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\PurchasePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

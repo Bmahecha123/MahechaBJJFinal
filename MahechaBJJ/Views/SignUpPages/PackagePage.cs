@@ -177,7 +177,7 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 Navigation.PushModalAsync(new SignUpPage(Package.NoGi));
             };
-            noGiStackLayout.GestureRecognizers.Add(giTap);
+            noGiStackLayout.GestureRecognizers.Add(noGiTap);
 
             noGiScrollView = new ScrollView
             {

@@ -291,6 +291,7 @@ namespace MahechaBJJ.Views
             }
             else
             {
+                SetSearch();
                 url = VIMEOVIDEOS + VIDEOSPERPAGE + QUERY;
 
                 if (searchBar.Text == " ")

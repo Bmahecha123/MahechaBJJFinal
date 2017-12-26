@@ -104,6 +104,8 @@ namespace MahechaBJJ.Views
 
             sweepTap = new TapGestureRecognizer();
             sweepTap.Tapped += (sender, e) => {
+                account = _baseViewModel.GetAccountInformation();
+
                 if (account.Properties["Package"] == "Gi")
                 {
                     Navigation.PushModalAsync(new SearchPage(Album.GiSweep));
@@ -146,6 +148,8 @@ namespace MahechaBJJ.Views
 
             takeDownTap = new TapGestureRecognizer();
             takeDownTap.Tapped += (sender, e) => {
+                account = _baseViewModel.GetAccountInformation();
+
                 if (account.Properties["Package"] == "Gi")
                 {
                     Navigation.PushModalAsync(new SearchPage(Album.GiTakeDown));
@@ -189,6 +193,8 @@ namespace MahechaBJJ.Views
 
             submissionTap = new TapGestureRecognizer();
             submissionTap.Tapped += (sender, e) => {
+                account = _baseViewModel.GetAccountInformation();
+
                 if (account.Properties["Package"] == "Gi")
                 {
                     Navigation.PushModalAsync(new SearchPage(Album.GiSubmission));
@@ -232,6 +238,8 @@ namespace MahechaBJJ.Views
 
             guardPassTap = new TapGestureRecognizer();
             guardPassTap.Tapped += (sender, e) => {
+                account = _baseViewModel.GetAccountInformation();
+
                 if (account.Properties["Package"] == "Gi")
                 {
                     Navigation.PushModalAsync(new SearchPage(Album.GiGuardPass));
@@ -275,6 +283,8 @@ namespace MahechaBJJ.Views
 
             defenseTap = new TapGestureRecognizer();
             defenseTap.Tapped += (sender, e) => {
+                account = _baseViewModel.GetAccountInformation();
+
                 if (account.Properties["Package"] == "Gi")
                 {
                     Navigation.PushModalAsync(new SearchPage(Album.GiDefense));
@@ -318,6 +328,8 @@ namespace MahechaBJJ.Views
 
             backTakeTap = new TapGestureRecognizer();
             backTakeTap.Tapped += (sender, e) => {
+                account = _baseViewModel.GetAccountInformation();
+
                 if (account.Properties["Package"] == "Gi")
                 {
                     Navigation.PushModalAsync(new SearchPage(Album.GiBackTake));
@@ -361,6 +373,8 @@ namespace MahechaBJJ.Views
 
             drillsTap = new TapGestureRecognizer();
             drillsTap.Tapped += (object sender, EventArgs e) => {
+                account = _baseViewModel.GetAccountInformation();
+
                 if (account.Properties["Package"] == "Gi")
                 {
                     Navigation.PushModalAsync(new SearchPage(Album.GiDrills));

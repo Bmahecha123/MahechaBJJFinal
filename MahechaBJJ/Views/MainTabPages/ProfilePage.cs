@@ -23,6 +23,7 @@ namespace MahechaBJJ.Views
         private Label emailTextLbl;
         private Label beltLbl;
         private Label beltTextLbl;
+        private Button packageBtn;
         private Button contactUsBtn;
         private Button logOutBtn;
         private Button settingsBtn;
@@ -37,6 +38,8 @@ namespace MahechaBJJ.Views
         public ProfilePage()
         {
             _baseViewModel = new BaseViewModel();
+            account = _baseViewModel.GetAccountInformation();
+
             Title = "Profile";
 #if __IOS__
             Icon = "karate.png";
@@ -65,6 +68,7 @@ namespace MahechaBJJ.Views
             {
                 RowDefinitions = new RowDefinitionCollection {
                     new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
@@ -169,6 +173,21 @@ namespace MahechaBJJ.Views
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
+            packageBtn = new Button
+            {
+                Text = "Packages",
+#if __IOS__
+                FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+                FontSize = size * 2,
+                BackgroundColor = Color.FromRgb(58, 93, 174),
+                TextColor = Color.Black,
+                BorderWidth = 3,
+                BorderColor = Color.Black,
+            };
             contactUsBtn = new Button
             {
                 Text = "Contact Us",
@@ -255,6 +274,9 @@ namespace MahechaBJJ.Views
             };
 
             //Events
+            packageBtn.Clicked += (object sender, EventArgs e) => {
+                SetPackages();
+            };
             contactUsBtn.Clicked += (sender, e) =>
             {
                 contactUsBtn.IsEnabled = false;
@@ -301,10 +323,6 @@ namespace MahechaBJJ.Views
             Grid.SetRowSpan(activityIndicator, 6);
             Grid.SetColumnSpan(activityIndicator, 3);
 
-            if (account == null)
-            {
-				account = _baseViewModel.GetAccountInformation();
-			}
             if (_baseViewModel.User == null)
             {
 				user = await _baseViewModel.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]);
@@ -325,9 +343,10 @@ namespace MahechaBJJ.Views
                 //Building Grid
                 innerGrid.Children.Clear();
                 innerGrid.Children.Add(userCredentialStack, 0, 0);
-				innerGrid.Children.Add(contactUsBtn, 0, 1);
-				innerGrid.Children.Add(settingsBtn, 0, 2);
-				innerGrid.Children.Add(logOutBtn, 0, 3);
+                innerGrid.Children.Add(packageBtn, 0, 1);
+				innerGrid.Children.Add(contactUsBtn, 0, 2);
+				innerGrid.Children.Add(settingsBtn, 0, 3);
+				innerGrid.Children.Add(logOutBtn, 0, 4);
             } else {
 				/*innerGrid.Children.Clear();
 				innerGrid.Children.Add(timeOutFrame, 0, 0);
@@ -346,6 +365,27 @@ namespace MahechaBJJ.Views
             Application.Current.MainPage = entryPage;
         }
 
+        private void SetPackages()
+        {
+            account = _baseViewModel.GetAccountInformation();
+
+            if (account.Properties["Package"].Contains("GiAndNoGi"))
+            {
+                DisplayAlert("No Packages", "No more packages are available for you to purchase.", "Ok");
+                return;
+            }
+            else if (account.Properties["Package"].Contains("Gi"))
+            {
+                string[] packages = { "NoGi" };
+                Navigation.PushModalAsync(new PurchasePage(Package.NoGi));
+            } 
+            else 
+            {
+                string[] packages = { "Gi" };
+                Navigation.PushModalAsync(new PurchasePage(Package.Gi));
+            }
+        }
+
         //Orientation
         protected override void OnSizeAllocated(double width, double height)
         {
@@ -361,16 +401,18 @@ namespace MahechaBJJ.Views
                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                     innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                     innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                     //Layout Options
                     //Building Grid
                     innerGrid.Children.Clear();
                     innerGrid.Children.Add(userCredentialStack, 0, 0);
-                    Grid.SetRowSpan(userCredentialStack, 3);
-                    innerGrid.Children.Add(contactUsBtn, 1, 0);
-                    innerGrid.Children.Add(settingsBtn, 1, 1);
-                    innerGrid.Children.Add(logOutBtn, 1, 2);
+                    Grid.SetRowSpan(userCredentialStack, 4);
+                    innerGrid.Children.Add(packageBtn, 1, 0);
+                    innerGrid.Children.Add(contactUsBtn, 1, 1);
+                    innerGrid.Children.Add(settingsBtn, 1, 2);
+                    innerGrid.Children.Add(logOutBtn, 1, 3);
                 }
             }
             else
@@ -384,12 +426,14 @@ namespace MahechaBJJ.Views
                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                     //Building Grid
                     innerGrid.Children.Clear();
                     innerGrid.Children.Add(userCredentialStack, 0, 0);
-                    innerGrid.Children.Add(contactUsBtn, 0, 1);
-                    innerGrid.Children.Add(settingsBtn, 0, 2);
-                    innerGrid.Children.Add(logOutBtn, 0, 3);
+                    innerGrid.Children.Add(packageBtn, 0, 1);
+                    innerGrid.Children.Add(contactUsBtn, 0, 2);
+                    innerGrid.Children.Add(settingsBtn, 0, 3);
+                    innerGrid.Children.Add(logOutBtn, 0, 4);
                 }
             }
         }
