@@ -26,12 +26,18 @@ namespace MahechaBJJ.Views.SignUpPages
         private Label giTitle;
         private Label giPrice;
         private Label giBody;
+        private Image giImage;
+        private Frame giImageFrame;
         private Label noGiTitle;
         private Label noGiPrice;
         private Label noGiBody;
+        private Image noGiImage;
+        private Frame noGiImageFrame;
         private Label giAndNoGiTitle;
         private Label giAndNoGiPrice;
         private Label giAndNoGiBody;
+        private Image giAndNoGiImage;
+        private Frame giAndNoGiImageFrame;
 
         public PackagePage()
         {
@@ -104,10 +110,25 @@ namespace MahechaBJJ.Views.SignUpPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "",
+                Text = "This library is growing constantly and there is no end in sight. The beauty of this package is that you get to follow our system as we develop and implement new transitions and positions. We’re constantly pushing the barrier in terms of our style and approach to Jiu-Jitsu. Every position that gets posted has been drilled to death and executed at the highest levels of competition. We’re proud of this; something I see wrong with other instructional resources is positions are shown that I know they have never ever hit in a competition or anything. You never have to worry about that with our techniques. One of the biggest advantages of our app is that you have direct access to us, if you have any questions or concerns; contacting us is a click away. Let’s grow and develop our Jiu Jitsu together!",
                 FontSize = lblSize,
                 TextColor = Color.Black,
                 FontAttributes = FontAttributes.Bold
+            };
+
+            giImage = new Image
+            {
+                Source = ImageSource.FromResource("gi"),
+                Aspect = Aspect.AspectFill
+            };
+
+            giImageFrame = new Frame
+            {
+                OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                Padding = 2,
+                Content = giImage,
+                HasShadow = false
             };
 
             giTap = new TapGestureRecognizer();
@@ -119,12 +140,15 @@ namespace MahechaBJJ.Views.SignUpPages
 
             giScrollView = new ScrollView
             {
-                Content = giStackLayout
+                Content = giStackLayout,
+                BackgroundColor = Color.FromRgb(58, 93, 174)
             };
 
             giFrame = new Frame
             {
                 OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                Padding = 5,
                 Content = giScrollView,
                 HasShadow = false
             };
@@ -166,10 +190,24 @@ namespace MahechaBJJ.Views.SignUpPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "",
+                Text = "Just like the other packages, the No-Gi library is constantly being updated. So that means you’ll grow along with us. As we come up with new tweaks and transitions you’ll see it first as we are constantly updating our libraries. Through these techniques and positions your game will be brought to a new technical level. All the while being exposed to a unique point of view on approaching Jiu Jitsu. Some of the biggest advantages of this package is that you have direct access to us, the ones who implement and recorded these techniques. We love to hear from our members and never ignore anyone. Lets grow together!",
                 FontSize = lblSize,
                 TextColor = Color.Black,
                 FontAttributes = FontAttributes.Bold
+            };
+
+            noGiImage = new Image
+            {
+                
+            };
+
+            noGiImageFrame = new Frame
+            {
+                OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                Padding = 2,
+                Content = noGiImage,
+                HasShadow = false
             };
 
             noGiTap = new TapGestureRecognizer();
@@ -181,12 +219,15 @@ namespace MahechaBJJ.Views.SignUpPages
 
             noGiScrollView = new ScrollView
             {
-                Content = noGiStackLayout
+                Content = noGiStackLayout,
+                BackgroundColor = Color.FromRgb(58, 93, 174)
             };
 
             noGiFrame = new Frame
             {
                 OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                Padding = 5,
                 Content = noGiScrollView,
                 HasShadow = false
             };
@@ -228,10 +269,25 @@ namespace MahechaBJJ.Views.SignUpPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "",
+                Text = "This package is the best of both worlds. Whenever any Jiu Jitsu position is uploaded to our database, you’ll get to see it right away. No other Jiu Jitsu apps post a disciplined system like this that gives you direct access to the ones who create, record and execute these techniques at the highest levels of competition. We love Jiu Jitsu and love sharing it with those who want to learn, we live the Jiu Jitsu lifestyle and want to share our unique point of view. At its core our Jiu-Jitsu is an emphasis on solid fundamentals building upon each other to open doors to unique transitions and timings in relation to our style and preferences. Think of this package as having an extra coach to help develop your game. For example: you see a technique on our app and try to work it in training. It goes terribly wrong and you email us in one click from the app. We see your concern and get back to you as soon as we can to help you get it down better. This happens all the time and we love it; anything we can do to help you get better. Let’s grow and develop our game together!",
                 FontSize = lblSize,
                 TextColor = Color.Black,
                 FontAttributes = FontAttributes.Bold
+            };
+
+            giAndNoGiImage = new Image
+            {
+                Source = ImageSource.FromResource("sweep"),
+                Aspect = Aspect.AspectFill
+            };
+
+            giAndNoGiImageFrame = new Frame
+            {
+                OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                Padding = 2,
+                Content = giAndNoGiImage,
+                HasShadow = false
             };
 
             giAndNoGiTap = new TapGestureRecognizer();
@@ -244,12 +300,15 @@ namespace MahechaBJJ.Views.SignUpPages
 
             giAndNoGiScrollView = new ScrollView
             {
-                Content = giAndNoGiStackLayout
+                Content = giAndNoGiStackLayout,
+                BackgroundColor = Color.FromRgb(58, 93, 174)
             };
 
             giAndNoGiFrame = new Frame
             {
                 OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                Padding = 5,
                 HasShadow = false,
                 Content = giAndNoGiScrollView
             };
@@ -258,7 +317,8 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}                }
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}                
+                }
             };
 
             innerGrid = new Grid
@@ -285,14 +345,17 @@ namespace MahechaBJJ.Views.SignUpPages
             giAndNoGiStackLayout.Children.Add(giAndNoGiTitle);
             giAndNoGiStackLayout.Children.Add(giAndNoGiPrice);
             giAndNoGiStackLayout.Children.Add(giAndNoGiBody);
+            giAndNoGiStackLayout.Children.Add(giAndNoGiImageFrame);
             giAndNoGiStackLayout.Orientation = StackOrientation.Vertical;
             giStackLayout.Children.Add(giTitle);
             giStackLayout.Children.Add(giPrice);
             giStackLayout.Children.Add(giBody);
+            giStackLayout.Children.Add(giImageFrame);
             giStackLayout.Orientation = StackOrientation.Vertical;
             noGiStackLayout.Children.Add(noGiTitle);
             noGiStackLayout.Children.Add(noGiPrice);
             noGiStackLayout.Children.Add(noGiBody);
+            noGiStackLayout.Children.Add(noGiImageFrame);
             noGiStackLayout.Orientation = StackOrientation.Vertical;
             innerGrid.Children.Add(giAndNoGiFrame, 0, 0);
             innerGrid.Children.Add(giFrame, 0, 1);
@@ -314,23 +377,16 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
 
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star)});
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(5, GridUnitType.Star)});
                 innerGrid.RowDefinitions.Add(new RowDefinition{ Height = new GridLength(1, GridUnitType.Star)});
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
                 innerGrid.Children.Add(giAndNoGiFrame, 0, 0);
-                Grid.SetColumnSpan(giFrame, 2);
-                innerGrid.Children.Add(giFrame, 2, 0);
-                Grid.SetColumnSpan(giFrame, 2);
-                innerGrid.Children.Add(noGiFrame, 4, 0);
-                Grid.SetColumnSpan(noGiFrame, 2);
+                innerGrid.Children.Add(giFrame, 1, 0);
+                innerGrid.Children.Add(noGiFrame, 2, 0);
                 innerGrid.Children.Add(backBtn, 1, 1);
-                Grid.SetColumnSpan(backBtn, 2);
             }
             else
             {

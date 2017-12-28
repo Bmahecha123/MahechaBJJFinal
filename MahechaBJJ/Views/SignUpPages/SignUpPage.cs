@@ -37,6 +37,8 @@ namespace MahechaBJJ.Views.SignUpPages
         private ObservableCollection<string> secretQuestionList;
         private TableView tableView;
         private StackLayout stackLayout;
+        private Grid innerGrid;
+        private Grid outerGrid;
         private Grid buttonGrid;
 
         public SignUpPage(Package package)
@@ -323,12 +325,30 @@ namespace MahechaBJJ.Views.SignUpPages
             stackLayout = new StackLayout
             {
                 Children = {
-                    tableView,
-                    buttonGrid
+                    tableView
                 }
             };
             scrollView.Content = stackLayout;
-            Content = stackLayout;
+
+            innerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(9, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }
+                }
+            };
+            outerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }
+                }
+            };
+            innerGrid.Children.Add(scrollView, 0, 0);
+            innerGrid.Children.Add(buttonGrid, 0, 1);
+            outerGrid.Children.Add(innerGrid);
+            Content = outerGrid;
         }
 
         private void Validate()
@@ -396,7 +416,7 @@ namespace MahechaBJJ.Views.SignUpPages
         }
 		
 		//Orientation
-		protected override void OnSizeAllocated(double width, double height)
+		/*protected override void OnSizeAllocated(double width, double height)
 		{
 			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
@@ -416,7 +436,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 backBtn.FontSize = btnSize * 1.5;
                 nextBtn.FontSize = btnSize * 1.5;
 			}
-		}
+		}*/
     }
 }
 

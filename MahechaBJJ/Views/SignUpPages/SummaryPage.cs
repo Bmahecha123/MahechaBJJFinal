@@ -273,7 +273,7 @@ namespace MahechaBJJ.Views.SignUpPages
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                    new RowDefinition { Height = new GridLength(2, GridUnitType.Star)}
                 }
             };
 
@@ -315,7 +315,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             outerGrid.Children.Add(innerGrid, 0, 0);
 
-            Content = innerGrid;
+            Content = outerGrid;
         }
 
         private async void SignUp()
@@ -337,6 +337,71 @@ namespace MahechaBJJ.Views.SignUpPages
             backBtn.IsEnabled = false;
             Navigation.PopModalAsync();
             backBtn.IsEnabled = true;
+        }
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+          
+            base.OnSizeAllocated(width, height); //must be called
+
+            if (width > height)
+            {
+                Padding = new Thickness(10, 10, 10, 0);
+                innerGrid.Children.Clear();
+                innerGrid.RowDefinitions.Clear();
+                innerGrid.ColumnDefinitions.Clear();
+
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+
+                innerGrid.Children.Add(summaryLbl, 0, 0);
+                innerGrid.Children.Add(packageLbl, 0, 1);
+                innerGrid.Children.Add(priceLbl, 0, 2);
+                innerGrid.Children.Add(userDetailsLbl, 0, 3);
+                innerGrid.Children.Add(nameLbl, 0, 4);
+                innerGrid.Children.Add(emailLbl, 0, 5);
+                innerGrid.Children.Add(beltLbl, 0, 6);
+                innerGrid.Children.Add(secretQuestionLbl, 0, 7);
+                innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
+                innerGrid.Children.Add(buttonGrid, 0, 9);
+            }
+            else
+            {
+                Padding = new Thickness(10, 30, 10, 10);
+                innerGrid.Children.Clear();
+                innerGrid.RowDefinitions.Clear();
+                innerGrid.ColumnDefinitions.Clear();
+
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+
+                innerGrid.Children.Add(summaryLbl, 0, 0);
+                innerGrid.Children.Add(packageLbl, 0, 1);
+                innerGrid.Children.Add(priceLbl, 0, 2);
+                innerGrid.Children.Add(userDetailsLbl, 0, 3);
+                innerGrid.Children.Add(nameLbl, 0, 4);
+                innerGrid.Children.Add(emailLbl, 0, 5);
+                innerGrid.Children.Add(beltLbl, 0, 6);
+                innerGrid.Children.Add(secretQuestionLbl, 0, 7);
+                innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
+                innerGrid.Children.Add(buttonGrid, 0, 9);
+            }
         }
     }
 }

@@ -55,7 +55,7 @@ namespace MahechaBJJ.Views
 #endif
 
             Padding = new Thickness(10, 30, 10, 10);
-            SetSearch();
+            //SetSearch();
             SetContent(false);
          }
 
@@ -78,19 +78,22 @@ namespace MahechaBJJ.Views
         private void SetSearch() 
         {
             account = _baseViewModel.GetAccountInformation();
-            var package = account.Properties["Package"];
+            if (account.Properties["Package"] != null) 
+            {
+                var package = account.Properties["Package"];
 
-            if (package == "Gi")
-            {
-                VIMEOVIDEOS = Constants.VIMEOGIALBUM;
-            } 
-            else if (package == "NoGi")
-            {
-                VIMEOVIDEOS = Constants.VIMEONOGIALBUM;
-            } 
-            else 
-            {
-                VIMEOVIDEOS = Constants.VIMEOGIANDNOGIALBUM;
+                if (package == "Gi")
+                {
+                    VIMEOVIDEOS = Constants.VIMEOGIALBUM;
+                }
+                else if (package == "NoGi")
+                {
+                    VIMEOVIDEOS = Constants.VIMEONOGIALBUM;
+                }
+                else
+                {
+                    VIMEOVIDEOS = Constants.VIMEOGIANDNOGIALBUM;
+                }
             }
         }
 

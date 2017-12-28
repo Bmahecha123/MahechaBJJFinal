@@ -17,6 +17,15 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\search.png" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\construction.png" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\karate.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\pass.jpg">
+      <LogicalName>pass</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\gi.jpg">
+      <LogicalName>gi</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\sweep.JPG">
+      <LogicalName>sweep</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
