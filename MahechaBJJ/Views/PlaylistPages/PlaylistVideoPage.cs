@@ -25,6 +25,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 		private Frame videoFrame;
 		private Button playBtn;
         private Button deleteBtn;
+        private Button qualityBtn;
 		private Grid innerGrid;
 		private Grid outerGrid;
 		private Video videoTechnique;
@@ -63,6 +64,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 				ColumnDefinitions = new ColumnDefinitionCollection
 				{
 					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
 					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
 				}
 			};
@@ -173,9 +176,27 @@ namespace MahechaBJJ.Views.PlaylistPages
 				BackgroundColor = Color.Red
 			};
 
+            qualityBtn = new Button
+            {
+                Text = "SD",
+                BorderWidth = 3,
+                BorderColor = Color.Black,
+                TextColor = Color.Black,
+#if __IOS__
+                FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+                FontSize = btnSize * 2,
+                BackgroundColor = Color.FromRgb(58, 93, 174)
+            };
+
+
 			//Events
 			backBtn.Clicked += GoBack;
 			deleteBtn.Clicked += DeleteFromPlaylist;
+            qualityBtn.Clicked += ChangeVideoQuality;
 #if __IOS__
 			playBtn.Clicked += PlayIOSVideo;
 #endif
@@ -184,17 +205,18 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 			//building grid
 			innerGrid.Children.Add(videoFrame, 0, 0);
-			Grid.SetColumnSpan(videoFrame, 2);
+			Grid.SetColumnSpan(videoFrame, 4);
 			innerGrid.Children.Add(videoNameLbl, 0, 0);
-			Grid.SetColumnSpan(videoNameLbl, 2);
+			Grid.SetColumnSpan(videoNameLbl, 4);
 			innerGrid.Children.Add(playBtn, 0, 1);
-			Grid.SetColumnSpan(playBtn, 2);
+			Grid.SetColumnSpan(playBtn, 3);
+            innerGrid.Children.Add(qualityBtn, 3, 1);
 			innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-			Grid.SetColumnSpan(videoDescriptionScrollView, 2);
+			Grid.SetColumnSpan(videoDescriptionScrollView, 4);
 			innerGrid.Children.Add(deleteBtn, 0, 3);
-			Grid.SetColumnSpan(deleteBtn, 2);
+			Grid.SetColumnSpan(deleteBtn, 4);
 			innerGrid.Children.Add(backBtn, 0, 4);
-			Grid.SetColumnSpan(backBtn, 2);
+			Grid.SetColumnSpan(backBtn, 4);
 
 			outerGrid.Children.Add(innerGrid, 0, 0);
 
@@ -245,6 +267,33 @@ namespace MahechaBJJ.Views.PlaylistPages
 
         }
 
+        public async void ChangeVideoQuality(object sender, EventArgs e)
+        {
+            string result;
+            if (qualityBtn.Text == "SD")
+            {
+                string[] videoQuality = { "HD" };
+                result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
+
+            }
+            else
+            {
+                string[] videoQuality = { "SD" };
+                result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
+            }
+
+            if (result == "SD")
+            {
+                videoUrl = videoTechnique.Link;
+                qualityBtn.Text = "SD";
+            }
+            else if (result == "HD")
+            {
+                videoUrl = videoTechnique.LinkHD;
+                qualityBtn.Text = "HD";
+            }
+        }
+
 		//Orientation
 		protected override void OnSizeAllocated(double width, double height)
 		{
@@ -259,9 +308,12 @@ namespace MahechaBJJ.Views.PlaylistPages
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
+				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+                deleteBtn.Text = "D";
 
 				innerGrid.Children.Clear();
 				innerGrid.Children.Add(videoFrame, 0, 0);
@@ -272,9 +324,10 @@ namespace MahechaBJJ.Views.PlaylistPages
 				Grid.SetColumnSpan(videoNameLbl, 2);
 				innerGrid.Children.Add(backBtn, 2, 1);
 				innerGrid.Children.Add(videoDescriptionScrollView, 2, 0);
-				Grid.SetColumnSpan(videoDescriptionScrollView, 3);
+				Grid.SetColumnSpan(videoDescriptionScrollView, 4);
 				innerGrid.Children.Add(playBtn, 3, 1);
 				innerGrid.Children.Add(deleteBtn, 4, 1);
+                innerGrid.Children.Add(qualityBtn, 5, 1);
 			}
 			else
 			{
@@ -288,19 +341,24 @@ namespace MahechaBJJ.Views.PlaylistPages
 				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+                deleteBtn.Text = "Delete From Playlist";
+
 				innerGrid.Children.Clear();
-				innerGrid.Children.Add(videoFrame, 0, 0);
-				Grid.SetColumnSpan(videoFrame, 2);
-				innerGrid.Children.Add(videoNameLbl, 0, 0);
-				Grid.SetColumnSpan(videoNameLbl, 2);
-				innerGrid.Children.Add(playBtn, 0, 1);
-				Grid.SetColumnSpan(playBtn, 2);
-				innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-				Grid.SetColumnSpan(videoDescriptionScrollView, 2);
-				innerGrid.Children.Add(deleteBtn, 0, 3);
-				Grid.SetColumnSpan(deleteBtn, 2);
-				innerGrid.Children.Add(backBtn, 0, 4);
-				Grid.SetColumnSpan(backBtn, 2);
+                //building grid
+                innerGrid.Children.Add(videoFrame, 0, 0);
+                Grid.SetColumnSpan(videoFrame, 4);
+                innerGrid.Children.Add(videoNameLbl, 0, 0);
+                Grid.SetColumnSpan(videoNameLbl, 4);
+                innerGrid.Children.Add(playBtn, 0, 1);
+                Grid.SetColumnSpan(playBtn, 3);
+                innerGrid.Children.Add(qualityBtn, 3, 1);
+                innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
+                Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+                innerGrid.Children.Add(deleteBtn, 0, 3);
+                Grid.SetColumnSpan(deleteBtn, 4);
+                innerGrid.Children.Add(backBtn, 0, 4);
+                Grid.SetColumnSpan(backBtn, 4);
 			}
 		}
     }
