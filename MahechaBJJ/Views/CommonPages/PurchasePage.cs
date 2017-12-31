@@ -22,9 +22,13 @@ namespace MahechaBJJ.Views.CommonPages
         private Label giTitle;
         private Label giPrice;
         private Label giBody;
+        private Image giImage;
+        private Frame giImageFrame;
         private Label noGiTitle;
         private Label noGiPrice;
         private Label noGiBody;
+        private Image noGiImage;
+        private Frame noGiImageFrame;
         private Button backBtn;
         private Button purchaseBtn;
         private Package package;
@@ -108,26 +112,44 @@ namespace MahechaBJJ.Views.CommonPages
 
             giBody = new Label
             {
-#if __IOS__
+                #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "",
+                Text = "This library is growing constantly and there is no end in sight. The beauty of this package is that you get to follow our system as we develop and implement new transitions and positions. We’re constantly pushing the barrier in terms of our style and approach to Jiu-Jitsu. Every position that gets posted has been drilled to death and executed at the highest levels of competition. We’re proud of this; something I see wrong with other instructional resources is positions are shown that I know they have never ever hit in a competition or anything. You never have to worry about that with our techniques. One of the biggest advantages of our app is that you have direct access to us, if you have any questions or concerns; contacting us is a click away. Let’s grow and develop our Jiu Jitsu together!",
                 FontSize = lblSize,
                 TextColor = Color.Black,
                 FontAttributes = FontAttributes.Bold
             };
 
+            giImage = new Image
+            {
+                Source = ImageSource.FromResource("gi"),
+                Aspect = Aspect.Fill
+            };
+
+            giImageFrame = new Frame
+            {
+                OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                Padding = 2,
+                Content = giImage,
+                HasShadow = false
+            };
+
             giScrollView = new ScrollView
             {
+                BackgroundColor = Color.FromRgb(58, 93, 174),
                 Content = giStackLayout
             };
 
             giFrame = new Frame
             {
                 OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                Padding = 5,
                 Content = giScrollView,
                 HasShadow = false
             };
@@ -163,26 +185,44 @@ namespace MahechaBJJ.Views.CommonPages
 
             noGiBody = new Label
             {
-#if __IOS__
+                #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "",
+                Text = "Just like the other packages, the No-Gi library is constantly being updated. So that means you’ll grow along with us. As we come up with new tweaks and transitions you’ll see it first as we are constantly updating our libraries. Through these techniques and positions your game will be brought to a new technical level. All the while being exposed to a unique point of view on approaching Jiu Jitsu. Some of the biggest advantages of this package is that you have direct access to us, the ones who implement and recorded these techniques. We love to hear from our members and never ignore anyone. Lets grow together!",
                 FontSize = lblSize,
                 TextColor = Color.Black,
                 FontAttributes = FontAttributes.Bold
             };
 
+            noGiImage = new Image
+            {
+                Source = ImageSource.FromResource("nogi6"),
+                Aspect = Aspect.Fill
+            };
+
+            noGiImageFrame = new Frame
+            {
+                OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                Padding = 2,
+                Content = noGiImage,
+                HasShadow = false
+            };
+
             noGiScrollView = new ScrollView
             {
+                BackgroundColor = Color.FromRgb(58, 93, 174),
                 Content = noGiStackLayout
             };
 
             noGiFrame = new Frame
             {
                 OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                Padding = 5,
                 Content = noGiScrollView,
                 HasShadow = false
             };
@@ -243,10 +283,12 @@ namespace MahechaBJJ.Views.CommonPages
             giStackLayout.Children.Add(giTitle);
             giStackLayout.Children.Add(giPrice);
             giStackLayout.Children.Add(giBody);
+            giStackLayout.Children.Add(giImageFrame);
             giStackLayout.Orientation = StackOrientation.Vertical;
             noGiStackLayout.Children.Add(noGiTitle);
             noGiStackLayout.Children.Add(noGiPrice);
             noGiStackLayout.Children.Add(noGiBody);
+            noGiStackLayout.Children.Add(noGiImageFrame);
             noGiStackLayout.Orientation = StackOrientation.Vertical;
 
             if (this.package == Package.Gi)

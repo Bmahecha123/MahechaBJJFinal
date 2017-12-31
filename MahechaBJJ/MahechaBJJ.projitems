@@ -29,6 +29,9 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\settings.png">
       <LogicalName>settings</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\nogi6.jpeg">
+      <LogicalName>nogi6</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">

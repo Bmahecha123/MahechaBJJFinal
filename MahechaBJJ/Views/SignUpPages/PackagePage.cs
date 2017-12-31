@@ -198,7 +198,8 @@ namespace MahechaBJJ.Views.SignUpPages
 
             noGiImage = new Image
             {
-                
+                Source = ImageSource.FromResource("nogi6"),
+                Aspect = Aspect.AspectFill
             };
 
             noGiImageFrame = new Frame
