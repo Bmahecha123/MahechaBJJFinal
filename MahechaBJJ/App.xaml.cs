@@ -1,9 +1,10 @@
-﻿using System.Threading.Tasks;
-using MahechaBJJ.Model;
-using MahechaBJJ.ViewModel.CommonPages;
+﻿using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views;
 using MahechaBJJ.Views.EntryPages;
 using Xamarin.Auth;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Xamarin.Forms;
 
 namespace MahechaBJJ
@@ -43,6 +44,9 @@ namespace MahechaBJJ
         protected override void OnStart()
         {
             // Handle when your app starts
+            AppCenter.Start("ios=9b3870a4-b554-44a6-9fc3-26ae2354c956;" + "uwp={Your UWP App secret here};" +
+                   "android={Your Android App secret here}",
+                   typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()

@@ -81872,7 +81872,7 @@ _mono_aot_file_info:
 	.long 1544,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 74,231,244,120,170,216,23,149,232,237,114,189,0,115,22,168
+	.byte 34,218,159,239,228,46,135,18,204,28,225,192,137,110,157,54
 	.globl _mono_aot_module_System_Net_Http_info
 	.align 3
 _mono_aot_module_System_Net_Http_info:

@@ -91,11 +91,11 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/Newtonsoft.Json.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/PCLCrypto.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/Xamarin.Auth.pdb
-/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/Validation.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/PInvoke.Windows.Core.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/PInvoke.Kernel32.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/PInvoke.BCrypt.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/PInvoke.NCrypt.xml
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/Validation.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/Xamarin.Forms.Core.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/Xamarin.Forms.Core.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/Xamarin.Forms.Core.xml
@@ -137,12 +137,6 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/bin/iPhone/Debug/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll
-/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.csprojResolveAssemblyReference.cache
-/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.csproj.MahechaBJJ.iOS.exe.config
-/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.csproj.CoreCompileInputs.cache
-/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.App.xaml.g.cs
-/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.exe
-/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/device-builds/iphone8.1-11.2.1/ibtool/_BundleResourceWithLogicalName.items
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/device-builds/iphone8.1-11.2.1/actool/_PartialAppManifest.items
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/device-builds/iphone8.1-11.2.1/actool/_BundleResourceWithLogicalName.items
@@ -162,3 +156,8 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/device-builds/iphone8.1-11.2.1/optimized/nogi.png
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/device-builds/iphone8.1-11.2.1/optimized/nogi@2x.png
 /Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/device-builds/iphone8.1-11.2.1/optimized/
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.csproj.MahechaBJJ.iOS.exe.config
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.csproj.CoreCompileInputs.cache
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.App.xaml.g.cs
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.exe
+/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.pdb

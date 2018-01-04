@@ -1,0 +1,26 @@
+Function=xamarin_timezone_get_data
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/mscorlib.dll
+Function=xamarin_GetFolderPath
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/mscorlib.dll
+Function=xamarin_log
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/mscorlib.dll
+Function=CreateZStream
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=CloseZStream
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=Flush
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=ReadZStream
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=WriteZStream
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=xamarin_start_wwan
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=UIApplicationMain
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
+Function=xamarin_get_block_descriptor
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
+Function=xamarin_IntPtr_objc_msgSend_IntPtr
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
+Function=xamarin_IntPtr_objc_msgSendSuper_IntPtr
+	/Users/bmahecha/Desktop/projects/MahechaBJJFinal/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll

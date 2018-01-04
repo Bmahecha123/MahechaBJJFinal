@@ -21,8 +21,8 @@ namespace MahechaBJJ.Service
         {
             client = new HttpClient();
             client.DefaultRequestHeaders.ConnectionClose = true;
-            //client.BaseAddress = new Uri(Constants.pivotalHost);
-            client.BaseAddress = new Uri(Constants.localHost);
+            client.BaseAddress = new Uri(Constants.pivotalHost);
+            //client.BaseAddress = new Uri(Constants.localHost);
             timeSpan = new TimeSpan(0, 0, 20);
             client.Timeout = timeSpan;
         }
