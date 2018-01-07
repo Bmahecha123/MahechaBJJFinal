@@ -205,26 +205,16 @@ namespace MahechaBJJ.Service
             }
         }
 
-        public async Task<bool> DeleteUser(User user)
+        public async Task DeleteUser(User user)
         {
             try
             {
                 client.DefaultRequestHeaders.Add("X-ID", user.Id);
-                var response = await client.DeleteAsync("user");
-
-                if (response.IsSuccessStatusCode)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                await client.DeleteAsync("user");
             }
             catch (HttpRequestException ex)
             {
                 Console.WriteLine(ex.Message);
-                return false;
             }
         }
 	}

@@ -97,6 +97,11 @@ namespace MahechaBJJ.ViewModel.SignUpPages
             }
         }
 
+        public async void DeleteUser(User user)
+        {
+            await _userService.DeleteUser(user);
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

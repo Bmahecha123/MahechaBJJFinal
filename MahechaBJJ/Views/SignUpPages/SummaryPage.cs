@@ -330,6 +330,7 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 await DisplayAlert("Account Exists", $"An account with the email {user.Email} already exists. Use a different email address.", "Ok");
                 await Navigation.PopModalAsync();
+                signUpBtn.IsEnabled = true;
             }
             else 
             {
@@ -341,6 +342,13 @@ namespace MahechaBJJ.Views.SignUpPages
                 await _summaryPageViewModel.CreateUser(user);
                 _summaryPageViewModel.SaveCredentials();
                 Application.Current.MainPage = new MainTabbedPage();
+                signUpBtn.IsEnabled = true;
+            }
+            else 
+            {
+                await DisplayAlert("Purchase Failed", "Failed to purchase package, please try again.", "Ok");
+                _summaryPageViewModel.DeleteUser(user);
+                await Navigation.PopModalAsync();
                 signUpBtn.IsEnabled = true;
             }
         }
@@ -371,8 +379,6 @@ namespace MahechaBJJ.Views.SignUpPages
                 var purchase = await CrossInAppBilling.Current.PurchaseAsync(productId, ItemType.InAppPurchase, $"Purchasing {productId}");
                 if (purchase == null)
                 {
-                    await DisplayAlert("Purchase Failed", "Failed to purchase package, please try again.", "Ok");
-
                     return false;
                 }
                 else
