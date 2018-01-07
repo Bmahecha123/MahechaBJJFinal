@@ -19,12 +19,13 @@ namespace MahechaBJJ.Droid.Service
         {
             var email = new Intent(Intent.ActionSend);
             //var email = new Intent(Android.Content.Intent.ActionSend);
-            //var email = Forms.Context(new Intent(Android.Content.Intent.ActionSend));
+            //var email = (new Intent(Android.Content.Intent.ActionSend));
             email.PutExtra(Intent.ExtraEmail, new string[] { "admin@mahechabjj.com" });
             email.PutExtra(Intent.ExtraSubject, emailMessage.Subject);
             email.PutExtra(Intent.ExtraText, emailMessage.Body);
             email.SetType("message/rfc822");
-            Forms.Context.StartActivity(Intent.CreateChooser(email, "Send Email"));
+            //.StartActivity(Intent.CreateChooser(email, "Send Email"));
+            Android.App.Application.Context.StartActivity(Intent.CreateChooser(email, "Send Email"));
         }
     }
 }

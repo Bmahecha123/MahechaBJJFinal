@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.SignUpPages;
+using Plugin.InAppBilling;
+using Plugin.InAppBilling.Abstractions;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views.SignUpPages
@@ -321,15 +324,25 @@ namespace MahechaBJJ.Views.SignUpPages
         private async void SignUp()
         {
             signUpBtn.IsEnabled = false;
-            await _summaryPageViewModel.CreateUser(user);
-            if (_summaryPageViewModel.User == null)
+            bool purchased = false;
+
+            if (_summaryPageViewModel.UserExist(user))
             {
                 await DisplayAlert("Account Exists", $"An account with the email {user.Email} already exists. Use a different email address.", "Ok");
                 await Navigation.PopModalAsync();
             }
-            _summaryPageViewModel.SaveCredentials();
-            Application.Current.MainPage = new MainTabbedPage();
-            signUpBtn.IsEnabled = true;
+            else 
+            {
+                purchased = await PurchasePackage();
+            }
+
+            if (purchased)
+            {
+                await _summaryPageViewModel.CreateUser(user);
+                _summaryPageViewModel.SaveCredentials();
+                Application.Current.MainPage = new MainTabbedPage();
+                signUpBtn.IsEnabled = true;
+            }
         }
 
         private void GoBack()
@@ -337,6 +350,67 @@ namespace MahechaBJJ.Views.SignUpPages
             backBtn.IsEnabled = false;
             Navigation.PopModalAsync();
             backBtn.IsEnabled = true;
+        }
+
+        private async Task<bool> PurchasePackage()
+        {
+            try
+            {
+                var productId = FindPackageName();
+
+                var connected = await CrossInAppBilling.Current.ConnectAsync();
+
+                if (!connected)
+                {
+                    await DisplayAlert("Failed to Connect", "Failed to connect, please try again.", "Ok");
+
+                    return false;
+                }
+
+                //try to purchase item
+                var purchase = await CrossInAppBilling.Current.PurchaseAsync(productId, ItemType.InAppPurchase, $"Purchasing {productId}");
+                if (purchase == null)
+                {
+                    await DisplayAlert("Purchase Failed", "Failed to purchase package, please try again.", "Ok");
+
+                    return false;
+                }
+                else
+                {
+                    //Product purchased
+                    var id = purchase.Id;
+                    var token = purchase.PurchaseToken;
+                    var state = purchase.State;
+
+                    await DisplayAlert("Product Purchased", $"Product Purchased \nID: {id}\nTOKEN: {token}\nSTATE: {state}", "Ok");
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Failed to Connect", $"Failed to connect with error: {ex}", "Ok");
+                return false;
+            }
+            finally
+            {
+                await CrossInAppBilling.Current.DisconnectAsync();
+            }
+        }
+
+        private string FindPackageName()
+        {
+            if (user.Packages.GiJiuJitsu == true)
+            {
+                return "package_gi";
+            }
+            else if (user.Packages.NoGiJiuJitsu == true)
+            {
+                return "package_nogi";
+            }
+            else 
+            {
+                return "package_giandnogi";
+            }
         }
 
         protected override void OnSizeAllocated(double width, double height)

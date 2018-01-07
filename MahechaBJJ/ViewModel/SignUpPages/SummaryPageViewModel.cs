@@ -83,6 +83,20 @@ namespace MahechaBJJ.ViewModel.SignUpPages
             _accountService.SaveCredentials(_account);
         }
 
+        public bool UserExist(User user)
+        {
+            var userExist = _userService.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, user.Email, user.Password);
+
+            if (userExist != null)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

@@ -182,3 +182,9 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.App.xaml.g.cs
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.exe
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhoneSimulator/Debug/MahechaBJJ.iOS.pdb
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhoneSimulator/Debug/Plugin.InAppBilling.Abstractions.dll
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhoneSimulator/Debug/Plugin.InAppBilling.dll
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhoneSimulator/Debug/Plugin.InAppBilling.Abstractions.pdb
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhoneSimulator/Debug/Plugin.InAppBilling.Abstractions.xml
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhoneSimulator/Debug/Plugin.InAppBilling.pdb
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhoneSimulator/Debug/Plugin.InAppBilling.xml

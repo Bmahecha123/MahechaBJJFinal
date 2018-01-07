@@ -86,6 +86,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignUpPages\SummaryPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Album.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\PurchasePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\PurchaseService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

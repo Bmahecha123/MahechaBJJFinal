@@ -13,6 +13,7 @@ using MahechaBJJ.Service;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using MahechaBJJ.Model;
+using Plugin.InAppBilling;
 
 namespace MahechaBJJ.Droid
 {
@@ -29,9 +30,6 @@ namespace MahechaBJJ.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
 			LoadApplication(new App());
-
-            //MessagingCenter.Subscribe<ProfilePage, EmailMessage>(this, "Send EMail", SendEmail);
-
 		}
 
 		private void HandleShowVideoPlayerMessage(Page page, ShowVideoPlayerArguments arguments)
@@ -42,16 +40,10 @@ namespace MahechaBJJ.Droid
             videoView.Start();
         }
 
-        private void SendEmail(Page page, EmailMessage emailMessage) 
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
-            var email = new Intent(Forms.Context, typeof(Android.Content.Intent));
-            //var email = new Intent(Android.Content.Intent.ActionSend);
-            //var email = Forms.Context(new Intent(Android.Content.Intent.ActionSend));
-            email.PutExtra(Android.Content.Intent.ExtraEmail, new string[] { "admin@mahechabjj.com" });
-            email.PutExtra(Android.Content.Intent.ExtraSubject, emailMessage.Subject);
-            email.PutExtra(Android.Content.Intent.ExtraText, emailMessage.Body);
-            email.SetType("message/rfc822");
-            Forms.Context.StartActivity(email);
+            base.OnActivityResult(requestCode, resultCode, data);
+            InAppBillingImplementation.HandleActivityResult(requestCode, resultCode, data);
         }
 	}
 }
