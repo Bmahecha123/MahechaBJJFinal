@@ -20,6 +20,7 @@ namespace MahechaBJJ.ViewModel.SignUpPages
         private Dictionary<String, string> secretQuestions;
         private UserService _userService;
         private AccountService _accountService;
+        private PurchaseService _purchaseService;
 
         private Account _account;
         public Account Account
@@ -53,6 +54,7 @@ namespace MahechaBJJ.ViewModel.SignUpPages
         {
             _userService = new UserService();
             _accountService = new AccountService();
+            _purchaseService = new PurchaseService();
         }
 
         public async Task CreateUser(User user)
@@ -83,9 +85,9 @@ namespace MahechaBJJ.ViewModel.SignUpPages
             _accountService.SaveCredentials(_account);
         }
 
-        public bool UserExist(User user)
+        public async Task<bool> UserExist(User user)
         {
-            var userExist = _userService.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, user.Email, user.Password);
+            var userExist = await _userService.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, user.Email, user.Password);
 
             if (userExist != null)
             {
@@ -100,6 +102,11 @@ namespace MahechaBJJ.ViewModel.SignUpPages
         public async void DeleteUser(User user)
         {
             await _userService.DeleteUser(user);
+        }
+
+        public Task<bool> PurchaseProduct(string productId)
+        {
+            return _purchaseService.PurchasePackage(productId);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

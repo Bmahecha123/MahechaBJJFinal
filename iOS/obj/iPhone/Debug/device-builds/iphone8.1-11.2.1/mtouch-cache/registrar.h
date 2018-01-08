@@ -16,6 +16,7 @@
 #import <CloudKit/CloudKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import <SafariServices/SafariServices.h>
+#import <StoreKit/StoreKit.h>
 #import <Intents/Intents.h>
 #import <Accounts/Accounts.h>
 #import <GLKit/GLKit.h>
@@ -123,6 +124,8 @@
 @class UIKit_UISplitViewController__UISplitViewControllerDelegate;
 @class UIKit_UITabBarController__UITabBarControllerDelegate;
 @class GLKit_GLKView__GLKViewDelegate;
+@class StoreKit_SKRequest__SKRequestDelegate;
+@class StoreKit_SKProductsRequest__SKProductsRequestDelegate;
 @class UIKit_UIWebView__UIWebViewDelegate;
 @class Xamarin_Controls_ProgressLabel;
 @class Xamarin_Auth_NativeAuthSafariViewControllerDelegate;
@@ -135,6 +138,33 @@
 @class Xamarin_Auth_WebAuthenticatorController;
 @class Xamarin_Auth_FormAuthenticatorController_FieldCell;
 @class Xamarin_Auth_FormAuthenticatorController_FormDataSource;
+@class MSAppCenter;
+@class MSCustomProperties;
+@class MSWrapperSdk;
+@class MSDevice;
+@class MSLogger;
+@protocol MSService;
+@class MSServiceAbstract;
+@class MSWrapperLogger;
+@class MSAnalytics;
+@protocol MSAnalyticsDelegate;
+@class MSLogWithProperties;
+@class MSEventLog;
+@class MSPageLog;
+@protocol MSCrashesDelegate;
+@class Microsoft_AppCenter_Crashes_CrashesDelegate;
+@class MSCrashes;
+@protocol MSCrashHandlerSetupDelegate;
+@class MSErrorAttachmentLog;
+@class MSErrorReport;
+@class MSException;
+@class MSStackFrame;
+@class MSWrapperCrashesHelper;
+@class MSWrapperException;
+@class MSWrapperExceptionManager;
+@class Microsoft_AppCenter_Crashes_iOS_Bindings_CrashesInitializationDelegate;
+@class Plugin_InAppBilling_ProductRequestDelegate;
+@class Plugin_InAppBilling_PaymentObserver;
 
 @protocol UIPickerViewModel<UIPickerViewDataSource, UIPickerViewDelegate>
 @end
@@ -524,6 +554,237 @@
 	-(void) xamarinSetGCHandle: (int) gchandle;
 	-(void) userContentController:(WKUserContentController *)p0 didReceiveScriptMessage:(WKScriptMessage *)p1;
 	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface MSAppCenter : NSObject {
+}
+	-(id) init;
+@end
+
+@interface MSCustomProperties : NSObject {
+}
+	-(void) clearPropertyForKey:(NSString *)p0;
+	-(void) setString:(NSString *)p0 forKey:(NSString *)p1;
+	-(void) setNumber:(NSNumber *)p0 forKey:(NSString *)p1;
+	-(void) setBool:(BOOL)p0 forKey:(NSString *)p1;
+	-(void) setDate:(NSDate *)p0 forKey:(NSString *)p1;
+	-(id) init;
+@end
+
+@interface MSWrapperSdk : NSObject {
+}
+	-(BOOL) isEqual:(id)p0;
+	-(NSString *) liveUpdateDeploymentKey;
+	-(NSString *) liveUpdatePackageHash;
+	-(NSString *) liveUpdateReleaseLabel;
+	-(NSString *) wrapperRuntimeVersion;
+	-(NSString *) wrapperSdkName;
+	-(NSString *) wrapperSdkVersion;
+	-(id) init;
+	-(id) initWithWrapperSdkVersion:(NSString *)p0 wrapperSdkName:(NSString *)p1 wrapperRuntimeVersion:(NSString *)p2 liveUpdateReleaseLabel:(NSString *)p3 liveUpdateDeploymentKey:(NSString *)p4 liveUpdatePackageHash:(NSString *)p5;
+@end
+
+@interface MSDevice : MSWrapperSdk {
+}
+	-(BOOL) isEqual:(id)p0;
+	-(NSString *) appBuild;
+	-(NSString *) appNamespace;
+	-(NSString *) appVersion;
+	-(NSString *) carrierCountry;
+	-(NSString *) carrierName;
+	-(NSString *) locale;
+	-(NSString *) model;
+	-(NSString *) oemName;
+	-(NSNumber *) osApiLevel;
+	-(NSString *) osBuild;
+	-(NSString *) osName;
+	-(NSString *) osVersion;
+	-(NSString *) screenSize;
+	-(NSString *) sdkName;
+	-(NSString *) sdkVersion;
+	-(NSNumber *) timeZoneOffset;
+	-(id) init;
+@end
+
+@interface MSLogger : NSObject {
+}
+	-(id) init;
+@end
+
+@protocol MSService
+	@optional +(BOOL) isEnabled;
+	@optional +(void) setEnabled:(BOOL)p0;
+@end
+
+@interface MSServiceAbstract : NSObject {
+}
+	-(id) init;
+@end
+
+@interface MSWrapperLogger : NSObject {
+}
+	-(id) init;
+@end
+
+@interface MSAnalytics : NSObject {
+}
+	-(id) init;
+@end
+
+@protocol MSAnalyticsDelegate
+	@optional -(void) analytics:(id)p0 willSendEventLog:(id)p1;
+	@optional -(void) analytics:(id)p0 didSucceedSendingEventLog:(id)p1;
+	@optional -(void) analytics:(id)p0 didFailSendingEventLog:(id)p1 withError:(NSError *)p2;
+@end
+
+@interface MSLogWithProperties : NSObject {
+}
+	-(NSDictionary <NSString *, NSString *>*) properties;
+	-(void) setProperties:(NSDictionary <NSString *, NSString *>*)p0;
+	-(id) init;
+@end
+
+@interface MSEventLog : MSLogWithProperties {
+}
+	-(NSString *) eventId;
+	-(void) setEventId:(NSString *)p0;
+	-(NSString *) name;
+	-(void) setName:(NSString *)p0;
+	-(NSDictionary <NSString *, NSString *>*) properties;
+	-(void) setProperties:(NSDictionary <NSString *, NSString *>*)p0;
+	-(id) init;
+@end
+
+@interface MSPageLog : MSLogWithProperties {
+}
+	-(NSString *) name;
+	-(void) setName:(NSString *)p0;
+	-(NSDictionary <NSString *, NSString *>*) properties;
+	-(void) setProperties:(NSDictionary <NSString *, NSString *>*)p0;
+	-(id) init;
+@end
+
+@protocol MSCrashesDelegate
+	@optional -(BOOL) crashes:(id)p0 shouldProcessErrorReport:(id)p1;
+	@optional -(NSArray *) attachmentsWithCrashes:(id)p0 forErrorReport:(id)p1;
+	@optional -(void) crashes:(id)p0 willSendErrorReport:(id)p1;
+	@optional -(void) crashes:(id)p0 didSucceedSendingErrorReport:(id)p1;
+	@optional -(void) crashes:(id)p0 didFailSendingErrorReport:(id)p1 withError:(NSError *)p2;
+@end
+
+@interface Microsoft_AppCenter_Crashes_CrashesDelegate : NSObject<MSCrashesDelegate> {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(BOOL) crashes:(id)p0 shouldProcessErrorReport:(id)p1;
+	-(NSArray *) attachmentsWithCrashes:(id)p0 forErrorReport:(id)p1;
+	-(void) crashes:(id)p0 willSendErrorReport:(id)p1;
+	-(void) crashes:(id)p0 didSucceedSendingErrorReport:(id)p1;
+	-(void) crashes:(id)p0 didFailSendingErrorReport:(id)p1 withError:(NSError *)p2;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface MSCrashes : NSObject {
+}
+	-(id) init;
+@end
+
+@protocol MSCrashHandlerSetupDelegate
+	@optional -(void) willSetUpCrashHandlers;
+	@optional -(void) didSetUpCrashHandlers;
+	@optional -(BOOL) shouldEnableUncaughtExceptionHandler;
+@end
+
+@interface MSErrorAttachmentLog : NSObject {
+}
+	-(id) init;
+@end
+
+@interface MSErrorReport : NSObject {
+}
+	-(NSDate *) appErrorTime;
+	-(NSUInteger) appProcessIdentifier;
+	-(NSDate *) appStartTime;
+	-(id) device;
+	-(NSString *) exceptionName;
+	-(NSString *) exceptionReason;
+	-(NSString *) incidentIdentifier;
+	-(BOOL) isAppKill;
+	-(NSString *) reporterKey;
+	-(NSString *) signal;
+	-(id) init;
+@end
+
+@interface MSException : NSObject {
+}
+	-(BOOL) isEqual:(id)p0;
+	-(NSArray *) frames;
+	-(void) setFrames:(NSArray *)p0;
+	-(NSArray *) innerExceptions;
+	-(void) setInnerExceptions:(NSArray *)p0;
+	-(NSString *) message;
+	-(void) setMessage:(NSString *)p0;
+	-(NSString *) stackTrace;
+	-(void) setStackTrace:(NSString *)p0;
+	-(NSString *) type;
+	-(void) setType:(NSString *)p0;
+	-(NSString *) wrapperSdkName;
+	-(void) setWrapperSdkName:(NSString *)p0;
+	-(id) init;
+@end
+
+@interface MSStackFrame : NSObject {
+}
+	-(BOOL) isEqual:(id)p0;
+	-(NSString *) address;
+	-(void) setAddress:(NSString *)p0;
+	-(NSString *) className;
+	-(void) setClassName:(NSString *)p0;
+	-(NSString *) code;
+	-(void) setCode:(NSString *)p0;
+	-(NSString *) fileName;
+	-(void) setFileName:(NSString *)p0;
+	-(NSNumber *) lineNumber;
+	-(void) setLineNumber:(NSNumber *)p0;
+	-(NSString *) methodName;
+	-(void) setMethodName:(NSString *)p0;
+	-(id) init;
+@end
+
+@interface MSWrapperCrashesHelper : NSObject {
+}
+	-(id) init;
+@end
+
+@interface MSWrapperException : NSObject {
+}
+	-(id) modelException;
+	-(void) setModelException:(id)p0;
+	-(NSData *) exceptionData;
+	-(void) setExceptionData:(NSData *)p0;
+	-(NSNumber *) processId;
+	-(void) setProcessId:(NSNumber *)p0;
+	-(id) init;
+@end
+
+@interface MSWrapperExceptionManager : NSObject {
+}
+	-(id) init;
+@end
+
+@interface Microsoft_AppCenter_Crashes_iOS_Bindings_CrashesInitializationDelegate : NSObject<MSCrashHandlerSetupDelegate> {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) willSetUpCrashHandlers;
+	-(void) didSetUpCrashHandlers;
+	-(BOOL) shouldEnableUncaughtExceptionHandler;
+	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
 @end
 
 

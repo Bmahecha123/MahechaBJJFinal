@@ -377,12 +377,12 @@ namespace MahechaBJJ.Views
             else if (account.Properties["Package"].Contains("Gi"))
             {
                 string[] packages = { "NoGi" };
-                Navigation.PushModalAsync(new PurchasePage(Package.NoGi));
+                Navigation.PushModalAsync(new PurchasePage(Package.Gi));
             } 
             else 
             {
                 string[] packages = { "Gi" };
-                Navigation.PushModalAsync(new PurchasePage(Package.Gi));
+                Navigation.PushModalAsync(new PurchasePage(Package.NoGi));
             }
         }
 

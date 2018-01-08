@@ -324,9 +324,10 @@ namespace MahechaBJJ.Views.SignUpPages
         private async void SignUp()
         {
             signUpBtn.IsEnabled = false;
+            backBtn.IsEnabled = false;
             bool purchased = false;
 
-            if (_summaryPageViewModel.UserExist(user))
+            if (await _summaryPageViewModel.UserExist(user))
             {
                 await DisplayAlert("Account Exists", $"An account with the email {user.Email} already exists. Use a different email address.", "Ok");
                 await Navigation.PopModalAsync();
@@ -334,7 +335,7 @@ namespace MahechaBJJ.Views.SignUpPages
             }
             else 
             {
-                purchased = await PurchasePackage();
+                purchased = await _summaryPageViewModel.PurchaseProduct(FindPackageName());
             }
 
             if (purchased)
@@ -343,13 +344,14 @@ namespace MahechaBJJ.Views.SignUpPages
                 _summaryPageViewModel.SaveCredentials();
                 Application.Current.MainPage = new MainTabbedPage();
                 signUpBtn.IsEnabled = true;
+                backBtn.IsEnabled = true;
             }
             else 
             {
-                await DisplayAlert("Purchase Failed", "Failed to purchase package, please try again.", "Ok");
                 _summaryPageViewModel.DeleteUser(user);
                 await Navigation.PopModalAsync();
                 signUpBtn.IsEnabled = true;
+                backBtn.IsEnabled = true;
             }
         }
 
@@ -358,49 +360,6 @@ namespace MahechaBJJ.Views.SignUpPages
             backBtn.IsEnabled = false;
             Navigation.PopModalAsync();
             backBtn.IsEnabled = true;
-        }
-
-        private async Task<bool> PurchasePackage()
-        {
-            try
-            {
-                var productId = FindPackageName();
-
-                var connected = await CrossInAppBilling.Current.ConnectAsync();
-
-                if (!connected)
-                {
-                    await DisplayAlert("Failed to Connect", "Failed to connect, please try again.", "Ok");
-
-                    return false;
-                }
-
-                //try to purchase item
-                var purchase = await CrossInAppBilling.Current.PurchaseAsync(productId, ItemType.InAppPurchase, $"Purchasing {productId}");
-                if (purchase == null)
-                {
-                    return false;
-                }
-                else
-                {
-                    //Product purchased
-                    var id = purchase.Id;
-                    var token = purchase.PurchaseToken;
-                    var state = purchase.State;
-
-                    await DisplayAlert("Product Purchased", $"Product Purchased \nID: {id}\nTOKEN: {token}\nSTATE: {state}", "Ok");
-                    return true;
-                }
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Failed to Connect", $"Failed to connect with error: {ex}", "Ok");
-                return false;
-            }
-            finally
-            {
-                await CrossInAppBilling.Current.DisconnectAsync();
-            }
         }
 
         private string FindPackageName()

@@ -1,6 +1,7 @@
 ﻿using System;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.CommonPages;
+using MahechaBJJ.ViewModel.MainTabPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
 
@@ -9,6 +10,7 @@ namespace MahechaBJJ.Views.CommonPages
     public class PurchasePage : ContentPage
     {
         private BaseViewModel _baseViewModel;
+        private PurchasePageViewModel _purchasePageViewModel;
         private Account account;
         private Grid outerGrid;
         private Grid innerGrid;
@@ -36,6 +38,7 @@ namespace MahechaBJJ.Views.CommonPages
         public PurchasePage(Package package)
         {
             _baseViewModel = new BaseViewModel();
+            _purchasePageViewModel = new PurchasePageViewModel();
             account = _baseViewModel.GetAccountInformation();
             this.package = package;
             Padding = new Thickness(10, 30, 10, 10);
@@ -53,7 +56,8 @@ namespace MahechaBJJ.Views.CommonPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}                }
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}                
+                }
             };
 
             innerGrid = new Grid
@@ -269,12 +273,7 @@ namespace MahechaBJJ.Views.CommonPages
                 Navigation.PopModalAsync();
             };
             purchaseBtn.Clicked += (object sender, EventArgs e) => {
-                //insert logic for Itunes or Play Store APIS
-                account.Properties.Remove("Package");
-                account.Properties.Add("Package", "GiAndNoGi");
-                _baseViewModel.UpdateCredentials(account);
-                DisplayAlert("Successfully Purchased Package", "You have successfully purchased this package", "Ok");
-                Navigation.PopModalAsync();
+                PurchasePackage();
             };
 
             buttonGrid.Children.Add(backBtn, 0, 0);
@@ -304,6 +303,51 @@ namespace MahechaBJJ.Views.CommonPages
             outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = outerGrid;
+        }
+
+        private async void PurchasePackage()
+        {
+            purchaseBtn.IsEnabled = false;
+            backBtn.IsEnabled = false;
+            bool purchased = false;
+
+
+            purchased = await _purchasePageViewModel.PurchasePackage(FindPackageName());
+
+            if (purchased)
+            {
+                //insert logic for Itunes or Play Store APIS
+                account.Properties.Remove("Package");
+                account.Properties.Add("Package", "GiAndNoGi");
+                _baseViewModel.UpdateCredentials(account);
+                await DisplayAlert("Successfully Purchased Package", "You have successfully purchased this package", "Ok");
+                await Navigation.PopModalAsync();
+
+                purchaseBtn.IsEnabled = true;
+                backBtn.IsEnabled = true;
+            }
+            else
+            {
+                await Navigation.PopModalAsync();
+                purchaseBtn.IsEnabled = true;
+                backBtn.IsEnabled = true;
+            }
+        }
+
+        private string FindPackageName()
+        {
+            if (package == Package.Gi)
+            {
+                return "package_gi";
+            }
+            else if (package == Package.NoGi)
+            {
+                return "package_nogi";
+            }
+            else
+            {
+                return "package_giandnogi";
+            }
         }
     }
 }
