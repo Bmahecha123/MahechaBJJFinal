@@ -367,15 +367,15 @@ namespace MahechaBJJ.Views.SignUpPages
         {
             if (user.Packages.GiJiuJitsu == true)
             {
-                return "package_gi";
+                return "package_gi_consumable";
             }
             else if (user.Packages.NoGiJiuJitsu == true)
             {
-                return "package_nogi";
+                return "package_nogi_consumable";
             }
             else 
             {
-                return "package_giandnogi";
+                return "package_giandnogi_consumable";
             }
         }
 

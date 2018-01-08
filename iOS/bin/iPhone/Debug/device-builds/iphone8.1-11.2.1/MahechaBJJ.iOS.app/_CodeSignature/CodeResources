@@ -94,11 +94,11 @@
 		</data>
 		<key>MahechaBJJ.iOS.aotdata.arm64</key>
 		<data>
-		3ifyFLUgCDTaRCFFUCs/XidZlNU=
+		nkjG+B86Jpk2y6DQJIEWIz3jrmQ=
 		</data>
 		<key>MahechaBJJ.iOS.exe</key>
 		<data>
-		LSUUHsY8/GlXjpciFY8L+Rpbw64=
+		q0g7SQfj/DEJ2+DwEBNZjZHbkjY=
 		</data>
 		<key>MahechaBJJ.iOS.exe.config</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>MahechaBJJ.iOS.pdb</key>
 		<data>
-		nGutAiqBNZEFNNhWrj6tYy89WB0=
+		ZHHRgPROlRr92ILWdw+zb5D7wgI=
 		</data>
 		<key>Microsoft.AppCenter.Analytics.aotdata.arm64</key>
 		<data>
@@ -1038,22 +1038,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3ifyFLUgCDTaRCFFUCs/XidZlNU=
+			nkjG+B86Jpk2y6DQJIEWIz3jrmQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			5ffPCqAO9jR+RWHfAiGkAWy6ZWxntM1XNxP5qHUjA5s=
+			jgH/3kFCEAK1vPwDSw+0xoo4ht1nqHi6IOTRmheEorQ=
 			</data>
 		</dict>
 		<key>MahechaBJJ.iOS.exe</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LSUUHsY8/GlXjpciFY8L+Rpbw64=
+			q0g7SQfj/DEJ2+DwEBNZjZHbkjY=
 			</data>
 			<key>hash2</key>
 			<data>
-			/2oPzaD4ETSr0o/Wapd1b0qWeicv18U3TtGcqmdns5Y=
+			SunJMETPSeVb3WED2Ekor9n9sUS6HsS2MytBRYelOU0=
 			</data>
 		</dict>
 		<key>MahechaBJJ.iOS.exe.config</key>
@@ -1071,11 +1071,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nGutAiqBNZEFNNhWrj6tYy89WB0=
+			ZHHRgPROlRr92ILWdw+zb5D7wgI=
 			</data>
 			<key>hash2</key>
 			<data>
-			bpa8xrxkywT178BloJ1wuuAQe58eGFd/HsUPvFoNkPU=
+			bX1XL0bUgtpChMPNnBeZ8qKOZflvEmAZqg5tvkezqdM=
 			</data>
 		</dict>
 		<key>Microsoft.AppCenter.Analytics.aotdata.arm64</key>

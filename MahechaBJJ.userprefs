@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D0D6A1DA-CA20-42FD-B8A7-B1A1A9BEED45" automaticSigning="False" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/EntryPages/EntryPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/SignUpPages/SummaryPage.cs">
     <Files>
       <File FileName="MahechaBJJ/Views/SignUpPages/PackagePage.cs" Line="1" Column="1" />
       <File FileName="MahechaBJJ/Views/CommonPages/PurchasePage.cs" Line="1" Column="1" />
@@ -8,11 +8,10 @@
       <File FileName="iOS/AppDelegate.cs" Line="12" Column="13" />
       <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
       <File FileName="MahechaBJJ/App.xaml.cs" Line="5" Column="20" />
-      <File FileName="packages/Plugin.InAppBilling.1.2.3.107/readme.txt" Line="1" Column="1" />
       <File FileName="MahechaBJJ/Views/MainTabPages/ProfilePage.cs" Line="1" Column="1" />
       <File FileName="MahechaBJJ/Service/IEmailService.cs" Line="8" Column="14" />
       <File FileName="Droid/Service/EmailService_Android.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/SignUpPages/SummaryPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/SignUpPages/SummaryPage.cs" Line="5" Column="19" />
       <File FileName="MahechaBJJ/ViewModel/SignUpPages/SummaryPageViewModel.cs" Line="1" Column="1" />
       <File FileName=":Users:bmahecha:Desktop:projects:MahechaBJJ:MahechaBJJXForms:MahechaBJJ:Service:PurchaseService.cs" Line="16" Column="64" />
       <File FileName="MahechaBJJ/Views/SignUpPages/SignUpPage.cs" Line="49" Column="32" />
@@ -20,7 +19,7 @@
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
       <File FileName="MahechaBJJ/ViewModel/MainTabPages/PurchasePageViewModel.cs" Line="1" Column="1" />
       <File FileName="iOS/Info.plist" />
-      <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="48" Column="72" />
+      <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="92" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -48,7 +47,7 @@
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="88" column="1" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="36" column="1" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="90" column="1" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="16" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="17" column="1" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/SignUpPage.cs" relfile="MahechaBJJ/Views/EntryPages/SignUpPage.cs" line="356" column="1" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/LoginPage.cs" relfile="MahechaBJJ/Views/EntryPages/LoginPage.cs" line="39" column="1" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Service/UserService.cs" relfile="MahechaBJJ/Service/UserService.cs" line="171" column="1" />
