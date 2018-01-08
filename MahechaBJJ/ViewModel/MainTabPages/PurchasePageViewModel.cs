@@ -17,5 +17,10 @@ namespace MahechaBJJ.ViewModel.MainTabPages
         {
             return _purchaseService.PurchasePackage(productId);
         }
+
+        public async Task Disconnect()
+        {
+            await _purchaseService.Disconnect();
+        }
     }
 }

@@ -320,6 +320,7 @@ namespace MahechaBJJ.Views.CommonPages
                 account.Properties.Remove("Package");
                 account.Properties.Add("Package", "GiAndNoGi");
                 _baseViewModel.UpdateCredentials(account);
+                await _purchasePageViewModel.Disconnect();
                 await Navigation.PopModalAsync();
 
                 purchaseBtn.IsEnabled = true;

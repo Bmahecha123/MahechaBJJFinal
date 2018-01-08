@@ -109,6 +109,11 @@ namespace MahechaBJJ.ViewModel.SignUpPages
             return _purchaseService.PurchasePackage(productId);
         }
 
+        public async Task Disconnect()
+        {
+            await _purchaseService.Disconnect();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

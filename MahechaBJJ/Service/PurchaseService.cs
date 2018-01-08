@@ -42,10 +42,11 @@ namespace MahechaBJJ.Service
             {
                 return false;
             }
-            finally
-            {
-                await CrossInAppBilling.Current.DisconnectAsync();
-            }
+        }
+
+        public async Task Disconnect()
+        {
+            await CrossInAppBilling.Current.DisconnectAsync();
         }
     }
 }

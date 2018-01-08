@@ -343,6 +343,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 await _summaryPageViewModel.CreateUser(user);
                 _summaryPageViewModel.SaveCredentials();
                 Application.Current.MainPage = new MainTabbedPage();
+                await _summaryPageViewModel.Disconnect();
                 signUpBtn.IsEnabled = true;
                 backBtn.IsEnabled = true;
             }
