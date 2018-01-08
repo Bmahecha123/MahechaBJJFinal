@@ -369,20 +369,18 @@ namespace MahechaBJJ.Views
         {
             account = _baseViewModel.GetAccountInformation();
 
-            if (account.Properties["Package"].Contains("GiAndNoGi"))
+            if (account.Properties["Package"].Equals("GiAndNoGi"))
             {
                 DisplayAlert("No Packages", "No more packages are available for you to purchase.", "Ok");
                 return;
             }
-            else if (account.Properties["Package"].Contains("Gi"))
+            else if (account.Properties["Package"].Equals("Gi"))
             {
-                string[] packages = { "NoGi" };
-                Navigation.PushModalAsync(new PurchasePage(Package.Gi));
+                Navigation.PushModalAsync(new PurchasePage(Package.NoGi));
             } 
             else 
             {
-                string[] packages = { "Gi" };
-                Navigation.PushModalAsync(new PurchasePage(Package.NoGi));
+                Navigation.PushModalAsync(new PurchasePage(Package.Gi));
             }
         }
 
