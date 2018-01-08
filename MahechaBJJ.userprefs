@@ -1,29 +1,28 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D0D6A1DA-CA20-42FD-B8A7-B1A1A9BEED45" automaticSigning="False" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/ViewModel/MainTabPages/PurchasePageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Service/PurchaseService.cs">
     <Files>
       <File FileName="MahechaBJJ/Views/SignUpPages/PackagePage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/CommonPages/PurchasePage.cs" Line="271" Column="19" />
-      <File FileName="MahechaBJJ/Service/UserService.cs" Line="51" Column="5" />
+      <File FileName="MahechaBJJ/Views/CommonPages/PurchasePage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Service/UserService.cs" Line="1" Column="1" />
       <File FileName="iOS/AppDelegate.cs" Line="12" Column="13" />
-      <File FileName="Droid/MainActivity.cs" Line="32" Column="31" />
+      <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
       <File FileName="MahechaBJJ/App.xaml.cs" Line="5" Column="20" />
-      <File FileName="iOS/Info.plist" />
       <File FileName="packages/Plugin.InAppBilling.1.2.3.107/readme.txt" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/MainTabPages/ProfilePage.cs" Line="290" Column="60" />
+      <File FileName="MahechaBJJ/Views/MainTabPages/ProfilePage.cs" Line="1" Column="1" />
       <File FileName="MahechaBJJ/Service/IEmailService.cs" Line="8" Column="14" />
-      <File FileName="Droid/Service/EmailService_Android.cs" Line="27" Column="19" />
-      <File FileName="MahechaBJJ/Views/SignUpPages/SummaryPage.cs" Line="339" Column="1" />
-      <File FileName="MahechaBJJ/ViewModel/SignUpPages/SummaryPageViewModel.cs" Line="107" Column="11" />
+      <File FileName="Droid/Service/EmailService_Android.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/SignUpPages/SummaryPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/ViewModel/SignUpPages/SummaryPageViewModel.cs" Line="1" Column="1" />
       <File FileName=":Users:bmahecha:Desktop:projects:MahechaBJJ:MahechaBJJXForms:MahechaBJJ:Service:PurchaseService.cs" Line="16" Column="64" />
       <File FileName="MahechaBJJ/Views/SignUpPages/SignUpPage.cs" Line="49" Column="32" />
-      <File FileName="MahechaBJJ/Service/PurchaseService.cs" Line="46" Column="30" />
+      <File FileName="MahechaBJJ/Service/PurchaseService.cs" Line="1" Column="1" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="MahechaBJJ/ViewModel/MainTabPages/PurchasePageViewModel.cs" Line="6" Column="9" />
+      <File FileName="MahechaBJJ/ViewModel/MainTabPages/PurchasePageViewModel.cs" Line="1" Column="1" />
+      <File FileName="iOS/Info.plist" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.Droid PreferredExecutionTarget="Android.SelectDevice" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/VideoPlayerService_Android.cs" relfile="Droid/VideoPlayerService_Android.cs" line="33" column="1" />
@@ -54,6 +53,7 @@
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Service/UserService.cs" relfile="MahechaBJJ/Service/UserService.cs" line="171" column="1" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/ViewModel/CommonPages/BaseViewModel.cs" relfile="MahechaBJJ/ViewModel/CommonPages/BaseViewModel.cs" line="173" column="52" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/ViewModel/SignUpPages/SummaryPageViewModel.cs" relfile="MahechaBJJ/ViewModel/SignUpPages/SummaryPageViewModel.cs" line="109" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/CommonPages/PurchasePage.cs" relfile="MahechaBJJ/Views/CommonPages/PurchasePage.cs" line="44" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
