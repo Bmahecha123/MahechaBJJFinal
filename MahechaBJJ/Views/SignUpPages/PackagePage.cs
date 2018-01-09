@@ -7,7 +7,6 @@ namespace MahechaBJJ.Views.SignUpPages
 {
     public class PackagePage : ContentPage
     {
-        private Package package;
         private Grid innerGrid;
         private Grid outerGrid;
         private Frame giFrame;

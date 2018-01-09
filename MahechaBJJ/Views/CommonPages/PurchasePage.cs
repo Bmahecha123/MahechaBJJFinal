@@ -342,15 +342,15 @@ namespace MahechaBJJ.Views.CommonPages
         {
             if (package == Package.Gi)
             {
-                return "package_gi_consumable";
+                return "package_gi_jiujitsu";
             }
             else if (package == Package.NoGi)
             {
-                return "package_nogi_consumable";
+                return "package_nogi_jiujitsu";
             }
             else
             {
-                return "package_giandnogi_consumable";
+                return "package_giandnogi_jiujitsu";
             }
         }
     }
