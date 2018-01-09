@@ -7358,14 +7358,14 @@ exception_handling:;
 	-(BOOL) application:(UIApplication *)p0 didFinishLaunchingWithOptions:(NSDictionary *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, p1, 0x20C00);
+		return native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, p1, 0x21500);
 	}
 
 	-(id) init
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x21000);
+		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x21900);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [Xamarin_Forms_Platform_iOS_FormsApplicationDelegate class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
