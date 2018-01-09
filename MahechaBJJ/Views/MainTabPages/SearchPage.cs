@@ -32,10 +32,7 @@ namespace MahechaBJJ.Views
 
 
         //CONSTS
-        private string ALBUM;
-        private string USERBASEURL = "https://api.vimeo.com/me/albums/";
         private const string VIMEOBASEURL = "https://api.vimeo.com";
-        //private string VIMEOVIDEOS = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952";
         private string VIMEOVIDEOS;
         private const string VIDEOSPERPAGE = "&per_page=5";
         private const string QUERY = "&query=";

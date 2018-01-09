@@ -22,9 +22,17 @@ extern void *mono_aot_module_PInvoke_Kernel32_info;
 extern void *mono_aot_module_System_Numerics_info;
 extern void *mono_aot_module_Validation_info;
 extern void *mono_aot_module_System_Json_info;
+extern void *mono_aot_module_Plugin_InAppBilling_Abstractions_info;
 extern void *mono_aot_module_Newtonsoft_Json_info;
 extern void *mono_aot_module_System_Xml_Linq_info;
 extern void *mono_aot_module_Microsoft_CSharp_info;
+extern void *mono_aot_module_Microsoft_AppCenter_Analytics_info;
+extern void *mono_aot_module_Microsoft_AppCenter_info;
+extern void *mono_aot_module_Microsoft_AppCenter_iOS_Bindings_info;
+extern void *mono_aot_module_Microsoft_AppCenter_Analytics_iOS_Bindings_info;
+extern void *mono_aot_module_Microsoft_AppCenter_Crashes_info;
+extern void *mono_aot_module_Microsoft_AppCenter_Crashes_iOS_Bindings_info;
+extern void *mono_aot_module_Plugin_InAppBilling_info;
 
 void xamarin_register_modules_impl ()
 {
@@ -50,9 +58,17 @@ void xamarin_register_modules_impl ()
 	mono_aot_register_module (mono_aot_module_System_Numerics_info);
 	mono_aot_register_module (mono_aot_module_Validation_info);
 	mono_aot_register_module (mono_aot_module_System_Json_info);
+	mono_aot_register_module (mono_aot_module_Plugin_InAppBilling_Abstractions_info);
 	mono_aot_register_module (mono_aot_module_Newtonsoft_Json_info);
 	mono_aot_register_module (mono_aot_module_System_Xml_Linq_info);
 	mono_aot_register_module (mono_aot_module_Microsoft_CSharp_info);
+	mono_aot_register_module (mono_aot_module_Microsoft_AppCenter_Analytics_info);
+	mono_aot_register_module (mono_aot_module_Microsoft_AppCenter_info);
+	mono_aot_register_module (mono_aot_module_Microsoft_AppCenter_iOS_Bindings_info);
+	mono_aot_register_module (mono_aot_module_Microsoft_AppCenter_Analytics_iOS_Bindings_info);
+	mono_aot_register_module (mono_aot_module_Microsoft_AppCenter_Crashes_info);
+	mono_aot_register_module (mono_aot_module_Microsoft_AppCenter_Crashes_iOS_Bindings_info);
+	mono_aot_register_module (mono_aot_module_Plugin_InAppBilling_info);
 
 }
 
@@ -62,6 +78,16 @@ void xamarin_register_assemblies_impl ()
 	xamarin_open_and_register ("Xamarin.Forms.Platform.iOS.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("Xamarin.Auth.dll", &exception_gchandle);
+	xamarin_process_managed_exception_gchandle (exception_gchandle);
+	xamarin_open_and_register ("Microsoft.AppCenter.iOS.Bindings.dll", &exception_gchandle);
+	xamarin_process_managed_exception_gchandle (exception_gchandle);
+	xamarin_open_and_register ("Microsoft.AppCenter.Analytics.iOS.Bindings.dll", &exception_gchandle);
+	xamarin_process_managed_exception_gchandle (exception_gchandle);
+	xamarin_open_and_register ("Microsoft.AppCenter.Crashes.dll", &exception_gchandle);
+	xamarin_process_managed_exception_gchandle (exception_gchandle);
+	xamarin_open_and_register ("Microsoft.AppCenter.Crashes.iOS.Bindings.dll", &exception_gchandle);
+	xamarin_process_managed_exception_gchandle (exception_gchandle);
+	xamarin_open_and_register ("Plugin.InAppBilling.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 
 }

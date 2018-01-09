@@ -270,6 +270,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             //events
             backBtn.Clicked += (object sender, EventArgs e) => {
+                ToggleButtons();
                 Navigation.PopModalAsync();
             };
             purchaseBtn.Clicked += (object sender, EventArgs e) => {
@@ -307,8 +308,7 @@ namespace MahechaBJJ.Views.CommonPages
 
         private async void PurchasePackage()
         {
-            purchaseBtn.IsEnabled = false;
-            backBtn.IsEnabled = false;
+            ToggleButtons();
             bool purchased = false;
 
 
@@ -323,15 +323,19 @@ namespace MahechaBJJ.Views.CommonPages
                 await _purchasePageViewModel.Disconnect();
                 await Navigation.PopModalAsync();
 
-                purchaseBtn.IsEnabled = true;
-                backBtn.IsEnabled = true;
+                ToggleButtons();
             }
             else
             {
                 await Navigation.PopModalAsync();
-                purchaseBtn.IsEnabled = true;
-                backBtn.IsEnabled = true;
+                ToggleButtons();
             }
+        }
+
+        private void ToggleButtons()
+        {
+            purchaseBtn.IsEnabled = !purchaseBtn.IsEnabled;
+            backBtn.IsEnabled = !backBtn.IsEnabled;
         }
 
         private string FindPackageName()

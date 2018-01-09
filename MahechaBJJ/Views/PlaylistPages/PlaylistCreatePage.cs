@@ -196,6 +196,7 @@ namespace MahechaBJJ.Views.PlaylistPages
         public async void CreatePlaylist(object sender, EventArgs e)
         {
             createBtn.IsEnabled = false;
+            backBtn.IsEnabled = false;
             if (playListNameEntry.Text != null){
 				playlist = new PlayList();
 				playlist.Name = playListNameEntry.Text;
@@ -215,6 +216,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 playListNameEntry.Focus();
             }
             createBtn.IsEnabled = true;
+            backBtn.IsEnabled = true;
         }
 
 		//Orientation

@@ -225,27 +225,27 @@ namespace MahechaBJJ.Views.PlaylistPages
 
 		public void PlayIOSVideo(object sender, EventArgs e)
 		{
-			playBtn.IsEnabled = false;
+            ToggleButtons();
 			MessagingCenter.Send(this, "ShowVideoPlayer", new ShowVideoPlayerArguments(videoUrl));
-			playBtn.IsEnabled = true;
+            ToggleButtons();
 		}
 
 		public async void PlayAndroidVideo(object sender, EventArgs e)
 		{
-			playBtn.IsEnabled = false;
+            ToggleButtons();
             await Navigation.PushModalAsync(new AndroidVideoPage(videoUrl));
-			playBtn.IsEnabled = true;
+            ToggleButtons();
 		}
 
 		public void GoBack(object sender, EventArgs e)
 		{
-			backBtn.IsEnabled = false;
+            ToggleButtons();
 			Navigation.PopModalAsync();
 		}
 
         public async void DeleteFromPlaylist(object sender, EventArgs e)
         {
-            deleteBtn.IsEnabled = false;
+            ToggleButtons();
             bool deleteVideo = await DisplayAlert("Delete Video From Playlist", "Remove " + videoTechnique.Name + " from " + userPlaylist.Name + "?", "Yes", "No");
 
             if (deleteVideo)
@@ -257,18 +257,29 @@ namespace MahechaBJJ.Views.PlaylistPages
                 {
                     await DisplayAlert("Video Deleted From Playlist", videoTechnique.Name + " has been successfully deleted from " + userPlaylist.Name + ".", "Ok");
                     await Navigation.PopModalAsync();
+                    ToggleButtons();
                 } else {
 					await DisplayAlert("Video Not Deleted From Playlist", videoTechnique.Name + " has not been deleted from " + userPlaylist.Name + ". Try again!", "Ok");
-                    deleteBtn.IsEnabled = true;
+                    ToggleButtons();
 				}
             } else {
+                ToggleButtons();
                 return;
             }
 
         }
 
+        public void ToggleButtons()
+        {
+            deleteBtn.IsEnabled = !deleteBtn.IsEnabled;
+            backBtn.IsEnabled = !backBtn.IsEnabled;
+            qualityBtn.IsEnabled = !qualityBtn.IsEnabled;
+            playBtn.IsEnabled = !playBtn.IsEnabled;
+        }
+
         public async void ChangeVideoQuality(object sender, EventArgs e)
         {
+            ToggleButtons();
             string result;
             if (qualityBtn.Text == "SD")
             {
@@ -292,6 +303,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 videoUrl = videoTechnique.LinkHD;
                 qualityBtn.Text = "HD";
             }
+            ToggleButtons();
         }
 
 		//Orientation

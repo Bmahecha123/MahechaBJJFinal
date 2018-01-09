@@ -323,15 +323,15 @@ namespace MahechaBJJ.Views.SignUpPages
 
         private async void SignUp()
         {
-            signUpBtn.IsEnabled = false;
-            backBtn.IsEnabled = false;
+            ToggleButtons();
             bool purchased = false;
 
             if (await _summaryPageViewModel.UserExist(user))
             {
                 await DisplayAlert("Account Exists", $"An account with the email {user.Email} already exists. Use a different email address.", "Ok");
                 await Navigation.PopModalAsync();
-                signUpBtn.IsEnabled = true;
+                ToggleButtons();
+
             }
             else 
             {
@@ -344,23 +344,20 @@ namespace MahechaBJJ.Views.SignUpPages
                 _summaryPageViewModel.SaveCredentials();
                 Application.Current.MainPage = new MainTabbedPage();
                 await _summaryPageViewModel.Disconnect();
-                signUpBtn.IsEnabled = true;
-                backBtn.IsEnabled = true;
+                ToggleButtons();
             }
             else 
             {
                 _summaryPageViewModel.DeleteUser(user);
                 await Navigation.PopModalAsync();
-                signUpBtn.IsEnabled = true;
-                backBtn.IsEnabled = true;
+                ToggleButtons();
             }
         }
 
         private void GoBack()
         {
-            backBtn.IsEnabled = false;
+            ToggleButtons();
             Navigation.PopModalAsync();
-            backBtn.IsEnabled = true;
         }
 
         private string FindPackageName()
@@ -377,6 +374,12 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 return "package_giandnogi_consumable";
             }
+        }
+
+        private void ToggleButtons()
+        {
+            backBtn.IsEnabled = !backBtn.IsEnabled;
+            signUpBtn.IsEnabled = !signUpBtn.IsEnabled;
         }
 
         protected override void OnSizeAllocated(double width, double height)

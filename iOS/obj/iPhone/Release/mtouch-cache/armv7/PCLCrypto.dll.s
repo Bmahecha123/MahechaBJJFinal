@@ -19914,1921 +19914,1921 @@ plt__jit_icall_mono_arch_throw_exception:
 _p_1:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1816,12454
+	.long mono_aot_PCLCrypto_got - . + 1816,12455
 	.no_dead_strip plt_System_Nullable_1_PCLCrypto_AsymmetricSignaturePadding__ctor_PCLCrypto_AsymmetricSignaturePadding
 plt_System_Nullable_1_PCLCrypto_AsymmetricSignaturePadding__ctor_PCLCrypto_AsymmetricSignaturePadding:
 _p_2:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1820,12482
+	.long mono_aot_PCLCrypto_got - . + 1820,12483
 	.no_dead_strip plt_System_Nullable_1_PCLCrypto_AsymmetricEncryptionPadding__ctor_PCLCrypto_AsymmetricEncryptionPadding
 plt_System_Nullable_1_PCLCrypto_AsymmetricEncryptionPadding__ctor_PCLCrypto_AsymmetricEncryptionPadding:
 _p_3:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1824,12493
+	.long mono_aot_PCLCrypto_got - . + 1824,12494
 	.no_dead_strip plt_System_Nullable_1_PCLCrypto_HashAlgorithm__ctor_PCLCrypto_HashAlgorithm
 plt_System_Nullable_1_PCLCrypto_HashAlgorithm__ctor_PCLCrypto_HashAlgorithm:
 _p_4:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1828,12504
+	.long mono_aot_PCLCrypto_got - . + 1828,12505
 	.no_dead_strip plt_System_GC_SuppressFinalize_object
 plt_System_GC_SuppressFinalize_object:
 _p_5:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1832,12515
+	.long mono_aot_PCLCrypto_got - . + 1832,12516
 	.no_dead_strip plt_wrapper_alloc_object_AllocVector_intptr_intptr
 plt_wrapper_alloc_object_AllocVector_intptr_intptr:
 _p_6:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1836,12520
+	.long mono_aot_PCLCrypto_got - . + 1836,12521
 	.no_dead_strip plt_Validation_Requires_That_bool_string_string_object__
 plt_Validation_Requires_That_bool_string_string_object__:
 _p_7:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1840,12528
+	.long mono_aot_PCLCrypto_got - . + 1840,12529
 	.no_dead_strip plt_PCLCrypto_CryptoStream_Chain_System_IO_Stream_PCLCrypto_CryptoStreamMode_PCLCrypto_ICryptoTransform__
 plt_PCLCrypto_CryptoStream_Chain_System_IO_Stream_PCLCrypto_CryptoStreamMode_PCLCrypto_ICryptoTransform__:
 _p_8:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1844,12533
+	.long mono_aot_PCLCrypto_got - . + 1844,12534
 	.no_dead_strip plt_PCLCrypto_CryptoStream_FlushFinalBlock
 plt_PCLCrypto_CryptoStream_FlushFinalBlock:
 _p_9:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1848,12535
+	.long mono_aot_PCLCrypto_got - . + 1848,12536
 	.no_dead_strip plt_System_Array_Clear_System_Array_int_int
 plt_System_Array_Clear_System_Array_int_int:
 _p_10:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1852,12537
+	.long mono_aot_PCLCrypto_got - . + 1852,12538
 	.no_dead_strip plt_Validation_Requires_Range_bool_string_string
 plt_Validation_Requires_Range_bool_string_string:
 _p_11:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1856,12542
+	.long mono_aot_PCLCrypto_got - . + 1856,12543
 	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
 plt_System_Array_Copy_System_Array_int_System_Array_int_int:
 _p_12:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1860,12547
+	.long mono_aot_PCLCrypto_got - . + 1860,12548
 	.no_dead_strip plt__jit_icall___emul_op_idiv
 plt__jit_icall___emul_op_idiv:
 _p_13:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1864,12552
+	.long mono_aot_PCLCrypto_got - . + 1864,12553
 	.no_dead_strip plt_Validation_Assumes_True_bool_string
 plt_Validation_Assumes_True_bool_string:
 _p_14:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1868,12569
+	.long mono_aot_PCLCrypto_got - . + 1868,12570
 	.no_dead_strip plt_System_IO_Stream_Dispose
 plt_System_IO_Stream_Dispose:
 _p_15:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1872,12574
+	.long mono_aot_PCLCrypto_got - . + 1872,12575
 	.no_dead_strip plt_Validation_Requires_NotNullOrEmpty_System_Collections_IEnumerable_string
 plt_Validation_Requires_NotNullOrEmpty_System_Collections_IEnumerable_string:
 _p_16:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1876,12579
+	.long mono_aot_PCLCrypto_got - . + 1876,12580
 	.no_dead_strip plt_System_Linq_Enumerable_Cast_PCLCrypto_ICryptoTransform_System_Collections_IEnumerable
 plt_System_Linq_Enumerable_Cast_PCLCrypto_ICryptoTransform_System_Collections_IEnumerable:
 _p_17:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1880,12584
+	.long mono_aot_PCLCrypto_got - . + 1880,12585
 	.no_dead_strip plt_PCLCrypto_CryptoStream_ChainWrite_System_IO_Stream_System_Collections_Generic_IEnumerator_1_PCLCrypto_ICryptoTransform
 plt_PCLCrypto_CryptoStream_ChainWrite_System_IO_Stream_System_Collections_Generic_IEnumerator_1_PCLCrypto_ICryptoTransform:
 _p_18:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1884,12596
+	.long mono_aot_PCLCrypto_got - . + 1884,12597
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_19:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1888,12598
+	.long mono_aot_PCLCrypto_got - . + 1888,12599
 	.no_dead_strip plt_PCLCrypto_CryptoStream__ctor_System_IO_Stream_PCLCrypto_ICryptoTransform_PCLCrypto_CryptoStreamMode
 plt_PCLCrypto_CryptoStream__ctor_System_IO_Stream_PCLCrypto_ICryptoTransform_PCLCrypto_CryptoStreamMode:
 _p_20:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1892,12606
+	.long mono_aot_PCLCrypto_got - . + 1892,12607
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_21:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1896,12608
+	.long mono_aot_PCLCrypto_got - . + 1896,12609
 	.no_dead_strip plt_PCLCrypto_SymmetricAlgorithmExtensions_GetMode_PCLCrypto_SymmetricAlgorithm
 plt_PCLCrypto_SymmetricAlgorithmExtensions_GetMode_PCLCrypto_SymmetricAlgorithm:
 _p_22:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1900,12643
+	.long mono_aot_PCLCrypto_got - . + 1900,12644
 	.no_dead_strip plt_Validation_Assumes_NotReachable
 plt_Validation_Assumes_NotReachable:
 _p_23:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1904,12646
+	.long mono_aot_PCLCrypto_got - . + 1904,12647
 	.no_dead_strip plt_System_Enum_GetValues_System_Type
 plt_System_Enum_GetValues_System_Type:
 _p_24:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1908,12651
+	.long mono_aot_PCLCrypto_got - . + 1908,12652
 	.no_dead_strip plt_System_Array_GetEnumerator
 plt_System_Array_GetEnumerator:
 _p_25:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1912,12656
+	.long mono_aot_PCLCrypto_got - . + 1912,12657
 	.no_dead_strip plt_PCLCrypto_SymmetricAlgorithmExtensions_GetName_PCLCrypto_SymmetricAlgorithm
 plt_PCLCrypto_SymmetricAlgorithmExtensions_GetName_PCLCrypto_SymmetricAlgorithm:
 _p_26:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1916,12661
+	.long mono_aot_PCLCrypto_got - . + 1916,12662
 	.no_dead_strip plt_PCLCrypto_SymmetricAlgorithmExtensions_GetPadding_PCLCrypto_SymmetricAlgorithm
 plt_PCLCrypto_SymmetricAlgorithmExtensions_GetPadding_PCLCrypto_SymmetricAlgorithm:
 _p_27:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1920,12664
+	.long mono_aot_PCLCrypto_got - . + 1920,12665
 	.no_dead_strip plt_PCLCrypto_SymmetricAlgorithmExtensions_UsesIV_PCLCrypto_SymmetricAlgorithmMode
 plt_PCLCrypto_SymmetricAlgorithmExtensions_UsesIV_PCLCrypto_SymmetricAlgorithmMode:
 _p_28:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1924,12667
+	.long mono_aot_PCLCrypto_got - . + 1924,12668
 	.no_dead_strip plt_PCLCrypto_Formatters_KeyFormatter_Read_byte__
 plt_PCLCrypto_Formatters_KeyFormatter_Read_byte__:
 _p_29:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1928,12670
+	.long mono_aot_PCLCrypto_got - . + 1928,12671
 	.no_dead_strip plt_System_IO_BinaryReader__ctor_System_IO_Stream
 plt_System_IO_BinaryReader__ctor_System_IO_Stream:
 _p_30:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1932,12673
+	.long mono_aot_PCLCrypto_got - . + 1932,12674
 	.no_dead_strip plt_System_Runtime_InteropServices_Marshal_SizeOf_PInvoke_BCrypt_BCRYPT_RSAKEY_BLOB
 plt_System_Runtime_InteropServices_Marshal_SizeOf_PInvoke_BCrypt_BCRYPT_RSAKEY_BLOB:
 _p_31:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1936,12678
+	.long mono_aot_PCLCrypto_got - . + 1936,12679
 	.no_dead_strip plt_System_IO_BinaryReader_ReadBytes_int
 plt_System_IO_BinaryReader_ReadBytes_int:
 _p_32:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1940,12690
+	.long mono_aot_PCLCrypto_got - . + 1940,12691
 	.no_dead_strip plt_System_IO_BinaryWriter__ctor_System_IO_Stream
 plt_System_IO_BinaryWriter__ctor_System_IO_Stream:
 _p_33:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1944,12695
+	.long mono_aot_PCLCrypto_got - . + 1944,12696
 	.no_dead_strip plt_PCLCrypto_Formatters_KeyFormatter_TrimLeadingZero_byte__
 plt_PCLCrypto_Formatters_KeyFormatter_TrimLeadingZero_byte__:
 _p_34:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1948,12700
+	.long mono_aot_PCLCrypto_got - . + 1948,12701
 	.no_dead_strip plt_System_Runtime_InteropServices_Marshal_StructureToPtr_PInvoke_BCrypt_BCRYPT_RSAKEY_BLOB_PInvoke_BCrypt_BCRYPT_RSAKEY_BLOB_intptr_bool
 plt_System_Runtime_InteropServices_Marshal_StructureToPtr_PInvoke_BCrypt_BCRYPT_RSAKEY_BLOB_PInvoke_BCrypt_BCRYPT_RSAKEY_BLOB_intptr_bool:
 _p_35:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1952,12703
+	.long mono_aot_PCLCrypto_got - . + 1952,12704
 	.no_dead_strip plt_System_IO_BinaryWriter_Write_byte__
 plt_System_IO_BinaryWriter_Write_byte__:
 _p_36:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1956,12715
+	.long mono_aot_PCLCrypto_got - . + 1956,12716
 	.no_dead_strip plt_PCLCrypto_Formatters_KeyFormatter_TrimOrPadZeroToLength_byte___int
 plt_PCLCrypto_Formatters_KeyFormatter_TrimOrPadZeroToLength_byte___int:
 _p_37:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1960,12720
+	.long mono_aot_PCLCrypto_got - . + 1960,12721
 	.no_dead_strip plt_ObjCRuntime_Dlfcn_dlopen_string_int
 plt_ObjCRuntime_Dlfcn_dlopen_string_int:
 _p_38:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1964,12723
+	.long mono_aot_PCLCrypto_got - . + 1964,12724
 	.no_dead_strip plt_Validation_Assumes_False_bool_string
 plt_Validation_Assumes_False_bool_string:
 _p_39:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1968,12728
+	.long mono_aot_PCLCrypto_got - . + 1968,12729
 	.no_dead_strip plt_ObjCRuntime_Dlfcn_GetStringConstant_intptr_string
 plt_ObjCRuntime_Dlfcn_GetStringConstant_intptr_string:
 _p_40:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1972,12733
+	.long mono_aot_PCLCrypto_got - . + 1972,12734
 	.no_dead_strip plt_PCLCrypto_KSec_set_AttrApplicationTag_Foundation_NSString
 plt_PCLCrypto_KSec_set_AttrApplicationTag_Foundation_NSString:
 _p_41:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1976,12738
+	.long mono_aot_PCLCrypto_got - . + 1976,12739
 	.no_dead_strip plt_PCLCrypto_KSec_set_AttrKeyType_Foundation_NSString
 plt_PCLCrypto_KSec_set_AttrKeyType_Foundation_NSString:
 _p_42:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1980,12741
+	.long mono_aot_PCLCrypto_got - . + 1980,12742
 	.no_dead_strip plt_PCLCrypto_KSec_set_AttrKeySizeInBits_Foundation_NSString
 plt_PCLCrypto_KSec_set_AttrKeySizeInBits_Foundation_NSString:
 _p_43:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1984,12744
+	.long mono_aot_PCLCrypto_got - . + 1984,12745
 	.no_dead_strip plt_PCLCrypto_KSec_set_AttrKeyTypeRSA_Foundation_NSString
 plt_PCLCrypto_KSec_set_AttrKeyTypeRSA_Foundation_NSString:
 _p_44:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1988,12747
+	.long mono_aot_PCLCrypto_got - . + 1988,12748
 	.no_dead_strip plt_PCLCrypto_KSec_set_AttrIsPermanent_Foundation_NSString
 plt_PCLCrypto_KSec_set_AttrIsPermanent_Foundation_NSString:
 _p_45:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1992,12750
+	.long mono_aot_PCLCrypto_got - . + 1992,12751
 	.no_dead_strip plt_PCLCrypto_KSec_set_PublicKeyAttrs_Foundation_NSString
 plt_PCLCrypto_KSec_set_PublicKeyAttrs_Foundation_NSString:
 _p_46:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 1996,12753
+	.long mono_aot_PCLCrypto_got - . + 1996,12754
 	.no_dead_strip plt_PCLCrypto_KSec_set_PrivateKeyAttrs_Foundation_NSString
 plt_PCLCrypto_KSec_set_PrivateKeyAttrs_Foundation_NSString:
 _p_47:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2000,12756
+	.long mono_aot_PCLCrypto_got - . + 2000,12757
 	.no_dead_strip plt_PCLCrypto_KSec_set_ClassKey_Foundation_NSString
 plt_PCLCrypto_KSec_set_ClassKey_Foundation_NSString:
 _p_48:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2004,12759
+	.long mono_aot_PCLCrypto_got - . + 2004,12760
 	.no_dead_strip plt_PCLCrypto_KSec_set_Class_Foundation_NSString
 plt_PCLCrypto_KSec_set_Class_Foundation_NSString:
 _p_49:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2008,12762
+	.long mono_aot_PCLCrypto_got - . + 2008,12763
 	.no_dead_strip plt_PCLCrypto_KSec_set_AttrKeyClass_Foundation_NSString
 plt_PCLCrypto_KSec_set_AttrKeyClass_Foundation_NSString:
 _p_50:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2012,12765
+	.long mono_aot_PCLCrypto_got - . + 2012,12766
 	.no_dead_strip plt_PCLCrypto_KSec_set_AttrKeyClassPublic_Foundation_NSString
 plt_PCLCrypto_KSec_set_AttrKeyClassPublic_Foundation_NSString:
 _p_51:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2016,12768
+	.long mono_aot_PCLCrypto_got - . + 2016,12769
 	.no_dead_strip plt_PCLCrypto_KSec_set_AttrKeyClassPrivate_Foundation_NSString
 plt_PCLCrypto_KSec_set_AttrKeyClassPrivate_Foundation_NSString:
 _p_52:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2020,12771
+	.long mono_aot_PCLCrypto_got - . + 2020,12772
 	.no_dead_strip plt_PCLCrypto_KSec_set_ReturnData_Foundation_NSString
 plt_PCLCrypto_KSec_set_ReturnData_Foundation_NSString:
 _p_53:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2024,12774
+	.long mono_aot_PCLCrypto_got - . + 2024,12775
 	.no_dead_strip plt_PCLCrypto_KSec_set_ReturnPersistentRef_Foundation_NSString
 plt_PCLCrypto_KSec_set_ReturnPersistentRef_Foundation_NSString:
 _p_54:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2028,12777
+	.long mono_aot_PCLCrypto_got - . + 2028,12778
 	.no_dead_strip plt_PCLCrypto_KSec_set_AttrAccessibleWhenUnlocked_Foundation_NSString
 plt_PCLCrypto_KSec_set_AttrAccessibleWhenUnlocked_Foundation_NSString:
 _p_55:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2032,12780
+	.long mono_aot_PCLCrypto_got - . + 2032,12781
 	.no_dead_strip plt_PCLCrypto_KSec_set_AttrAccessible_Foundation_NSString
 plt_PCLCrypto_KSec_set_AttrAccessible_Foundation_NSString:
 _p_56:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2036,12783
+	.long mono_aot_PCLCrypto_got - . + 2036,12784
 	.no_dead_strip plt_PCLCrypto_KSec_set_ReturnRef_Foundation_NSString
 plt_PCLCrypto_KSec_set_ReturnRef_Foundation_NSString:
 _p_57:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2040,12786
+	.long mono_aot_PCLCrypto_got - . + 2040,12787
 	.no_dead_strip plt_PCLCrypto_KSec_set_ValueData_Foundation_NSString
 plt_PCLCrypto_KSec_set_ValueData_Foundation_NSString:
 _p_58:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2044,12789
+	.long mono_aot_PCLCrypto_got - . + 2044,12790
 	.no_dead_strip plt_ObjCRuntime_Dlfcn_dlclose_intptr
 plt_ObjCRuntime_Dlfcn_dlclose_intptr:
 _p_59:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2048,12792
+	.long mono_aot_PCLCrypto_got - . + 2048,12793
 	.no_dead_strip plt__jit_icall_mono_generic_class_init
 plt__jit_icall_mono_generic_class_init:
 _p_60:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2052,12797
+	.long mono_aot_PCLCrypto_got - . + 2052,12798
 	.no_dead_strip plt_PCLCrypto_CryptoUtilities_GetTypicalLegalAsymmetricKeySizes_PCLCrypto_AsymmetricAlgorithm
 plt_PCLCrypto_CryptoUtilities_GetTypicalLegalAsymmetricKeySizes_PCLCrypto_AsymmetricAlgorithm:
 _p_61:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2056,12823
+	.long mono_aot_PCLCrypto_got - . + 2056,12824
 	.no_dead_strip plt_System_Guid_NewGuid
 plt_System_Guid_NewGuid:
 _p_62:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2060,12826
+	.long mono_aot_PCLCrypto_got - . + 2060,12827
 	.no_dead_strip plt_System_Guid_ToString
 plt_System_Guid_ToString:
 _p_63:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2064,12831
+	.long mono_aot_PCLCrypto_got - . + 2064,12832
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey_GetPublicKeyIdentifierWithTag_string
 plt_PCLCrypto_RsaCryptographicKey_GetPublicKeyIdentifierWithTag_string:
 _p_64:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2068,12836
+	.long mono_aot_PCLCrypto_got - . + 2068,12837
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey_GetPrivateKeyIdentifierWithTag_string
 plt_PCLCrypto_RsaCryptographicKey_GetPrivateKeyIdentifierWithTag_string:
 _p_65:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2072,12839
+	.long mono_aot_PCLCrypto_got - . + 2072,12840
 	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
 plt__jit_icall_ves_icall_object_new_specific:
 _p_66:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2076,12842
+	.long mono_aot_PCLCrypto_got - . + 2076,12843
 	.no_dead_strip plt_Foundation_NSMutableDictionary__ctor
 plt_Foundation_NSMutableDictionary__ctor:
 _p_67:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2080,12874
+	.long mono_aot_PCLCrypto_got - . + 2080,12875
 	.no_dead_strip plt_PCLCrypto_KSec_get_AttrKeyType
 plt_PCLCrypto_KSec_get_AttrKeyType:
 _p_68:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2084,12879
+	.long mono_aot_PCLCrypto_got - . + 2084,12880
 	.no_dead_strip plt_PCLCrypto_KSec_get_AttrKeyTypeRSA
 plt_PCLCrypto_KSec_get_AttrKeyTypeRSA:
 _p_69:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2088,12882
+	.long mono_aot_PCLCrypto_got - . + 2088,12883
 	.no_dead_strip plt_PCLCrypto_KSec_get_AttrKeySizeInBits
 plt_PCLCrypto_KSec_get_AttrKeySizeInBits:
 _p_70:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2092,12885
+	.long mono_aot_PCLCrypto_got - . + 2092,12886
 	.no_dead_strip plt_Foundation_NSNumber_FromInt32_int
 plt_Foundation_NSNumber_FromInt32_int:
 _p_71:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2096,12888
+	.long mono_aot_PCLCrypto_got - . + 2096,12889
 	.no_dead_strip plt_PCLCrypto_KSec_get_AttrIsPermanent
 plt_PCLCrypto_KSec_get_AttrIsPermanent:
 _p_72:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2100,12893
+	.long mono_aot_PCLCrypto_got - . + 2100,12894
 	.no_dead_strip plt_Foundation_NSNumber_FromBoolean_bool
 plt_Foundation_NSNumber_FromBoolean_bool:
 _p_73:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2104,12896
+	.long mono_aot_PCLCrypto_got - . + 2104,12897
 	.no_dead_strip plt_PCLCrypto_KSec_get_AttrApplicationTag
 plt_PCLCrypto_KSec_get_AttrApplicationTag:
 _p_74:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2108,12901
+	.long mono_aot_PCLCrypto_got - . + 2108,12902
 	.no_dead_strip plt_Foundation_NSData_FromString_string_Foundation_NSStringEncoding
 plt_Foundation_NSData_FromString_string_Foundation_NSStringEncoding:
 _p_75:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2112,12904
+	.long mono_aot_PCLCrypto_got - . + 2112,12905
 	.no_dead_strip plt_PCLCrypto_KSec_get_PublicKeyAttrs
 plt_PCLCrypto_KSec_get_PublicKeyAttrs:
 _p_76:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2116,12909
+	.long mono_aot_PCLCrypto_got - . + 2116,12910
 	.no_dead_strip plt_PCLCrypto_KSec_get_PrivateKeyAttrs
 plt_PCLCrypto_KSec_get_PrivateKeyAttrs:
 _p_77:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2120,12912
+	.long mono_aot_PCLCrypto_got - . + 2120,12913
 	.no_dead_strip plt_Security_SecKey_GenerateKeyPair_Foundation_NSDictionary_Security_SecKey__Security_SecKey_
 plt_Security_SecKey_GenerateKeyPair_Foundation_NSDictionary_Security_SecKey__Security_SecKey_:
 _p_78:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2124,12915
+	.long mono_aot_PCLCrypto_got - . + 2124,12916
 	.no_dead_strip plt_string_Concat_object_object
 plt_string_Concat_object_object:
 _p_79:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2128,12920
+	.long mono_aot_PCLCrypto_got - . + 2128,12921
 	.no_dead_strip plt__jit_icall_mono_helper_newobj_mscorlib
 plt__jit_icall_mono_helper_newobj_mscorlib:
 _p_80:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2132,12925
+	.long mono_aot_PCLCrypto_got - . + 2132,12926
 	.no_dead_strip plt_System_ArgumentException__ctor_string_System_Exception
 plt_System_ArgumentException__ctor_string_System_Exception:
 _p_81:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2136,12955
+	.long mono_aot_PCLCrypto_got - . + 2136,12956
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey__ctor_Security_SecKey_Security_SecKey_string_PCLCrypto_AsymmetricAlgorithm
 plt_PCLCrypto_RsaCryptographicKey__ctor_Security_SecKey_Security_SecKey_string_PCLCrypto_AsymmetricAlgorithm:
 _p_82:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2140,12960
+	.long mono_aot_PCLCrypto_got - . + 2140,12961
 	.no_dead_strip plt_PCLCrypto_Formatters_KeyFormatter_GetFormatter_PCLCrypto_CryptographicPrivateKeyBlobType
 plt_PCLCrypto_Formatters_KeyFormatter_GetFormatter_PCLCrypto_CryptographicPrivateKeyBlobType:
 _p_83:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2144,12963
+	.long mono_aot_PCLCrypto_got - . + 2144,12964
 	.no_dead_strip plt_PCLCrypto_RsaAsymmetricKeyAlgorithmProvider_ImportKey_PCLCrypto_RSAParameters_string
 plt_PCLCrypto_RsaAsymmetricKeyAlgorithmProvider_ImportKey_PCLCrypto_RSAParameters_string:
 _p_84:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2148,12966
+	.long mono_aot_PCLCrypto_got - . + 2148,12967
 	.no_dead_strip plt_PCLCrypto_Formatters_KeyFormatter_GetFormatter_PCLCrypto_CryptographicPublicKeyBlobType
 plt_PCLCrypto_Formatters_KeyFormatter_GetFormatter_PCLCrypto_CryptographicPublicKeyBlobType:
 _p_85:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2152,12969
+	.long mono_aot_PCLCrypto_got - . + 2152,12970
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey_CreateKeyQueryDictionary_string
 plt_PCLCrypto_RsaCryptographicKey_CreateKeyQueryDictionary_string:
 _p_86:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2156,12972
+	.long mono_aot_PCLCrypto_got - . + 2156,12973
 	.no_dead_strip plt_PCLCrypto_KSec_get_ValueData
 plt_PCLCrypto_KSec_get_ValueData:
 _p_87:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2160,12975
+	.long mono_aot_PCLCrypto_got - . + 2160,12976
 	.no_dead_strip plt_PCLCrypto_Formatters_KeyFormatter_Write_PCLCrypto_RSAParameters_bool
 plt_PCLCrypto_Formatters_KeyFormatter_Write_PCLCrypto_RSAParameters_bool:
 _p_88:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2164,12978
+	.long mono_aot_PCLCrypto_got - . + 2164,12979
 	.no_dead_strip plt_Foundation_NSData_FromArray_byte__
 plt_Foundation_NSData_FromArray_byte__:
 _p_89:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2168,12981
+	.long mono_aot_PCLCrypto_got - . + 2168,12982
 	.no_dead_strip plt_PCLCrypto_KSec_get_AttrKeyClass
 plt_PCLCrypto_KSec_get_AttrKeyClass:
 _p_90:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2172,12986
+	.long mono_aot_PCLCrypto_got - . + 2172,12987
 	.no_dead_strip plt_PCLCrypto_KSec_get_AttrKeyClassPublic
 plt_PCLCrypto_KSec_get_AttrKeyClassPublic:
 _p_91:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2176,12989
+	.long mono_aot_PCLCrypto_got - . + 2176,12990
 	.no_dead_strip plt_PCLCrypto_KSec_get_ReturnRef
 plt_PCLCrypto_KSec_get_ReturnRef:
 _p_92:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2180,12992
+	.long mono_aot_PCLCrypto_got - . + 2180,12993
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey_SecItemAdd_intptr_intptr_
 plt_PCLCrypto_RsaCryptographicKey_SecItemAdd_intptr_intptr_:
 _p_93:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2184,12995
+	.long mono_aot_PCLCrypto_got - . + 2184,12996
 	.no_dead_strip plt_intptr_op_Inequality_intptr_intptr
 plt_intptr_op_Inequality_intptr_intptr:
 _p_94:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2188,12998
+	.long mono_aot_PCLCrypto_got - . + 2188,12999
 	.no_dead_strip plt_Security_SecKey__ctor_intptr_bool
 plt_Security_SecKey__ctor_intptr_bool:
 _p_95:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2192,13003
+	.long mono_aot_PCLCrypto_got - . + 2192,13004
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey__ctor_Security_SecKey_string_PCLCrypto_AsymmetricAlgorithm
 plt_PCLCrypto_RsaCryptographicKey__ctor_Security_SecKey_string_PCLCrypto_AsymmetricAlgorithm:
 _p_96:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2196,13008
+	.long mono_aot_PCLCrypto_got - . + 2196,13009
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr
 plt__jit_icall_mono_helper_ldstr:
 _p_97:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2200,13011
+	.long mono_aot_PCLCrypto_got - . + 2200,13012
 	.no_dead_strip plt_PCLCrypto_KSec_get_AttrKeyClassPrivate
 plt_PCLCrypto_KSec_get_AttrKeyClassPrivate:
 _p_98:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2204,13031
+	.long mono_aot_PCLCrypto_got - . + 2204,13032
 	.no_dead_strip plt_Validation_Verify_Operation_bool_string_object
 plt_Validation_Verify_Operation_bool_string_object:
 _p_99:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2208,13034
+	.long mono_aot_PCLCrypto_got - . + 2208,13035
 	.no_dead_strip plt_Security_SecKey_get_BlockSize
 plt_Security_SecKey_get_BlockSize:
 _p_100:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2212,13039
+	.long mono_aot_PCLCrypto_got - . + 2212,13040
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey_KeyDataWithTag_string
 plt_PCLCrypto_RsaCryptographicKey_KeyDataWithTag_string:
 _p_101:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2216,13044
+	.long mono_aot_PCLCrypto_got - . + 2216,13045
 	.no_dead_strip plt_Foundation_NSData_ToArray
 plt_Foundation_NSData_ToArray:
 _p_102:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2220,13047
+	.long mono_aot_PCLCrypto_got - . + 2220,13048
 	.no_dead_strip plt_System_InvalidOperationException__ctor_string_System_Exception
 plt_System_InvalidOperationException__ctor_string_System_Exception:
 _p_103:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2224,13052
+	.long mono_aot_PCLCrypto_got - . + 2224,13053
 	.no_dead_strip plt_string_Concat_string_string
 plt_string_Concat_string_string:
 _p_104:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2228,13057
+	.long mono_aot_PCLCrypto_got - . + 2228,13058
 	.no_dead_strip plt_PCLCrypto_KSec_get_Class
 plt_PCLCrypto_KSec_get_Class:
 _p_105:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2232,13062
+	.long mono_aot_PCLCrypto_got - . + 2232,13063
 	.no_dead_strip plt_PCLCrypto_KSec_get_ClassKey
 plt_PCLCrypto_KSec_get_ClassKey:
 _p_106:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2236,13065
+	.long mono_aot_PCLCrypto_got - . + 2236,13066
 	.no_dead_strip plt_PCLCrypto_KSec_get_AttrAccessible
 plt_PCLCrypto_KSec_get_AttrAccessible:
 _p_107:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2240,13068
+	.long mono_aot_PCLCrypto_got - . + 2240,13069
 	.no_dead_strip plt_PCLCrypto_KSec_get_AttrAccessibleWhenUnlocked
 plt_PCLCrypto_KSec_get_AttrAccessibleWhenUnlocked:
 _p_108:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2244,13071
+	.long mono_aot_PCLCrypto_got - . + 2244,13072
 	.no_dead_strip plt_System_Security_Cryptography_HashAlgorithm_ComputeHash_byte__
 plt_System_Security_Cryptography_HashAlgorithm_ComputeHash_byte__:
 _p_109:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2248,13074
+	.long mono_aot_PCLCrypto_got - . + 2248,13075
 	.no_dead_strip plt_System_Runtime_InteropServices_GCHandle_Alloc_object_System_Runtime_InteropServices_GCHandleType
 plt_System_Runtime_InteropServices_GCHandle_Alloc_object_System_Runtime_InteropServices_GCHandleType:
 _p_110:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2252,13079
+	.long mono_aot_PCLCrypto_got - . + 2252,13080
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey_GetPadding_PCLCrypto_AsymmetricAlgorithm
 plt_PCLCrypto_RsaCryptographicKey_GetPadding_PCLCrypto_AsymmetricAlgorithm:
 _p_111:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2256,13084
+	.long mono_aot_PCLCrypto_got - . + 2256,13085
 	.no_dead_strip plt_System_Runtime_InteropServices_GCHandle_AddrOfPinnedObject
 plt_System_Runtime_InteropServices_GCHandle_AddrOfPinnedObject:
 _p_112:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2260,13087
+	.long mono_aot_PCLCrypto_got - . + 2260,13088
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey_SecKeyRawSign_intptr_Security_SecPadding_intptr_int_intptr_int_
 plt_PCLCrypto_RsaCryptographicKey_SecKeyRawSign_intptr_Security_SecPadding_intptr_int_intptr_int_:
 _p_113:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2264,13092
+	.long mono_aot_PCLCrypto_got - . + 2264,13093
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey_TrimBuffer_byte____int_bool
 plt_PCLCrypto_RsaCryptographicKey_TrimBuffer_byte____int_bool:
 _p_114:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2268,13095
+	.long mono_aot_PCLCrypto_got - . + 2268,13096
 	.no_dead_strip plt_System_Runtime_InteropServices_GCHandle_Free
 plt_System_Runtime_InteropServices_GCHandle_Free:
 _p_115:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2272,13098
+	.long mono_aot_PCLCrypto_got - . + 2272,13099
 	.no_dead_strip plt_Security_SecKey_RawVerify_Security_SecPadding_byte___byte__
 plt_Security_SecKey_RawVerify_Security_SecPadding_byte___byte__:
 _p_116:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2276,13103
+	.long mono_aot_PCLCrypto_got - . + 2276,13104
 	.no_dead_strip plt_Security_SecKey_Encrypt_Security_SecPadding_byte___byte___
 plt_Security_SecKey_Encrypt_Security_SecPadding_byte___byte___:
 _p_117:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2280,13108
+	.long mono_aot_PCLCrypto_got - . + 2280,13109
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey_SecKeyDecrypt_intptr_Security_SecPadding_intptr_int_intptr_int_
 plt_PCLCrypto_RsaCryptographicKey_SecKeyDecrypt_intptr_Security_SecPadding_intptr_int_intptr_int_:
 _p_118:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2284,13113
+	.long mono_aot_PCLCrypto_got - . + 2284,13114
 	.no_dead_strip plt_Security_SecKey_Dispose
 plt_Security_SecKey_Dispose:
 _p_119:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2288,13116
+	.long mono_aot_PCLCrypto_got - . + 2288,13117
 	.no_dead_strip plt_System_Array_Copy_System_Array_System_Array_int
 plt_System_Array_Copy_System_Array_System_Array_int:
 _p_120:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2292,13121
+	.long mono_aot_PCLCrypto_got - . + 2292,13122
 	.no_dead_strip plt_PCLCrypto_KSec_get_ReturnData
 plt_PCLCrypto_KSec_get_ReturnData:
 _p_121:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2296,13126
+	.long mono_aot_PCLCrypto_got - . + 2296,13127
 	.no_dead_strip plt_PCLCrypto_RsaCryptographicKey_SecItemCopyMatching_intptr_intptr_
 plt_PCLCrypto_RsaCryptographicKey_SecItemCopyMatching_intptr_intptr_:
 _p_122:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2300,13129
+	.long mono_aot_PCLCrypto_got - . + 2300,13130
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSData_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSData_intptr:
 _p_123:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2304,13132
+	.long mono_aot_PCLCrypto_got - . + 2304,13133
 	.no_dead_strip plt_PCLCrypto_AsymmetricKeyAlgorithmProviderFactory_GetHashAlgorithmEnum_PCLCrypto_AsymmetricAlgorithm
 plt_PCLCrypto_AsymmetricKeyAlgorithmProviderFactory_GetHashAlgorithmEnum_PCLCrypto_AsymmetricAlgorithm:
 _p_124:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2308,13144
+	.long mono_aot_PCLCrypto_got - . + 2308,13145
 	.no_dead_strip plt_PCLCrypto_CryptoUtilities_BufferEquals_byte___byte__
 plt_PCLCrypto_CryptoUtilities_BufferEquals_byte___byte__:
 _p_125:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2312,13147
+	.long mono_aot_PCLCrypto_got - . + 2312,13148
 	.no_dead_strip plt_System_Convert_FromBase64String_string
 plt_System_Convert_FromBase64String_string:
 _p_126:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2316,13150
+	.long mono_aot_PCLCrypto_got - . + 2316,13151
 	.no_dead_strip plt_string_Substring_int_int
 plt_string_Substring_int_int:
 _p_127:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2320,13155
+	.long mono_aot_PCLCrypto_got - . + 2320,13156
 	.no_dead_strip plt_System_Convert_ToByte_string_int
 plt_System_Convert_ToByte_string_int:
 _p_128:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2324,13160
+	.long mono_aot_PCLCrypto_got - . + 2324,13161
 	.no_dead_strip plt_System_Convert_ToBase64String_byte__
 plt_System_Convert_ToBase64String_byte__:
 _p_129:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2328,13165
+	.long mono_aot_PCLCrypto_got - . + 2328,13166
 	.no_dead_strip plt_System_Text_StringBuilder__ctor_int
 plt_System_Text_StringBuilder__ctor_int:
 _p_130:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2332,13170
+	.long mono_aot_PCLCrypto_got - . + 2332,13171
 	.no_dead_strip plt_System_Text_StringBuilder_AppendFormat_string_object
 plt_System_Text_StringBuilder_AppendFormat_string_object:
 _p_131:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2336,13175
+	.long mono_aot_PCLCrypto_got - . + 2336,13176
 	.no_dead_strip plt_PCLCrypto_NetFxCrypto_get_RandomNumberGenerator
 plt_PCLCrypto_NetFxCrypto_get_RandomNumberGenerator:
 _p_132:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2340,13180
+	.long mono_aot_PCLCrypto_got - . + 2340,13181
 	.no_dead_strip plt_System_BitConverter_ToUInt32_byte___int
 plt_System_BitConverter_ToUInt32_byte___int:
 _p_133:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2344,13182
+	.long mono_aot_PCLCrypto_got - . + 2344,13183
 	.no_dead_strip plt_Validation_Requires_NotNullOrEmpty_string_string
 plt_Validation_Requires_NotNullOrEmpty_string_string:
 _p_134:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2348,13187
+	.long mono_aot_PCLCrypto_got - . + 2348,13188
 	.no_dead_strip plt_System_Security_Cryptography_Rfc2898DeriveBytes__ctor_string_byte___int
 plt_System_Security_Cryptography_Rfc2898DeriveBytes__ctor_string_byte___int:
 _p_135:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2352,13192
+	.long mono_aot_PCLCrypto_got - . + 2352,13193
 	.no_dead_strip plt_System_Security_Cryptography_Rfc2898DeriveBytes__ctor_byte___byte___int
 plt_System_Security_Cryptography_Rfc2898DeriveBytes__ctor_byte___byte___int:
 _p_136:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2356,13197
+	.long mono_aot_PCLCrypto_got - . + 2356,13198
 	.no_dead_strip plt_PCLCrypto_NetFxCryptographicHash__ctor_System_Security_Cryptography_HashAlgorithm
 plt_PCLCrypto_NetFxCryptographicHash__ctor_System_Security_Cryptography_HashAlgorithm:
 _p_137:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2360,13202
+	.long mono_aot_PCLCrypto_got - . + 2360,13203
 	.no_dead_strip plt_PCLCrypto_HashAlgorithmProviderFactory_GetHashAlgorithmName_PCLCrypto_HashAlgorithm
 plt_PCLCrypto_HashAlgorithmProviderFactory_GetHashAlgorithmName_PCLCrypto_HashAlgorithm:
 _p_138:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2364,13205
+	.long mono_aot_PCLCrypto_got - . + 2364,13206
 	.no_dead_strip plt_System_Security_Cryptography_HashAlgorithm_Create_string
 plt_System_Security_Cryptography_HashAlgorithm_Create_string:
 _p_139:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2368,13208
+	.long mono_aot_PCLCrypto_got - . + 2368,13209
 	.no_dead_strip plt_PCLCrypto_KeyDerivationCryptographicKey__ctor_PCLCrypto_KeyDerivationAlgorithm_byte__
 plt_PCLCrypto_KeyDerivationCryptographicKey__ctor_PCLCrypto_KeyDerivationAlgorithm_byte__:
 _p_140:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2372,13213
+	.long mono_aot_PCLCrypto_got - . + 2372,13214
 	.no_dead_strip plt_PCLCrypto_KeyDerivationParametersFactory_KeyDerivationParameters__ctor_int_byte__
 plt_PCLCrypto_KeyDerivationParametersFactory_KeyDerivationParameters__ctor_int_byte__:
 _p_141:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2376,13216
+	.long mono_aot_PCLCrypto_got - . + 2376,13217
 	.no_dead_strip plt_PCLCrypto_SymmetricKeyAlgorithmProvider__ctor_PCLCrypto_SymmetricAlgorithmName_PCLCrypto_SymmetricAlgorithmMode_PCLCrypto_SymmetricAlgorithmPadding
 plt_PCLCrypto_SymmetricKeyAlgorithmProvider__ctor_PCLCrypto_SymmetricAlgorithmName_PCLCrypto_SymmetricAlgorithmMode_PCLCrypto_SymmetricAlgorithmPadding:
 _p_142:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2380,13219
+	.long mono_aot_PCLCrypto_got - . + 2380,13220
 	.no_dead_strip plt_PCLCrypto_MacCryptographicKey__ctor_PCLCrypto_MacAlgorithm_byte__
 plt_PCLCrypto_MacCryptographicKey__ctor_PCLCrypto_MacAlgorithm_byte__:
 _p_143:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2384,13222
+	.long mono_aot_PCLCrypto_got - . + 2384,13223
 	.no_dead_strip plt_PCLCrypto_MacAlgorithmProviderFactory_GetAlgorithmName_PCLCrypto_MacAlgorithm
 plt_PCLCrypto_MacAlgorithmProviderFactory_GetAlgorithmName_PCLCrypto_MacAlgorithm:
 _p_144:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2388,13225
+	.long mono_aot_PCLCrypto_got - . + 2388,13226
 	.no_dead_strip plt_System_Security_Cryptography_KeyedHashAlgorithm_Create_string
 plt_System_Security_Cryptography_KeyedHashAlgorithm_Create_string:
 _p_145:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2392,13228
+	.long mono_aot_PCLCrypto_got - . + 2392,13229
 	.no_dead_strip plt_System_Security_Cryptography_HashAlgorithm_get_Hash
 plt_System_Security_Cryptography_HashAlgorithm_get_Hash:
 _p_146:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2396,13233
+	.long mono_aot_PCLCrypto_got - . + 2396,13234
 	.no_dead_strip plt_System_Security_Cryptography_HashAlgorithm_TransformBlock_byte___int_int_byte___int
 plt_System_Security_Cryptography_HashAlgorithm_TransformBlock_byte___int_int_byte___int:
 _p_147:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2400,13238
+	.long mono_aot_PCLCrypto_got - . + 2400,13239
 	.no_dead_strip plt_System_Security_Cryptography_HashAlgorithm_TransformFinalBlock_byte___int_int
 plt_System_Security_Cryptography_HashAlgorithm_TransformFinalBlock_byte___int_int:
 _p_148:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2404,13243
+	.long mono_aot_PCLCrypto_got - . + 2404,13244
 	.no_dead_strip plt__jit_icall___emul_op_irem
 plt__jit_icall___emul_op_irem:
 _p_149:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2408,13248
+	.long mono_aot_PCLCrypto_got - . + 2408,13249
 	.no_dead_strip plt_PCLCrypto_SymmetricCryptographicKey_CipherOperation_System_Security_Cryptography_ICryptoTransform__System_Func_3_PCLCrypto_SymmetricCryptographicKey_byte___System_Security_Cryptography_ICryptoTransform_byte___byte__
 plt_PCLCrypto_SymmetricCryptographicKey_CipherOperation_System_Security_Cryptography_ICryptoTransform__System_Func_3_PCLCrypto_SymmetricCryptographicKey_byte___System_Security_Cryptography_ICryptoTransform_byte___byte__:
 _p_150:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2412,13265
+	.long mono_aot_PCLCrypto_got - . + 2412,13266
 	.no_dead_strip plt_PCLCrypto_SymmetricCryptographicKey_ThisOrDefaultIV_byte__
 plt_PCLCrypto_SymmetricCryptographicKey_ThisOrDefaultIV_byte__:
 _p_151:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2416,13268
+	.long mono_aot_PCLCrypto_got - . + 2416,13269
 	.no_dead_strip plt_PCLCrypto_SymmetricCryptographicKey_CryptoTransformAdaptor__ctor_System_Security_Cryptography_ICryptoTransform
 plt_PCLCrypto_SymmetricCryptographicKey_CryptoTransformAdaptor__ctor_System_Security_Cryptography_ICryptoTransform:
 _p_152:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2420,13271
+	.long mono_aot_PCLCrypto_got - . + 2420,13272
 	.no_dead_strip plt_System_Array_Resize_byte_byte____int
 plt_System_Array_Resize_byte_byte____int:
 _p_153:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2424,13274
+	.long mono_aot_PCLCrypto_got - . + 2424,13275
 	.no_dead_strip plt_PCLCrypto_SymmetricAlgorithmExtensions_IsBlockCipher_PCLCrypto_SymmetricAlgorithmName
 plt_PCLCrypto_SymmetricAlgorithmExtensions_IsBlockCipher_PCLCrypto_SymmetricAlgorithmName:
 _p_154:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2428,13286
+	.long mono_aot_PCLCrypto_got - . + 2428,13287
 	.no_dead_strip plt_PCLCrypto_SymmetricKeyAlgorithmProvider_GetAlgorithm
 plt_PCLCrypto_SymmetricKeyAlgorithmProvider_GetAlgorithm:
 _p_155:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2432,13289
+	.long mono_aot_PCLCrypto_got - . + 2432,13290
 	.no_dead_strip plt_System_Security_Cryptography_SymmetricAlgorithm_get_LegalKeySizes
 plt_System_Security_Cryptography_SymmetricAlgorithm_get_LegalKeySizes:
 _p_156:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2436,13292
+	.long mono_aot_PCLCrypto_got - . + 2436,13293
 	.no_dead_strip plt_System_Linq_Enumerable_Select_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_System_Collections_Generic_IEnumerable_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes
 plt_System_Linq_Enumerable_Select_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_System_Collections_Generic_IEnumerable_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes:
 _p_157:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2440,13297
+	.long mono_aot_PCLCrypto_got - . + 2440,13298
 	.no_dead_strip plt_System_Linq_Enumerable_ToList_PCLCrypto_KeySizes_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes
 plt_System_Linq_Enumerable_ToList_PCLCrypto_KeySizes_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes:
 _p_158:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2444,13309
+	.long mono_aot_PCLCrypto_got - . + 2444,13310
 	.no_dead_strip plt_System_Collections_ObjectModel_ReadOnlyCollection_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IList_1_PCLCrypto_KeySizes
 plt_System_Collections_ObjectModel_ReadOnlyCollection_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IList_1_PCLCrypto_KeySizes:
 _p_159:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2448,13321
+	.long mono_aot_PCLCrypto_got - . + 2448,13322
 	.no_dead_strip plt_System_ArgumentException__ctor_string_string_System_Exception
 plt_System_ArgumentException__ctor_string_string_System_Exception:
 _p_160:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2452,13332
+	.long mono_aot_PCLCrypto_got - . + 2452,13333
 	.no_dead_strip plt_PCLCrypto_SymmetricCryptographicKey__ctor_System_Security_Cryptography_SymmetricAlgorithm_PCLCrypto_SymmetricAlgorithmName_PCLCrypto_SymmetricAlgorithmMode_PCLCrypto_SymmetricAlgorithmPadding
 plt_PCLCrypto_SymmetricCryptographicKey__ctor_System_Security_Cryptography_SymmetricAlgorithm_PCLCrypto_SymmetricAlgorithmName_PCLCrypto_SymmetricAlgorithmMode_PCLCrypto_SymmetricAlgorithmPadding:
 _p_161:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2456,13337
+	.long mono_aot_PCLCrypto_got - . + 2456,13338
 	.no_dead_strip plt_System_Security_Cryptography_AesManaged__ctor
 plt_System_Security_Cryptography_AesManaged__ctor:
 _p_162:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2460,13340
+	.long mono_aot_PCLCrypto_got - . + 2460,13341
 	.no_dead_strip plt_System_Security_Cryptography_SymmetricAlgorithm_set_Mode_System_Security_Cryptography_CipherMode
 plt_System_Security_Cryptography_SymmetricAlgorithm_set_Mode_System_Security_Cryptography_CipherMode:
 _p_163:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2464,13345
+	.long mono_aot_PCLCrypto_got - . + 2464,13346
 	.no_dead_strip plt_PCLCrypto_SymmetricKeyAlgorithmProvider_GetPadding_PCLCrypto_SymmetricAlgorithmPadding
 plt_PCLCrypto_SymmetricKeyAlgorithmProvider_GetPadding_PCLCrypto_SymmetricAlgorithmPadding:
 _p_164:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2468,13350
+	.long mono_aot_PCLCrypto_got - . + 2468,13351
 	.no_dead_strip plt_System_Security_Cryptography_SymmetricAlgorithm_set_Padding_System_Security_Cryptography_PaddingMode
 plt_System_Security_Cryptography_SymmetricAlgorithm_set_Padding_System_Security_Cryptography_PaddingMode:
 _p_165:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2472,13353
+	.long mono_aot_PCLCrypto_got - . + 2472,13354
 	.no_dead_strip plt_PCLCrypto_CryptographicKey_get_SignatureHashAlgorithmOrThrow
 plt_PCLCrypto_CryptographicKey_get_SignatureHashAlgorithmOrThrow:
 _p_166:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2476,13358
+	.long mono_aot_PCLCrypto_got - . + 2476,13359
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_167:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2480,13393
+	.long mono_aot_PCLCrypto_got - . + 2480,13394
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_168:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2484,13401
+	.long mono_aot_PCLCrypto_got - . + 2484,13402
 	.no_dead_strip plt__rgctx_fetch_2
 plt__rgctx_fetch_2:
 _p_169:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2488,13443
+	.long mono_aot_PCLCrypto_got - . + 2488,13444
 	.no_dead_strip plt_System_ArraySegment_1_T_REF__ctor_T_REF__
 plt_System_ArraySegment_1_T_REF__ctor_T_REF__:
 _p_170:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2492,13451
+	.long mono_aot_PCLCrypto_got - . + 2492,13452
 	.no_dead_strip plt_string_CopyTo_int_char___int_int
 plt_string_CopyTo_int_char___int_int:
 _p_171:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2496,13470
+	.long mono_aot_PCLCrypto_got - . + 2496,13471
 	.no_dead_strip plt_System_Array_Reverse_System_Array
 plt_System_Array_Reverse_System_Array:
 _p_172:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2500,13475
+	.long mono_aot_PCLCrypto_got - . + 2500,13476
 	.no_dead_strip plt_System_Array_Reverse_System_Array_int_int
 plt_System_Array_Reverse_System_Array_int_int:
 _p_173:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2504,13480
+	.long mono_aot_PCLCrypto_got - . + 2504,13481
 	.no_dead_strip plt_System_Numerics_BigInteger__ctor_byte__
 plt_System_Numerics_BigInteger__ctor_byte__:
 _p_174:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2508,13485
+	.long mono_aot_PCLCrypto_got - . + 2508,13486
 	.no_dead_strip plt_PCLCrypto_CryptoUtilities_FromPositiveBigEndian_byte__
 plt_PCLCrypto_CryptoUtilities_FromPositiveBigEndian_byte__:
 _p_175:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2512,13490
+	.long mono_aot_PCLCrypto_got - . + 2512,13491
 	.no_dead_strip plt_PCLCrypto_RSAParametersExtensions_GetFullPrivateParameters_System_Numerics_BigInteger_System_Numerics_BigInteger_System_Numerics_BigInteger_System_Numerics_BigInteger
 plt_PCLCrypto_RSAParametersExtensions_GetFullPrivateParameters_System_Numerics_BigInteger_System_Numerics_BigInteger_System_Numerics_BigInteger_System_Numerics_BigInteger:
 _p_176:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2516,13493
+	.long mono_aot_PCLCrypto_got - . + 2516,13494
 	.no_dead_strip plt_System_Numerics_BigInteger_op_GreaterThan_System_Numerics_BigInteger_long
 plt_System_Numerics_BigInteger_op_GreaterThan_System_Numerics_BigInteger_long:
 _p_177:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2520,13496
+	.long mono_aot_PCLCrypto_got - . + 2520,13497
 	.no_dead_strip plt_System_Numerics_BigInteger_op_Subtraction_System_Numerics_BigInteger_System_Numerics_BigInteger
 plt_System_Numerics_BigInteger_op_Subtraction_System_Numerics_BigInteger_System_Numerics_BigInteger:
 _p_178:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2524,13501
+	.long mono_aot_PCLCrypto_got - . + 2524,13502
 	.no_dead_strip plt_System_Numerics_BigInteger_op_Implicit_int
 plt_System_Numerics_BigInteger_op_Implicit_int:
 _p_179:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2528,13506
+	.long mono_aot_PCLCrypto_got - . + 2528,13507
 	.no_dead_strip plt_System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger
 plt_System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger:
 _p_180:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2532,13511
+	.long mono_aot_PCLCrypto_got - . + 2532,13512
 	.no_dead_strip plt_System_Numerics_BigInteger_op_Modulus_System_Numerics_BigInteger_System_Numerics_BigInteger
 plt_System_Numerics_BigInteger_op_Modulus_System_Numerics_BigInteger_System_Numerics_BigInteger:
 _p_181:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2536,13516
+	.long mono_aot_PCLCrypto_got - . + 2536,13517
 	.no_dead_strip plt_System_Numerics_BigInteger_ToByteArray
 plt_System_Numerics_BigInteger_ToByteArray:
 _p_182:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2540,13521
+	.long mono_aot_PCLCrypto_got - . + 2540,13522
 	.no_dead_strip plt_PCLCrypto_CryptoUtilities_CopyAndReverse_byte__
 plt_PCLCrypto_CryptoUtilities_CopyAndReverse_byte__:
 _p_183:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2544,13526
+	.long mono_aot_PCLCrypto_got - . + 2544,13527
 	.no_dead_strip plt_System_Numerics_BigInteger_op_LessThan_System_Numerics_BigInteger_long
 plt_System_Numerics_BigInteger_op_LessThan_System_Numerics_BigInteger_long:
 _p_184:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2548,13529
+	.long mono_aot_PCLCrypto_got - . + 2548,13530
 	.no_dead_strip plt_System_Numerics_BigInteger_op_Division_System_Numerics_BigInteger_System_Numerics_BigInteger
 plt_System_Numerics_BigInteger_op_Division_System_Numerics_BigInteger_System_Numerics_BigInteger:
 _p_185:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2552,13534
+	.long mono_aot_PCLCrypto_got - . + 2552,13535
 	.no_dead_strip plt_System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger
 plt_System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger:
 _p_186:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2556,13539
+	.long mono_aot_PCLCrypto_got - . + 2556,13540
 	.no_dead_strip plt_System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_long
 plt_System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_long:
 _p_187:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2560,13544
+	.long mono_aot_PCLCrypto_got - . + 2560,13545
 	.no_dead_strip plt_System_IO_MemoryStream__ctor_byte__
 plt_System_IO_MemoryStream__ctor_byte__:
 _p_188:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2564,13549
+	.long mono_aot_PCLCrypto_got - . + 2564,13550
 	.no_dead_strip plt_PCLCrypto_Formatters_Asn_ReadAsn1Elements_System_IO_Stream
 plt_PCLCrypto_Formatters_Asn_ReadAsn1Elements_System_IO_Stream:
 _p_189:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2568,13554
+	.long mono_aot_PCLCrypto_got - . + 2568,13555
 	.no_dead_strip plt_System_IO_MemoryStream__ctor
 plt_System_IO_MemoryStream__ctor:
 _p_190:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2572,13557
+	.long mono_aot_PCLCrypto_got - . + 2572,13558
 	.no_dead_strip plt_PCLCrypto_Formatters_Asn_WriteAsn1Element_System_IO_Stream_PCLCrypto_Formatters_Asn_DataElement
 plt_PCLCrypto_Formatters_Asn_WriteAsn1Element_System_IO_Stream_PCLCrypto_Formatters_Asn_DataElement:
 _p_191:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2576,13562
+	.long mono_aot_PCLCrypto_got - . + 2576,13563
 	.no_dead_strip plt_PCLCrypto_Formatters_Asn_WriteAsn1Elements_PCLCrypto_Formatters_Asn_DataElement__
 plt_PCLCrypto_Formatters_Asn_WriteAsn1Elements_PCLCrypto_Formatters_Asn_DataElement__:
 _p_192:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2580,13565
+	.long mono_aot_PCLCrypto_got - . + 2580,13566
 	.no_dead_strip plt_System_Environment_get_CurrentManagedThreadId
 plt_System_Environment_get_CurrentManagedThreadId:
 _p_193:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2584,13568
+	.long mono_aot_PCLCrypto_got - . + 2584,13569
 	.no_dead_strip plt_PCLCrypto_Formatters_Asn__ReadAsn1Elementsd__3_System_Collections_Generic_IEnumerable_PCLCrypto_Formatters_Asn_DataElement_GetEnumerator
 plt_PCLCrypto_Formatters_Asn__ReadAsn1Elementsd__3_System_Collections_Generic_IEnumerable_PCLCrypto_Formatters_Asn_DataElement_GetEnumerator:
 _p_194:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2588,13573
+	.long mono_aot_PCLCrypto_got - . + 2588,13574
 	.no_dead_strip plt_System_Nullable_1_int__ctor_int
 plt_System_Nullable_1_int__ctor_int:
 _p_195:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2592,13576
+	.long mono_aot_PCLCrypto_got - . + 2592,13577
 	.no_dead_strip plt_PCLCrypto_Formatters_CapiKeyFormatter_IsCapiCompatible_PCLCrypto_RSAParameters
 plt_PCLCrypto_Formatters_CapiKeyFormatter_IsCapiCompatible_PCLCrypto_RSAParameters:
 _p_196:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2596,13587
+	.long mono_aot_PCLCrypto_got - . + 2596,13588
 	.no_dead_strip plt_System_NotSupportedException__ctor_string_System_Exception
 plt_System_NotSupportedException__ctor_string_System_Exception:
 _p_197:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2600,13590
+	.long mono_aot_PCLCrypto_got - . + 2600,13591
 	.no_dead_strip plt_System_IO_BinaryReader_ReadByte
 plt_System_IO_BinaryReader_ReadByte:
 _p_198:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2604,13595
+	.long mono_aot_PCLCrypto_got - . + 2604,13596
 	.no_dead_strip plt_System_IO_BinaryReader_ReadInt16
 plt_System_IO_BinaryReader_ReadInt16:
 _p_199:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2608,13600
+	.long mono_aot_PCLCrypto_got - . + 2608,13601
 	.no_dead_strip plt_System_IO_BinaryReader_ReadInt32
 plt_System_IO_BinaryReader_ReadInt32:
 _p_200:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2612,13605
+	.long mono_aot_PCLCrypto_got - . + 2612,13606
 	.no_dead_strip plt_System_Text_Encoding_get_UTF8
 plt_System_Text_Encoding_get_UTF8:
 _p_201:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2616,13610
+	.long mono_aot_PCLCrypto_got - . + 2616,13611
 	.no_dead_strip plt_string_op_Equality_string_string
 plt_string_op_Equality_string_string:
 _p_202:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2620,13615
+	.long mono_aot_PCLCrypto_got - . + 2620,13616
 	.no_dead_strip plt_PCLCrypto_Formatters_CapiKeyFormatter_VerifyCapiCompatibleParameters_PCLCrypto_RSAParameters
 plt_PCLCrypto_Formatters_CapiKeyFormatter_VerifyCapiCompatibleParameters_PCLCrypto_RSAParameters:
 _p_203:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2624,13620
+	.long mono_aot_PCLCrypto_got - . + 2624,13621
 	.no_dead_strip plt_System_IO_BinaryWriter_Write_byte
 plt_System_IO_BinaryWriter_Write_byte:
 _p_204:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2628,13623
+	.long mono_aot_PCLCrypto_got - . + 2628,13624
 	.no_dead_strip plt_System_IO_BinaryWriter_Write_int16
 plt_System_IO_BinaryWriter_Write_int16:
 _p_205:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2632,13628
+	.long mono_aot_PCLCrypto_got - . + 2632,13629
 	.no_dead_strip plt_System_IO_BinaryWriter_Write_int
 plt_System_IO_BinaryWriter_Write_int:
 _p_206:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2636,13633
+	.long mono_aot_PCLCrypto_got - . + 2636,13634
 	.no_dead_strip plt_System_IO_BinaryWriter_Flush
 plt_System_IO_BinaryWriter_Flush:
 _p_207:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2640,13638
+	.long mono_aot_PCLCrypto_got - . + 2640,13639
 	.no_dead_strip plt_System_IO_BinaryWriter_Dispose
 plt_System_IO_BinaryWriter_Dispose:
 _p_208:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2644,13643
+	.long mono_aot_PCLCrypto_got - . + 2644,13644
 	.no_dead_strip plt_PCLCrypto_Formatters_KeyFormatter_CopyAndReverse_byte__
 plt_PCLCrypto_Formatters_KeyFormatter_CopyAndReverse_byte__:
 _p_209:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2648,13648
+	.long mono_aot_PCLCrypto_got - . + 2648,13649
 	.no_dead_strip plt_System_IO_BinaryWriter_Write_byte___int_int
 plt_System_IO_BinaryWriter_Write_byte___int_int:
 _p_210:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2652,13651
+	.long mono_aot_PCLCrypto_got - . + 2652,13652
 	.no_dead_strip plt_PCLCrypto_Formatters_KeyFormatter_Write_System_IO_Stream_PCLCrypto_RSAParameters_bool
 plt_PCLCrypto_Formatters_KeyFormatter_Write_System_IO_Stream_PCLCrypto_RSAParameters_bool:
 _p_211:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2656,13656
+	.long mono_aot_PCLCrypto_got - . + 2656,13657
 	.no_dead_strip plt_System_Buffer_BlockCopy_System_Array_int_System_Array_int_int
 plt_System_Buffer_BlockCopy_System_Array_int_System_Array_int_int:
 _p_212:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2660,13659
+	.long mono_aot_PCLCrypto_got - . + 2660,13660
 	.no_dead_strip plt_PCLCrypto_Formatters_KeyFormatter_PrependLeadingZero_byte___bool
 plt_PCLCrypto_Formatters_KeyFormatter_PrependLeadingZero_byte___bool:
 _p_213:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2664,13664
+	.long mono_aot_PCLCrypto_got - . + 2664,13665
 	.no_dead_strip plt_PCLCrypto_BCryptRsaKeyFormatter__ctor_PCLCrypto_CryptographicPrivateKeyBlobType
 plt_PCLCrypto_BCryptRsaKeyFormatter__ctor_PCLCrypto_CryptographicPrivateKeyBlobType:
 _p_214:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2668,13667
+	.long mono_aot_PCLCrypto_got - . + 2668,13668
 	.no_dead_strip plt_PCLCrypto_BCryptRsaKeyFormatter__ctor_PCLCrypto_CryptographicPublicKeyBlobType
 plt_PCLCrypto_BCryptRsaKeyFormatter__ctor_PCLCrypto_CryptographicPublicKeyBlobType:
 _p_215:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2672,13670
+	.long mono_aot_PCLCrypto_got - . + 2672,13671
 	.no_dead_strip plt_string_memcpy_byte__byte__int
 plt_string_memcpy_byte__byte__int:
 _p_216:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2676,13673
+	.long mono_aot_PCLCrypto_got - . + 2676,13674
 	.no_dead_strip plt_System_Linq_Enumerable_First_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement
 plt_System_Linq_Enumerable_First_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement:
 _p_217:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2680,13678
+	.long mono_aot_PCLCrypto_got - . + 2680,13679
 	.no_dead_strip plt_System_Linq_Enumerable_ToList_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement
 plt_System_Linq_Enumerable_ToList_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement:
 _p_218:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2684,13690
+	.long mono_aot_PCLCrypto_got - . + 2684,13691
 	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentOutOfRangeException
 plt_System_ThrowHelper_ThrowArgumentOutOfRangeException:
 _p_219:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2688,13702
+	.long mono_aot_PCLCrypto_got - . + 2688,13703
 	.no_dead_strip plt_System_Linq_Enumerable_Single_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement
 plt_System_Linq_Enumerable_Single_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement:
 _p_220:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2692,13707
+	.long mono_aot_PCLCrypto_got - . + 2692,13708
 	.no_dead_strip plt_PCLCrypto_Formatters_Asn_ReadAsn1Elements_byte__
 plt_PCLCrypto_Formatters_Asn_ReadAsn1Elements_byte__:
 _p_221:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2696,13719
+	.long mono_aot_PCLCrypto_got - . + 2696,13720
 	.no_dead_strip plt_PCLCrypto_Formatters_KeyFormatter_BufferEqual_byte___byte__
 plt_PCLCrypto_Formatters_KeyFormatter_BufferEqual_byte___byte__:
 _p_222:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2700,13722
+	.long mono_aot_PCLCrypto_got - . + 2700,13723
 	.no_dead_strip plt__rgctx_fetch_3
 plt__rgctx_fetch_3:
 _p_223:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2704,13742
+	.long mono_aot_PCLCrypto_got - . + 2704,13743
 	.no_dead_strip plt__rgctx_fetch_4
 plt__rgctx_fetch_4:
 _p_224:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2708,13776
+	.long mono_aot_PCLCrypto_got - . + 2708,13777
 	.no_dead_strip plt__rgctx_fetch_5
 plt__rgctx_fetch_5:
 _p_225:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2712,13784
+	.long mono_aot_PCLCrypto_got - . + 2712,13785
 	.no_dead_strip plt__rgctx_fetch_6
 plt__rgctx_fetch_6:
 _p_226:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2716,13815
+	.long mono_aot_PCLCrypto_got - . + 2716,13816
 	.no_dead_strip plt__rgctx_fetch_7
 plt__rgctx_fetch_7:
 _p_227:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2720,13843
+	.long mono_aot_PCLCrypto_got - . + 2720,13844
 	.no_dead_strip plt__rgctx_fetch_8
 plt__rgctx_fetch_8:
 _p_228:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2724,13871
+	.long mono_aot_PCLCrypto_got - . + 2724,13872
 	.no_dead_strip plt__rgctx_fetch_9
 plt__rgctx_fetch_9:
 _p_229:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2728,13907
+	.long mono_aot_PCLCrypto_got - . + 2728,13908
 	.no_dead_strip plt__rgctx_fetch_10
 plt__rgctx_fetch_10:
 _p_230:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2732,13960
+	.long mono_aot_PCLCrypto_got - . + 2732,13961
 	.no_dead_strip plt__rgctx_fetch_11
 plt__rgctx_fetch_11:
 _p_231:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2736,13968
+	.long mono_aot_PCLCrypto_got - . + 2736,13969
 	.no_dead_strip plt__rgctx_fetch_12
 plt__rgctx_fetch_12:
 _p_232:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2740,13976
+	.long mono_aot_PCLCrypto_got - . + 2740,13977
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
 plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_233:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2744,13999
+	.long mono_aot_PCLCrypto_got - . + 2744,14000
 	.no_dead_strip plt_System_Nullable_1_PCLCrypto_AsymmetricSignaturePadding_Unbox_object
 plt_System_Nullable_1_PCLCrypto_AsymmetricSignaturePadding_Unbox_object:
 _p_234:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2748,14028
+	.long mono_aot_PCLCrypto_got - . + 2748,14029
 	.no_dead_strip plt_System_Nullable_1_PCLCrypto_AsymmetricSignaturePadding_Equals_System_Nullable_1_PCLCrypto_AsymmetricSignaturePadding
 plt_System_Nullable_1_PCLCrypto_AsymmetricSignaturePadding_Equals_System_Nullable_1_PCLCrypto_AsymmetricSignaturePadding:
 _p_235:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2752,14048
+	.long mono_aot_PCLCrypto_got - . + 2752,14049
 	.no_dead_strip plt_System_Enum_Equals_object
 plt_System_Enum_Equals_object:
 _p_236:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2756,14068
+	.long mono_aot_PCLCrypto_got - . + 2756,14069
 	.no_dead_strip plt_System_Enum_ToString
 plt_System_Enum_ToString:
 _p_237:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2760,14073
+	.long mono_aot_PCLCrypto_got - . + 2760,14074
 	.no_dead_strip plt_System_Nullable_1_PCLCrypto_AsymmetricEncryptionPadding_Unbox_object
 plt_System_Nullable_1_PCLCrypto_AsymmetricEncryptionPadding_Unbox_object:
 _p_238:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2764,14078
+	.long mono_aot_PCLCrypto_got - . + 2764,14079
 	.no_dead_strip plt_System_Nullable_1_PCLCrypto_AsymmetricEncryptionPadding_Equals_System_Nullable_1_PCLCrypto_AsymmetricEncryptionPadding
 plt_System_Nullable_1_PCLCrypto_AsymmetricEncryptionPadding_Equals_System_Nullable_1_PCLCrypto_AsymmetricEncryptionPadding:
 _p_239:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2768,14098
+	.long mono_aot_PCLCrypto_got - . + 2768,14099
 	.no_dead_strip plt_System_Nullable_1_PCLCrypto_HashAlgorithm_Unbox_object
 plt_System_Nullable_1_PCLCrypto_HashAlgorithm_Unbox_object:
 _p_240:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2772,14118
+	.long mono_aot_PCLCrypto_got - . + 2772,14119
 	.no_dead_strip plt_System_Nullable_1_PCLCrypto_HashAlgorithm_Equals_System_Nullable_1_PCLCrypto_HashAlgorithm
 plt_System_Nullable_1_PCLCrypto_HashAlgorithm_Equals_System_Nullable_1_PCLCrypto_HashAlgorithm:
 _p_241:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2776,14138
+	.long mono_aot_PCLCrypto_got - . + 2776,14139
 	.no_dead_strip plt__rgctx_fetch_13
 plt__rgctx_fetch_13:
 _p_242:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2780,14184
+	.long mono_aot_PCLCrypto_got - . + 2780,14185
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
 _p_243:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2784,14192
+	.long mono_aot_PCLCrypto_got - . + 2784,14193
 	.no_dead_strip plt__rgctx_fetch_14
 plt__rgctx_fetch_14:
 _p_244:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2788,14229
+	.long mono_aot_PCLCrypto_got - . + 2788,14230
 	.no_dead_strip plt__rgctx_fetch_15
 plt__rgctx_fetch_15:
 _p_245:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2792,14252
+	.long mono_aot_PCLCrypto_got - . + 2792,14253
 	.no_dead_strip plt__rgctx_fetch_16
 plt__rgctx_fetch_16:
 _p_246:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2796,14293
+	.long mono_aot_PCLCrypto_got - . + 2796,14294
 	.no_dead_strip plt__rgctx_fetch_17
 plt__rgctx_fetch_17:
 _p_247:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2800,14301
+	.long mono_aot_PCLCrypto_got - . + 2800,14302
 	.no_dead_strip plt__rgctx_fetch_18
 plt__rgctx_fetch_18:
 _p_248:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2804,14324
+	.long mono_aot_PCLCrypto_got - . + 2804,14325
 	.no_dead_strip plt__rgctx_fetch_19
 plt__rgctx_fetch_19:
 _p_249:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2808,14358
+	.long mono_aot_PCLCrypto_got - . + 2808,14359
 	.no_dead_strip plt__rgctx_fetch_20
 plt__rgctx_fetch_20:
 _p_250:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2812,14366
+	.long mono_aot_PCLCrypto_got - . + 2812,14367
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_251:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2816,14389
+	.long mono_aot_PCLCrypto_got - . + 2816,14390
 	.no_dead_strip plt_System_Array_InternalArray__get_Item_PCLCrypto_Formatters_Asn_DataElement_int
 plt_System_Array_InternalArray__get_Item_PCLCrypto_Formatters_Asn_DataElement_int:
 _p_252:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2820,14427
+	.long mono_aot_PCLCrypto_got - . + 2820,14428
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_PCLCrypto_Formatters_Asn_DataElement_get_Current
 plt_System_Array_InternalEnumerator_1_PCLCrypto_Formatters_Asn_DataElement_get_Current:
 _p_253:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2824,14445
+	.long mono_aot_PCLCrypto_got - . + 2824,14446
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_PCLCrypto_Formatters_Asn_DataElement__ctor_System_Array
 plt_System_Array_InternalEnumerator_1_PCLCrypto_Formatters_Asn_DataElement__ctor_System_Array:
 _p_254:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2828,14463
+	.long mono_aot_PCLCrypto_got - . + 2828,14464
 	.no_dead_strip plt_System_Nullable_1_int_Unbox_object
 plt_System_Nullable_1_int_Unbox_object:
 _p_255:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2832,14481
+	.long mono_aot_PCLCrypto_got - . + 2832,14482
 	.no_dead_strip plt_System_Nullable_1_int_Equals_System_Nullable_1_int
 plt_System_Nullable_1_int_Equals_System_Nullable_1_int:
 _p_256:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2836,14503
+	.long mono_aot_PCLCrypto_got - . + 2836,14504
 	.no_dead_strip plt_int_Equals_object
 plt_int_Equals_object:
 _p_257:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2840,14525
+	.long mono_aot_PCLCrypto_got - . + 2840,14526
 	.no_dead_strip plt_int_ToString
 plt_int_ToString:
 _p_258:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2844,14530
+	.long mono_aot_PCLCrypto_got - . + 2844,14531
 	.no_dead_strip plt_System_Collections_Generic_EqualityComparer_1_PCLCrypto_Formatters_Asn_DataElement_CreateComparer
 plt_System_Collections_Generic_EqualityComparer_1_PCLCrypto_Formatters_Asn_DataElement_CreateComparer:
 _p_259:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2848,14535
+	.long mono_aot_PCLCrypto_got - . + 2848,14536
 	.no_dead_strip plt_System_RuntimeType_CreateInstanceForAnotherGenericParameter_System_Type_System_RuntimeType
 plt_System_RuntimeType_CreateInstanceForAnotherGenericParameter_System_Type_System_RuntimeType:
 _p_260:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2852,14553
+	.long mono_aot_PCLCrypto_got - . + 2852,14554
 	.no_dead_strip plt_System_Enum_GetUnderlyingType_System_Type
 plt_System_Enum_GetUnderlyingType_System_Type:
 _p_261:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2856,14558
+	.long mono_aot_PCLCrypto_got - . + 2856,14559
 	.no_dead_strip plt_System_Type_GetTypeCode_System_Type
 plt_System_Type_GetTypeCode_System_Type:
 _p_262:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2860,14563
+	.long mono_aot_PCLCrypto_got - . + 2860,14564
 	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentException_System_ExceptionResource
 plt_System_ThrowHelper_ThrowArgumentException_System_ExceptionResource:
 _p_263:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2864,14568
+	.long mono_aot_PCLCrypto_got - . + 2864,14569
 	.no_dead_strip plt__icall_native_PCLCrypto_RsaCryptographicKey_SecItemAdd_intptr_intptr_
 plt__icall_native_PCLCrypto_RsaCryptographicKey_SecItemAdd_intptr_intptr_:
 _p_264:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2868,14573
+	.long mono_aot_PCLCrypto_got - . + 2868,14574
 	.no_dead_strip plt__icall_native_PCLCrypto_RsaCryptographicKey_SecKeyDecrypt_intptr_Security_SecPadding_intptr_int_intptr_int_
 plt__icall_native_PCLCrypto_RsaCryptographicKey_SecKeyDecrypt_intptr_Security_SecPadding_intptr_int_intptr_int_:
 _p_265:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2872,14576
+	.long mono_aot_PCLCrypto_got - . + 2872,14577
 	.no_dead_strip plt__icall_native_PCLCrypto_RsaCryptographicKey_SecKeyRawSign_intptr_Security_SecPadding_intptr_int_intptr_int_
 plt__icall_native_PCLCrypto_RsaCryptographicKey_SecKeyRawSign_intptr_Security_SecPadding_intptr_int_intptr_int_:
 _p_266:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2876,14579
+	.long mono_aot_PCLCrypto_got - . + 2876,14580
 	.no_dead_strip plt__icall_native_PCLCrypto_RsaCryptographicKey_SecItemCopyMatching_intptr_intptr_
 plt__icall_native_PCLCrypto_RsaCryptographicKey_SecItemCopyMatching_intptr_intptr_:
 _p_267:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2880,14582
+	.long mono_aot_PCLCrypto_got - . + 2880,14583
 	.no_dead_strip plt_System_Runtime_InteropServices_Marshal_SizeOf_System_Type
 plt_System_Runtime_InteropServices_Marshal_SizeOf_System_Type:
 _p_268:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2884,14585
+	.long mono_aot_PCLCrypto_got - . + 2884,14586
 	.no_dead_strip plt_System_Runtime_InteropServices_Marshal_StructureToPtr_object_intptr_bool
 plt_System_Runtime_InteropServices_Marshal_StructureToPtr_object_intptr_bool:
 _p_269:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2888,14590
+	.long mono_aot_PCLCrypto_got - . + 2888,14591
 	.no_dead_strip plt__rgctx_fetch_21
 plt__rgctx_fetch_21:
 _p_270:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2892,14613
+	.long mono_aot_PCLCrypto_got - . + 2892,14614
 	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentNullException_System_ExceptionArgument
 plt_System_ThrowHelper_ThrowArgumentNullException_System_ExceptionArgument:
 _p_271:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2896,14623
+	.long mono_aot_PCLCrypto_got - . + 2896,14624
 	.no_dead_strip plt_System_Collections_Generic_List_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes
 plt_System_Collections_Generic_List_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes:
 _p_272:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2900,14628
+	.long mono_aot_PCLCrypto_got - . + 2900,14629
 	.no_dead_strip plt_System_Linq_Error_ArgumentNull_string
 plt_System_Linq_Error_ArgumentNull_string:
 _p_273:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2904,14646
+	.long mono_aot_PCLCrypto_got - . + 2904,14647
 	.no_dead_strip plt_System_Array_InternalArray__get_Item_PCLCrypto_KeySizes_int
 plt_System_Array_InternalArray__get_Item_PCLCrypto_KeySizes_int:
 _p_274:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2908,14651
+	.long mono_aot_PCLCrypto_got - . + 2908,14652
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_PCLCrypto_KeySizes_get_Current
 plt_System_Array_InternalEnumerator_1_PCLCrypto_KeySizes_get_Current:
 _p_275:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2912,14669
+	.long mono_aot_PCLCrypto_got - . + 2912,14670
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_PCLCrypto_KeySizes__ctor_System_Array
 plt_System_Array_InternalEnumerator_1_PCLCrypto_KeySizes__ctor_System_Array:
 _p_276:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2916,14687
+	.long mono_aot_PCLCrypto_got - . + 2916,14688
 	.no_dead_strip plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr
 plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr:
 _p_277:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2920,14705
+	.long mono_aot_PCLCrypto_got - . + 2920,14706
 	.no_dead_strip plt_System_Linq_Enumerable_SelectArrayIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Security_Cryptography_KeySizes___System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes
 plt_System_Linq_Enumerable_SelectArrayIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Security_Cryptography_KeySizes___System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes:
 _p_278:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2924,14713
+	.long mono_aot_PCLCrypto_got - . + 2924,14714
 	.no_dead_strip plt_System_Linq_Enumerable_SelectListIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Collections_Generic_List_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes
 plt_System_Linq_Enumerable_SelectListIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Collections_Generic_List_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes:
 _p_279:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2928,14735
+	.long mono_aot_PCLCrypto_got - . + 2928,14736
 	.no_dead_strip plt_System_Linq_Enumerable_SelectIListIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IList_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes
 plt_System_Linq_Enumerable_SelectIListIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IList_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes:
 _p_280:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2932,14757
+	.long mono_aot_PCLCrypto_got - . + 2932,14758
 	.no_dead_strip plt_System_Linq_Enumerable_SelectIPartitionIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Linq_IPartition_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes
 plt_System_Linq_Enumerable_SelectIPartitionIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Linq_IPartition_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes:
 _p_281:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2936,14779
+	.long mono_aot_PCLCrypto_got - . + 2936,14780
 	.no_dead_strip plt_System_Linq_Enumerable_SelectEnumerableIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IEnumerable_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes
 plt_System_Linq_Enumerable_SelectEnumerableIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IEnumerable_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes:
 _p_282:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2940,14801
+	.long mono_aot_PCLCrypto_got - . + 2940,14802
 	.no_dead_strip plt__rgctx_fetch_22
 plt__rgctx_fetch_22:
 _p_283:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2944,14841
+	.long mono_aot_PCLCrypto_got - . + 2944,14842
 	.no_dead_strip plt__rgctx_fetch_23
 plt__rgctx_fetch_23:
 _p_284:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2948,14882
+	.long mono_aot_PCLCrypto_got - . + 2948,14883
 	.no_dead_strip plt__rgctx_fetch_24
 plt__rgctx_fetch_24:
 _p_285:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2952,14923
+	.long mono_aot_PCLCrypto_got - . + 2952,14924
 	.no_dead_strip plt__rgctx_fetch_25
 plt__rgctx_fetch_25:
 _p_286:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2956,14964
+	.long mono_aot_PCLCrypto_got - . + 2956,14965
 	.no_dead_strip plt_System_Collections_Generic_List_1_PCLCrypto_Formatters_Asn_DataElement__ctor_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement
 plt_System_Collections_Generic_List_1_PCLCrypto_Formatters_Asn_DataElement__ctor_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement:
 _p_287:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2960,14987
+	.long mono_aot_PCLCrypto_got - . + 2960,14988
 	.no_dead_strip plt_System_Linq_Enumerable_TryGetFirst_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement_bool_
 plt_System_Linq_Enumerable_TryGetFirst_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement_bool_:
 _p_288:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2964,15007
+	.long mono_aot_PCLCrypto_got - . + 2964,15008
 	.no_dead_strip plt_System_Linq_Error_NoElements
 plt_System_Linq_Error_NoElements:
 _p_289:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2968,15025
+	.long mono_aot_PCLCrypto_got - . + 2968,15026
 	.no_dead_strip plt_System_Linq_Error_MoreThanOneElement
 plt_System_Linq_Error_MoreThanOneElement:
 _p_290:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2972,15030
+	.long mono_aot_PCLCrypto_got - . + 2972,15031
 	.no_dead_strip plt__rgctx_fetch_26
 plt__rgctx_fetch_26:
 _p_291:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2976,15053
+	.long mono_aot_PCLCrypto_got - . + 2976,15054
 	.no_dead_strip plt_System_Collections_Generic_List_1_PCLCrypto_KeySizes_Add_PCLCrypto_KeySizes
 plt_System_Collections_Generic_List_1_PCLCrypto_KeySizes_Add_PCLCrypto_KeySizes:
 _p_292:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2980,15076
+	.long mono_aot_PCLCrypto_got - . + 2980,15077
 	.no_dead_strip plt_System_Collections_Generic_EqualityComparer_1_PCLCrypto_KeySizes_CreateComparer
 plt_System_Collections_Generic_EqualityComparer_1_PCLCrypto_KeySizes_CreateComparer:
 _p_293:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2984,15094
+	.long mono_aot_PCLCrypto_got - . + 2984,15095
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_PCLCrypto_KeySizes__ctor
 plt_System_Linq_Enumerable_Iterator_1_PCLCrypto_KeySizes__ctor:
 _p_294:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2988,15112
+	.long mono_aot_PCLCrypto_got - . + 2988,15113
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_PCLCrypto_KeySizes_Dispose
 plt_System_Linq_Enumerable_Iterator_1_PCLCrypto_KeySizes_Dispose:
 _p_295:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2992,15130
+	.long mono_aot_PCLCrypto_got - . + 2992,15131
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes__ctor_bool
 plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes__ctor_bool:
 _p_296:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 2996,15148
+	.long mono_aot_PCLCrypto_got - . + 2996,15149
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_AllocateBuffer
 plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_AllocateBuffer:
 _p_297:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3000,15166
+	.long mono_aot_PCLCrypto_got - . + 3000,15167
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_ToArray
 plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_ToArray:
 _p_298:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3004,15184
+	.long mono_aot_PCLCrypto_got - . + 3004,15185
 	.no_dead_strip plt_System_Linq_Enumerable_WhereEnumerableIterator_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes_System_Func_2_PCLCrypto_KeySizes_bool
 plt_System_Linq_Enumerable_WhereEnumerableIterator_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes_System_Func_2_PCLCrypto_KeySizes_bool:
 _p_299:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3008,15202
+	.long mono_aot_PCLCrypto_got - . + 3008,15203
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_PCLCrypto_KeySizes_GetEnumerator
 plt_System_Linq_Enumerable_Iterator_1_PCLCrypto_KeySizes_GetEnumerator:
 _p_300:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3012,15220
+	.long mono_aot_PCLCrypto_got - . + 3012,15221
 	.no_dead_strip plt_System_Linq_Error_NotSupported
 plt_System_Linq_Error_NotSupported:
 _p_301:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3016,15238
+	.long mono_aot_PCLCrypto_got - . + 3016,15239
 	.no_dead_strip plt_System_Linq_Enumerable_SelectIPartitionIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_LazyToArray
 plt_System_Linq_Enumerable_SelectIPartitionIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_LazyToArray:
 _p_302:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3020,15243
+	.long mono_aot_PCLCrypto_got - . + 3020,15244
 	.no_dead_strip plt_System_Linq_Enumerable_SelectIPartitionIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_PreallocatingToArray_int
 plt_System_Linq_Enumerable_SelectIPartitionIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_PreallocatingToArray_int:
 _p_303:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3024,15265
+	.long mono_aot_PCLCrypto_got - . + 3024,15266
 	.no_dead_strip plt_System_Collections_Generic_List_1_PCLCrypto_KeySizes__ctor_int
 plt_System_Collections_Generic_List_1_PCLCrypto_KeySizes__ctor_int:
 _p_304:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3028,15287
+	.long mono_aot_PCLCrypto_got - . + 3028,15288
 	.no_dead_strip plt_System_Linq_Enumerable_SelectListPartitionIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IList_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_int_int
 plt_System_Linq_Enumerable_SelectListPartitionIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IList_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_int_int:
 _p_305:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3032,15305
+	.long mono_aot_PCLCrypto_got - . + 3032,15306
 	.no_dead_strip plt_System_Collections_Generic_List_1_System_Security_Cryptography_KeySizes_GetEnumerator
 plt_System_Collections_Generic_List_1_System_Security_Cryptography_KeySizes_GetEnumerator:
 _p_306:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3036,15327
+	.long mono_aot_PCLCrypto_got - . + 3036,15328
 	.no_dead_strip plt_System_Collections_Generic_List_1_Enumerator_System_Security_Cryptography_KeySizes_MoveNext
 plt_System_Collections_Generic_List_1_Enumerator_System_Security_Cryptography_KeySizes_MoveNext:
 _p_307:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3040,15347
+	.long mono_aot_PCLCrypto_got - . + 3040,15348
 	.no_dead_strip plt_System_Collections_Generic_List_1_PCLCrypto_Formatters_Asn_DataElement_Add_PCLCrypto_Formatters_Asn_DataElement
 plt_System_Collections_Generic_List_1_PCLCrypto_Formatters_Asn_DataElement_Add_PCLCrypto_Formatters_Asn_DataElement:
 _p_308:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3044,15367
+	.long mono_aot_PCLCrypto_got - . + 3044,15368
 	.no_dead_strip plt_System_Collections_Generic_List_1_PCLCrypto_KeySizes_EnsureCapacity_int
 plt_System_Collections_Generic_List_1_PCLCrypto_KeySizes_EnsureCapacity_int:
 _p_309:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3048,15387
+	.long mono_aot_PCLCrypto_got - . + 3048,15388
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_TryMove_PCLCrypto_KeySizes___
 plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_TryMove_PCLCrypto_KeySizes___:
 _p_310:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3052,15405
+	.long mono_aot_PCLCrypto_got - . + 3052,15406
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_CopyTo_PCLCrypto_KeySizes___int_int
 plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_CopyTo_PCLCrypto_KeySizes___int_int:
 _p_311:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3056,15423
+	.long mono_aot_PCLCrypto_got - . + 3056,15424
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes__ctor_int
 plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes__ctor_int:
 _p_312:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3060,15441
+	.long mono_aot_PCLCrypto_got - . + 3060,15442
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_GetBuffer_int
 plt_System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_GetBuffer_int:
 _p_313:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3064,15459
+	.long mono_aot_PCLCrypto_got - . + 3064,15460
 	.no_dead_strip plt_System_Collections_Generic_ArrayBuilder_1_PCLCrypto_KeySizes___Add_PCLCrypto_KeySizes__
 plt_System_Collections_Generic_ArrayBuilder_1_PCLCrypto_KeySizes___Add_PCLCrypto_KeySizes__:
 _p_314:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3068,15477
+	.long mono_aot_PCLCrypto_got - . + 3068,15478
 	.no_dead_strip plt_System_Linq_Utilities_CombinePredicates_PCLCrypto_KeySizes_System_Func_2_PCLCrypto_KeySizes_bool_System_Func_2_PCLCrypto_KeySizes_bool
 plt_System_Linq_Utilities_CombinePredicates_PCLCrypto_KeySizes_System_Func_2_PCLCrypto_KeySizes_bool_System_Func_2_PCLCrypto_KeySizes_bool:
 _p_315:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3072,15497
+	.long mono_aot_PCLCrypto_got - . + 3072,15498
 	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentOutOfRangeException_System_ExceptionArgument_System_ExceptionResource
 plt_System_ThrowHelper_ThrowArgumentOutOfRangeException_System_ExceptionArgument_System_ExceptionResource:
 _p_316:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3076,15515
+	.long mono_aot_PCLCrypto_got - . + 3076,15516
 	.no_dead_strip plt_System_Linq_Enumerable_SelectListPartitionIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_get_Count
 plt_System_Linq_Enumerable_SelectListPartitionIterator_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_get_Count:
 _p_317:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3080,15520
+	.long mono_aot_PCLCrypto_got - . + 3080,15521
 	.no_dead_strip plt_System_Collections_Generic_List_1_PCLCrypto_Formatters_Asn_DataElement_EnsureCapacity_int
 plt_System_Collections_Generic_List_1_PCLCrypto_Formatters_Asn_DataElement_EnsureCapacity_int:
 _p_318:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3084,15542
+	.long mono_aot_PCLCrypto_got - . + 3084,15543
 	.no_dead_strip plt_System_Collections_Generic_List_1_PCLCrypto_KeySizes_set_Capacity_int
 plt_System_Collections_Generic_List_1_PCLCrypto_KeySizes_set_Capacity_int:
 _p_319:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3088,15562
+	.long mono_aot_PCLCrypto_got - . + 3088,15563
 	.no_dead_strip plt_System_Collections_Generic_List_1_PCLCrypto_Formatters_Asn_DataElement_set_Capacity_int
 plt_System_Collections_Generic_List_1_PCLCrypto_Formatters_Asn_DataElement_set_Capacity_int:
 _p_320:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_PCLCrypto_got - . + 3092,15580
+	.long mono_aot_PCLCrypto_got - . + 3092,15581
 plt_end:
 .section __DATA, __bss
 	.align 3
@@ -21940,13 +21940,13 @@ _mono_aot_file_info:
 	.align 2
 	.long unbox_trampoline_addresses
 
-	.long 454,3100,321,834,66,391195135,0,22700
+	.long 454,3100,321,834,66,391195135,0,22701
 	.long 128,4,4,10,0,24,37936,15224
 	.long 14584,11680,0,13040,14424,12424,0,8688
 	.long 1224,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 134,61,181,176,120,152,184,219,106,132,156,100,130,32,228,80
+	.byte 85,212,116,215,183,184,156,144,208,228,0,177,55,2,168,161
 	.globl _mono_aot_module_PCLCrypto_info
 	.align 2
 _mono_aot_module_PCLCrypto_info:

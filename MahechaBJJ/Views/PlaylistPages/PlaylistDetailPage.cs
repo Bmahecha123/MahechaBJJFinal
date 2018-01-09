@@ -156,13 +156,13 @@ namespace MahechaBJJ.Views.PlaylistPages
 
         public void GoBack(object sender, EventArgs e)
         {
-            backBtn.IsEnabled = false;
+            ToggleButtons();
             Navigation.PopModalAsync();
         }
 
         public async void DeletePlaylist(object sender, EventArgs e)
         {
-            deleteBtn.IsEnabled = false;
+            ToggleButtons();
             bool delete = await DisplayAlert("Delete Playlist", "Are you sure you want to delete " + userPlaylist.Name + "?", "Yes", "No");
             if (delete)
             {
@@ -172,11 +172,18 @@ namespace MahechaBJJ.Views.PlaylistPages
                     await Navigation.PopModalAsync();
                 } else {
 					await DisplayAlert("Unable To Delete", userPlaylist.Name + " has not been deleted. Try again.", "Ok");
-                    deleteBtn.IsEnabled = true;
+                    ToggleButtons();
 				}
             } else {
+                ToggleButtons();
                 return;
             }
+        }
+
+        public void ToggleButtons()
+        {
+            backBtn.IsEnabled = !backBtn.IsEnabled;
+            deleteBtn.IsEnabled = !deleteBtn.IsEnabled;
         }
 
         public void LoadVideo(object sender, SelectedItemChangedEventArgs e)

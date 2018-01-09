@@ -190,9 +190,16 @@ namespace MahechaBJJ.Views.CommonPages
         }
 
         //Events
+
+        private void ToggleButtons()
+        {
+            backBtn.IsEnabled = !backBtn.IsEnabled;
+            submitBtn.IsEnabled = !submitBtn.IsEnabled;
+        }
+
         public async void ChangePassword(object sender, EventArgs e) 
         {
-            submitBtn.IsEnabled = false;
+            ToggleButtons();
             bool success = await _baseViewModel.ChangePassword(_user.Id, secretQuestionEntry.Text.ToLower(), newPasswordEntry.Text);
             if (success)
             {
@@ -206,7 +213,7 @@ namespace MahechaBJJ.Views.CommonPages
             } else {
                 await DisplayAlert("Password Not Updated", "Password has not been updated, please try again.", "Ok");
             }
-            submitBtn.IsEnabled = true;
+            ToggleButtons();
         }
     }
 }

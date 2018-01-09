@@ -182,7 +182,7 @@ namespace MahechaBJJ.Views.EntryPages
 
         private void Validate(object sender, EventArgs e)
         {
-            loginBtn.IsEnabled = false;
+            ToggleButtons();
             if(emailEntry.Text != null || passwordEntry.Text != null)
             {
                 Login(sender, e);
@@ -191,7 +191,7 @@ namespace MahechaBJJ.Views.EntryPages
             {
                 DisplayAlert("Login Error!", "Make sure all fields are filled in!", "Ok, got it.");
             }
-            loginBtn.IsEnabled = true;
+            ToggleButtons();
         }
 
         private async void Login(object sender, EventArgs e)
@@ -210,15 +210,22 @@ namespace MahechaBJJ.Views.EntryPages
 
         private void GoBack(object sender, EventArgs e)
         {
-            backBtn.IsEnabled = false;
+            ToggleButtons();
             Navigation.PopModalAsync();
+        }
+
+        private void ToggleButtons()
+        {
+            backBtn.IsEnabled = !backBtn.IsEnabled;
+            loginBtn.IsEnabled = !loginBtn.IsEnabled;
+            forgotPasswordBtn.IsEnabled = !forgotPasswordBtn.IsEnabled;
         }
 
         private void ForgotPasswordForm(object sender, EventArgs e)
         {
-            forgotPasswordBtn.IsEnabled = false;
+            ToggleButtons();
             Navigation.PushModalAsync(new ForgotPasswordPage());
-            forgotPasswordBtn.IsEnabled = true;
+            ToggleButtons();
         }
 
 		protected override void OnSizeAllocated(double width, double height)

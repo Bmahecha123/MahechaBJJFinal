@@ -152,7 +152,7 @@ namespace MahechaBJJ.Views.CommonPages
 
         private async void CheckIfUserExists(Object sender, EventArgs e)
         {
-            nextBtn.IsEnabled = false;
+            ToggleButtons();
             //logic to check if email exists
             if (emailEntry.Text != null){
                 user = await _baseViewModel.GetUser(emailEntry.Text.ToLower());
@@ -165,7 +165,13 @@ namespace MahechaBJJ.Views.CommonPages
             } else {
                 await DisplayAlert("Empty Field", "Email Field is Empty, Fill In.", "Ok");
             }
-            nextBtn.IsEnabled = true;
+            ToggleButtons();
+        }
+
+        private void ToggleButtons()
+        {
+            backBtn.IsEnabled = !backBtn.IsEnabled;
+            nextBtn.IsEnabled = !nextBtn.IsEnabled;
         }
     }
 }

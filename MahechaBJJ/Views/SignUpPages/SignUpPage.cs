@@ -353,7 +353,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
         private void Validate()
         {
-            nextBtn.IsEnabled = false;
+            ToggleButtons();
             if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null 
                 || secretQuestionEntry.Text != null) 
             {
@@ -363,31 +363,19 @@ namespace MahechaBJJ.Views.SignUpPages
             else {
                 DisplayAlert("Sign Up Error", "Make sure all fields are filled in!", "Okay, got it.");
             }
-            nextBtn.IsEnabled = true;
+            ToggleButtons();
         }
-
-        /*private async void SignUp(object sender, EventArgs e)
-        {
-            nextBtn.IsEnabled = false;
-            user = await _signUpPageViewModel.CreateUser(nameEntry.Text, emailAddressEntry.Text.ToLower(), passWordEntry.Text, secretQuestionPicker.SelectedItem.ToString(), 
-                                                         secretQuestionEntry.Text.ToLower(), beltPicker.SelectedItem.ToString());
-            if (user == null)
-            {
-                await DisplayAlert("Account Exists", $"An account with the email {emailAddressEntry.Text} already exists. Use a different email address.", "Ok");
-                emailAddressEntry.Text = "";
-                nextBtn.IsEnabled = true;
-                return;
-            }
-            _signUpPageViewModel.SaveCredentials(user.Email, user.Password, user.Id);
-            account = _baseViewModel.GetAccountInformation();
-            nextBtn.IsEnabled = true;
-            Application.Current.MainPage = new MainTabbedPage();
-        }*/
 
         private void GoBack(object sender, EventArgs e)
         {
-            backBtn.IsEnabled = false;
+            ToggleButtons();
             Navigation.PopModalAsync();
+        }
+
+        private void ToggleButtons()
+        {
+            backBtn.IsEnabled = !backBtn.IsEnabled;
+            nextBtn.IsEnabled = !nextBtn.IsEnabled;
         }
 
         private void CreateUser() 

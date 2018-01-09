@@ -26702,4813 +26702,4813 @@ plt_Xamarin_Auth_Account__ctor_string_System_Collections_Generic_IDictionary_2_s
 _p_1:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2692,19396
+	.long mono_aot_Xamarin_Auth_got - . + 2692,19397
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_2:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2696,19398
+	.long mono_aot_Xamarin_Auth_got - . + 2696,19399
 	.no_dead_strip plt_System_Collections_Generic_Dictionary_2_string_string__ctor
 plt_System_Collections_Generic_Dictionary_2_string_string__ctor:
 _p_3:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2700,19406
+	.long mono_aot_Xamarin_Auth_got - . + 2700,19407
 	.no_dead_strip plt_System_Collections_Generic_Dictionary_2_string_string__ctor_System_Collections_Generic_IDictionary_2_string_string
 plt_System_Collections_Generic_Dictionary_2_string_string__ctor_System_Collections_Generic_IDictionary_2_string_string:
 _p_4:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2704,19417
+	.long mono_aot_Xamarin_Auth_got - . + 2704,19418
 	.no_dead_strip plt_System_Net_CookieContainer__ctor
 plt_System_Net_CookieContainer__ctor:
 _p_5:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2708,19428
+	.long mono_aot_Xamarin_Auth_got - . + 2708,19429
 	.no_dead_strip plt_System_Text_StringBuilder__ctor
 plt_System_Text_StringBuilder__ctor:
 _p_6:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2712,19433
+	.long mono_aot_Xamarin_Auth_got - . + 2712,19434
 	.no_dead_strip plt_System_Text_StringBuilder_Append_string
 plt_System_Text_StringBuilder_Append_string:
 _p_7:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2716,19438
+	.long mono_aot_Xamarin_Auth_got - . + 2716,19439
 	.no_dead_strip plt_System_Uri_EscapeDataString_string
 plt_System_Uri_EscapeDataString_string:
 _p_8:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2720,19443
+	.long mono_aot_Xamarin_Auth_got - . + 2720,19444
 	.no_dead_strip plt_System_Collections_Generic_Dictionary_2_string_string_GetEnumerator
 plt_System_Collections_Generic_Dictionary_2_string_string_GetEnumerator:
 _p_9:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2724,19448
+	.long mono_aot_Xamarin_Auth_got - . + 2724,19449
 	.no_dead_strip plt_System_Collections_Generic_Dictionary_2_Enumerator_string_string_MoveNext
 plt_System_Collections_Generic_Dictionary_2_Enumerator_string_string_MoveNext:
 _p_10:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2728,19459
+	.long mono_aot_Xamarin_Auth_got - . + 2728,19460
 	.no_dead_strip plt_Xamarin_Auth_Account_SerializeCookies
 plt_Xamarin_Auth_Account_SerializeCookies:
 _p_11:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2732,19470
+	.long mono_aot_Xamarin_Auth_got - . + 2732,19471
 	.no_dead_strip plt_Xamarin_Auth_Account__ctor
 plt_Xamarin_Auth_Account__ctor:
 _p_12:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2736,19472
+	.long mono_aot_Xamarin_Auth_got - . + 2736,19473
 	.no_dead_strip plt_wrapper_alloc_object_AllocVector_intptr_intptr
 plt_wrapper_alloc_object_AllocVector_intptr_intptr:
 _p_13:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2740,19474
+	.long mono_aot_Xamarin_Auth_got - . + 2740,19475
 	.no_dead_strip plt_string_Split_char__
 plt_string_Split_char__:
 _p_14:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2744,19482
+	.long mono_aot_Xamarin_Auth_got - . + 2744,19483
 	.no_dead_strip plt_System_Uri_UnescapeDataString_string
 plt_System_Uri_UnescapeDataString_string:
 _p_15:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2748,19487
+	.long mono_aot_Xamarin_Auth_got - . + 2748,19488
 	.no_dead_strip plt_string_op_Equality_string_string
 plt_string_op_Equality_string_string:
 _p_16:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2752,19492
+	.long mono_aot_Xamarin_Auth_got - . + 2752,19493
 	.no_dead_strip plt_Xamarin_Auth_Account_DeserializeCookies_string
 plt_Xamarin_Auth_Account_DeserializeCookies_string:
 _p_17:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2756,19497
+	.long mono_aot_Xamarin_Auth_got - . + 2756,19498
 	.no_dead_strip plt_System_Collections_Generic_Dictionary_2_string_string_set_Item_string_string
 plt_System_Collections_Generic_Dictionary_2_string_string_set_Item_string_string:
 _p_18:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2760,19499
+	.long mono_aot_Xamarin_Auth_got - . + 2760,19500
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_19:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2764,19510
+	.long mono_aot_Xamarin_Auth_got - . + 2764,19511
 	.no_dead_strip plt_System_Runtime_Serialization_Formatters_Binary_BinaryFormatter__ctor
 plt_System_Runtime_Serialization_Formatters_Binary_BinaryFormatter__ctor:
 _p_20:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2768,19545
+	.long mono_aot_Xamarin_Auth_got - . + 2768,19546
 	.no_dead_strip plt_System_IO_MemoryStream__ctor
 plt_System_IO_MemoryStream__ctor:
 _p_21:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2772,19550
+	.long mono_aot_Xamarin_Auth_got - . + 2772,19551
 	.no_dead_strip plt_System_Runtime_Serialization_Formatters_Binary_BinaryFormatter_Serialize_System_IO_Stream_object
 plt_System_Runtime_Serialization_Formatters_Binary_BinaryFormatter_Serialize_System_IO_Stream_object:
 _p_22:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2776,19555
+	.long mono_aot_Xamarin_Auth_got - . + 2776,19556
 	.no_dead_strip plt_System_Convert_ToBase64String_byte___int_int
 plt_System_Convert_ToBase64String_byte___int_int:
 _p_23:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2780,19560
+	.long mono_aot_Xamarin_Auth_got - . + 2780,19561
 	.no_dead_strip plt_System_Convert_FromBase64String_string
 plt_System_Convert_FromBase64String_string:
 _p_24:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2784,19565
+	.long mono_aot_Xamarin_Auth_got - . + 2784,19566
 	.no_dead_strip plt_System_IO_MemoryStream__ctor_byte__
 plt_System_IO_MemoryStream__ctor_byte__:
 _p_25:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2788,19570
+	.long mono_aot_Xamarin_Auth_got - . + 2788,19571
 	.no_dead_strip plt_System_Runtime_Serialization_Formatters_Binary_BinaryFormatter_Deserialize_System_IO_Stream
 plt_System_Runtime_Serialization_Formatters_Binary_BinaryFormatter_Deserialize_System_IO_Stream:
 _p_26:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2792,19575
+	.long mono_aot_Xamarin_Auth_got - . + 2792,19576
 	.no_dead_strip plt_Xamarin_Auth_Account_Serialize
 plt_Xamarin_Auth_Account_Serialize:
 _p_27:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2796,19580
+	.long mono_aot_Xamarin_Auth_got - . + 2796,19581
 	.no_dead_strip plt_System_Delegate_Combine_System_Delegate_System_Delegate
 plt_System_Delegate_Combine_System_Delegate_System_Delegate:
 _p_28:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2800,19582
+	.long mono_aot_Xamarin_Auth_got - . + 2800,19583
 	.no_dead_strip plt_System_Delegate_Remove_System_Delegate_System_Delegate
 plt_System_Delegate_Remove_System_Delegate_System_Delegate:
 _p_29:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2804,19587
+	.long mono_aot_Xamarin_Auth_got - . + 2804,19588
 	.no_dead_strip plt_Plugin_Threading_UIThreadRunInvoker_BeginInvokeOnUIThread_System_Action
 plt_Plugin_Threading_UIThreadRunInvoker_BeginInvokeOnUIThread_System_Action:
 _p_30:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2808,19592
+	.long mono_aot_Xamarin_Auth_got - . + 2808,19593
 	.no_dead_strip plt_Xamarin_Auth_Authenticator_OnSucceeded_Xamarin_Auth_Account
 plt_Xamarin_Auth_Authenticator_OnSucceeded_Xamarin_Auth_Account:
 _p_31:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2812,19595
+	.long mono_aot_Xamarin_Auth_got - . + 2812,19596
 	.no_dead_strip plt_Xamarin_Auth_Authenticator_RaiseErrorEvent_Xamarin_Auth_AuthenticatorErrorEventArgs
 plt_Xamarin_Auth_Authenticator_RaiseErrorEvent_Xamarin_Auth_AuthenticatorErrorEventArgs:
 _p_32:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2816,19597
+	.long mono_aot_Xamarin_Auth_got - . + 2816,19598
 	.no_dead_strip plt_System_Exception__ctor
 plt_System_Exception__ctor:
 _p_33:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2820,19599
+	.long mono_aot_Xamarin_Auth_got - . + 2820,19600
 	.no_dead_strip plt_System_Exception__ctor_string
 plt_System_Exception__ctor_string:
 _p_34:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2824,19604
+	.long mono_aot_Xamarin_Auth_got - . + 2824,19605
 	.no_dead_strip plt_System_Exception__ctor_string_System_Exception
 plt_System_Exception__ctor_string_System_Exception:
 _p_35:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2828,19609
+	.long mono_aot_Xamarin_Auth_got - . + 2828,19610
 	.no_dead_strip plt_Xamarin_Auth_Cryptography_CryptoUtilities_Get256BitSalt
 plt_Xamarin_Auth_Cryptography_CryptoUtilities_Get256BitSalt:
 _p_36:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2832,19614
+	.long mono_aot_Xamarin_Auth_got - . + 2832,19615
 	.no_dead_strip plt_Xamarin_Auth_Cryptography_CryptoUtilities_GetHash_byte___byte__
 plt_Xamarin_Auth_Cryptography_CryptoUtilities_GetHash_byte___byte__:
 _p_37:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2836,19616
+	.long mono_aot_Xamarin_Auth_got - . + 2836,19617
 	.no_dead_strip plt__jit_icall_mono_generic_class_init
 plt__jit_icall_mono_generic_class_init:
 _p_38:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2840,19618
+	.long mono_aot_Xamarin_Auth_got - . + 2840,19619
 	.no_dead_strip plt_Xamarin_Auth_AccountUtilities_AccountManager_GetAccountFromStore_Xamarin_Auth_AccountStore_string
 plt_Xamarin_Auth_AccountUtilities_AccountManager_GetAccountFromStore_Xamarin_Auth_AccountStore_string:
 _p_39:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2844,19644
+	.long mono_aot_Xamarin_Auth_got - . + 2844,19645
 	.no_dead_strip plt_System_Convert_ToBase64String_byte__
 plt_System_Convert_ToBase64String_byte__:
 _p_40:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2848,19646
+	.long mono_aot_Xamarin_Auth_got - . + 2848,19647
 	.no_dead_strip plt_System_Collections_Generic_Dictionary_2_string_string_Add_string_string
 plt_System_Collections_Generic_Dictionary_2_string_string_Add_string_string:
 _p_41:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2852,19651
+	.long mono_aot_Xamarin_Auth_got - . + 2852,19652
 	.no_dead_strip plt_Xamarin_Auth_Cryptography_CryptoUtilities_GetAES256KeyMaterial
 plt_Xamarin_Auth_Cryptography_CryptoUtilities_GetAES256KeyMaterial:
 _p_42:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2856,19662
+	.long mono_aot_Xamarin_Auth_got - . + 2856,19663
 	.no_dead_strip plt_System_Collections_Generic_Dictionary_2_string_string_ContainsKey_string
 plt_System_Collections_Generic_Dictionary_2_string_string_ContainsKey_string:
 _p_43:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2860,19664
+	.long mono_aot_Xamarin_Auth_got - . + 2860,19665
 	.no_dead_strip plt_System_Collections_Generic_Dictionary_2_string_string_get_Item_string
 plt_System_Collections_Generic_Dictionary_2_string_string_get_Item_string:
 _p_44:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2864,19675
+	.long mono_aot_Xamarin_Auth_got - . + 2864,19676
 	.no_dead_strip plt_System_Linq_Enumerable_FirstOrDefault_Xamarin_Auth_Account_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_Account_System_Func_2_Xamarin_Auth_Account_bool
 plt_System_Linq_Enumerable_FirstOrDefault_Xamarin_Auth_Account_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_Account_System_Func_2_Xamarin_Auth_Account_bool:
 _p_45:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2868,19686
+	.long mono_aot_Xamarin_Auth_got - . + 2868,19687
 	.no_dead_strip plt_Xamarin_Auth_Authenticator_add_Completed_System_EventHandler_1_Xamarin_Auth_AuthenticatorCompletedEventArgs
 plt_Xamarin_Auth_Authenticator_add_Completed_System_EventHandler_1_Xamarin_Auth_AuthenticatorCompletedEventArgs:
 _p_46:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2872,19698
+	.long mono_aot_Xamarin_Auth_got - . + 2872,19699
 	.no_dead_strip plt_Xamarin_Auth_Authenticator_remove_Completed_System_EventHandler_1_Xamarin_Auth_AuthenticatorCompletedEventArgs
 plt_Xamarin_Auth_Authenticator_remove_Completed_System_EventHandler_1_Xamarin_Auth_AuthenticatorCompletedEventArgs:
 _p_47:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2876,19700
+	.long mono_aot_Xamarin_Auth_got - . + 2876,19701
 	.no_dead_strip plt_PCLCrypto_WinRTCrypto_get_CryptographicBuffer
 plt_PCLCrypto_WinRTCrypto_get_CryptographicBuffer:
 _p_48:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2880,19702
+	.long mono_aot_Xamarin_Auth_got - . + 2880,19703
 	.no_dead_strip plt_System_Array_Copy_System_Array_System_Array_int
 plt_System_Array_Copy_System_Array_System_Array_int:
 _p_49:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2884,19707
+	.long mono_aot_Xamarin_Auth_got - . + 2884,19708
 	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
 plt_System_Array_Copy_System_Array_int_System_Array_int_int:
 _p_50:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2888,19712
+	.long mono_aot_Xamarin_Auth_got - . + 2888,19713
 	.no_dead_strip plt_PCLCrypto_WinRTCrypto_get_HashAlgorithmProvider
 plt_PCLCrypto_WinRTCrypto_get_HashAlgorithmProvider:
 _p_51:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2892,19717
+	.long mono_aot_Xamarin_Auth_got - . + 2892,19718
 	.no_dead_strip plt_System_Text_Encoding_get_UTF8
 plt_System_Text_Encoding_get_UTF8:
 _p_52:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2896,19722
+	.long mono_aot_Xamarin_Auth_got - . + 2896,19723
 	.no_dead_strip plt_Xamarin_Auth_Authenticator__ctor
 plt_Xamarin_Auth_Authenticator__ctor:
 _p_53:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2900,19727
+	.long mono_aot_Xamarin_Auth_got - . + 2900,19728
 	.no_dead_strip plt_System_Linq_Enumerable_FirstOrDefault_Xamarin_Auth_FormAuthenticatorField_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_bool
 plt_System_Linq_Enumerable_FirstOrDefault_Xamarin_Auth_FormAuthenticatorField_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_bool:
 _p_54:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2904,19729
+	.long mono_aot_Xamarin_Auth_got - . + 2904,19730
 	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
 plt__jit_icall_ves_icall_object_new_specific:
 _p_55:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2908,19741
+	.long mono_aot_Xamarin_Auth_got - . + 2908,19742
 	.no_dead_strip plt_Xamarin_Auth_FormAuthenticatorController__ctor_Xamarin_Auth_FormAuthenticator
 plt_Xamarin_Auth_FormAuthenticatorController__ctor_Xamarin_Auth_FormAuthenticator:
 _p_56:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2912,19773
+	.long mono_aot_Xamarin_Auth_got - . + 2912,19774
 	.no_dead_strip plt_UIKit_UINavigationController__ctor_UIKit_UIViewController
 plt_UIKit_UINavigationController__ctor_UIKit_UIViewController:
 _p_57:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2916,19776
+	.long mono_aot_Xamarin_Auth_got - . + 2916,19777
 	.no_dead_strip plt_string_IsNullOrWhiteSpace_string
 plt_string_IsNullOrWhiteSpace_string:
 _p_58:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2920,19781
+	.long mono_aot_Xamarin_Auth_got - . + 2920,19782
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr
 plt__jit_icall_mono_helper_ldstr:
 _p_59:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2924,19786
+	.long mono_aot_Xamarin_Auth_got - . + 2924,19787
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_60:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2928,19806
+	.long mono_aot_Xamarin_Auth_got - . + 2928,19807
 	.no_dead_strip plt_System_Text_StringBuilder_Append_char
 plt_System_Text_StringBuilder_Append_char:
 _p_61:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2932,19834
+	.long mono_aot_Xamarin_Auth_got - . + 2932,19835
 	.no_dead_strip plt_System_Text_StringBuilder_AppendFormat_System_IFormatProvider_string_object
 plt_System_Text_StringBuilder_AppendFormat_System_IFormatProvider_string_object:
 _p_62:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2936,19839
+	.long mono_aot_Xamarin_Auth_got - . + 2936,19840
 	.no_dead_strip plt_System_Uri_get_AbsoluteUri
 plt_System_Uri_get_AbsoluteUri:
 _p_63:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2940,19844
+	.long mono_aot_Xamarin_Auth_got - . + 2940,19845
 	.no_dead_strip plt_Xamarin_Auth_OAuth1_EncodeString_string
 plt_Xamarin_Auth_OAuth1_EncodeString_string:
 _p_64:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2944,19849
+	.long mono_aot_Xamarin_Auth_got - . + 2944,19850
 	.no_dead_strip plt_System_Linq_Enumerable_OrderBy_string_string_System_Collections_Generic_IEnumerable_1_string_System_Func_2_string_string
 plt_System_Linq_Enumerable_OrderBy_string_string_System_Collections_Generic_IEnumerable_1_string_System_Func_2_string_string:
 _p_65:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2948,19851
+	.long mono_aot_Xamarin_Auth_got - . + 2948,19852
 	.no_dead_strip plt_string_Concat_string_string_string_string
 plt_string_Concat_string_string_string_string:
 _p_66:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2952,19863
+	.long mono_aot_Xamarin_Auth_got - . + 2952,19864
 	.no_dead_strip plt_Xamarin_Auth_OAuth1_GetBaseString_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string
 plt_Xamarin_Auth_OAuth1_GetBaseString_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string:
 _p_67:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2956,19868
+	.long mono_aot_Xamarin_Auth_got - . + 2956,19869
 	.no_dead_strip plt_string_Concat_string_string_string
 plt_string_Concat_string_string_string:
 _p_68:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2960,19870
+	.long mono_aot_Xamarin_Auth_got - . + 2960,19871
 	.no_dead_strip plt_System_Security_Cryptography_HMACSHA1__ctor_byte__
 plt_System_Security_Cryptography_HMACSHA1__ctor_byte__:
 _p_69:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2964,19875
+	.long mono_aot_Xamarin_Auth_got - . + 2964,19876
 	.no_dead_strip plt_System_Security_Cryptography_HashAlgorithm_ComputeHash_byte__
 plt_System_Security_Cryptography_HashAlgorithm_ComputeHash_byte__:
 _p_70:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2968,19880
+	.long mono_aot_Xamarin_Auth_got - . + 2968,19881
 	.no_dead_strip plt_System_Random__ctor
 plt_System_Random__ctor:
 _p_71:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2972,19885
+	.long mono_aot_Xamarin_Auth_got - . + 2972,19886
 	.no_dead_strip plt_System_Random_Next
 plt_System_Random_Next:
 _p_72:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2976,19890
+	.long mono_aot_Xamarin_Auth_got - . + 2976,19891
 	.no_dead_strip plt_int_ToString
 plt_int_ToString:
 _p_73:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2980,19895
+	.long mono_aot_Xamarin_Auth_got - . + 2980,19896
 	.no_dead_strip plt_System_DateTime_get_UtcNow
 plt_System_DateTime_get_UtcNow:
 _p_74:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2984,19900
+	.long mono_aot_Xamarin_Auth_got - . + 2984,19901
 	.no_dead_strip plt_System_DateTime__ctor_int_int_int
 plt_System_DateTime__ctor_int_int_int:
 _p_75:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2988,19905
+	.long mono_aot_Xamarin_Auth_got - . + 2988,19906
 	.no_dead_strip plt_System_DateTime_op_Subtraction_System_DateTime_System_DateTime
 plt_System_DateTime_op_Subtraction_System_DateTime_System_DateTime:
 _p_76:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2992,19910
+	.long mono_aot_Xamarin_Auth_got - . + 2992,19911
 	.no_dead_strip plt__jit_icall___emul_lconv_to_r8
 plt__jit_icall___emul_lconv_to_r8:
 _p_77:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 2996,19915
+	.long mono_aot_Xamarin_Auth_got - . + 2996,19916
 	.no_dead_strip plt_Xamarin_Auth_OAuth1_GetSignature_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string_string_string
 plt_Xamarin_Auth_OAuth1_GetSignature_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string_string_string:
 _p_78:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3000,19936
+	.long mono_aot_Xamarin_Auth_got - . + 3000,19937
 	.no_dead_strip plt_Xamarin_Auth_OAuth1_MixInOAuthParameters_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string_string_string_string
 plt_Xamarin_Auth_OAuth1_MixInOAuthParameters_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string_string_string_string:
 _p_79:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3004,19938
+	.long mono_aot_Xamarin_Auth_got - . + 3004,19939
 	.no_dead_strip plt_Xamarin_Auth_WebUtilities_FormEncode_System_Collections_Generic_IDictionary_2_string_string
 plt_Xamarin_Auth_WebUtilities_FormEncode_System_Collections_Generic_IDictionary_2_string_string:
 _p_80:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3008,19940
+	.long mono_aot_Xamarin_Auth_got - . + 3008,19941
 	.no_dead_strip plt_System_Net_WebRequest_Create_string
 plt_System_Net_WebRequest_Create_string:
 _p_81:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3012,19943
+	.long mono_aot_Xamarin_Auth_got - . + 3012,19944
 	.no_dead_strip plt_string_StartsWith_string
 plt_string_StartsWith_string:
 _p_82:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3016,19948
+	.long mono_aot_Xamarin_Auth_got - . + 3016,19949
 	.no_dead_strip plt_System_Text_StringBuilder_AppendFormat_string_object_object
 plt_System_Text_StringBuilder_AppendFormat_string_object_object:
 _p_83:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3020,19953
+	.long mono_aot_Xamarin_Auth_got - . + 3020,19954
 	.no_dead_strip plt_System_Uri_op_Equality_System_Uri_System_Uri
 plt_System_Uri_op_Equality_System_Uri_System_Uri:
 _p_84:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3024,19958
+	.long mono_aot_Xamarin_Auth_got - . + 3024,19959
 	.no_dead_strip plt_System_Uri_get_OriginalString
 plt_System_Uri_get_OriginalString:
 _p_85:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3028,19963
+	.long mono_aot_Xamarin_Auth_got - . + 3028,19964
 	.no_dead_strip plt_Xamarin_Auth_OAuth1_CreateRequest_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string_string_string_string
 plt_Xamarin_Auth_OAuth1_CreateRequest_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string_string_string_string:
 _p_86:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3032,19968
+	.long mono_aot_Xamarin_Auth_got - . + 3032,19969
 	.no_dead_strip plt_System_Net_WebRequest_GetResponseAsync
 plt_System_Net_WebRequest_GetResponseAsync:
 _p_87:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3036,19970
+	.long mono_aot_Xamarin_Auth_got - . + 3036,19971
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_System_Net_WebResponse_ContinueWith_System_Uri_System_Func_2_System_Threading_Tasks_Task_1_System_Net_WebResponse_System_Uri
 plt_System_Threading_Tasks_Task_1_System_Net_WebResponse_ContinueWith_System_Uri_System_Func_2_System_Threading_Tasks_Task_1_System_Net_WebResponse_System_Uri:
 _p_88:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3040,19975
+	.long mono_aot_Xamarin_Auth_got - . + 3040,19976
 	.no_dead_strip plt_System_Uri_get_Authority
 plt_System_Uri_get_Authority:
 _p_89:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3044,19987
+	.long mono_aot_Xamarin_Auth_got - . + 3044,19988
 	.no_dead_strip plt_System_Uri_get_AbsolutePath
 plt_System_Uri_get_AbsolutePath:
 _p_90:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3048,19992
+	.long mono_aot_Xamarin_Auth_got - . + 3048,19993
 	.no_dead_strip plt_System_Uri_get_Query
 plt_System_Uri_get_Query:
 _p_91:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3052,19997
+	.long mono_aot_Xamarin_Auth_got - . + 3052,19998
 	.no_dead_strip plt_Xamarin_Utilities_WebEx_FormDecode_string
 plt_Xamarin_Utilities_WebEx_FormDecode_string:
 _p_92:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3056,20002
+	.long mono_aot_Xamarin_Auth_got - . + 3056,20003
 	.no_dead_strip plt_Xamarin_Auth_OAuth1Authenticator_GetAccessTokenAsync
 plt_Xamarin_Auth_OAuth1Authenticator_GetAccessTokenAsync:
 _p_93:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3060,20005
+	.long mono_aot_Xamarin_Auth_got - . + 3060,20006
 	.no_dead_strip plt_System_Threading_Tasks_Task_ContinueWith_System_Action_1_System_Threading_Tasks_Task_System_Threading_Tasks_TaskContinuationOptions
 plt_System_Threading_Tasks_Task_ContinueWith_System_Action_1_System_Threading_Tasks_Task_System_Threading_Tasks_TaskContinuationOptions:
 _p_94:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3064,20008
+	.long mono_aot_Xamarin_Auth_got - . + 3064,20009
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_System_Net_WebResponse_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_System_Net_WebResponse
 plt_System_Threading_Tasks_Task_1_System_Net_WebResponse_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_System_Net_WebResponse:
 _p_95:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3068,20013
+	.long mono_aot_Xamarin_Auth_got - . + 3068,20014
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_System_Net_WebResponse_get_Result
 plt_System_Threading_Tasks_Task_1_System_Net_WebResponse_get_Result:
 _p_96:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3072,20024
+	.long mono_aot_Xamarin_Auth_got - . + 3072,20025
 	.no_dead_strip plt_Xamarin_Utilities_WebEx_GetResponseText_System_Net_WebResponse
 plt_Xamarin_Utilities_WebEx_GetResponseText_System_Net_WebResponse:
 _p_97:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3076,20035
+	.long mono_aot_Xamarin_Auth_got - . + 3076,20036
 	.no_dead_strip plt_string_IndexOf_string
 plt_string_IndexOf_string:
 _p_98:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3080,20038
+	.long mono_aot_Xamarin_Auth_got - . + 3080,20039
 	.no_dead_strip plt_System_Uri__ctor_string
 plt_System_Uri__ctor_string:
 _p_99:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3084,20043
+	.long mono_aot_Xamarin_Auth_got - . + 3084,20044
 	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsCanceled
 plt_System_Threading_Tasks_Task_get_IsCanceled:
 _p_100:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3088,20048
+	.long mono_aot_Xamarin_Auth_got - . + 3088,20049
 	.no_dead_strip plt_Xamarin_Auth_Authenticator_OnCancelled
 plt_Xamarin_Auth_Authenticator_OnCancelled:
 _p_101:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3092,20053
+	.long mono_aot_Xamarin_Auth_got - . + 3092,20054
 	.no_dead_strip plt_System_Threading_Tasks_Task_get_Exception
 plt_System_Threading_Tasks_Task_get_Exception:
 _p_102:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3096,20055
+	.long mono_aot_Xamarin_Auth_got - . + 3096,20056
 	.no_dead_strip plt_Xamarin_Auth_Authenticator_OnError_System_Exception
 plt_Xamarin_Auth_Authenticator_OnError_System_Exception:
 _p_103:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3100,20060
+	.long mono_aot_Xamarin_Auth_got - . + 3100,20061
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_string_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_string
 plt_System_Threading_Tasks_Task_1_string_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_string:
 _p_104:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3104,20062
+	.long mono_aot_Xamarin_Auth_got - . + 3104,20063
 	.no_dead_strip plt_Xamarin_Auth_Authenticator_OnSucceeded_string_System_Collections_Generic_IDictionary_2_string_string
 plt_Xamarin_Auth_Authenticator_OnSucceeded_string_System_Collections_Generic_IDictionary_2_string_string:
 _p_105:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3108,20073
+	.long mono_aot_Xamarin_Auth_got - . + 3108,20074
 	.no_dead_strip plt_Xamarin_Auth_Request__ctor_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string_Xamarin_Auth_Account
 plt_Xamarin_Auth_Request__ctor_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string_Xamarin_Auth_Account:
 _p_106:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3112,20075
+	.long mono_aot_Xamarin_Auth_got - . + 3112,20076
 	.no_dead_strip plt_System_Net_Http_HttpRequestMessage_get_Headers
 plt_System_Net_Http_HttpRequestMessage_get_Headers:
 _p_107:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3116,20078
+	.long mono_aot_Xamarin_Auth_got - . + 3116,20079
 	.no_dead_strip plt_System_Net_Http_Headers_AuthenticationHeaderValue__ctor_string_string
 plt_System_Net_Http_Headers_AuthenticationHeaderValue__ctor_string_string:
 _p_108:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3120,20083
+	.long mono_aot_Xamarin_Auth_got - . + 3120,20084
 	.no_dead_strip plt_System_Net_Http_Headers_HttpRequestHeaders_set_Authorization_System_Net_Http_Headers_AuthenticationHeaderValue
 plt_System_Net_Http_Headers_HttpRequestHeaders_set_Authorization_System_Net_Http_Headers_AuthenticationHeaderValue:
 _p_109:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3124,20088
+	.long mono_aot_Xamarin_Auth_got - . + 3124,20089
 	.no_dead_strip plt_Xamarin_Auth_Request_GetResponseAsync_System_Threading_CancellationToken
 plt_Xamarin_Auth_Request_GetResponseAsync_System_Threading_CancellationToken:
 _p_110:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3128,20093
+	.long mono_aot_Xamarin_Auth_got - . + 3128,20094
 	.no_dead_strip plt_System_Collections_Generic_List_1_Xamarin_Auth_Request_Part_GetEnumerator
 plt_System_Collections_Generic_List_1_Xamarin_Auth_Request_Part_GetEnumerator:
 _p_111:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3132,20096
+	.long mono_aot_Xamarin_Auth_got - . + 3132,20097
 	.no_dead_strip plt_System_Collections_Generic_List_1_Enumerator_Xamarin_Auth_Request_Part_MoveNext
 plt_System_Collections_Generic_List_1_Enumerator_Xamarin_Auth_Request_Part_MoveNext:
 _p_112:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3136,20107
+	.long mono_aot_Xamarin_Auth_got - . + 3136,20108
 	.no_dead_strip plt_Xamarin_Auth_OAuth1_GetAuthorizationHeader_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string_string_string_string_string
 plt_Xamarin_Auth_OAuth1_GetAuthorizationHeader_string_System_Uri_System_Collections_Generic_IDictionary_2_string_string_string_string_string_string:
 _p_113:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3140,20118
+	.long mono_aot_Xamarin_Auth_got - . + 3140,20119
 	.no_dead_strip plt_Xamarin_Auth_OAuth2Authenticator__ctor_System_Uri_string_System_Uri_bool
 plt_Xamarin_Auth_OAuth2Authenticator__ctor_System_Uri_string_System_Uri_bool:
 _p_114:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3144,20120
+	.long mono_aot_Xamarin_Auth_got - . + 3144,20121
 	.no_dead_strip plt_System_Random_Next_int_int
 plt_System_Random_Next_int_int:
 _p_115:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3148,20123
+	.long mono_aot_Xamarin_Auth_got - . + 3148,20124
 	.no_dead_strip plt_string__ctor_char__
 plt_string__ctor_char__:
 _p_116:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3152,20128
+	.long mono_aot_Xamarin_Auth_got - . + 3152,20129
 	.no_dead_strip plt_Xamarin_Auth_OAuth2Authenticator_OAuthFlowResponseTypeVerification
 plt_Xamarin_Auth_OAuth2Authenticator_OAuthFlowResponseTypeVerification:
 _p_117:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3156,20133
+	.long mono_aot_Xamarin_Auth_got - . + 3156,20134
 	.no_dead_strip plt_System_Linq_Enumerable_Select_System_Collections_Generic_KeyValuePair_2_string_string_string_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_KeyValuePair_2_string_string_System_Func_2_System_Collections_Generic_KeyValuePair_2_string_string_string
 plt_System_Linq_Enumerable_Select_System_Collections_Generic_KeyValuePair_2_string_string_string_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_KeyValuePair_2_string_string_System_Func_2_System_Collections_Generic_KeyValuePair_2_string_string_string:
 _p_118:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3160,20136
+	.long mono_aot_Xamarin_Auth_got - . + 3160,20137
 	.no_dead_strip plt_string_Join_string_System_Collections_Generic_IEnumerable_1_string
 plt_string_Join_string_System_Collections_Generic_IEnumerable_1_string:
 _p_119:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3164,20148
+	.long mono_aot_Xamarin_Auth_got - . + 3164,20149
 	.no_dead_strip plt_System_Threading_Tasks_Task_FromResult_System_Uri_System_Uri
 plt_System_Threading_Tasks_Task_FromResult_System_Uri_System_Uri:
 _p_120:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3168,20153
+	.long mono_aot_Xamarin_Auth_got - . + 3168,20154
 	.no_dead_strip plt_string_op_Inequality_string_string
 plt_string_op_Inequality_string_string:
 _p_121:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3172,20165
+	.long mono_aot_Xamarin_Auth_got - . + 3172,20166
 	.no_dead_strip plt_Xamarin_Auth_Authenticator_OnError_string
 plt_Xamarin_Auth_Authenticator_OnError_string:
 _p_122:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3176,20170
+	.long mono_aot_Xamarin_Auth_got - . + 3176,20171
 	.no_dead_strip plt_Xamarin_Auth_WebRedirectAuthenticator_OnPageEncountered_System_Uri_System_Collections_Generic_IDictionary_2_string_string_System_Collections_Generic_IDictionary_2_string_string
 plt_Xamarin_Auth_WebRedirectAuthenticator_OnPageEncountered_System_Uri_System_Collections_Generic_IDictionary_2_string_string_System_Collections_Generic_IDictionary_2_string_string:
 _p_123:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3180,20172
+	.long mono_aot_Xamarin_Auth_got - . + 3180,20173
 	.no_dead_strip plt_Xamarin_Auth_OAuth2Authenticator_RequestAccessTokenAsync_string
 plt_Xamarin_Auth_OAuth2Authenticator_RequestAccessTokenAsync_string:
 _p_124:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3184,20175
+	.long mono_aot_Xamarin_Auth_got - . + 3184,20176
 	.no_dead_strip plt_System_Threading_Tasks_TaskScheduler_FromCurrentSynchronizationContext
 plt_System_Threading_Tasks_TaskScheduler_FromCurrentSynchronizationContext:
 _p_125:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3188,20178
+	.long mono_aot_Xamarin_Auth_got - . + 3188,20179
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_System_Collections_Generic_IDictionary_2_string_string_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_System_Collections_Generic_IDictionary_2_string_string_System_Threading_Tasks_TaskScheduler
 plt_System_Threading_Tasks_Task_1_System_Collections_Generic_IDictionary_2_string_string_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_System_Collections_Generic_IDictionary_2_string_string_System_Threading_Tasks_TaskScheduler:
 _p_126:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3192,20183
+	.long mono_aot_Xamarin_Auth_got - . + 3192,20184
 	.no_dead_strip plt_Xamarin_Auth_OAuth2Authenticator_RequestAccessTokenAsync_System_Collections_Generic_IDictionary_2_string_string
 plt_Xamarin_Auth_OAuth2Authenticator_RequestAccessTokenAsync_System_Collections_Generic_IDictionary_2_string_string:
 _p_127:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3196,20194
+	.long mono_aot_Xamarin_Auth_got - . + 3196,20195
 	.no_dead_strip plt_string_memset_byte__int_int
 plt_string_memset_byte__int_int:
 _p_128:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3200,20197
+	.long mono_aot_Xamarin_Auth_got - . + 3200,20198
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_Start_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_Start_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_:
 _p_129:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3204,20202
+	.long mono_aot_Xamarin_Auth_got - . + 3204,20203
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_get_Task
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_get_Task:
 _p_130:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3208,20214
+	.long mono_aot_Xamarin_Auth_got - . + 3208,20215
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_string_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_string_System_Threading_Tasks_TaskScheduler
 plt_System_Threading_Tasks_Task_1_string_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_string_System_Threading_Tasks_TaskScheduler:
 _p_131:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3212,20225
+	.long mono_aot_Xamarin_Auth_got - . + 3212,20226
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_System_Collections_Generic_IDictionary_2_string_string_get_Result
 plt_System_Threading_Tasks_Task_1_System_Collections_Generic_IDictionary_2_string_string_get_Result:
 _p_132:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3216,20236
+	.long mono_aot_Xamarin_Auth_got - . + 3216,20237
 	.no_dead_strip plt_Xamarin_Auth_Request_GetPreparedUrl
 plt_Xamarin_Auth_Request_GetPreparedUrl:
 _p_133:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3220,20247
+	.long mono_aot_Xamarin_Auth_got - . + 3220,20248
 	.no_dead_strip plt_Xamarin_Auth_OAuth2Request_GetAuthenticatedUrl_Xamarin_Auth_Account_System_Uri_string
 plt_Xamarin_Auth_OAuth2Request_GetAuthenticatedUrl_Xamarin_Auth_Account_System_Uri_string:
 _p_134:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3224,20250
+	.long mono_aot_Xamarin_Auth_got - . + 3224,20251
 	.no_dead_strip plt_string_Contains_string
 plt_string_Contains_string:
 _p_135:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3228,20253
+	.long mono_aot_Xamarin_Auth_got - . + 3228,20254
 	.no_dead_strip plt_string_Concat_string__
 plt_string_Concat_string__:
 _p_136:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3232,20258
+	.long mono_aot_Xamarin_Auth_got - . + 3232,20259
 	.no_dead_strip plt_string_Concat_string_string
 plt_string_Concat_string_string:
 _p_137:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3236,20263
+	.long mono_aot_Xamarin_Auth_got - . + 3236,20264
 	.no_dead_strip plt_System_Collections_Generic_List_1_Xamarin_Auth_Request_Part_Add_Xamarin_Auth_Request_Part
 plt_System_Collections_Generic_List_1_Xamarin_Auth_Request_Part_Add_Xamarin_Auth_Request_Part:
 _p_138:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3240,20268
+	.long mono_aot_Xamarin_Auth_got - . + 3240,20269
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_Start_Xamarin_Auth_Request__GetResponseAsyncc__async0_Xamarin_Auth_Request__GetResponseAsyncc__async0_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_Start_Xamarin_Auth_Request__GetResponseAsyncc__async0_Xamarin_Auth_Request__GetResponseAsyncc__async0_:
 _p_139:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3244,20279
+	.long mono_aot_Xamarin_Auth_got - . + 3244,20280
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_get_Task
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_get_Task:
 _p_140:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3248,20291
+	.long mono_aot_Xamarin_Auth_got - . + 3248,20292
 	.no_dead_strip plt_System_Linq_Enumerable_Contains_char_System_Collections_Generic_IEnumerable_1_char_char
 plt_System_Linq_Enumerable_Contains_char_System_Collections_Generic_IEnumerable_1_char_char:
 _p_141:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3252,20302
+	.long mono_aot_Xamarin_Auth_got - . + 3252,20303
 	.no_dead_strip plt_Xamarin_Auth_Request_GetMethod_string
 plt_Xamarin_Auth_Request_GetMethod_string:
 _p_142:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3256,20314
+	.long mono_aot_Xamarin_Auth_got - . + 3256,20315
 	.no_dead_strip plt_System_Net_Http_HttpRequestMessage__ctor_System_Net_Http_HttpMethod_System_Uri
 plt_System_Net_Http_HttpRequestMessage__ctor_System_Net_Http_HttpMethod_System_Uri:
 _p_143:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3260,20317
+	.long mono_aot_Xamarin_Auth_got - . + 3260,20318
 	.no_dead_strip plt_System_Net_Http_Headers_HttpHeaders_Contains_string
 plt_System_Net_Http_Headers_HttpHeaders_Contains_string:
 _p_144:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3264,20322
+	.long mono_aot_Xamarin_Auth_got - . + 3264,20323
 	.no_dead_strip plt_System_Net_CookieContainer_GetCookies_System_Uri
 plt_System_Net_CookieContainer_GetCookies_System_Uri:
 _p_145:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3268,20327
+	.long mono_aot_Xamarin_Auth_got - . + 3268,20328
 	.no_dead_strip plt_System_Net_CookieCollection_get_Count
 plt_System_Net_CookieCollection_get_Count:
 _p_146:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3272,20332
+	.long mono_aot_Xamarin_Auth_got - . + 3272,20333
 	.no_dead_strip plt_System_Net_CookieContainer_GetCookieHeader_System_Uri
 plt_System_Net_CookieContainer_GetCookieHeader_System_Uri:
 _p_147:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3276,20337
+	.long mono_aot_Xamarin_Auth_got - . + 3276,20338
 	.no_dead_strip plt_System_Net_Http_Headers_HttpHeaders_Add_string_string
 plt_System_Net_Http_Headers_HttpHeaders_Add_string_string:
 _p_148:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3280,20342
+	.long mono_aot_Xamarin_Auth_got - . + 3280,20343
 	.no_dead_strip plt_string_ToUpper
 plt_string_ToUpper:
 _p_149:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3284,20347
+	.long mono_aot_Xamarin_Auth_got - . + 3284,20348
 	.no_dead_strip plt_System_Collections_Generic_Dictionary_2_string_int__ctor_int
 plt_System_Collections_Generic_Dictionary_2_string_int__ctor_int:
 _p_150:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3288,20352
+	.long mono_aot_Xamarin_Auth_got - . + 3288,20353
 	.no_dead_strip plt_System_Collections_Generic_Dictionary_2_string_int_Add_string_int
 plt_System_Collections_Generic_Dictionary_2_string_int_Add_string_int:
 _p_151:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3292,20363
+	.long mono_aot_Xamarin_Auth_got - . + 3292,20364
 	.no_dead_strip plt_System_Collections_Generic_Dictionary_2_string_int_TryGetValue_string_int_
 plt_System_Collections_Generic_Dictionary_2_string_int_TryGetValue_string_int_:
 _p_152:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3296,20374
+	.long mono_aot_Xamarin_Auth_got - . + 3296,20375
 	.no_dead_strip plt_System_Net_Http_HttpMethod__ctor_string
 plt_System_Net_Http_HttpMethod__ctor_string:
 _p_153:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3300,20385
+	.long mono_aot_Xamarin_Auth_got - . + 3300,20386
 	.no_dead_strip plt_System_Net_Http_HttpResponseMessage_get_Headers
 plt_System_Net_Http_HttpResponseMessage_get_Headers:
 _p_154:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3304,20390
+	.long mono_aot_Xamarin_Auth_got - . + 3304,20391
 	.no_dead_strip plt_System_Net_Http_Headers_HttpHeaders_GetEnumerator
 plt_System_Net_Http_Headers_HttpHeaders_GetEnumerator:
 _p_155:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3308,20395
+	.long mono_aot_Xamarin_Auth_got - . + 3308,20396
 	.no_dead_strip plt_System_Linq_Enumerable_First_string_System_Collections_Generic_IEnumerable_1_string
 plt_System_Linq_Enumerable_First_string_System_Collections_Generic_IEnumerable_1_string:
 _p_156:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3312,20400
+	.long mono_aot_Xamarin_Auth_got - . + 3312,20401
 	.no_dead_strip plt_System_Net_Http_HttpContent_ReadAsStringAsync
 plt_System_Net_Http_HttpContent_ReadAsStringAsync:
 _p_157:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3316,20412
+	.long mono_aot_Xamarin_Auth_got - . + 3316,20413
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_string_get_Result
 plt_System_Threading_Tasks_Task_1_string_get_Result:
 _p_158:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3320,20417
+	.long mono_aot_Xamarin_Auth_got - . + 3320,20418
 	.no_dead_strip plt_System_Net_Http_HttpContent_ReadAsStreamAsync
 plt_System_Net_Http_HttpContent_ReadAsStreamAsync:
 _p_159:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3324,20428
+	.long mono_aot_Xamarin_Auth_got - . + 3324,20429
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_System_IO_Stream_get_Result
 plt_System_Threading_Tasks_Task_1_System_IO_Stream_get_Result:
 _p_160:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3328,20433
+	.long mono_aot_Xamarin_Auth_got - . + 3328,20434
 	.no_dead_strip plt_string_Format_string_object_object
 plt_string_Format_string_object_object:
 _p_161:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3332,20444
+	.long mono_aot_Xamarin_Auth_got - . + 3332,20445
 	.no_dead_strip plt_System_GC_SuppressFinalize_object
 plt_System_GC_SuppressFinalize_object:
 _p_162:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3336,20449
+	.long mono_aot_Xamarin_Auth_got - . + 3336,20450
 	.no_dead_strip plt_System_Net_Http_HttpResponseMessage_Dispose
 plt_System_Net_Http_HttpResponseMessage_Dispose:
 _p_163:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3340,20454
+	.long mono_aot_Xamarin_Auth_got - . + 3340,20455
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_System_Uri_get_Result
 plt_System_Threading_Tasks_Task_1_System_Uri_get_Result:
 _p_164:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3344,20459
+	.long mono_aot_Xamarin_Auth_got - . + 3344,20460
 	.no_dead_strip plt_System_Uri_get_Scheme
 plt_System_Uri_get_Scheme:
 _p_165:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3348,20470
+	.long mono_aot_Xamarin_Auth_got - . + 3348,20471
 	.no_dead_strip plt_string_StartsWith_string_System_StringComparison
 plt_string_StartsWith_string_System_StringComparison:
 _p_166:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3352,20475
+	.long mono_aot_Xamarin_Auth_got - . + 3352,20476
 	.no_dead_strip plt_System_Text_StringBuilder_AppendLine_string
 plt_System_Text_StringBuilder_AppendLine_string:
 _p_167:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3356,20480
+	.long mono_aot_Xamarin_Auth_got - . + 3356,20481
 	.no_dead_strip plt_string_Format_string_object
 plt_string_Format_string_object:
 _p_168:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3360,20485
+	.long mono_aot_Xamarin_Auth_got - . + 3360,20486
 	.no_dead_strip plt_Xamarin_Auth_WebAuthenticator_GetPlatformUINative
 plt_Xamarin_Auth_WebAuthenticator_GetPlatformUINative:
 _p_169:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3364,20490
+	.long mono_aot_Xamarin_Auth_got - . + 3364,20491
 	.no_dead_strip plt_Xamarin_Auth_WebAuthenticator_GetPlatformUIEmbeddedBrowser
 plt_Xamarin_Auth_WebAuthenticator_GetPlatformUIEmbeddedBrowser:
 _p_170:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3368,20493
+	.long mono_aot_Xamarin_Auth_got - . + 3368,20494
 	.no_dead_strip plt_Foundation_NSHttpCookieStorage_get_SharedStorage
 plt_Foundation_NSHttpCookieStorage_get_SharedStorage:
 _p_171:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3372,20496
+	.long mono_aot_Xamarin_Auth_got - . + 3372,20497
 	.no_dead_strip plt_Foundation_NSHttpCookieStorage_get_Cookies
 plt_Foundation_NSHttpCookieStorage_get_Cookies:
 _p_172:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3376,20501
+	.long mono_aot_Xamarin_Auth_got - . + 3376,20502
 	.no_dead_strip plt_Foundation_NSHttpCookieStorage_DeleteCookie_Foundation_NSHttpCookie
 plt_Foundation_NSHttpCookieStorage_DeleteCookie_Foundation_NSHttpCookie:
 _p_173:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3380,20506
+	.long mono_aot_Xamarin_Auth_got - . + 3380,20507
 	.no_dead_strip plt_Xamarin_Auth_WebAuthenticator_ShowErrorForNativeUIAlert_string
 plt_Xamarin_Auth_WebAuthenticator_ShowErrorForNativeUIAlert_string:
 _p_174:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3384,20511
+	.long mono_aot_Xamarin_Auth_got - . + 3384,20512
 	.no_dead_strip plt_Foundation_NSUrl__ctor_string
 plt_Foundation_NSUrl__ctor_string:
 _p_175:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3388,20514
+	.long mono_aot_Xamarin_Auth_got - . + 3388,20515
 	.no_dead_strip plt_SafariServices_SFSafariViewController__ctor_Foundation_NSUrl_bool
 plt_SafariServices_SFSafariViewController__ctor_Foundation_NSUrl_bool:
 _p_176:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3392,20519
+	.long mono_aot_Xamarin_Auth_got - . + 3392,20520
 	.no_dead_strip plt_SafariServices_SFSafariViewController_set_Delegate_SafariServices_ISFSafariViewControllerDelegate
 plt_SafariServices_SFSafariViewController_set_Delegate_SafariServices_ISFSafariViewControllerDelegate:
 _p_177:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3396,20524
+	.long mono_aot_Xamarin_Auth_got - . + 3396,20525
 	.no_dead_strip plt_System_Linq_Enumerable_Cast_System_Net_Cookie_System_Collections_IEnumerable
 plt_System_Linq_Enumerable_Cast_System_Net_Cookie_System_Collections_IEnumerable:
 _p_178:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3400,20529
+	.long mono_aot_Xamarin_Auth_got - . + 3400,20530
 	.no_dead_strip plt_System_Linq_Enumerable_FirstOrDefault_System_Net_Cookie_System_Collections_Generic_IEnumerable_1_System_Net_Cookie_System_Func_2_System_Net_Cookie_bool
 plt_System_Linq_Enumerable_FirstOrDefault_System_Net_Cookie_System_Collections_Generic_IEnumerable_1_System_Net_Cookie_System_Func_2_System_Net_Cookie_bool:
 _p_179:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3404,20541
+	.long mono_aot_Xamarin_Auth_got - . + 3404,20542
 	.no_dead_strip plt_System_IO_StreamReader__ctor_System_IO_Stream_System_Text_Encoding
 plt_System_IO_StreamReader__ctor_System_IO_Stream_System_Text_Encoding:
 _p_180:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3408,20553
+	.long mono_aot_Xamarin_Auth_got - . + 3408,20554
 	.no_dead_strip plt__jit_icall_mono_ldvirtfn
 plt__jit_icall_mono_ldvirtfn:
 _p_181:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3412,20558
+	.long mono_aot_Xamarin_Auth_got - . + 3412,20559
 	.no_dead_strip plt_System_Func_3_System_AsyncCallback_object_System_IAsyncResult__ctor_object_intptr
 plt_System_Func_3_System_AsyncCallback_object_System_IAsyncResult__ctor_object_intptr:
 _p_182:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3416,20574
+	.long mono_aot_Xamarin_Auth_got - . + 3416,20575
 	.no_dead_strip plt_System_Func_2_System_IAsyncResult_System_Net_WebResponse__ctor_object_intptr
 plt_System_Func_2_System_IAsyncResult_System_Net_WebResponse__ctor_object_intptr:
 _p_183:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3420,20585
+	.long mono_aot_Xamarin_Auth_got - . + 3420,20586
 	.no_dead_strip plt_System_Threading_Tasks_TaskFactory_FromAsync_System_Net_WebResponse_System_Func_3_System_AsyncCallback_object_System_IAsyncResult_System_Func_2_System_IAsyncResult_System_Net_WebResponse_object
 plt_System_Threading_Tasks_TaskFactory_FromAsync_System_Net_WebResponse_System_Func_3_System_AsyncCallback_object_System_IAsyncResult_System_Func_2_System_IAsyncResult_System_Net_WebResponse_object:
 _p_184:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3424,20596
+	.long mono_aot_Xamarin_Auth_got - . + 3424,20597
 	.no_dead_strip plt_string_Substring_int
 plt_string_Substring_int:
 _p_185:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3428,20608
+	.long mono_aot_Xamarin_Auth_got - . + 3428,20609
 	.no_dead_strip plt_string_Split_char___System_StringSplitOptions
 plt_string_Split_char___System_StringSplitOptions:
 _p_186:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3432,20613
+	.long mono_aot_Xamarin_Auth_got - . + 3432,20614
 	.no_dead_strip plt_string_IndexOf_char
 plt_string_IndexOf_char:
 _p_187:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3436,20618
+	.long mono_aot_Xamarin_Auth_got - . + 3436,20619
 	.no_dead_strip plt_string_Substring_int_int
 plt_string_Substring_int_int:
 _p_188:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3440,20623
+	.long mono_aot_Xamarin_Auth_got - . + 3440,20624
 	.no_dead_strip plt_System_Json_JsonValue_Parse_string
 plt_System_Json_JsonValue_Parse_string:
 _p_189:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3444,20628
+	.long mono_aot_Xamarin_Auth_got - . + 3444,20629
 	.no_dead_strip plt_System_Json_JsonObject_GetEnumerator
 plt_System_Json_JsonObject_GetEnumerator:
 _p_190:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3448,20633
+	.long mono_aot_Xamarin_Auth_got - . + 3448,20634
 	.no_dead_strip plt_System_Json_JsonValue_op_Implicit_System_Json_JsonValue
 plt_System_Json_JsonValue_op_Implicit_System_Json_JsonValue:
 _p_191:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3452,20638
+	.long mono_aot_Xamarin_Auth_got - . + 3452,20639
 	.no_dead_strip plt_System_Text_StringBuilder__ctor_int
 plt_System_Text_StringBuilder__ctor_int:
 _p_192:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3456,20643
+	.long mono_aot_Xamarin_Auth_got - . + 3456,20644
 	.no_dead_strip plt_int_ToString_System_IFormatProvider
 plt_int_ToString_System_IFormatProvider:
 _p_193:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3460,20648
+	.long mono_aot_Xamarin_Auth_got - . + 3460,20649
 	.no_dead_strip plt_string_IndexOf_string_int
 plt_string_IndexOf_string_int:
 _p_194:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3464,20653
+	.long mono_aot_Xamarin_Auth_got - . + 3464,20654
 	.no_dead_strip plt_System_Uri_get_Fragment
 plt_System_Uri_get_Fragment:
 _p_195:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3468,20658
+	.long mono_aot_Xamarin_Auth_got - . + 3468,20659
 	.no_dead_strip plt_System_Uri_get_Host
 plt_System_Uri_get_Host:
 _p_196:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3472,20663
+	.long mono_aot_Xamarin_Auth_got - . + 3472,20664
 	.no_dead_strip plt_System_Uri_get_LocalPath
 plt_System_Uri_get_LocalPath:
 _p_197:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3476,20668
+	.long mono_aot_Xamarin_Auth_got - . + 3476,20669
 	.no_dead_strip plt_Xamarin_Auth_WebUtilities_EncodeString_string
 plt_Xamarin_Auth_WebUtilities_EncodeString_string:
 _p_198:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3480,20673
+	.long mono_aot_Xamarin_Auth_got - . + 3480,20674
 	.no_dead_strip plt_Xamarin_Auth_Presenters_XamarinIOS_PlatformOAuthLoginPresenter_Login_Xamarin_Auth_Authenticator
 plt_Xamarin_Auth_Presenters_XamarinIOS_PlatformOAuthLoginPresenter_Login_Xamarin_Auth_Authenticator:
 _p_199:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3484,20676
+	.long mono_aot_Xamarin_Auth_got - . + 3484,20677
 	.no_dead_strip plt_Accounts_ACAccount_get_Username
 plt_Accounts_ACAccount_get_Username:
 _p_200:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3488,20679
+	.long mono_aot_Xamarin_Auth_got - . + 3488,20680
 	.no_dead_strip plt_System_Environment_GetFolderPath_System_Environment_SpecialFolder
 plt_System_Environment_GetFolderPath_System_Environment_SpecialFolder:
 _p_201:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3492,20684
+	.long mono_aot_Xamarin_Auth_got - . + 3492,20685
 	.no_dead_strip plt_System_IO_Path_Combine_string_string_string_string
 plt_System_IO_Path_Combine_string_string_string_string:
 _p_202:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3496,20689
+	.long mono_aot_Xamarin_Auth_got - . + 3496,20690
 	.no_dead_strip plt_System_IO_Directory_Exists_string
 plt_System_IO_Directory_Exists_string:
 _p_203:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3500,20694
+	.long mono_aot_Xamarin_Auth_got - . + 3500,20695
 	.no_dead_strip plt_System_IO_Directory_CreateDirectory_string
 plt_System_IO_Directory_CreateDirectory_string:
 _p_204:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3504,20699
+	.long mono_aot_Xamarin_Auth_got - . + 3504,20700
 	.no_dead_strip plt_UIKit_UITableViewController__ctor_UIKit_UITableViewStyle
 plt_UIKit_UITableViewController__ctor_UIKit_UITableViewStyle:
 _p_205:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3508,20704
+	.long mono_aot_Xamarin_Auth_got - . + 3508,20705
 	.no_dead_strip plt_UIKit_UITableViewController_get_TableView
 plt_UIKit_UITableViewController_get_TableView:
 _p_206:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3512,20709
+	.long mono_aot_Xamarin_Auth_got - . + 3512,20710
 	.no_dead_strip plt_UIKit_UITableView_set_DataSource_UIKit_IUITableViewDataSource
 plt_UIKit_UITableView_set_DataSource_UIKit_IUITableViewDataSource:
 _p_207:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3516,20714
+	.long mono_aot_Xamarin_Auth_got - . + 3516,20715
 	.no_dead_strip plt_UIKit_UITableView_set_Delegate_UIKit_IUITableViewDelegate
 plt_UIKit_UITableView_set_Delegate_UIKit_IUITableViewDelegate:
 _p_208:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3520,20719
+	.long mono_aot_Xamarin_Auth_got - . + 3520,20720
 	.no_dead_strip plt_UIKit_UIViewController_get_NavigationItem
 plt_UIKit_UIViewController_get_NavigationItem:
 _p_209:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3524,20724
+	.long mono_aot_Xamarin_Auth_got - . + 3524,20725
 	.no_dead_strip plt_UIKit_UIBarButtonItem__ctor_UIKit_UIBarButtonSystemItem_System_EventHandler
 plt_UIKit_UIBarButtonItem__ctor_UIKit_UIBarButtonSystemItem_System_EventHandler:
 _p_210:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3528,20729
+	.long mono_aot_Xamarin_Auth_got - . + 3528,20730
 	.no_dead_strip plt_UIKit_UINavigationItem_set_LeftBarButtonItem_UIKit_UIBarButtonItem
 plt_UIKit_UINavigationItem_set_LeftBarButtonItem_UIKit_UIBarButtonItem:
 _p_211:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3532,20734
+	.long mono_aot_Xamarin_Auth_got - . + 3532,20735
 	.no_dead_strip plt_Foundation_NSBundle_get_MainBundle
 plt_Foundation_NSBundle_get_MainBundle:
 _p_212:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3536,20739
+	.long mono_aot_Xamarin_Auth_got - . + 3536,20740
 	.no_dead_strip plt_Foundation_NSBundle_LocalizedString_string_string
 plt_Foundation_NSBundle_LocalizedString_string_string:
 _p_213:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3540,20744
+	.long mono_aot_Xamarin_Auth_got - . + 3540,20745
 	.no_dead_strip plt_Xamarin_Controls_ProgressLabel__ctor_string
 plt_Xamarin_Controls_ProgressLabel__ctor_string:
 _p_214:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3544,20749
+	.long mono_aot_Xamarin_Auth_got - . + 3544,20750
 	.no_dead_strip plt_UIKit_UINavigationItem_set_TitleView_UIKit_UIView
 plt_UIKit_UINavigationItem_set_TitleView_UIKit_UIView:
 _p_215:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3548,20752
+	.long mono_aot_Xamarin_Auth_got - . + 3548,20753
 	.no_dead_strip plt_System_Threading_CancellationTokenSource__ctor
 plt_System_Threading_CancellationTokenSource__ctor:
 _p_216:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3552,20757
+	.long mono_aot_Xamarin_Auth_got - . + 3552,20758
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
 plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_217:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3556,20762
+	.long mono_aot_Xamarin_Auth_got - . + 3556,20763
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_Xamarin_Auth_Account_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_Xamarin_Auth_Account_System_Threading_Tasks_TaskScheduler
 plt_System_Threading_Tasks_Task_1_Xamarin_Auth_Account_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_Xamarin_Auth_Account_System_Threading_Tasks_TaskScheduler:
 _p_218:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3560,20791
+	.long mono_aot_Xamarin_Auth_got - . + 3560,20792
 	.no_dead_strip plt_UIKit_UIViewController_ViewDidAppear_bool
 plt_UIKit_UIViewController_ViewDidAppear_bool:
 _p_219:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3564,20802
+	.long mono_aot_Xamarin_Auth_got - . + 3564,20803
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_Xamarin_Auth_Account_get_Result
 plt_System_Threading_Tasks_Task_1_Xamarin_Auth_Account_get_Result:
 _p_220:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3568,20807
+	.long mono_aot_Xamarin_Auth_got - . + 3568,20808
 	.no_dead_strip plt_UIKit_UITableViewDelegate__ctor
 plt_UIKit_UITableViewDelegate__ctor:
 _p_221:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3572,20818
+	.long mono_aot_Xamarin_Auth_got - . + 3572,20819
 	.no_dead_strip plt_UIKit_UIResponder_ResignFirstResponder
 plt_UIKit_UIResponder_ResignFirstResponder:
 _p_222:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3576,20823
+	.long mono_aot_Xamarin_Auth_got - . + 3576,20824
 	.no_dead_strip plt_Foundation_NSIndexPath_get_Section
 plt_Foundation_NSIndexPath_get_Section:
 _p_223:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3580,20828
+	.long mono_aot_Xamarin_Auth_got - . + 3580,20829
 	.no_dead_strip plt_UIKit_UITableView_DeselectRow_Foundation_NSIndexPath_bool
 plt_UIKit_UITableView_DeselectRow_Foundation_NSIndexPath_bool:
 _p_224:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3584,20833
+	.long mono_aot_Xamarin_Auth_got - . + 3584,20834
 	.no_dead_strip plt_UIKit_UITableView_get_DataSource
 plt_UIKit_UITableView_get_DataSource:
 _p_225:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3588,20838
+	.long mono_aot_Xamarin_Auth_got - . + 3588,20839
 	.no_dead_strip plt_Xamarin_Auth_FormAuthenticatorController_HandleSubmit
 plt_Xamarin_Auth_FormAuthenticatorController_HandleSubmit:
 _p_226:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3592,20843
+	.long mono_aot_Xamarin_Auth_got - . + 3592,20844
 	.no_dead_strip plt_UIKit_UIApplication_get_SharedApplication
 plt_UIKit_UIApplication_get_SharedApplication:
 _p_227:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3596,20846
+	.long mono_aot_Xamarin_Auth_got - . + 3596,20847
 	.no_dead_strip plt_UIKit_UIApplication_OpenUrl_Foundation_NSUrl
 plt_UIKit_UIApplication_OpenUrl_Foundation_NSUrl:
 _p_228:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3600,20851
+	.long mono_aot_Xamarin_Auth_got - . + 3600,20852
 	.no_dead_strip plt_UIKit_UITableViewCell__ctor_UIKit_UITableViewCellStyle_string
 plt_UIKit_UITableViewCell__ctor_UIKit_UITableViewCellStyle_string:
 _p_229:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3604,20856
+	.long mono_aot_Xamarin_Auth_got - . + 3604,20857
 	.no_dead_strip plt_UIKit_UITableViewCell_set_SelectionStyle_UIKit_UITableViewCellSelectionStyle
 plt_UIKit_UITableViewCell_set_SelectionStyle_UIKit_UITableViewCellSelectionStyle:
 _p_230:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3608,20861
+	.long mono_aot_Xamarin_Auth_got - . + 3608,20862
 	.no_dead_strip plt_UIKit_UITableViewCell_get_TextLabel
 plt_UIKit_UITableViewCell_get_TextLabel:
 _p_231:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3612,20866
+	.long mono_aot_Xamarin_Auth_got - . + 3612,20867
 	.no_dead_strip plt_UIKit_UILabel_set_Text_string
 plt_UIKit_UILabel_set_Text_string:
 _p_232:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3616,20871
+	.long mono_aot_Xamarin_Auth_got - . + 3616,20872
 	.no_dead_strip plt_UIKit_UIFont_get_PointSize
 plt_UIKit_UIFont_get_PointSize:
 _p_233:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3620,20876
+	.long mono_aot_Xamarin_Auth_got - . + 3620,20877
 	.no_dead_strip plt_UIKit_UIView_get_Frame
 plt_UIKit_UIView_get_Frame:
 _p_234:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3624,20881
+	.long mono_aot_Xamarin_Auth_got - . + 3624,20882
 	.no_dead_strip plt_CoreGraphics_CGRect__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat
 plt_CoreGraphics_CGRect__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat:
 _p_235:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3628,20886
+	.long mono_aot_Xamarin_Auth_got - . + 3628,20887
 	.no_dead_strip plt_UIKit_UITextField__ctor_CoreGraphics_CGRect
 plt_UIKit_UITextField__ctor_CoreGraphics_CGRect:
 _p_236:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3632,20891
+	.long mono_aot_Xamarin_Auth_got - . + 3632,20892
 	.no_dead_strip plt_UIKit_UITextField_set_Font_UIKit_UIFont
 plt_UIKit_UITextField_set_Font_UIKit_UIFont:
 _p_237:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3636,20896
+	.long mono_aot_Xamarin_Auth_got - . + 3636,20897
 	.no_dead_strip plt_UIKit_UITextField_set_Placeholder_string
 plt_UIKit_UITextField_set_Placeholder_string:
 _p_238:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3640,20901
+	.long mono_aot_Xamarin_Auth_got - . + 3640,20902
 	.no_dead_strip plt_UIKit_UITextField_set_Text_string
 plt_UIKit_UITextField_set_Text_string:
 _p_239:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3644,20906
+	.long mono_aot_Xamarin_Auth_got - . + 3644,20907
 	.no_dead_strip plt_UIKit_UITextField_set_TextColor_UIKit_UIColor
 plt_UIKit_UITextField_set_TextColor_UIKit_UIColor:
 _p_240:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3648,20911
+	.long mono_aot_Xamarin_Auth_got - . + 3648,20912
 	.no_dead_strip plt_UIKit_UIView_set_AutoresizingMask_UIKit_UIViewAutoresizing
 plt_UIKit_UIView_set_AutoresizingMask_UIKit_UIViewAutoresizing:
 _p_241:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3652,20916
+	.long mono_aot_Xamarin_Auth_got - . + 3652,20917
 	.no_dead_strip plt_UIKit_UITextField_set_SecureTextEntry_bool
 plt_UIKit_UITextField_set_SecureTextEntry_bool:
 _p_242:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3656,20921
+	.long mono_aot_Xamarin_Auth_got - . + 3656,20922
 	.no_dead_strip plt_UIKit_UITextField_set_KeyboardType_UIKit_UIKeyboardType
 plt_UIKit_UITextField_set_KeyboardType_UIKit_UIKeyboardType:
 _p_243:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3660,20926
+	.long mono_aot_Xamarin_Auth_got - . + 3660,20927
 	.no_dead_strip plt_UIKit_UITextField_set_AutocorrectionType_UIKit_UITextAutocorrectionType
 plt_UIKit_UITextField_set_AutocorrectionType_UIKit_UITextAutocorrectionType:
 _p_244:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3664,20931
+	.long mono_aot_Xamarin_Auth_got - . + 3664,20932
 	.no_dead_strip plt_UIKit_UITextField_set_AutocapitalizationType_UIKit_UITextAutocapitalizationType
 plt_UIKit_UITextField_set_AutocapitalizationType_UIKit_UITextAutocapitalizationType:
 _p_245:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3668,20936
+	.long mono_aot_Xamarin_Auth_got - . + 3668,20937
 	.no_dead_strip plt_UIKit_UITextField_set_ShouldReturn_UIKit_UITextFieldCondition
 plt_UIKit_UITextField_set_ShouldReturn_UIKit_UITextFieldCondition:
 _p_246:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3672,20941
+	.long mono_aot_Xamarin_Auth_got - . + 3672,20942
 	.no_dead_strip plt_UIKit_UIControl_add_EditingDidEnd_System_EventHandler
 plt_UIKit_UIControl_add_EditingDidEnd_System_EventHandler:
 _p_247:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3676,20946
+	.long mono_aot_Xamarin_Auth_got - . + 3676,20947
 	.no_dead_strip plt_UIKit_UITableViewCell_get_ContentView
 plt_UIKit_UITableViewCell_get_ContentView:
 _p_248:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3680,20951
+	.long mono_aot_Xamarin_Auth_got - . + 3680,20952
 	.no_dead_strip plt_UIKit_UIView_AddSubview_UIKit_UIView
 plt_UIKit_UIView_AddSubview_UIKit_UIView:
 _p_249:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3684,20956
+	.long mono_aot_Xamarin_Auth_got - . + 3684,20957
 	.no_dead_strip plt_UIKit_UIFont_BoldSystemFontOfSize_System_nfloat
 plt_UIKit_UIFont_BoldSystemFontOfSize_System_nfloat:
 _p_250:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3688,20961
+	.long mono_aot_Xamarin_Auth_got - . + 3688,20962
 	.no_dead_strip plt_UIKit_UIFont_SystemFontOfSize_System_nfloat
 plt_UIKit_UIFont_SystemFontOfSize_System_nfloat:
 _p_251:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3692,20966
+	.long mono_aot_Xamarin_Auth_got - . + 3692,20967
 	.no_dead_strip plt_UIKit_UIColor_FromRGB_int_int_int
 plt_UIKit_UIColor_FromRGB_int_int_int:
 _p_252:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3696,20971
+	.long mono_aot_Xamarin_Auth_got - . + 3696,20972
 	.no_dead_strip plt_UIKit_UITableViewDataSource__ctor
 plt_UIKit_UITableViewDataSource__ctor:
 _p_253:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3700,20976
+	.long mono_aot_Xamarin_Auth_got - . + 3700,20977
 	.no_dead_strip plt_System_Uri_op_Inequality_System_Uri_System_Uri
 plt_System_Uri_op_Inequality_System_Uri_System_Uri:
 _p_254:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3704,20981
+	.long mono_aot_Xamarin_Auth_got - . + 3704,20982
 	.no_dead_strip plt_UIKit_UIResponder_get_IsFirstResponder
 plt_UIKit_UIResponder_get_IsFirstResponder:
 _p_255:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3708,20986
+	.long mono_aot_Xamarin_Auth_got - . + 3708,20987
 	.no_dead_strip plt_UIKit_UIResponder_BecomeFirstResponder
 plt_UIKit_UIResponder_BecomeFirstResponder:
 _p_256:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3712,20991
+	.long mono_aot_Xamarin_Auth_got - . + 3712,20992
 	.no_dead_strip plt_System_Linq_Enumerable_Select_Xamarin_Auth_FormAuthenticatorField_System_nfloat_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat
 plt_System_Linq_Enumerable_Select_Xamarin_Auth_FormAuthenticatorField_System_nfloat_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat:
 _p_257:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3716,20996
+	.long mono_aot_Xamarin_Auth_got - . + 3716,20997
 	.no_dead_strip plt_System_Linq_Enumerable_Max_System_nfloat_System_Collections_Generic_IEnumerable_1_System_nfloat
 plt_System_Linq_Enumerable_Max_System_nfloat_System_Collections_Generic_IEnumerable_1_System_nfloat:
 _p_258:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3720,21008
+	.long mono_aot_Xamarin_Auth_got - . + 3720,21009
 	.no_dead_strip plt_System_Linq_Enumerable_Select_Xamarin_Auth_FormAuthenticatorField_Xamarin_Auth_FormAuthenticatorController_FieldCell_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_Xamarin_Auth_FormAuthenticatorController_FieldCell
 plt_System_Linq_Enumerable_Select_Xamarin_Auth_FormAuthenticatorField_Xamarin_Auth_FormAuthenticatorController_FieldCell_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_Xamarin_Auth_FormAuthenticatorController_FieldCell:
 _p_259:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3724,21020
+	.long mono_aot_Xamarin_Auth_got - . + 3724,21021
 	.no_dead_strip plt_System_Linq_Enumerable_ToArray_Xamarin_Auth_FormAuthenticatorController_FieldCell_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_FormAuthenticatorController_FieldCell
 plt_System_Linq_Enumerable_ToArray_Xamarin_Auth_FormAuthenticatorController_FieldCell_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_FormAuthenticatorController_FieldCell:
 _p_260:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3728,21032
+	.long mono_aot_Xamarin_Auth_got - . + 3728,21033
 	.no_dead_strip plt_Foundation_NSIndexPath_get_Row
 plt_Foundation_NSIndexPath_get_Row:
 _p_261:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3732,21044
+	.long mono_aot_Xamarin_Auth_got - . + 3732,21045
 	.no_dead_strip plt_UIKit_UITableView_DequeueReusableCell_string
 plt_UIKit_UITableView_DequeueReusableCell_string:
 _p_262:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3736,21049
+	.long mono_aot_Xamarin_Auth_got - . + 3736,21050
 	.no_dead_strip plt_UIKit_UILabel_set_TextAlignment_UIKit_UITextAlignment
 plt_UIKit_UILabel_set_TextAlignment_UIKit_UITextAlignment:
 _p_263:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3740,21054
+	.long mono_aot_Xamarin_Auth_got - . + 3740,21055
 	.no_dead_strip plt_UIKit_UIStringDrawing_StringSize_string_UIKit_UIFont
 plt_UIKit_UIStringDrawing_StringSize_string_UIKit_UIFont:
 _p_264:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3744,21059
+	.long mono_aot_Xamarin_Auth_got - . + 3744,21060
 	.no_dead_strip plt_System_Drawing_RectangleF__ctor_single_single_single_single
 plt_System_Drawing_RectangleF__ctor_single_single_single_single:
 _p_265:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3748,21064
+	.long mono_aot_Xamarin_Auth_got - . + 3748,21065
 	.no_dead_strip plt_CoreGraphics_CGRect_op_Implicit_System_Drawing_RectangleF
 plt_CoreGraphics_CGRect_op_Implicit_System_Drawing_RectangleF:
 _p_266:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3752,21069
+	.long mono_aot_Xamarin_Auth_got - . + 3752,21070
 	.no_dead_strip plt_UIKit_UIView__ctor_CoreGraphics_CGRect
 plt_UIKit_UIView__ctor_CoreGraphics_CGRect:
 _p_267:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3756,21074
+	.long mono_aot_Xamarin_Auth_got - . + 3756,21075
 	.no_dead_strip plt_UIKit_UIColor_get_Clear
 plt_UIKit_UIColor_get_Clear:
 _p_268:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3760,21079
+	.long mono_aot_Xamarin_Auth_got - . + 3760,21080
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView__ctor_UIKit_UIActivityIndicatorViewStyle
 plt_UIKit_UIActivityIndicatorView__ctor_UIKit_UIActivityIndicatorViewStyle:
 _p_269:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3764,21084
+	.long mono_aot_Xamarin_Auth_got - . + 3764,21085
 	.no_dead_strip plt_UIKit_UIView_set_Frame_CoreGraphics_CGRect
 plt_UIKit_UIView_set_Frame_CoreGraphics_CGRect:
 _p_270:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3768,21089
+	.long mono_aot_Xamarin_Auth_got - . + 3768,21090
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView_set_HidesWhenStopped_bool
 plt_UIKit_UIActivityIndicatorView_set_HidesWhenStopped_bool:
 _p_271:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3772,21094
+	.long mono_aot_Xamarin_Auth_got - . + 3772,21095
 	.no_dead_strip plt_UIKit_UIView_set_Hidden_bool
 plt_UIKit_UIView_set_Hidden_bool:
 _p_272:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3776,21099
+	.long mono_aot_Xamarin_Auth_got - . + 3776,21100
 	.no_dead_strip plt_UIKit_UILabel__ctor
 plt_UIKit_UILabel__ctor:
 _p_273:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3780,21104
+	.long mono_aot_Xamarin_Auth_got - . + 3780,21105
 	.no_dead_strip plt_UIKit_UIColor_get_White
 plt_UIKit_UIColor_get_White:
 _p_274:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3784,21109
+	.long mono_aot_Xamarin_Auth_got - . + 3784,21110
 	.no_dead_strip plt_UIKit_UILabel_set_TextColor_UIKit_UIColor
 plt_UIKit_UILabel_set_TextColor_UIKit_UIColor:
 _p_275:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3788,21114
+	.long mono_aot_Xamarin_Auth_got - . + 3788,21115
 	.no_dead_strip plt_UIKit_UILabel_set_Font_UIKit_UIFont
 plt_UIKit_UILabel_set_Font_UIKit_UIFont:
 _p_276:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3792,21119
+	.long mono_aot_Xamarin_Auth_got - . + 3792,21120
 	.no_dead_strip plt_UIKit_UILabel_get_Text
 plt_UIKit_UILabel_get_Text:
 _p_277:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3796,21124
+	.long mono_aot_Xamarin_Auth_got - . + 3796,21125
 	.no_dead_strip plt_UIKit_UILabel_get_Font
 plt_UIKit_UILabel_get_Font:
 _p_278:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3800,21129
+	.long mono_aot_Xamarin_Auth_got - . + 3800,21130
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView_StartAnimating
 plt_UIKit_UIActivityIndicatorView_StartAnimating:
 _p_279:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3804,21134
+	.long mono_aot_Xamarin_Auth_got - . + 3804,21135
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView_StopAnimating
 plt_UIKit_UIActivityIndicatorView_StopAnimating:
 _p_280:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3808,21139
+	.long mono_aot_Xamarin_Auth_got - . + 3808,21140
 	.no_dead_strip plt_Xamarin_Utilities_iOS_UIViewControllerEx_ShowError_UIKit_UIViewController_string_string_System_Action
 plt_Xamarin_Utilities_iOS_UIViewControllerEx_ShowError_UIKit_UIViewController_string_string_System_Action:
 _p_281:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3812,21144
+	.long mono_aot_Xamarin_Auth_got - . + 3812,21145
 	.no_dead_strip plt_UIKit_UIAlertView__ctor_string_string_UIKit_UIAlertViewDelegate_string_string__
 plt_UIKit_UIAlertView__ctor_string_string_UIKit_UIAlertViewDelegate_string_string__:
 _p_282:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3816,21147
+	.long mono_aot_Xamarin_Auth_got - . + 3816,21148
 	.no_dead_strip plt_UIKit_UIAlertView_add_Dismissed_System_EventHandler_1_UIKit_UIButtonEventArgs
 plt_UIKit_UIAlertView_add_Dismissed_System_EventHandler_1_UIKit_UIButtonEventArgs:
 _p_283:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3820,21152
+	.long mono_aot_Xamarin_Auth_got - . + 3820,21153
 	.no_dead_strip plt_UIKit_UIAlertView_Show
 plt_UIKit_UIAlertView_Show:
 _p_284:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3824,21157
+	.long mono_aot_Xamarin_Auth_got - . + 3824,21158
 	.no_dead_strip plt_Xamarin_Auth_WebViewConfiguration_IOS_get_IsUsingWKWebView
 plt_Xamarin_Auth_WebViewConfiguration_IOS_get_IsUsingWKWebView:
 _p_285:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3828,21162
+	.long mono_aot_Xamarin_Auth_got - . + 3828,21163
 	.no_dead_strip plt_Xamarin_Auth_WebAuthenticatorController__ctor_Xamarin_Auth_WebAuthenticator_bool
 plt_Xamarin_Auth_WebAuthenticatorController__ctor_Xamarin_Auth_WebAuthenticator_bool:
 _p_286:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3832,21165
+	.long mono_aot_Xamarin_Auth_got - . + 3832,21166
 	.no_dead_strip plt_UIKit_UIViewController__ctor
 plt_UIKit_UIViewController__ctor:
 _p_287:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3836,21168
+	.long mono_aot_Xamarin_Auth_got - . + 3836,21169
 	.no_dead_strip plt_Xamarin_Auth_WebViewConfiguration_IOS_set_IsUsingWKWebView_bool
 plt_Xamarin_Auth_WebViewConfiguration_IOS_set_IsUsingWKWebView_bool:
 _p_288:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3840,21173
+	.long mono_aot_Xamarin_Auth_got - . + 3840,21174
 	.no_dead_strip plt_Xamarin_Auth_Authenticator_add_Error_System_EventHandler_1_Xamarin_Auth_AuthenticatorErrorEventArgs
 plt_Xamarin_Auth_Authenticator_add_Error_System_EventHandler_1_Xamarin_Auth_AuthenticatorErrorEventArgs:
 _p_289:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3844,21176
+	.long mono_aot_Xamarin_Auth_got - . + 3844,21177
 	.no_dead_strip plt_Xamarin_Auth_WebAuthenticator_add_BrowsingCompleted_System_EventHandler
 plt_Xamarin_Auth_WebAuthenticator_add_BrowsingCompleted_System_EventHandler:
 _p_290:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3848,21178
+	.long mono_aot_Xamarin_Auth_got - . + 3848,21179
 	.no_dead_strip plt_UIKit_UIBarButtonItem__ctor_UIKit_UIView
 plt_UIKit_UIBarButtonItem__ctor_UIKit_UIView:
 _p_291:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3852,21181
+	.long mono_aot_Xamarin_Auth_got - . + 3852,21182
 	.no_dead_strip plt_UIKit_UINavigationItem_set_RightBarButtonItem_UIKit_UIBarButtonItem
 plt_UIKit_UINavigationItem_set_RightBarButtonItem_UIKit_UIBarButtonItem:
 _p_292:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3856,21186
+	.long mono_aot_Xamarin_Auth_got - . + 3856,21187
 	.no_dead_strip plt_UIKit_UIViewController_get_View
 plt_UIKit_UIViewController_get_View:
 _p_293:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3860,21191
+	.long mono_aot_Xamarin_Auth_got - . + 3860,21192
 	.no_dead_strip plt_UIKit_UIView_get_Bounds
 plt_UIKit_UIView_get_Bounds:
 _p_294:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3864,21196
+	.long mono_aot_Xamarin_Auth_got - . + 3864,21197
 	.no_dead_strip plt_UIKit_UIWebView__ctor_CoreGraphics_CGRect
 plt_UIKit_UIWebView__ctor_CoreGraphics_CGRect:
 _p_295:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3868,21201
+	.long mono_aot_Xamarin_Auth_got - . + 3868,21202
 	.no_dead_strip plt_UIKit_UIWebView_set_Delegate_UIKit_IUIWebViewDelegate
 plt_UIKit_UIWebView_set_Delegate_UIKit_IUIWebViewDelegate:
 _p_296:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3872,21206
+	.long mono_aot_Xamarin_Auth_got - . + 3872,21207
 	.no_dead_strip plt_WebKit_WKWebViewConfiguration__ctor
 plt_WebKit_WKWebViewConfiguration__ctor:
 _p_297:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3876,21211
+	.long mono_aot_Xamarin_Auth_got - . + 3876,21212
 	.no_dead_strip plt_UIKit_UIDevice_get_CurrentDevice
 plt_UIKit_UIDevice_get_CurrentDevice:
 _p_298:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3880,21216
+	.long mono_aot_Xamarin_Auth_got - . + 3880,21217
 	.no_dead_strip plt_UIKit_UIDevice_CheckSystemVersion_int_int
 plt_UIKit_UIDevice_CheckSystemVersion_int_int:
 _p_299:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3884,21221
+	.long mono_aot_Xamarin_Auth_got - . + 3884,21222
 	.no_dead_strip plt_WebKit_WKWebsiteDataStore_get_NonPersistentDataStore
 plt_WebKit_WKWebsiteDataStore_get_NonPersistentDataStore:
 _p_300:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3888,21226
+	.long mono_aot_Xamarin_Auth_got - . + 3888,21227
 	.no_dead_strip plt_WebKit_WKWebViewConfiguration_set_WebsiteDataStore_WebKit_WKWebsiteDataStore
 plt_WebKit_WKWebViewConfiguration_set_WebsiteDataStore_WebKit_WKWebsiteDataStore:
 _p_301:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3892,21231
+	.long mono_aot_Xamarin_Auth_got - . + 3892,21232
 	.no_dead_strip plt_WebKit_WKWebView__ctor_CoreGraphics_CGRect_WebKit_WKWebViewConfiguration
 plt_WebKit_WKWebView__ctor_CoreGraphics_CGRect_WebKit_WKWebViewConfiguration:
 _p_302:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3896,21236
+	.long mono_aot_Xamarin_Auth_got - . + 3896,21237
 	.no_dead_strip plt_WebKit_WKWebView_set_UIDelegate_WebKit_IWKUIDelegate
 plt_WebKit_WKWebView_set_UIDelegate_WebKit_IWKUIDelegate:
 _p_303:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3900,21241
+	.long mono_aot_Xamarin_Auth_got - . + 3900,21242
 	.no_dead_strip plt_WebKit_WKWebView_set_NavigationDelegate_WebKit_IWKNavigationDelegate
 plt_WebKit_WKWebView_set_NavigationDelegate_WebKit_IWKNavigationDelegate:
 _p_304:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3904,21246
+	.long mono_aot_Xamarin_Auth_got - . + 3904,21247
 	.no_dead_strip plt_Xamarin_Auth_WebViewConfiguration_IOS_get_UserAgent
 plt_Xamarin_Auth_WebViewConfiguration_IOS_get_UserAgent:
 _p_305:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3908,21251
+	.long mono_aot_Xamarin_Auth_got - . + 3908,21252
 	.no_dead_strip plt_WebKit_WKWebView_set_CustomUserAgent_string
 plt_WebKit_WKWebView_set_CustomUserAgent_string:
 _p_306:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3912,21254
+	.long mono_aot_Xamarin_Auth_got - . + 3912,21255
 	.no_dead_strip plt_UIKit_UIColor_get_Black
 plt_UIKit_UIColor_get_Black:
 _p_307:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3916,21259
+	.long mono_aot_Xamarin_Auth_got - . + 3916,21260
 	.no_dead_strip plt_Xamarin_Auth_WebAuthenticatorController_BeginLoadingInitialUrl
 plt_Xamarin_Auth_WebAuthenticatorController_BeginLoadingInitialUrl:
 _p_308:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3920,21264
+	.long mono_aot_Xamarin_Auth_got - . + 3920,21265
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_System_Uri_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_System_Uri_System_Threading_Tasks_TaskScheduler
 plt_System_Threading_Tasks_Task_1_System_Uri_ContinueWith_System_Action_1_System_Threading_Tasks_Task_1_System_Uri_System_Threading_Tasks_TaskScheduler:
 _p_309:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3924,21267
+	.long mono_aot_Xamarin_Auth_got - . + 3924,21268
 	.no_dead_strip plt_UIKit_UIView_Transition_UIKit_UIView_UIKit_UIView_double_UIKit_UIViewAnimationOptions_System_Action
 plt_UIKit_UIView_Transition_UIKit_UIView_UIKit_UIView_double_UIKit_UIViewAnimationOptions_System_Action:
 _p_310:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3928,21278
+	.long mono_aot_Xamarin_Auth_got - . + 3928,21279
 	.no_dead_strip plt_Foundation_NSUrlRequest__ctor_Foundation_NSUrl
 plt_Foundation_NSUrlRequest__ctor_Foundation_NSUrl:
 _p_311:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3932,21283
+	.long mono_aot_Xamarin_Auth_got - . + 3932,21284
 	.no_dead_strip plt_Foundation_NSUrlCache_get_SharedCache
 plt_Foundation_NSUrlCache_get_SharedCache:
 _p_312:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3936,21288
+	.long mono_aot_Xamarin_Auth_got - . + 3936,21289
 	.no_dead_strip plt_Foundation_NSUrlCache_RemoveCachedResponse_Foundation_NSUrlRequest
 plt_Foundation_NSUrlCache_RemoveCachedResponse_Foundation_NSUrlRequest:
 _p_313:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3940,21293
+	.long mono_aot_Xamarin_Auth_got - . + 3940,21294
 	.no_dead_strip plt_UIKit_UIWebView_LoadRequest_Foundation_NSUrlRequest
 plt_UIKit_UIWebView_LoadRequest_Foundation_NSUrlRequest:
 _p_314:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3944,21298
+	.long mono_aot_Xamarin_Auth_got - . + 3944,21299
 	.no_dead_strip plt_WebKit_WKWebView_LoadRequest_Foundation_NSUrlRequest
 plt_WebKit_WKWebView_LoadRequest_Foundation_NSUrlRequest:
 _p_315:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3948,21303
+	.long mono_aot_Xamarin_Auth_got - . + 3948,21304
 	.no_dead_strip plt_UIKit_UIView_Add_UIKit_UIView
 plt_UIKit_UIView_Add_UIKit_UIView:
 _p_316:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3952,21308
+	.long mono_aot_Xamarin_Auth_got - . + 3952,21309
 	.no_dead_strip plt_UIKit_UIViewController_DismissViewControllerAsync_bool
 plt_UIKit_UIViewController_DismissViewControllerAsync_bool:
 _p_317:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3956,21313
+	.long mono_aot_Xamarin_Auth_got - . + 3956,21314
 	.no_dead_strip plt_Xamarin_Auth_WebAuthenticatorController_LoadInitialUrl_System_Uri
 plt_Xamarin_Auth_WebAuthenticatorController_LoadInitialUrl_System_Uri:
 _p_318:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3960,21318
+	.long mono_aot_Xamarin_Auth_got - . + 3960,21319
 	.no_dead_strip plt_Security_SecRecord__ctor_Security_SecKind
 plt_Security_SecRecord__ctor_Security_SecKind:
 _p_319:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3964,21321
+	.long mono_aot_Xamarin_Auth_got - . + 3964,21322
 	.no_dead_strip plt_Security_SecRecord_set_Service_string
 plt_Security_SecRecord_set_Service_string:
 _p_320:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3968,21326
+	.long mono_aot_Xamarin_Auth_got - . + 3968,21327
 	.no_dead_strip plt_System_Lazy_1_System_Reflection_MethodInfo_get_Value
 plt_System_Lazy_1_System_Reflection_MethodInfo_get_Value:
 _p_321:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3972,21331
+	.long mono_aot_Xamarin_Auth_got - . + 3972,21332
 	.no_dead_strip plt_System_Reflection_MethodBase_Invoke_object_object__
 plt_System_Reflection_MethodBase_Invoke_object_object__:
 _p_322:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3976,21342
+	.long mono_aot_Xamarin_Auth_got - . + 3976,21343
 	.no_dead_strip plt_System_Lazy_1_ObjCRuntime_INativeObject_get_Value
 plt_System_Lazy_1_ObjCRuntime_INativeObject_get_Value:
 _p_323:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3980,21347
+	.long mono_aot_Xamarin_Auth_got - . + 3980,21348
 	.no_dead_strip plt_System_Lazy_1_intptr_get_Value
 plt_System_Lazy_1_intptr_get_Value:
 _p_324:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3984,21358
+	.long mono_aot_Xamarin_Auth_got - . + 3984,21359
 	.no_dead_strip plt_Foundation_NSMutableDictionary_LowlevelSetObject_intptr_intptr
 plt_Foundation_NSMutableDictionary_LowlevelSetObject_intptr_intptr:
 _p_325:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3988,21369
+	.long mono_aot_Xamarin_Auth_got - . + 3988,21370
 	.no_dead_strip plt_Security_SecKeyChain_QueryAsRecord_Security_SecRecord_int_Security_SecStatusCode_
 plt_Security_SecKeyChain_QueryAsRecord_Security_SecRecord_int_Security_SecStatusCode_:
 _p_326:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3992,21374
+	.long mono_aot_Xamarin_Auth_got - . + 3992,21375
 	.no_dead_strip plt_Xamarin_Auth_AccountStoreException__ctor_string_System_Exception
 plt_Xamarin_Auth_AccountStoreException__ctor_string_System_Exception:
 _p_327:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 3996,21379
+	.long mono_aot_Xamarin_Auth_got - . + 3996,21380
 	.no_dead_strip plt_System_Linq_Enumerable_Select_Security_SecRecord_Xamarin_Auth_Account_System_Collections_Generic_IEnumerable_1_Security_SecRecord_System_Func_2_Security_SecRecord_Xamarin_Auth_Account
 plt_System_Linq_Enumerable_Select_Security_SecRecord_Xamarin_Auth_Account_System_Collections_Generic_IEnumerable_1_Security_SecRecord_System_Func_2_Security_SecRecord_Xamarin_Auth_Account:
 _p_328:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4000,21381
+	.long mono_aot_Xamarin_Auth_got - . + 4000,21382
 	.no_dead_strip plt_System_Linq_Enumerable_Count_Xamarin_Auth_Account_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_Account
 plt_System_Linq_Enumerable_Count_Xamarin_Auth_Account_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_Account:
 _p_329:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4004,21393
+	.long mono_aot_Xamarin_Auth_got - . + 4004,21394
 	.no_dead_strip plt_System_Linq_Enumerable_LongCount_Xamarin_Auth_Account_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_Account
 plt_System_Linq_Enumerable_LongCount_Xamarin_Auth_Account_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_Account:
 _p_330:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4008,21405
+	.long mono_aot_Xamarin_Auth_got - . + 4008,21406
 	.no_dead_strip plt_System_Linq_Enumerable_ToList_Xamarin_Auth_Account_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_Account
 plt_System_Linq_Enumerable_ToList_Xamarin_Auth_Account_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_Account:
 _p_331:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4012,21417
+	.long mono_aot_Xamarin_Auth_got - . + 4012,21418
 	.no_dead_strip plt__jit_icall_mono_thread_get_undeniable_exception
 plt__jit_icall_mono_thread_get_undeniable_exception:
 _p_332:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4016,21429
+	.long mono_aot_Xamarin_Auth_got - . + 4016,21430
 	.no_dead_strip plt_System_Collections_Generic_List_1_Xamarin_Auth_Account__ctor_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_Account
 plt_System_Collections_Generic_List_1_Xamarin_Auth_Account__ctor_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_Account:
 _p_333:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4020,21468
+	.long mono_aot_Xamarin_Auth_got - . + 4020,21469
 	.no_dead_strip plt_System_Threading_Tasks_Task_FromResult_System_Collections_Generic_List_1_Xamarin_Auth_Account_System_Collections_Generic_List_1_Xamarin_Auth_Account
 plt_System_Threading_Tasks_Task_FromResult_System_Collections_Generic_List_1_Xamarin_Auth_Account_System_Collections_Generic_List_1_Xamarin_Auth_Account:
 _p_334:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4024,21479
+	.long mono_aot_Xamarin_Auth_got - . + 4024,21480
 	.no_dead_strip plt_Security_SecRecord_get_Generic
 plt_Security_SecRecord_get_Generic:
 _p_335:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4028,21491
+	.long mono_aot_Xamarin_Auth_got - . + 4028,21492
 	.no_dead_strip plt_Security_SecRecord_get_ValueData
 plt_Security_SecRecord_get_ValueData:
 _p_336:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4032,21496
+	.long mono_aot_Xamarin_Auth_got - . + 4032,21497
 	.no_dead_strip plt_Foundation_NSString_FromData_Foundation_NSData_Foundation_NSStringEncoding
 plt_Foundation_NSString_FromData_Foundation_NSData_Foundation_NSStringEncoding:
 _p_337:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4036,21501
+	.long mono_aot_Xamarin_Auth_got - . + 4036,21502
 	.no_dead_strip plt_Foundation_NSString_op_Implicit_Foundation_NSString
 plt_Foundation_NSString_op_Implicit_Foundation_NSString:
 _p_338:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4040,21506
+	.long mono_aot_Xamarin_Auth_got - . + 4040,21507
 	.no_dead_strip plt_Xamarin_Auth_Account_Deserialize_string
 plt_Xamarin_Auth_Account_Deserialize_string:
 _p_339:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4044,21511
+	.long mono_aot_Xamarin_Auth_got - . + 4044,21512
 	.no_dead_strip plt_Xamarin_Auth_AccountStoreException__ctor_string
 plt_Xamarin_Auth_AccountStoreException__ctor_string:
 _p_340:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4048,21513
+	.long mono_aot_Xamarin_Auth_got - . + 4048,21514
 	.no_dead_strip plt_Security_SecRecord_set_Account_string
 plt_Security_SecRecord_set_Account_string:
 _p_341:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4052,21515
+	.long mono_aot_Xamarin_Auth_got - . + 4052,21516
 	.no_dead_strip plt_Security_SecKeyChain_QueryAsRecord_Security_SecRecord_Security_SecStatusCode_
 plt_Security_SecKeyChain_QueryAsRecord_Security_SecRecord_Security_SecStatusCode_:
 _p_342:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4056,21520
+	.long mono_aot_Xamarin_Auth_got - . + 4056,21521
 	.no_dead_strip plt_Xamarin_Auth_KeyChainAccountStore_GetAccountFromRecord_Security_SecRecord
 plt_Xamarin_Auth_KeyChainAccountStore_GetAccountFromRecord_Security_SecRecord:
 _p_343:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4060,21525
+	.long mono_aot_Xamarin_Auth_got - . + 4060,21526
 	.no_dead_strip plt_Foundation_NSData_FromString_string_Foundation_NSStringEncoding
 plt_Foundation_NSData_FromString_string_Foundation_NSStringEncoding:
 _p_344:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4064,21528
+	.long mono_aot_Xamarin_Auth_got - . + 4064,21529
 	.no_dead_strip plt_Xamarin_Auth_KeyChainAccountStore_FindAccount_string_string
 plt_Xamarin_Auth_KeyChainAccountStore_FindAccount_string_string:
 _p_345:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4068,21533
+	.long mono_aot_Xamarin_Auth_got - . + 4068,21534
 	.no_dead_strip plt_Security_SecKeyChain_Remove_Security_SecRecord
 plt_Security_SecKeyChain_Remove_Security_SecRecord:
 _p_346:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4072,21536
+	.long mono_aot_Xamarin_Auth_got - . + 4072,21537
 	.no_dead_strip plt_string_Concat_object_object
 plt_string_Concat_object_object:
 _p_347:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4076,21541
+	.long mono_aot_Xamarin_Auth_got - . + 4076,21542
 	.no_dead_strip plt_Security_SecRecord_set_ValueData_Foundation_NSData
 plt_Security_SecRecord_set_ValueData_Foundation_NSData:
 _p_348:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4080,21546
+	.long mono_aot_Xamarin_Auth_got - . + 4080,21547
 	.no_dead_strip plt_Security_SecRecord_set_Accessible_Security_SecAccessible
 plt_Security_SecRecord_set_Accessible_Security_SecAccessible:
 _p_349:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4084,21551
+	.long mono_aot_Xamarin_Auth_got - . + 4084,21552
 	.no_dead_strip plt_Security_SecKeyChain_Add_Security_SecRecord
 plt_Security_SecKeyChain_Add_Security_SecRecord:
 _p_350:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4088,21556
+	.long mono_aot_Xamarin_Auth_got - . + 4088,21557
 	.no_dead_strip plt_System_Text_StringBuilder__ctor_string
 plt_System_Text_StringBuilder__ctor_string:
 _p_351:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4092,21561
+	.long mono_aot_Xamarin_Auth_got - . + 4092,21562
 	.no_dead_strip plt_System_Threading_Tasks_Task_FromResult_bool_bool
 plt_System_Threading_Tasks_Task_FromResult_bool_bool:
 _p_352:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4096,21566
+	.long mono_aot_Xamarin_Auth_got - . + 4096,21567
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_System_Collections_Generic_List_1_Xamarin_Auth_Account_get_Result
 plt_System_Threading_Tasks_Task_1_System_Collections_Generic_List_1_Xamarin_Auth_Account_get_Result:
 _p_353:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4100,21578
+	.long mono_aot_Xamarin_Auth_got - . + 4100,21579
 	.no_dead_strip plt_System_Lazy_1_System_Reflection_MethodInfo__ctor_System_Func_1_System_Reflection_MethodInfo
 plt_System_Lazy_1_System_Reflection_MethodInfo__ctor_System_Func_1_System_Reflection_MethodInfo:
 _p_354:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4104,21589
+	.long mono_aot_Xamarin_Auth_got - . + 4104,21590
 	.no_dead_strip plt_System_Lazy_1_intptr__ctor_System_Func_1_intptr
 plt_System_Lazy_1_intptr__ctor_System_Func_1_intptr:
 _p_355:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4108,21600
+	.long mono_aot_Xamarin_Auth_got - . + 4108,21601
 	.no_dead_strip plt_System_Lazy_1_ObjCRuntime_INativeObject__ctor_System_Func_1_ObjCRuntime_INativeObject
 plt_System_Lazy_1_ObjCRuntime_INativeObject__ctor_System_Func_1_ObjCRuntime_INativeObject:
 _p_356:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4112,21611
+	.long mono_aot_Xamarin_Auth_got - . + 4112,21612
 	.no_dead_strip plt_System_Type_GetProperty_string_System_Reflection_BindingFlags
 plt_System_Type_GetProperty_string_System_Reflection_BindingFlags:
 _p_357:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4116,21622
+	.long mono_aot_Xamarin_Auth_got - . + 4116,21623
 	.no_dead_strip plt_System_Reflection_PropertyInfo_get_GetMethod
 plt_System_Reflection_PropertyInfo_get_GetMethod:
 _p_358:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4120,21627
+	.long mono_aot_Xamarin_Auth_got - . + 4120,21628
 	.no_dead_strip plt_System_Reflection_Assembly_GetTypes
 plt_System_Reflection_Assembly_GetTypes:
 _p_359:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4124,21632
+	.long mono_aot_Xamarin_Auth_got - . + 4124,21633
 	.no_dead_strip plt_System_Linq_Enumerable_First_System_Type_System_Collections_Generic_IEnumerable_1_System_Type_System_Func_2_System_Type_bool
 plt_System_Linq_Enumerable_First_System_Type_System_Collections_Generic_IEnumerable_1_System_Type_System_Func_2_System_Type_bool:
 _p_360:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4128,21637
+	.long mono_aot_Xamarin_Auth_got - . + 4128,21638
 	.no_dead_strip plt_System_Type_GetProperty_string
 plt_System_Type_GetProperty_string:
 _p_361:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4132,21649
+	.long mono_aot_Xamarin_Auth_got - . + 4132,21650
 	.no_dead_strip plt_System_Type_GetField_string
 plt_System_Type_GetField_string:
 _p_362:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4136,21654
+	.long mono_aot_Xamarin_Auth_got - . + 4136,21655
 	.no_dead_strip plt_Foundation_NSObject_BeginInvokeOnMainThread_System_Action
 plt_Foundation_NSObject_BeginInvokeOnMainThread_System_Action:
 _p_363:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4140,21659
+	.long mono_aot_Xamarin_Auth_got - . + 4140,21660
 	.no_dead_strip plt_UIKit_UIWebViewDelegate__ctor
 plt_UIKit_UIWebViewDelegate__ctor:
 _p_364:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4144,21664
+	.long mono_aot_Xamarin_Auth_got - . + 4144,21665
 	.no_dead_strip plt_Foundation_NSUrlRequest_get_Url
 plt_Foundation_NSUrlRequest_get_Url:
 _p_365:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4148,21669
+	.long mono_aot_Xamarin_Auth_got - . + 4148,21670
 	.no_dead_strip plt_Foundation_NSUrl_op_Inequality_Foundation_NSUrl_Foundation_NSUrl
 plt_Foundation_NSUrl_op_Inequality_Foundation_NSUrl_Foundation_NSUrl:
 _p_366:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4152,21674
+	.long mono_aot_Xamarin_Auth_got - . + 4152,21675
 	.no_dead_strip plt_Foundation_NSUrl_get_AbsoluteString
 plt_Foundation_NSUrl_get_AbsoluteString:
 _p_367:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4156,21679
+	.long mono_aot_Xamarin_Auth_got - . + 4156,21680
 	.no_dead_strip plt_System_Uri_TryCreate_string_System_UriKind_System_Uri_
 plt_System_Uri_TryCreate_string_System_UriKind_System_Uri_:
 _p_368:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4160,21684
+	.long mono_aot_Xamarin_Auth_got - . + 4160,21685
 	.no_dead_strip plt_string_ToLower
 plt_string_ToLower:
 _p_369:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4164,21689
+	.long mono_aot_Xamarin_Auth_got - . + 4164,21690
 	.no_dead_strip plt_UIKit_UIView_set_UserInteractionEnabled_bool
 plt_UIKit_UIView_set_UserInteractionEnabled_bool:
 _p_370:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4168,21694
+	.long mono_aot_Xamarin_Auth_got - . + 4168,21695
 	.no_dead_strip plt_Foundation_NSError_get_Domain
 plt_Foundation_NSError_get_Domain:
 _p_371:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4172,21699
+	.long mono_aot_Xamarin_Auth_got - . + 4172,21700
 	.no_dead_strip plt_Foundation_NSError_get_Code
 plt_Foundation_NSError_get_Code:
 _p_372:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4176,21704
+	.long mono_aot_Xamarin_Auth_got - . + 4176,21705
 	.no_dead_strip plt_Foundation_NSError_get_LocalizedDescription
 plt_Foundation_NSError_get_LocalizedDescription:
 _p_373:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4180,21709
+	.long mono_aot_Xamarin_Auth_got - . + 4180,21710
 	.no_dead_strip plt_UIKit_UIWebView_get_Request
 plt_UIKit_UIWebView_get_Request:
 _p_374:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4184,21714
+	.long mono_aot_Xamarin_Auth_got - . + 4184,21715
 	.no_dead_strip plt_WebKit_WKUIDelegate__ctor
 plt_WebKit_WKUIDelegate__ctor:
 _p_375:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4188,21719
+	.long mono_aot_Xamarin_Auth_got - . + 4188,21720
 	.no_dead_strip plt_WebKit_WKNavigationDelegate__ctor
 plt_WebKit_WKNavigationDelegate__ctor:
 _p_376:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4192,21724
+	.long mono_aot_Xamarin_Auth_got - . + 4192,21725
 	.no_dead_strip plt_WebKit_WKWebView_get_Url
 plt_WebKit_WKWebView_get_Url:
 _p_377:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4196,21729
+	.long mono_aot_Xamarin_Auth_got - . + 4196,21730
 	.no_dead_strip plt_Foundation_NSError_get_UserInfo
 plt_Foundation_NSError_get_UserInfo:
 _p_378:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4200,21734
+	.long mono_aot_Xamarin_Auth_got - . + 4200,21735
 	.no_dead_strip plt_Foundation_NSString__ctor_string
 plt_Foundation_NSString__ctor_string:
 _p_379:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4204,21739
+	.long mono_aot_Xamarin_Auth_got - . + 4204,21740
 	.no_dead_strip plt_WebKit_WKScriptMessageHandler__ctor
 plt_WebKit_WKScriptMessageHandler__ctor:
 _p_380:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4208,21744
+	.long mono_aot_Xamarin_Auth_got - . + 4208,21745
 	.no_dead_strip plt_Xamarin_Auth_WebViewConfiguration_IOS_UserAgentFromUIWebView
 plt_Xamarin_Auth_WebViewConfiguration_IOS_UserAgentFromUIWebView:
 _p_381:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4212,21749
+	.long mono_aot_Xamarin_Auth_got - . + 4212,21750
 	.no_dead_strip plt_Xamarin_Auth_WebViewConfiguration_IOS_UserAgentFromWKWebView
 plt_Xamarin_Auth_WebViewConfiguration_IOS_UserAgentFromWKWebView:
 _p_382:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4216,21752
+	.long mono_aot_Xamarin_Auth_got - . + 4216,21753
 	.no_dead_strip plt_Xamarin_Auth_WebViewConfiguration_IOS_set_UserAgent_string
 plt_Xamarin_Auth_WebViewConfiguration_IOS_set_UserAgent_string:
 _p_383:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4220,21755
+	.long mono_aot_Xamarin_Auth_got - . + 4220,21756
 	.no_dead_strip plt_Xamarin_Auth_WebViewConfiguration_IOS_SetDefaultUserAgent
 plt_Xamarin_Auth_WebViewConfiguration_IOS_SetDefaultUserAgent:
 _p_384:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4224,21758
+	.long mono_aot_Xamarin_Auth_got - . + 4224,21759
 	.no_dead_strip plt_UIKit_UIWebView_LoadHtmlString_string_Foundation_NSUrl
 plt_UIKit_UIWebView_LoadHtmlString_string_Foundation_NSUrl:
 _p_385:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4228,21761
+	.long mono_aot_Xamarin_Auth_got - . + 4228,21762
 	.no_dead_strip plt_UIKit_UIWebView_EvaluateJavascript_string
 plt_UIKit_UIWebView_EvaluateJavascript_string:
 _p_386:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4232,21766
+	.long mono_aot_Xamarin_Auth_got - . + 4232,21767
 	.no_dead_strip plt_Foundation_NSString_op_Explicit_string
 plt_Foundation_NSString_op_Explicit_string:
 _p_387:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4236,21771
+	.long mono_aot_Xamarin_Auth_got - . + 4236,21772
 	.no_dead_strip plt_WebKit_WKWebView_EvaluateJavaScript_Foundation_NSString_WebKit_WKJavascriptEvaluationResult
 plt_WebKit_WKWebView_EvaluateJavaScript_Foundation_NSString_WebKit_WKJavascriptEvaluationResult:
 _p_388:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4240,21776
+	.long mono_aot_Xamarin_Auth_got - . + 4240,21777
 	.no_dead_strip plt_WebKit_WKWebView_LoadHtmlString_string_Foundation_NSUrl
 plt_WebKit_WKWebView_LoadHtmlString_string_Foundation_NSUrl:
 _p_389:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4244,21781
+	.long mono_aot_Xamarin_Auth_got - . + 4244,21782
 	.no_dead_strip plt_Foundation_NSObject_FromObject_object
 plt_Foundation_NSObject_FromObject_object:
 _p_390:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4248,21786
+	.long mono_aot_Xamarin_Auth_got - . + 4248,21787
 	.no_dead_strip plt_Foundation_NSDictionary_FromObjectAndKey_Foundation_NSObject_Foundation_NSObject
 plt_Foundation_NSDictionary_FromObjectAndKey_Foundation_NSObject_Foundation_NSObject:
 _p_391:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4252,21791
+	.long mono_aot_Xamarin_Auth_got - . + 4252,21792
 	.no_dead_strip plt_Foundation_NSUserDefaults_get_StandardUserDefaults
 plt_Foundation_NSUserDefaults_get_StandardUserDefaults:
 _p_392:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4256,21796
+	.long mono_aot_Xamarin_Auth_got - . + 4256,21797
 	.no_dead_strip plt_Foundation_NSUserDefaults_RegisterDefaults_Foundation_NSDictionary
 plt_Foundation_NSUserDefaults_RegisterDefaults_Foundation_NSDictionary:
 _p_393:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4260,21801
+	.long mono_aot_Xamarin_Auth_got - . + 4260,21802
 	.no_dead_strip plt_System_Console_WriteLine_object
 plt_System_Console_WriteLine_object:
 _p_394:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4264,21806
+	.long mono_aot_Xamarin_Auth_got - . + 4264,21807
 	.no_dead_strip plt_SafariServices_SFSafariViewControllerDelegate__ctor
 plt_SafariServices_SFSafariViewControllerDelegate__ctor:
 _p_395:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4268,21811
+	.long mono_aot_Xamarin_Auth_got - . + 4268,21812
 	.no_dead_strip plt_UIKit_UIApplication_get_KeyWindow
 plt_UIKit_UIApplication_get_KeyWindow:
 _p_396:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4272,21816
+	.long mono_aot_Xamarin_Auth_got - . + 4272,21817
 	.no_dead_strip plt_UIKit_UIWindow_get_RootViewController
 plt_UIKit_UIWindow_get_RootViewController:
 _p_397:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4276,21821
+	.long mono_aot_Xamarin_Auth_got - . + 4276,21822
 	.no_dead_strip plt_UIKit_UIViewController_PresentViewController_UIKit_UIViewController_bool_System_Action
 plt_UIKit_UIViewController_PresentViewController_UIKit_UIViewController_bool_System_Action:
 _p_398:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4280,21826
+	.long mono_aot_Xamarin_Auth_got - . + 4280,21827
 	.no_dead_strip plt_System_Net_Http_FormUrlEncodedContent__ctor_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_KeyValuePair_2_string_string
 plt_System_Net_Http_FormUrlEncodedContent__ctor_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_KeyValuePair_2_string_string:
 _p_399:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4284,21831
+	.long mono_aot_Xamarin_Auth_got - . + 4284,21832
 	.no_dead_strip plt_System_Net_Http_HttpClient__ctor
 plt_System_Net_Http_HttpClient__ctor:
 _p_400:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4288,21836
+	.long mono_aot_Xamarin_Auth_got - . + 4288,21837
 	.no_dead_strip plt_System_Net_Http_HttpClient_PostAsync_System_Uri_System_Net_Http_HttpContent
 plt_System_Net_Http_HttpClient_PostAsync_System_Uri_System_Net_Http_HttpContent:
 _p_401:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4292,21841
+	.long mono_aot_Xamarin_Auth_got - . + 4292,21842
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_System_Net_Http_HttpResponseMessage_ConfigureAwait_bool
 plt_System_Threading_Tasks_Task_1_System_Net_Http_HttpResponseMessage_ConfigureAwait_bool:
 _p_402:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4296,21846
+	.long mono_aot_Xamarin_Auth_got - . + 4296,21847
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage__Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage__Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_:
 _p_403:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4300,21857
+	.long mono_aot_Xamarin_Auth_got - . + 4300,21858
 	.no_dead_strip plt_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage_GetResult
 plt_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage_GetResult:
 _p_404:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4304,21869
+	.long mono_aot_Xamarin_Auth_got - . + 4304,21870
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_string_ConfigureAwait_bool
 plt_System_Threading_Tasks_Task_1_string_ConfigureAwait_bool:
 _p_405:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4308,21880
+	.long mono_aot_Xamarin_Auth_got - . + 4308,21881
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_string_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_string__Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_string_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_string__Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_:
 _p_406:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4312,21891
+	.long mono_aot_Xamarin_Auth_got - . + 4312,21892
 	.no_dead_strip plt_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_string_GetResult
 plt_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_string_GetResult:
 _p_407:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4316,21903
+	.long mono_aot_Xamarin_Auth_got - . + 4316,21904
 	.no_dead_strip plt_Xamarin_Utilities_WebEx_JsonDecode_string
 plt_Xamarin_Utilities_WebEx_JsonDecode_string:
 _p_408:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4320,21914
+	.long mono_aot_Xamarin_Auth_got - . + 4320,21915
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_SetException_System_Exception
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_SetException_System_Exception:
 _p_409:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4324,21917
+	.long mono_aot_Xamarin_Auth_got - . + 4324,21918
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_SetResult_System_Collections_Generic_IDictionary_2_string_string
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_SetResult_System_Collections_Generic_IDictionary_2_string_string:
 _p_410:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4328,21928
+	.long mono_aot_Xamarin_Auth_got - . + 4328,21929
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine:
 _p_411:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4332,21939
+	.long mono_aot_Xamarin_Auth_got - . + 4332,21940
 	.no_dead_strip plt_System_Nullable_1_bool__ctor_bool
 plt_System_Nullable_1_bool__ctor_bool:
 _p_412:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4336,21950
+	.long mono_aot_Xamarin_Auth_got - . + 4336,21951
 	.no_dead_strip plt_System_Net_Http_Headers_HttpRequestHeaders_set_ExpectContinue_System_Nullable_1_bool
 plt_System_Net_Http_Headers_HttpRequestHeaders_set_ExpectContinue_System_Nullable_1_bool:
 _p_413:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4340,21961
+	.long mono_aot_Xamarin_Auth_got - . + 4340,21962
 	.no_dead_strip plt_System_Net_Http_MultipartFormDataContent__ctor_string
 plt_System_Net_Http_MultipartFormDataContent__ctor_string:
 _p_414:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4344,21966
+	.long mono_aot_Xamarin_Auth_got - . + 4344,21967
 	.no_dead_strip plt_System_Net_Http_StreamContent__ctor_System_IO_Stream
 plt_System_Net_Http_StreamContent__ctor_System_IO_Stream:
 _p_415:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4348,21971
+	.long mono_aot_Xamarin_Auth_got - . + 4348,21972
 	.no_dead_strip plt_System_Net_Http_HttpContent_get_Headers
 plt_System_Net_Http_HttpContent_get_Headers:
 _p_416:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4352,21976
+	.long mono_aot_Xamarin_Auth_got - . + 4352,21977
 	.no_dead_strip plt_System_Net_Http_Headers_ContentDispositionHeaderValue__ctor_string
 plt_System_Net_Http_Headers_ContentDispositionHeaderValue__ctor_string:
 _p_417:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4356,21981
+	.long mono_aot_Xamarin_Auth_got - . + 4356,21982
 	.no_dead_strip plt_System_Net_Http_Headers_HttpContentHeaders_set_ContentDisposition_System_Net_Http_Headers_ContentDispositionHeaderValue
 plt_System_Net_Http_Headers_HttpContentHeaders_set_ContentDisposition_System_Net_Http_Headers_ContentDispositionHeaderValue:
 _p_418:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4360,21986
+	.long mono_aot_Xamarin_Auth_got - . + 4360,21987
 	.no_dead_strip plt_System_Net_Http_Headers_HttpContentHeaders_get_ContentDisposition
 plt_System_Net_Http_Headers_HttpContentHeaders_get_ContentDisposition:
 _p_419:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4364,21991
+	.long mono_aot_Xamarin_Auth_got - . + 4364,21992
 	.no_dead_strip plt_System_Net_Http_Headers_ContentDispositionHeaderValue_set_FileName_string
 plt_System_Net_Http_Headers_ContentDispositionHeaderValue_set_FileName_string:
 _p_420:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4368,21996
+	.long mono_aot_Xamarin_Auth_got - . + 4368,21997
 	.no_dead_strip plt_System_Net_Http_Headers_MediaTypeHeaderValue__ctor_string
 plt_System_Net_Http_Headers_MediaTypeHeaderValue__ctor_string:
 _p_421:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4372,22001
+	.long mono_aot_Xamarin_Auth_got - . + 4372,22002
 	.no_dead_strip plt_System_Net_Http_Headers_HttpContentHeaders_set_ContentType_System_Net_Http_Headers_MediaTypeHeaderValue
 plt_System_Net_Http_Headers_HttpContentHeaders_set_ContentType_System_Net_Http_Headers_MediaTypeHeaderValue:
 _p_422:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4376,22006
+	.long mono_aot_Xamarin_Auth_got - . + 4376,22007
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage_Xamarin_Auth_Request__GetResponseAsyncc__async0_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage__Xamarin_Auth_Request__GetResponseAsyncc__async0_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage_Xamarin_Auth_Request__GetResponseAsyncc__async0_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage__Xamarin_Auth_Request__GetResponseAsyncc__async0_:
 _p_423:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4380,22011
+	.long mono_aot_Xamarin_Auth_got - . + 4380,22012
 	.no_dead_strip plt_Xamarin_Auth_Response__ctor_System_Net_Http_HttpResponseMessage
 plt_Xamarin_Auth_Response__ctor_System_Net_Http_HttpResponseMessage:
 _p_424:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4384,22023
+	.long mono_aot_Xamarin_Auth_got - . + 4384,22024
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_SetException_System_Exception
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_SetException_System_Exception:
 _p_425:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4388,22026
+	.long mono_aot_Xamarin_Auth_got - . + 4388,22027
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_SetResult_Xamarin_Auth_Response
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_SetResult_Xamarin_Auth_Response:
 _p_426:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4392,22037
+	.long mono_aot_Xamarin_Auth_got - . + 4392,22038
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Xamarin_Auth_Response_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine:
 _p_427:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4396,22048
+	.long mono_aot_Xamarin_Auth_got - . + 4396,22049
 	.no_dead_strip plt_UIKit_UITextField_get_Text
 plt_UIKit_UITextField_get_Text:
 _p_428:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4400,22059
+	.long mono_aot_Xamarin_Auth_got - . + 4400,22060
 	.no_dead_strip plt_Xamarin_Auth_FormAuthenticatorController_FieldCell__ctor_Xamarin_Auth_FormAuthenticatorField_System_nfloat_System_Action
 plt_Xamarin_Auth_FormAuthenticatorController_FieldCell__ctor_Xamarin_Auth_FormAuthenticatorField_System_nfloat_System_Action:
 _p_429:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4404,22064
+	.long mono_aot_Xamarin_Auth_got - . + 4404,22065
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_430:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4408,22067
+	.long mono_aot_Xamarin_Auth_got - . + 4408,22068
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_431:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4412,22123
+	.long mono_aot_Xamarin_Auth_got - . + 4412,22124
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_432:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4416,22148
+	.long mono_aot_Xamarin_Auth_got - . + 4416,22149
 	.no_dead_strip plt__rgctx_fetch_2
 plt__rgctx_fetch_2:
 _p_433:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4420,22191
+	.long mono_aot_Xamarin_Auth_got - . + 4420,22192
 	.no_dead_strip plt__rgctx_fetch_3
 plt__rgctx_fetch_3:
 _p_434:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4424,22201
+	.long mono_aot_Xamarin_Auth_got - . + 4424,22202
 	.no_dead_strip plt__rgctx_fetch_4
 plt__rgctx_fetch_4:
 _p_435:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4428,22226
+	.long mono_aot_Xamarin_Auth_got - . + 4428,22227
 	.no_dead_strip plt__rgctx_fetch_5
 plt__rgctx_fetch_5:
 _p_436:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4432,22262
+	.long mono_aot_Xamarin_Auth_got - . + 4432,22263
 	.no_dead_strip plt__rgctx_fetch_6
 plt__rgctx_fetch_6:
 _p_437:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4436,22274
+	.long mono_aot_Xamarin_Auth_got - . + 4436,22275
 	.no_dead_strip plt__rgctx_fetch_7
 plt__rgctx_fetch_7:
 _p_438:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4440,22327
+	.long mono_aot_Xamarin_Auth_got - . + 4440,22328
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
 _p_439:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4444,22339
+	.long mono_aot_Xamarin_Auth_got - . + 4444,22340
 	.no_dead_strip plt__rgctx_fetch_8
 plt__rgctx_fetch_8:
 _p_440:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4448,22378
+	.long mono_aot_Xamarin_Auth_got - . + 4448,22379
 	.no_dead_strip plt__rgctx_fetch_9
 plt__rgctx_fetch_9:
 _p_441:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4452,22421
+	.long mono_aot_Xamarin_Auth_got - . + 4452,22422
 	.no_dead_strip plt__rgctx_fetch_10
 plt__rgctx_fetch_10:
 _p_442:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4456,22446
+	.long mono_aot_Xamarin_Auth_got - . + 4456,22447
 	.no_dead_strip plt__rgctx_fetch_11
 plt__rgctx_fetch_11:
 _p_443:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4460,22456
+	.long mono_aot_Xamarin_Auth_got - . + 4460,22457
 	.no_dead_strip plt__rgctx_fetch_12
 plt__rgctx_fetch_12:
 _p_444:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4464,22472
+	.long mono_aot_Xamarin_Auth_got - . + 4464,22473
 	.no_dead_strip plt__rgctx_fetch_13
 plt__rgctx_fetch_13:
 _p_445:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4468,22509
+	.long mono_aot_Xamarin_Auth_got - . + 4468,22510
 	.no_dead_strip plt__rgctx_fetch_14
 plt__rgctx_fetch_14:
 _p_446:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4472,22558
+	.long mono_aot_Xamarin_Auth_got - . + 4472,22559
 	.no_dead_strip plt__rgctx_fetch_15
 plt__rgctx_fetch_15:
 _p_447:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4476,22607
+	.long mono_aot_Xamarin_Auth_got - . + 4476,22608
 	.no_dead_strip plt__rgctx_fetch_16
 plt__rgctx_fetch_16:
 _p_448:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4480,22656
+	.long mono_aot_Xamarin_Auth_got - . + 4480,22657
 	.no_dead_strip plt__rgctx_fetch_17
 plt__rgctx_fetch_17:
 _p_449:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4484,22693
+	.long mono_aot_Xamarin_Auth_got - . + 4484,22694
 	.no_dead_strip plt_System_Collections_Generic_EqualityComparer_1_TKey_REF_get_Default
 plt_System_Collections_Generic_EqualityComparer_1_TKey_REF_get_Default:
 _p_450:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4488,22705
+	.long mono_aot_Xamarin_Auth_got - . + 4488,22706
 	.no_dead_strip plt__jit_icall_mono_helper_newobj_mscorlib
 plt__jit_icall_mono_helper_newobj_mscorlib:
 _p_451:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4492,22726
+	.long mono_aot_Xamarin_Auth_got - . + 4492,22727
 	.no_dead_strip plt_System_ArgumentOutOfRangeException__ctor_string_object_string
 plt_System_ArgumentOutOfRangeException__ctor_string_object_string:
 _p_452:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4496,22756
+	.long mono_aot_Xamarin_Auth_got - . + 4496,22757
 	.no_dead_strip plt__rgctx_fetch_18
 plt__rgctx_fetch_18:
 _p_453:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4500,22782
+	.long mono_aot_Xamarin_Auth_got - . + 4500,22783
 	.no_dead_strip plt__rgctx_fetch_19
 plt__rgctx_fetch_19:
 _p_454:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4504,22854
+	.long mono_aot_Xamarin_Auth_got - . + 4504,22855
 	.no_dead_strip plt__rgctx_fetch_20
 plt__rgctx_fetch_20:
 _p_455:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4508,22883
+	.long mono_aot_Xamarin_Auth_got - . + 4508,22884
 	.no_dead_strip plt__rgctx_fetch_21
 plt__rgctx_fetch_21:
 _p_456:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4512,22911
+	.long mono_aot_Xamarin_Auth_got - . + 4512,22912
 	.no_dead_strip plt__rgctx_fetch_22
 plt__rgctx_fetch_22:
 _p_457:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4516,22921
+	.long mono_aot_Xamarin_Auth_got - . + 4516,22922
 	.no_dead_strip plt_wrapper_castclass_object___castclass_with_cache_object_intptr_intptr
 plt_wrapper_castclass_object___castclass_with_cache_object_intptr_intptr:
 _p_458:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4520,22931
+	.long mono_aot_Xamarin_Auth_got - . + 4520,22932
 	.no_dead_strip plt__rgctx_fetch_23
 plt__rgctx_fetch_23:
 _p_459:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4524,22939
+	.long mono_aot_Xamarin_Auth_got - . + 4524,22940
 	.no_dead_strip plt__rgctx_fetch_24
 plt__rgctx_fetch_24:
 _p_460:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4528,22978
+	.long mono_aot_Xamarin_Auth_got - . + 4528,22979
 	.no_dead_strip plt__rgctx_fetch_25
 plt__rgctx_fetch_25:
 _p_461:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4532,23018
+	.long mono_aot_Xamarin_Auth_got - . + 4532,23019
 	.no_dead_strip plt__rgctx_fetch_26
 plt__rgctx_fetch_26:
 _p_462:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4536,23047
+	.long mono_aot_Xamarin_Auth_got - . + 4536,23048
 	.no_dead_strip plt_System_Runtime_CompilerServices_ConditionalWeakTable_2_object_System_Runtime_Serialization_SerializationInfo_Add_object_System_Runtime_Serialization_SerializationInfo
 plt_System_Runtime_CompilerServices_ConditionalWeakTable_2_object_System_Runtime_Serialization_SerializationInfo_Add_object_System_Runtime_Serialization_SerializationInfo:
 _p_463:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4540,23073
+	.long mono_aot_Xamarin_Auth_got - . + 4540,23074
 	.no_dead_strip plt__rgctx_fetch_27
 plt__rgctx_fetch_27:
 _p_464:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4544,23132
+	.long mono_aot_Xamarin_Auth_got - . + 4544,23133
 	.no_dead_strip plt__rgctx_fetch_28
 plt__rgctx_fetch_28:
 _p_465:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4548,23144
+	.long mono_aot_Xamarin_Auth_got - . + 4548,23145
 	.no_dead_strip plt__rgctx_fetch_29
 plt__rgctx_fetch_29:
 _p_466:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4552,23195
+	.long mono_aot_Xamarin_Auth_got - . + 4552,23196
 	.no_dead_strip plt__rgctx_fetch_30
 plt__rgctx_fetch_30:
 _p_467:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4556,23207
+	.long mono_aot_Xamarin_Auth_got - . + 4556,23208
 	.no_dead_strip plt__rgctx_fetch_31
 plt__rgctx_fetch_31:
 _p_468:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4560,23258
+	.long mono_aot_Xamarin_Auth_got - . + 4560,23259
 	.no_dead_strip plt__rgctx_fetch_32
 plt__rgctx_fetch_32:
 _p_469:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4564,23270
+	.long mono_aot_Xamarin_Auth_got - . + 4564,23271
 	.no_dead_strip plt__rgctx_fetch_33
 plt__rgctx_fetch_33:
 _p_470:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4568,23333
+	.long mono_aot_Xamarin_Auth_got - . + 4568,23334
 	.no_dead_strip plt__rgctx_fetch_34
 plt__rgctx_fetch_34:
 _p_471:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4572,23345
+	.long mono_aot_Xamarin_Auth_got - . + 4572,23346
 	.no_dead_strip plt__rgctx_fetch_35
 plt__rgctx_fetch_35:
 _p_472:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4576,23396
+	.long mono_aot_Xamarin_Auth_got - . + 4576,23397
 	.no_dead_strip plt__rgctx_fetch_36
 plt__rgctx_fetch_36:
 _p_473:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4580,23408
+	.long mono_aot_Xamarin_Auth_got - . + 4580,23409
 	.no_dead_strip plt__rgctx_fetch_37
 plt__rgctx_fetch_37:
 _p_474:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4584,23459
+	.long mono_aot_Xamarin_Auth_got - . + 4584,23460
 	.no_dead_strip plt__rgctx_fetch_38
 plt__rgctx_fetch_38:
 _p_475:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4588,23471
+	.long mono_aot_Xamarin_Auth_got - . + 4588,23472
 	.no_dead_strip plt__rgctx_fetch_39
 plt__rgctx_fetch_39:
 _p_476:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4592,23522
+	.long mono_aot_Xamarin_Auth_got - . + 4592,23523
 	.no_dead_strip plt__rgctx_fetch_40
 plt__rgctx_fetch_40:
 _p_477:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4596,23571
+	.long mono_aot_Xamarin_Auth_got - . + 4596,23572
 	.no_dead_strip plt__rgctx_fetch_41
 plt__rgctx_fetch_41:
 _p_478:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4600,23620
+	.long mono_aot_Xamarin_Auth_got - . + 4600,23621
 	.no_dead_strip plt__rgctx_fetch_42
 plt__rgctx_fetch_42:
 _p_479:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4604,23669
+	.long mono_aot_Xamarin_Auth_got - . + 4604,23670
 	.no_dead_strip plt__rgctx_fetch_43
 plt__rgctx_fetch_43:
 _p_480:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4608,23681
+	.long mono_aot_Xamarin_Auth_got - . + 4608,23682
 	.no_dead_strip plt__rgctx_fetch_44
 plt__rgctx_fetch_44:
 _p_481:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4612,23730
+	.long mono_aot_Xamarin_Auth_got - . + 4612,23731
 	.no_dead_strip plt__rgctx_fetch_45
 plt__rgctx_fetch_45:
 _p_482:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4616,23742
+	.long mono_aot_Xamarin_Auth_got - . + 4616,23743
 	.no_dead_strip plt__rgctx_fetch_46
 plt__rgctx_fetch_46:
 _p_483:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4620,23779
+	.long mono_aot_Xamarin_Auth_got - . + 4620,23780
 	.no_dead_strip plt__rgctx_fetch_47
 plt__rgctx_fetch_47:
 _p_484:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4624,23791
+	.long mono_aot_Xamarin_Auth_got - . + 4624,23792
 	.no_dead_strip plt__rgctx_fetch_48
 plt__rgctx_fetch_48:
 _p_485:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4628,23839
+	.long mono_aot_Xamarin_Auth_got - . + 4628,23840
 	.no_dead_strip plt__rgctx_fetch_49
 plt__rgctx_fetch_49:
 _p_486:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4632,23851
+	.long mono_aot_Xamarin_Auth_got - . + 4632,23852
 	.no_dead_strip plt__rgctx_fetch_50
 plt__rgctx_fetch_50:
 _p_487:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4636,23879
+	.long mono_aot_Xamarin_Auth_got - . + 4636,23880
 	.no_dead_strip plt__rgctx_fetch_51
 plt__rgctx_fetch_51:
 _p_488:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4640,23891
+	.long mono_aot_Xamarin_Auth_got - . + 4640,23892
 	.no_dead_strip plt__rgctx_fetch_52
 plt__rgctx_fetch_52:
 _p_489:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4644,23918
+	.long mono_aot_Xamarin_Auth_got - . + 4644,23919
 	.no_dead_strip plt_System_Array_Clear_System_Array_int_int
 plt_System_Array_Clear_System_Array_int_int:
 _p_490:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4648,23946
+	.long mono_aot_Xamarin_Auth_got - . + 4648,23947
 	.no_dead_strip plt__rgctx_fetch_53
 plt__rgctx_fetch_53:
 _p_491:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4652,23972
+	.long mono_aot_Xamarin_Auth_got - . + 4652,23973
 	.no_dead_strip plt__rgctx_fetch_54
 plt__rgctx_fetch_54:
 _p_492:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4656,24021
+	.long mono_aot_Xamarin_Auth_got - . + 4656,24022
 	.no_dead_strip plt__rgctx_fetch_55
 plt__rgctx_fetch_55:
 _p_493:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4660,24033
+	.long mono_aot_Xamarin_Auth_got - . + 4660,24034
 	.no_dead_strip plt__rgctx_fetch_56
 plt__rgctx_fetch_56:
 _p_494:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4664,24081
+	.long mono_aot_Xamarin_Auth_got - . + 4664,24082
 	.no_dead_strip plt__rgctx_fetch_57
 plt__rgctx_fetch_57:
 _p_495:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4668,24093
+	.long mono_aot_Xamarin_Auth_got - . + 4668,24094
 	.no_dead_strip plt__rgctx_fetch_58
 plt__rgctx_fetch_58:
 _p_496:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4672,24156
+	.long mono_aot_Xamarin_Auth_got - . + 4672,24157
 	.no_dead_strip plt__rgctx_fetch_59
 plt__rgctx_fetch_59:
 _p_497:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4676,24168
+	.long mono_aot_Xamarin_Auth_got - . + 4676,24169
 	.no_dead_strip plt__rgctx_fetch_60
 plt__rgctx_fetch_60:
 _p_498:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4680,24219
+	.long mono_aot_Xamarin_Auth_got - . + 4680,24220
 	.no_dead_strip plt__rgctx_fetch_61
 plt__rgctx_fetch_61:
 _p_499:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4684,24231
+	.long mono_aot_Xamarin_Auth_got - . + 4684,24232
 	.no_dead_strip plt_System_Runtime_Serialization_SerializationInfo_AddValue_string_int
 plt_System_Runtime_Serialization_SerializationInfo_AddValue_string_int:
 _p_500:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4688,24261
+	.long mono_aot_Xamarin_Auth_got - . + 4688,24262
 	.no_dead_strip plt__rgctx_fetch_62
 plt__rgctx_fetch_62:
 _p_501:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4692,24296
+	.long mono_aot_Xamarin_Auth_got - . + 4692,24297
 	.no_dead_strip plt_System_Runtime_Serialization_SerializationInfo_AddValue_string_object_System_Type
 plt_System_Runtime_Serialization_SerializationInfo_AddValue_string_object_System_Type:
 _p_502:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4696,24308
+	.long mono_aot_Xamarin_Auth_got - . + 4696,24309
 	.no_dead_strip plt__rgctx_fetch_63
 plt__rgctx_fetch_63:
 _p_503:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4700,24313
+	.long mono_aot_Xamarin_Auth_got - . + 4700,24314
 	.no_dead_strip plt__rgctx_fetch_64
 plt__rgctx_fetch_64:
 _p_504:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4704,24327
+	.long mono_aot_Xamarin_Auth_got - . + 4704,24328
 	.no_dead_strip plt__rgctx_fetch_65
 plt__rgctx_fetch_65:
 _p_505:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4708,24355
+	.long mono_aot_Xamarin_Auth_got - . + 4708,24356
 	.no_dead_strip plt__rgctx_fetch_66
 plt__rgctx_fetch_66:
 _p_506:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4712,24390
+	.long mono_aot_Xamarin_Auth_got - . + 4712,24391
 	.no_dead_strip plt__jit_icall___emul_op_irem
 plt__jit_icall___emul_op_irem:
 _p_507:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4716,24417
+	.long mono_aot_Xamarin_Auth_got - . + 4716,24418
 	.no_dead_strip plt__rgctx_fetch_67
 plt__rgctx_fetch_67:
 _p_508:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4720,24434
+	.long mono_aot_Xamarin_Auth_got - . + 4720,24435
 	.no_dead_strip plt_System_Collections_HashHelpers_GetPrime_int
 plt_System_Collections_HashHelpers_GetPrime_int:
 _p_509:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4724,24461
+	.long mono_aot_Xamarin_Auth_got - . + 4724,24462
 	.no_dead_strip plt__rgctx_fetch_68
 plt__rgctx_fetch_68:
 _p_510:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4728,24499
+	.long mono_aot_Xamarin_Auth_got - . + 4728,24500
 	.no_dead_strip plt__rgctx_fetch_69
 plt__rgctx_fetch_69:
 _p_511:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4732,24534
+	.long mono_aot_Xamarin_Auth_got - . + 4732,24535
 	.no_dead_strip plt__rgctx_fetch_70
 plt__rgctx_fetch_70:
 _p_512:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4736,24562
+	.long mono_aot_Xamarin_Auth_got - . + 4736,24563
 	.no_dead_strip plt__rgctx_fetch_71
 plt__rgctx_fetch_71:
 _p_513:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4740,24589
+	.long mono_aot_Xamarin_Auth_got - . + 4740,24590
 	.no_dead_strip plt__rgctx_fetch_72
 plt__rgctx_fetch_72:
 _p_514:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4744,24616
+	.long mono_aot_Xamarin_Auth_got - . + 4744,24617
 	.no_dead_strip plt_System_Collections_Generic_EqualityComparer_1_string_get_Default
 plt_System_Collections_Generic_EqualityComparer_1_string_get_Default:
 _p_515:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4748,24644
+	.long mono_aot_Xamarin_Auth_got - . + 4748,24645
 	.no_dead_strip plt__rgctx_fetch_73
 plt__rgctx_fetch_73:
 _p_516:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4752,24666
+	.long mono_aot_Xamarin_Auth_got - . + 4752,24667
 	.no_dead_strip plt__rgctx_fetch_74
 plt__rgctx_fetch_74:
 _p_517:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4756,24678
+	.long mono_aot_Xamarin_Auth_got - . + 4756,24679
 	.no_dead_strip plt_SR_Format_string_object
 plt_SR_Format_string_object:
 _p_518:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4760,24706
+	.long mono_aot_Xamarin_Auth_got - . + 4760,24707
 	.no_dead_strip plt_System_Runtime_CompilerServices_ConditionalWeakTable_2_object_System_Runtime_Serialization_SerializationInfo_TryGetValue_object_System_Runtime_Serialization_SerializationInfo_
 plt_System_Runtime_CompilerServices_ConditionalWeakTable_2_object_System_Runtime_Serialization_SerializationInfo_TryGetValue_object_System_Runtime_Serialization_SerializationInfo_:
 _p_519:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4764,24711
+	.long mono_aot_Xamarin_Auth_got - . + 4764,24712
 	.no_dead_strip plt_System_Runtime_Serialization_SerializationInfo_GetInt32_string
 plt_System_Runtime_Serialization_SerializationInfo_GetInt32_string:
 _p_520:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4768,24737
+	.long mono_aot_Xamarin_Auth_got - . + 4768,24738
 	.no_dead_strip plt__rgctx_fetch_75
 plt__rgctx_fetch_75:
 _p_521:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4772,24763
+	.long mono_aot_Xamarin_Auth_got - . + 4772,24764
 	.no_dead_strip plt_System_Runtime_Serialization_SerializationInfo_GetValue_string_System_Type
 plt_System_Runtime_Serialization_SerializationInfo_GetValue_string_System_Type:
 _p_522:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4776,24775
+	.long mono_aot_Xamarin_Auth_got - . + 4776,24776
 	.no_dead_strip plt__rgctx_fetch_76
 plt__rgctx_fetch_76:
 _p_523:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4780,24780
+	.long mono_aot_Xamarin_Auth_got - . + 4780,24781
 	.no_dead_strip plt__rgctx_fetch_77
 plt__rgctx_fetch_77:
 _p_524:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4784,24792
+	.long mono_aot_Xamarin_Auth_got - . + 4784,24793
 	.no_dead_strip plt__rgctx_fetch_78
 plt__rgctx_fetch_78:
 _p_525:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4788,24806
+	.long mono_aot_Xamarin_Auth_got - . + 4788,24807
 	.no_dead_strip plt__rgctx_fetch_79
 plt__rgctx_fetch_79:
 _p_526:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4792,24820
+	.long mono_aot_Xamarin_Auth_got - . + 4792,24821
 	.no_dead_strip plt__rgctx_fetch_80
 plt__rgctx_fetch_80:
 _p_527:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4796,24834
+	.long mono_aot_Xamarin_Auth_got - . + 4796,24835
 	.no_dead_strip plt__rgctx_fetch_81
 plt__rgctx_fetch_81:
 _p_528:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4800,24846
+	.long mono_aot_Xamarin_Auth_got - . + 4800,24847
 	.no_dead_strip plt_System_Runtime_CompilerServices_ConditionalWeakTable_2_object_System_Runtime_Serialization_SerializationInfo_Remove_object
 plt_System_Runtime_CompilerServices_ConditionalWeakTable_2_object_System_Runtime_Serialization_SerializationInfo_Remove_object:
 _p_529:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4804,24874
+	.long mono_aot_Xamarin_Auth_got - . + 4804,24875
 	.no_dead_strip plt_System_Collections_HashHelpers_ExpandPrime_int
 plt_System_Collections_HashHelpers_ExpandPrime_int:
 _p_530:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4808,24900
+	.long mono_aot_Xamarin_Auth_got - . + 4808,24901
 	.no_dead_strip plt__rgctx_fetch_82
 plt__rgctx_fetch_82:
 _p_531:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4812,24926
+	.long mono_aot_Xamarin_Auth_got - . + 4812,24927
 	.no_dead_strip plt__rgctx_fetch_83
 plt__rgctx_fetch_83:
 _p_532:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4816,24975
+	.long mono_aot_Xamarin_Auth_got - . + 4816,24976
 	.no_dead_strip plt__rgctx_fetch_84
 plt__rgctx_fetch_84:
 _p_533:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4820,24989
+	.long mono_aot_Xamarin_Auth_got - . + 4820,24990
 	.no_dead_strip plt__rgctx_fetch_85
 plt__rgctx_fetch_85:
 _p_534:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4824,25037
+	.long mono_aot_Xamarin_Auth_got - . + 4824,25038
 	.no_dead_strip plt__rgctx_fetch_86
 plt__rgctx_fetch_86:
 _p_535:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4828,25064
+	.long mono_aot_Xamarin_Auth_got - . + 4828,25065
 	.no_dead_strip plt__rgctx_fetch_87
 plt__rgctx_fetch_87:
 _p_536:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4832,25112
+	.long mono_aot_Xamarin_Auth_got - . + 4832,25113
 	.no_dead_strip plt__rgctx_fetch_88
 plt__rgctx_fetch_88:
 _p_537:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4836,25161
+	.long mono_aot_Xamarin_Auth_got - . + 4836,25162
 	.no_dead_strip plt__rgctx_fetch_89
 plt__rgctx_fetch_89:
 _p_538:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4840,25210
+	.long mono_aot_Xamarin_Auth_got - . + 4840,25211
 	.no_dead_strip plt__rgctx_fetch_90
 plt__rgctx_fetch_90:
 _p_539:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4844,25259
+	.long mono_aot_Xamarin_Auth_got - . + 4844,25260
 	.no_dead_strip plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr
 plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr:
 _p_540:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4848,25273
+	.long mono_aot_Xamarin_Auth_got - . + 4848,25274
 	.no_dead_strip plt__rgctx_fetch_91
 plt__rgctx_fetch_91:
 _p_541:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4852,25281
+	.long mono_aot_Xamarin_Auth_got - . + 4852,25282
 	.no_dead_strip plt__rgctx_fetch_92
 plt__rgctx_fetch_92:
 _p_542:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4856,25309
+	.long mono_aot_Xamarin_Auth_got - . + 4856,25310
 	.no_dead_strip plt__rgctx_fetch_93
 plt__rgctx_fetch_93:
 _p_543:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4860,25319
+	.long mono_aot_Xamarin_Auth_got - . + 4860,25320
 	.no_dead_strip plt__rgctx_fetch_94
 plt__rgctx_fetch_94:
 _p_544:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4864,25331
+	.long mono_aot_Xamarin_Auth_got - . + 4864,25332
 	.no_dead_strip plt__rgctx_fetch_95
 plt__rgctx_fetch_95:
 _p_545:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4868,25382
+	.long mono_aot_Xamarin_Auth_got - . + 4868,25383
 	.no_dead_strip plt__rgctx_fetch_96
 plt__rgctx_fetch_96:
 _p_546:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4872,25394
+	.long mono_aot_Xamarin_Auth_got - . + 4872,25395
 	.no_dead_strip plt__rgctx_fetch_97
 plt__rgctx_fetch_97:
 _p_547:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4876,25445
+	.long mono_aot_Xamarin_Auth_got - . + 4876,25446
 	.no_dead_strip plt__rgctx_fetch_98
 plt__rgctx_fetch_98:
 _p_548:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4880,25494
+	.long mono_aot_Xamarin_Auth_got - . + 4880,25495
 	.no_dead_strip plt__rgctx_fetch_99
 plt__rgctx_fetch_99:
 _p_549:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4884,25543
+	.long mono_aot_Xamarin_Auth_got - . + 4884,25544
 	.no_dead_strip plt__rgctx_fetch_100
 plt__rgctx_fetch_100:
 _p_550:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4888,25553
+	.long mono_aot_Xamarin_Auth_got - . + 4888,25554
 	.no_dead_strip plt__rgctx_fetch_101
 plt__rgctx_fetch_101:
 _p_551:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4892,25581
+	.long mono_aot_Xamarin_Auth_got - . + 4892,25582
 	.no_dead_strip plt__rgctx_fetch_102
 plt__rgctx_fetch_102:
 _p_552:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4896,25591
+	.long mono_aot_Xamarin_Auth_got - . + 4896,25592
 	.no_dead_strip plt__rgctx_fetch_103
 plt__rgctx_fetch_103:
 _p_553:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4900,25619
+	.long mono_aot_Xamarin_Auth_got - . + 4900,25620
 	.no_dead_strip plt__rgctx_fetch_104
 plt__rgctx_fetch_104:
 _p_554:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4904,25650
+	.long mono_aot_Xamarin_Auth_got - . + 4904,25651
 	.no_dead_strip plt__rgctx_fetch_105
 plt__rgctx_fetch_105:
 _p_555:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4908,25660
+	.long mono_aot_Xamarin_Auth_got - . + 4908,25661
 	.no_dead_strip plt__rgctx_fetch_106
 plt__rgctx_fetch_106:
 _p_556:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4912,25670
+	.long mono_aot_Xamarin_Auth_got - . + 4912,25671
 	.no_dead_strip plt__rgctx_fetch_107
 plt__rgctx_fetch_107:
 _p_557:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4916,25698
+	.long mono_aot_Xamarin_Auth_got - . + 4916,25699
 	.no_dead_strip plt_SR_Format_string_object_object
 plt_SR_Format_string_object_object:
 _p_558:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4920,25708
+	.long mono_aot_Xamarin_Auth_got - . + 4920,25709
 	.no_dead_strip plt__rgctx_fetch_108
 plt__rgctx_fetch_108:
 _p_559:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4924,25713
+	.long mono_aot_Xamarin_Auth_got - . + 4924,25714
 	.no_dead_strip plt__rgctx_fetch_109
 plt__rgctx_fetch_109:
 _p_560:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4928,25744
+	.long mono_aot_Xamarin_Auth_got - . + 4928,25745
 	.no_dead_strip plt__rgctx_fetch_110
 plt__rgctx_fetch_110:
 _p_561:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4932,25775
+	.long mono_aot_Xamarin_Auth_got - . + 4932,25776
 	.no_dead_strip plt__rgctx_fetch_111
 plt__rgctx_fetch_111:
 _p_562:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4936,25785
+	.long mono_aot_Xamarin_Auth_got - . + 4936,25786
 	.no_dead_strip plt__rgctx_fetch_112
 plt__rgctx_fetch_112:
 _p_563:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4940,25795
+	.long mono_aot_Xamarin_Auth_got - . + 4940,25796
 	.no_dead_strip plt__rgctx_fetch_113
 plt__rgctx_fetch_113:
 _p_564:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4944,25823
+	.long mono_aot_Xamarin_Auth_got - . + 4944,25824
 	.no_dead_strip plt__rgctx_fetch_114
 plt__rgctx_fetch_114:
 _p_565:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4948,25833
+	.long mono_aot_Xamarin_Auth_got - . + 4948,25834
 	.no_dead_strip plt__rgctx_fetch_115
 plt__rgctx_fetch_115:
 _p_566:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4952,25864
+	.long mono_aot_Xamarin_Auth_got - . + 4952,25865
 	.no_dead_strip plt__rgctx_fetch_116
 plt__rgctx_fetch_116:
 _p_567:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4956,25874
+	.long mono_aot_Xamarin_Auth_got - . + 4956,25875
 	.no_dead_strip plt__rgctx_fetch_117
 plt__rgctx_fetch_117:
 _p_568:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4960,25902
+	.long mono_aot_Xamarin_Auth_got - . + 4960,25903
 	.no_dead_strip plt__rgctx_fetch_118
 plt__rgctx_fetch_118:
 _p_569:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4964,25912
+	.long mono_aot_Xamarin_Auth_got - . + 4964,25913
 	.no_dead_strip plt__rgctx_fetch_119
 plt__rgctx_fetch_119:
 _p_570:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4968,25961
+	.long mono_aot_Xamarin_Auth_got - . + 4968,25962
 	.no_dead_strip plt__rgctx_fetch_120
 plt__rgctx_fetch_120:
 _p_571:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4972,25973
+	.long mono_aot_Xamarin_Auth_got - . + 4972,25974
 	.no_dead_strip plt__rgctx_fetch_121
 plt__rgctx_fetch_121:
 _p_572:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4976,26024
+	.long mono_aot_Xamarin_Auth_got - . + 4976,26025
 	.no_dead_strip plt__rgctx_fetch_122
 plt__rgctx_fetch_122:
 _p_573:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4980,26034
+	.long mono_aot_Xamarin_Auth_got - . + 4980,26035
 	.no_dead_strip plt__rgctx_fetch_123
 plt__rgctx_fetch_123:
 _p_574:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4984,26062
+	.long mono_aot_Xamarin_Auth_got - . + 4984,26063
 	.no_dead_strip plt__rgctx_fetch_124
 plt__rgctx_fetch_124:
 _p_575:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4988,26072
+	.long mono_aot_Xamarin_Auth_got - . + 4988,26073
 	.no_dead_strip plt__rgctx_fetch_125
 plt__rgctx_fetch_125:
 _p_576:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4992,26133
+	.long mono_aot_Xamarin_Auth_got - . + 4992,26134
 	.no_dead_strip plt__rgctx_fetch_126
 plt__rgctx_fetch_126:
 _p_577:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 4996,26145
+	.long mono_aot_Xamarin_Auth_got - . + 4996,26146
 	.no_dead_strip plt__rgctx_fetch_127
 plt__rgctx_fetch_127:
 _p_578:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5000,26208
+	.long mono_aot_Xamarin_Auth_got - . + 5000,26209
 	.no_dead_strip plt__rgctx_fetch_128
 plt__rgctx_fetch_128:
 _p_579:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5004,26259
+	.long mono_aot_Xamarin_Auth_got - . + 5004,26260
 	.no_dead_strip plt__rgctx_fetch_129
 plt__rgctx_fetch_129:
 _p_580:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5008,26271
+	.long mono_aot_Xamarin_Auth_got - . + 5008,26272
 	.no_dead_strip plt__rgctx_fetch_130
 plt__rgctx_fetch_130:
 _p_581:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5012,26322
+	.long mono_aot_Xamarin_Auth_got - . + 5012,26323
 	.no_dead_strip plt__rgctx_fetch_131
 plt__rgctx_fetch_131:
 _p_582:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5016,26334
+	.long mono_aot_Xamarin_Auth_got - . + 5016,26335
 	.no_dead_strip plt__rgctx_fetch_132
 plt__rgctx_fetch_132:
 _p_583:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5020,26385
+	.long mono_aot_Xamarin_Auth_got - . + 5020,26386
 	.no_dead_strip plt__rgctx_fetch_133
 plt__rgctx_fetch_133:
 _p_584:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5024,26397
+	.long mono_aot_Xamarin_Auth_got - . + 5024,26398
 	.no_dead_strip plt__rgctx_fetch_134
 plt__rgctx_fetch_134:
 _p_585:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5028,26458
+	.long mono_aot_Xamarin_Auth_got - . + 5028,26459
 	.no_dead_strip plt__rgctx_fetch_135
 plt__rgctx_fetch_135:
 _p_586:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5032,26470
+	.long mono_aot_Xamarin_Auth_got - . + 5032,26471
 	.no_dead_strip plt__rgctx_fetch_136
 plt__rgctx_fetch_136:
 _p_587:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5036,26533
+	.long mono_aot_Xamarin_Auth_got - . + 5036,26534
 	.no_dead_strip plt__rgctx_fetch_137
 plt__rgctx_fetch_137:
 _p_588:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5040,26584
+	.long mono_aot_Xamarin_Auth_got - . + 5040,26585
 	.no_dead_strip plt__rgctx_fetch_138
 plt__rgctx_fetch_138:
 _p_589:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5044,26596
+	.long mono_aot_Xamarin_Auth_got - . + 5044,26597
 	.no_dead_strip plt__rgctx_fetch_139
 plt__rgctx_fetch_139:
 _p_590:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5048,26647
+	.long mono_aot_Xamarin_Auth_got - . + 5048,26648
 	.no_dead_strip plt__rgctx_fetch_140
 plt__rgctx_fetch_140:
 _p_591:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5052,26659
+	.long mono_aot_Xamarin_Auth_got - . + 5052,26660
 	.no_dead_strip plt__rgctx_fetch_141
 plt__rgctx_fetch_141:
 _p_592:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5056,26710
+	.long mono_aot_Xamarin_Auth_got - . + 5056,26711
 	.no_dead_strip plt__rgctx_fetch_142
 plt__rgctx_fetch_142:
 _p_593:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5060,26722
+	.long mono_aot_Xamarin_Auth_got - . + 5060,26723
 	.no_dead_strip plt__rgctx_fetch_143
 plt__rgctx_fetch_143:
 _p_594:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5064,26750
+	.long mono_aot_Xamarin_Auth_got - . + 5064,26751
 	.no_dead_strip plt_System_Nullable_1_bool_Unbox_object
 plt_System_Nullable_1_bool_Unbox_object:
 _p_595:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5068,26760
+	.long mono_aot_Xamarin_Auth_got - . + 5068,26761
 	.no_dead_strip plt_System_Nullable_1_bool_Equals_System_Nullable_1_bool
 plt_System_Nullable_1_bool_Equals_System_Nullable_1_bool:
 _p_596:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5072,26782
+	.long mono_aot_Xamarin_Auth_got - . + 5072,26783
 	.no_dead_strip plt_bool_Equals_object
 plt_bool_Equals_object:
 _p_597:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5076,26804
+	.long mono_aot_Xamarin_Auth_got - . + 5076,26805
 	.no_dead_strip plt__rgctx_fetch_144
 plt__rgctx_fetch_144:
 _p_598:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5080,26827
+	.long mono_aot_Xamarin_Auth_got - . + 5080,26828
 	.no_dead_strip plt__rgctx_fetch_145
 plt__rgctx_fetch_145:
 _p_599:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5084,26870
+	.long mono_aot_Xamarin_Auth_got - . + 5084,26871
 	.no_dead_strip plt__rgctx_fetch_146
 plt__rgctx_fetch_146:
 _p_600:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5088,26913
+	.long mono_aot_Xamarin_Auth_got - . + 5088,26914
 	.no_dead_strip plt__rgctx_fetch_147
 plt__rgctx_fetch_147:
 _p_601:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5092,26923
+	.long mono_aot_Xamarin_Auth_got - . + 5092,26924
 	.no_dead_strip plt__rgctx_fetch_148
 plt__rgctx_fetch_148:
 _p_602:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5096,26966
+	.long mono_aot_Xamarin_Auth_got - . + 5096,26967
 	.no_dead_strip plt__rgctx_fetch_149
 plt__rgctx_fetch_149:
 _p_603:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5100,26976
+	.long mono_aot_Xamarin_Auth_got - . + 5100,26977
 	.no_dead_strip plt__rgctx_fetch_150
 plt__rgctx_fetch_150:
 _p_604:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5104,27019
+	.long mono_aot_Xamarin_Auth_got - . + 5104,27020
 	.no_dead_strip plt__rgctx_fetch_151
 plt__rgctx_fetch_151:
 _p_605:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5108,27062
+	.long mono_aot_Xamarin_Auth_got - . + 5108,27063
 	.no_dead_strip plt__rgctx_fetch_152
 plt__rgctx_fetch_152:
 _p_606:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5112,27087
+	.long mono_aot_Xamarin_Auth_got - . + 5112,27088
 	.no_dead_strip plt__rgctx_fetch_153
 plt__rgctx_fetch_153:
 _p_607:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5116,27112
+	.long mono_aot_Xamarin_Auth_got - . + 5116,27113
 	.no_dead_strip plt__rgctx_fetch_154
 plt__rgctx_fetch_154:
 _p_608:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5120,27128
+	.long mono_aot_Xamarin_Auth_got - . + 5120,27129
 	.no_dead_strip plt__rgctx_fetch_155
 plt__rgctx_fetch_155:
 _p_609:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5124,27144
+	.long mono_aot_Xamarin_Auth_got - . + 5124,27145
 	.no_dead_strip plt__rgctx_fetch_156
 plt__rgctx_fetch_156:
 _p_610:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5128,27180
+	.long mono_aot_Xamarin_Auth_got - . + 5128,27181
 	.no_dead_strip plt__rgctx_fetch_157
 plt__rgctx_fetch_157:
 _p_611:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5132,27210
+	.long mono_aot_Xamarin_Auth_got - . + 5132,27211
 	.no_dead_strip plt__rgctx_fetch_158
 plt__rgctx_fetch_158:
 _p_612:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5136,27230
+	.long mono_aot_Xamarin_Auth_got - . + 5136,27231
 	.no_dead_strip plt_System_Runtime_ExceptionServices_ExceptionDispatchInfo_Throw
 plt_System_Runtime_ExceptionServices_ExceptionDispatchInfo_Throw:
 _p_613:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5140,27242
+	.long mono_aot_Xamarin_Auth_got - . + 5140,27243
 	.no_dead_strip plt__rgctx_fetch_159
 plt__rgctx_fetch_159:
 _p_614:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5144,27247
+	.long mono_aot_Xamarin_Auth_got - . + 5144,27248
 	.no_dead_strip plt__rgctx_fetch_160
 plt__rgctx_fetch_160:
 _p_615:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5148,27290
+	.long mono_aot_Xamarin_Auth_got - . + 5148,27291
 	.no_dead_strip plt__rgctx_fetch_161
 plt__rgctx_fetch_161:
 _p_616:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5152,27315
+	.long mono_aot_Xamarin_Auth_got - . + 5152,27316
 	.no_dead_strip plt__rgctx_fetch_162
 plt__rgctx_fetch_162:
 _p_617:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5156,27340
+	.long mono_aot_Xamarin_Auth_got - . + 5156,27341
 	.no_dead_strip plt__rgctx_fetch_163
 plt__rgctx_fetch_163:
 _p_618:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5160,27352
+	.long mono_aot_Xamarin_Auth_got - . + 5160,27353
 	.no_dead_strip plt__rgctx_fetch_164
 plt__rgctx_fetch_164:
 _p_619:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5164,27362
+	.long mono_aot_Xamarin_Auth_got - . + 5164,27363
 	.no_dead_strip plt__jit_icall_mono_monitor_enter_v4_internal
 plt__jit_icall_mono_monitor_enter_v4_internal:
 _p_620:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5168,27372
+	.long mono_aot_Xamarin_Auth_got - . + 5168,27373
 	.no_dead_strip plt__rgctx_fetch_165
 plt__rgctx_fetch_165:
 _p_621:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5172,27405
+	.long mono_aot_Xamarin_Auth_got - . + 5172,27406
 	.no_dead_strip plt_System_Threading_Monitor_Exit_object
 plt_System_Threading_Monitor_Exit_object:
 _p_622:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5176,27417
+	.long mono_aot_Xamarin_Auth_got - . + 5176,27418
 	.no_dead_strip plt__rgctx_fetch_166
 plt__rgctx_fetch_166:
 _p_623:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5180,27440
+	.long mono_aot_Xamarin_Auth_got - . + 5180,27441
 	.no_dead_strip plt__rgctx_fetch_167
 plt__rgctx_fetch_167:
 _p_624:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5184,27465
+	.long mono_aot_Xamarin_Auth_got - . + 5184,27466
 	.no_dead_strip plt__rgctx_fetch_168
 plt__rgctx_fetch_168:
 _p_625:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5188,27475
+	.long mono_aot_Xamarin_Auth_got - . + 5188,27476
 	.no_dead_strip plt_System_Delegate_op_Equality_System_Delegate_System_Delegate
 plt_System_Delegate_op_Equality_System_Delegate_System_Delegate:
 _p_626:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5192,27485
+	.long mono_aot_Xamarin_Auth_got - . + 5192,27486
 	.no_dead_strip plt__rgctx_fetch_169
 plt__rgctx_fetch_169:
 _p_627:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5196,27490
+	.long mono_aot_Xamarin_Auth_got - . + 5196,27491
 	.no_dead_strip plt__rgctx_fetch_170
 plt__rgctx_fetch_170:
 _p_628:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5200,27502
+	.long mono_aot_Xamarin_Auth_got - . + 5200,27503
 	.no_dead_strip plt__rgctx_fetch_171
 plt__rgctx_fetch_171:
 _p_629:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5204,27529
+	.long mono_aot_Xamarin_Auth_got - . + 5204,27530
 	.no_dead_strip plt__rgctx_fetch_172
 plt__rgctx_fetch_172:
 _p_630:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5208,27541
+	.long mono_aot_Xamarin_Auth_got - . + 5208,27542
 	.no_dead_strip plt__jit_icall_mono_arch_rethrow_exception
 plt__jit_icall_mono_arch_rethrow_exception:
 _p_631:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5212,27568
+	.long mono_aot_Xamarin_Auth_got - . + 5212,27569
 	.no_dead_strip plt__rgctx_fetch_173
 plt__rgctx_fetch_173:
 _p_632:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5216,27598
+	.long mono_aot_Xamarin_Auth_got - . + 5216,27599
 	.no_dead_strip plt_System_Activator_CreateInstance_System_Type
 plt_System_Activator_CreateInstance_System_Type:
 _p_633:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5220,27608
+	.long mono_aot_Xamarin_Auth_got - . + 5220,27609
 	.no_dead_strip plt__rgctx_fetch_174
 plt__rgctx_fetch_174:
 _p_634:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5224,27613
+	.long mono_aot_Xamarin_Auth_got - . + 5224,27614
 	.no_dead_strip plt_System_MissingMemberException__ctor_string
 plt_System_MissingMemberException__ctor_string:
 _p_635:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5228,27623
+	.long mono_aot_Xamarin_Auth_got - . + 5228,27624
 	.no_dead_strip plt__rgctx_fetch_175
 plt__rgctx_fetch_175:
 _p_636:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5232,27654
+	.long mono_aot_Xamarin_Auth_got - . + 5232,27655
 	.no_dead_strip plt__rgctx_fetch_176
 plt__rgctx_fetch_176:
 _p_637:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5236,27666
+	.long mono_aot_Xamarin_Auth_got - . + 5236,27667
 	.no_dead_strip plt__rgctx_fetch_177
 plt__rgctx_fetch_177:
 _p_638:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5240,27678
+	.long mono_aot_Xamarin_Auth_got - . + 5240,27679
 	.no_dead_strip plt__jit_icall_mono_ldftn
 plt__jit_icall_mono_ldftn:
 _p_639:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5244,27705
+	.long mono_aot_Xamarin_Auth_got - . + 5244,27706
 	.no_dead_strip plt__rgctx_fetch_178
 plt__rgctx_fetch_178:
 _p_640:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5248,27727
+	.long mono_aot_Xamarin_Auth_got - . + 5248,27728
 	.no_dead_strip plt__rgctx_fetch_179
 plt__rgctx_fetch_179:
 _p_641:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5252,27739
+	.long mono_aot_Xamarin_Auth_got - . + 5252,27740
 	.no_dead_strip plt__rgctx_fetch_180
 plt__rgctx_fetch_180:
 _p_642:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5256,27766
+	.long mono_aot_Xamarin_Auth_got - . + 5256,27767
 	.no_dead_strip plt__rgctx_fetch_181
 plt__rgctx_fetch_181:
 _p_643:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5260,27794
+	.long mono_aot_Xamarin_Auth_got - . + 5260,27795
 	.no_dead_strip plt__rgctx_fetch_182
 plt__rgctx_fetch_182:
 _p_644:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5264,27837
+	.long mono_aot_Xamarin_Auth_got - . + 5264,27838
 	.no_dead_strip plt__rgctx_fetch_183
 plt__rgctx_fetch_183:
 _p_645:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5268,27880
+	.long mono_aot_Xamarin_Auth_got - . + 5268,27881
 	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
 plt__jit_icall_mono_delegate_begin_invoke:
 _p_646:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5272,27905
+	.long mono_aot_Xamarin_Auth_got - . + 5272,27906
 	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
 plt__jit_icall_mono_delegate_end_invoke:
 _p_647:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5276,27934
+	.long mono_aot_Xamarin_Auth_got - . + 5276,27935
 	.no_dead_strip plt__rgctx_fetch_184
 plt__rgctx_fetch_184:
 _p_648:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5280,27990
+	.long mono_aot_Xamarin_Auth_got - . + 5280,27991
 	.no_dead_strip plt__rgctx_fetch_185
 plt__rgctx_fetch_185:
 _p_649:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5284,28002
+	.long mono_aot_Xamarin_Auth_got - . + 5284,28003
 	.no_dead_strip plt__rgctx_fetch_186
 plt__rgctx_fetch_186:
 _p_650:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5288,28032
+	.long mono_aot_Xamarin_Auth_got - . + 5288,28033
 	.no_dead_strip plt__rgctx_fetch_187
 plt__rgctx_fetch_187:
 _p_651:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5292,28071
+	.long mono_aot_Xamarin_Auth_got - . + 5292,28072
 	.no_dead_strip plt__rgctx_fetch_188
 plt__rgctx_fetch_188:
 _p_652:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5296,28083
+	.long mono_aot_Xamarin_Auth_got - . + 5296,28084
 	.no_dead_strip plt__rgctx_fetch_189
 plt__rgctx_fetch_189:
 _p_653:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5300,28106
+	.long mono_aot_Xamarin_Auth_got - . + 5300,28107
 	.no_dead_strip plt__rgctx_fetch_190
 plt__rgctx_fetch_190:
 _p_654:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5304,28118
+	.long mono_aot_Xamarin_Auth_got - . + 5304,28119
 	.no_dead_strip plt__rgctx_fetch_191
 plt__rgctx_fetch_191:
 _p_655:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5308,28156
+	.long mono_aot_Xamarin_Auth_got - . + 5308,28157
 	.no_dead_strip plt__rgctx_fetch_192
 plt__rgctx_fetch_192:
 _p_656:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5312,28168
+	.long mono_aot_Xamarin_Auth_got - . + 5312,28169
 	.no_dead_strip plt__rgctx_fetch_193
 plt__rgctx_fetch_193:
 _p_657:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5316,28189
+	.long mono_aot_Xamarin_Auth_got - . + 5316,28190
 	.no_dead_strip plt__rgctx_fetch_194
 plt__rgctx_fetch_194:
 _p_658:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5320,28212
+	.long mono_aot_Xamarin_Auth_got - . + 5320,28213
 	.no_dead_strip plt__rgctx_fetch_195
 plt__rgctx_fetch_195:
 _p_659:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5324,28224
+	.long mono_aot_Xamarin_Auth_got - . + 5324,28225
 	.no_dead_strip plt__rgctx_fetch_196
 plt__rgctx_fetch_196:
 _p_660:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5328,28265
+	.long mono_aot_Xamarin_Auth_got - . + 5328,28266
 	.no_dead_strip plt__rgctx_fetch_197
 plt__rgctx_fetch_197:
 _p_661:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5332,28277
+	.long mono_aot_Xamarin_Auth_got - . + 5332,28278
 	.no_dead_strip plt__rgctx_fetch_198
 plt__rgctx_fetch_198:
 _p_662:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5336,28315
+	.long mono_aot_Xamarin_Auth_got - . + 5336,28316
 	.no_dead_strip plt__rgctx_fetch_199
 plt__rgctx_fetch_199:
 _p_663:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5340,28338
+	.long mono_aot_Xamarin_Auth_got - . + 5340,28339
 	.no_dead_strip plt__rgctx_fetch_200
 plt__rgctx_fetch_200:
 _p_664:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5344,28350
+	.long mono_aot_Xamarin_Auth_got - . + 5344,28351
 	.no_dead_strip plt__rgctx_fetch_201
 plt__rgctx_fetch_201:
 _p_665:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5348,28391
+	.long mono_aot_Xamarin_Auth_got - . + 5348,28392
 	.no_dead_strip plt__rgctx_fetch_202
 plt__rgctx_fetch_202:
 _p_666:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5352,28403
+	.long mono_aot_Xamarin_Auth_got - . + 5352,28404
 	.no_dead_strip plt_System_Linq_Error_ArgumentNull_string
 plt_System_Linq_Error_ArgumentNull_string:
 _p_667:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5356,28433
+	.long mono_aot_Xamarin_Auth_got - . + 5356,28434
 	.no_dead_strip plt_System_Environment_get_CurrentManagedThreadId
 plt_System_Environment_get_CurrentManagedThreadId:
 _p_668:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5360,28438
+	.long mono_aot_Xamarin_Auth_got - . + 5360,28439
 	.no_dead_strip plt__rgctx_fetch_203
 plt__rgctx_fetch_203:
 _p_669:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5364,28469
+	.long mono_aot_Xamarin_Auth_got - . + 5364,28470
 	.no_dead_strip plt__rgctx_fetch_204
 plt__rgctx_fetch_204:
 _p_670:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5368,28481
+	.long mono_aot_Xamarin_Auth_got - . + 5368,28482
 	.no_dead_strip plt__rgctx_fetch_205
 plt__rgctx_fetch_205:
 _p_671:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5372,28526
+	.long mono_aot_Xamarin_Auth_got - . + 5372,28527
 	.no_dead_strip plt__rgctx_fetch_206
 plt__rgctx_fetch_206:
 _p_672:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5376,28554
+	.long mono_aot_Xamarin_Auth_got - . + 5376,28555
 	.no_dead_strip plt_System_Linq_Error_NotSupported
 plt_System_Linq_Error_NotSupported:
 _p_673:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5380,28579
+	.long mono_aot_Xamarin_Auth_got - . + 5380,28580
 	.no_dead_strip plt__rgctx_fetch_207
 plt__rgctx_fetch_207:
 _p_674:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5384,28602
+	.long mono_aot_Xamarin_Auth_got - . + 5384,28603
 	.no_dead_strip plt__rgctx_fetch_208
 plt__rgctx_fetch_208:
 _p_675:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5388,28627
+	.long mono_aot_Xamarin_Auth_got - . + 5388,28628
 	.no_dead_strip plt__rgctx_fetch_209
 plt__rgctx_fetch_209:
 _p_676:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5392,28637
+	.long mono_aot_Xamarin_Auth_got - . + 5392,28638
 	.no_dead_strip plt__rgctx_fetch_210
 plt__rgctx_fetch_210:
 _p_677:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5396,28653
+	.long mono_aot_Xamarin_Auth_got - . + 5396,28654
 	.no_dead_strip plt__rgctx_fetch_211
 plt__rgctx_fetch_211:
 _p_678:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5400,28687
+	.long mono_aot_Xamarin_Auth_got - . + 5400,28688
 	.no_dead_strip plt__rgctx_fetch_212
 plt__rgctx_fetch_212:
 _p_679:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5404,28730
+	.long mono_aot_Xamarin_Auth_got - . + 5404,28731
 	.no_dead_strip plt__rgctx_fetch_213
 plt__rgctx_fetch_213:
 _p_680:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5408,28740
+	.long mono_aot_Xamarin_Auth_got - . + 5408,28741
 	.no_dead_strip plt__rgctx_fetch_214
 plt__rgctx_fetch_214:
 _p_681:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5412,28783
+	.long mono_aot_Xamarin_Auth_got - . + 5412,28784
 	.no_dead_strip plt__rgctx_fetch_215
 plt__rgctx_fetch_215:
 _p_682:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5416,28793
+	.long mono_aot_Xamarin_Auth_got - . + 5416,28794
 	.no_dead_strip plt__rgctx_fetch_216
 plt__rgctx_fetch_216:
 _p_683:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5420,28803
+	.long mono_aot_Xamarin_Auth_got - . + 5420,28804
 	.no_dead_strip plt__rgctx_fetch_217
 plt__rgctx_fetch_217:
 _p_684:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5424,28846
+	.long mono_aot_Xamarin_Auth_got - . + 5424,28847
 	.no_dead_strip plt__rgctx_fetch_218
 plt__rgctx_fetch_218:
 _p_685:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5428,28856
+	.long mono_aot_Xamarin_Auth_got - . + 5428,28857
 	.no_dead_strip plt__rgctx_fetch_219
 plt__rgctx_fetch_219:
 _p_686:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5432,28875
+	.long mono_aot_Xamarin_Auth_got - . + 5432,28876
 	.no_dead_strip plt_System_RuntimeType_CreateInstanceForAnotherGenericParameter_System_Type_System_RuntimeType
 plt_System_RuntimeType_CreateInstanceForAnotherGenericParameter_System_Type_System_RuntimeType:
 _p_687:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5436,28887
+	.long mono_aot_Xamarin_Auth_got - . + 5436,28888
 	.no_dead_strip plt_System_Enum_GetUnderlyingType_System_Type
 plt_System_Enum_GetUnderlyingType_System_Type:
 _p_688:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5440,28892
+	.long mono_aot_Xamarin_Auth_got - . + 5440,28893
 	.no_dead_strip plt_System_Type_GetTypeCode_System_Type
 plt_System_Type_GetTypeCode_System_Type:
 _p_689:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5444,28897
+	.long mono_aot_Xamarin_Auth_got - . + 5444,28898
 	.no_dead_strip plt__rgctx_fetch_220
 plt__rgctx_fetch_220:
 _p_690:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5448,28911
+	.long mono_aot_Xamarin_Auth_got - . + 5448,28912
 	.no_dead_strip plt__rgctx_fetch_221
 plt__rgctx_fetch_221:
 _p_691:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5452,28923
+	.long mono_aot_Xamarin_Auth_got - . + 5452,28924
 	.no_dead_strip plt__rgctx_fetch_222
 plt__rgctx_fetch_222:
 _p_692:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5456,28968
+	.long mono_aot_Xamarin_Auth_got - . + 5456,28969
 	.no_dead_strip plt__rgctx_fetch_223
 plt__rgctx_fetch_223:
 _p_693:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5460,28978
+	.long mono_aot_Xamarin_Auth_got - . + 5460,28979
 	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentException_System_ExceptionResource
 plt_System_ThrowHelper_ThrowArgumentException_System_ExceptionResource:
 _p_694:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5464,28988
+	.long mono_aot_Xamarin_Auth_got - . + 5464,28989
 	.no_dead_strip plt__rgctx_fetch_224
 plt__rgctx_fetch_224:
 _p_695:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5468,29011
+	.long mono_aot_Xamarin_Auth_got - . + 5468,29012
 	.no_dead_strip plt__rgctx_fetch_225
 plt__rgctx_fetch_225:
 _p_696:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5472,29021
+	.long mono_aot_Xamarin_Auth_got - . + 5472,29022
 	.no_dead_strip plt_string_memcpy_byte__byte__int
 plt_string_memcpy_byte__byte__int:
 _p_697:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5476,29031
+	.long mono_aot_Xamarin_Auth_got - . + 5476,29032
 	.no_dead_strip plt_System_Threading_ExecutionContext_EstablishCopyOnWriteScope_System_Threading_ExecutionContextSwitcher_
 plt_System_Threading_ExecutionContext_EstablishCopyOnWriteScope_System_Threading_ExecutionContextSwitcher_:
 _p_698:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5480,29036
+	.long mono_aot_Xamarin_Auth_got - . + 5480,29037
 	.no_dead_strip plt_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_MoveNext
 plt_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_MoveNext:
 _p_699:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5484,29041
+	.long mono_aot_Xamarin_Auth_got - . + 5484,29042
 	.no_dead_strip plt_System_Threading_ExecutionContextSwitcher_Undo
 plt_System_Threading_ExecutionContextSwitcher_Undo:
 _p_700:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5488,29044
+	.long mono_aot_Xamarin_Auth_got - . + 5488,29045
 	.no_dead_strip plt_Xamarin_Auth_Request__GetResponseAsyncc__async0_MoveNext
 plt_Xamarin_Auth_Request__GetResponseAsyncc__async0_MoveNext:
 _p_701:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5492,29049
+	.long mono_aot_Xamarin_Auth_got - . + 5492,29050
 	.no_dead_strip plt__rgctx_fetch_226
 plt__rgctx_fetch_226:
 _p_702:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5496,29079
+	.long mono_aot_Xamarin_Auth_got - . + 5496,29080
 	.no_dead_strip plt__rgctx_fetch_227
 plt__rgctx_fetch_227:
 _p_703:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5500,29091
+	.long mono_aot_Xamarin_Auth_got - . + 5500,29092
 	.no_dead_strip plt__rgctx_fetch_228
 plt__rgctx_fetch_228:
 _p_704:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5504,29118
+	.long mono_aot_Xamarin_Auth_got - . + 5504,29119
 	.no_dead_strip plt__rgctx_fetch_229
 plt__rgctx_fetch_229:
 _p_705:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5508,29143
+	.long mono_aot_Xamarin_Auth_got - . + 5508,29144
 	.no_dead_strip plt__rgctx_fetch_230
 plt__rgctx_fetch_230:
 _p_706:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5512,29186
+	.long mono_aot_Xamarin_Auth_got - . + 5512,29187
 	.no_dead_strip plt__rgctx_fetch_231
 plt__rgctx_fetch_231:
 _p_707:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5516,29211
+	.long mono_aot_Xamarin_Auth_got - . + 5516,29212
 	.no_dead_strip plt__rgctx_fetch_232
 plt__rgctx_fetch_232:
 _p_708:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5520,29254
+	.long mono_aot_Xamarin_Auth_got - . + 5520,29255
 	.no_dead_strip plt__rgctx_fetch_233
 plt__rgctx_fetch_233:
 _p_709:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5524,29264
+	.long mono_aot_Xamarin_Auth_got - . + 5524,29265
 	.no_dead_strip plt__rgctx_fetch_234
 plt__rgctx_fetch_234:
 _p_710:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5528,29289
+	.long mono_aot_Xamarin_Auth_got - . + 5528,29290
 	.no_dead_strip plt__rgctx_fetch_235
 plt__rgctx_fetch_235:
 _p_711:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5532,29325
+	.long mono_aot_Xamarin_Auth_got - . + 5532,29326
 	.no_dead_strip plt__rgctx_fetch_236
 plt__rgctx_fetch_236:
 _p_712:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5536,29337
+	.long mono_aot_Xamarin_Auth_got - . + 5536,29338
 	.no_dead_strip plt__rgctx_fetch_237
 plt__rgctx_fetch_237:
 _p_713:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5540,29382
+	.long mono_aot_Xamarin_Auth_got - . + 5540,29383
 	.no_dead_strip plt__rgctx_fetch_238
 plt__rgctx_fetch_238:
 _p_714:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5544,29407
+	.long mono_aot_Xamarin_Auth_got - . + 5544,29408
 	.no_dead_strip plt__rgctx_fetch_239
 plt__rgctx_fetch_239:
 _p_715:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5548,29417
+	.long mono_aot_Xamarin_Auth_got - . + 5548,29418
 	.no_dead_strip plt__rgctx_fetch_240
 plt__rgctx_fetch_240:
 _p_716:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5552,29433
+	.long mono_aot_Xamarin_Auth_got - . + 5552,29434
 	.no_dead_strip plt_System_Collections_Generic_Comparer_1_System_nfloat_get_Default
 plt_System_Collections_Generic_Comparer_1_System_nfloat_get_Default:
 _p_717:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5556,29449
+	.long mono_aot_Xamarin_Auth_got - . + 5556,29450
 	.no_dead_strip plt_System_Linq_Error_NoElements
 plt_System_Linq_Error_NoElements:
 _p_718:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5560,29469
+	.long mono_aot_Xamarin_Auth_got - . + 5560,29470
 	.no_dead_strip plt_System_Array_InternalArray__get_Item_System_nfloat_int
 plt_System_Array_InternalArray__get_Item_System_nfloat_int:
 _p_719:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5564,29474
+	.long mono_aot_Xamarin_Auth_got - . + 5564,29475
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_System_nfloat_get_Current
 plt_System_Array_InternalEnumerator_1_System_nfloat_get_Current:
 _p_720:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5568,29494
+	.long mono_aot_Xamarin_Auth_got - . + 5568,29495
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_System_nfloat__ctor_System_Array
 plt_System_Array_InternalEnumerator_1_System_nfloat__ctor_System_Array:
 _p_721:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5572,29514
+	.long mono_aot_Xamarin_Auth_got - . + 5572,29515
 	.no_dead_strip plt_System_Collections_Generic_Comparer_1_System_nfloat_CreateComparer
 plt_System_Collections_Generic_Comparer_1_System_nfloat_CreateComparer:
 _p_722:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5576,29534
+	.long mono_aot_Xamarin_Auth_got - . + 5576,29535
 	.no_dead_strip plt_System_nfloat_CompareTo_System_nfloat
 plt_System_nfloat_CompareTo_System_nfloat:
 _p_723:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5580,29554
+	.long mono_aot_Xamarin_Auth_got - . + 5580,29555
 	.no_dead_strip plt_System_Linq_Enumerable_SelectArrayIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_Xamarin_Auth_FormAuthenticatorField___System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat
 plt_System_Linq_Enumerable_SelectArrayIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_Xamarin_Auth_FormAuthenticatorField___System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat:
 _p_724:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5584,29559
+	.long mono_aot_Xamarin_Auth_got - . + 5584,29560
 	.no_dead_strip plt_System_Linq_Enumerable_SelectListIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_System_Collections_Generic_List_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat
 plt_System_Linq_Enumerable_SelectListIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_System_Collections_Generic_List_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat:
 _p_725:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5588,29581
+	.long mono_aot_Xamarin_Auth_got - . + 5588,29582
 	.no_dead_strip plt_System_Linq_Enumerable_SelectIListIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_System_Collections_Generic_IList_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat
 plt_System_Linq_Enumerable_SelectIListIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_System_Collections_Generic_IList_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat:
 _p_726:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5592,29603
+	.long mono_aot_Xamarin_Auth_got - . + 5592,29604
 	.no_dead_strip plt_System_Linq_Enumerable_SelectIPartitionIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_System_Linq_IPartition_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat
 plt_System_Linq_Enumerable_SelectIPartitionIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_System_Linq_IPartition_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat:
 _p_727:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5596,29625
+	.long mono_aot_Xamarin_Auth_got - . + 5596,29626
 	.no_dead_strip plt_System_Linq_Enumerable_SelectEnumerableIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat
 plt_System_Linq_Enumerable_SelectEnumerableIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_System_Collections_Generic_IEnumerable_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat:
 _p_728:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5600,29647
+	.long mono_aot_Xamarin_Auth_got - . + 5600,29648
 	.no_dead_strip plt__rgctx_fetch_241
 plt__rgctx_fetch_241:
 _p_729:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5604,29697
+	.long mono_aot_Xamarin_Auth_got - . + 5604,29698
 	.no_dead_strip plt__rgctx_fetch_242
 plt__rgctx_fetch_242:
 _p_730:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5608,29709
+	.long mono_aot_Xamarin_Auth_got - . + 5608,29710
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_GetCompletionAction_System_Threading_Tasks_Task_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_
 plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_GetCompletionAction_System_Threading_Tasks_Task_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_:
 _p_731:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5612,29736
+	.long mono_aot_Xamarin_Auth_got - . + 5612,29737
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_PostBoxInitialization_System_Runtime_CompilerServices_IAsyncStateMachine_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_System_Threading_Tasks_Task
 plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_PostBoxInitialization_System_Runtime_CompilerServices_IAsyncStateMachine_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_System_Threading_Tasks_Task:
 _p_732:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5616,29741
+	.long mono_aot_Xamarin_Auth_got - . + 5616,29742
 	.no_dead_strip plt_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_string_UnsafeOnCompleted_System_Action
 plt_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_string_UnsafeOnCompleted_System_Action:
 _p_733:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5620,29746
+	.long mono_aot_Xamarin_Auth_got - . + 5620,29747
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_ThrowAsync_System_Exception_System_Threading_SynchronizationContext
 plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_ThrowAsync_System_Exception_System_Threading_SynchronizationContext:
 _p_734:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5624,29768
+	.long mono_aot_Xamarin_Auth_got - . + 5624,29769
 	.no_dead_strip plt_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage_UnsafeOnCompleted_System_Action
 plt_System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_ConfiguredTaskAwaiter_System_Net_Http_HttpResponseMessage_UnsafeOnCompleted_System_Action:
 _p_735:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5628,29773
+	.long mono_aot_Xamarin_Auth_got - . + 5628,29774
 	.no_dead_strip plt__rgctx_fetch_243
 plt__rgctx_fetch_243:
 _p_736:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5632,29812
+	.long mono_aot_Xamarin_Auth_got - . + 5632,29813
 	.no_dead_strip plt__rgctx_fetch_244
 plt__rgctx_fetch_244:
 _p_737:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5636,29822
+	.long mono_aot_Xamarin_Auth_got - . + 5636,29823
 	.no_dead_strip plt_System_Collections_Generic_EqualityComparer_1_T_REF_CreateComparer
 plt_System_Collections_Generic_EqualityComparer_1_T_REF_CreateComparer:
 _p_738:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5640,29832
+	.long mono_aot_Xamarin_Auth_got - . + 5640,29833
 	.no_dead_strip plt__rgctx_fetch_245
 plt__rgctx_fetch_245:
 _p_739:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5644,29869
+	.long mono_aot_Xamarin_Auth_got - . + 5644,29870
 	.no_dead_strip plt__rgctx_fetch_246
 plt__rgctx_fetch_246:
 _p_740:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5648,29879
+	.long mono_aot_Xamarin_Auth_got - . + 5648,29880
 	.no_dead_strip plt__rgctx_fetch_247
 plt__rgctx_fetch_247:
 _p_741:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5652,29889
+	.long mono_aot_Xamarin_Auth_got - . + 5652,29890
 	.no_dead_strip plt_System_Runtime_ExceptionServices_ExceptionDispatchInfo_Capture_System_Exception
 plt_System_Runtime_ExceptionServices_ExceptionDispatchInfo_Capture_System_Exception:
 _p_742:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5656,29914
+	.long mono_aot_Xamarin_Auth_got - . + 5656,29915
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor
 plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor:
 _p_743:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5660,29927
+	.long mono_aot_Xamarin_Auth_got - . + 5660,29928
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_0
 plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_0:
 _p_744:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5664,29956
+	.long mono_aot_Xamarin_Auth_got - . + 5664,29957
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_1
 plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_1:
 _p_745:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5668,29985
+	.long mono_aot_Xamarin_Auth_got - . + 5668,29986
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_2
 plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_2:
 _p_746:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5672,30014
+	.long mono_aot_Xamarin_Auth_got - . + 5672,30015
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_3
 plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_3:
 _p_747:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5676,30043
+	.long mono_aot_Xamarin_Auth_got - . + 5676,30044
 	.no_dead_strip plt__rgctx_fetch_248
 plt__rgctx_fetch_248:
 _p_748:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5680,30090
+	.long mono_aot_Xamarin_Auth_got - . + 5680,30091
 	.no_dead_strip plt__rgctx_fetch_249
 plt__rgctx_fetch_249:
 _p_749:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5684,30144
+	.long mono_aot_Xamarin_Auth_got - . + 5684,30145
 	.no_dead_strip plt__rgctx_fetch_250
 plt__rgctx_fetch_250:
 _p_750:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5688,30156
+	.long mono_aot_Xamarin_Auth_got - . + 5688,30157
 	.no_dead_strip plt__rgctx_fetch_251
 plt__rgctx_fetch_251:
 _p_751:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5692,30192
+	.long mono_aot_Xamarin_Auth_got - . + 5692,30193
 	.no_dead_strip plt__rgctx_fetch_252
 plt__rgctx_fetch_252:
 _p_752:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5696,30228
+	.long mono_aot_Xamarin_Auth_got - . + 5696,30229
 	.no_dead_strip plt__rgctx_fetch_253
 plt__rgctx_fetch_253:
 _p_753:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5700,30264
+	.long mono_aot_Xamarin_Auth_got - . + 5700,30265
 	.no_dead_strip plt__rgctx_fetch_254
 plt__rgctx_fetch_254:
 _p_754:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5704,30309
+	.long mono_aot_Xamarin_Auth_got - . + 5704,30310
 	.no_dead_strip plt_System_Collections_Comparer_Compare_object_object
 plt_System_Collections_Comparer_Compare_object_object:
 _p_755:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5708,30334
+	.long mono_aot_Xamarin_Auth_got - . + 5708,30335
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_System_nfloat__ctor
 plt_System_Linq_Enumerable_Iterator_1_System_nfloat__ctor:
 _p_756:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5712,30339
+	.long mono_aot_Xamarin_Auth_got - . + 5712,30340
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_System_nfloat_Dispose
 plt_System_Linq_Enumerable_Iterator_1_System_nfloat_Dispose:
 _p_757:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5716,30359
+	.long mono_aot_Xamarin_Auth_got - . + 5716,30360
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat__ctor_bool
 plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat__ctor_bool:
 _p_758:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5720,30379
+	.long mono_aot_Xamarin_Auth_got - . + 5720,30380
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_AllocateBuffer
 plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_AllocateBuffer:
 _p_759:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5724,30399
+	.long mono_aot_Xamarin_Auth_got - . + 5724,30400
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_ToArray
 plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_ToArray:
 _p_760:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5728,30419
+	.long mono_aot_Xamarin_Auth_got - . + 5728,30420
 	.no_dead_strip plt_System_Collections_Generic_List_1_System_nfloat_Add_System_nfloat
 plt_System_Collections_Generic_List_1_System_nfloat_Add_System_nfloat:
 _p_761:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5732,30439
+	.long mono_aot_Xamarin_Auth_got - . + 5732,30440
 	.no_dead_strip plt_System_Linq_Enumerable_WhereEnumerableIterator_1_System_nfloat__ctor_System_Collections_Generic_IEnumerable_1_System_nfloat_System_Func_2_System_nfloat_bool
 plt_System_Linq_Enumerable_WhereEnumerableIterator_1_System_nfloat__ctor_System_Collections_Generic_IEnumerable_1_System_nfloat_System_Func_2_System_nfloat_bool:
 _p_762:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5736,30459
+	.long mono_aot_Xamarin_Auth_got - . + 5736,30460
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_System_nfloat_GetEnumerator
 plt_System_Linq_Enumerable_Iterator_1_System_nfloat_GetEnumerator:
 _p_763:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5740,30479
+	.long mono_aot_Xamarin_Auth_got - . + 5740,30480
 	.no_dead_strip plt_System_Linq_Enumerable_SelectIPartitionIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat_LazyToArray
 plt_System_Linq_Enumerable_SelectIPartitionIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat_LazyToArray:
 _p_764:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5744,30499
+	.long mono_aot_Xamarin_Auth_got - . + 5744,30500
 	.no_dead_strip plt_System_Linq_Enumerable_SelectIPartitionIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat_PreallocatingToArray_int
 plt_System_Linq_Enumerable_SelectIPartitionIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat_PreallocatingToArray_int:
 _p_765:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5748,30521
+	.long mono_aot_Xamarin_Auth_got - . + 5748,30522
 	.no_dead_strip plt_System_Collections_Generic_List_1_System_nfloat__ctor_int
 plt_System_Collections_Generic_List_1_System_nfloat__ctor_int:
 _p_766:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5752,30543
+	.long mono_aot_Xamarin_Auth_got - . + 5752,30544
 	.no_dead_strip plt_System_Linq_Enumerable_SelectListPartitionIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_System_Collections_Generic_IList_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat_int_int
 plt_System_Linq_Enumerable_SelectListPartitionIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat__ctor_System_Collections_Generic_IList_1_Xamarin_Auth_FormAuthenticatorField_System_Func_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat_int_int:
 _p_767:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5756,30563
+	.long mono_aot_Xamarin_Auth_got - . + 5756,30564
 	.no_dead_strip plt_System_Collections_Generic_List_1_Xamarin_Auth_FormAuthenticatorField_GetEnumerator
 plt_System_Collections_Generic_List_1_Xamarin_Auth_FormAuthenticatorField_GetEnumerator:
 _p_768:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5760,30585
+	.long mono_aot_Xamarin_Auth_got - . + 5760,30586
 	.no_dead_strip plt_System_Collections_Generic_List_1_Enumerator_Xamarin_Auth_FormAuthenticatorField_MoveNext
 plt_System_Collections_Generic_List_1_Enumerator_Xamarin_Auth_FormAuthenticatorField_MoveNext:
 _p_769:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5764,30605
+	.long mono_aot_Xamarin_Auth_got - . + 5764,30606
 	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentOutOfRangeException
 plt_System_ThrowHelper_ThrowArgumentOutOfRangeException:
 _p_770:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5768,30625
+	.long mono_aot_Xamarin_Auth_got - . + 5768,30626
 	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_bool_System_Threading_Tasks_TaskCreationOptions_System_Threading_CancellationToken
 plt_System_Threading_Tasks_Task__ctor_bool_System_Threading_Tasks_TaskCreationOptions_System_Threading_CancellationToken:
 _p_771:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5772,30630
+	.long mono_aot_Xamarin_Auth_got - . + 5772,30631
 	.no_dead_strip plt__rgctx_fetch_255
 plt__rgctx_fetch_255:
 _p_772:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5776,30653
+	.long mono_aot_Xamarin_Auth_got - . + 5776,30654
 	.no_dead_strip plt__rgctx_fetch_256
 plt__rgctx_fetch_256:
 _p_773:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5780,30663
+	.long mono_aot_Xamarin_Auth_got - . + 5780,30664
 	.no_dead_strip plt__rgctx_fetch_257
 plt__rgctx_fetch_257:
 _p_774:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5784,30682
+	.long mono_aot_Xamarin_Auth_got - . + 5784,30683
 	.no_dead_strip plt__rgctx_fetch_258
 plt__rgctx_fetch_258:
 _p_775:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5788,30703
+	.long mono_aot_Xamarin_Auth_got - . + 5788,30704
 	.no_dead_strip plt_System_Collections_Generic_ObjectEqualityComparer_1_T_REF__ctor
 plt_System_Collections_Generic_ObjectEqualityComparer_1_T_REF__ctor:
 _p_776:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5792,30715
+	.long mono_aot_Xamarin_Auth_got - . + 5792,30716
 	.no_dead_strip plt__rgctx_fetch_259
 plt__rgctx_fetch_259:
 _p_777:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5796,30754
+	.long mono_aot_Xamarin_Auth_got - . + 5796,30755
 	.no_dead_strip plt__rgctx_fetch_260
 plt__rgctx_fetch_260:
 _p_778:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5800,30764
+	.long mono_aot_Xamarin_Auth_got - . + 5800,30765
 	.no_dead_strip plt__rgctx_fetch_261
 plt__rgctx_fetch_261:
 _p_779:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5804,30783
+	.long mono_aot_Xamarin_Auth_got - . + 5804,30784
 	.no_dead_strip plt__rgctx_fetch_262
 plt__rgctx_fetch_262:
 _p_780:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5808,30804
+	.long mono_aot_Xamarin_Auth_got - . + 5808,30805
 	.no_dead_strip plt__rgctx_fetch_263
 plt__rgctx_fetch_263:
 _p_781:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5812,30816
+	.long mono_aot_Xamarin_Auth_got - . + 5812,30817
 	.no_dead_strip plt__rgctx_fetch_264
 plt__rgctx_fetch_264:
 _p_782:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5816,30861
+	.long mono_aot_Xamarin_Auth_got - . + 5816,30862
 	.no_dead_strip plt__rgctx_fetch_265
 plt__rgctx_fetch_265:
 _p_783:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5820,30871
+	.long mono_aot_Xamarin_Auth_got - . + 5820,30872
 	.no_dead_strip plt__rgctx_fetch_266
 plt__rgctx_fetch_266:
 _p_784:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5824,30881
+	.long mono_aot_Xamarin_Auth_got - . + 5824,30882
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_TryMove_System_nfloat___
 plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_TryMove_System_nfloat___:
 _p_785:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5828,30906
+	.long mono_aot_Xamarin_Auth_got - . + 5828,30907
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_CopyTo_System_nfloat___int_int
 plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_CopyTo_System_nfloat___int_int:
 _p_786:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5832,30926
+	.long mono_aot_Xamarin_Auth_got - . + 5832,30927
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat__ctor_int
 plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat__ctor_int:
 _p_787:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5836,30946
+	.long mono_aot_Xamarin_Auth_got - . + 5836,30947
 	.no_dead_strip plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_GetBuffer_int
 plt_System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_GetBuffer_int:
 _p_788:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5840,30966
+	.long mono_aot_Xamarin_Auth_got - . + 5840,30967
 	.no_dead_strip plt_System_Collections_Generic_ArrayBuilder_1_System_nfloat___Add_System_nfloat__
 plt_System_Collections_Generic_ArrayBuilder_1_System_nfloat___Add_System_nfloat__:
 _p_789:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5844,30986
+	.long mono_aot_Xamarin_Auth_got - . + 5844,30987
 	.no_dead_strip plt_System_Collections_Generic_List_1_System_nfloat_EnsureCapacity_int
 plt_System_Collections_Generic_List_1_System_nfloat_EnsureCapacity_int:
 _p_790:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5848,31010
+	.long mono_aot_Xamarin_Auth_got - . + 5848,31011
 	.no_dead_strip plt_System_nfloat_Equals_object
 plt_System_nfloat_Equals_object:
 _p_791:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5852,31030
+	.long mono_aot_Xamarin_Auth_got - . + 5852,31031
 	.no_dead_strip plt_System_Collections_Generic_EqualityComparer_1_System_nfloat_CreateComparer
 plt_System_Collections_Generic_EqualityComparer_1_System_nfloat_CreateComparer:
 _p_792:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5856,31035
+	.long mono_aot_Xamarin_Auth_got - . + 5856,31036
 	.no_dead_strip plt_System_nfloat_Equals_System_nfloat
 plt_System_nfloat_Equals_System_nfloat:
 _p_793:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5860,31055
+	.long mono_aot_Xamarin_Auth_got - . + 5860,31056
 	.no_dead_strip plt_System_Linq_Utilities_CombinePredicates_System_nfloat_System_Func_2_System_nfloat_bool_System_Func_2_System_nfloat_bool
 plt_System_Linq_Utilities_CombinePredicates_System_nfloat_System_Func_2_System_nfloat_bool_System_Func_2_System_nfloat_bool:
 _p_794:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5864,31060
+	.long mono_aot_Xamarin_Auth_got - . + 5864,31061
 	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentOutOfRangeException_System_ExceptionArgument_System_ExceptionResource
 plt_System_ThrowHelper_ThrowArgumentOutOfRangeException_System_ExceptionArgument_System_ExceptionResource:
 _p_795:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5868,31080
+	.long mono_aot_Xamarin_Auth_got - . + 5868,31081
 	.no_dead_strip plt_System_Linq_Enumerable_SelectListPartitionIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat_get_Count
 plt_System_Linq_Enumerable_SelectListPartitionIterator_2_Xamarin_Auth_FormAuthenticatorField_System_nfloat_get_Count:
 _p_796:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5872,31085
+	.long mono_aot_Xamarin_Auth_got - . + 5872,31086
 	.no_dead_strip plt__rgctx_fetch_267
 plt__rgctx_fetch_267:
 _p_797:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5876,31125
+	.long mono_aot_Xamarin_Auth_got - . + 5876,31126
 	.no_dead_strip plt__rgctx_fetch_268
 plt__rgctx_fetch_268:
 _p_798:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5880,31135
+	.long mono_aot_Xamarin_Auth_got - . + 5880,31136
 	.no_dead_strip plt__rgctx_fetch_269
 plt__rgctx_fetch_269:
 _p_799:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5884,31154
+	.long mono_aot_Xamarin_Auth_got - . + 5884,31155
 	.no_dead_strip plt__rgctx_fetch_270
 plt__rgctx_fetch_270:
 _p_800:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5888,31175
+	.long mono_aot_Xamarin_Auth_got - . + 5888,31176
 	.no_dead_strip plt__rgctx_fetch_271
 plt__rgctx_fetch_271:
 _p_801:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5892,31187
+	.long mono_aot_Xamarin_Auth_got - . + 5892,31188
 	.no_dead_strip plt_System_Collections_Generic_List_1_System_nfloat_set_Capacity_int
 plt_System_Collections_Generic_List_1_System_nfloat_set_Capacity_int:
 _p_802:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Xamarin_Auth_got - . + 5896,31214
+	.long mono_aot_Xamarin_Auth_got - . + 5896,31215
 plt_end:
 .section __DATA, __bss
 	.align 3
@@ -31620,13 +31620,13 @@ _mono_aot_file_info:
 	.align 2
 	.long unbox_trampoline_addresses
 
-	.long 673,5904,803,946,66,391195135,0,44471
+	.long 673,5904,803,946,66,391195135,0,44472
 	.long 128,4,4,10,0,24,66040,21560
 	.long 20856,17592,0,19064,20720,18088,0,13096
 	.long 1408,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 220,212,179,66,218,64,4,212,93,148,235,209,10,170,19,147
+	.byte 20,173,118,91,128,27,151,251,8,8,53,46,201,150,205,169
 	.globl _mono_aot_module_Xamarin_Auth_info
 	.align 2
 _mono_aot_module_Xamarin_Auth_info:

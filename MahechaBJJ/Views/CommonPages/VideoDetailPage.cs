@@ -236,27 +236,35 @@ namespace MahechaBJJ.Views
 
         public void PlayIOSVideo(object sender, EventArgs e)
         {
-            playBtn.IsEnabled = false;
+            ToggleButtons();
             MessagingCenter.Send(this, "ShowVideoPlayer", new ShowVideoPlayerArguments(videoUrl));
-            playBtn.IsEnabled = true;
+            ToggleButtons();
         }
 
         public async void PlayAndroidVideo(object sender, EventArgs e)
         {
-            playBtn.IsEnabled = false;
+            ToggleButtons();
             await Navigation.PushModalAsync(new AndroidVideoPage(videoTechnique.files[1].link));
-            playBtn.IsEnabled = true;
+            ToggleButtons();
         }
 
         public void GoBack(object sender, EventArgs e)
         {
-            backBtn.IsEnabled = false;
+            ToggleButtons();
             Navigation.PopModalAsync();
+        }
+
+        public void ToggleButtons()
+        {
+            backBtn.IsEnabled = !backBtn.IsEnabled;
+            addBtn.IsEnabled = !addBtn.IsEnabled;
+            playBtn.IsEnabled = !playBtn.IsEnabled;
+            qualityBtn.IsEnabled = !qualityBtn.IsEnabled;
         }
 
         public async void AddVideoToPlaylist(object sender, EventArgs e)
         {
-            addBtn.IsEnabled = false;
+            ToggleButtons();
             //get user info
             account = _baseViewModel.GetAccountInformation();
             //Get playlist information
@@ -272,7 +280,7 @@ namespace MahechaBJJ.Views
             {
                 UpdatePlaylist(userPlaylists, answer);
 			}
-            addBtn.IsEnabled = true;
+            ToggleButtons();
         }
 
         public List<string> GetPlaylistNames(ObservableCollection<PlayList> playlists)
