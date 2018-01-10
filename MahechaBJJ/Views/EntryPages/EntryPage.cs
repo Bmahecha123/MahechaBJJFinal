@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
@@ -30,136 +30,145 @@ namespace MahechaBJJ.Views.EntryPages
             _entryPageViewModel = new EntryPageViewModel();
             Padding = new Thickness(10, 30, 10, 10);
             BuildPageObjects();
-		}
+        }
 
         public void BuildPageObjects()
         {
-			//outer Grid
-			outerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-				}
-			};
-			//inner Grid
-			innerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+            //outer Grid
+            outerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection {
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
-			};
+            };
+            //inner Grid
+            innerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection {
+                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
+            };
 
-			//view objects
-			mahechaLogo = new Image
-			{
-				Source = ImageSource.FromResource("mahechabjjlogo.png"),
-				Aspect = Aspect.AspectFit
-			};
-			var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
-			loginBtn = new Button
-			{
-				Text = "Login",
+            //view objects
+            mahechaLogo = new Image
+            {
+                Source = ImageSource.FromResource("mahechabjjlogo.png"),
+                Aspect = Aspect.AspectFit
+            };
+            var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+            loginBtn = new Button
+            {
+                Text = "Login",
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                //FontFamily = "Roboto Bold",
-#endif
-				FontSize = size * 2,
-				BackgroundColor = Color.FromRgb(58, 93, 174),
-				TextColor = Color.Black,
-				BorderWidth = 3,
-				BorderColor = Color.Black
-			};
-			signUpBtn = new Button
-			{
-				Text = "Sign Up",
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size * 2,
+
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size,
 #endif
-				FontSize = size * 2,
-				BackgroundColor = Color.FromRgb(58, 93, 174),
-				TextColor = Color.Black,
-				BorderWidth = 3,
-				BorderColor = Color.Black
-			};
+                BackgroundColor = Color.FromRgb(58, 93, 174),
+                TextColor = Color.Black,
+                BorderWidth = 3,
+                BorderColor = Color.Black
+            };
+            signUpBtn = new Button
+            {
+                Text = "Sign Up",
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size * 2,
+
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+                FontSize = size,
+#endif
+                BackgroundColor = Color.FromRgb(58, 93, 174),
+                TextColor = Color.Black,
+                BorderWidth = 3,
+                BorderColor = Color.Black
+            };
             blogBtn = new Button
             {
                 Text = "Learn More",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size * 2,
+
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size,
 #endif
-                FontSize = size * 2,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
                 BorderColor = Color.Black
             };
 
-			//Button events
-			loginBtn.Clicked += (object sender, EventArgs e) =>
-			{
-				Navigation.PushModalAsync(new LoginPage());
-			};
+            //Button events
+            loginBtn.Clicked += (object sender, EventArgs e) =>
+            {
+                Navigation.PushModalAsync(new LoginPage());
+            };
 
-			signUpBtn.Clicked += (sender, args) =>
-			{
+            signUpBtn.Clicked += (sender, args) =>
+            {
                 Navigation.PushModalAsync(new PackagePage());
-			};
+            };
 
-            blogBtn.Clicked += (sender, e) => 
+            blogBtn.Clicked += (sender, e) =>
             {
                 Navigation.PushModalAsync(new BlogViewPage());
 
             };
 
-			innerGrid.Children.Add(mahechaLogo, 0, 0);
+            innerGrid.Children.Add(mahechaLogo, 0, 0);
             innerGrid.Children.Add(loginBtn, 0, 1);
             innerGrid.Children.Add(signUpBtn, 0, 2);
             innerGrid.Children.Add(blogBtn, 0, 3);
 
-			outerGrid.Children.Add(innerGrid, 0, 0);
+            outerGrid.Children.Add(innerGrid, 0, 0);
 
-			Content = outerGrid;
+            Content = outerGrid;
         }
 
         //Orientation
-		protected override void OnSizeAllocated(double width, double height)
-		{
-			base.OnSizeAllocated(width, height); //must be called
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height); //must be called
 
-            if (width > height) {
+            if (width > height)
+            {
                 Padding = new Thickness(10, 10, 10, 10);
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.Children.Clear();
                 innerGrid.Children.Add(mahechaLogo, 0, 0);
                 Grid.SetRowSpan(mahechaLogo, 3);
                 innerGrid.Children.Add(loginBtn, 1, 0);
                 innerGrid.Children.Add(signUpBtn, 1, 1);
                 innerGrid.Children.Add(blogBtn, 1, 2);
-            } else {
-				Padding = new Thickness(10, 30, 10, 10);
+            }
+            else
+            {
+                Padding = new Thickness(10, 30, 10, 10);
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star)});
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
                 innerGrid.Children.Clear();
                 innerGrid.Children.Add(mahechaLogo, 0, 0);
@@ -168,9 +177,9 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.Children.Add(blogBtn, 0, 3);
 
             }
-		}
-		//functions
-	
-	}
+        }
+        //functions
+
+    }
 }
 
