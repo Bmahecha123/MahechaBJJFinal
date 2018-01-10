@@ -28,7 +28,12 @@ namespace MahechaBJJ.Views.EntryPages
         public EntryPage()
         {
             _entryPageViewModel = new EntryPageViewModel();
+#if __ANDROID__
+            Padding = new Thickness(10, 10, 10, 10);
+#endif
+#if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
+#endif
             BuildPageObjects();
         }
 
@@ -162,7 +167,12 @@ namespace MahechaBJJ.Views.EntryPages
             }
             else
             {
-                Padding = new Thickness(10, 30, 10, 10);
+                #if __ANDROID__
+                Padding = new Thickness(10, 10, 10, 10);
+#endif
+#if __IOS__
+            Padding = new Thickness(10, 30, 10, 10);
+#endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });

@@ -34,7 +34,12 @@ namespace MahechaBJJ.Views.EntryPages
         public LoginPage()
         {
             _baseViewModel = new BaseViewModel();
+            #if __ANDROID__
+            Padding = new Thickness(10, 10, 10, 10);
+#endif
+#if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
+#endif
             BuildPageObjects();
         }
 
@@ -318,11 +323,13 @@ namespace MahechaBJJ.Views.EntryPages
             {
                 mahechaLogo.Scale = 1;
                 mahechaLogo.IsVisible = true;
-                Padding = new Thickness(10, 30, 10, 10);
 #if __IOS__
                 stackLayout.Orientation = StackOrientation.Vertical;
+                Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
+                Padding = new Thickness(10, 10, 10, 10);
+
                 buttonGrid.Children.Add(loginBtn, 0, 0);
                 buttonGrid.Children.Add(forgotPasswordBtn, 1, 0);
                 innerGrid.Children.Add(mahechaLogo, 0, 0);
