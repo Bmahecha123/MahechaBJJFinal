@@ -26,13 +26,20 @@ namespace MahechaBJJ.Views.SignUpPages
         private Grid buttonGrid;
         private Grid innerGrid;
         private Grid outerGrid;
+        private StackLayout stackLayout;
+        private ScrollView scrollView;
         private string packageName;
         private string packagePrice;
 
         public SummaryPage(User user)
         {
             _summaryPageViewModel = new SummaryPageViewModel();
+            #if __ANDROID__
+            Padding = new Thickness(10, 10, 10, 10);
+#endif
+#if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
+#endif
             this.user = user;
             SetContent();
         }
@@ -47,13 +54,14 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize,
 #endif
                 Text = "Summary",
                 LineBreakMode = LineBreakMode.WordWrap,
-                FontSize = lblSize * 1.5,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -64,13 +72,14 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize,
 #endif
                 Text = "User Details",
                 LineBreakMode = LineBreakMode.WordWrap,
-                FontSize = lblSize * 1.5,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -97,13 +106,14 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
 #endif
                 Text = $"Package: {packageName}",
                 LineBreakMode = LineBreakMode.WordWrap,
-                FontSize = lblSize,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Start,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -115,13 +125,14 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
 #endif
                 Text = $"Price: {packagePrice}",
                 LineBreakMode = LineBreakMode.WordWrap,
-                FontSize = lblSize,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Start,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -133,13 +144,14 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
 #endif
                 Text = $"Name: {user.Name}",
                 LineBreakMode = LineBreakMode.WordWrap,
-                FontSize = lblSize,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Start,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -151,13 +163,14 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
 #endif
                 Text = $"E-Mail: {user.Email}",
                 LineBreakMode = LineBreakMode.WordWrap,
-                FontSize = lblSize,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Start,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -169,13 +182,14 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
 #endif
                 Text = $"Belt: {user.Belt}",
                 LineBreakMode = LineBreakMode.WordWrap,
-                FontSize = lblSize,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Start,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -187,13 +201,14 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
 #endif
                 Text = $"Secret Question: {user.SecretQuestion}",
                 LineBreakMode = LineBreakMode.WordWrap,
-                FontSize = lblSize,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Start,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -205,13 +220,14 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
 #endif
                 Text = $"Answer: {user.SecretQuestionAnswer}",
                 LineBreakMode = LineBreakMode.WordWrap,
-                FontSize = lblSize,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Start,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -239,14 +255,15 @@ namespace MahechaBJJ.Views.SignUpPages
 
             signUpBtn = new Button
             {
-#if __IOS__
+                #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = btnSize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = btnSize,
 #endif
                 Text = "Sign Up",
-                FontSize = btnSize * 1.5,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -262,7 +279,7 @@ namespace MahechaBJJ.Views.SignUpPages
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
             };
-
+#if __IOS__
             innerGrid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection
@@ -279,7 +296,6 @@ namespace MahechaBJJ.Views.SignUpPages
                     new RowDefinition { Height = new GridLength(2, GridUnitType.Star)}
                 }
             };
-
             buttonGrid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection
@@ -292,6 +308,47 @@ namespace MahechaBJJ.Views.SignUpPages
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
                 }
             };
+#endif
+#if __ANDROID__
+            innerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
+            };
+            buttonGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
+            };
+#endif
+
+
+
+#if __ANDROID__
+            stackLayout = new StackLayout
+            {
+                Children = {
+                    summaryLbl,
+                    packageLbl,
+                    priceLbl,
+                    userDetailsLbl,
+                    nameLbl,
+                    emailLbl,
+                    beltLbl,
+                    secretQuestionLbl,
+                    secretQuestionAnswerLbl
+                }
+            };
+            scrollView = new ScrollView
+            {
+                Content = stackLayout
+            };
+#endif
 
 
             //events
@@ -302,12 +359,14 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 SignUp();
             };
+
+#if __IOS__
             buttonGrid.Children.Add(backBtn, 0, 0);
             buttonGrid.Children.Add(signUpBtn, 1, 0);
 
             innerGrid.Children.Add(summaryLbl, 0, 0);
             innerGrid.Children.Add(packageLbl, 0, 1);
-            innerGrid.Children.Add(priceLbl, 0 , 2);
+            innerGrid.Children.Add(priceLbl, 0, 2);
             innerGrid.Children.Add(userDetailsLbl, 0, 3);
             innerGrid.Children.Add(nameLbl, 0, 4);
             innerGrid.Children.Add(emailLbl, 0, 5);
@@ -315,7 +374,14 @@ namespace MahechaBJJ.Views.SignUpPages
             innerGrid.Children.Add(secretQuestionLbl, 0, 7);
             innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
             innerGrid.Children.Add(buttonGrid, 0, 9);
+#endif
+#if __ANDROID__
+            buttonGrid.Children.Add(signUpBtn, 0, 0);
 
+            innerGrid.Children.Add(scrollView, 0, 0);
+            innerGrid.Children.Add(buttonGrid, 0, 1);
+#endif
+     
             outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = outerGrid;
@@ -393,7 +459,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.Children.Clear();
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
-
+#if __IOS__
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
@@ -415,14 +481,27 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.Children.Add(secretQuestionLbl, 0, 7);
                 innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
                 innerGrid.Children.Add(buttonGrid, 0, 9);
+#endif
+#if __ANDROID__
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(5, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+
+                innerGrid.Children.Add(scrollView, 0, 0);
+                innerGrid.Children.Add(buttonGrid, 0, 1);
+#endif
             }
             else
             {
+#if __IOS__
                 Padding = new Thickness(10, 30, 10, 10);
+#endif
+#if __ANDROID__
+                Padding = new Thickness(10, 10, 10, 10);
+#endif
                 innerGrid.Children.Clear();
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
-
+#if __IOS__
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
@@ -444,6 +523,15 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.Children.Add(secretQuestionLbl, 0, 7);
                 innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
                 innerGrid.Children.Add(buttonGrid, 0, 9);
+
+#endif
+#if __ANDROID__
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+
+                innerGrid.Children.Add(scrollView, 0, 0);
+                innerGrid.Children.Add(buttonGrid, 0, 1);
+#endif
             }
         }
     }
