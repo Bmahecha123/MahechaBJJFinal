@@ -282,28 +282,62 @@ namespace MahechaBJJ.Views.EntryPages
             ToggleButtons();
         }
 
-        /*protected override void OnSizeAllocated(double width, double height)
-		{
-			base.OnSizeAllocated(width, height); //must be called
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height); //must be called
 
             if (width > height)
             {
                 Padding = new Thickness(10, 10, 10, 10);
                 mahechaLogo.Scale = 0;
                 mahechaLogo.IsVisible = false;
-				stackLayout.Orientation = StackOrientation.Horizontal;
+#if __IOS__
+                stackLayout.Orientation = StackOrientation.Horizontal;
                 stackLayout.HorizontalOptions = LayoutOptions.CenterAndExpand;
                 stackLayout.VerticalOptions = LayoutOptions.CenterAndExpand;
                 buttonLayout.VerticalOptions = LayoutOptions.EndAndExpand;
+#endif
+#if __ANDROID__
+                innerGrid.Children.Clear();
+                innerGrid.RowDefinitions.Clear();
+                innerGrid.RowDefinitions.Add(new RowDefinition {Height = new GridLength(1, GridUnitType.Star)});
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+                buttonGrid.Children.Add(loginBtn, 0, 0);
+                buttonGrid.Children.Add(forgotPasswordBtn, 1, 0);
+                innerGrid.Children.Add(emailLbl, 0, 0);
+                innerGrid.Children.Add(emailEntry, 0, 1);
+                innerGrid.Children.Add(passwordLbl, 0, 2);
+                innerGrid.Children.Add(passwordEntry, 0, 3);
+                innerGrid.Children.Add(buttonGrid, 0, 4);
+#endif
             }
             else
             {
                 mahechaLogo.Scale = 1;
                 mahechaLogo.IsVisible = true;
                 Padding = new Thickness(10, 30, 10, 10);
-				stackLayout.Orientation = StackOrientation.Vertical;
+#if __IOS__
+                stackLayout.Orientation = StackOrientation.Vertical;
+#endif
+#if __ANDROID__
+                buttonGrid.Children.Add(loginBtn, 0, 0);
+                buttonGrid.Children.Add(forgotPasswordBtn, 1, 0);
+                innerGrid.Children.Add(mahechaLogo, 0, 0);
+                innerGrid.Children.Add(emailLbl, 0, 1);
+                innerGrid.Children.Add(emailEntry, 0, 2);
+                innerGrid.Children.Add(passwordLbl, 0, 3);
+                innerGrid.Children.Add(passwordEntry, 0, 4);
+                innerGrid.Children.Add(buttonGrid, 0, 5);
+
+                outerGrid.Children.Add(innerGrid, 0, 0);
+
+                Content = outerGrid;
+#endif
             }
-		} */
+		}
     }
 }
 
