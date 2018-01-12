@@ -131,7 +131,7 @@ namespace MahechaBJJ.Views.CommonPages
             giImage = new Image
             {
                 Source = ImageSource.FromResource("gi"),
-                Aspect = Aspect.Fill
+                Aspect = Aspect.AspectFit
             };
 
             giImageFrame = new Frame
@@ -204,7 +204,7 @@ namespace MahechaBJJ.Views.CommonPages
             noGiImage = new Image
             {
                 Source = ImageSource.FromResource("nogi6"),
-                Aspect = Aspect.Fill
+                Aspect = Aspect.AspectFit
             };
 
             noGiImageFrame = new Frame
