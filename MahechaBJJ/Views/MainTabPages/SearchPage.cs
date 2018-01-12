@@ -43,9 +43,9 @@ namespace MahechaBJJ.Views
             _baseViewModel = new BaseViewModel();
             searchedVideos = new ObservableCollection<VideoData>();
             this.modal = false;
-            Title = "Search";
 #if __IOS__
             Icon = "search.png";
+            Title = "Search";
 #endif
 #if __ANDROID__
             Icon = "search.png";

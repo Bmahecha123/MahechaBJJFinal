@@ -40,9 +40,9 @@ namespace MahechaBJJ.Views
             _baseViewModel = new BaseViewModel();
             account = _baseViewModel.GetAccountInformation();
 
-            Title = "Profile";
 #if __IOS__
             Icon = "karate.png";
+            Title = "Profile";
 #endif
 #if __ANDROID__
             Icon = "karate.png";

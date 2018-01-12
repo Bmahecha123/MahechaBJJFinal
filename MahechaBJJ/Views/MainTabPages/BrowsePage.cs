@@ -48,9 +48,9 @@ namespace MahechaBJJ.Views
         {
             _baseViewModel = new BaseViewModel();
             account = _baseViewModel.GetAccountInformation();
-            Title = "Browse";
 #if __IOS__
             Icon = "openbook.png";
+            Title = "Browse";
 #endif
 #if __ANDROID__
             Icon = "openbook.png";
