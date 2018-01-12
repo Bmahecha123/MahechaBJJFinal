@@ -51,37 +51,38 @@ namespace MahechaBJJ.Views
 #if __IOS__
             Icon = "openbook.png";
             Title = "Browse";
+            Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
             Icon = "openbook.png";
+            Padding = new Thickness(5, 5, 5, 5);
 #endif
-            Padding = new Thickness(10,30,10,10);
             SetContent();
-			
+
         }
 
-		//Functions
+        //Functions
         private void SetContent()
         {
-			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+            var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+            var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 
-			innerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection
-				{
-					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(2, GridUnitType.Star)}
-				}
-			};
+            innerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(2, GridUnitType.Star)}
+                }
+            };
 
-			outerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection
-				{
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-				}
-			};
+            outerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
+            };
 
             stackLayout = new StackLayout();
             scrollView = new ScrollView();
@@ -92,18 +93,20 @@ namespace MahechaBJJ.Views
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black,
-                FontSize = lblSize,
                 LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold"
+                FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold"
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
 #endif
             };
 
             sweepTap = new TapGestureRecognizer();
-            sweepTap.Tapped += (sender, e) => {
+            sweepTap.Tapped += (sender, e) =>
+            {
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
@@ -114,7 +117,7 @@ namespace MahechaBJJ.Views
                 {
                     Navigation.PushModalAsync(new SearchPage(Album.NoGiSweep));
                 }
-                else 
+                else
                 {
                     Navigation.PushModalAsync(new SearchPage(Album.Sweep));
                 }
@@ -136,18 +139,20 @@ namespace MahechaBJJ.Views
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black,
-                FontSize = lblSize,
                 LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold"
+                FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold"
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75
 #endif
             };
 
             takeDownTap = new TapGestureRecognizer();
-            takeDownTap.Tapped += (sender, e) => {
+            takeDownTap.Tapped += (sender, e) =>
+            {
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
@@ -181,18 +186,20 @@ namespace MahechaBJJ.Views
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black,
-                FontSize = lblSize,
                 LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold"
+                FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold"
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75
 #endif
             };
 
             submissionTap = new TapGestureRecognizer();
-            submissionTap.Tapped += (sender, e) => {
+            submissionTap.Tapped += (sender, e) =>
+            {
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
@@ -226,18 +233,20 @@ namespace MahechaBJJ.Views
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black,
-                FontSize = lblSize,
                 LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold"
+                FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold"
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75
 #endif
             };
 
             guardPassTap = new TapGestureRecognizer();
-            guardPassTap.Tapped += (sender, e) => {
+            guardPassTap.Tapped += (sender, e) =>
+            {
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
@@ -271,18 +280,20 @@ namespace MahechaBJJ.Views
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black,
-                FontSize = lblSize,
                 LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold"
+                FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold"
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75
 #endif
             };
 
             defenseTap = new TapGestureRecognizer();
-            defenseTap.Tapped += (sender, e) => {
+            defenseTap.Tapped += (sender, e) =>
+            {
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
@@ -316,18 +327,20 @@ namespace MahechaBJJ.Views
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black,
-                FontSize = lblSize,
                 LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold"
+                FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold"
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75
 #endif
             };
 
             backTakeTap = new TapGestureRecognizer();
-            backTakeTap.Tapped += (sender, e) => {
+            backTakeTap.Tapped += (sender, e) =>
+            {
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
@@ -361,18 +374,20 @@ namespace MahechaBJJ.Views
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black,
-                FontSize = lblSize,
                 LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold"
+                FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold"
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75
 #endif
             };
 
             drillsTap = new TapGestureRecognizer();
-            drillsTap.Tapped += (object sender, EventArgs e) => {
+            drillsTap.Tapped += (object sender, EventArgs e) =>
+            {
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
@@ -399,40 +414,40 @@ namespace MahechaBJJ.Views
                 Padding = new Thickness(10, 10, 10, 10)
             };
 
-			//blog objects
-			blogLbl = new Label
-			{
-				Text = "Blog",
+            //blog objects
+            blogLbl = new Label
+            {
+                Text = "Blog",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = lblSize * 2,
-				TextColor = Color.White,
-				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center
-			};
-			blogTap = new TapGestureRecognizer();
-			blogTap.Tapped += (sender, e) =>
-			{
-				Navigation.PushModalAsync(new BlogViewPage());
-			};
-			blogLbl.GestureRecognizers.Add(blogTap);
-			blogImage = new Image
-			{
-				Aspect = Aspect.AspectFill,
-				Source = ImageSource.FromFile("blog.jpg")
-			};
-			blogFrame = new Frame
-			{
-				Content = blogImage,
-				OutlineColor = Color.Black,
-				BackgroundColor = Color.Black,
-				HasShadow = false,
-				Padding = 3
-			};
+                FontSize = lblSize * 2,
+                TextColor = Color.White,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center
+            };
+            blogTap = new TapGestureRecognizer();
+            blogTap.Tapped += (sender, e) =>
+            {
+                Navigation.PushModalAsync(new BlogViewPage());
+            };
+            blogLbl.GestureRecognizers.Add(blogTap);
+            blogImage = new Image
+            {
+                Aspect = Aspect.AspectFill,
+                Source = ImageSource.FromFile("blog.jpg")
+            };
+            blogFrame = new Frame
+            {
+                Content = blogImage,
+                OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                HasShadow = false,
+                Padding = 3
+            };
 
 
             //Events
@@ -449,48 +464,54 @@ namespace MahechaBJJ.Views
             scrollView.Content = stackLayout;
 
             innerGrid.Children.Add(scrollView, 0, 0);
-			innerGrid.Children.Add(blogFrame, 0, 1);
-			innerGrid.Children.Add(blogLbl, 0, 1);
-			outerGrid.Children.Add(innerGrid, 0, 0);
+            innerGrid.Children.Add(blogFrame, 0, 1);
+            innerGrid.Children.Add(blogLbl, 0, 1);
+            outerGrid.Children.Add(innerGrid, 0, 0);
 
-			Content = outerGrid;
+            Content = outerGrid;
         }
 
-		//Orientation
-		protected override void OnSizeAllocated(double width, double height)
-		{
-			base.OnSizeAllocated(width, height); //must be called
+        //Orientation
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height); //must be called
 
-			if (width > height)
-			{
-				Padding = new Thickness(10, 10, 10, 10);
-				innerGrid.RowDefinitions.Clear();
-				innerGrid.ColumnDefinitions.Clear();
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-				innerGrid.Children.Clear();
+            if (width > height)
+            {
+                Padding = new Thickness(10, 10, 10, 10);
+                innerGrid.RowDefinitions.Clear();
+                innerGrid.ColumnDefinitions.Clear();
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                innerGrid.Children.Clear();
                 //building grid
                 innerGrid.Children.Add(scrollView, 0, 0);
-				innerGrid.Children.Add(blogFrame, 1, 0);
-				//Grid.SetRowSpan(blogFrame, 2);
-				innerGrid.Children.Add(blogLbl, 1, 0);
-				//Grid.SetRowSpan(blogLbl, 2);
-			}
-			else
-			{
-				Padding = new Thickness(10, 30, 10, 10);
-				innerGrid.RowDefinitions.Clear();
-				innerGrid.ColumnDefinitions.Clear();
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-				innerGrid.Children.Clear();
+                innerGrid.Children.Add(blogFrame, 1, 0);
+                //Grid.SetRowSpan(blogFrame, 2);
+                innerGrid.Children.Add(blogLbl, 1, 0);
+                //Grid.SetRowSpan(blogLbl, 2);
+            }
+            else
+            {
+#if __IOS__
+            
+                Padding = new Thickness(10, 30, 10, 10);
+#endif
+#if __ANDROID__
+                Padding = new Thickness(5, 5, 5, 5);
+#endif				
+                innerGrid.RowDefinitions.Clear();
+                innerGrid.ColumnDefinitions.Clear();
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+                innerGrid.Children.Clear();
                 //building grid
                 innerGrid.Children.Add(scrollView, 0, 0);
                 innerGrid.Children.Add(blogFrame, 0, 1);
                 innerGrid.Children.Add(blogLbl, 0, 1);
-			}
-		}
+            }
+        }
     }
 }
 

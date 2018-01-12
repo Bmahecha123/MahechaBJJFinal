@@ -44,7 +44,7 @@ namespace MahechaBJJ.Views
 #endif
 #if __ANDROID__
             Icon = "construction.png";
-            Padding = new Thickness(10, -5, 10, 10);
+            Padding = new Thickness(5, -5, 5, 5);
 #endif
             BuildPageObjects();
             SetContent();
@@ -362,7 +362,7 @@ namespace MahechaBJJ.Views
                     Padding = new Thickness(10, 10, 10, 10);
 #endif
 #if __ANDROID__
-                    Padding = new Thickness(10, -5, 10, 10);
+                    Padding = new Thickness(5, -5, 5, 5);
 #endif
                     innerGrid.RowDefinitions.Clear();
                     innerGrid.ColumnDefinitions.Clear();
