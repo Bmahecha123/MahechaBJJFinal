@@ -43,11 +43,12 @@ namespace MahechaBJJ.Views
 #if __IOS__
             Icon = "karate.png";
             Title = "Profile";
+            Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
             Icon = "karate.png";
+            Padding = new Thickness(5, 5, 5, 5);
 #endif
-            Padding = new Thickness(10, 30, 10, 10);
             BuildPageObjects();
             SetContent();
         }
@@ -86,13 +87,15 @@ namespace MahechaBJJ.Views
                 Text = "Name",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size * 1.5,
+                HorizontalTextAlignment = TextAlignment.Center,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size,
+                HorizontalTextAlignment = TextAlignment.Start,
 #endif
-                FontSize = size * 1.5,
                 VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -102,11 +105,12 @@ namespace MahechaBJJ.Views
                 Text = "Jon",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size * .5,
 #endif
-                FontSize = size,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -117,13 +121,15 @@ namespace MahechaBJJ.Views
                 Text = "E-Mail",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size * 1.5,
+                HorizontalTextAlignment = TextAlignment.Center,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size,
+                HorizontalTextAlignment = TextAlignment.Start,
 #endif
-                FontSize = size * 1.5,
                 VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -132,11 +138,12 @@ namespace MahechaBJJ.Views
                 Text = "Doe",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size * .5,
 #endif
-                FontSize = size,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 LineBreakMode = LineBreakMode.TailTruncation,
@@ -148,13 +155,15 @@ namespace MahechaBJJ.Views
                 Text = "Belt",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size * 1.5,
+                HorizontalTextAlignment = TextAlignment.Center,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size,
+                HorizontalTextAlignment = TextAlignment.Start,
 #endif
-                FontSize = size * 1.5,
                 VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -163,11 +172,12 @@ namespace MahechaBJJ.Views
                 Text = "White",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size * .5,
 #endif
-                FontSize = size,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -178,11 +188,13 @@ namespace MahechaBJJ.Views
                 Text = "Packages",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size * 2,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size,
+                Margin = -5,
 #endif
-                FontSize = size * 2,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -193,11 +205,13 @@ namespace MahechaBJJ.Views
                 Text = "Contact Us",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size * 2,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size,
+                Margin = -5,
 #endif
-                FontSize = size * 2,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -208,11 +222,13 @@ namespace MahechaBJJ.Views
                 Text = "Log Out",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size * 2,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size,
+                Margin = -5,
 #endif
-                FontSize = size * 2,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -223,11 +239,13 @@ namespace MahechaBJJ.Views
                 Text = "Settings",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = size * 2,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = size,
+                Margin = -5,
 #endif
-                FontSize = size * 2,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -274,7 +292,8 @@ namespace MahechaBJJ.Views
             };
 
             //Events
-            packageBtn.Clicked += (object sender, EventArgs e) => {
+            packageBtn.Clicked += (object sender, EventArgs e) =>
+            {
                 SetPackages();
             };
             contactUsBtn.Clicked += (sender, e) =>
@@ -290,15 +309,15 @@ namespace MahechaBJJ.Views
                 DependencyService.Get<IEmailService>().StartEmailActivity(emailMessage);
 #endif
                 contactUsBtn.IsEnabled = true;
-			};
-			logOutBtn.Clicked += async (sender, e) =>
-			{
-				bool logout = await DisplayAlert("Logout", "Are you sure you want to log out " + user.Email + "?", "Yes, I'll be back friend.", "No, I'll stay!");
-				if (logout)
-				{
+            };
+            logOutBtn.Clicked += async (sender, e) =>
+            {
+                bool logout = await DisplayAlert("Logout", "Are you sure you want to log out " + user.Email + "?", "Yes, I'll be back friend.", "No, I'll stay!");
+                if (logout)
+                {
                     LogOut();
-				}
-			};
+                }
+            };
             settingsBtn.Clicked += async (sender, e) =>
             {
                 string[] settings = { "Change Password" };
@@ -309,9 +328,9 @@ namespace MahechaBJJ.Views
                 }
             };
 
-			outerGrid.Children.Add(innerGrid, 0, 0);
+            outerGrid.Children.Add(innerGrid, 0, 0);
 
-			Content = outerGrid;
+            Content = outerGrid;
         }
 
         public async void SetContent()
@@ -325,37 +344,50 @@ namespace MahechaBJJ.Views
 
             if (_baseViewModel.User == null)
             {
-				user = await _baseViewModel.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]);
-			}
+                user = await _baseViewModel.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]);
+            }
             if (_baseViewModel.Successful)
             {
                 activityIndicator.IsRunning = false;
-				nameTextLbl.Text = user.Name;
-				emailTextLbl.Text = user.Email;
-				beltTextLbl.Text = user.Belt;
-                //Building Stack
+#if __IOS__
+                nameTextLbl.Text = user.Name;
+                emailTextLbl.Text = user.Email;
+                beltTextLbl.Text = user.Belt;
+
                 userCredentialStack.Children.Add(nameLbl);
                 userCredentialStack.Children.Add(nameTextLbl);
                 userCredentialStack.Children.Add(beltLbl);
                 userCredentialStack.Children.Add(beltTextLbl);
                 userCredentialStack.Children.Add(emailLbl);
                 userCredentialStack.Children.Add(emailTextLbl);
+#endif
+#if __ANDROID__
+                nameLbl.Text = $"{nameLbl.Text}: {user.Name}";
+                emailLbl.Text = $"{emailLbl.Text}: {user.Email}";
+                beltLbl.Text = $"{beltLbl.Text}: {user.Belt}";
+                userCredentialStack.Children.Add(nameLbl);
+                userCredentialStack.Children.Add(beltLbl);
+                userCredentialStack.Children.Add(emailLbl);
+#endif
+
                 //Building Grid
                 innerGrid.Children.Clear();
                 innerGrid.Children.Add(userCredentialStack, 0, 0);
                 innerGrid.Children.Add(packageBtn, 0, 1);
-				innerGrid.Children.Add(contactUsBtn, 0, 2);
-				innerGrid.Children.Add(settingsBtn, 0, 3);
-				innerGrid.Children.Add(logOutBtn, 0, 4);
-            } else {
-				/*innerGrid.Children.Clear();
+                innerGrid.Children.Add(contactUsBtn, 0, 2);
+                innerGrid.Children.Add(settingsBtn, 0, 3);
+                innerGrid.Children.Add(logOutBtn, 0, 4);
+            }
+            else
+            {
+                /*innerGrid.Children.Clear();
 				innerGrid.Children.Add(timeOutFrame, 0, 0);
 				Grid.SetRowSpan(timeOutFrame, 4);
 				Grid.SetRowSpan(timeOutLbl, 4); */
                 LogOut();
             }
 
-		}
+        }
 
         private void LogOut()
         {
@@ -377,8 +409,8 @@ namespace MahechaBJJ.Views
             else if (account.Properties["Package"].Equals("Gi"))
             {
                 Navigation.PushModalAsync(new PurchasePage(Package.NoGi));
-            } 
-            else 
+            }
+            else
             {
                 Navigation.PushModalAsync(new PurchasePage(Package.Gi));
             }
@@ -417,7 +449,13 @@ namespace MahechaBJJ.Views
             {
                 if (_baseViewModel.User != null)
                 {
+#if __IOS__
+          
                     Padding = new Thickness(10, 30, 10, 10);
+#endif
+#if __ANDROID__
+                    Padding = new Thickness(5, 5, 5, 5);
+#endif
                     innerGrid.RowDefinitions.Clear();
                     innerGrid.ColumnDefinitions.Clear();
                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
@@ -435,6 +473,6 @@ namespace MahechaBJJ.Views
                 }
             }
         }
-	}
+    }
 }
 
