@@ -261,23 +261,48 @@ namespace MahechaBJJ.Views
             //Building grid
             if (modal)
             {
+#if __ANDROID__
+                innerGrid.Children.Add(videoListView, 0, 0);
+#endif
+#if __IOS__
                 innerGrid.Children.Add(backBtn, 0, 0);
+                innerGrid.Children.Add(videoListView, 0, 1);
+#endif
             }
             else
             {
                 innerGrid.Children.Add(searchBar, 0, 0);
+                innerGrid.Children.Add(videoListView, 0, 1);
             }
 
-            innerGrid.Children.Add(videoListView, 0, 1);
             if (moreToLoad)
             {
                 innerGrid.Children.Add(loadBtn, 0, 2);
+#if __ANDROID__
+                Grid.SetRowSpan(videoListView, 2);
+#endif
+#if __IOS__
                 Grid.SetRowSpan(videoListView, 1);
+#endif
+
             }
             else
             {
                 innerGrid.Children.Remove(loadBtn);
+#if __ANDROID__
+                if (modal)
+                {
+                    Grid.SetRowSpan(videoListView, 3);
+                }
+                else
+                {
+                    Grid.SetRowSpan(videoListView, 2);
+                }
+#endif
+#if __IOS__
                 Grid.SetRowSpan(videoListView, 2);
+#endif
+
             }
             innerGrid.Children.Add(activityIndicator, 0, 0);
             Grid.SetRowSpan(activityIndicator, 3);
@@ -428,7 +453,9 @@ namespace MahechaBJJ.Views
 
                 if (this.modal)
                 {
+#if __IOS__
                     innerGrid.Children.Add(backBtn, 0, 0);
+#endif
                 }
                 else
                 {
@@ -473,26 +500,51 @@ namespace MahechaBJJ.Views
 #endif
                 innerGrid.Children.Clear();
 
+                //Building grid
                 if (modal)
                 {
-                    innerGrid.Children.Add(backBtn, 0, 0);
+#if __ANDROID__
+                    innerGrid.Children.Add(videoListView, 0, 0);
+#endif
+#if __IOS__
+                innerGrid.Children.Add(backBtn, 0, 0);
+                innerGrid.Children.Add(videoListView, 0, 1);
+#endif
                 }
                 else
                 {
                     innerGrid.Children.Add(searchBar, 0, 0);
+                    innerGrid.Children.Add(videoListView, 0, 1);
                 }
-
-                innerGrid.Children.Add(videoListView, 0, 1);
 
                 if (moreToLoad)
                 {
                     innerGrid.Children.Add(loadBtn, 0, 2);
-                    Grid.SetRowSpan(videoListView, 1);
+#if __ANDROID__
+                    Grid.SetRowSpan(videoListView, 2);
+#endif
+#if __IOS__
+                Grid.SetRowSpan(videoListView, 1);
+#endif
+
                 }
                 else
                 {
                     innerGrid.Children.Remove(loadBtn);
-                    Grid.SetRowSpan(videoListView, 2);
+#if __ANDROID__
+                    if (modal)
+                    {
+                        Grid.SetRowSpan(videoListView, 3);
+                    }
+                    else
+                    {
+                        Grid.SetRowSpan(videoListView, 2);
+                    }
+#endif
+#if __IOS__
+                Grid.SetRowSpan(videoListView, 2);
+#endif
+
                 }
                 innerGrid.Children.Add(activityIndicator, 0, 0);
                 Grid.SetRowSpan(activityIndicator, 3);
