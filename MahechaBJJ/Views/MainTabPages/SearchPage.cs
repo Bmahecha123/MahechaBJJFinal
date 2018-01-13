@@ -65,7 +65,15 @@ namespace MahechaBJJ.Views
             this.modal = true;
             Title = "Search";
             Icon = "004-search.png";
+            #if __IOS__
+            Icon = "search.png";
+            Title = "Search";
             Padding = new Thickness(10, 30, 10, 10);
+#endif
+#if __ANDROID__
+            Icon = "search.png";
+            Padding = new Thickness(5, 5, 5, 5);
+#endif
             SetSearch(album);
             SetContent(true);
             SearchVimeo(true);
@@ -360,7 +368,12 @@ namespace MahechaBJJ.Views
                     innerGrid.Children.Add(loadBtn, 0, 2);
                     if (Application.Current.MainPage.Width < Application.Current.MainPage.Height)
                     {
+#if __ANDROID__
+                        Grid.SetRowSpan(videoListView, 2);
+#endif
+#if __IOS__
                         Grid.SetRowSpan(videoListView, 1);
+#endif
                     }
                 }
                 else
@@ -369,7 +382,19 @@ namespace MahechaBJJ.Views
                     innerGrid.Children.Remove(loadBtn);
                     if (Application.Current.MainPage.Width < Application.Current.MainPage.Height)
                     {
+#if __IOS__
                         Grid.SetRowSpan(videoListView, 2);
+#endif
+#if __ANDROID__
+                        if (modal)
+                        {
+                            Grid.SetRowSpan(videoListView, 3);
+                        }
+                        else
+                        {
+                            Grid.SetRowSpan(videoListView, 2);
+                        }
+#endif
                     }
                 }
             }
@@ -431,7 +456,7 @@ namespace MahechaBJJ.Views
             if (width > height)
             {
 #if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
+                Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
                 Padding = new Thickness(5, 5, 5, 5);
@@ -456,13 +481,17 @@ namespace MahechaBJJ.Views
 #if __IOS__
                     innerGrid.Children.Add(backBtn, 0, 0);
 #endif
+#if __ANDROID__
+                    innerGrid.Children.Add(videoListView, 0, 0);
+                    Grid.SetColumnSpan(videoListView, 2);
+#endif
                 }
                 else
                 {
                     innerGrid.Children.Add(searchBar, 0, 0);
+                    innerGrid.Children.Add(videoListView, 1, 0);
                 }
 
-                innerGrid.Children.Add(videoListView, 1, 0);
                 Grid.SetRowSpan(videoListView, 3);
 
                 if (moreToLoad)
@@ -501,7 +530,7 @@ namespace MahechaBJJ.Views
                 innerGrid.Children.Clear();
 
                 //Building grid
-                if (modal)
+                if (this.modal)
                 {
 #if __ANDROID__
                     innerGrid.Children.Add(videoListView, 0, 0);
@@ -524,7 +553,7 @@ namespace MahechaBJJ.Views
                     Grid.SetRowSpan(videoListView, 2);
 #endif
 #if __IOS__
-                Grid.SetRowSpan(videoListView, 1);
+                    Grid.SetRowSpan(videoListView, 1);
 #endif
 
                 }
@@ -532,7 +561,7 @@ namespace MahechaBJJ.Views
                 {
                     innerGrid.Children.Remove(loadBtn);
 #if __ANDROID__
-                    if (modal)
+                    if (this.modal)
                     {
                         Grid.SetRowSpan(videoListView, 3);
                     }
@@ -548,6 +577,7 @@ namespace MahechaBJJ.Views
                 }
                 innerGrid.Children.Add(activityIndicator, 0, 0);
                 Grid.SetRowSpan(activityIndicator, 3);
+
             }
         }
     }

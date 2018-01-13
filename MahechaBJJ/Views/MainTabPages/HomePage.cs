@@ -261,6 +261,7 @@ namespace MahechaBJJ.Views
 
         private async void SetContent()
         {
+            
             //add activity indicator while contents load
             innerGrid.Children.Clear();
             activityIndicator.IsRunning = true;
