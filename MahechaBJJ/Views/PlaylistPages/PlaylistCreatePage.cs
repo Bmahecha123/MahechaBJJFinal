@@ -190,8 +190,10 @@ namespace MahechaBJJ.Views.PlaylistPages
             innerGrid.Children.Add(editorFrame, 0, 3);
             Grid.SetRowSpan(editorFrame, 3);
             Grid.SetColumnSpan(editorFrame, 2);
+#if __IOS__
             innerGrid.Children.Add(backBtn, 0, 7);
             innerGrid.Children.Add(createBtn, 1, 7);
+#endif
 #if __ANDROID__
             innerGrid.Children.Add(createBtn, 0, 6);
             Grid.SetRowSpan(createBtn, 2);
@@ -275,7 +277,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 #if __IOS__
                 Padding = new Thickness(10, 30, 10, 10);
-#endif				
+#endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });

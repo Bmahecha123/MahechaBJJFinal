@@ -223,13 +223,14 @@ namespace MahechaBJJ.Views.PlaylistPages
                 playlistLbl.VerticalTextAlignment = TextAlignment.Center;
                 playlistLbl.HorizontalTextAlignment = TextAlignment.Center;
                 playlistLbl.TextColor = Color.Black;
-                playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 2;
                 playlistLbl.LineBreakMode = LineBreakMode.WordWrap;
 #if __IOS__
                 playlistLbl.FontFamily = "AmericanTypewriter-Bold";
+                playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 2;
 #endif
 #if __ANDROID__
                 playlistLbl.FontFamily = "Roboto Bold";
+                playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 #endif
 
                 playlistFrame = new Frame();
