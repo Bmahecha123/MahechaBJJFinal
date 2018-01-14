@@ -21,7 +21,12 @@ namespace MahechaBJJ.Views.CommonPages
 
         public ForgotPasswordPage()
         {
+#if __ANDROID__
+            Padding = new Thickness(5, 5, 5, 5);
+#endif
+#if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
+#endif
             Title = "Forgot Password";
             _baseViewModel = new BaseViewModel();
             BuildPageObjects();
@@ -31,7 +36,7 @@ namespace MahechaBJJ.Views.CommonPages
         {
             var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
             var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-            var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));            
+            var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));
 
             stackLayout = new StackLayout();
             entryLayout = new StackLayout();
@@ -53,11 +58,12 @@ namespace MahechaBJJ.Views.CommonPages
                 Text = "Forgot Password",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize,
 #endif
-                FontSize = lblSize * 1.5,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.StartAndExpand
@@ -69,24 +75,26 @@ namespace MahechaBJJ.Views.CommonPages
                 Text = "E-Mail Address",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
 #endif
-                FontSize = lblSize * 1.5,
                 VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center                 
+                HorizontalTextAlignment = TextAlignment.Center
             };
 
             emailEntry = new Entry
             {
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = entrySize * 1.25,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = entrySize * .75,
 #endif
-                FontSize = entrySize * 1.25,
                 Placeholder = "Enter E-Mail"
             };
 
@@ -112,12 +120,13 @@ namespace MahechaBJJ.Views.CommonPages
             {
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = btnSize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = btnSize,
 #endif
                 Text = "Next",
-                FontSize = btnSize * 1.5,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -131,8 +140,15 @@ namespace MahechaBJJ.Views.CommonPages
             nextBtn.Clicked += CheckIfUserExists;
 
             //building layouts
+#if __ANDROID__
+            buttonGrid.Children.Add(nextBtn, 0, 0);
+            Grid.SetColumnSpan(nextBtn, 2);
+#endif
+#if __IOS__
             buttonGrid.Children.Add(backBtn, 0, 0);
             buttonGrid.Children.Add(nextBtn, 1, 0);
+#endif
+
             entryLayout.Children.Add(emailLbl);
             entryLayout.Children.Add(emailEntry);
             entryLayout.HorizontalOptions = LayoutOptions.FillAndExpand;
