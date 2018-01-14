@@ -24,7 +24,12 @@ namespace MahechaBJJ.Views.CommonPages
         public ChangePasswordPage(User user)
         {
             _baseViewModel = new BaseViewModel();
+#if __ANDROID__
+            Padding = new Thickness(5, 5, 5, 5);
+#endif
+#if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
+#endif
             Title = "Change Password";
             _user = user;
             BuildPageObjects();
@@ -33,7 +38,7 @@ namespace MahechaBJJ.Views.CommonPages
             //back button
         }
 
-        private void BuildPageObjects() 
+        private void BuildPageObjects()
         {
             var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
             var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
@@ -60,11 +65,12 @@ namespace MahechaBJJ.Views.CommonPages
                 Text = "Change Password",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize * 2,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize,
 #endif
-                FontSize = lblSize * 2,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.StartAndExpand,
@@ -76,11 +82,12 @@ namespace MahechaBJJ.Views.CommonPages
                 Text = _user.SecretQuestion,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
 #endif
-                FontSize = lblSize * 1.5,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -89,13 +96,14 @@ namespace MahechaBJJ.Views.CommonPages
 
             secretQuestionEntry = new Entry
             {
-                #if __IOS__
+#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = entrySize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = entrySize * .75,
 #endif
-                FontSize = entrySize * 1.5,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -105,11 +113,12 @@ namespace MahechaBJJ.Views.CommonPages
                 Text = "New Password",
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
 #endif
-                FontSize = lblSize * 1.5,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.CenterAndExpand,
@@ -120,11 +129,12 @@ namespace MahechaBJJ.Views.CommonPages
             {
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = entrySize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = entrySize * .75,
 #endif
-                FontSize = entrySize * 1.5,
                 IsPassword = true,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
@@ -152,12 +162,13 @@ namespace MahechaBJJ.Views.CommonPages
             {
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = btnSize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = btnSize * .75,
 #endif
                 Text = "Change Password",
-                FontSize = btnSize * 1.5,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -167,7 +178,8 @@ namespace MahechaBJJ.Views.CommonPages
             };
 
             //events
-            backBtn.Clicked += (sender, e) => {
+            backBtn.Clicked += (sender, e) =>
+            {
                 backBtn.IsEnabled = false;
                 Navigation.PopModalAsync();
                 backBtn.IsEnabled = true;
@@ -175,8 +187,14 @@ namespace MahechaBJJ.Views.CommonPages
             submitBtn.Clicked += ChangePassword;
 
             //layout
+#if __ANDROID__
+            buttonGrid.Children.Add(submitBtn, 0, 1);
+#endif
+#if __IOS__
             buttonGrid.Children.Add(backBtn, 0, 1);
             buttonGrid.Children.Add(submitBtn, 0, 0);
+#endif
+
             stackLayout.Children.Add(headerLbl);
             stackLayout.Children.Add(secretQuestionLbl);
             stackLayout.Children.Add(secretQuestionEntry);
