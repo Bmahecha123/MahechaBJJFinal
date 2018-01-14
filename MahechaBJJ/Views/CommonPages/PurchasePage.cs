@@ -41,8 +41,12 @@ namespace MahechaBJJ.Views.CommonPages
             _purchasePageViewModel = new PurchasePageViewModel();
             account = _baseViewModel.GetAccountInformation();
             this.package = package;
+#if __ANDROID__
+            Padding = new Thickness(5, 5, 5, 5);
+#endif
+#if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
-
+#endif
             SetContent();
         }
 
@@ -85,7 +89,7 @@ namespace MahechaBJJ.Views.CommonPages
             giStackLayout = new StackLayout();
             noGiStackLayout = new StackLayout();
 
-            #region GI
+#region GI
             giTitle = new Label
             {
 #if __IOS__
@@ -116,7 +120,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             giBody = new Label
             {
-                #if __IOS__
+#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
@@ -157,8 +161,8 @@ namespace MahechaBJJ.Views.CommonPages
                 Content = giScrollView,
                 HasShadow = false
             };
-            #endregion
-            #region NOGI
+#endregion
+#region NOGI
             noGiTitle = new Label
             {
 #if __IOS__
@@ -189,7 +193,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             noGiBody = new Label
             {
-                #if __IOS__
+#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
@@ -230,7 +234,7 @@ namespace MahechaBJJ.Views.CommonPages
                 Content = noGiScrollView,
                 HasShadow = false
             };
-            #endregion
+#endregion
 
             backBtn = new Button
             {
@@ -254,12 +258,14 @@ namespace MahechaBJJ.Views.CommonPages
             {
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = btnSize * 1.5,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                Margin = -5,
+                FontSize = btnSize,
 #endif
                 Text = "Purchase",
-                FontSize = btnSize * 1.5,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -277,8 +283,14 @@ namespace MahechaBJJ.Views.CommonPages
                 PurchasePackage();
             };
 
+#if __ANDROID__
+            buttonGrid.Children.Add(purchaseBtn, 0, 0);
+            Grid.SetColumnSpan(purchaseBtn, 2);
+#endif
+#if __IOS__
             buttonGrid.Children.Add(backBtn, 0, 0);
             buttonGrid.Children.Add(purchaseBtn, 1, 0);
+#endif
 
             giStackLayout.Children.Add(giTitle);
             giStackLayout.Children.Add(giPrice);
