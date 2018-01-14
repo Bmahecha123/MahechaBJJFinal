@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec 18 14:29:38 EST 2017)"
 	.asciz "PInvoke.Windows.Core.dll"
 	.asciz ""
 
@@ -3057,7 +3057,7 @@ _mono_aot_file_info:
 	.long 144,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 82,94,62,199,195,78,94,14,10,238,167,209,225,125,137,188
+	.byte 170,107,162,244,133,132,225,243,42,178,186,79,208,103,38,180
 	.globl _mono_aot_module_PInvoke_Windows_Core_info
 	.align 3
 _mono_aot_module_PInvoke_Windows_Core_info:

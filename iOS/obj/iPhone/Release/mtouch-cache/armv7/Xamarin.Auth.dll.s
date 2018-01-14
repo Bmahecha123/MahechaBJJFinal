@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 4,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 21:00:42 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec 18 14:27:59 EST 2017)"
 	.asciz "Xamarin.Auth.dll"
 	.asciz ""
 
@@ -10527,7 +10527,7 @@ ut_388:
 	.align 2
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INST__ctor_System_Array
 System_Array_InternalEnumerator_1_T_INST__ctor_System_Array:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 2 215 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,64,1,45,233,2,223,77,226,0,128,141,229,0,96,160,225,4,16,141,229,4,0,157,229
@@ -12083,7 +12083,7 @@ Lme_1d7:
 	.align 2
 	.no_dead_strip System_Collections_Generic_Dictionary_2_TKey_REF_TValue_INT__ctor
 System_Collections_Generic_Dictionary_2_TKey_REF_TValue_INT__ctor:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corert/src/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corert/src/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs"
 .loc 3 70 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,0,0,141,229,0,0,157,229,0,224,208,229,8,0,141,229
@@ -15348,7 +15348,7 @@ ut_555:
 	.align 2
 	.no_dead_strip System_Nullable_1_bool__ctor_bool
 System_Nullable_1_bool__ctor_bool:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Nullable.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/corlib/System/Nullable.cs"
 .loc 4 94 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,4,16,205,229,0,0,157,229,64,19,160,227
@@ -16141,7 +16141,7 @@ Lme_253:
 	.align 2
 	.no_dead_strip System_Lazy_1_T_INTPTR__ctor
 System_Lazy_1_T_INTPTR__ctor:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/Lazy.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/Lazy.cs"
 .loc 5 125 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,0,0,141,229,0,0,157,229,0,224,208,229,8,0,141,229
@@ -17317,7 +17317,7 @@ Lme_279:
 	.align 2
 	.no_dead_strip System_Linq_Enumerable_Select_TSource_INST_TResult_REF_System_Collections_Generic_IEnumerable_1_TSource_INST_System_Func_2_TSource_INST_TResult_REF
 System_Linq_Enumerable_Select_TSource_INST_TResult_REF_System_Collections_Generic_IEnumerable_1_TSource_INST_System_Func_2_TSource_INST_TResult_REF:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Select.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Select.cs"
 .loc 6 15 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,112,13,45,233,8,223,77,226,12,128,141,229,0,96,160,225,1,160,160,225,0,15,86,227
@@ -17487,7 +17487,7 @@ Lme_27a:
 	.align 2
 	.no_dead_strip System_Linq_Enumerable_Iterator_1_TSource_INST__ctor
 System_Linq_Enumerable_Iterator_1_TSource_INST__ctor:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Iterator.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Iterator.cs"
 .loc 7 43 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,0,0,141,229,0,0,157,229,8,0,141,229
@@ -17836,7 +17836,7 @@ Lme_28d:
 	.align 2
 	.no_dead_strip System_Collections_Generic_EqualityComparer_1_T_INST_get_Default
 System_Collections_Generic_EqualityComparer_1_T_INST_get_Default:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/equalitycomparer.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/equalitycomparer.cs"
 .loc 8 32 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,5,45,233,6,223,77,226,0,128,141,229,0,0,157,229
@@ -18287,7 +18287,7 @@ ut_684:
 	.align 2
 	.no_dead_strip System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_Start_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_
 System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Collections_Generic_IDictionary_2_string_string_Start_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_Xamarin_Auth_OAuth2Authenticator__RequestAccessTokenAsyncc__async0_:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/runtime/compilerservices/AsyncMethodBuilder.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/runtime/compilerservices/AsyncMethodBuilder.cs"
 .loc 9 459 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,24,223,77,226,13,176,160,225,88,0,139,229,92,16,139,229,0,15,160,227
@@ -18380,7 +18380,7 @@ Lme_2ad:
 	.align 2
 	.no_dead_strip System_Linq_Enumerable_Contains_TSource_CHAR_System_Collections_Generic_IEnumerable_1_TSource_CHAR_TSource_CHAR
 System_Linq_Enumerable_Contains_TSource_CHAR_System_Collections_Generic_IEnumerable_1_TSource_CHAR_TSource_CHAR:
-.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Contains.cs"
+.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Contains.cs"
 .loc 10 13 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,64,1,45,233,6,223,77,226,0,128,141,229,4,0,141,229,184,16,205,225,0,0,157,229
@@ -18718,7 +18718,7 @@ Lme_2c1:
 	.align 2
 	.no_dead_strip System_Linq_Enumerable_Max_System_nfloat_System_Collections_Generic_IEnumerable_1_System_nfloat
 System_Linq_Enumerable_Max_System_nfloat_System_Collections_Generic_IEnumerable_1_System_nfloat:
-.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Max.cs"
+.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Max.cs"
 .loc 11 446 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,64,13,45,233,16,223,77,226,13,176,160,225,0,160,160,225,0,15,160,227,20,0,139,229
@@ -19016,7 +19016,7 @@ Lme_2ca:
 	.align 2
 	.no_dead_strip System_Collections_Generic_Comparer_1_System_nfloat_get_Default
 System_Collections_Generic_Comparer_1_System_nfloat_get_Default:
-.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/comparer.cs"
+.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/comparer.cs"
 .loc 12 28 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,5,45,233,2,223,77,226,0,0,159,229,0,0,0,234
@@ -19397,7 +19397,7 @@ Lme_2db:
 	.align 2
 	.no_dead_strip System_Threading_Tasks_Task_FromResult_TResult_BOOL_TResult_BOOL
 System_Threading_Tasks_Task_FromResult_TResult_BOOL_TResult_BOOL:
-.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/threading/Tasks/Task.cs"
+.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/threading/Tasks/Task.cs"
 .loc 13 5532 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,0,128,141,229,4,0,205,229,0,0,157,229
@@ -19773,7 +19773,7 @@ ut_740:
 	.align 2
 	.no_dead_strip System_Collections_Generic_KeyValuePair_2_TKey_REF_TValue_INT__ctor_TKey_REF_TValue_INT
 System_Collections_Generic_KeyValuePair_2_TKey_REF_TValue_INT__ctor_TKey_REF_TValue_INT:
-.file 14 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corert/src/System.Private.CoreLib/shared/System/Collections/Generic/KeyValuePair.cs"
+.file 14 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corert/src/System.Private.CoreLib/shared/System/Collections/Generic/KeyValuePair.cs"
 .loc 14 58 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,32,1,45,233,4,223,77,226,0,128,141,229,0,80,160,225,4,16,141,229,8,32,141,229
@@ -20018,7 +20018,7 @@ Lme_2ed:
 	.align 2
 	.no_dead_strip System_Linq_Enumerable_WhereEnumerableIterator_1_TSource_INST__ctor_System_Collections_Generic_IEnumerable_1_TSource_INST_System_Func_2_TSource_INST_bool
 System_Linq_Enumerable_WhereEnumerableIterator_1_TSource_INST__ctor_System_Collections_Generic_IEnumerable_1_TSource_INST_System_Func_2_TSource_INST_bool:
-.file 15 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Where.cs"
+.file 15 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Where.cs"
 .loc 15 90 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,7,223,77,226,0,0,141,229,4,16,141,229,8,32,141,229,0,0,157,229
@@ -21750,7 +21750,7 @@ Lme_32c:
 	.align 2
 	.no_dead_strip System_Linq_EmptyPartition_1_System_nfloat__cctor
 System_Linq_EmptyPartition_1_System_nfloat__cctor:
-.file 16 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Partition.cs"
+.file 16 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Partition.cs"
 .loc 16 93 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,1,223,77,226,0,0,159,229,0,0,0,234
@@ -22046,7 +22046,7 @@ Lme_338:
 	.align 2
 	.no_dead_strip System_Threading_Tasks_Task_1_TResult_BOOL__ctor_TResult_BOOL
 System_Threading_Tasks_Task_1_TResult_BOOL__ctor_TResult_BOOL:
-.file 17 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/threading/Tasks/Future.cs"
+.file 17 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/threading/Tasks/Future.cs"
 .loc 17 104 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,4,0,141,229,8,16,205,229,4,0,157,229,0,31,160,227
@@ -22487,7 +22487,7 @@ ut_830:
 	.align 2
 	.no_dead_strip System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_ToArray
 System_Collections_Generic_LargeArrayBuilder_1_System_nfloat_ToArray:
-.file 18 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/Common/src/System/Collections/Generic/LargeArrayBuilder.cs"
+.file 18 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/Common/src/System/Collections/Generic/LargeArrayBuilder.cs"
 .loc 18 270 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,5,45,233,2,223,77,226,0,160,160,225,0,15,160,227,0,0,141,229,0,128,159,229
@@ -22960,7 +22960,7 @@ Lme_349:
 	.align 2
 	.no_dead_strip System_Collections_Generic_List_1_System_nfloat_Add_System_nfloat
 System_Collections_Generic_List_1_System_nfloat_Add_System_nfloat:
-.file 19 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/list.cs"
+.file 19 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/list.cs"
 .loc 19 228 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,64,5,45,233,3,223,77,226,0,160,160,225,0,16,141,229,16,0,154,229,8,16,154,229
@@ -23991,7 +23991,7 @@ Lme_383:
 	.align 2
 	.no_dead_strip System_EmptyArray_1_System_nfloat__cctor
 System_EmptyArray_1_System_nfloat__cctor:
-.file 20 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/EmptyArray.cs"
+.file 20 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/corlib/System/EmptyArray.cs"
 .loc 20 33 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,1,223,77,226,0,0,159,229,0,0,0,234
@@ -25021,7 +25021,7 @@ Lme_3ac:
 	.align 2
 	.no_dead_strip System_Linq_Utilities_CombinePredicates_System_nfloat_System_Func_2_System_nfloat_bool_System_Func_2_System_nfloat_bool
 System_Linq_Utilities_CombinePredicates_System_nfloat_System_Func_2_System_nfloat_bool_System_Func_2_System_nfloat_bool:
-.file 21 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Utilities.cs"
+.file 21 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Utilities.cs"
 .loc 21 0 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,0,0,141,229,4,16,141,229,0,0,159,229,0,0,0,234
@@ -31626,7 +31626,7 @@ _mono_aot_file_info:
 	.long 1408,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 20,173,118,91,128,27,151,251,8,8,53,46,201,150,205,169
+	.byte 109,122,113,112,218,244,5,23,240,109,105,241,145,8,18,207
 	.globl _mono_aot_module_Xamarin_Auth_info
 	.align 2
 _mono_aot_module_Xamarin_Auth_info:

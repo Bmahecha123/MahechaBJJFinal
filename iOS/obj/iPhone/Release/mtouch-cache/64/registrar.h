@@ -22,10 +22,10 @@
 #import <CoreGraphics/CoreGraphics.h>
 
 @protocol UIPickerViewModel;
-@class Foundation_InternalNSNotificationHandler;
 @class __MonoMac_NSActionDispatcher;
 @class __Xamarin_NSTimerActionDispatcher;
 @class __MonoMac_NSAsyncActionDispatcher;
+@class Foundation_InternalNSNotificationHandler;
 @class MessageUI_Mono_MFMailComposeViewControllerDelegate;
 @class UIKit_UIControlEventProxy;
 @class Xamarin_Forms_Platform_iOS_FormsApplicationDelegate;
@@ -98,22 +98,22 @@
 @class Xamarin_Forms_Platform_iOS_ToolbarItemExtensions_SecondaryToolbarItem;
 @class Xamarin_Forms_Platform_iOS_NavigationMenuRenderer_DataSource;
 @class Xamarin_Forms_Platform_iOS_NavigationRenderer_SecondaryToolbar;
+@class __NSObject_Disposer;
 @class UIKit_UIGestureRecognizer__UIGestureRecognizerDelegate;
 @class __UIGestureRecognizerToken;
 @class __UIGestureRecognizerParameterlessToken;
 @class __UIGestureRecognizerParametrizedToken;
-@class __NSObject_Disposer;
 @class __UILongPressGestureRecognizer;
 @class UIKit_UIView_UIViewAppearance;
 @class UIKit_UINavigationBar_UINavigationBarAppearance;
 @class __UIPanGestureRecognizer;
+@class __UIPinchGestureRecognizer;
 @class UIKit_UIAlertView__UIAlertViewDelegate;
 @class UIKit_UIBarButtonItem_Callback;
 @class UIKit_UIControl_UIControlAppearance;
 @class UIKit_UIButton_UIButtonAppearance;
 @class __UIRotationGestureRecognizer;
 @class __UITapGestureRecognizer;
-@class __UIPinchGestureRecognizer;
 @class __UISwipeGestureRecognizer;
 @class __UIScreenEdgePanGestureRecognizer;
 @class UIKit_UISearchBar__UISearchBarDelegate;

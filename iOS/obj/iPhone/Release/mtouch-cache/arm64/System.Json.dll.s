@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec 18 14:29:38 EST 2017)"
 	.asciz "System.Json.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip System_Json_JsonArray__ctor_System_Collections_Generic_IEnumerable_1_System_Json_JsonValue
 System_Json_JsonArray__ctor_System_Collections_Generic_IEnumerable_1_System_Json_JsonValue:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/System.Json/System.Json/JsonArray.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/System.Json/System.Json/JsonArray.cs"
 .loc 1 23 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -574,7 +574,7 @@ Lme_f:
 	.align 4
 	.no_dead_strip System_Json_JsonObject__ctor_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_KeyValuePair_2_string_System_Json_JsonValue
 System_Json_JsonObject__ctor_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_KeyValuePair_2_string_System_Json_JsonValue:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/System.Json/System.Json/JsonObject.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/System.Json/System.Json/JsonObject.cs"
 .loc 2 28 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -1214,7 +1214,7 @@ Lme_23:
 	.align 4
 	.no_dead_strip System_Json_JsonPrimitive__ctor_bool
 System_Json_JsonPrimitive__ctor_bool:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/System.Json/System.Json/JsonPrimitive.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/System.Json/System.Json/JsonPrimitive.cs"
 .loc 3 16 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -2323,7 +2323,7 @@ Lme_3a:
 	.align 4
 	.no_dead_strip System_Json_JsonValue_Load_System_IO_TextReader
 System_Json_JsonValue_Load_System_IO_TextReader:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/System.Json/System.Json/JsonValue.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/System.Json/System.Json/JsonValue.cs"
 .loc 4 26 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -5740,7 +5740,7 @@ Lme_62:
 	.align 4
 	.no_dead_strip System_Runtime_Serialization_Json_JavaScriptReader__ctor_System_IO_TextReader_bool
 System_Runtime_Serialization_Json_JavaScriptReader__ctor_System_IO_TextReader_bool:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/System.Json/System.Json/JavaScriptReader.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/System.Json/System.Json/JavaScriptReader.cs"
 .loc 5 14 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -7395,7 +7395,7 @@ Lme_6d:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__Insert_T_REF_int_T_REF
 System_Array_InternalArray__Insert_T_REF_int_T_REF:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 6 136 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -8764,7 +8764,7 @@ Lme_91:
 	.align 4
 	.no_dead_strip System_Collections_Generic_SortedSet_1_Node_T_INST__ctor_T_INST_bool
 System_Collections_Generic_SortedSet_1_Node_T_INST__ctor_T_INST_bool:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Collections/src/System/Collections/Generic/SortedSet.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Collections/src/System/Collections/Generic/SortedSet.cs"
 .loc 7 1730 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -9462,7 +9462,7 @@ Lme_a4:
 	.align 4
 	.no_dead_strip System_Collections_Generic_TreeSet_1_T_INST__ctor
 System_Collections_Generic_TreeSet_1_T_INST__ctor:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Collections/src/System/Collections/Generic/SortedDictionary.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Collections/src/System/Collections/Generic/SortedDictionary.cs"
 .loc 8 966 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -13609,7 +13609,7 @@ Lme_df:
 	.align 4
 	.no_dead_strip System_Collections_Generic_Comparer_1_T_INST_get_Default
 System_Collections_Generic_Comparer_1_T_INST_get_Default:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/comparer.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/comparer.cs"
 .loc 9 28 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -15978,7 +15978,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "FCCF4EBD-2EF6-402A-8375-9EFEEEA8069D"
+	.asciz "5AE2B67F-BB5C-45A8-B5BB-3C19D49FDFA4"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -16061,7 +16061,7 @@ _mono_aot_file_info:
 	.long 344,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 19,123,218,36,33,236,16,175,230,253,211,154,17,76,172,93
+	.byte 196,82,169,75,148,0,193,8,129,41,13,156,212,240,52,81
 	.globl _mono_aot_module_System_Json_info
 	.align 3
 _mono_aot_module_System_Json_info:

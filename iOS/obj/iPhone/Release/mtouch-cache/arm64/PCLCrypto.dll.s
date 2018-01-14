@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec 18 14:29:38 EST 2017)"
 	.asciz "PCLCrypto.dll"
 	.asciz ""
 
@@ -23160,7 +23160,7 @@ b System_Nullable_1_PCLCrypto_AsymmetricSignaturePadding__ctor_PCLCrypto_Asymmet
 	.align 4
 	.no_dead_strip System_Nullable_1_PCLCrypto_AsymmetricSignaturePadding__ctor_PCLCrypto_AsymmetricSignaturePadding
 System_Nullable_1_PCLCrypto_AsymmetricSignaturePadding__ctor_PCLCrypto_AsymmetricSignaturePadding:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Nullable.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/corlib/System/Nullable.cs"
 .loc 2 94 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -24432,7 +24432,7 @@ Lme_1ef:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF
 System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 3 71 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -26273,7 +26273,7 @@ Lme_22b:
 	.align 4
 	.no_dead_strip System_Collections_Generic_EqualityComparer_1_PCLCrypto_Formatters_Asn_DataElement_get_Default
 System_Collections_Generic_EqualityComparer_1_PCLCrypto_Formatters_Asn_DataElement_get_Default:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/equalitycomparer.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/equalitycomparer.cs"
 .loc 4 32 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -27539,7 +27539,7 @@ Lme_24a:
 	.align 4
 	.no_dead_strip System_Runtime_InteropServices_Marshal_SizeOf_PInvoke_BCrypt_BCRYPT_RSAKEY_BLOB
 System_Runtime_InteropServices_Marshal_SizeOf_PInvoke_BCrypt_BCRYPT_RSAKEY_BLOB:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System.Runtime.InteropServices/Marshal.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/corlib/System.Runtime.InteropServices/Marshal.cs"
 .loc 5 1051 0 prologue_end
 .word 0xa9bf7bfd
 .word 0x910003fd
@@ -27597,7 +27597,7 @@ Lme_24c:
 	.align 4
 	.no_dead_strip System_Array_Resize_T_BYTE_T_BYTE____int
 System_Array_Resize_T_BYTE_T_BYTE____int:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corert/src/System.Private.CoreLib/src/System/Array.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corert/src/System.Private.CoreLib/src/System/Array.cs"
 .loc 6 52 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -27696,7 +27696,7 @@ Lme_24d:
 	.align 4
 	.no_dead_strip System_Collections_ObjectModel_ReadOnlyCollection_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IList_1_PCLCrypto_KeySizes
 System_Collections_ObjectModel_ReadOnlyCollection_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IList_1_PCLCrypto_KeySizes:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/collections/objectmodel/readonlycollection.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/collections/objectmodel/readonlycollection.cs"
 .loc 7 28 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -27734,7 +27734,7 @@ Lme_24e:
 	.align 4
 	.no_dead_strip System_Linq_Enumerable_ToList_PCLCrypto_KeySizes_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes
 System_Linq_Enumerable_ToList_PCLCrypto_KeySizes_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/ToCollection.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/ToCollection.cs"
 .loc 8 24 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -28098,7 +28098,7 @@ Lme_257:
 	.align 4
 	.no_dead_strip System_Linq_Enumerable_Select_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_System_Collections_Generic_IEnumerable_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes
 System_Linq_Enumerable_Select_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes_System_Collections_Generic_IEnumerable_1_System_Security_Cryptography_KeySizes_System_Func_2_System_Security_Cryptography_KeySizes_PCLCrypto_KeySizes:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Select.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Select.cs"
 .loc 9 15 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -29080,7 +29080,7 @@ b System_ArraySegment_1_T_REF__ctor_T_REF__
 	.align 4
 	.no_dead_strip System_ArraySegment_1_T_REF__ctor_T_REF__
 System_ArraySegment_1_T_REF__ctor_T_REF__:
-.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/arraysegment.cs"
+.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/arraysegment.cs"
 .loc 10 39 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -29204,7 +29204,7 @@ Lme_272:
 	.align 4
 	.no_dead_strip System_Linq_Enumerable_First_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement
 System_Linq_Enumerable_First_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement:
-.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/First.cs"
+.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/First.cs"
 .loc 11 14 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
@@ -29248,7 +29248,7 @@ Lme_276:
 	.align 4
 	.no_dead_strip System_Linq_Enumerable_Single_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement
 System_Linq_Enumerable_Single_PCLCrypto_Formatters_Asn_DataElement_System_Collections_Generic_IEnumerable_1_PCLCrypto_Formatters_Asn_DataElement:
-.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Single.cs"
+.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Single.cs"
 .loc 12 13 0 prologue_end
 .word 0xa9b87bfd
 .word 0x910003fd
@@ -30419,7 +30419,7 @@ Lme_289:
 	.align 4
 	.no_dead_strip System_Collections_Generic_List_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes
 System_Collections_Generic_List_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes:
-.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/list.cs"
+.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/list.cs"
 .loc 13 75 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -32446,7 +32446,7 @@ Lme_2b6:
 	.align 4
 	.no_dead_strip System_Linq_Enumerable_Iterator_1_PCLCrypto_KeySizes__ctor
 System_Linq_Enumerable_Iterator_1_PCLCrypto_KeySizes__ctor:
-.file 14 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Iterator.cs"
+.file 14 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Iterator.cs"
 .loc 14 43 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -35365,7 +35365,7 @@ Lme_2e5:
 	.align 4
 	.no_dead_strip System_Linq_EmptyPartition_1_PCLCrypto_KeySizes__cctor
 System_Linq_EmptyPartition_1_PCLCrypto_KeySizes__cctor:
-.file 15 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Partition.cs"
+.file 15 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Partition.cs"
 .loc 15 93 0 prologue_end
 .word 0xa9bf7bfd
 .word 0x910003fd
@@ -37046,7 +37046,7 @@ b System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_ToArray
 	.align 4
 	.no_dead_strip System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_ToArray
 System_Collections_Generic_LargeArrayBuilder_1_PCLCrypto_KeySizes_ToArray:
-.file 16 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/Common/src/System/Collections/Generic/LargeArrayBuilder.cs"
+.file 16 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/Common/src/System/Collections/Generic/LargeArrayBuilder.cs"
 .loc 16 270 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -37870,7 +37870,7 @@ Lme_30d:
 	.align 4
 	.no_dead_strip System_Linq_Enumerable_WhereEnumerableIterator_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes_System_Func_2_PCLCrypto_KeySizes_bool
 System_Linq_Enumerable_WhereEnumerableIterator_1_PCLCrypto_KeySizes__ctor_System_Collections_Generic_IEnumerable_1_PCLCrypto_KeySizes_System_Func_2_PCLCrypto_KeySizes_bool:
-.file 17 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Where.cs"
+.file 17 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Where.cs"
 .loc 17 90 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -38619,7 +38619,7 @@ Lme_31a:
 	.align 4
 	.no_dead_strip System_EmptyArray_1_PCLCrypto_KeySizes__cctor
 System_EmptyArray_1_PCLCrypto_KeySizes__cctor:
-.file 18 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/EmptyArray.cs"
+.file 18 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/corlib/System/EmptyArray.cs"
 .loc 18 33 0 prologue_end
 .word 0xa9bf7bfd
 .word 0x910003fd
@@ -40043,7 +40043,7 @@ Lme_33b:
 	.align 4
 	.no_dead_strip System_Linq_Utilities_CombinePredicates_PCLCrypto_KeySizes_System_Func_2_PCLCrypto_KeySizes_bool_System_Func_2_PCLCrypto_KeySizes_bool
 System_Linq_Utilities_CombinePredicates_PCLCrypto_KeySizes_System_Func_2_PCLCrypto_KeySizes_bool_System_Func_2_PCLCrypto_KeySizes_bool:
-.file 19 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Utilities.cs"
+.file 19 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/Utilities.cs"
 .loc 19 0 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -44121,7 +44121,7 @@ _mono_aot_file_info:
 	.long 1224,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 31,111,137,89,20,143,25,220,238,114,74,86,200,221,42,196
+	.byte 45,41,233,244,204,97,165,105,152,84,227,38,196,222,120,239
 	.globl _mono_aot_module_PCLCrypto_info
 	.align 3
 _mono_aot_module_PCLCrypto_info:

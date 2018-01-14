@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec 18 14:29:38 EST 2017)"
 	.asciz "PInvoke.Kernel32.dll"
 	.asciz ""
 
@@ -2990,7 +2990,7 @@ b System_Nullable_1_int__ctor_int
 	.align 4
 	.no_dead_strip System_Nullable_1_int__ctor_int
 System_Nullable_1_int__ctor_int:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Nullable.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/corlib/System/Nullable.cs"
 .loc 2 94 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -3392,7 +3392,7 @@ b System_ArraySegment_1_T_BYTE__ctor_T_BYTE__
 	.align 4
 	.no_dead_strip System_ArraySegment_1_T_BYTE__ctor_T_BYTE__
 System_ArraySegment_1_T_BYTE__ctor_T_BYTE__:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/arraysegment.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/arraysegment.cs"
 .loc 3 39 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -7440,7 +7440,7 @@ Lme_bc:
 	.align 4
 	.no_dead_strip System_Array_IndexOf_T_BYTE_T_BYTE___T_BYTE_int_int
 System_Array_IndexOf_T_BYTE_T_BYTE___T_BYTE_int_int:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corert/src/System.Private.CoreLib/src/System/Array.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corert/src/System.Private.CoreLib/src/System/Array.cs"
 .loc 4 687 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -7584,7 +7584,7 @@ Lme_be:
 	.align 4
 	.no_dead_strip System_Array_IndexOfImpl_T_BYTE_T_BYTE___T_BYTE_int_int
 System_Array_IndexOfImpl_T_BYTE_T_BYTE___T_BYTE_int_int:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 5 624 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -7619,7 +7619,7 @@ Lme_bf:
 	.align 4
 	.no_dead_strip System_Collections_Generic_EqualityComparer_1_T_BYTE_get_Default
 System_Collections_Generic_EqualityComparer_1_T_BYTE_get_Default:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/equalitycomparer.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/equalitycomparer.cs"
 .loc 6 32 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -9481,7 +9481,7 @@ _mono_aot_file_info:
 	.long 280,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 55,58,19,238,69,133,1,52,123,175,42,30,187,150,14,230
+	.byte 75,54,133,172,135,37,213,91,40,201,236,235,85,38,213,144
 	.globl _mono_aot_module_PInvoke_Kernel32_info
 	.align 3
 _mono_aot_module_PInvoke_Kernel32_info:

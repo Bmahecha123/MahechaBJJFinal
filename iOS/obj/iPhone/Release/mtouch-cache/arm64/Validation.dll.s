@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec 18 14:29:38 EST 2017)"
 	.asciz "Validation.dll"
 	.asciz ""
 
@@ -3956,7 +3956,7 @@ Lme_59:
 	.align 4
 	.no_dead_strip System_Linq_Enumerable_Any_TSource_REF_System_Collections_Generic_IEnumerable_1_TSource_REF
 System_Linq_Enumerable_Any_TSource_REF_System_Collections_Generic_IEnumerable_1_TSource_REF:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/AnyAll.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Linq/src/System/Linq/AnyAll.cs"
 .loc 2 13 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -5103,7 +5103,7 @@ _mono_aot_file_info:
 	.long 144,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 224,145,62,226,60,97,60,60,238,249,97,56,65,204,184,200
+	.byte 3,178,206,190,93,206,230,200,11,138,63,153,79,33,149,91
 	.globl _mono_aot_module_Validation_info
 	.align 3
 _mono_aot_module_Validation_info:

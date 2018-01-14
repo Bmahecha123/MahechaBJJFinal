@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 4,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 21:00:42 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec 18 14:27:59 EST 2017)"
 	.asciz "System.Json.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 2
 	.no_dead_strip System_Json_JsonArray__ctor_System_Collections_Generic_IEnumerable_1_System_Json_JsonValue
 System_Json_JsonArray__ctor_System_Collections_Generic_IEnumerable_1_System_Json_JsonValue:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/System.Json/System.Json/JsonArray.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/System.Json/System.Json/JsonArray.cs"
 .loc 1 23 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,0,0,141,229,4,16,141,229,4,0,157,229,0,15,80,227
@@ -383,7 +383,7 @@ Lme_f:
 	.align 2
 	.no_dead_strip System_Json_JsonObject__ctor_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_KeyValuePair_2_string_System_Json_JsonValue
 System_Json_JsonObject__ctor_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_KeyValuePair_2_string_System_Json_JsonValue:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/System.Json/System.Json/JsonObject.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/System.Json/System.Json/JsonObject.cs"
 .loc 2 28 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,64,1,45,233,4,223,77,226,0,96,160,225,0,16,141,229,0,0,157,229,0,15,80,227
@@ -769,7 +769,7 @@ Lme_23:
 	.align 2
 	.no_dead_strip System_Json_JsonPrimitive__ctor_bool
 System_Json_JsonPrimitive__ctor_bool:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/System.Json/System.Json/JsonPrimitive.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/System.Json/System.Json/JsonPrimitive.cs"
 .loc 3 16 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,4,16,205,229,0,0,159,229,0,0,0,234
@@ -1327,7 +1327,7 @@ Lme_3a:
 	.align 2
 	.no_dead_strip System_Json_JsonValue_Load_System_IO_TextReader
 System_Json_JsonValue_Load_System_IO_TextReader:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/System.Json/System.Json/JsonValue.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/System.Json/System.Json/JsonValue.cs"
 .loc 4 26 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,0,0,141,229,0,0,157,229,0,15,80,227,15,0,0,10
@@ -2907,7 +2907,7 @@ Lme_62:
 	.align 2
 	.no_dead_strip System_Runtime_Serialization_Json_JavaScriptReader__ctor_System_IO_TextReader_bool
 System_Runtime_Serialization_Json_JavaScriptReader__ctor_System_IO_TextReader_bool:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/System.Json/System.Json/JavaScriptReader.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/System.Json/System.Json/JavaScriptReader.cs"
 .loc 5 14 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,64,5,45,233,5,223,77,226,0,96,160,225,1,160,160,225,0,32,205,229,64,3,160,227
@@ -4089,7 +4089,7 @@ Lme_6d:
 	.align 2
 	.no_dead_strip System_Array_InternalArray__Insert_T_REF_int_T_REF
 System_Array_InternalArray__Insert_T_REF_int_T_REF:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 6 136 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,0,128,141,229,4,0,141,229,8,16,141,229,12,32,141,229
@@ -4819,7 +4819,7 @@ Lme_91:
 	.align 2
 	.no_dead_strip System_Collections_Generic_SortedSet_1_Node_T_INST__ctor_T_INST_bool
 System_Collections_Generic_SortedSet_1_Node_T_INST__ctor_T_INST_bool:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Collections/src/System/Collections/Generic/SortedSet.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Collections/src/System/Collections/Generic/SortedSet.cs"
 .loc 7 1730 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,4,223,77,226,13,176,160,225,0,0,139,229,4,16,139,229,8,32,139,229
@@ -5139,7 +5139,7 @@ Lme_a4:
 	.align 2
 	.no_dead_strip System_Collections_Generic_TreeSet_1_T_INST__ctor
 System_Collections_Generic_TreeSet_1_T_INST__ctor:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Collections/src/System/Collections/Generic/SortedDictionary.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/external/corefx/src/System.Collections/src/System/Collections/Generic/SortedDictionary.cs"
 .loc 8 966 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,0,0,141,229,0,0,157,229,0,224,208,229,8,0,141,229
@@ -7480,7 +7480,7 @@ Lme_df:
 	.align 2
 	.no_dead_strip System_Collections_Generic_Comparer_1_T_INST_get_Default
 System_Collections_Generic_Comparer_1_T_INST_get_Default:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/comparer.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/comparer.cs"
 .loc 9 28 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,5,45,233,6,223,77,226,0,128,141,229,0,0,157,229
@@ -9412,7 +9412,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "FCCF4EBD-2EF6-402A-8375-9EFEEEA8069D"
+	.asciz "5AE2B67F-BB5C-45A8-B5BB-3C19D49FDFA4"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -9495,7 +9495,7 @@ _mono_aot_file_info:
 	.long 344,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 231,53,207,151,14,8,151,81,46,206,135,181,129,33,241,143
+	.byte 124,111,64,232,139,55,213,59,39,194,247,248,218,145,10,171
 	.globl _mono_aot_module_System_Json_info
 	.align 2
 _mono_aot_module_System_Json_info:

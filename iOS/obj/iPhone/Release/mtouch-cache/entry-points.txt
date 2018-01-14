@@ -16,13 +16,13 @@ Function=WriteZStream
 	/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
 Function=xamarin_start_wwan
 	/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
-Function=UIApplicationMain
-	/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
 Function=xamarin_get_block_descriptor
 	/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
 Function=xamarin_IntPtr_objc_msgSend_IntPtr
 	/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
 Function=xamarin_IntPtr_objc_msgSendSuper_IntPtr
+	/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
+Function=UIApplicationMain
 	/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
 ObjectiveCClass=OBJC_CLASS_$_MSAppCenter
 	/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Microsoft.AppCenter.iOS.Bindings.dll

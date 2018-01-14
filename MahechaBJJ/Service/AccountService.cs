@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using MahechaBJJ.Droid;
 using MahechaBJJ.Resources;
 using Xamarin.Auth;
 using Xamarin.Forms;
@@ -20,7 +21,7 @@ namespace MahechaBJJ.Service
 			return AccountStore.Create().FindAccountsForService(Constants.AppName).FirstOrDefault();
 #endif
 #if __ANDROID__
-            return AccountStore.Create(Forms.Context).FindAccountsForService(Constants.AppName).FirstOrDefault();
+            return AccountStore.Create(MainApplication.ActivityContext).FindAccountsForService(Constants.AppName).FirstOrDefault();
 #endif
 		}
 
@@ -34,10 +35,10 @@ namespace MahechaBJJ.Service
 			}
 #endif
 #if __ANDROID__
-            account = AccountStore.Create(Forms.Context).FindAccountsForService(Constants.AppName).FirstOrDefault();
+            account = AccountStore.Create(MainApplication.ActivityContext).FindAccountsForService(Constants.AppName).FirstOrDefault();
             if (account != null)
             {
-                AccountStore.Create(Forms.Context).Delete(account, Constants.AppName);
+                AccountStore.Create(MainApplication.ActivityContext).Delete(account, Constants.AppName);
             }
 #endif
 		}
@@ -48,7 +49,7 @@ namespace MahechaBJJ.Service
 			AccountStore.Create().Save(account, Constants.AppName);
 #endif
 #if __ANDROID__
-            AccountStore.Create(Forms.Context).Save(account, Constants.AppName);
+            AccountStore.Create(MainApplication.ActivityContext).Save(account, Constants.AppName);
 #endif
 		}
 

@@ -1,4 +1,3 @@
-_UIApplicationMain
 _xamarin_get_block_descriptor
 _xamarin_IntPtr_objc_msgSend_IntPtr
 _xamarin_IntPtr_objc_msgSendSuper_IntPtr
@@ -6,3 +5,4 @@ _UIApplicationMain
 _xamarin_get_block_descriptor
 _xamarin_IntPtr_objc_msgSend_IntPtr
 _xamarin_IntPtr_objc_msgSendSuper_IntPtr
+_UIApplicationMain

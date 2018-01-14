@@ -93,7 +93,6 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/optimized/nogi.png
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/optimized/nogi@2x.png
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/optimized/
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/MahechaBJJ.iOS.csprojResolveAssemblyReference.cache
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/MahechaBJJ.iOS.csproj.MahechaBJJ.iOS.exe.config
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/MahechaBJJ.iOS.csproj.CoreCompileInputs.cache
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Release/MahechaBJJ.iOS.App.xaml.g.cs
