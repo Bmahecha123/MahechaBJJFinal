@@ -85,7 +85,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             {
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize * 2
+                FontSize = lblSize * 2,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
