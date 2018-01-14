@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace MahechaBJJ.Views
         private ObservableCollection<PlayList> userPlaylists;
         private ObservableCollection<Video> videos;
         private Account account;
-		private string videoUrl;
+        private string videoUrl;
         private Button backBtn;
         private Label videoNameLbl;
         private Label videoDescription;
@@ -50,144 +50,156 @@ namespace MahechaBJJ.Views
             _videoDetailPageViewModel = new VideoDetailPageViewModel();
             userPlaylists = new ObservableCollection<PlayList>();
             videoUrl = video.files[0].link;
+#if __ANDROID__
+            Padding = new Thickness(5, 5, 5, 5);
+#endif
+#if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
+#endif
+
             Title = video.name;
             videoTechnique = video;
             SetContent();
         }
 
         //Functions
-        public void SetContent() 
+        public void SetContent()
         {
 
-			var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-			var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+            var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+            var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 
-			//view objects
-			innerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection
-				{
-					new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection
-				{
-					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-					new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+            //view objects
+            innerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                },
+                ColumnDefinitions = new ColumnDefinitionCollection
+                {
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
 
-				}
-			};
+                }
+            };
 
-			outerGrid = new Grid
-			{
-				RowDefinitions = new RowDefinitionCollection
-				{
-					new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-				}
-			};
+            outerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
+            };
 
-			backBtn = new Button
-			{
-				Text = "Back",
-				BorderWidth = 3,
-				BorderColor = Color.Black,
-				TextColor = Color.Black,
+            backBtn = new Button
+            {
+                Text = "Back",
+                BorderWidth = 3,
+                BorderColor = Color.Black,
+                TextColor = Color.Black,
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+                FontSize = btnSize * 2,
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+                FontSize = btnSize,
+#endif
+                BackgroundColor = Color.FromRgb(124, 37, 41)
+            };
+            videoNameLbl = new Label
+            {
+                Text = videoTechnique.name,
+#if __IOS__
+				FontFamily = "AmericanTypewriter-Bold",
+                FontSize = lblSize,
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
+#endif
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                TextColor = Color.White
+            };
+
+            videoDescription = new Label
+            {
+                Text = videoTechnique.description,
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-				FontSize = btnSize * 2,
-				BackgroundColor = Color.FromRgb(124, 37, 41)
-			};
-			videoNameLbl = new Label
-			{
-				Text = videoTechnique.name,
+                VerticalTextAlignment = TextAlignment.Start,
+                HorizontalTextAlignment = TextAlignment.Start,
+                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
+                LineBreakMode = LineBreakMode.WordWrap,
+
+            };
+
+            videoDescriptionScrollView = new ScrollView
+            {
+                Padding = 0,
+                Content = videoDescription,
+                Orientation = ScrollOrientation.Vertical
+            };
+
+            videoImage = new Image
+            {
+                Source = videoTechnique.pictures.sizes[4].link,
+                Aspect = Aspect.AspectFill
+            };
+            videoFrame = new Frame
+            {
+                Content = videoImage,
+                OutlineColor = Color.Black,
+                BackgroundColor = Color.Black,
+                HasShadow = false,
+                Padding = 3
+
+            };
+            playBtn = new Button
+            {
+                Text = "Play",
+                BorderWidth = 3,
+                BorderColor = Color.Black,
+                TextColor = Color.Black,
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
+                FontSize = btnSize * 2,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = btnSize,
+                Margin = -5,
 #endif
-				VerticalTextAlignment = TextAlignment.Center,
-				HorizontalTextAlignment = TextAlignment.Center,
-				FontSize = lblSize,
-				TextColor = Color.White
-			};
-
-			videoDescription = new Label
-			{
-				Text = videoTechnique.description,
+                BackgroundColor = Color.FromRgb(58, 93, 174)
+            };
+            addBtn = new Button
+            {
+                Text = "+",
+                BorderWidth = 3,
+                BorderColor = Color.Black,
+                TextColor = Color.Black,
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
+                FontSize = btnSize * 3,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = btnSize,
+                Margin = -5,
 #endif
-				VerticalTextAlignment = TextAlignment.Start,
-				HorizontalTextAlignment = TextAlignment.Start,
-				FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
-				LineBreakMode = LineBreakMode.WordWrap,
-
-			};
-
-			videoDescriptionScrollView = new ScrollView
-			{
-				Padding = 0,
-				Content = videoDescription,
-				Orientation = ScrollOrientation.Vertical
-			};
-
-			videoImage = new Image
-			{
-				Source = videoTechnique.pictures.sizes[4].link,
-				Aspect = Aspect.AspectFill
-			};
-			videoFrame = new Frame
-			{
-				Content = videoImage,
-				OutlineColor = Color.Black,
-				BackgroundColor = Color.Black,
-				HasShadow = false,
-				Padding = 3
-
-			};
-			playBtn = new Button
-			{
-				Text = "Play",
-				BorderWidth = 3,
-				BorderColor = Color.Black,
-				TextColor = Color.Black,
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-				FontSize = btnSize * 2,
-				BackgroundColor = Color.FromRgb(58, 93, 174)
-			};
-			addBtn = new Button
-			{
-				Text = "+",
-				BorderWidth = 3,
-				BorderColor = Color.Black,
-				TextColor = Color.Black,
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-				FontSize = btnSize * 3,
-				BackgroundColor = Color.FromRgb(58, 93, 174)
-			};
+                BackgroundColor = Color.FromRgb(58, 93, 174)
+            };
 
             qualityBtn = new Button
             {
@@ -197,17 +209,19 @@ namespace MahechaBJJ.Views
                 TextColor = Color.Black,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = btnSize * 2,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = btnSize,
+                Margin = -5,
 #endif
-                FontSize = btnSize * 2,
                 BackgroundColor = Color.FromRgb(58, 93, 174)
             };
 
-			//Events
-			backBtn.Clicked += GoBack;
-			addBtn.Clicked += AddVideoToPlaylist;
+            //Events
+            backBtn.Clicked += GoBack;
+            addBtn.Clicked += AddVideoToPlaylist;
             qualityBtn.Clicked += ChangeVideoQuality;
 #if __IOS__
 			playBtn.Clicked += PlayIOSVideo;
@@ -215,23 +229,29 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
             playBtn.Clicked += PlayAndroidVideo;
 #endif
-			//building grid
-			innerGrid.Children.Add(videoFrame, 0, 0);
-			Grid.SetColumnSpan(videoFrame, 4);
-			innerGrid.Children.Add(videoNameLbl, 0, 0);
-			Grid.SetColumnSpan(videoNameLbl, 4);
-			innerGrid.Children.Add(playBtn, 0, 1);
+            //building grid
+            innerGrid.Children.Add(videoFrame, 0, 0);
+            Grid.SetColumnSpan(videoFrame, 4);
+            innerGrid.Children.Add(videoNameLbl, 0, 0);
+            Grid.SetColumnSpan(videoNameLbl, 4);
+            innerGrid.Children.Add(playBtn, 0, 1);
             Grid.SetColumnSpan(playBtn, 2);
-			innerGrid.Children.Add(addBtn, 2, 1);
+            innerGrid.Children.Add(addBtn, 2, 1);
             innerGrid.Children.Add(qualityBtn, 3, 1);
-			innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-			Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-			innerGrid.Children.Add(backBtn, 0, 3);
-			Grid.SetColumnSpan(backBtn, 4);
+            innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
+            Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+#if __ANDROID__
+            Grid.SetRowSpan(videoDescriptionScrollView, 2);
+#endif
+#if __IOS__
+            innerGrid.Children.Add(backBtn, 0, 3);
+            Grid.SetColumnSpan(backBtn, 4);
+#endif
 
-			outerGrid.Children.Add(innerGrid, 0, 0);
 
-			Content = outerGrid;
+            outerGrid.Children.Add(innerGrid, 0, 0);
+
+            Content = outerGrid;
         }
 
         public void PlayIOSVideo(object sender, EventArgs e)
@@ -276,10 +296,11 @@ namespace MahechaBJJ.Views
             if (answer == playlistNames[0])
             {
                 await Navigation.PushModalAsync(new PlaylistCreatePage());
-            } else if (answer != "Cancel")
+            }
+            else if (answer != "Cancel")
             {
                 UpdatePlaylist(userPlaylists, answer);
-			}
+            }
             ToggleButtons();
         }
 
@@ -297,33 +318,33 @@ namespace MahechaBJJ.Views
         public async void UpdatePlaylist(ObservableCollection<PlayList> playlists, string playlistName)
         {
             Video videoToBeAdded = new Video(videoTechnique.name, videoTechnique.pictures.sizes[3].link, videoTechnique.files[0].link, videoTechnique.files[1].link, videoTechnique.description);
-			PlayList playlist = playlists.FirstOrDefault(x => x.Name == playlistName);
+            PlayList playlist = playlists.FirstOrDefault(x => x.Name == playlistName);
 
             foreach (Video userVideo in playlist.Videos)
             {
                 if (userVideo.Name.Contains(videoToBeAdded.Name))
-				{
+                {
                     await DisplayAlert("Video Already in Playlist", videoToBeAdded.Name + " already part of " + playlist.Name, "Ok");
                     return;
-				}
+                }
             }
 
-			if (playlist.Videos == null)
-			{
-				videos = new ObservableCollection<Video>();
-			}
-			else
-			{
-				videos = playlist.Videos;
-			}
-			videos.Add(videoToBeAdded);
-			playlist.Videos = videos;
+            if (playlist.Videos == null)
+            {
+                videos = new ObservableCollection<Video>();
+            }
+            else
+            {
+                videos = playlist.Videos;
+            }
+            videos.Add(videoToBeAdded);
+            playlist.Videos = videos;
 
-			await _videoDetailPageViewModel.UpdateUserPlaylist(Constants.UPDATEPLAYLIST, account.Properties["Id"], playlist);
-			if (_videoDetailPageViewModel.Successful == true)
-			{
-				await DisplayAlert("Video Added", videoTechnique.name + " has been added to " + playlist.Name, "Ok");
-			}
+            await _videoDetailPageViewModel.UpdateUserPlaylist(Constants.UPDATEPLAYLIST, account.Properties["Id"], playlist);
+            if (_videoDetailPageViewModel.Successful == true)
+            {
+                await DisplayAlert("Video Added", videoTechnique.name + " has been added to " + playlist.Name, "Ok");
+            }
         }
 
         public async void ChangeVideoQuality(object sender, EventArgs e)
@@ -335,7 +356,7 @@ namespace MahechaBJJ.Views
                 result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
 
             }
-            else 
+            else
             {
                 string[] videoQuality = { "SD" };
                 result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
@@ -360,35 +381,54 @@ namespace MahechaBJJ.Views
 
             if (width > height)
             {
-                Padding = new Thickness(10, 10, 10, 10);
+#if __ANDROID__
+                Padding = new Thickness(5, 5, 5, 5);
+#endif
+#if __IOS__
+            Padding = new Thickness(10, 10, 10, 10);
+#endif                
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
-				innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
-				innerGrid.Children.Clear();
+                innerGrid.Children.Clear();
                 innerGrid.Children.Add(videoFrame, 0, 0);
                 Grid.SetRowSpan(videoFrame, 2);
                 Grid.SetColumnSpan(videoFrame, 2);
                 innerGrid.Children.Add(videoNameLbl, 0, 0);
                 Grid.SetRowSpan(videoNameLbl, 2);
                 Grid.SetColumnSpan(videoNameLbl, 2);
+#if __ANDROID__
+                innerGrid.Children.Add(playBtn, 2, 1);
+                innerGrid.Children.Add(addBtn, 3, 1);
+                innerGrid.Children.Add(qualityBtn, 4, 1);
+                Grid.SetColumnSpan(qualityBtn, 2);
+#endif
+#if __IOS__
                 innerGrid.Children.Add(backBtn, 2, 1);
-                innerGrid.Children.Add(videoDescriptionScrollView, 2, 0);
-                Grid.SetColumnSpan(videoDescriptionScrollView, 4);
                 innerGrid.Children.Add(playBtn, 3, 1);
                 innerGrid.Children.Add(addBtn, 4, 1);
                 innerGrid.Children.Add(qualityBtn, 5, 1);
+#endif
+                innerGrid.Children.Add(videoDescriptionScrollView, 2, 0);
+                Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+
             }
             else
             {
-                Padding = new Thickness(10, 30, 10, 10);
+#if __ANDROID__
+                Padding = new Thickness(5, 5, 5, 5);
+#endif
+#if __IOS__
+            Padding = new Thickness(10, 30, 10, 10);
+#endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
@@ -409,8 +449,14 @@ namespace MahechaBJJ.Views
                 innerGrid.Children.Add(qualityBtn, 3, 1);
                 innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
                 Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-                innerGrid.Children.Add(backBtn, 0, 3);
-                Grid.SetColumnSpan(backBtn, 4);
+#if __ANDROID__
+                Grid.SetRowSpan(videoDescriptionScrollView, 2);
+#endif
+#if __IOS__
+            innerGrid.Children.Add(backBtn, 0, 3);
+            Grid.SetColumnSpan(backBtn, 4);
+#endif
+
             }
         }
     }
