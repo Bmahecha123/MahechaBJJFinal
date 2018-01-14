@@ -95,7 +95,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 BorderColor = Color.Black,
                 TextColor = Color.Black,
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
@@ -107,7 +107,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             {
                 Text = video.Name,
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = lblSize,
 #endif
 #if __ANDROID__
@@ -123,7 +123,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             {
                 Text = video.Description,
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
@@ -163,7 +163,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 BorderColor = Color.Black,
                 TextColor = Color.Black,
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
 #endif
 #if __ANDROID__
@@ -180,7 +180,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 TextColor = Color.White,
 #if __IOS__
                 Text = "Delete From Playlist",
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 1.5,
 #endif
 #if __ANDROID__
@@ -216,7 +216,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             deleteBtn.Clicked += DeleteFromPlaylist;
             qualityBtn.Clicked += ChangeVideoQuality;
 #if __IOS__
-			playBtn.Clicked += PlayIOSVideo;
+            playBtn.Clicked += PlayIOSVideo;
 #endif
 #if __ANDROID__
             playBtn.Clicked += PlayAndroidVideo;
@@ -259,7 +259,9 @@ namespace MahechaBJJ.Views.PlaylistPages
         public async void PlayAndroidVideo(object sender, EventArgs e)
         {
             ToggleButtons();
+#if __ANDROID__
             await Navigation.PushModalAsync(new AndroidVideoPage(videoUrl));
+#endif
             ToggleButtons();
         }
 
@@ -348,7 +350,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
-            Padding = new Thickness(10, 10, 10, 10);
+                Padding = new Thickness(10, 10, 10, 10);
 #endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
@@ -383,7 +385,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
+                Padding = new Thickness(10, 30, 10, 10);
 #endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();

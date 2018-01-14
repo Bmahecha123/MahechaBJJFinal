@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-using Android.Content;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.Service;
@@ -105,7 +104,7 @@ namespace MahechaBJJ.Views
                 BorderColor = Color.Black,
                 TextColor = Color.Black,
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
 #endif
 #if __ANDROID__
@@ -118,7 +117,7 @@ namespace MahechaBJJ.Views
             {
                 Text = videoTechnique.name,
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = lblSize,
 #endif
 #if __ANDROID__
@@ -134,7 +133,7 @@ namespace MahechaBJJ.Views
             {
                 Text = videoTechnique.description,
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
@@ -174,7 +173,7 @@ namespace MahechaBJJ.Views
                 BorderColor = Color.Black,
                 TextColor = Color.Black,
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
 #endif
 #if __ANDROID__
@@ -191,7 +190,7 @@ namespace MahechaBJJ.Views
                 BorderColor = Color.Black,
                 TextColor = Color.Black,
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 3,
 #endif
 #if __ANDROID__
@@ -225,7 +224,7 @@ namespace MahechaBJJ.Views
             addBtn.Clicked += AddVideoToPlaylist;
             qualityBtn.Clicked += ChangeVideoQuality;
 #if __IOS__
-			playBtn.Clicked += PlayIOSVideo;
+            playBtn.Clicked += PlayIOSVideo;
 #endif
 #if __ANDROID__
             playBtn.Clicked += PlayAndroidVideo;
@@ -265,7 +264,9 @@ namespace MahechaBJJ.Views
         public async void PlayAndroidVideo(object sender, EventArgs e)
         {
             ToggleButtons();
+#if __ANDROID__
             await Navigation.PushModalAsync(new AndroidVideoPage(videoTechnique.files[1].link));
+#endif
             ToggleButtons();
         }
 
@@ -386,8 +387,8 @@ namespace MahechaBJJ.Views
                 Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
-            Padding = new Thickness(10, 10, 10, 10);
-#endif                
+                Padding = new Thickness(10, 10, 10, 10);
+#endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
@@ -428,7 +429,7 @@ namespace MahechaBJJ.Views
                 Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
+                Padding = new Thickness(10, 30, 10, 10);
 #endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
@@ -454,8 +455,8 @@ namespace MahechaBJJ.Views
                 Grid.SetRowSpan(videoDescriptionScrollView, 2);
 #endif
 #if __IOS__
-            innerGrid.Children.Add(backBtn, 0, 3);
-            Grid.SetColumnSpan(backBtn, 4);
+                innerGrid.Children.Add(backBtn, 0, 3);
+                Grid.SetColumnSpan(backBtn, 4);
 #endif
 
             }

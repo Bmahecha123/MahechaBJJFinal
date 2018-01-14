@@ -174,6 +174,7 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
                 FontSize = btnSize,
+                Margin = -5,
 #endif
                 BackgroundColor = Color.FromRgb(58, 93, 174)
 
@@ -480,6 +481,7 @@ namespace MahechaBJJ.Views
                 {
 #if __IOS__
                     innerGrid.Children.Add(backBtn, 0, 0);
+                    innerGrid.Children.Add(videoListView, 1, 0);
 #endif
 #if __ANDROID__
                     innerGrid.Children.Add(videoListView, 0, 0);

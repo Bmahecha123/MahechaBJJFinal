@@ -1,18 +1,17 @@
-﻿﻿﻿using System;
+﻿using System;
 using MahechaBJJ.Model;
 using Xamarin.Forms;
+
+#if __ANDROID__
 using Android.Content;
 using Android.App;
 using Android.Views;
 using MahechaBJJ.Droid;
-#if __ANDROID__
 using Android.Widget;
 using Xamarin.Forms.Platform.Android;
-#endif
+
 namespace MahechaBJJ.Views
 {
-    #if __ANDROID__
-    [Activity]
     public class AndroidVideoPage : ContentPage
     {
 
@@ -23,7 +22,6 @@ namespace MahechaBJJ.Views
 		private Android.Net.Uri uriHd;
         private int currentPosition;
 
-#endif
         //added string link instead of passing whole video
 		public AndroidVideoPage(string url)
         {
@@ -33,8 +31,6 @@ namespace MahechaBJJ.Views
 
         public void SetContent(string url)
         {
-#if __ANDROID__
-
             // https://stackoverflow.com/questions/47353986/xamarin-forms-forms-context-is-obsolete
             //SOLVED BY REFERENCING LOCAL ANDROID CONTEXT IN MAIN APPLICATION 
             //REPLACED FORMS.CONTEXT
@@ -58,9 +54,7 @@ namespace MahechaBJJ.Views
             Content = contentView;
 
             videoView.Start();
-#endif
 		}
-#if __ANDROID__
         //Orientation
         protected override void OnSizeAllocated(double width, double height)
         {
@@ -77,8 +71,7 @@ namespace MahechaBJJ.Views
                 contentView.VerticalOptions = LayoutOptions.CenterAndExpand;
             }
         }
-#endif
-
 	}
 }
 
+#endif
