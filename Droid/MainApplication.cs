@@ -1,6 +1,7 @@
 using System;
 
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Plugin.CurrentActivity;
@@ -15,6 +16,8 @@ namespace MahechaBJJ.Droid
 #endif
     public class MainApplication : Application, Application.IActivityLifecycleCallbacks
     {
+        internal static Context ActivityContext { get; private set; }
+
         public MainApplication(IntPtr handle, JniHandleOwnership transer)
           :base(handle, transer)
         {
@@ -35,6 +38,7 @@ namespace MahechaBJJ.Droid
 
         public void OnActivityCreated(Activity activity, Bundle savedInstanceState)
         {
+            ActivityContext = activity;
             CrossCurrentActivity.Current.Activity = activity;
         }
 
@@ -48,6 +52,7 @@ namespace MahechaBJJ.Droid
 
         public void OnActivityResumed(Activity activity)
         {
+            ActivityContext = activity;
             CrossCurrentActivity.Current.Activity = activity;
         }
 
@@ -57,6 +62,7 @@ namespace MahechaBJJ.Droid
 
         public void OnActivityStarted(Activity activity)
         {
+            ActivityContext = activity;
             CrossCurrentActivity.Current.Activity = activity;
         }
 

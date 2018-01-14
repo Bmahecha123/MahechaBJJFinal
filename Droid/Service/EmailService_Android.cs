@@ -23,6 +23,7 @@ namespace MahechaBJJ.Droid.Service
             email.PutExtra(Intent.ExtraEmail, new string[] { "admin@mahechabjj.com" });
             email.PutExtra(Intent.ExtraSubject, emailMessage.Subject);
             email.PutExtra(Intent.ExtraText, emailMessage.Body);
+            //email.SetType("text/html");
             email.SetType("message/rfc822");
             //.StartActivity(Intent.CreateChooser(email, "Send Email"));
             Android.App.Application.Context.StartActivity(Intent.CreateChooser(email, "Send Email"));
