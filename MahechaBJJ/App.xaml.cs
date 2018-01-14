@@ -45,7 +45,7 @@ namespace MahechaBJJ
         {
             // Handle when your app starts
             AppCenter.Start("ios=9b3870a4-b554-44a6-9fc3-26ae2354c956;" + "uwp={Your UWP App secret here};" +
-                   "android={Your Android App secret here}",
+                            "android=89e42d8d-063a-4f4c-ab30-7151b11e7395;",
                    typeof(Analytics), typeof(Crashes));
         }
 

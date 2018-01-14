@@ -14,6 +14,9 @@ using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using MahechaBJJ.Model;
 using Plugin.InAppBilling;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace MahechaBJJ.Droid
 {
@@ -24,6 +27,9 @@ namespace MahechaBJJ.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            AppCenter.Start("89e42d8d-063a-4f4c-ab30-7151b11e7395",
+                   typeof(Analytics), typeof(Crashes));
 
             base.OnCreate(bundle);
 
