@@ -252,16 +252,16 @@ namespace MahechaBJJ.Views.PlaylistPages
                     videoLbl = new Label();
 #if __IOS__
                     videoLbl.FontFamily = "AmericanTypewriter-Bold";
+                    videoLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 #endif
 #if __ANDROID__
                     videoLbl.FontFamily = "Roboto Bold";
+                    videoLbl.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
 #endif
                     videoLbl.SetBinding(Label.TextProperty, "Name");
                     videoLbl.VerticalTextAlignment = TextAlignment.Center;
                     videoLbl.HorizontalTextAlignment = TextAlignment.Center;
                     videoLbl.TextColor = Color.White;
-                    videoLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-
                     videoFrame = new Frame();
                     videoFrame.Content = videoImage;
                     videoFrame.OutlineColor = Color.Black;
