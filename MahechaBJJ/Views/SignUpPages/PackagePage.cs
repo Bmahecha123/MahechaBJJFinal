@@ -41,7 +41,7 @@ namespace MahechaBJJ.Views.SignUpPages
         public PackagePage()
         {
 #if __ANDROID__
-            Padding = new Thickness(10, 10, 10, 10);
+            Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
@@ -86,7 +86,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
-                FontSize = lblSize,
+                FontSize = lblSize * 1.5,
 #endif
                 Text = "Gi",
                 TextColor = Color.Black,
@@ -101,7 +101,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
-                FontSize = lblSize,
+                FontSize = lblSize * 1.5,
 #endif
                 Text = "$19.99",
                 TextColor = Color.Black,
@@ -116,7 +116,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
-                FontSize = lblSize * .5,
+                FontSize = lblSize,
 #endif
                 Text = "This library is growing constantly and there is no end in sight. The beauty of this package is that you get to follow our system as we develop and implement new transitions and positions. We’re constantly pushing the barrier in terms of our style and approach to Jiu-Jitsu. Every position that gets posted has been drilled to death and executed at the highest levels of competition. We’re proud of this; something I see wrong with other instructional resources is positions are shown that I know they have never ever hit in a competition or anything. You never have to worry about that with our techniques. One of the biggest advantages of our app is that you have direct access to us, if you have any questions or concerns; contacting us is a click away. Let’s grow and develop our Jiu Jitsu together!",
                 TextColor = Color.Black,
@@ -169,7 +169,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
-                FontSize = lblSize,
+                FontSize = lblSize * 1.5,
 #endif
                 Text = "No-Gi",
                 TextColor = Color.Black,
@@ -184,7 +184,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
-                FontSize = lblSize,
+                FontSize = lblSize * 1.5,
 #endif
                 Text = "$19.99",
                 TextColor = Color.Black,
@@ -199,7 +199,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
-                FontSize = lblSize * .5,
+                FontSize = lblSize,
 #endif
                 Text = "Just like the other packages, the No-Gi library is constantly being updated. So that means you’ll grow along with us. As we come up with new tweaks and transitions you’ll see it first as we are constantly updating our libraries. Through these techniques and positions your game will be brought to a new technical level. All the while being exposed to a unique point of view on approaching Jiu Jitsu. Some of the biggest advantages of this package is that you have direct access to us, the ones who implement and recorded these techniques. We love to hear from our members and never ignore anyone. Lets grow together!",
                 TextColor = Color.Black,
@@ -252,7 +252,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
-                FontSize = lblSize,
+                FontSize = lblSize * 1.5,
 #endif
                 Text = "Complete Jiu-Jitsu",
                 TextColor = Color.Black,
@@ -267,7 +267,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
-                FontSize = lblSize,
+                FontSize = lblSize * 1.5,
 #endif
                 Text = "$29.99",
                 TextColor = Color.Black,
@@ -282,7 +282,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
-                FontSize = lblSize * .5,
+                FontSize = lblSize,
 #endif
                 Text = "This package is the best of both worlds. Whenever any Jiu Jitsu position is uploaded to our database, you’ll get to see it right away. No other Jiu Jitsu apps post a disciplined system like this that gives you direct access to the ones who create, record and execute these techniques at the highest levels of competition. We love Jiu Jitsu and love sharing it with those who want to learn, we live the Jiu Jitsu lifestyle and want to share our unique point of view. At its core our Jiu-Jitsu is an emphasis on solid fundamentals building upon each other to open doors to unique transitions and timings in relation to our style and preferences. Think of this package as having an extra coach to help develop your game. For example: you see a technique on our app and try to work it in training. It goes terribly wrong and you email us in one click from the app. We see your concern and get back to you as soon as we can to help you get it down better. This happens all the time and we love it; anything we can do to help you get better. Let’s grow and develop our game together!",
                 TextColor = Color.Black,
@@ -406,7 +406,12 @@ namespace MahechaBJJ.Views.SignUpPages
 
             if (width > height)
             {
-                Padding = new Thickness(10, 10, 10, 10);
+                #if __ANDROID__
+                Padding = new Thickness(5, 5, 5, 5);
+#endif
+#if __IOS__
+            Padding = new Thickness(10, 10, 10, 10);
+#endif                
                 innerGrid.Children.Clear();
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
@@ -437,7 +442,7 @@ namespace MahechaBJJ.Views.SignUpPages
             else
             {
 #if __ANDROID__
-                Padding = new Thickness(10, 10, 10, 10);
+                Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
             Padding = new Thickness(10, 30, 10, 10);

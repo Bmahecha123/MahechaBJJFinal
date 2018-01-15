@@ -34,8 +34,8 @@ namespace MahechaBJJ.Views.EntryPages
         public LoginPage()
         {
             _baseViewModel = new BaseViewModel();
-            #if __ANDROID__
-            Padding = new Thickness(10, 10, 10, 10);
+#if __ANDROID__
+            Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
@@ -65,11 +65,8 @@ namespace MahechaBJJ.Views.EntryPages
                     new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition {Height = new GridLength(2, GridUnitType.Star)}
-                },
-                RowSpacing = 0,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}
+                }
             };
             outerGrid = new Grid
             {
@@ -101,7 +98,7 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
                 FontSize = lblSize,
-                Margin = new Thickness(0, -5, 0, -5),
+                Margin = -5,
 #endif
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center
@@ -114,7 +111,7 @@ namespace MahechaBJJ.Views.EntryPages
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
-                Margin = new Thickness(0, -5, 0, -5),
+                Margin = -5,
 #endif
                 FontSize = entrySize
             };
@@ -128,7 +125,7 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
                 FontSize = lblSize,
-                Margin = new Thickness(0, -5, 0, -5),
+                Margin = -5,
 #endif
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center
@@ -141,7 +138,7 @@ namespace MahechaBJJ.Views.EntryPages
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
-                Margin = new Thickness(0, -5, 0, -5),
+                Margin = -5,
 #endif
                 FontSize = entrySize
             };
@@ -155,6 +152,8 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
                 FontSize = btnSize,
+                Margin = -5,
+                 
 #endif
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
@@ -193,6 +192,7 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
                 FontSize = btnSize,
                 BackgroundColor = Color.FromRgb(124, 37, 41),
+                Margin = -5,
 #endif
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -293,7 +293,12 @@ namespace MahechaBJJ.Views.EntryPages
 
             if (width > height)
             {
+#if __ANDROID__
+                Padding = new Thickness(5, 5, 5, 5);
+#endif
+#if __IOS__
                 Padding = new Thickness(10, 10, 10, 10);
+#endif
                 mahechaLogo.Scale = 0;
                 mahechaLogo.IsVisible = false;
 #if __IOS__
@@ -309,7 +314,7 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 buttonGrid.Children.Add(loginBtn, 0, 0);
                 buttonGrid.Children.Add(forgotPasswordBtn, 1, 0);
                 innerGrid.Children.Add(emailLbl, 0, 0);
@@ -328,7 +333,7 @@ namespace MahechaBJJ.Views.EntryPages
                 Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
-                Padding = new Thickness(10, 10, 10, 10);
+                Padding = new Thickness(5, 5, 5, 5);
 
                 buttonGrid.Children.Add(loginBtn, 0, 0);
                 buttonGrid.Children.Add(forgotPasswordBtn, 1, 0);

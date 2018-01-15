@@ -31,7 +31,7 @@ namespace MahechaBJJ.Views.BlogPages
             _blogViewPageViewModel = new BlogViewPageViewModel();
             Title = "Blog Posts";
 #if __ANDROID__
-            Padding = new Thickness(10, 10, 10, 10);
+            Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
                     Padding = new Thickness(10, 30, 10, 10);
@@ -280,7 +280,12 @@ namespace MahechaBJJ.Views.BlogPages
             {
                 if (_blogViewPageViewModel.BlogPosts != null)
                 {
+                    #if __ANDROID__
+                    Padding = new Thickness(5, 5, 5, 5);
+#endif
+#if __IOS__
                     Padding = new Thickness(10, 10, 10, 10);
+#endif                    
                     innerGrid.RowDefinitions.Clear();
                     innerGrid.ColumnDefinitions.Clear();
                     innerGrid.Children.Clear();
@@ -316,7 +321,7 @@ namespace MahechaBJJ.Views.BlogPages
                 if (_blogViewPageViewModel.BlogPosts != null)
                 {
 #if __ANDROID__
-                    Padding = new Thickness(10, 10, 10, 10);
+                    Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
                     Padding = new Thickness(10, 30, 10, 10);

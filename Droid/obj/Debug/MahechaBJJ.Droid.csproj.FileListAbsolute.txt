@@ -239,8 +239,10 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.Abstractions.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.Abstractions.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.pdb
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.VendingLibrary.pdb
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.VendingLibrary.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.VendingLibrary.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/MahechaBJJ.Droid.csproj.CoreCompileInputs.cache
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/MahechaBJJ.Droid.App.xaml.g.cs
@@ -285,11 +287,6 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/drawable-xxhdpi/karate.png
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/R.cs.flag
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/uploadflags.txt
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.dll.mdb
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.VendingLibrary.dll.mdb
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/MahechaBJJ.Droid.csprojResolveAssemblyReference.cache
-bin/Debug/Plugin.InAppBilling.dll.mdb
-bin/Debug/Plugin.InAppBilling.VendingLibrary.dll.mdb
 bin/Debug/Mono.Android.pdb
 obj/Debug/linksrc/FormsViewGroup.dll.mdb
 obj/Debug/linksrc/Plugin.InAppBilling.dll.mdb
