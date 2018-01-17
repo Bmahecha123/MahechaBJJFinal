@@ -25,8 +25,8 @@ namespace MahechaBJJ.Views.BlogPages
             Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
-#endif
+                Padding = new Thickness(10, 30, 10, 10);
+#endif            
             globalBlogPost = blogPost;
             BuildPageObjects();
 
@@ -67,7 +67,7 @@ namespace MahechaBJJ.Views.BlogPages
                 HasShadow = false,
                 OutlineColor = Color.Black,
                 Padding = 3,
-                Content = blogImage,
+                Content = blogImage
             };
             blogContentLbl = new Label
             {
@@ -108,12 +108,13 @@ namespace MahechaBJJ.Views.BlogPages
 
             //building Grid
             innerGrid.Children.Add(blogFrame, 0, 0);
-            innerGrid.Children.Add(scrollView, 0, 1);
 #if __ANDROID__
+            innerGrid.Children.Add(scrollView, 0, 1);
             Grid.SetRowSpan(scrollView, 2);
 #endif
 #if __IOS__
-            innerGrid.Children.Add(backBtn, 0, 2);
+            innerGrid.Children.Add(scrollView, 0, 1);
+			innerGrid.Children.Add(backBtn, 0, 2);
 #endif
 
             outerGrid.Children.Add(innerGrid, 0, 0);
@@ -140,12 +141,12 @@ namespace MahechaBJJ.Views.BlogPages
 
             if (width > height)
             {
-                #if __ANDROID__
+#if __ANDROID__
                 Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
-            Padding = new Thickness(10, 10, 10, 10);
-#endif
+                Padding = new Thickness(10, 10, 10, 10);
+#endif                
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
@@ -165,34 +166,33 @@ namespace MahechaBJJ.Views.BlogPages
                 Grid.SetRowSpan(blogFrame, 2);
                 innerGrid.Children.Add(backBtn, 0, 2);
 #endif
-			}
-			else
-			{
-                #if __ANDROID__
+            }
+            else
+            {
+#if __ANDROID__
                 Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
-#endif				
+                Padding = new Thickness(10, 30, 10, 10);
+#endif
                 innerGrid.RowDefinitions.Clear();
-				innerGrid.ColumnDefinitions.Clear();
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(6, GridUnitType.Star) });
-				innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-				innerGrid.Children.Clear();
+                innerGrid.ColumnDefinitions.Clear();
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(6, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.Children.Clear();
                 //building Grid
                 innerGrid.Children.Add(blogFrame, 0, 0);
-                innerGrid.Children.Add(scrollView, 0, 1);
 #if __ANDROID__
+                innerGrid.Children.Add(scrollView, 0, 1);
                 Grid.SetRowSpan(scrollView, 2);
 #endif
 #if __IOS__
+            innerGrid.Children.Add(scrollView, 0, 1);
             innerGrid.Children.Add(backBtn, 0, 2);
 #endif
-
-                outerGrid.Children.Add(innerGrid, 0, 0);
-			}
-		}
+            }
+        }
     }
 }
 

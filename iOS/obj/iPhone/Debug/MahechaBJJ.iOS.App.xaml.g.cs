@@ -11,7 +11,7 @@
 namespace MahechaBJJ {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/bmahecha/Desktop/projects/MahechaBJJFinal/MahechaBJJ/App.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/App.xaml")]
     public partial class App : global::Xamarin.Forms.Application {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
