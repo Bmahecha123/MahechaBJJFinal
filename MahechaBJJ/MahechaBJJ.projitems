@@ -13,25 +13,6 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\mahechabjjlogo.png">
       <LogicalName>mahechabjjlogo.png</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\openbook.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\search.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\construction.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\karate.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\pass.jpg">
-      <LogicalName>pass</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\gi.jpg">
-      <LogicalName>gi</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\sweep.JPG">
-      <LogicalName>sweep</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\settings.png">
-      <LogicalName>settings</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\nogi6.jpeg">
-      <LogicalName>nogi6</LogicalName>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -88,6 +69,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\PurchasePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\PurchaseService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainTabPages\PurchasePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\AccountInfoPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

@@ -33,6 +33,7 @@ namespace MahechaBJJ.Views
         private Frame timeOutFrame;
         private TapGestureRecognizer timeOutTap;
         private ActivityIndicator activityIndicator;
+
         public HomePage()
         {
             _baseViewModel = new BaseViewModel();

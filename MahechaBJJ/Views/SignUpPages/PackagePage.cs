@@ -125,7 +125,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             giImage = new Image
             {
-                Source = ImageSource.FromResource("gi"),
+                Source = "gi.jpg",
                 Aspect = Aspect.AspectFit
             };
 
@@ -208,7 +208,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             noGiImage = new Image
             {
-                Source = ImageSource.FromResource("nogi6"),
+                Source = "nogi6.jpeg",
                 Aspect = Aspect.AspectFit
             };
 
@@ -291,7 +291,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             giAndNoGiImage = new Image
             {
-                Source = ImageSource.FromResource("sweep"),
+                Source = "sweep.JPG",
                 Aspect = Aspect.AspectFit
             };
 

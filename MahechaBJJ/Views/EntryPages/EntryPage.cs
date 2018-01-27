@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
+using System.Threading;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.EntryPages;
 using MahechaBJJ.Views.BlogPages;
@@ -9,6 +10,11 @@ using MahechaBJJ.Views.SignUpPages;
 using Newtonsoft.Json;
 using Xamarin.Auth;
 using Xamarin.Forms;
+using System.Threading.Tasks;
+#if __ANDROID__
+using Xamarin.Forms.Platform.Android;
+using MahechaBJJ.Droid;
+#endif
 
 namespace MahechaBJJ.Views.EntryPages
 {
@@ -16,7 +22,6 @@ namespace MahechaBJJ.Views.EntryPages
     {
         //viewModel
         private EntryPageViewModel _entryPageViewModel;
-        private const String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
         //declare objects
         private Grid outerGrid;
         private Grid innerGrid;
@@ -24,6 +29,13 @@ namespace MahechaBJJ.Views.EntryPages
         private Button loginBtn;
         private Button signUpBtn;
         private Button blogBtn;
+#if __ANDROID__
+        private Android.Widget.Button androidLoginBtn;
+        private Android.Widget.Button androidSignUpBtn;
+        private Android.Widget.Button androidBlogBtn;
+        private bool isRunning = false;
+        private int tapCount;
+#endif
 
         public EntryPage()
         {
@@ -85,7 +97,7 @@ namespace MahechaBJJ.Views.EntryPages
             {
                 Text = "Sign Up",
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = size * 2,
 
 #endif
@@ -116,7 +128,38 @@ namespace MahechaBJJ.Views.EntryPages
                 BorderColor = Color.Black
             };
 
+#if __ANDROID__
+            androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidLoginBtn.Text = "Login";
+            androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidLoginBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
+
+            androidSignUpBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidSignUpBtn.Text = "Sign Up";
+            androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidSignUpBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidSignUpBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidSignUpBtn.Gravity = Android.Views.GravityFlags.Center;
+
+            androidBlogBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidBlogBtn.Text = "Learn More";
+            androidBlogBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidBlogBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidBlogBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidBlogBtn.Gravity = Android.Views.GravityFlags.Center;
+#endif
+
             //Button events
+#if __ANDROID__
+            androidLoginBtn.Click += Login;
+
+            androidSignUpBtn.Click += SignUp;
+
+            androidBlogBtn.Click += Blog;
+#endif
+#if __IOS__
             loginBtn.Clicked += (object sender, EventArgs e) =>
             {
                 Navigation.PushModalAsync(new LoginPage());
@@ -132,62 +175,105 @@ namespace MahechaBJJ.Views.EntryPages
                 Navigation.PushModalAsync(new BlogViewPage());
 
             };
+#endif
 
-            innerGrid.Children.Add(mahechaLogo, 0, 0);
+            //building Grid
+#if __ANDROID__
+            innerGrid.Children.Add(androidLoginBtn.ToView(), 0, 1);
+            innerGrid.Children.Add(androidSignUpBtn.ToView(), 0, 2);
+            innerGrid.Children.Add(androidBlogBtn.ToView(), 0, 3);
+#endif
+#if __IOS__
             innerGrid.Children.Add(loginBtn, 0, 1);
             innerGrid.Children.Add(signUpBtn, 0, 2);
             innerGrid.Children.Add(blogBtn, 0, 3);
+#endif
+
+
+            innerGrid.Children.Add(mahechaLogo, 0, 0);
 
             outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = outerGrid;
         }
 
-        //Orientation
-        protected override void OnSizeAllocated(double width, double height)
+        private void ToggleButtons(bool clickable)
         {
-            base.OnSizeAllocated(width, height); //must be called
+#if __ANDROID__
+            androidLoginBtn.ToView().IsEnabled = clickable;
+            androidSignUpBtn.ToView().IsEnabled = clickable;
+            androidBlogBtn.ToView().IsEnabled = clickable;
+#endif
+        }
 
-            if (width > height)
-            {
-                Padding = new Thickness(10, 10, 10, 10);
-                innerGrid.RowDefinitions.Clear();
-                innerGrid.ColumnDefinitions.Clear();
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                innerGrid.Children.Clear();
-                innerGrid.Children.Add(mahechaLogo, 0, 0);
-                Grid.SetRowSpan(mahechaLogo, 3);
-                innerGrid.Children.Add(loginBtn, 1, 0);
-                innerGrid.Children.Add(signUpBtn, 1, 1);
-                innerGrid.Children.Add(blogBtn, 1, 2);
-            }
-            else
-            {
-                #if __ANDROID__
-                Padding = new Thickness(10, 10, 10, 10);
+        private void Login(object sender, EventArgs e)
+        {
+            #if __ANDROID__
+            androidLoginBtn.Click -= Login;
+            Navigation.PushModalAsync(new LoginPage());
+            androidLoginBtn.Click += Login;
+            #endif
+        }
+
+        private void SignUp(object sender, EventArgs e)
+        {
+            ToggleButtons(false);
+            Navigation.PushModalAsync(new PackagePage());
+            ToggleButtons(true);
+        }
+
+        private void Blog(object sender, EventArgs e)
+        {
+            ToggleButtons(false);
+            Navigation.PushModalAsync(new BlogViewPage());
+            ToggleButtons(true);
+        }
+
+        //Orientation
+        /*     protected override void OnSizeAllocated(double width, double height)
+             {
+                 base.OnSizeAllocated(width, height); //must be called
+
+                 if (width > height)
+                 {
+                     Padding = new Thickness(10, 10, 10, 10);
+                     innerGrid.RowDefinitions.Clear();
+                     innerGrid.ColumnDefinitions.Clear();
+                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                     innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                     innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                     innerGrid.Children.Clear();
+                     innerGrid.Children.Add(mahechaLogo, 0, 0);
+                     Grid.SetRowSpan(mahechaLogo, 3);
+                     innerGrid.Children.Add(loginBtn, 1, 0);
+                     innerGrid.Children.Add(signUpBtn, 1, 1);
+                     innerGrid.Children.Add(blogBtn, 1, 2);
+                 }
+                 else
+                 {
+#if __ANDROID__
+                     Padding = new Thickness(10, 10, 10, 10);
 #endif
 #if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
+                 Padding = new Thickness(10, 30, 10, 10);
 #endif
-                innerGrid.RowDefinitions.Clear();
-                innerGrid.ColumnDefinitions.Clear();
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                     innerGrid.RowDefinitions.Clear();
+                     innerGrid.ColumnDefinitions.Clear();
+                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
+                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
-                innerGrid.Children.Clear();
-                innerGrid.Children.Add(mahechaLogo, 0, 0);
-                innerGrid.Children.Add(loginBtn, 0, 1);
-                innerGrid.Children.Add(signUpBtn, 0, 2);
-                innerGrid.Children.Add(blogBtn, 0, 3);
+                     innerGrid.Children.Clear();
+                     innerGrid.Children.Add(mahechaLogo, 0, 0);
+                     innerGrid.Children.Add(loginBtn, 0, 1);
+                     innerGrid.Children.Add(signUpBtn, 0, 2);
+                     innerGrid.Children.Add(blogBtn, 0, 3);
 
-            }
-        }
+                 }
+             } */
         //functions
 
     }
