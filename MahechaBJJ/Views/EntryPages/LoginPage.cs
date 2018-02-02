@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
+using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.CommonPages;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 
 namespace MahechaBJJ.Views.EntryPages
 {
@@ -29,6 +31,11 @@ namespace MahechaBJJ.Views.EntryPages
         private StackLayout stackLayout;
         private StackLayout innerStackLayout;
         private StackLayout buttonLayout;
+#if __ANDROID__
+        private Android.Widget.Button androidLoginBtn;
+        private Android.Widget.Button androidBackBtn;
+        private Android.Widget.Button androidForgotPasswordBtn;
+#endif
 
 
         public LoginPage()
@@ -200,6 +207,22 @@ namespace MahechaBJJ.Views.EntryPages
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
+
+#if __ANDROID__
+            androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidLoginBtn.Text = "Login";
+            androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidLoginBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
+
+            androidForgotPasswordBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidForgotPasswordBtn.Text = "?";
+            androidForgotPasswordBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidForgotPasswordBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(124, 37, 41));
+            androidForgotPasswordBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidForgotPasswordBtn.Gravity = Android.Views.GravityFlags.Center;
+#endif
             //Events
             loginBtn.Clicked += Validate;
             backBtn.Clicked += GoBack;
@@ -223,8 +246,8 @@ namespace MahechaBJJ.Views.EntryPages
             Content = scrollView;
 #endif
 #if __ANDROID__
-            buttonGrid.Children.Add(loginBtn, 0, 0);
-            buttonGrid.Children.Add(forgotPasswordBtn, 1, 0);
+            buttonGrid.Children.Add(androidLoginBtn.ToView(), 0, 0);
+            buttonGrid.Children.Add(androidForgotPasswordBtn.ToView(), 1, 0);
             innerGrid.Children.Add(mahechaLogo, 0, 0);
             innerGrid.Children.Add(emailLbl, 0, 1);
             innerGrid.Children.Add(emailEntry, 0, 2);
@@ -286,7 +309,7 @@ namespace MahechaBJJ.Views.EntryPages
             Navigation.PushModalAsync(new ForgotPasswordPage());
             ToggleButtons();
         }
-
+        /*
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height); //must be called
@@ -345,6 +368,8 @@ namespace MahechaBJJ.Views.EntryPages
 #endif
             }
 		}
+		*/
     }
+
 }
 
