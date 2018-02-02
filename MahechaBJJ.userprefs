@@ -1,7 +1,13 @@
-﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default">
+﻿<Properties StartupConfiguration="{4A7FB70C-C450-4C8F-A39E-EE1FFC1B294B}|Default">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D0D6A1DA-CA20-42FD-B8A7-B1A1A9BEED45" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/EntryPages/EntryPage.cs">
+    <Files>
+      <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="256" Column="7" />
+      <File FileName="MahechaBJJ/Views/EntryPages/LoginPage.cs" Line="118" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.Droid PreferredExecutionTarget="Android.FA7A61A08112" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
