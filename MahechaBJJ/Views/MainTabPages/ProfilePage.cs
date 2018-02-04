@@ -7,6 +7,7 @@ using MahechaBJJ.Service;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.CommonPages;
 using MahechaBJJ.Views.EntryPages;
+using MahechaBJJ.Views.SignUpPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
 
@@ -34,11 +35,14 @@ namespace MahechaBJJ.Views
         private TapGestureRecognizer timeOutTap;
         private ActivityIndicator activityIndicator;
         private StackLayout userCredentialStack;
+        private Button createAccountBtn;
+        private bool hasAccount;
 
-        public ProfilePage()
+        public ProfilePage(bool hasAccount)
         {
             _baseViewModel = new BaseViewModel();
             account = _baseViewModel.GetAccountInformation();
+            this.hasAccount = hasAccount;
 
 #if __IOS__
             Icon = "karate.png";
@@ -68,7 +72,9 @@ namespace MahechaBJJ.Views
             innerGrid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection {
-                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
@@ -251,6 +257,19 @@ namespace MahechaBJJ.Views
                 BorderWidth = 3,
                 BorderColor = Color.Black,
             };
+
+            createAccountBtn = new Button();
+            createAccountBtn.Text = "Create Account";
+            createAccountBtn.BorderWidth = 3;
+            createAccountBtn.BorderColor = Color.Black;
+            createAccountBtn.FontFamily = "AmericanTypewriter-Bold";
+            createAccountBtn.FontSize = btnSize * 2;
+            createAccountBtn.BackgroundColor = Color.FromRgb(58, 93, 174);
+            createAccountBtn.TextColor = Color.Black;
+            createAccountBtn.Clicked += (object sender, EventArgs e) => {
+                Navigation.PushModalAsync(new SignUpPage());
+            };
+
             timeOutLbl = new Label
             {
 #if __IOS__
@@ -336,30 +355,32 @@ namespace MahechaBJJ.Views
         public async void SetContent()
         {
             //add activity indicator while contents load
-            innerGrid.Children.Clear();
-            activityIndicator.IsRunning = true;
-            innerGrid.Children.Add(activityIndicator, 0, 0);
-            Grid.SetRowSpan(activityIndicator, 6);
-            Grid.SetColumnSpan(activityIndicator, 3);
+            if (hasAccount)
+            {
+                innerGrid.Children.Clear();
+                activityIndicator.IsRunning = true;
+                innerGrid.Children.Add(activityIndicator, 0, 0);
+                Grid.SetRowSpan(activityIndicator, 6);
+                Grid.SetColumnSpan(activityIndicator, 3);
 
-            if (_baseViewModel.User == null)
-            {
-                user = await _baseViewModel.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]);
-            }
-            if (_baseViewModel.Successful)
-            {
-                activityIndicator.IsRunning = false;
+                if (_baseViewModel.User == null)
+                {
+                    user = await _baseViewModel.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]);
+                }
+                if (_baseViewModel.Successful)
+                {
+                    activityIndicator.IsRunning = false;
 #if __IOS__
-                nameTextLbl.Text = user.Name;
-                emailTextLbl.Text = user.Email;
-                beltTextLbl.Text = user.Belt;
+                    nameTextLbl.Text = user.Name;
+                    emailTextLbl.Text = user.Email;
+                    beltTextLbl.Text = user.Belt;
 
-                userCredentialStack.Children.Add(nameLbl);
-                userCredentialStack.Children.Add(nameTextLbl);
-                userCredentialStack.Children.Add(beltLbl);
-                userCredentialStack.Children.Add(beltTextLbl);
-                userCredentialStack.Children.Add(emailLbl);
-                userCredentialStack.Children.Add(emailTextLbl);
+                    userCredentialStack.Children.Add(nameLbl);
+                    userCredentialStack.Children.Add(nameTextLbl);
+                    userCredentialStack.Children.Add(beltLbl);
+                    userCredentialStack.Children.Add(beltTextLbl);
+                    userCredentialStack.Children.Add(emailLbl);
+                    userCredentialStack.Children.Add(emailTextLbl);
 #endif
 #if __ANDROID__
                 nameLbl.Text = $"{nameLbl.Text}: {user.Name}";
@@ -370,21 +391,32 @@ namespace MahechaBJJ.Views
                 userCredentialStack.Children.Add(emailLbl);
 #endif
 
-                //Building Grid
-                innerGrid.Children.Clear();
-                innerGrid.Children.Add(userCredentialStack, 0, 0);
-                innerGrid.Children.Add(packageBtn, 0, 1);
-                innerGrid.Children.Add(contactUsBtn, 0, 2);
-                innerGrid.Children.Add(settingsBtn, 0, 3);
-                innerGrid.Children.Add(logOutBtn, 0, 4);
+                    //Building Grid
+                    innerGrid.Children.Clear();
+                    innerGrid.Children.Add(userCredentialStack, 0, 0);
+                    Grid.SetRowSpan(userCredentialStack, 3);
+                    innerGrid.Children.Add(packageBtn, 0, 3);
+                    innerGrid.Children.Add(contactUsBtn, 0, 4);
+                    innerGrid.Children.Add(settingsBtn, 0, 5);
+                    innerGrid.Children.Add(logOutBtn, 0, 6);
+                }
+                else
+                {
+                    /*innerGrid.Children.Clear();
+                    innerGrid.Children.Add(timeOutFrame, 0, 0);
+                    Grid.SetRowSpan(timeOutFrame, 4);
+                    Grid.SetRowSpan(timeOutLbl, 4); */
+                    LogOut();
+                }
             }
             else
             {
-                /*innerGrid.Children.Clear();
-				innerGrid.Children.Add(timeOutFrame, 0, 0);
-				Grid.SetRowSpan(timeOutFrame, 4);
-				Grid.SetRowSpan(timeOutLbl, 4); */
-                LogOut();
+#if __IOS__
+                innerGrid.Children.Clear();
+                innerGrid.Children.Add(packageBtn, 0, 1);
+                innerGrid.Children.Add(contactUsBtn, 0, 3);
+                innerGrid.Children.Add(createAccountBtn, 0, 5);
+#endif
             }
 
         }
@@ -417,7 +449,7 @@ namespace MahechaBJJ.Views
         }
 
         //Orientation
-        protected override void OnSizeAllocated(double width, double height)
+      /*  protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height); //must be called
 
@@ -466,13 +498,14 @@ namespace MahechaBJJ.Views
                     //Building Grid
                     innerGrid.Children.Clear();
                     innerGrid.Children.Add(userCredentialStack, 0, 0);
+                    Grid.SetRowSpan(userCredentialStack, 3);
                     innerGrid.Children.Add(packageBtn, 0, 1);
                     innerGrid.Children.Add(contactUsBtn, 0, 2);
                     innerGrid.Children.Add(settingsBtn, 0, 3);
                     innerGrid.Children.Add(logOutBtn, 0, 4);
                 }
             }
-        }
+        } */
     }
 }
 

@@ -18,9 +18,17 @@ namespace MahechaBJJ
         {
             InitializeComponent();
             _baseViewModel = new BaseViewModel();
+            _baseViewModel.DeleteCredentials();
             if (LoginCheck())
             {
-                MainPage = new MainTabbedPage();
+                if (account.Username == "NO_ACCOUNT")
+                {
+                    MainPage = new MainTabbedPage(false);
+                }
+                else 
+                {
+                    MainPage = new MainTabbedPage(true);
+                }
             }
             if (!LoginCheck())
             {

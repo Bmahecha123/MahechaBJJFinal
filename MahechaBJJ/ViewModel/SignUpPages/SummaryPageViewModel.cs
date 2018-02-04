@@ -66,6 +66,7 @@ namespace MahechaBJJ.ViewModel.SignUpPages
 
         public void SaveCredentials()
         {
+
             _account = new Account();
             _account.Username = _user.Email;
             _account.Properties.Add("Id", _user.Id);
@@ -77,7 +78,31 @@ namespace MahechaBJJ.ViewModel.SignUpPages
             {
                 _account.Properties.Add("Package", "NoGi");
             }
-            else 
+            else
+            {
+                _account.Properties.Add("Package", "GiAndNoGi");
+            }
+
+            _accountService.SaveCredentials(_account);
+
+
+        }
+
+        public void SavePackageInfoWithNoAccount(Package package)
+        {
+            _accountService.DeleteCredentials();
+
+            _account = new Account();
+            _account.Username = "NO_ACCOUNT";
+            if (package == Package.Gi)
+            {
+                _account.Properties.Add("Package", "Gi");
+            }
+            else if (package == Package.NoGi)
+            {
+                _account.Properties.Add("Package", "NoGi");
+            }
+            else
             {
                 _account.Properties.Add("Package", "GiAndNoGi");
             }
@@ -93,7 +118,7 @@ namespace MahechaBJJ.ViewModel.SignUpPages
             {
                 return true;
             }
-            else 
+            else
             {
                 return false;
             }
@@ -116,9 +141,9 @@ namespace MahechaBJJ.ViewModel.SignUpPages
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-		}
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

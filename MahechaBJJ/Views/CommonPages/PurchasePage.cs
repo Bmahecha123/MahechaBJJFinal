@@ -334,7 +334,6 @@ namespace MahechaBJJ.Views.CommonPages
                 _baseViewModel.UpdateCredentials(account);
                 await _purchasePageViewModel.Disconnect();
                 await Navigation.PopModalAsync();
-
                 ToggleButtons();
             }
             else

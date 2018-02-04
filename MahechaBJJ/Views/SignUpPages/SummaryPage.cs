@@ -30,6 +30,26 @@ namespace MahechaBJJ.Views.SignUpPages
         private ScrollView scrollView;
         private string packageName;
         private string packagePrice;
+        private Image packageImage;
+        private Package package;
+        private bool userPassed;
+
+        public SummaryPage(Package package)
+        {
+            _summaryPageViewModel = new SummaryPageViewModel();
+            this.package = package;
+            #if __ANDROID__
+            Padding = new Thickness(10, 10, 10, 10);
+#endif
+#if __IOS__
+            Padding = new Thickness(10, 30, 10, 10);
+#endif
+            this.userPassed = false;
+            SetPackageInfo(false);
+            SetContent(false);
+
+        }
+
 
         public SummaryPage(User user)
         {
@@ -41,14 +61,116 @@ namespace MahechaBJJ.Views.SignUpPages
             Padding = new Thickness(10, 30, 10, 10);
 #endif
             this.user = user;
-            SetContent();
+            this.userPassed = true;
+            SetPackageInfo(true);
+            SetContent(true);
         }
 
-        private void SetContent()
+        private void SetPackageInfo(bool hasUser)
+        {
+            if (hasUser)
+            {
+                if (user.Packages.GiJiuJitsu == true)
+                {
+                    packageName = "Gi Jiu-Jitsu Package";
+                    packagePrice = "$19.99";
+                }
+                if (user.Packages.NoGiJiuJitsu == true)
+                {
+                    packageName = "No-Gi Jiu-Jitsu Package";
+                    packagePrice = "$19.99";
+                }
+                if (user.Packages.GiAndNoGiJiuJitsu == true)
+                {
+                    packageName = "Complete Jiu-Jitsu Package";
+                    packagePrice = "$29.99";
+                }
+            }
+            else 
+            {
+                if (package == Package.Gi)
+                {
+                    packageName = "Gi Jiu-Jitsu Package";
+                    packagePrice = "$19.99";
+                }
+                if (package == Package.NoGi)
+                {
+                    packageName = "No-Gi Jiu-Jitsu Package";
+                    packagePrice = "$19.99";
+                }
+                if (package == Package.GiAndNoGi)
+                {
+                    packageName = "Complete Jiu-Jitsu Package";
+                    packagePrice = "$29.99";
+                }
+            }
+        }
+
+        private void SetContent(bool hasUser)
         {
             var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
             var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
             var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));
+
+            buttonGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                },
+                ColumnDefinitions = new ColumnDefinitionCollection
+                {
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
+                }
+            };
+
+            backBtn = new Button
+            {
+#if __IOS__
+                FontFamily = "AmericanTypewriter-Bold",
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+#endif
+                Text = "Back",
+                FontSize = btnSize * 1.5,
+                BackgroundColor = Color.FromRgb(124, 37, 41),
+                TextColor = Color.Black,
+                BorderWidth = 3,
+                BorderColor = Color.Black,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+            backBtn.Clicked += (sender, e) => {
+                GoBack();
+            };
+
+            signUpBtn = new Button
+            {
+#if __IOS__
+                FontFamily = "AmericanTypewriter-Bold",
+                FontSize = btnSize * 1.5,
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+                FontSize = btnSize,
+#endif
+                Text = "Sign Up",
+                BackgroundColor = Color.FromRgb(58, 93, 174),
+                TextColor = Color.Black,
+                BorderWidth = 3,
+                BorderColor = Color.Black,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+            };
+            signUpBtn.Clicked += (sender, e) =>
+            {
+                SignUp();
+            };
+
+            buttonGrid.Children.Add(backBtn, 0, 0);
+            buttonGrid.Children.Add(signUpBtn, 1, 0);
 
             summaryLbl = new Label
             {
@@ -86,21 +208,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
 
-            if (user.Packages.GiJiuJitsu == true) 
-            {
-                packageName = "Gi Jiu-Jitsu Package";
-                packagePrice = "$19.99";
-            }
-            if (user.Packages.NoGiJiuJitsu == true)
-            {
-                packageName = "No-Gi Jiu-Jitsu Package";
-                packagePrice = "$19.99";
-            }
-            if (user.Packages.GiAndNoGiJiuJitsu == true)
-            {
-                packageName = "Complete Jiu-Jitsu Package";
-                packagePrice = "$29.99";
-            }
+
 
             packageLbl = new Label
             {
@@ -140,149 +248,122 @@ namespace MahechaBJJ.Views.SignUpPages
 
             };
 
-            nameLbl = new Label
+            packageImage = new Image();
+            if (packageName.Equals("Gi Jiu-Jitsu Package"))
             {
-                #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
-#endif
-                Text = $"Name: {user.Name}",
-                LineBreakMode = LineBreakMode.WordWrap,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Start,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-
-            };
-
-            emailLbl = new Label
+                packageImage.Source = "gi.jpg";
+            }
+            else if (packageName.Equals("No-Gi Jiu-Jitsu Package"))
             {
-                #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
-#endif
-                Text = $"E-Mail: {user.Email}",
-                LineBreakMode = LineBreakMode.WordWrap,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Start,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-
-            };
-
-            beltLbl = new Label
+                packageImage.Source = "nogi6.jpeg";
+            }
+            else
             {
-                #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
-#endif
-                Text = $"Belt: {user.Belt}",
-                LineBreakMode = LineBreakMode.WordWrap,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Start,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                packageImage.Source = "sweep.JPG";
+            }
+            packageImage.Aspect = Aspect.AspectFit;
 
-            };
-
-            secretQuestionLbl = new Label
+            if (hasUser)
             {
-                #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
-#endif
-                Text = $"Secret Question: {user.SecretQuestion}",
-                LineBreakMode = LineBreakMode.WordWrap,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Start,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-
-            };
-
-            secretQuestionAnswerLbl = new Label
-            {
-                #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
-#endif
-                Text = $"Answer: {user.SecretQuestionAnswer}",
-                LineBreakMode = LineBreakMode.WordWrap,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Start,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-
-            };
-
-            backBtn = new Button
-            {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-                Text = "Back",
-                FontSize = btnSize * 1.5,
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-            };
-
-            signUpBtn = new Button
-            {
-                #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 1.5,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-#endif
-                Text = "Sign Up",
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-            };
-
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
+                nameLbl = new Label
                 {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
 #if __IOS__
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
+                    FontFamily = "AmericanTypewriter-Bold",
+                    FontSize = lblSize,
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
+#endif
+                    Text = $"Name: {user.Name}",
+                    LineBreakMode = LineBreakMode.WordWrap,
+                    VerticalTextAlignment = TextAlignment.Center,
+                    HorizontalTextAlignment = TextAlignment.Start,
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalOptions = LayoutOptions.FillAndExpand
+
+                };
+
+                emailLbl = new Label
+                {
+#if __IOS__
+                    FontFamily = "AmericanTypewriter-Bold",
+                    FontSize = lblSize,
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
+#endif
+                    Text = $"E-Mail: {user.Email}",
+                    LineBreakMode = LineBreakMode.WordWrap,
+                    VerticalTextAlignment = TextAlignment.Center,
+                    HorizontalTextAlignment = TextAlignment.Start,
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalOptions = LayoutOptions.FillAndExpand
+
+                };
+
+                beltLbl = new Label
+                {
+#if __IOS__
+                    FontFamily = "AmericanTypewriter-Bold",
+                    FontSize = lblSize,
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
+#endif
+                    Text = $"Belt: {user.Belt}",
+                    LineBreakMode = LineBreakMode.WordWrap,
+                    VerticalTextAlignment = TextAlignment.Center,
+                    HorizontalTextAlignment = TextAlignment.Start,
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalOptions = LayoutOptions.FillAndExpand
+
+                };
+
+                secretQuestionLbl = new Label
+                {
+#if __IOS__
+                    FontFamily = "AmericanTypewriter-Bold",
+                    FontSize = lblSize,
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
+#endif
+                    Text = $"Secret Question: {user.SecretQuestion}",
+                    LineBreakMode = LineBreakMode.WordWrap,
+                    VerticalTextAlignment = TextAlignment.Center,
+                    HorizontalTextAlignment = TextAlignment.Start,
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalOptions = LayoutOptions.FillAndExpand
+
+                };
+
+                secretQuestionAnswerLbl = new Label
+                {
+#if __IOS__
+                    FontFamily = "AmericanTypewriter-Bold",
+                    FontSize = lblSize,
+#endif
+#if __ANDROID__
+                FontFamily = "Roboto Bold",
+                FontSize = lblSize * .75,
+#endif
+                    Text = $"Answer: {user.SecretQuestionAnswer}",
+                    LineBreakMode = LineBreakMode.WordWrap,
+                    VerticalTextAlignment = TextAlignment.Center,
+                    HorizontalTextAlignment = TextAlignment.Start,
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalOptions = LayoutOptions.FillAndExpand
+
+                };
+
+#if __IOS__
+                innerGrid = new Grid
+                {
+                    RowDefinitions = new RowDefinitionCollection
                 {
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
@@ -295,19 +376,8 @@ namespace MahechaBJJ.Views.SignUpPages
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(2, GridUnitType.Star)}
                 }
-            };
-            buttonGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                },
-                ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-                }
-            };
+                };
+
 #endif
 #if __ANDROID__
             innerGrid = new Grid
@@ -349,31 +419,18 @@ namespace MahechaBJJ.Views.SignUpPages
                 Content = stackLayout
             };
 #endif
-
-
-            //events
-            backBtn.Clicked += (sender, e) => {
-                GoBack();
-            };
-            signUpBtn.Clicked += (sender, e) =>
-            {
-                SignUp();
-            };
-
 #if __IOS__
-            buttonGrid.Children.Add(backBtn, 0, 0);
-            buttonGrid.Children.Add(signUpBtn, 1, 0);
 
-            innerGrid.Children.Add(summaryLbl, 0, 0);
-            innerGrid.Children.Add(packageLbl, 0, 1);
-            innerGrid.Children.Add(priceLbl, 0, 2);
-            innerGrid.Children.Add(userDetailsLbl, 0, 3);
-            innerGrid.Children.Add(nameLbl, 0, 4);
-            innerGrid.Children.Add(emailLbl, 0, 5);
-            innerGrid.Children.Add(beltLbl, 0, 6);
-            innerGrid.Children.Add(secretQuestionLbl, 0, 7);
-            innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
-            innerGrid.Children.Add(buttonGrid, 0, 9);
+                innerGrid.Children.Add(summaryLbl, 0, 0);
+                innerGrid.Children.Add(packageLbl, 0, 1);
+                innerGrid.Children.Add(priceLbl, 0, 2);
+                innerGrid.Children.Add(userDetailsLbl, 0, 3);
+                innerGrid.Children.Add(nameLbl, 0, 4);
+                innerGrid.Children.Add(emailLbl, 0, 5);
+                innerGrid.Children.Add(beltLbl, 0, 6);
+                innerGrid.Children.Add(secretQuestionLbl, 0, 7);
+                innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
+                innerGrid.Children.Add(buttonGrid, 0, 9);
 #endif
 #if __ANDROID__
             buttonGrid.Children.Add(signUpBtn, 0, 0);
@@ -381,7 +438,34 @@ namespace MahechaBJJ.Views.SignUpPages
             innerGrid.Children.Add(scrollView, 0, 0);
             innerGrid.Children.Add(buttonGrid, 0, 1);
 #endif
-     
+
+            }
+            else
+            {
+#if __IOS__
+                innerGrid = new Grid();
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+
+                innerGrid.Children.Add(summaryLbl, 0, 0);
+                innerGrid.Children.Add(packageLbl, 0, 1);
+                innerGrid.Children.Add(priceLbl, 0, 2);
+                innerGrid.Children.Add(packageImage, 0, 3);
+                innerGrid.Children.Add(buttonGrid, 0, 4);
+#endif
+            }
+
+            outerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
+            };
+
             outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = outerGrid;
@@ -390,34 +474,54 @@ namespace MahechaBJJ.Views.SignUpPages
         private async void SignUp()
         {
             ToggleButtons();
-            bool purchased = false;
+            bool purchased = true;
+            if (userPassed)
+            {
+                if (await _summaryPageViewModel.UserExist(user))
+                {
+                    await DisplayAlert("Account Exists", $"An account with the email {user.Email} already exists. Use a different email address.", "Ok");
+                    await Navigation.PopModalAsync();
+                    ToggleButtons();
 
-            if (await _summaryPageViewModel.UserExist(user))
+                }
+                else
+                {
+                    purchased = await _summaryPageViewModel.PurchaseProduct(FindPackageName(true));
+                }
+                if (purchased)
+                {
+                    await _summaryPageViewModel.CreateUser(user);
+                    _summaryPageViewModel.SaveCredentials();
+                    Application.Current.MainPage = new MainTabbedPage(true);
+                    await _summaryPageViewModel.Disconnect();
+                    ToggleButtons();
+                }
+                else
+                {
+                    _summaryPageViewModel.DeleteUser(user);
+                    await Navigation.PopModalAsync();
+                    ToggleButtons();
+                }
+            }
+            else
             {
-                await DisplayAlert("Account Exists", $"An account with the email {user.Email} already exists. Use a different email address.", "Ok");
-                await Navigation.PopModalAsync();
-                ToggleButtons();
+                //purchased = await _summaryPageViewModel.PurchaseProduct(FindPackageName(false));
 
-            }
-            else 
-            {
-                purchased = await _summaryPageViewModel.PurchaseProduct(FindPackageName());
+                if (purchased)
+                {
+                    _summaryPageViewModel.SavePackageInfoWithNoAccount(package);
+                    Application.Current.MainPage = new MainTabbedPage(false);
+                    await _summaryPageViewModel.Disconnect();
+                    ToggleButtons();
+                }
+                else
+                {
+                    await Navigation.PopModalAsync();
+                    ToggleButtons();
+                }
             }
 
-            if (purchased)
-            {
-                await _summaryPageViewModel.CreateUser(user);
-                _summaryPageViewModel.SaveCredentials();
-                Application.Current.MainPage = new MainTabbedPage();
-                await _summaryPageViewModel.Disconnect();
-                ToggleButtons();
-            }
-            else 
-            {
-                _summaryPageViewModel.DeleteUser(user);
-                await Navigation.PopModalAsync();
-                ToggleButtons();
-            }
+
         }
 
         private void GoBack()
@@ -426,19 +530,37 @@ namespace MahechaBJJ.Views.SignUpPages
             Navigation.PopModalAsync();
         }
 
-        private string FindPackageName()
+        private string FindPackageName(bool hasUser)
         {
-            if (user.Packages.GiJiuJitsu == true)
+            if (hasUser)
             {
-                return "package_gi_jiujitsu";
+                if (user.Packages.GiJiuJitsu == true)
+                {
+                    return "package_gi_jiujitsu";
+                }
+                else if (user.Packages.NoGiJiuJitsu == true)
+                {
+                    return "package_nogi_jiujitsu";
+                }
+                else
+                {
+                    return "package_giandnogi_jiujitsu";
+                }
             }
-            else if (user.Packages.NoGiJiuJitsu == true)
+            else
             {
-                return "package_nogi_jiujitsu";
-            }
-            else 
-            {
-                return "package_giandnogi_jiujitsu";
+                if (package == Package.Gi)
+                {
+                    return "package_gi_jiujitsu";
+                }
+                if (package == Package.NoGi)
+                {
+                    return "package_nogi_jiujitsu";
+                }
+                else 
+                {
+                    return "package_giandnogi_jiujitsu";
+                }
             }
         }
 
@@ -447,40 +569,41 @@ namespace MahechaBJJ.Views.SignUpPages
             backBtn.IsEnabled = !backBtn.IsEnabled;
             signUpBtn.IsEnabled = !signUpBtn.IsEnabled;
         }
-
+            
         protected override void OnSizeAllocated(double width, double height)
         {
-          
             base.OnSizeAllocated(width, height); //must be called
 
-            if (width > height)
+            if (userPassed)
             {
-                Padding = new Thickness(10, 10, 10, 0);
-                innerGrid.Children.Clear();
-                innerGrid.RowDefinitions.Clear();
-                innerGrid.ColumnDefinitions.Clear();
+                if (width > height)
+                {
+                    Padding = new Thickness(10, 10, 10, 0);
+                    innerGrid.Children.Clear();
+                    innerGrid.RowDefinitions.Clear();
+                    innerGrid.ColumnDefinitions.Clear();
 #if __IOS__
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
 
-                innerGrid.Children.Add(summaryLbl, 0, 0);
-                innerGrid.Children.Add(packageLbl, 0, 1);
-                innerGrid.Children.Add(priceLbl, 0, 2);
-                innerGrid.Children.Add(userDetailsLbl, 0, 3);
-                innerGrid.Children.Add(nameLbl, 0, 4);
-                innerGrid.Children.Add(emailLbl, 0, 5);
-                innerGrid.Children.Add(beltLbl, 0, 6);
-                innerGrid.Children.Add(secretQuestionLbl, 0, 7);
-                innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
-                innerGrid.Children.Add(buttonGrid, 0, 9);
+                    innerGrid.Children.Add(summaryLbl, 0, 0);
+                    innerGrid.Children.Add(packageLbl, 0, 1);
+                    innerGrid.Children.Add(priceLbl, 0, 2);
+                    innerGrid.Children.Add(userDetailsLbl, 0, 3);
+                    innerGrid.Children.Add(nameLbl, 0, 4);
+                    innerGrid.Children.Add(emailLbl, 0, 5);
+                    innerGrid.Children.Add(beltLbl, 0, 6);
+                    innerGrid.Children.Add(secretQuestionLbl, 0, 7);
+                    innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
+                    innerGrid.Children.Add(buttonGrid, 0, 9);
 #endif
 #if __ANDROID__
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(5, GridUnitType.Star) });
@@ -489,40 +612,40 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.Children.Add(scrollView, 0, 0);
                 innerGrid.Children.Add(buttonGrid, 0, 1);
 #endif
-            }
-            else
-            {
+                }
+                else
+                {
 #if __IOS__
-                Padding = new Thickness(10, 30, 10, 10);
+                    Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
                 Padding = new Thickness(10, 10, 10, 10);
 #endif
-                innerGrid.Children.Clear();
-                innerGrid.RowDefinitions.Clear();
-                innerGrid.ColumnDefinitions.Clear();
+                    innerGrid.Children.Clear();
+                    innerGrid.RowDefinitions.Clear();
+                    innerGrid.ColumnDefinitions.Clear();
 #if __IOS__
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
-                innerGrid.Children.Add(summaryLbl, 0, 0);
-                innerGrid.Children.Add(packageLbl, 0, 1);
-                innerGrid.Children.Add(priceLbl, 0, 2);
-                innerGrid.Children.Add(userDetailsLbl, 0, 3);
-                innerGrid.Children.Add(nameLbl, 0, 4);
-                innerGrid.Children.Add(emailLbl, 0, 5);
-                innerGrid.Children.Add(beltLbl, 0, 6);
-                innerGrid.Children.Add(secretQuestionLbl, 0, 7);
-                innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
-                innerGrid.Children.Add(buttonGrid, 0, 9);
+                    innerGrid.Children.Add(summaryLbl, 0, 0);
+                    innerGrid.Children.Add(packageLbl, 0, 1);
+                    innerGrid.Children.Add(priceLbl, 0, 2);
+                    innerGrid.Children.Add(userDetailsLbl, 0, 3);
+                    innerGrid.Children.Add(nameLbl, 0, 4);
+                    innerGrid.Children.Add(emailLbl, 0, 5);
+                    innerGrid.Children.Add(beltLbl, 0, 6);
+                    innerGrid.Children.Add(secretQuestionLbl, 0, 7);
+                    innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
+                    innerGrid.Children.Add(buttonGrid, 0, 9);
 
 #endif
 #if __ANDROID__
@@ -532,6 +655,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.Children.Add(scrollView, 0, 0);
                 innerGrid.Children.Add(buttonGrid, 0, 1);
 #endif
+                }
             }
         }
     }

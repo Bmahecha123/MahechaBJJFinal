@@ -34,8 +34,6 @@ namespace MahechaBJJ.Views.EntryPages
         private Android.Widget.Button androidLoginBtn;
         private Android.Widget.Button androidSignUpBtn;
         private Android.Widget.Button androidBlogBtn;
-        private bool isRunning = false;
-        private int tapCount;
 #endif
 
         public EntryPage()

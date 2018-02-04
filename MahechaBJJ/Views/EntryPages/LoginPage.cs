@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
-using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.CommonPages;
 using Xamarin.Forms;
+#if __ANDROID__
+using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
+#endif
 
 namespace MahechaBJJ.Views.EntryPages
 {
@@ -282,7 +284,7 @@ namespace MahechaBJJ.Views.EntryPages
             else
             {
                 _baseViewModel.SaveCredentials(user);
-                Application.Current.MainPage = new MainTabbedPage();
+                Application.Current.MainPage = new MainTabbedPage(true);
             }
 
         }

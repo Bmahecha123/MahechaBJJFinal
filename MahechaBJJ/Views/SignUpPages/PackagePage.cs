@@ -141,7 +141,7 @@ namespace MahechaBJJ.Views.SignUpPages
             giTap = new TapGestureRecognizer();
             giTap.Tapped += (sender, e) =>
             {
-                Navigation.PushModalAsync(new SignUpPage(Package.Gi));
+                Navigation.PushModalAsync(new AccountInfoPage(Package.Gi));
             };
             giStackLayout.GestureRecognizers.Add(giTap);
 
@@ -224,7 +224,7 @@ namespace MahechaBJJ.Views.SignUpPages
             noGiTap = new TapGestureRecognizer();
             noGiTap.Tapped += (sender, e) =>
             {
-                Navigation.PushModalAsync(new SignUpPage(Package.NoGi));
+                Navigation.PushModalAsync(new AccountInfoPage(Package.NoGi));
             };
             noGiStackLayout.GestureRecognizers.Add(noGiTap);
 
@@ -307,7 +307,7 @@ namespace MahechaBJJ.Views.SignUpPages
             giAndNoGiTap = new TapGestureRecognizer();
             giAndNoGiTap.Tapped += (sender, e) =>
             {
-                Navigation.PushModalAsync(new SignUpPage(Package.GiAndNoGi));
+                Navigation.PushModalAsync(new AccountInfoPage(Package.GiAndNoGi));
             };
             giAndNoGiStackLayout.GestureRecognizers.Add(giAndNoGiTap);
 
