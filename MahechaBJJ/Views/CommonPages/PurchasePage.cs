@@ -1,5 +1,6 @@
 ﻿using System;
 using MahechaBJJ.Model;
+using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.MainTabPages;
 using Xamarin.Auth;
@@ -353,15 +354,15 @@ namespace MahechaBJJ.Views.CommonPages
         {
             if (package == Package.Gi)
             {
-                return "package_gi_jiujitsu";
+                return Constants.GIPACKAGE;
             }
             else if (package == Package.NoGi)
             {
-                return "package_nogi_jiujitsu";
+                return Constants.NOGIPACKAGE;
             }
             else
             {
-                return "package_giandnogi_jiujitsu";
+                return Constants.GIANDNOGIPACKAGE;
             }
         }
     }

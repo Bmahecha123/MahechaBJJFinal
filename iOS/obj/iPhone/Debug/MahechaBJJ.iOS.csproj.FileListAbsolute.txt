@@ -261,3 +261,4 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.App.xaml.g.cs
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.exe
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.pdb
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.csprojResolveAssemblyReference.cache

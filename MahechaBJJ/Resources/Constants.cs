@@ -7,6 +7,10 @@ namespace MahechaBJJ.Resources
 {
     public class Constants
     {
+        public static string GIPACKAGE = "gi_package";
+        public static string NOGIPACKAGE = "nogi_package";
+        public static string GIANDNOGIPACKAGE = "giandnogi_package";
+
 		public static string pivotalHost = "https://mahechabjj.cfapps.io/";
 		public static string localHost = "http://localhost:8080/";
 		public static string AppName = "mahechabjj";

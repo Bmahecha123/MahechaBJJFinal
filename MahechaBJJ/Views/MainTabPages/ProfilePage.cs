@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
@@ -27,6 +28,7 @@ namespace MahechaBJJ.Views
         private Button packageBtn;
         private Button contactUsBtn;
         private Button logOutBtn;
+        private Button loginBtn;
         private Button settingsBtn;
         private Account account;
         private User user;
@@ -41,7 +43,6 @@ namespace MahechaBJJ.Views
         public ProfilePage(bool hasAccount)
         {
             _baseViewModel = new BaseViewModel();
-            account = _baseViewModel.GetAccountInformation();
             this.hasAccount = hasAccount;
 
 #if __IOS__
@@ -240,6 +241,21 @@ namespace MahechaBJJ.Views
                 BorderWidth = 3,
                 BorderColor = Color.Black,
             };
+
+            loginBtn = new Button();
+            loginBtn.Text = "Login";
+#if __IOS__
+            loginBtn.FontFamily = "AmericanTypewriter-Bold";
+            loginBtn.FontSize = size * 2;
+#endif
+            loginBtn.BackgroundColor = Color.FromRgb(58, 93, 174);
+            loginBtn.TextColor = Color.Black;
+            loginBtn.BorderWidth = 3;
+            loginBtn.BorderColor = Color.Black;
+            loginBtn.Clicked += (object sender, EventArgs e) => {
+                Navigation.PushModalAsync(new LoginPage());
+            };
+
             settingsBtn = new Button
             {
                 Text = "Settings",
@@ -354,6 +370,8 @@ namespace MahechaBJJ.Views
 
         public async void SetContent()
         {
+            account = _baseViewModel.GetAccountInformation();
+
             //add activity indicator while contents load
             if (hasAccount)
             {
@@ -365,7 +383,15 @@ namespace MahechaBJJ.Views
 
                 if (_baseViewModel.User == null)
                 {
-                    user = await _baseViewModel.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]);
+                    try 
+                    {
+                        user = await _baseViewModel.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]);
+ 
+                    }
+                    catch (KeyNotFoundException ex) 
+                    {
+                        Console.WriteLine(ex.StackTrace);
+                    }
                 }
                 if (_baseViewModel.Successful)
                 {
@@ -415,6 +441,7 @@ namespace MahechaBJJ.Views
                 innerGrid.Children.Clear();
                 innerGrid.Children.Add(packageBtn, 0, 1);
                 innerGrid.Children.Add(contactUsBtn, 0, 3);
+                innerGrid.Children.Add(loginBtn, 0, 4);
                 innerGrid.Children.Add(createAccountBtn, 0, 5);
 #endif
             }

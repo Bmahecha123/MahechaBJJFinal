@@ -12,6 +12,8 @@ using Xamarin.Auth;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using MahechaBJJ.Resources;
+using MahechaBJJ.ViewModel.CommonPages;
+using MahechaBJJ.ViewModel.SignUpPages;
 #if __ANDROID__
 using Xamarin.Forms.Platform.Android;
 using MahechaBJJ.Droid;
@@ -23,6 +25,8 @@ namespace MahechaBJJ.Views.EntryPages
     {
         //viewModel
         private EntryPageViewModel _entryPageViewModel;
+        private SummaryPageViewModel _summaryPageViewModel;
+        private BaseViewModel _baseViewModel;
         //declare objects
         private Grid outerGrid;
         private Grid innerGrid;
@@ -30,6 +34,8 @@ namespace MahechaBJJ.Views.EntryPages
         private Button loginBtn;
         private Button signUpBtn;
         private Button blogBtn;
+        private Button restoreBtn;
+        private Package package;
 #if __ANDROID__
         private Android.Widget.Button androidLoginBtn;
         private Android.Widget.Button androidSignUpBtn;
@@ -39,6 +45,8 @@ namespace MahechaBJJ.Views.EntryPages
         public EntryPage()
         {
             _entryPageViewModel = new EntryPageViewModel();
+            _baseViewModel = new BaseViewModel();
+            _summaryPageViewModel = new SummaryPageViewModel();
 #if __ANDROID__
             Padding = new Thickness(10, 10, 10, 10);
 #endif
@@ -62,6 +70,7 @@ namespace MahechaBJJ.Views.EntryPages
             {
                 RowDefinitions = new RowDefinitionCollection {
                     new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
@@ -127,6 +136,16 @@ namespace MahechaBJJ.Views.EntryPages
                 BorderColor = Color.Black
             };
 
+            restoreBtn = new Button();
+            restoreBtn.Text = "Restore Packages";
+            restoreBtn.FontFamily = "AmericanTypewriter-Bold";
+            restoreBtn.FontSize = size * 1.5;
+            restoreBtn.BackgroundColor = Color.FromRgb(58, 93, 174);
+            restoreBtn.TextColor = Color.Black;
+            restoreBtn.BorderWidth = 3;
+            restoreBtn.BorderColor = Color.Black;
+            restoreBtn.Clicked += CheckIfUserHasPackage;
+
 #if __ANDROID__
             androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidLoginBtn.Text = "Login";
@@ -186,6 +205,7 @@ namespace MahechaBJJ.Views.EntryPages
             innerGrid.Children.Add(loginBtn, 0, 1);
             innerGrid.Children.Add(signUpBtn, 0, 2);
             innerGrid.Children.Add(blogBtn, 0, 3);
+            innerGrid.Children.Add(restoreBtn, 0, 4);
 #endif
 
 
@@ -196,13 +216,43 @@ namespace MahechaBJJ.Views.EntryPages
             Content = outerGrid;
         }
 
-        private void ToggleButtons(bool clickable)
+        private async void CheckIfUserHasPackage(object sender, EventArgs e)
+        {
+            ToggleButtons();
+            await _entryPageViewModel.CheckIfUserHasPackage();
+            if (_entryPageViewModel.HasGiAndNoGiPackage)
+            {
+                package = Package.GiAndNoGi;
+            }
+            else if (_entryPageViewModel.HasGiPackage && _entryPageViewModel.HasNoGiPackage)
+            {
+                package = Package.GiAndNoGi;
+            }
+            else if (_entryPageViewModel.HasGiPackage && !_entryPageViewModel.HasNoGiPackage)
+            {
+                package = Package.Gi;
+            }
+            else if (_entryPageViewModel.HasNoGiPackage && !_entryPageViewModel.HasGiPackage)
+            {
+                package = Package.NoGi;
+            }
+
+            _summaryPageViewModel.SavePackageInfoWithNoAccount(package);
+            Application.Current.MainPage = new MainTabbedPage(false);
+            ToggleButtons();
+        }
+
+        private void ToggleButtons()
         {
 #if __ANDROID__
-            androidLoginBtn.ToView().IsEnabled = clickable;
-            androidSignUpBtn.ToView().IsEnabled = clickable;
-            androidBlogBtn.ToView().IsEnabled = clickable;
+            androidLoginBtn.ToView().IsEnabled = !androidLoginBtn.ToView().IsEnabled;
+            androidSignUpBtn.ToView().IsEnabled = !androidSignUpBtn.ToView().IsEnabled;
+            androidBlogBtn.ToView().IsEnabled = !androidBlogBtn.ToView().IsEnabled;
 #endif
+            loginBtn.IsEnabled = !loginBtn.IsEnabled;
+            signUpBtn.IsEnabled = !signUpBtn.IsEnabled;
+            blogBtn.IsEnabled = !blogBtn.IsEnabled;
+            restoreBtn.IsEnabled = !restoreBtn.IsEnabled;
         }
 
         private void Login(object sender, EventArgs e)
@@ -216,16 +266,16 @@ namespace MahechaBJJ.Views.EntryPages
 
         private void SignUp(object sender, EventArgs e)
         {
-            ToggleButtons(false);
+            ToggleButtons();
             Navigation.PushModalAsync(new PackagePage());
-            ToggleButtons(true);
+            ToggleButtons();
         }
 
         private void Blog(object sender, EventArgs e)
         {
-            ToggleButtons(false);
+            ToggleButtons();
             Navigation.PushModalAsync(new BlogViewPage());
-            ToggleButtons(true);
+            ToggleButtons();
         }
 
         //Orientation
@@ -272,6 +322,7 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
                 innerGrid.Children.Clear();
                 innerGrid.Children.Add(mahechaLogo, 0, 0);
@@ -285,6 +336,7 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.Children.Add(loginBtn, 0, 1);
                 innerGrid.Children.Add(signUpBtn, 0, 2);
                 innerGrid.Children.Add(blogBtn, 0, 3);
+                innerGrid.Children.Add(restoreBtn, 0, 4);
 #endif
             }
         }

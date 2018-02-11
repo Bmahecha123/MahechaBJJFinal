@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
+using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.SignUpPages;
 using Plugin.InAppBilling;
 using Plugin.InAppBilling.Abstractions;
@@ -505,7 +506,7 @@ namespace MahechaBJJ.Views.SignUpPages
             }
             else
             {
-                //purchased = await _summaryPageViewModel.PurchaseProduct(FindPackageName(false));
+                purchased = await _summaryPageViewModel.PurchaseProduct(FindPackageName(false));
 
                 if (purchased)
                 {
@@ -536,30 +537,30 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 if (user.Packages.GiJiuJitsu == true)
                 {
-                    return "package_gi_jiujitsu";
+                    return Constants.GIPACKAGE;
                 }
                 else if (user.Packages.NoGiJiuJitsu == true)
                 {
-                    return "package_nogi_jiujitsu";
+                    return Constants.NOGIPACKAGE;
                 }
                 else
                 {
-                    return "package_giandnogi_jiujitsu";
+                    return Constants.GIANDNOGIPACKAGE;
                 }
             }
             else
             {
                 if (package == Package.Gi)
                 {
-                    return "package_gi_jiujitsu";
+                    return Constants.GIPACKAGE;
                 }
                 if (package == Package.NoGi)
                 {
-                    return "package_nogi_jiujitsu";
+                    return Constants.NOGIPACKAGE;
                 }
                 else 
                 {
-                    return "package_giandnogi_jiujitsu";
+                    return Constants.GIANDNOGIPACKAGE;
                 }
             }
         }
