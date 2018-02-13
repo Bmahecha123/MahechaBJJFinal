@@ -84,8 +84,6 @@ namespace MahechaBJJ.ViewModel.SignUpPages
             }
 
             _accountService.SaveCredentials(_account);
-
-
         }
 
         public void SavePackageInfoWithNoAccount(Package package)

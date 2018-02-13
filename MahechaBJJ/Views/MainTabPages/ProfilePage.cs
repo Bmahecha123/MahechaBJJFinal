@@ -385,12 +385,13 @@ namespace MahechaBJJ.Views
                 {
                     try 
                     {
-                        user = await _baseViewModel.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]);
- 
+                        user = await _baseViewModel.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]); 
                     }
                     catch (KeyNotFoundException ex) 
                     {
                         Console.WriteLine(ex.StackTrace);
+                        await DisplayAlert("Unknown Error", "There has been an unknown error, please sign in again.", "Ok");
+                        LogOut();
                     }
                 }
                 if (_baseViewModel.Successful)
@@ -428,10 +429,6 @@ namespace MahechaBJJ.Views
                 }
                 else
                 {
-                    /*innerGrid.Children.Clear();
-                    innerGrid.Children.Add(timeOutFrame, 0, 0);
-                    Grid.SetRowSpan(timeOutFrame, 4);
-                    Grid.SetRowSpan(timeOutLbl, 4); */
                     LogOut();
                 }
             }
@@ -474,65 +471,6 @@ namespace MahechaBJJ.Views
                 Navigation.PushModalAsync(new PurchasePage(Package.Gi));
             }
         }
-
-        //Orientation
-      /*  protected override void OnSizeAllocated(double width, double height)
-        {
-            base.OnSizeAllocated(width, height); //must be called
-
-            if (width > height)
-            {
-                if (_baseViewModel.User != null)
-                {
-                    Padding = new Thickness(10, 10, 10, 10);
-                    innerGrid.RowDefinitions.Clear();
-                    innerGrid.ColumnDefinitions.Clear();
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    //Layout Options
-                    //Building Grid
-                    innerGrid.Children.Clear();
-                    innerGrid.Children.Add(userCredentialStack, 0, 0);
-                    Grid.SetRowSpan(userCredentialStack, 4);
-                    innerGrid.Children.Add(packageBtn, 1, 0);
-                    innerGrid.Children.Add(contactUsBtn, 1, 1);
-                    innerGrid.Children.Add(settingsBtn, 1, 2);
-                    innerGrid.Children.Add(logOutBtn, 1, 3);
-                }
-            }
-            else
-            {
-                if (_baseViewModel.User != null)
-                {
-#if __IOS__
-          
-                    Padding = new Thickness(10, 30, 10, 10);
-#endif
-#if __ANDROID__
-                    Padding = new Thickness(5, 5, 5, 5);
-#endif
-                    innerGrid.RowDefinitions.Clear();
-                    innerGrid.ColumnDefinitions.Clear();
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    //Building Grid
-                    innerGrid.Children.Clear();
-                    innerGrid.Children.Add(userCredentialStack, 0, 0);
-                    Grid.SetRowSpan(userCredentialStack, 3);
-                    innerGrid.Children.Add(packageBtn, 0, 1);
-                    innerGrid.Children.Add(contactUsBtn, 0, 2);
-                    innerGrid.Children.Add(settingsBtn, 0, 3);
-                    innerGrid.Children.Add(logOutBtn, 0, 4);
-                }
-            }
-        } */
     }
 }
 

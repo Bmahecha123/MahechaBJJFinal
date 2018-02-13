@@ -291,11 +291,12 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.Children.Clear();
                 innerGrid.Children.Add(mahechaLogo, 0, 0);
-                Grid.SetRowSpan(mahechaLogo, 3);
+                Grid.SetRowSpan(mahechaLogo, 4);
 
 #if __ANDROID__
                 innerGrid.Children.Add(androidLoginBtn.ToView(), 1, 0);
@@ -306,6 +307,7 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.Children.Add(loginBtn, 1, 0);
                 innerGrid.Children.Add(signUpBtn, 1, 1);
                 innerGrid.Children.Add(blogBtn, 1, 2);
+                innerGrid.Children.Add(restoreBtn, 1, 3);
 #endif
             }
             else

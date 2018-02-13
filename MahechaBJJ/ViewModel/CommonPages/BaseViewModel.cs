@@ -127,6 +127,7 @@ namespace MahechaBJJ.ViewModel.CommonPages
 
 		public void SaveCredentials(User user)
 		{
+            DeleteCredentials();
             _account = new Account();
             _account.Username = user.Email;
             _account.Properties.Add("Id", user.Id);

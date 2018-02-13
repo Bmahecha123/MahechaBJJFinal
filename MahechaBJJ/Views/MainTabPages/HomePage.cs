@@ -256,7 +256,7 @@ namespace MahechaBJJ.Views
 #endif
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black
-            };
+            }; 
 
             timeOutLbl = new Label
             {
@@ -392,76 +392,6 @@ namespace MahechaBJJ.Views
             Navigation.PushModalAsync(new PlaylistViewPage());
             viewPlaylistBtn.IsEnabled = true;
         }
-
-        //Orientation
- /*       protected override void OnSizeAllocated(double width, double height)
-        {
-            base.OnSizeAllocated(width, height); //must be called
-
-            if (width > height)
-            {
-                if (_homePageViewModel.VimeoInfo != null)
-                {
-                    Padding = new Thickness(10, 10, 10, 10);
-
-                    innerGrid.RowDefinitions.Clear();
-                    innerGrid.ColumnDefinitions.Clear();
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.Children.Clear();
-                    innerGrid.Children.Add(whatsNewLbl, 0, 0);
-                    Grid.SetColumnSpan(whatsNewLbl, 2);
-                    innerGrid.Children.Add(video1Frame, 0, 1);
-                    innerGrid.Children.Add(video1Lbl, 0, 1);
-                    innerGrid.Children.Add(video2Frame, 1, 1);
-                    innerGrid.Children.Add(video2Lbl, 1, 1);
-                    innerGrid.Children.Add(playListLbl, 0, 2);
-                    Grid.SetColumnSpan(playListLbl, 2);
-                    innerGrid.Children.Add(viewPlaylistBtn, 0, 3);
-                    innerGrid.Children.Add(addPlaylistBtn, 1, 3);
-                }
-            }
-            else
-            {
-                if (_homePageViewModel.VimeoInfo != null)
-                {
-#if __IOS__
-                    Padding = new Thickness(10, 10, 10, 10);
-#endif
-#if __ANDROID__
-                    Padding = new Thickness(5, -5, 5, 5);
-#endif
-                    innerGrid.RowDefinitions.Clear();
-                    innerGrid.ColumnDefinitions.Clear();
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.Children.Clear();
-                    innerGrid.Children.Add(whatsNewLbl, 0, 0);
-                    Grid.SetColumnSpan(whatsNewLbl, 2);
-                    innerGrid.Children.Add(video1Frame, 0, 1);
-                    Grid.SetColumnSpan(video1Frame, 2);
-                    innerGrid.Children.Add(video1Lbl, 0, 1);
-                    Grid.SetColumnSpan(video1Lbl, 2);
-                    innerGrid.Children.Add(video2Frame, 0, 2);
-                    Grid.SetColumnSpan(video2Frame, 2);
-                    innerGrid.Children.Add(video2Lbl, 0, 2);
-                    Grid.SetColumnSpan(video2Lbl, 2);
-                    innerGrid.Children.Add(playListLbl, 0, 3);
-                    Grid.SetColumnSpan(playListLbl, 2);
-                    innerGrid.Children.Add(viewPlaylistBtn, 0, 4);
-                    innerGrid.Children.Add(addPlaylistBtn, 1, 4);
-                }
-            } 
-        } */
     }
 }
 
