@@ -38,14 +38,6 @@ namespace MahechaBJJ.Droid
 			LoadApplication(new App());
 		}
 
-		private void HandleShowVideoPlayerMessage(Page page, ShowVideoPlayerArguments arguments)
-        {
-            var videoView = FindViewById<VideoView>(Resource.Id.VideoPlayer);
-            var uri = Android.Net.Uri.Parse(arguments.Url);
-            videoView.SetVideoURI(uri);
-            videoView.Start();
-        }
-
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);

@@ -125,7 +125,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             giImage = new Image
             {
-                Source = ImageSource.FromResource("gi"),
+                Source = "gi.jpg",
                 Aspect = Aspect.AspectFit
             };
 
@@ -141,7 +141,7 @@ namespace MahechaBJJ.Views.SignUpPages
             giTap = new TapGestureRecognizer();
             giTap.Tapped += (sender, e) =>
             {
-                Navigation.PushModalAsync(new SignUpPage(Package.Gi));
+                Navigation.PushModalAsync(new AccountInfoPage(Package.Gi));
             };
             giStackLayout.GestureRecognizers.Add(giTap);
 
@@ -208,7 +208,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             noGiImage = new Image
             {
-                Source = ImageSource.FromResource("nogi6"),
+                Source = "nogi6.jpeg",
                 Aspect = Aspect.AspectFit
             };
 
@@ -224,7 +224,7 @@ namespace MahechaBJJ.Views.SignUpPages
             noGiTap = new TapGestureRecognizer();
             noGiTap.Tapped += (sender, e) =>
             {
-                Navigation.PushModalAsync(new SignUpPage(Package.NoGi));
+                Navigation.PushModalAsync(new AccountInfoPage(Package.NoGi));
             };
             noGiStackLayout.GestureRecognizers.Add(noGiTap);
 
@@ -291,7 +291,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             giAndNoGiImage = new Image
             {
-                Source = ImageSource.FromResource("sweep"),
+                Source = "sweep.JPG",
                 Aspect = Aspect.AspectFit
             };
 
@@ -307,7 +307,7 @@ namespace MahechaBJJ.Views.SignUpPages
             giAndNoGiTap = new TapGestureRecognizer();
             giAndNoGiTap.Tapped += (sender, e) =>
             {
-                Navigation.PushModalAsync(new SignUpPage(Package.GiAndNoGi));
+                Navigation.PushModalAsync(new AccountInfoPage(Package.GiAndNoGi));
             };
             giAndNoGiStackLayout.GestureRecognizers.Add(giAndNoGiTap);
 

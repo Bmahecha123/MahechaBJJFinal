@@ -238,7 +238,6 @@ namespace MahechaBJJ.Views
                     videoGrid.Children.Add(videoFrame, 0, 0);
                     videoGrid.Children.Add(videoLbl, 0, 0);
 
-                    //return a ViewCell
                     return new ViewCell
                     {
                         View = new StackLayout

@@ -9,6 +9,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
 using MahechaBJJ.Views.SignUpPages;
+using MahechaBJJ.ViewModel.SignUpPages;
 
 namespace MahechaBJJ.Views.SignUpPages
 {
@@ -16,6 +17,7 @@ namespace MahechaBJJ.Views.SignUpPages
     {
         //ViewModel
         private BaseViewModel _baseViewModel;
+        private SummaryPageViewModel _summaryPageViewModel;
         //declare objects
         private Package package;
         private Label nameLbl;
@@ -41,11 +43,13 @@ namespace MahechaBJJ.Views.SignUpPages
         private Grid innerGrid;
         private Grid outerGrid;
         private Grid buttonGrid;
+        private bool hasPackage;
+        private Account _account;
 
         public SignUpPage(Package package)
         {
-            //_signUpPageViewModel = new SignUpPageViewModel();
             _baseViewModel = new BaseViewModel();
+            this.hasPackage = true;
 #if __ANDROID__
             Padding = new Thickness(10, 10, 10, 10);
 #endif
@@ -53,6 +57,20 @@ namespace MahechaBJJ.Views.SignUpPages
             Padding = new Thickness(10, 30, 10, 10);
 #endif
             this.package = package;
+            SetContent();
+        }
+
+        public SignUpPage()
+        {
+            _summaryPageViewModel = new SummaryPageViewModel();
+            _baseViewModel = new BaseViewModel();
+            this.hasPackage = false;
+#if __ANDROID__
+            Padding = new Thickness(10, 10, 10, 10);
+#endif
+#if __IOS__
+            Padding = new Thickness(10, 30, 10, 10);
+#endif
             SetContent();
         }
 
@@ -423,19 +441,53 @@ namespace MahechaBJJ.Views.SignUpPages
             Content = outerGrid;
         }
 
-        private void Validate()
+        private async void Validate()
         {
             ToggleButtons();
-            if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null
+            if (this.hasPackage)
+            {
+                if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null
                 || secretQuestionEntry.Text != null)
-            {
-                CreateUser();
-                Navigation.PushModalAsync(new SummaryPage(user));
+                {
+                    CreateUser();
+                    await Navigation.PushModalAsync(new SummaryPage(user));
+                }
+                else
+                {
+                    await DisplayAlert("Sign Up Error", "Make sure all fields are filled in!", "Okay, got it.");
+                }
             }
-            else
+            else 
             {
-                DisplayAlert("Sign Up Error", "Make sure all fields are filled in!", "Okay, got it.");
+                _account = _baseViewModel.GetAccountInformation();
+                if (_account.Properties["Package"] == "Gi")
+                {
+                    this.package = Package.Gi;
+                }
+                else if (_account.Properties["Package"] == "NoGi")
+                {
+                    this.package = Package.NoGi;
+                }
+                else
+                {
+                    this.package = Package.GiAndNoGi;
+                }
+
+                if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null
+                || secretQuestionEntry.Text != null)
+                {
+                    CreateUser();
+                    await _summaryPageViewModel.CreateUser(user);
+                    _baseViewModel.DeleteCredentials();
+                    _baseViewModel.SaveCredentials(_summaryPageViewModel.User);
+                    Application.Current.MainPage = new MainTabbedPage(true);
+                }
+                else
+                {
+                    await DisplayAlert("Sign Up Error", "Make sure all fields are filled in!", "Okay, got it.");
+                }
             }
+
             ToggleButtons();
         }
 

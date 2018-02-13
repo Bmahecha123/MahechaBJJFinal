@@ -11,15 +11,23 @@ namespace MahechaBJJ
 {
     public partial class App : Application
     {
-		private BaseViewModel _baseViewModel = new BaseViewModel();
+        private BaseViewModel _baseViewModel;
         private Account account;
 
         public App()
         {
             InitializeComponent();
+            _baseViewModel = new BaseViewModel();
             if (LoginCheck())
             {
-                MainPage = new MainTabbedPage();
+                if (account.Username == "NO_ACCOUNT")
+                {
+                    MainPage = new MainTabbedPage(false);
+                }
+                else 
+                {
+                    MainPage = new MainTabbedPage(true);
+                }
             }
             if (!LoginCheck())
             {
@@ -29,10 +37,9 @@ namespace MahechaBJJ
             }
         }
 
-        protected bool LoginCheck(){
-            
+        protected bool LoginCheck()
+        {
 			account = _baseViewModel.GetAccountInformation();
-
             if(account == null){
                 return false;
             }

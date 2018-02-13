@@ -1,5 +1,6 @@
 ﻿using System;
 using MahechaBJJ.Model;
+using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.MainTabPages;
 using Xamarin.Auth;
@@ -134,7 +135,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             giImage = new Image
             {
-                Source = ImageSource.FromResource("gi"),
+                Source = "gi.jpg",
                 Aspect = Aspect.AspectFit
             };
 
@@ -207,7 +208,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             noGiImage = new Image
             {
-                Source = ImageSource.FromResource("nogi6"),
+                Source = "nogi6.jpeg",
                 Aspect = Aspect.AspectFit
             };
 
@@ -334,7 +335,6 @@ namespace MahechaBJJ.Views.CommonPages
                 _baseViewModel.UpdateCredentials(account);
                 await _purchasePageViewModel.Disconnect();
                 await Navigation.PopModalAsync();
-
                 ToggleButtons();
             }
             else
@@ -354,15 +354,15 @@ namespace MahechaBJJ.Views.CommonPages
         {
             if (package == Package.Gi)
             {
-                return "package_gi_jiujitsu";
+                return Constants.GIPACKAGE;
             }
             else if (package == Package.NoGi)
             {
-                return "package_nogi_jiujitsu";
+                return Constants.NOGIPACKAGE;
             }
             else
             {
-                return "package_giandnogi_jiujitsu";
+                return Constants.GIANDNOGIPACKAGE;
             }
         }
     }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
+using MahechaBJJ.Resources;
 using MahechaBJJ.Service;
 using Newtonsoft.Json;
 using Xamarin.Auth;
@@ -14,45 +15,52 @@ namespace MahechaBJJ.ViewModel.EntryPages
 {
     public class EntryPageViewModel : INotifyPropertyChanged
     {
-		private VimeoAPIService _vimeoApiService;
-		
-        private BaseInfo _baseInfo;
-		public BaseInfo VimeoInfo
-		{
-			get
-			{
-				return _baseInfo;
-			}
-			set
-			{
-				_baseInfo = value;
-				OnPropertyChanged();
-			}
-		}
+        private PurchaseService _purchaseService;
 
-        private User _user;
-        public User User
+        private bool _hasGiAndNoGiPackage;
+        public bool HasGiAndNoGiPackage 
         {
-			get
-			{
-				return _user;
-			}
-			set
-			{
-                _user = value;
-				OnPropertyChanged();
-			}
+            get {
+                return _hasGiAndNoGiPackage;
+            } set {
+                _hasGiAndNoGiPackage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _hasGiPackage;
+        public bool HasGiPackage
+        {
+            get {
+                return _hasGiPackage;
+            } set {
+                _hasGiPackage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _hasNoGiPackage;
+        public bool HasNoGiPackage
+        {
+            get {
+                return _hasNoGiPackage;
+            } set {
+                _hasNoGiPackage = value;
+                OnPropertyChanged();
+            }
         }
 
         public EntryPageViewModel()
 		{
-            _vimeoApiService = new VimeoAPIService();
+            _purchaseService = new PurchaseService();
 		}
 
-		public async Task GetVimeo(string url)
-		{
-			_baseInfo = await _vimeoApiService.GetVimeoInfo(url);
-		}
+        public async Task CheckIfUserHasPackage()
+        {
+            _hasGiAndNoGiPackage = await _purchaseService.WasPackagePurchased(Constants.GIANDNOGIPACKAGE);
+            _hasGiPackage = await _purchaseService.WasPackagePurchased(Constants.GIPACKAGE);
+            _hasNoGiPackage = await _purchaseService.WasPackagePurchased(Constants.NOGIPACKAGE);
+        }
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
@@ -60,16 +68,5 @@ namespace MahechaBJJ.ViewModel.EntryPages
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
-
-        public async Task GetGoogleInfo (OAuth2Request request) {
-			var response = await request.GetResponseAsync();
-			if (response != null)
-			{
-				// Deserialize the data and store it in the account store
-				// The users email address will be used to identify data in SimpleDB
-				string userJson = await response.GetResponseTextAsync();
-				_user = JsonConvert.DeserializeObject<User>(userJson);
-			}
-        }
     }
 }

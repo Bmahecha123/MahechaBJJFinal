@@ -2,9 +2,11 @@
 using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
+using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.MainTabPages;
 using MahechaBJJ.Views.PlaylistPages;
+using Xamarin.Auth;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views
@@ -13,7 +15,8 @@ namespace MahechaBJJ.Views
     {
         private BaseViewModel _baseViewModel;
         private HomePageViewModel _homePageViewModel;
-        private const String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
+        //private String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
+        private string vimeoUrl;
         private BaseInfo VimeoInfo;
         private Grid outerGrid;
         private Grid innerGrid;
@@ -33,10 +36,16 @@ namespace MahechaBJJ.Views
         private Frame timeOutFrame;
         private TapGestureRecognizer timeOutTap;
         private ActivityIndicator activityIndicator;
+        private Button createAccountBtn;
+        private Account _account;
+        private bool account;
+
         public HomePage()
         {
             _baseViewModel = new BaseViewModel();
             _homePageViewModel = new HomePageViewModel();
+            _account = _baseViewModel.GetAccountInformation();
+            this.account = true;
 #if __IOS__
             Icon = "construction.png";
             Title = "Home";
@@ -46,11 +55,47 @@ namespace MahechaBJJ.Views
             Icon = "construction.png";
             Padding = new Thickness(5, -5, 5, 5);
 #endif
+            SetVimeoUrl();
             BuildPageObjects();
-            SetContent();
+            SetContent(this.account);
+        }
+
+        public HomePage(bool hasAccount)
+        {
+            _baseViewModel = new BaseViewModel();
+            _homePageViewModel = new HomePageViewModel();
+            _account = _baseViewModel.GetAccountInformation();
+            this.account = hasAccount;
+#if __IOS__
+            Icon = "construction.png";
+            Title = "Home";
+            Padding = new Thickness(10, 10, 10, 10);
+#endif
+#if __ANDROID__
+            Icon = "construction.png";
+            Padding = new Thickness(5, -5, 5, 5);
+#endif
+            SetVimeoUrl();
+            BuildPageObjects();
+            SetContent(hasAccount);
         }
 
         //functions
+        private void SetVimeoUrl()
+        {
+            if (_account.Properties["Package"].Equals("Gi"))
+            {
+                vimeoUrl = Constants.VIMEOGIALBUM;
+            }
+            else if (_account.Properties["Package"].Equals("NoGi"))
+            {
+                vimeoUrl = Constants.VIMEONOGIALBUM;
+            }
+            else 
+            {
+                vimeoUrl = Constants.VIMEOGIANDNOGIALBUM;
+            }
+        }
 
         private void BuildPageObjects()
         {
@@ -63,7 +108,8 @@ namespace MahechaBJJ.Views
                 RowDefinitions = new RowDefinitionCollection {
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(2, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(2, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 },
@@ -210,7 +256,8 @@ namespace MahechaBJJ.Views
 #endif
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black
-            };
+            }; 
+
             timeOutLbl = new Label
             {
 #if __IOS__
@@ -241,7 +288,7 @@ namespace MahechaBJJ.Views
             timeOutTap = new TapGestureRecognizer();
             timeOutTap.Tapped += (sender, e) =>
             {
-                SetContent();
+                SetContent(this.account);
             };
             timeOutLbl.GestureRecognizers.Add(timeOutTap);
             activityIndicator = new ActivityIndicator
@@ -259,9 +306,8 @@ namespace MahechaBJJ.Views
             Content = outerGrid;
         }
 
-        private async void SetContent()
+        private async void SetContent(bool userAccount)
         {
-            
             //add activity indicator while contents load
             innerGrid.Children.Clear();
             activityIndicator.IsRunning = true;
@@ -270,7 +316,7 @@ namespace MahechaBJJ.Views
             Grid.SetColumnSpan(activityIndicator, 2);
             if (_homePageViewModel.VimeoInfo == null)
             {
-                await _homePageViewModel.GetVimeo(VIMEOURL);
+                await _homePageViewModel.GetVimeo(vimeoUrl);
             }
             if (_homePageViewModel.Successful)
             {
@@ -281,22 +327,46 @@ namespace MahechaBJJ.Views
                 video1Lbl.Text = VimeoInfo.data[0].name;
                 video2Lbl.Text = VimeoInfo.data[1].name;
 
-                innerGrid.Children.Clear();
-                innerGrid.Children.Add(whatsNewLbl, 0, 0);
-                Grid.SetColumnSpan(whatsNewLbl, 2);
-                innerGrid.Children.Add(video1Frame, 0, 1);
-                Grid.SetColumnSpan(video1Frame, 2);
-                innerGrid.Children.Add(video1Lbl, 0, 1);
-                Grid.SetColumnSpan(video1Lbl, 2);
-                innerGrid.Children.Add(video2Frame, 0, 2);
-                Grid.SetColumnSpan(video2Frame, 2);
-                innerGrid.Children.Add(video2Lbl, 0, 2);
-                Grid.SetColumnSpan(video2Lbl, 2);
-                innerGrid.Children.Add(playListLbl, 0, 3);
-                Grid.SetColumnSpan(playListLbl, 2);
-                innerGrid.Children.Add(viewPlaylistBtn, 0, 4);
-                innerGrid.Children.Add(addPlaylistBtn, 1, 4);
-
+                if (userAccount)
+                {
+                    innerGrid.Children.Clear();
+                    innerGrid.Children.Add(whatsNewLbl, 0, 0);
+                    Grid.SetColumnSpan(whatsNewLbl, 2);
+                    innerGrid.Children.Add(video1Frame, 0, 1);
+                    Grid.SetColumnSpan(video1Frame, 2);
+                    innerGrid.Children.Add(video1Lbl, 0, 1);
+                    Grid.SetColumnSpan(video1Lbl, 2);
+                    innerGrid.Children.Add(video2Frame, 0, 2);
+                    Grid.SetColumnSpan(video2Frame, 2);
+                    Grid.SetRowSpan(video2Frame, 2);
+                    innerGrid.Children.Add(video2Lbl, 0, 2);
+                    Grid.SetColumnSpan(video2Lbl, 2);
+                    Grid.SetRowSpan(video2Lbl, 2);
+                    innerGrid.Children.Add(playListLbl, 0, 4);
+                    Grid.SetColumnSpan(playListLbl, 2);
+                    innerGrid.Children.Add(viewPlaylistBtn, 0, 5);
+                    innerGrid.Children.Add(addPlaylistBtn, 1, 5);
+                }
+                else
+                {
+#if __IOS__
+                    innerGrid.Children.Clear();
+                    innerGrid.Children.Add(whatsNewLbl, 0, 0);
+                    Grid.SetColumnSpan(whatsNewLbl, 2);
+                    innerGrid.Children.Add(video1Frame, 0, 1);
+                    Grid.SetColumnSpan(video1Frame, 2);
+                    Grid.SetRowSpan(video1Frame, 2);
+                    innerGrid.Children.Add(video1Lbl, 0, 1);
+                    Grid.SetColumnSpan(video1Lbl, 2);
+                    Grid.SetRowSpan(video1Lbl, 2);
+                    innerGrid.Children.Add(video2Frame, 0, 3);
+                    Grid.SetColumnSpan(video2Frame, 2);
+                    Grid.SetRowSpan(video2Frame, 3);
+                    innerGrid.Children.Add(video2Lbl, 0, 3);
+                    Grid.SetColumnSpan(video2Lbl, 2);
+                    Grid.SetRowSpan(video2Lbl, 3);
+#endif
+                }
             }
             else
             {
@@ -321,76 +391,6 @@ namespace MahechaBJJ.Views
             viewPlaylistBtn.IsEnabled = false;
             Navigation.PushModalAsync(new PlaylistViewPage());
             viewPlaylistBtn.IsEnabled = true;
-        }
-
-        //Orientation
-        protected override void OnSizeAllocated(double width, double height)
-        {
-            base.OnSizeAllocated(width, height); //must be called
-
-            if (width > height)
-            {
-                if (_homePageViewModel.VimeoInfo != null)
-                {
-                    Padding = new Thickness(10, 10, 10, 10);
-
-                    innerGrid.RowDefinitions.Clear();
-                    innerGrid.ColumnDefinitions.Clear();
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.Children.Clear();
-                    innerGrid.Children.Add(whatsNewLbl, 0, 0);
-                    Grid.SetColumnSpan(whatsNewLbl, 2);
-                    innerGrid.Children.Add(video1Frame, 0, 1);
-                    innerGrid.Children.Add(video1Lbl, 0, 1);
-                    innerGrid.Children.Add(video2Frame, 1, 1);
-                    innerGrid.Children.Add(video2Lbl, 1, 1);
-                    innerGrid.Children.Add(playListLbl, 0, 2);
-                    Grid.SetColumnSpan(playListLbl, 2);
-                    innerGrid.Children.Add(viewPlaylistBtn, 0, 3);
-                    innerGrid.Children.Add(addPlaylistBtn, 1, 3);
-                }
-            }
-            else
-            {
-                if (_homePageViewModel.VimeoInfo != null)
-                {
-#if __IOS__
-                    Padding = new Thickness(10, 10, 10, 10);
-#endif
-#if __ANDROID__
-                    Padding = new Thickness(5, -5, 5, 5);
-#endif
-                    innerGrid.RowDefinitions.Clear();
-                    innerGrid.ColumnDefinitions.Clear();
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.Children.Clear();
-                    innerGrid.Children.Add(whatsNewLbl, 0, 0);
-                    Grid.SetColumnSpan(whatsNewLbl, 2);
-                    innerGrid.Children.Add(video1Frame, 0, 1);
-                    Grid.SetColumnSpan(video1Frame, 2);
-                    innerGrid.Children.Add(video1Lbl, 0, 1);
-                    Grid.SetColumnSpan(video1Lbl, 2);
-                    innerGrid.Children.Add(video2Frame, 0, 2);
-                    Grid.SetColumnSpan(video2Frame, 2);
-                    innerGrid.Children.Add(video2Lbl, 0, 2);
-                    Grid.SetColumnSpan(video2Lbl, 2);
-                    innerGrid.Children.Add(playListLbl, 0, 3);
-                    Grid.SetColumnSpan(playListLbl, 2);
-                    innerGrid.Children.Add(viewPlaylistBtn, 0, 4);
-                    innerGrid.Children.Add(addPlaylistBtn, 1, 4);
-                }
-            }
         }
     }
 }

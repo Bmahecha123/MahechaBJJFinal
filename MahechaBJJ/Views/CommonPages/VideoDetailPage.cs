@@ -41,6 +41,7 @@ namespace MahechaBJJ.Views
         private Grid innerGrid;
         private Grid outerGrid;
         private VideoData videoTechnique;
+        private bool userHasAccount;
         //UIViewController uiView;
         //UIWindow window;
 
@@ -59,10 +60,26 @@ namespace MahechaBJJ.Views
 
             Title = video.name;
             videoTechnique = video;
+            DoesUserHaveAccount();
             SetContent();
         }
 
         //Functions
+
+        private void DoesUserHaveAccount()
+        {
+            account = _baseViewModel.GetAccountInformation();
+            if (account.Username == "NO_ACCOUNT")
+            {
+                userHasAccount = false;
+            }
+            else 
+            {
+                userHasAccount = true;
+            }
+               
+        }
+
         public void SetContent()
         {
 
@@ -229,24 +246,50 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
             playBtn.Clicked += PlayAndroidVideo;
 #endif
-            //building grid
-            innerGrid.Children.Add(videoFrame, 0, 0);
-            Grid.SetColumnSpan(videoFrame, 4);
-            innerGrid.Children.Add(videoNameLbl, 0, 0);
-            Grid.SetColumnSpan(videoNameLbl, 4);
-            innerGrid.Children.Add(playBtn, 0, 1);
-            Grid.SetColumnSpan(playBtn, 2);
-            innerGrid.Children.Add(addBtn, 2, 1);
-            innerGrid.Children.Add(qualityBtn, 3, 1);
-            innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-            Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+
+            if (userHasAccount)
+            {
+                //building grid
+                innerGrid.Children.Add(videoFrame, 0, 0);
+                Grid.SetColumnSpan(videoFrame, 4);
+                innerGrid.Children.Add(videoNameLbl, 0, 0);
+                Grid.SetColumnSpan(videoNameLbl, 4);
+                innerGrid.Children.Add(playBtn, 0, 1);
+                Grid.SetColumnSpan(playBtn, 2);
+                innerGrid.Children.Add(addBtn, 2, 1);
+                innerGrid.Children.Add(qualityBtn, 3, 1);
+                innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
+                Grid.SetColumnSpan(videoDescriptionScrollView, 4);
 #if __ANDROID__
             Grid.SetRowSpan(videoDescriptionScrollView, 2);
 #endif
 #if __IOS__
-            innerGrid.Children.Add(backBtn, 0, 3);
-            Grid.SetColumnSpan(backBtn, 4);
+                innerGrid.Children.Add(backBtn, 0, 3);
+                Grid.SetColumnSpan(backBtn, 4);
 #endif
+            }
+            else
+            {
+                //building grid
+                innerGrid.Children.Add(videoFrame, 0, 0);
+                Grid.SetColumnSpan(videoFrame, 4);
+                innerGrid.Children.Add(videoNameLbl, 0, 0);
+                Grid.SetColumnSpan(videoNameLbl, 4);
+                innerGrid.Children.Add(playBtn, 0, 1);
+                Grid.SetColumnSpan(playBtn, 2);
+                innerGrid.Children.Add(qualityBtn, 2, 1);
+                Grid.SetColumnSpan(qualityBtn, 2);
+                innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
+                Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+#if __ANDROID__
+            Grid.SetRowSpan(videoDescriptionScrollView, 2);
+#endif
+#if __IOS__
+                innerGrid.Children.Add(backBtn, 0, 3);
+                Grid.SetColumnSpan(backBtn, 4);
+#endif
+            }
+
 
 
             outerGrid.Children.Add(innerGrid, 0, 0);
@@ -288,7 +331,6 @@ namespace MahechaBJJ.Views
         {
             ToggleButtons();
             //get user info
-            account = _baseViewModel.GetAccountInformation();
             //Get playlist information
             await _videoDetailPageViewModel.GetUserPlaylists(Constants.GETPLAYLIST, account.Properties["Id"]);
             userPlaylists = _videoDetailPageViewModel.Playlist;
@@ -400,13 +442,15 @@ namespace MahechaBJJ.Views
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
-                innerGrid.Children.Clear();
-                innerGrid.Children.Add(videoFrame, 0, 0);
-                Grid.SetRowSpan(videoFrame, 2);
-                Grid.SetColumnSpan(videoFrame, 2);
-                innerGrid.Children.Add(videoNameLbl, 0, 0);
-                Grid.SetRowSpan(videoNameLbl, 2);
-                Grid.SetColumnSpan(videoNameLbl, 2);
+                if (userHasAccount)
+                {
+                    innerGrid.Children.Clear();
+                    innerGrid.Children.Add(videoFrame, 0, 0);
+                    Grid.SetRowSpan(videoFrame, 2);
+                    Grid.SetColumnSpan(videoFrame, 2);
+                    innerGrid.Children.Add(videoNameLbl, 0, 0);
+                    Grid.SetRowSpan(videoNameLbl, 2);
+                    Grid.SetColumnSpan(videoNameLbl, 2);
 #if __ANDROID__
                 innerGrid.Children.Add(playBtn, 2, 1);
                 innerGrid.Children.Add(addBtn, 3, 1);
@@ -414,14 +458,37 @@ namespace MahechaBJJ.Views
                 Grid.SetColumnSpan(qualityBtn, 2);
 #endif
 #if __IOS__
-                innerGrid.Children.Add(backBtn, 2, 1);
-                innerGrid.Children.Add(playBtn, 3, 1);
-                innerGrid.Children.Add(addBtn, 4, 1);
-                innerGrid.Children.Add(qualityBtn, 5, 1);
+                    innerGrid.Children.Add(backBtn, 2, 1);
+                    innerGrid.Children.Add(playBtn, 3, 1);
+                    innerGrid.Children.Add(addBtn, 4, 1);
+                    innerGrid.Children.Add(qualityBtn, 5, 1);
 #endif
-                innerGrid.Children.Add(videoDescriptionScrollView, 2, 0);
-                Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-
+                    innerGrid.Children.Add(videoDescriptionScrollView, 2, 0);
+                    Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+                }
+                else
+                {
+                    innerGrid.Children.Clear();
+                    innerGrid.Children.Add(videoFrame, 0, 0);
+                    Grid.SetRowSpan(videoFrame, 2);
+                    Grid.SetColumnSpan(videoFrame, 2);
+                    innerGrid.Children.Add(videoNameLbl, 0, 0);
+                    Grid.SetRowSpan(videoNameLbl, 2);
+                    Grid.SetColumnSpan(videoNameLbl, 2);
+#if __ANDROID__
+                innerGrid.Children.Add(playBtn, 2, 1);
+                innerGrid.Children.Add(qualityBtn, 3, 1);
+                Grid.SetColumnSpan(qualityBtn, 3);
+#endif
+#if __IOS__
+                    innerGrid.Children.Add(backBtn, 2, 1);
+                    innerGrid.Children.Add(playBtn, 3, 1);
+                    innerGrid.Children.Add(qualityBtn, 4, 1);
+                    Grid.SetColumnSpan(qualityBtn, 2);
+#endif
+                    innerGrid.Children.Add(videoDescriptionScrollView, 2, 0);
+                    Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+                }
             }
             else
             {
@@ -440,24 +507,48 @@ namespace MahechaBJJ.Views
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.Children.Clear();
-                //building grid
-                innerGrid.Children.Add(videoFrame, 0, 0);
-                Grid.SetColumnSpan(videoFrame, 4);
-                innerGrid.Children.Add(videoNameLbl, 0, 0);
-                Grid.SetColumnSpan(videoNameLbl, 4);
-                innerGrid.Children.Add(playBtn, 0, 1);
-                Grid.SetColumnSpan(playBtn, 2);
-                innerGrid.Children.Add(addBtn, 2, 1);
-                innerGrid.Children.Add(qualityBtn, 3, 1);
-                innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-                Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+                if (userHasAccount)
+                {
+                    //building grid
+                    innerGrid.Children.Add(videoFrame, 0, 0);
+                    Grid.SetColumnSpan(videoFrame, 4);
+                    innerGrid.Children.Add(videoNameLbl, 0, 0);
+                    Grid.SetColumnSpan(videoNameLbl, 4);
+                    innerGrid.Children.Add(playBtn, 0, 1);
+                    Grid.SetColumnSpan(playBtn, 2);
+                    innerGrid.Children.Add(addBtn, 2, 1);
+                    innerGrid.Children.Add(qualityBtn, 3, 1);
+                    innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
+                    Grid.SetColumnSpan(videoDescriptionScrollView, 4);
 #if __ANDROID__
-                Grid.SetRowSpan(videoDescriptionScrollView, 2);
+            Grid.SetRowSpan(videoDescriptionScrollView, 2);
 #endif
 #if __IOS__
-                innerGrid.Children.Add(backBtn, 0, 3);
-                Grid.SetColumnSpan(backBtn, 4);
+                    innerGrid.Children.Add(backBtn, 0, 3);
+                    Grid.SetColumnSpan(backBtn, 4);
 #endif
+                }
+                else
+                {
+                    //building grid
+                    innerGrid.Children.Add(videoFrame, 0, 0);
+                    Grid.SetColumnSpan(videoFrame, 4);
+                    innerGrid.Children.Add(videoNameLbl, 0, 0);
+                    Grid.SetColumnSpan(videoNameLbl, 4);
+                    innerGrid.Children.Add(playBtn, 0, 1);
+                    Grid.SetColumnSpan(playBtn, 2);
+                    innerGrid.Children.Add(qualityBtn, 2, 1);
+                    Grid.SetColumnSpan(qualityBtn, 2);
+                    innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
+                    Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+#if __ANDROID__
+            Grid.SetRowSpan(videoDescriptionScrollView, 2);
+#endif
+#if __IOS__
+                    innerGrid.Children.Add(backBtn, 0, 3);
+                    Grid.SetColumnSpan(backBtn, 4);
+#endif
+                }
 
             }
         }
