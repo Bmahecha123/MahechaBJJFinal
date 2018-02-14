@@ -36,6 +36,8 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
         private Android.Widget.Button androidLoginBtn;
         private Android.Widget.Button androidForgotPasswordBtn;
+        private Android.Widget.EditText androidEmailEntry;
+        private Android.Widget.EditText androidPasswordEntry;
 #endif
 
 
@@ -159,7 +161,7 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
                 FontSize = btnSize,
                 Margin = -5,
-                 
+
 #endif
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
@@ -221,6 +223,20 @@ namespace MahechaBJJ.Views.EntryPages
             androidForgotPasswordBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(124, 37, 41));
             androidForgotPasswordBtn.SetTextColor(Android.Graphics.Color.Black);
             androidForgotPasswordBtn.Gravity = Android.Views.GravityFlags.Center;
+
+            androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidEmailEntry.Hint = "E-Mail Address";
+            androidEmailEntry.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidEmailEntry.SetTextColor(Android.Graphics.Color.Black);
+            androidEmailEntry.Gravity = Android.Views.GravityFlags.Center;
+            androidEmailEntry.InputType = Android.Text.InputTypes.TextVariationEmailAddress;
+
+            androidPasswordEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidPasswordEntry.Hint = "Password";
+            androidPasswordEntry.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidPasswordEntry.SetTextColor(Android.Graphics.Color.Black);
+            androidPasswordEntry.Gravity = Android.Views.GravityFlags.Center;
+            androidPasswordEntry.InputType = Android.Text.InputTypes.TextVariationPassword;
 #endif
             //Events
             loginBtn.Clicked += Validate;
@@ -253,8 +269,8 @@ namespace MahechaBJJ.Views.EntryPages
             buttonGrid.Children.Add(androidLoginBtn.ToView(), 0, 0);
             buttonGrid.Children.Add(androidForgotPasswordBtn.ToView(), 1, 0);
             innerGrid.Children.Add(mahechaLogo, 0, 0);
-            innerGrid.Children.Add(emailEntry, 0, 1);
-            innerGrid.Children.Add(passwordEntry, 0, 2);
+            innerGrid.Children.Add(androidEmailEntry.ToView(), 0, 1);
+            innerGrid.Children.Add(androidPasswordEntry.ToView(), 0, 2);
             innerGrid.Children.Add(buttonGrid, 0, 3);
 
             outerGrid.Children.Add(innerGrid, 0, 0);
@@ -266,10 +282,19 @@ namespace MahechaBJJ.Views.EntryPages
         private void Validate(object sender, EventArgs e)
         {
             ToggleButtons();
+#if __ANDROID__
+            if (androidEmailEntry.Text != null || androidPasswordEntry.Text != null)
+            {
+                Login(sender, e);
+            }
+#endif
+#if __IOS__
             if (emailEntry.Text != null || passwordEntry.Text != null)
             {
                 Login(sender, e);
             }
+#endif
+
             else
             {
                 DisplayAlert("Login Error!", "Make sure all fields are filled in!", "Ok, got it.");
@@ -279,7 +304,12 @@ namespace MahechaBJJ.Views.EntryPages
 
         private async void Login(object sender, EventArgs e)
         {
+#if __ANDROID__
+            user = await _baseViewModel.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, androidEmailEntry.Text.ToLower(), androidPasswordEntry.Text.ToLower());
+#endif
+#if __IOS__
             user = await _baseViewModel.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, emailEntry.Text.ToLower(), passwordEntry.Text);
+#endif
             if (user == null)
             {
                 await DisplayAlert("User Not Found", "Wrong Email address or Password, please try again.", "Got It");

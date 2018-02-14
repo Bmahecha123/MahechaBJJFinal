@@ -1,27 +1,27 @@
-﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default">
-  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D0D6A1DA-CA20-42FD-B8A7-B1A1A9BEED45" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/MainTabPages/ProfilePage.cs">
+﻿<Properties StartupConfiguration="{4A7FB70C-C450-4C8F-A39E-EE1FFC1B294B}|Default">
+  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" automaticSigning="False" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/SignUpPages/PackagePage.cs">
     <Files>
-      <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/ViewModel/CommonPages/BaseViewModel.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/MainTabPages/HomePage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/App.xaml.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/MainTabPages/ProfilePage.cs" Line="474" Column="6" />
+      <File FileName="MahechaBJJ/App.xaml.cs" Line="21" Column="48" />
+      <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="322" Column="57" />
+      <File FileName="MahechaBJJ/Views/EntryPages/LoginPage.cs" Line="39" Column="41" />
+      <File FileName="MahechaBJJ/Views/SignUpPages/PackagePage.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/SignUpPages/SignUpPage.cs" relfile="MahechaBJJ/Views/SignUpPages/SignUpPage.cs" line="482" column="29" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/SignUpPages/SummaryPage.cs" relfile="MahechaBJJ/Views/SignUpPages/SummaryPage.cs" line="553" column="43" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/SignUpPages/SummaryPage.cs" relfile="MahechaBJJ/Views/SignUpPages/SummaryPage.cs" line="509" column="1" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="223" column="1" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="240" column="68" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="225" column="1" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="229" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="232" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="249" column="68" />
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="234" column="1" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="233" column="1" />
-      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="237" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="238" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="243" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="242" column="1" />
+      <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/EntryPages/EntryPage.cs" relfile="MahechaBJJ/Views/EntryPages/EntryPage.cs" line="246" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+#if __ANDROID__
 using MahechaBJJ.Droid;
+#endif
 using MahechaBJJ.Resources;
 using Xamarin.Auth;
 using Xamarin.Forms;

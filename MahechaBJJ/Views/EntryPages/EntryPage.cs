@@ -40,6 +40,7 @@ namespace MahechaBJJ.Views.EntryPages
         private Android.Widget.Button androidLoginBtn;
         private Android.Widget.Button androidSignUpBtn;
         private Android.Widget.Button androidBlogBtn;
+        private Android.Widget.Button androidRestoreBtn;
 #endif
 
         public EntryPage()
@@ -170,6 +171,13 @@ namespace MahechaBJJ.Views.EntryPages
             androidBlogBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidBlogBtn.SetTextColor(Android.Graphics.Color.Black);
             androidBlogBtn.Gravity = Android.Views.GravityFlags.Center;
+
+            androidRestoreBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidRestoreBtn.Text = "Restore Packages";
+            androidRestoreBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidRestoreBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidRestoreBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidRestoreBtn.Gravity = Android.Views.GravityFlags.Center;
 #endif
 
             //Button events
@@ -203,6 +211,7 @@ namespace MahechaBJJ.Views.EntryPages
             innerGrid.Children.Add(androidLoginBtn.ToView(), 0, 1);
             innerGrid.Children.Add(androidSignUpBtn.ToView(), 0, 2);
             innerGrid.Children.Add(androidBlogBtn.ToView(), 0, 3);
+            innerGrid.Children.Add(androidRestoreBtn.ToView(), 0, 4);
 #endif
 #if __IOS__
             innerGrid.Children.Add(loginBtn, 0, 1);
@@ -310,6 +319,7 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.Children.Add(androidLoginBtn.ToView(), 1, 0);
                 innerGrid.Children.Add(androidSignUpBtn.ToView(), 1, 1);
                 innerGrid.Children.Add(androidBlogBtn.ToView(), 1, 2);
+                innerGrid.Children.Add(androidRestoreBtn.ToView(), 1, 3);
 #endif
 #if __IOS__
                 innerGrid.Children.Add(loginBtn, 1, 0);
@@ -341,6 +351,7 @@ namespace MahechaBJJ.Views.EntryPages
                 innerGrid.Children.Add(androidLoginBtn.ToView(), 0, 1);
                 innerGrid.Children.Add(androidSignUpBtn.ToView(), 0, 2);
                 innerGrid.Children.Add(androidBlogBtn.ToView(), 0, 3);
+                innerGrid.Children.Add(androidRestoreBtn.ToView(), 0, 4);
 #endif
 #if __IOS__
                 innerGrid.Children.Add(loginBtn, 0, 1);
