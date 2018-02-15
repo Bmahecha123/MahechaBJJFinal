@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.CommonPages;
@@ -10,6 +10,10 @@ using Newtonsoft.Json;
 using System.Text;
 using MahechaBJJ.Views.SignUpPages;
 using MahechaBJJ.ViewModel.SignUpPages;
+using MahechaBJJ.Droid;
+using Xamarin.Forms.Platform.Android;
+#if __ANDROID__
+#endif
 
 namespace MahechaBJJ.Views.SignUpPages
 {
@@ -45,6 +49,15 @@ namespace MahechaBJJ.Views.SignUpPages
         private Grid buttonGrid;
         private bool hasPackage;
         private Account _account;
+#if __ANDROID__
+        Android.Widget.EditText androidNameEntry;
+        Android.Widget.TextView androidBeltLbl;
+        Android.Widget.EditText androidEmailAddressEntry;
+        Android.Widget.EditText androidPassWordEntry;
+        Android.Widget.TextView androidSecretQuestionsLbl;
+        Android.Widget.EditText androidSecretQuestionEntry;
+        Android.Widget.Button androidNextBtn;
+#endif
 
         public SignUpPage(Package package)
         {
@@ -302,6 +315,69 @@ namespace MahechaBJJ.Views.SignUpPages
                 BorderColor = Color.Black
             };
 
+#if __ANDROID__
+            androidNameEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidNameEntry.Hint = "Name";
+            androidNameEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidNameEntry.SetTextColor(Android.Graphics.Color.Black);
+            androidNameEntry.Gravity = Android.Views.GravityFlags.Start;
+
+            androidBeltLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidBeltLbl.Text = "Belt";
+            androidBeltLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidBeltLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidBeltLbl.Gravity = Android.Views.GravityFlags.Center;
+
+            androidEmailAddressEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidEmailAddressEntry.Hint = "E-Mail Address";
+            androidEmailAddressEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidEmailAddressEntry.SetTextColor(Android.Graphics.Color.Black);
+            androidEmailAddressEntry.Gravity = Android.Views.GravityFlags.Start;
+
+            androidPassWordEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidPassWordEntry.Hint = "Password";
+            androidPassWordEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidPassWordEntry.SetTextColor(Android.Graphics.Color.Black);
+            androidPassWordEntry.Gravity = Android.Views.GravityFlags.Start;
+
+            androidSecretQuestionsLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidSecretQuestionsLbl.Text = "Secret Questions";
+            androidSecretQuestionsLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidSecretQuestionsLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidSecretQuestionsLbl.Gravity = Android.Views.GravityFlags.Center;
+
+            androidSecretQuestionEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidSecretQuestionEntry.Hint = "Answer for your own security!";
+            androidSecretQuestionEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidSecretQuestionEntry.SetTextColor(Android.Graphics.Color.Black);
+            androidSecretQuestionEntry.Gravity = Android.Views.GravityFlags.Start;
+
+            androidNextBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidNextBtn.Text = "Next";
+            androidNextBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidNextBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidNextBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidNextBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidNextBtn.Click += (object sender, EventArgs e) =>
+            {
+                Validate();
+            };
+
+            /*androidBlogBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidBlogBtn.Text = "Learn More";
+            androidBlogBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidBlogBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidBlogBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidBlogBtn.Gravity = Android.Views.GravityFlags.Center; 
+
+            androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidEmailEntry.Hint = "E-Mail Address";
+            androidEmailEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidEmailEntry.SetPadding(0, 0, 0, 0);
+            androidEmailEntry.SetTextColor(Android.Graphics.Color.Black);
+            androidEmailEntry.InputType = Android.Text.InputTypes.TextVariationEmailAddress;*/
+#endif
+
             //Events
             nextBtn.Clicked += (object sender, EventArgs e) =>
             {
@@ -376,7 +452,7 @@ namespace MahechaBJJ.Views.SignUpPages
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
             };
-            buttonGrid.Children.Add(nextBtn, 0, 0);
+            buttonGrid.Children.Add(androidNextBtn.ToView(), 0, 0);
 #endif
 
             scrollView = new ScrollView();
@@ -392,17 +468,14 @@ namespace MahechaBJJ.Views.SignUpPages
             stackLayout = new StackLayout
             {
                 Children = {
-                    nameLbl,
-                    nameEntry,
-                    emailAddressLbl,
-                    emailAddressEntry,
-                    beltLbl,
+                    androidNameEntry.ToView(),
+                    androidEmailAddressEntry.ToView(),
+                    androidBeltLbl.ToView(),
                     beltPicker,
-                    passWordLbl,
-                    passWordEntry,
-                    secretQuestionLbl,
+                    androidPassWordEntry.ToView(),
+                    androidSecretQuestionsLbl.ToView(),
                     secretQuestionPicker,
-                    secretQuestionEntry
+                    androidSecretQuestionEntry.ToView()
                 }
             };
 #endif
@@ -446,8 +519,14 @@ namespace MahechaBJJ.Views.SignUpPages
             ToggleButtons();
             if (this.hasPackage)
             {
+#if __ANDROID__
+                if (androidNameEntry.Text != null || androidEmailAddressEntry.Text != null || androidPassWordEntry.Text != null
+                || androidSecretQuestionEntry.Text != null)
+#endif
+#if __IOS__
                 if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null
                 || secretQuestionEntry.Text != null)
+#endif
                 {
                     CreateUser();
                     await Navigation.PushModalAsync(new SummaryPage(user));
@@ -457,7 +536,7 @@ namespace MahechaBJJ.Views.SignUpPages
                     await DisplayAlert("Sign Up Error", "Make sure all fields are filled in!", "Okay, got it.");
                 }
             }
-            else 
+            else
             {
                 _account = _baseViewModel.GetAccountInformation();
                 if (_account.Properties["Package"] == "Gi")
@@ -473,8 +552,14 @@ namespace MahechaBJJ.Views.SignUpPages
                     this.package = Package.GiAndNoGi;
                 }
 
+#if __ANDROID__
+                if (androidNameEntry.Text != null || androidEmailAddressEntry.Text != null || androidPassWordEntry.Text != null
+                || androidSecretQuestionEntry.Text != null)
+#endif
+#if __IOS__
                 if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null
                 || secretQuestionEntry.Text != null)
+#endif
                 {
                     CreateUser();
                     await _summaryPageViewModel.CreateUser(user);
@@ -555,8 +640,8 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
 
-                innerGrid.RowDefinitions.Add(new RowDefinition{Height = new GridLength(9, GridUnitType.Star)});
-                innerGrid.RowDefinitions.Add(new RowDefinition {Height = new GridLength(2, GridUnitType.Star)});
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(9, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
 
                 innerGrid.Children.Add(scrollView, 0, 0);
                 innerGrid.Children.Add(buttonGrid, 0, 1);

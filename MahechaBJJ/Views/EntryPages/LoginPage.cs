@@ -70,7 +70,7 @@ namespace MahechaBJJ.Views.EntryPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
-                    new RowDefinition {Height = new GridLength(3, GridUnitType.Star)},
+                    new RowDefinition {Height = new GridLength(4, GridUnitType.Star)},
                     new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}
@@ -226,16 +226,16 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidEmailEntry.Hint = "E-Mail Address";
-            androidEmailEntry.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidEmailEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidEmailEntry.SetPadding(0, 0, 0, 0);
             androidEmailEntry.SetTextColor(Android.Graphics.Color.Black);
-            androidEmailEntry.Gravity = Android.Views.GravityFlags.Center;
             androidEmailEntry.InputType = Android.Text.InputTypes.TextVariationEmailAddress;
 
             androidPasswordEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidPasswordEntry.Hint = "Password";
-            androidPasswordEntry.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidPasswordEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidPasswordEntry.SetPadding(0, 0, 0, 0);
             androidPasswordEntry.SetTextColor(Android.Graphics.Color.Black);
-            androidPasswordEntry.Gravity = Android.Views.GravityFlags.Center;
             androidPasswordEntry.InputType = Android.Text.InputTypes.TextVariationPassword;
 #endif
             //Events
