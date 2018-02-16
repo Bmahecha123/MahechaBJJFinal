@@ -56,7 +56,7 @@ namespace MahechaBJJ.Views.SignUpPages
         public PackagePage()
         {
 #if __ANDROID__
-            Padding = new Thickness(5, 5, 5, 5);
+            Padding = new Thickness(10, 10, 10, 10);
 #endif
 #if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
@@ -283,10 +283,26 @@ namespace MahechaBJJ.Views.SignUpPages
             };
 
 #if __ANDROID__
-            //TODO FINISH UP FILLING EVERYTHING IN FOR THESE VIEWS
             androidNoGiTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidNoGiTitle.Text = "No-Gi";
+            androidNoGiTitle.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidNoGiTitle.SetTextColor(Android.Graphics.Color.Black);
+            androidNoGiTitle.Gravity = Android.Views.GravityFlags.Start;
+            androidNoGiTitle.SetTypeface(androidNoGiTitle.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
             androidNoGiPrice = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidNoGiPrice.Text = "$19.99";
+            androidNoGiPrice.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidNoGiPrice.SetTextColor(Android.Graphics.Color.Black);
+            androidNoGiPrice.Gravity = Android.Views.GravityFlags.Start;
+            androidNoGiPrice.SetTypeface(androidNoGiPrice.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
             androidNoGiBody = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidNoGiBody.Text = "Just like the other packages, the No-Gi library is constantly being updated. So that means you’ll grow along with us. As we come up with new tweaks and transitions you’ll see it first as we are constantly updating our libraries. Through these techniques and positions your game will be brought to a new technical level. All the while being exposed to a unique point of view on approaching Jiu Jitsu. Some of the biggest advantages of this package is that you have direct access to us, the ones who implement and recorded these techniques. We love to hear from our members and never ignore anyone. Lets grow together!";
+            androidNoGiBody.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
+            androidNoGiBody.SetTextColor(Android.Graphics.Color.Black);
+            androidNoGiBody.Gravity = Android.Views.GravityFlags.Start;
+            androidNoGiBody.SetTypeface(androidNoGiBody.Typeface, Android.Graphics.TypefaceStyle.Bold);
 #endif
 
 
@@ -376,10 +392,26 @@ namespace MahechaBJJ.Views.SignUpPages
             };
 
 #if __ANDROID__
-            //TODO FINISH UP FILLING EVERYTHING IN FOR THESE VIEWS
             androidGiAndNoGiTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidGiAndNoGiTitle.Text = "Complete Jiu-Jitsu";
+            androidGiAndNoGiTitle.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidGiAndNoGiTitle.SetTextColor(Android.Graphics.Color.Black);
+            androidGiAndNoGiTitle.Gravity = Android.Views.GravityFlags.Start;
+            androidGiAndNoGiTitle.SetTypeface(androidGiAndNoGiTitle.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
             androidGiAndNoGiPrice = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidGiAndNoGiPrice.Text = "$29.99";
+            androidGiAndNoGiPrice.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidGiAndNoGiPrice.SetTextColor(Android.Graphics.Color.Black);
+            androidGiAndNoGiPrice.Gravity = Android.Views.GravityFlags.Start;
+            androidGiAndNoGiPrice.SetTypeface(androidGiAndNoGiPrice.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
             androidGiAndNoGiBody = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidGiAndNoGiBody.Text = "This package is the best of both worlds. Whenever any Jiu Jitsu position is uploaded to our database, you’ll get to see it right away. No other Jiu Jitsu apps post a disciplined system like this that gives you direct access to the ones who create, record and execute these techniques at the highest levels of competition. We love Jiu Jitsu and love sharing it with those who want to learn, we live the Jiu Jitsu lifestyle and want to share our unique point of view. At its core our Jiu-Jitsu is an emphasis on solid fundamentals building upon each other to open doors to unique transitions and timings in relation to our style and preferences. Think of this package as having an extra coach to help develop your game. For example: you see a technique on our app and try to work it in training. It goes terribly wrong and you email us in one click from the app. We see your concern and get back to you as soon as we can to help you get it down better. This happens all the time and we love it; anything we can do to help you get better. Let’s grow and develop our game together!";
+            androidGiAndNoGiBody.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
+            androidGiAndNoGiBody.SetTextColor(Android.Graphics.Color.Black);
+            androidGiAndNoGiBody.Gravity = Android.Views.GravityFlags.Start;
+            androidGiAndNoGiBody.SetTypeface(androidGiAndNoGiBody.Typeface, Android.Graphics.TypefaceStyle.Bold);
 #endif
 
 
@@ -426,26 +458,38 @@ namespace MahechaBJJ.Views.SignUpPages
 
         private void SetContent()
         {
-            giAndNoGiStackLayout.Children.Add(giAndNoGiTitle);
-            giAndNoGiStackLayout.Children.Add(giAndNoGiPrice);
-            giAndNoGiStackLayout.Children.Add(giAndNoGiBody);
-            giAndNoGiStackLayout.Children.Add(giAndNoGiImageFrame);
-            giAndNoGiStackLayout.Orientation = StackOrientation.Vertical;
 #if __ANDROID__
+            giAndNoGiStackLayout.Children.Add(androidGiAndNoGiTitle.ToView());
+            giAndNoGiStackLayout.Children.Add(androidGiAndNoGiPrice.ToView());
+            giAndNoGiStackLayout.Children.Add(androidGiAndNoGiBody.ToView());
+
             giStackLayout.Children.Add(androidGiTitle.ToView());
             giStackLayout.Children.Add(androidGiPrice.ToView());
             giStackLayout.Children.Add(androidGiBody.ToView());
+
+            noGiStackLayout.Children.Add(androidNoGiTitle.ToView());
+            noGiStackLayout.Children.Add(androidNoGiPrice.ToView());
+            noGiStackLayout.Children.Add(androidNoGiBody.ToView());
 #endif
 #if __IOS__
+            giAndNoGiStackLayout.Children.Add(giAndNoGiTitle);
+            giAndNoGiStackLayout.Children.Add(giAndNoGiPrice);
+            giAndNoGiStackLayout.Children.Add(giAndNoGiBody);
+
             giStackLayout.Children.Add(giTitle);
             giStackLayout.Children.Add(giPrice);
             giStackLayout.Children.Add(giBody);
-#endif
-            giStackLayout.Children.Add(giImageFrame);
-            giStackLayout.Orientation = StackOrientation.Vertical;
+
             noGiStackLayout.Children.Add(noGiTitle);
             noGiStackLayout.Children.Add(noGiPrice);
             noGiStackLayout.Children.Add(noGiBody);
+#endif
+            giAndNoGiStackLayout.Children.Add(giAndNoGiImageFrame);
+            giAndNoGiStackLayout.Orientation = StackOrientation.Vertical;
+
+            giStackLayout.Children.Add(giImageFrame);
+            giStackLayout.Orientation = StackOrientation.Vertical;
+
             noGiStackLayout.Children.Add(noGiImageFrame);
             noGiStackLayout.Orientation = StackOrientation.Vertical;
 #if __IOS__
@@ -471,7 +515,7 @@ namespace MahechaBJJ.Views.SignUpPages
             if (width > height)
             {
 #if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
+                Padding = new Thickness(10, 10, 10, 10);
 #endif
 #if __IOS__
             Padding = new Thickness(10, 10, 10, 10);
@@ -506,7 +550,7 @@ namespace MahechaBJJ.Views.SignUpPages
             else
             {
 #if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
+                Padding = new Thickness(10, 10, 10, 10);
 #endif
 #if __IOS__
             Padding = new Thickness(10, 30, 10, 10);

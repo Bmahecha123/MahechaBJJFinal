@@ -321,6 +321,7 @@ namespace MahechaBJJ.Views.SignUpPages
             androidNameEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidNameEntry.SetTextColor(Android.Graphics.Color.Black);
             androidNameEntry.Gravity = Android.Views.GravityFlags.Start;
+            androidNameEntry.InputType = Android.Text.InputTypes.TextVariationPersonName;
 
             androidBeltLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidBeltLbl.Text = "Belt";
@@ -333,12 +334,14 @@ namespace MahechaBJJ.Views.SignUpPages
             androidEmailAddressEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidEmailAddressEntry.SetTextColor(Android.Graphics.Color.Black);
             androidEmailAddressEntry.Gravity = Android.Views.GravityFlags.Start;
+            androidEmailAddressEntry.InputType = Android.Text.InputTypes.TextVariationEmailAddress;
 
             androidPassWordEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidPassWordEntry.Hint = "Password";
             androidPassWordEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidPassWordEntry.SetTextColor(Android.Graphics.Color.Black);
             androidPassWordEntry.Gravity = Android.Views.GravityFlags.Start;
+            androidPassWordEntry.InputType = Android.Text.InputTypes.TextVariationPassword;
 
             androidSecretQuestionsLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidSecretQuestionsLbl.Text = "Secret Questions";
@@ -351,6 +354,7 @@ namespace MahechaBJJ.Views.SignUpPages
             androidSecretQuestionEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidSecretQuestionEntry.SetTextColor(Android.Graphics.Color.Black);
             androidSecretQuestionEntry.Gravity = Android.Views.GravityFlags.Start;
+            androidSecretQuestionEntry.InputType = Android.Text.InputTypes.TextVariationShortMessage;
 
             androidNextBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidNextBtn.Text = "Next";
@@ -497,7 +501,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 RowDefinitions = new RowDefinitionCollection
                 {
                     new RowDefinition { Height = new GridLength(9, GridUnitType.Star) },
-                    new RowDefinition { Height = new GridLength(2, GridUnitType.Star) }
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }
                 }
             };
 #endif
@@ -641,7 +645,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.ColumnDefinitions.Clear();
 
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(9, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
                 innerGrid.Children.Add(scrollView, 0, 0);
                 innerGrid.Children.Add(buttonGrid, 0, 1);

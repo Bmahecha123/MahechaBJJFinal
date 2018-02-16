@@ -271,6 +271,21 @@
             Unexpected failure
             </summary>
         </member>
+        <member name="F:PInvoke.HResult.Code.RPC_E_CALL_CANCELED">
+            <summary>
+            The call was already canceled
+            </summary>
+        </member>
+        <member name="F:PInvoke.HResult.Code.RPC_E_CALL_COMPLETE">
+            <summary>
+            The call was completed during the timeout interval
+            </summary>
+        </member>
+        <member name="F:PInvoke.HResult.Code.CO_E_CANCEL_DISABLED">
+            <summary>
+            Call cancellation is not enabled on the specified thread
+            </summary>
+        </member>
         <member name="T:PInvoke.HResult.FacilityCode">
             <summary>
             HRESULT facility codes defined by winerror.h

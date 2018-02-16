@@ -6,6 +6,10 @@ using MahechaBJJ.ViewModel.SignUpPages;
 using Plugin.InAppBilling;
 using Plugin.InAppBilling.Abstractions;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
+#if __ANDROID__
+using MahechaBJJ.Droid;
+#endif
 
 namespace MahechaBJJ.Views.SignUpPages
 {
@@ -34,6 +38,18 @@ namespace MahechaBJJ.Views.SignUpPages
         private Image packageImage;
         private Package package;
         private bool userPassed;
+#if __ANDROID__
+        private Android.Widget.TextView androidSummaryLbl;
+        private Android.Widget.TextView androidUserDetailsLbl;
+        private Android.Widget.TextView androidPackageLbl;
+        private Android.Widget.TextView androidPriceLbl;
+        private Android.Widget.TextView androidNameLbl;
+        private Android.Widget.TextView androidEmailLbl;
+        private Android.Widget.TextView androidBeltLbl;
+        private Android.Widget.TextView androidSecretQuestionLbl;
+        private Android.Widget.TextView androidSecretQuestionAnswerLbl;
+        private Android.Widget.Button androidSignUpBtn;
+#endif
 
         public SummaryPage(Package package)
         {
@@ -136,14 +152,90 @@ namespace MahechaBJJ.Views.SignUpPages
                 }
             };
 #endif
+#if __ANDROID__
+            buttonGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
+            };
+#endif
+
+#if __ANDROID__
+
+            androidSummaryLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidSummaryLbl.Text = "Summary";
+            androidSummaryLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidSummaryLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidSummaryLbl.Gravity = Android.Views.GravityFlags.Center;
+            androidSummaryLbl.SetTypeface(androidSummaryLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
+            androidPackageLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidPackageLbl.Text = $"Package: {packageName}";
+            androidPackageLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidPackageLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidPackageLbl.Gravity = Android.Views.GravityFlags.Start;
+
+            androidPriceLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidPriceLbl.Text = $"Price: {packagePrice}";
+            androidPriceLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidPriceLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidPriceLbl.Gravity = Android.Views.GravityFlags.Start;
+
+            androidSignUpBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidSignUpBtn.Text = "Sign Up";
+            androidSignUpBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidSignUpBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidSignUpBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidSignUpBtn.Click += (object sender, EventArgs e) => {
+                SignUp();
+            };
+
+            if (hasUser)
+            {
+                androidUserDetailsLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+                androidUserDetailsLbl.Text = "User Details";
+                androidUserDetailsLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+                androidUserDetailsLbl.SetTextColor(Android.Graphics.Color.Black);
+                androidUserDetailsLbl.Gravity = Android.Views.GravityFlags.Center;
+                androidUserDetailsLbl.SetTypeface(androidUserDetailsLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
+                androidNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+                androidNameLbl.Text = $"Name: {user.Name}";
+                androidNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+                androidNameLbl.SetTextColor(Android.Graphics.Color.Black);
+                androidNameLbl.Gravity = Android.Views.GravityFlags.Start;
+
+                androidEmailLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+                androidEmailLbl.Text = $"E-Mail: {user.Email}";
+                androidEmailLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+                androidEmailLbl.SetTextColor(Android.Graphics.Color.Black);
+                androidEmailLbl.Gravity = Android.Views.GravityFlags.Start;
+
+                androidBeltLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+                androidBeltLbl.Text = $"Belt: {user.Belt}";
+                androidBeltLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+                androidBeltLbl.SetTextColor(Android.Graphics.Color.Black);
+                androidBeltLbl.Gravity = Android.Views.GravityFlags.Start;
+
+                androidSecretQuestionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+                androidSecretQuestionLbl.Text = $"Secret Question: {user.SecretQuestion}";
+                androidSecretQuestionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+                androidSecretQuestionLbl.Gravity = Android.Views.GravityFlags.Start;
+
+                androidSecretQuestionAnswerLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+                androidSecretQuestionAnswerLbl.Text = $"Answer: {user.SecretQuestionAnswer}";
+                androidSecretQuestionAnswerLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+                androidSecretQuestionAnswerLbl.Gravity = Android.Views.GravityFlags.Start;
+            }
+#endif
 
             backBtn = new Button
             {
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
 #endif
                 Text = "Back",
                 FontSize = btnSize * 1.5,
@@ -399,34 +491,25 @@ namespace MahechaBJJ.Views.SignUpPages
                 {
                     RowDefinitions = new RowDefinitionCollection
                 {
-                    new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-                };
-                buttonGrid = new Grid
-                {
-                    RowDefinitions = new RowDefinitionCollection
-                {
+                    new RowDefinition { Height = new GridLength(6, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
                 };
 #endif
 
-
-
 #if __ANDROID__
                 stackLayout = new StackLayout
                 {
                     Children = {
-                    summaryLbl,
-                    packageLbl,
-                    priceLbl,
-                    userDetailsLbl,
-                    nameLbl,
-                    emailLbl,
-                    beltLbl,
-                    secretQuestionLbl,
-                    secretQuestionAnswerLbl
+                        androidSummaryLbl.ToView(),
+                        androidPackageLbl.ToView(),
+                        androidPriceLbl.ToView(),
+                        androidUserDetailsLbl.ToView(),
+                        androidNameLbl.ToView(),
+                        androidEmailLbl.ToView(),
+                        androidBeltLbl.ToView(),
+                        androidSecretQuestionLbl.ToView(),
+                        androidSecretQuestionAnswerLbl.ToView()
                 }
                 };
                 scrollView = new ScrollView
@@ -448,7 +531,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.Children.Add(buttonGrid, 0, 9);
 #endif
 #if __ANDROID__
-                buttonGrid.Children.Add(signUpBtn, 0, 0);
+                buttonGrid.Children.Add(androidSignUpBtn.ToView(), 0, 0);
 
                 innerGrid.Children.Add(scrollView, 0, 0);
                 innerGrid.Children.Add(buttonGrid, 0, 1);
@@ -471,7 +554,13 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.Children.Add(buttonGrid, 0, 4);
 #endif
 #if __ANDROID__
+                buttonGrid.Children.Add(androidSignUpBtn.ToView(), 0, 0);
 
+                innerGrid.Children.Add(androidSummaryLbl.ToView(), 0, 0);
+                innerGrid.Children.Add(androidPackageLbl.ToView(), 0, 1);
+                innerGrid.Children.Add(androidPriceLbl.ToView(), 0, 2);
+                innerGrid.Children.Add(packageImage, 0, 3);
+                innerGrid.Children.Add(buttonGrid, 0, 4);
 #endif
             }
 
@@ -578,7 +667,7 @@ namespace MahechaBJJ.Views.SignUpPages
             backBtn.IsEnabled = !backBtn.IsEnabled;
             signUpBtn.IsEnabled = !signUpBtn.IsEnabled;
         }
-     /*       
+          
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height); //must be called
@@ -666,7 +755,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
                 }
             }
-        } */
+        }
     }
 }
 

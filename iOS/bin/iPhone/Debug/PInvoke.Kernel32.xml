@@ -1561,6 +1561,13 @@
             <returns>The process identifier of the calling process.</returns>
             <remarks>Until the process terminates, the process identifier uniquely identifies the process throughout the system.</remarks>
         </member>
+        <member name="M:PInvoke.Kernel32.GetProcessId(System.IntPtr)">
+            <summary>
+            Retrieves the process identifier of the specified process.
+            </summary>
+            <param name="Process">A handle to the process. The handle must have the PROCESS_QUERY_INFORMATION or PROCESS_QUERY_LIMITED_INFORMATION access right. For more information, see Process Security and Access Rights.</param>
+            <returns>The process identifier of the specified process.</returns>
+        </member>
         <member name="M:PInvoke.Kernel32.GetCurrentProcess">
             <summary>Retrieves a pseudo handle for the current process.</summary>
             <returns>The return value is a pseudo handle to the current process.</returns>

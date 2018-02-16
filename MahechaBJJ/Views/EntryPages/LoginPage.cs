@@ -236,7 +236,9 @@ namespace MahechaBJJ.Views.EntryPages
             androidPasswordEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidPasswordEntry.SetPadding(0, 0, 0, 0);
             androidPasswordEntry.SetTextColor(Android.Graphics.Color.Black);
+            androidPasswordEntry.SetHighlightColor(Android.Graphics.Color.Transparent);
             androidPasswordEntry.InputType = Android.Text.InputTypes.TextVariationPassword;
+
 #endif
             //Events
             loginBtn.Clicked += Validate;

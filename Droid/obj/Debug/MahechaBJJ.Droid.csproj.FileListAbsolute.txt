@@ -220,10 +220,6 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Xamarin.Auth.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Xamarin.Auth.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/PCLCrypto.xml
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/PInvoke.Windows.Core.xml
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/PInvoke.Kernel32.xml
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/PInvoke.BCrypt.xml
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/PInvoke.NCrypt.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Validation.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.CurrentActivity.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.Abstractions.pdb
@@ -234,6 +230,10 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.VendingLibrary.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.VendingLibrary.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.VendingLibrary.xml
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/PInvoke.Windows.Core.xml
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/PInvoke.Kernel32.xml
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/PInvoke.BCrypt.xml
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/PInvoke.NCrypt.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/FormsViewGroup.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/FormsViewGroup.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Xamarin.Forms.Core.pdb
