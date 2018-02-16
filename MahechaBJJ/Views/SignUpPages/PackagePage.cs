@@ -4,6 +4,7 @@ using MahechaBJJ.ViewModel.CommonPages;
 using Xamarin.Forms;
 #if __ANDROID__
 using Xamarin.Forms.Platform.Android;
+using MahechaBJJ.Droid;
 #endif
 
 namespace MahechaBJJ.Views.SignUpPages
@@ -40,6 +41,17 @@ namespace MahechaBJJ.Views.SignUpPages
         private Label giAndNoGiBody;
         private Image giAndNoGiImage;
         private Frame giAndNoGiImageFrame;
+#if __ANDROID__
+        private Android.Widget.TextView androidGiTitle;
+        private Android.Widget.TextView androidGiPrice;
+        private Android.Widget.TextView androidGiBody;
+        private Android.Widget.TextView androidNoGiTitle;
+        private Android.Widget.TextView androidNoGiPrice;
+        private Android.Widget.TextView androidNoGiBody;
+        private Android.Widget.TextView androidGiAndNoGiTitle;
+        private Android.Widget.TextView androidGiAndNoGiPrice;
+        private Android.Widget.TextView androidGiAndNoGiBody;
+#endif
 
         public PackagePage()
         {
@@ -163,6 +175,29 @@ namespace MahechaBJJ.Views.SignUpPages
                 HasShadow = false
             };
 
+#if __ANDROID__
+            androidGiTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidGiTitle.Text = "Gi";
+            androidGiTitle.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidGiTitle.SetTextColor(Android.Graphics.Color.Black);
+            androidGiTitle.Gravity = Android.Views.GravityFlags.Start;
+            androidGiTitle.SetTypeface(androidGiTitle.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
+            androidGiPrice = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidGiPrice.Text = "$19.99";
+            androidGiPrice.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidGiPrice.SetTextColor(Android.Graphics.Color.Black);
+            androidGiPrice.Gravity = Android.Views.GravityFlags.Start;
+            androidGiPrice.SetTypeface(androidGiPrice.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
+            androidGiBody = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidGiBody.Text = "This library is growing constantly and there is no end in sight. The beauty of this package is that you get to follow our system as we develop and implement new transitions and positions. We’re constantly pushing the barrier in terms of our style and approach to Jiu-Jitsu. Every position that gets posted has been drilled to death and executed at the highest levels of competition. We’re proud of this; something I see wrong with other instructional resources is positions are shown that I know they have never ever hit in a competition or anything. You never have to worry about that with our techniques. One of the biggest advantages of our app is that you have direct access to us, if you have any questions or concerns; contacting us is a click away. Let’s grow and develop our Jiu Jitsu together!";
+            androidGiBody.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
+            androidGiBody.SetTextColor(Android.Graphics.Color.Black);
+            androidGiBody.Gravity = Android.Views.GravityFlags.Start;
+            androidGiBody.SetTypeface(androidGiBody.Typeface, Android.Graphics.TypefaceStyle.Bold);
+#endif
+
             #endregion
             #region NOGI
             noGiTitle = new Label
@@ -246,6 +281,14 @@ namespace MahechaBJJ.Views.SignUpPages
                 Content = noGiScrollView,
                 HasShadow = false
             };
+
+#if __ANDROID__
+            //TODO FINISH UP FILLING EVERYTHING IN FOR THESE VIEWS
+            androidNoGiTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidNoGiPrice = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidNoGiBody = new Android.Widget.TextView(MainApplication.ActivityContext);
+#endif
+
 
             #endregion
             #region GIANDNOGI
@@ -332,6 +375,14 @@ namespace MahechaBJJ.Views.SignUpPages
                 Content = giAndNoGiScrollView
             };
 
+#if __ANDROID__
+            //TODO FINISH UP FILLING EVERYTHING IN FOR THESE VIEWS
+            androidGiAndNoGiTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidGiAndNoGiPrice = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidGiAndNoGiBody = new Android.Widget.TextView(MainApplication.ActivityContext);
+#endif
+
+
             #endregion
             outerGrid = new Grid
             {
@@ -380,9 +431,16 @@ namespace MahechaBJJ.Views.SignUpPages
             giAndNoGiStackLayout.Children.Add(giAndNoGiBody);
             giAndNoGiStackLayout.Children.Add(giAndNoGiImageFrame);
             giAndNoGiStackLayout.Orientation = StackOrientation.Vertical;
+#if __ANDROID__
+            giStackLayout.Children.Add(androidGiTitle.ToView());
+            giStackLayout.Children.Add(androidGiPrice.ToView());
+            giStackLayout.Children.Add(androidGiBody.ToView());
+#endif
+#if __IOS__
             giStackLayout.Children.Add(giTitle);
             giStackLayout.Children.Add(giPrice);
             giStackLayout.Children.Add(giBody);
+#endif
             giStackLayout.Children.Add(giImageFrame);
             giStackLayout.Orientation = StackOrientation.Vertical;
             noGiStackLayout.Children.Add(noGiTitle);

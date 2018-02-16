@@ -10,9 +10,9 @@ using Newtonsoft.Json;
 using System.Text;
 using MahechaBJJ.Views.SignUpPages;
 using MahechaBJJ.ViewModel.SignUpPages;
+#if __ANDROID__
 using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
-#if __ANDROID__
 #endif
 
 namespace MahechaBJJ.Views.SignUpPages

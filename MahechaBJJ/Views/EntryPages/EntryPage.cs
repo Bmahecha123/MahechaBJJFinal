@@ -235,20 +235,32 @@ namespace MahechaBJJ.Views.EntryPages
             if (_entryPageViewModel.HasGiAndNoGiPackage)
             {
                 package = Package.GiAndNoGi;
+                Restore();
             }
             else if (_entryPageViewModel.HasGiPackage && _entryPageViewModel.HasNoGiPackage)
             {
                 package = Package.GiAndNoGi;
+                Restore();
             }
             else if (_entryPageViewModel.HasGiPackage && !_entryPageViewModel.HasNoGiPackage)
             {
                 package = Package.Gi;
+                Restore();
             }
             else if (_entryPageViewModel.HasNoGiPackage && !_entryPageViewModel.HasGiPackage)
             {
                 package = Package.NoGi;
+                Restore();
             }
+            else 
+            {
+                await DisplayAlert("No Packages Found", "There were no packages found.", "Ok");
+                ToggleButtons();
+            }
+        }
 
+        private void Restore()
+        {
             _summaryPageViewModel.SavePackageInfoWithNoAccount(package);
             Application.Current.MainPage = new MainTabbedPage(false);
             ToggleButtons();

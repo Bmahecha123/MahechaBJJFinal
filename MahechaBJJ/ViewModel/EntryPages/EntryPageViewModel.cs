@@ -53,6 +53,9 @@ namespace MahechaBJJ.ViewModel.EntryPages
         public EntryPageViewModel()
 		{
             _purchaseService = new PurchaseService();
+            _hasGiAndNoGiPackage = false;
+            _hasGiPackage = false;
+            _hasNoGiPackage = false;
 		}
 
         public async Task CheckIfUserHasPackage()

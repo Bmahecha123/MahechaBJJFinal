@@ -24,6 +24,8 @@ namespace MahechaBJJ.Views.SignUpPages
 #if __ANDROID__
         private Android.Widget.Button androidAccountBtn;
         private Android.Widget.Button androidNoAccountBtn;
+        private Android.Widget.TextView androidAccountTitle;
+        private Android.Widget.TextView androidAccountInfo;
 #endif
 
         public AccountInfoPage(Package package)
@@ -121,7 +123,8 @@ namespace MahechaBJJ.Views.SignUpPages
             androidNoAccountBtn.SetBackgroundColor(Android.Graphics.Color.DarkRed);
             androidNoAccountBtn.SetTextColor(Android.Graphics.Color.Black);
             androidNoAccountBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidNoAccountBtn.Click += (object sender, EventArgs e) => {
+            androidNoAccountBtn.Click += (object sender, EventArgs e) =>
+            {
                 Navigation.PushModalAsync(new SummaryPage(package));
             };
 
@@ -131,18 +134,37 @@ namespace MahechaBJJ.Views.SignUpPages
             androidAccountBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidAccountBtn.SetTextColor(Android.Graphics.Color.Black);
             androidAccountBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidAccountBtn.Click += (object sender, EventArgs e) => {
+            androidAccountBtn.Click += (object sender, EventArgs e) =>
+            {
                 Navigation.PushModalAsync(new SignUpPage(package));
             };
+
+            androidAccountTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidAccountTitle.Text = "Mahecha BJJ Account";
+            androidAccountTitle.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidAccountTitle.SetTextColor(Android.Graphics.Color.Black);
+            androidAccountTitle.Gravity = Android.Views.GravityFlags.Center;
+            androidAccountTitle.SetTypeface(androidAccountTitle.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
+            androidAccountInfo = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidAccountInfo.Text = "-Ability to create and manage you're own playlists.\n-Access to Mahecha BJJ Web Application(Coming soon)";
+            androidAccountInfo.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidAccountInfo.SetTextColor(Android.Graphics.Color.Black);
+            androidAccountInfo.Gravity = Android.Views.GravityFlags.Start;
 #endif
         }
 
         private void SetContent()
         {
             accountStackLayout = new StackLayout();
+#if __ANDROID__
+            accountStackLayout.Children.Add(androidAccountTitle.ToView());
+            accountStackLayout.Children.Add(androidAccountInfo.ToView());
+#endif
+#if __IOS__
             accountStackLayout.Children.Add(accountTitle);
             accountStackLayout.Children.Add(accountInfo);
-
+#endif
             accountScrollView = new ScrollView();
             accountScrollView.Content = accountStackLayout;
 

@@ -64,6 +64,7 @@ namespace MahechaBJJ.Service
                 var purchases = await billing.GetPurchasesAsync(ItemType.InAppPurchase);
 
                 //Check for null just incase
+
                 if (purchases?.Any(p => p.ProductId == productId) ?? false)
                 {
                     //Purchase restored
