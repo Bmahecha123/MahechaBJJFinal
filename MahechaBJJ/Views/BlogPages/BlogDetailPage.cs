@@ -1,7 +1,11 @@
-﻿ using System;
+﻿using System;
 using System.Text.RegularExpressions;
 using MahechaBJJ.Model;
 using Xamarin.Forms;
+#if __ANDROID__
+using Xamarin.Forms.Platform.Android;
+using MahechaBJJ.Droid;
+#endif
 
 namespace MahechaBJJ.Views.BlogPages
 {
@@ -17,12 +21,16 @@ namespace MahechaBJJ.Views.BlogPages
         private ScrollView scrollView;
         private BlogPosts.Post globalBlogPost;
 
+#if __ANDROID__
+        private Android.Widget.TextView androidBlogContentLbl;
+#endif
+
         public BlogDetailPage(BlogPosts.Post blogPost)
         {
             Title = "Blog Post";
             blogString = StripHtml(blogPost.caption);
 #if __ANDROID__
-            Padding = new Thickness(5, 5, 5, 5);
+            Padding = new Thickness(10, 10, 10, 10);
 #endif
 #if __IOS__
                 Padding = new Thickness(10, 30, 10, 10);
@@ -97,11 +105,25 @@ namespace MahechaBJJ.Views.BlogPages
                 BorderWidth = 3,
                 TextColor = Color.Black
             };
+
+#if __ANDROID__
+
+            androidBlogContentLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidBlogContentLbl.Text = blogString;
+            androidBlogContentLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
+            androidBlogContentLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidBlogContentLbl.Gravity = Android.Views.GravityFlags.Start;
+#endif
+
             scrollView = new ScrollView
             {
-                Content = blogContentLbl
+#if __ANDROID__
+                Content = androidBlogContentLbl.ToView()
+#endif
+#if __IOS__
+                    Content = blogContentLbl
+#endif          
             };
-
 
             //Events
             backBtn.Clicked += GoBack;
@@ -141,12 +163,8 @@ namespace MahechaBJJ.Views.BlogPages
 
             if (width > height)
             {
-#if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
                 Padding = new Thickness(10, 10, 10, 10);
-#endif                
+
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
@@ -170,7 +188,7 @@ namespace MahechaBJJ.Views.BlogPages
             else
             {
 #if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
+                Padding = new Thickness(10, 10, 10, 10);
 #endif
 #if __IOS__
                 Padding = new Thickness(10, 30, 10, 10);

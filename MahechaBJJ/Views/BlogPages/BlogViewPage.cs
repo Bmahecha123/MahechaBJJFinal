@@ -3,6 +3,10 @@ using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.BlogPages;
 using Xamarin.Forms;
+#if __ANDROID__
+using MahechaBJJ.Droid;
+using Xamarin.Forms.Platform.Android;
+#endif
 
 namespace MahechaBJJ.Views.BlogPages
 {
@@ -25,13 +29,16 @@ namespace MahechaBJJ.Views.BlogPages
         private Frame timeOutFrame;
         private TapGestureRecognizer timeOutTap;
         private ActivityIndicator activityIndicator;
+#if __ANDROID__
+        private Android.Widget.TextView androidViewBlogLbl;
+#endif
 
         public BlogViewPage()
         {
             _blogViewPageViewModel = new BlogViewPageViewModel();
             Title = "Blog Posts";
 #if __ANDROID__
-            Padding = new Thickness(5, 5, 5, 5);
+            Padding = new Thickness(10, 10, 10, 10);
 #endif
 #if __IOS__
                     Padding = new Thickness(10, 30, 10, 10);
@@ -139,6 +146,16 @@ namespace MahechaBJJ.Views.BlogPages
                 IsVisible = true
             };
 
+#if __ANDROID__
+            androidViewBlogLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidViewBlogLbl.Text = "Mahecha BJJ Blog";
+            androidViewBlogLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            //androidViewBlogLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidViewBlogLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidViewBlogLbl.Gravity = Android.Views.GravityFlags.Center;
+            androidViewBlogLbl.SetTypeface(androidViewBlogLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
+#endif
+
             //Events
             backBtn.Clicked += GoBack;
             blogListView.ItemSelected += LoadBlogpost;
@@ -194,23 +211,20 @@ namespace MahechaBJJ.Views.BlogPages
                     blogLbl.VerticalTextAlignment = TextAlignment.Center;
                     blogLbl.HorizontalTextAlignment = TextAlignment.Center;
                     blogLbl.TextColor = Color.Black;
+
 #if __ANDROID__
-                    blogLbl.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
+                    blogLbl.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
+                    blogLbl.LineBreakMode = LineBreakMode.WordWrap;
+                    blogLbl.FontAttributes = FontAttributes.Bold;
 #endif
 #if __IOS__
                     blogLbl.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
-#endif
-                    blogLbl.LineBreakMode = LineBreakMode.WordWrap;
-#if __IOS__
                     blogLbl.FontFamily = "AmericanTypewriter-Bold";
-#endif
-#if __ANDROID__
-                    blogLbl.FontFamily = "Roboto Bold";
 #endif
 
                     blogImage = new Image();
-                    blogImage.SetBinding(Image.SourceProperty, "photos[0].alt_sizes[1].url");
-                    blogImage.Aspect = Aspect.Fill;
+                    blogImage.SetBinding(Image.SourceProperty, "photos[0].alt_sizes[0].url");
+                    blogImage.Aspect = Aspect.AspectFit;
 
                     blogFrame = new Frame();
                     blogFrame.BackgroundColor = Color.Black;
@@ -240,13 +254,16 @@ namespace MahechaBJJ.Views.BlogPages
                 });
 
                 //building grid
-                innerGrid.Children.Clear();
-                innerGrid.Children.Add(viewBlogLbl, 0, 0);
-                innerGrid.Children.Add(blogListView, 0, 1);
 #if __ANDROID__
+                innerGrid.Children.Clear();
+                innerGrid.Children.Add(androidViewBlogLbl.ToView(), 0, 0);
+                innerGrid.Children.Add(blogListView, 0, 1);
                 Grid.SetRowSpan(blogListView, 2);
 #endif
 #if __IOS__
+                innerGrid.Children.Clear();
+                innerGrid.Children.Add(viewBlogLbl, 0, 0);
+                innerGrid.Children.Add(blogListView, 0, 1);
                 innerGrid.Children.Add(backBtn, 0, 2);
 #endif
             }
@@ -280,12 +297,8 @@ namespace MahechaBJJ.Views.BlogPages
             {
                 if (_blogViewPageViewModel.BlogPosts != null)
                 {
-                    #if __ANDROID__
-                    Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
                     Padding = new Thickness(10, 10, 10, 10);
-#endif                    
+
                     innerGrid.RowDefinitions.Clear();
                     innerGrid.ColumnDefinitions.Clear();
                     innerGrid.Children.Clear();
@@ -306,12 +319,12 @@ namespace MahechaBJJ.Views.BlogPages
 #endif
 #if __ANDROID__
                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
+                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(5, GridUnitType.Star) });
                     innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(4, GridUnitType.Star) });
+                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(6, GridUnitType.Star) });
                     innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                     //building grid
-                    innerGrid.Children.Add(viewBlogLbl, 1, 0);
+                    innerGrid.Children.Add(androidViewBlogLbl.ToView(), 1, 0);
                     innerGrid.Children.Add(blogListView, 1, 1);
 #endif
                 }
@@ -321,7 +334,7 @@ namespace MahechaBJJ.Views.BlogPages
                 if (_blogViewPageViewModel.BlogPosts != null)
                 {
 #if __ANDROID__
-                    Padding = new Thickness(5, 5, 5, 5);
+                    Padding = new Thickness(10, 10, 10, 10);
 #endif
 #if __IOS__
                     Padding = new Thickness(10, 30, 10, 10);
@@ -333,10 +346,16 @@ namespace MahechaBJJ.Views.BlogPages
                     innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                     innerGrid.Children.Clear();
                     //building grid
+#if __IOS__
                     innerGrid.Children.Clear();
                     innerGrid.Children.Add(viewBlogLbl, 0, 0);
                     innerGrid.Children.Add(blogListView, 0, 1);
+#endif
 #if __ANDROID__
+                    //building grid
+                    innerGrid.Children.Clear();
+                    innerGrid.Children.Add(androidViewBlogLbl.ToView(), 0, 0);
+                    innerGrid.Children.Add(blogListView, 0, 1);
                     Grid.SetRowSpan(blogListView, 2);
 #endif
 #if __IOS__

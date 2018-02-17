@@ -6,9 +6,9 @@ using MahechaBJJ.ViewModel.SignUpPages;
 using Plugin.InAppBilling;
 using Plugin.InAppBilling.Abstractions;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
 #if __ANDROID__
 using MahechaBJJ.Droid;
+using Xamarin.Forms.Platform.Android;
 #endif
 
 namespace MahechaBJJ.Views.SignUpPages
