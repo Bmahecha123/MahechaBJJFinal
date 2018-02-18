@@ -157,6 +157,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidLoginBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
             androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidLoginBtn.SetAllCaps(false);
 
             androidSignUpBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidSignUpBtn.Text = "Sign Up";
@@ -164,6 +165,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidSignUpBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidSignUpBtn.SetTextColor(Android.Graphics.Color.Black);
             androidSignUpBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidSignUpBtn.SetAllCaps(false);
 
             androidBlogBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidBlogBtn.Text = "Learn More";
@@ -171,6 +173,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidBlogBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidBlogBtn.SetTextColor(Android.Graphics.Color.Black);
             androidBlogBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidBlogBtn.SetAllCaps(false);
 
             androidRestoreBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidRestoreBtn.Text = "Restore Packages";
@@ -178,6 +181,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidRestoreBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidRestoreBtn.SetTextColor(Android.Graphics.Color.Black);
             androidRestoreBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidRestoreBtn.SetAllCaps(false);
 #endif
 
             //Button events

@@ -192,6 +192,7 @@ namespace MahechaBJJ.Views.SignUpPages
             androidSignUpBtn.Click += (object sender, EventArgs e) => {
                 SignUp();
             };
+            androidSignUpBtn.SetAllCaps(false);
 
             if (hasUser)
             {

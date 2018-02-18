@@ -127,6 +127,7 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 Navigation.PushModalAsync(new SummaryPage(package));
             };
+            androidNoAccountBtn.SetAllCaps(false);
 
             androidAccountBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidAccountBtn.Text = "Create";
@@ -138,6 +139,7 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 Navigation.PushModalAsync(new SignUpPage(package));
             };
+            androidAccountBtn.SetAllCaps(false);
 
             androidAccountTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidAccountTitle.Text = "Mahecha BJJ Account";

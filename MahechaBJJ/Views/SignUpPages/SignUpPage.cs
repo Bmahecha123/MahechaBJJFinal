@@ -366,6 +366,7 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 Validate();
             };
+            androidNextBtn.SetAllCaps(false);
 
             /*androidBlogBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidBlogBtn.Text = "Learn More";

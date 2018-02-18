@@ -5,6 +5,10 @@ using MahechaBJJ.Views.BlogPages;
 using MahechaBJJ.Views.CommonPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+#if __ANDROID__
+using MahechaBJJ.Droid;
+using Xamarin.Forms.Platform.Android;
+#endif
 
 namespace MahechaBJJ.Views
 {
@@ -42,6 +46,9 @@ namespace MahechaBJJ.Views
         private Label blogLbl;
         private Image blogImage;
         private TapGestureRecognizer blogTap;
+#if __ANDROID__
+        private Android.Widget.TextView androidBlogLbl;
+#endif
 
 
         public BrowsePage()
@@ -55,7 +62,7 @@ namespace MahechaBJJ.Views
 #endif
 #if __ANDROID__
             Icon = "openbook.png";
-            Padding = new Thickness(5, 5, 5, 5);
+            Padding = new Thickness(10, 10, 10, 10);
 #endif
             SetContent();
 
@@ -99,8 +106,8 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
+                FontSize = lblSize * 1.5,
+                FontAttributes = FontAttributes.Bold
 #endif
             };
 
@@ -145,8 +152,8 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75
+                FontSize = lblSize * 1.5,
+                FontAttributes = FontAttributes.Bold
 #endif
             };
 
@@ -192,8 +199,8 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75
+                FontSize = lblSize * 1.5,
+                FontAttributes = FontAttributes.Bold
 #endif
             };
 
@@ -239,8 +246,8 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75
+                FontSize = lblSize * 1.5,
+                FontAttributes = FontAttributes.Bold
 #endif
             };
 
@@ -286,8 +293,8 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75
+                FontSize = lblSize * 1.5,
+                FontAttributes = FontAttributes.Bold
 #endif
             };
 
@@ -333,8 +340,8 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75
+                FontSize = lblSize * 1.5,
+                FontAttributes = FontAttributes.Bold
 #endif
             };
 
@@ -364,7 +371,12 @@ namespace MahechaBJJ.Views
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 HasShadow = false,
                 OutlineColor = Color.Black,
+#if __ANDROID__
                 Content = backTakeLbl,
+#endif
+#if __IOS__
+                Content = backTakeLbl,
+#endif
                 Padding = new Thickness(10, 10, 10, 10)
             };
 
@@ -380,8 +392,8 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75
+                FontSize = lblSize * 1.5,
+                FontAttributes = FontAttributes.Bold
 #endif
             };
 
@@ -421,9 +433,6 @@ namespace MahechaBJJ.Views
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
                 FontSize = lblSize * 2,
                 TextColor = Color.White,
                 VerticalTextAlignment = TextAlignment.Center,
@@ -449,10 +458,19 @@ namespace MahechaBJJ.Views
                 Padding = 3
             };
 
+#if __ANDROID__
+            androidBlogLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidBlogLbl.Text = "Blog";
+            androidBlogLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidBlogLbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
+            androidBlogLbl.Gravity = Android.Views.GravityFlags.Center;
+            androidBlogLbl.Click += (object sender, EventArgs e) =>
+            {
+                Navigation.PushModalAsync(new BlogViewPage());
+            };
+#endif
 
             //Events
-
-
             //adding children
             stackLayout.Children.Add(sweepFrame);
             stackLayout.Children.Add(takeDownFrame);
@@ -465,7 +483,13 @@ namespace MahechaBJJ.Views
 
             innerGrid.Children.Add(scrollView, 0, 0);
             innerGrid.Children.Add(blogFrame, 0, 1);
+#if __ANDROID__
+            innerGrid.Children.Add(androidBlogLbl.ToView(), 0, 1);
+#endif
+#if __IOS__
+
             innerGrid.Children.Add(blogLbl, 0, 1);
+#endif
             outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = outerGrid;
@@ -488,9 +512,12 @@ namespace MahechaBJJ.Views
                 //building grid
                 innerGrid.Children.Add(scrollView, 0, 0);
                 innerGrid.Children.Add(blogFrame, 1, 0);
-                //Grid.SetRowSpan(blogFrame, 2);
+#if __ANDROID__
+                innerGrid.Children.Add(androidBlogLbl.ToView(), 1, 0);
+#endif
+#if __IOS__
                 innerGrid.Children.Add(blogLbl, 1, 0);
-                //Grid.SetRowSpan(blogLbl, 2);
+#endif
             }
             else
             {
@@ -499,8 +526,8 @@ namespace MahechaBJJ.Views
                 Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
-#endif				
+                Padding = new Thickness(10, 10, 10, 10);
+#endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
@@ -509,7 +536,14 @@ namespace MahechaBJJ.Views
                 //building grid
                 innerGrid.Children.Add(scrollView, 0, 0);
                 innerGrid.Children.Add(blogFrame, 0, 1);
-                innerGrid.Children.Add(blogLbl, 0, 1);
+#if __ANDROID__
+                innerGrid.Children.Add(androidBlogLbl.ToView(), 0, 1);
+#endif
+#if __IOS__
+
+            innerGrid.Children.Add(blogLbl, 0, 1);
+#endif
+
             }
         }
     }

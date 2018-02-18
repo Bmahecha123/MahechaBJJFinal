@@ -38,6 +38,8 @@ namespace MahechaBJJ.Views.EntryPages
         private Android.Widget.Button androidForgotPasswordBtn;
         private Android.Widget.EditText androidEmailEntry;
         private Android.Widget.EditText androidPasswordEntry;
+        private Android.Support.Design.Widget.TextInputEditText androidTextInputEditText;
+
 #endif
 
 
@@ -216,6 +218,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidLoginBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
             androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidLoginBtn.SetAllCaps(false);
 
             androidForgotPasswordBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidForgotPasswordBtn.Text = "?";
@@ -223,6 +226,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidForgotPasswordBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(124, 37, 41));
             androidForgotPasswordBtn.SetTextColor(Android.Graphics.Color.Black);
             androidForgotPasswordBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidForgotPasswordBtn.SetAllCaps(false);
 
             androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidEmailEntry.Hint = "E-Mail Address";
@@ -237,8 +241,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidPasswordEntry.SetPadding(0, 0, 0, 0);
             androidPasswordEntry.SetTextColor(Android.Graphics.Color.Black);
             androidPasswordEntry.SetHighlightColor(Android.Graphics.Color.Transparent);
-            androidPasswordEntry.InputType = Android.Text.InputTypes.TextVariationPassword;
-
+            androidPasswordEntry.InputType = Android.Text.InputTypes.TextVariationWebPassword;
 #endif
             //Events
             loginBtn.Clicked += Validate;
@@ -273,6 +276,7 @@ namespace MahechaBJJ.Views.EntryPages
             innerGrid.Children.Add(mahechaLogo, 0, 0);
             innerGrid.Children.Add(androidEmailEntry.ToView(), 0, 1);
             innerGrid.Children.Add(androidPasswordEntry.ToView(), 0, 2);
+            //innerGrid.Children.Add(androidTextInputEditText.ToView(), 0, 2);
             innerGrid.Children.Add(buttonGrid, 0, 3);
 
             outerGrid.Children.Add(innerGrid, 0, 0);
