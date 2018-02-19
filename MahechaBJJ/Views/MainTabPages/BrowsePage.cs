@@ -468,6 +468,7 @@ namespace MahechaBJJ.Views
             {
                 Navigation.PushModalAsync(new BlogViewPage());
             };
+
 #endif
 
             //Events
