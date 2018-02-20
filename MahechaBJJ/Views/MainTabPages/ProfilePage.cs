@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.Service;
@@ -12,7 +11,10 @@ using MahechaBJJ.Views.EntryPages;
 using MahechaBJJ.Views.SignUpPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+#if __ANDROID__
 using Xamarin.Forms.Platform.Android;
+using MahechaBJJ.Droid;
+#endif
 
 namespace MahechaBJJ.Views
 {

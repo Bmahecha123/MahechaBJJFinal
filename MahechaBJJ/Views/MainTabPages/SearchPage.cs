@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.MainTabPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 
 namespace MahechaBJJ.Views
 {
@@ -29,6 +31,10 @@ namespace MahechaBJJ.Views
         private Frame videoFrame;
         private Button backBtn;
         private bool modal;
+#if __ANDROID__
+        private Android.Widget.Button androidLoadBtn;
+        private ContentView contentViewLoadBtn;
+#endif
 
 
         //CONSTS
@@ -65,7 +71,7 @@ namespace MahechaBJJ.Views
             this.modal = true;
             Title = "Search";
             Icon = "004-search.png";
-            #if __IOS__
+#if __IOS__
             Icon = "search.png";
             Title = "Search";
             Padding = new Thickness(10, 30, 10, 10);
@@ -198,6 +204,20 @@ namespace MahechaBJJ.Views
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
 
+#if __ANDROID__
+            androidLoadBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidLoadBtn.Text = "Load More...";
+            androidLoadBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidLoadBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidLoadBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidLoadBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidLoadBtn.SetAllCaps(false);
+            androidLoadBtn.Click += LoadMoreVideos;
+
+            contentViewLoadBtn = new ContentView();
+            contentViewLoadBtn.Content = androidLoadBtn.ToView();
+#endif
+
             videoListView = new ListView
             {
                 ItemsSource = searchedVideos,
@@ -209,21 +229,28 @@ namespace MahechaBJJ.Views
                     videoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
                     videoImage = new Image();
+#if __IOS__
                     videoImage.SetBinding(Image.SourceProperty, "pictures.sizes[3].link");
                     videoImage.Aspect = Aspect.Fill;
+#endif
+#if __ANDROID__
+                    videoImage.SetBinding(Image.SourceProperty, "pictures.sizes[4].link");
+                    videoImage.Aspect = Aspect.AspectFill;
+#endif
 
                     videoLbl = new Label();
                     videoLbl.SetBinding(Label.TextProperty, "name");
                     videoLbl.VerticalTextAlignment = TextAlignment.Center;
                     videoLbl.HorizontalTextAlignment = TextAlignment.Center;
-                    videoLbl.TextColor = Color.White;
-#if __IOS__
-					videoLbl.FontFamily = "AmericanTypewriter-Bold";
                     videoLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+
+#if __IOS__
+                    videoLbl.TextColor = Color.White;
+					videoLbl.FontFamily = "AmericanTypewriter-Bold";
 #endif
 #if __ANDROID__
-                    videoLbl.FontFamily = "Roboto Bold";
-                    videoLbl.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
+                    videoLbl.TextColor = Color.AntiqueWhite;
+                    videoLbl.FontAttributes = FontAttributes.Bold;
 #endif
 
 
@@ -285,19 +312,22 @@ namespace MahechaBJJ.Views
 
             if (moreToLoad)
             {
-                innerGrid.Children.Add(loadBtn, 0, 2);
+
 #if __ANDROID__
+                innerGrid.Children.Add(contentViewLoadBtn, 0, 2);
                 Grid.SetRowSpan(videoListView, 2);
 #endif
 #if __IOS__
+                innerGrid.Children.Add(loadBtn, 0, 2);
                 Grid.SetRowSpan(videoListView, 1);
 #endif
 
             }
             else
             {
-                innerGrid.Children.Remove(loadBtn);
+
 #if __ANDROID__
+                innerGrid.Children.Remove(contentViewLoadBtn);
                 if (modal)
                 {
                     Grid.SetRowSpan(videoListView, 3);
@@ -308,6 +338,7 @@ namespace MahechaBJJ.Views
                 }
 #endif
 #if __IOS__
+                innerGrid.Children.Remove(loadBtn);
                 Grid.SetRowSpan(videoListView, 2);
 #endif
 
@@ -365,7 +396,13 @@ namespace MahechaBJJ.Views
                 if (_searchPageViewModel.Videos.paging.next != null)
                 {
                     moreToLoad = true;
+#if __ANDROID__
+                    innerGrid.Children.Add(contentViewLoadBtn, 0, 2);
+
+#endif
+#if __IOS__
                     innerGrid.Children.Add(loadBtn, 0, 2);
+#endif
                     if (Application.Current.MainPage.Width < Application.Current.MainPage.Height)
                     {
 #if __ANDROID__
@@ -379,7 +416,12 @@ namespace MahechaBJJ.Views
                 else
                 {
                     moreToLoad = false;
+#if __IOS__
                     innerGrid.Children.Remove(loadBtn);
+#endif
+#if __ANDROID__
+                    innerGrid.Children.Remove(contentViewLoadBtn);
+#endif
                     if (Application.Current.MainPage.Width < Application.Current.MainPage.Height)
                     {
 #if __IOS__
@@ -418,6 +460,7 @@ namespace MahechaBJJ.Views
 
         public async void LoadMoreVideos(object sender, EventArgs e)
         {
+            ToggleButtons();
             await _searchPageViewModel.SearchVideo(VIMEOBASEURL + _searchPageViewModel.Videos.paging.next);
 
             for (int i = 0; i < _searchPageViewModel.Videos.data.Length; i++)
@@ -425,7 +468,7 @@ namespace MahechaBJJ.Views
                 searchedVideos.Add(_searchPageViewModel.Videos.data[i]);
             }
             CheckIfNextPageIsNull(sender, e);
-
+            ToggleButtons();
         }
 
         //Checks if next page is null or not.
@@ -434,10 +477,23 @@ namespace MahechaBJJ.Views
             if (_searchPageViewModel.Videos.paging.next == null)
             {
                 moreToLoad = false;
+#if __ANDROID__
+                innerGrid.Children.Remove(contentViewLoadBtn);
+#endif
+#if __IOS__
                 innerGrid.Children.Remove(loadBtn);
+#endif
                 if (Application.Current.MainPage.Width < Application.Current.MainPage.Height)
                 {
+#if __IOS__
                     Grid.SetRowSpan(videoListView, 2);
+#endif
+#if __ANDROID__
+                    if (modal)
+                    {
+                        Grid.SetRowSpan(videoListView, 3);
+                    }
+#endif
                 }
             }
         }
@@ -446,6 +502,14 @@ namespace MahechaBJJ.Views
         private void FocusSearchBar(object sender, EventArgs e)
         {
             searchBar.Text = " ";
+        }
+
+        private void ToggleButtons()
+        {
+            loadBtn.IsEnabled = !loadBtn.IsEnabled;
+#if __ANDROID__
+            androidLoadBtn.Clickable = !androidLoadBtn.Clickable;
+#endif
         }
 
         //Orientation
@@ -459,7 +523,7 @@ namespace MahechaBJJ.Views
                 Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
+                Padding = new Thickness(10, 10, 10, 10);
 #endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
@@ -497,11 +561,21 @@ namespace MahechaBJJ.Views
 
                 if (moreToLoad)
                 {
+#if __ANDROID__
+                    innerGrid.Children.Add(contentViewLoadBtn, 0, 2);
+#endif
+#if __IOS__
                     innerGrid.Children.Add(loadBtn, 0, 2);
+#endif
                 }
                 else
                 {
+#if __ANDROID__
+                    innerGrid.Children.Remove(contentViewLoadBtn);
+#endif
+#if __IOS__
                     innerGrid.Children.Remove(loadBtn);
+#endif
                 }
                 innerGrid.Children.Add(activityIndicator, 0, 0);
                 Grid.SetRowSpan(activityIndicator, 3);
@@ -513,7 +587,7 @@ namespace MahechaBJJ.Views
             Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
+                Padding = new Thickness(10, 10, 10, 10);
 #endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
@@ -522,6 +596,7 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
                 loadBtn.Text = "Load More...";
+                androidLoadBtn.Text = "Load More...";
 
 #endif
 #if __IOS__
@@ -549,19 +624,21 @@ namespace MahechaBJJ.Views
 
                 if (moreToLoad)
                 {
-                    innerGrid.Children.Add(loadBtn, 0, 2);
 #if __ANDROID__
+                    innerGrid.Children.Add(contentViewLoadBtn, 0, 2);
                     Grid.SetRowSpan(videoListView, 2);
 #endif
 #if __IOS__
+                    innerGrid.Children.Add(loadBtn, 0, 2);
                     Grid.SetRowSpan(videoListView, 1);
 #endif
 
                 }
                 else
                 {
-                    innerGrid.Children.Remove(loadBtn);
 #if __ANDROID__
+                    innerGrid.Children.Remove(contentViewLoadBtn);
+
                     if (this.modal)
                     {
                         Grid.SetRowSpan(videoListView, 3);
@@ -572,6 +649,7 @@ namespace MahechaBJJ.Views
                     }
 #endif
 #if __IOS__
+                    innerGrid.Children.Remove(loadBtn);
                 Grid.SetRowSpan(videoListView, 2);
 #endif
 
