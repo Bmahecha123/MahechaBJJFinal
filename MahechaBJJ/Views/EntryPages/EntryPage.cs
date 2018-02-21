@@ -36,6 +36,7 @@ namespace MahechaBJJ.Views.EntryPages
         private Button blogBtn;
         private Button restoreBtn;
         private Package package;
+        private bool isButtonPressed;
 #if __ANDROID__
         private Android.Widget.Button androidLoginBtn;
         private Android.Widget.Button androidSignUpBtn;
@@ -186,7 +187,19 @@ namespace MahechaBJJ.Views.EntryPages
 
             //Button events
 #if __ANDROID__
-            androidLoginBtn.Click += Login;
+            //androidLoginBtn.Click += Login;
+            androidLoginBtn.Click += async (object sender, EventArgs e) => {
+                if (isButtonPressed)
+                {
+                    return;
+                }
+                else 
+                {
+                    isButtonPressed = true;
+                    await Navigation.PushModalAsync(new LoginPage());
+                }
+                isButtonPressed = false;
+            };
 
             androidSignUpBtn.Click += SignUp;
 

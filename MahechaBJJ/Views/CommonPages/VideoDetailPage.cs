@@ -2,22 +2,17 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.Service;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.PlaylistPages;
 using Xamarin.Auth;
-/*#if __IOS__
-using Xamarin.Forms.Platform.iOS;
-using UIKit;
-using AVFoundation;
-using Foundation;
-using MediaPlayer;
-#endif */
-
 using Xamarin.Forms;
+#if __ANDROID__
+using MahechaBJJ.Droid;
+using Xamarin.Forms.Platform.Android;
+#endif
 
 namespace MahechaBJJ.Views
 {
@@ -42,8 +37,19 @@ namespace MahechaBJJ.Views
         private Grid outerGrid;
         private VideoData videoTechnique;
         private bool userHasAccount;
-        //UIViewController uiView;
-        //UIWindow window;
+#if __ANDROID__
+        private Android.Widget.TextView androidVideoNameLbl;
+        private Android.Widget.TextView androidVideoDescriptionLbl;
+        private Android.Widget.Button androidPlayBtn;
+        private Android.Widget.Button androidAddBtn;
+        private Android.Widget.Button androidQualityBtn;
+
+        private ContentView contentViewNameLbl;
+        private ContentView contentViewDescriptionLbl;
+        private ContentView contentViewPlayBtn;
+        private ContentView contentViewAddBtn;
+        private ContentView contentViewQualityBtn;
+#endif
 
         public VideoDetailPage(VideoData video)
         {
@@ -73,11 +79,11 @@ namespace MahechaBJJ.Views
             {
                 userHasAccount = false;
             }
-            else 
+            else
             {
                 userHasAccount = true;
             }
-               
+
         }
 
         public void SetContent()
@@ -113,6 +119,59 @@ namespace MahechaBJJ.Views
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
             };
+
+#if __ANDROID__
+            androidVideoNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidVideoNameLbl.Text = videoTechnique.name;
+            androidVideoNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidVideoNameLbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
+            androidVideoNameLbl.Gravity = Android.Views.GravityFlags.Center;
+            androidVideoNameLbl.SetTypeface(androidVideoNameLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
+            androidVideoDescriptionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidVideoDescriptionLbl.Text = videoTechnique.description;
+            androidVideoDescriptionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
+            androidVideoDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidVideoDescriptionLbl.Gravity = Android.Views.GravityFlags.Start;
+
+            androidPlayBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidPlayBtn.Text = "Play";
+            androidPlayBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidPlayBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidPlayBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidPlayBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidPlayBtn.SetAllCaps(false);
+            androidPlayBtn.Click += PlayAndroidVideo;
+
+            androidAddBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidAddBtn.Text = "+";
+            androidAddBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidAddBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidAddBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidAddBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidAddBtn.SetAllCaps(false);
+            androidAddBtn.Click += AddVideoToPlaylist;
+
+            androidQualityBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidQualityBtn.Text = "SD";
+            androidQualityBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidQualityBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidQualityBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidQualityBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidQualityBtn.SetAllCaps(false);
+            androidQualityBtn.Click += ChangeVideoQuality;
+
+            contentViewNameLbl = new ContentView();
+            contentViewNameLbl.Content = androidVideoNameLbl.ToView();
+            contentViewDescriptionLbl = new ContentView();
+            contentViewDescriptionLbl.Content = androidVideoDescriptionLbl.ToView();
+            contentViewPlayBtn = new ContentView();
+            contentViewPlayBtn.Content = androidPlayBtn.ToView();
+            contentViewAddBtn = new ContentView();
+            contentViewAddBtn.Content = androidAddBtn.ToView();
+            contentViewQualityBtn = new ContentView();
+            contentViewQualityBtn.Content = androidQualityBtn.ToView();
+#endif
 
             backBtn = new Button
             {
@@ -151,13 +210,16 @@ namespace MahechaBJJ.Views
                 Text = videoTechnique.description,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
+                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                TextColor = Color.Black,
+
 #endif
                 VerticalTextAlignment = TextAlignment.Start,
                 HorizontalTextAlignment = TextAlignment.Start,
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
                 LineBreakMode = LineBreakMode.WordWrap,
 
             };
@@ -165,7 +227,13 @@ namespace MahechaBJJ.Views
             videoDescriptionScrollView = new ScrollView
             {
                 Padding = 0,
+#if __ANDROID__
+                Content = contentViewDescriptionLbl,
+#endif
+#if __IOS__
                 Content = videoDescription,
+
+#endif
                 Orientation = ScrollOrientation.Vertical
             };
 
@@ -252,16 +320,26 @@ namespace MahechaBJJ.Views
                 //building grid
                 innerGrid.Children.Add(videoFrame, 0, 0);
                 Grid.SetColumnSpan(videoFrame, 4);
+#if __IOS__
                 innerGrid.Children.Add(videoNameLbl, 0, 0);
                 Grid.SetColumnSpan(videoNameLbl, 4);
                 innerGrid.Children.Add(playBtn, 0, 1);
                 Grid.SetColumnSpan(playBtn, 2);
                 innerGrid.Children.Add(addBtn, 2, 1);
                 innerGrid.Children.Add(qualityBtn, 3, 1);
+#endif
+#if __ANDROID__
+                innerGrid.Children.Add(contentViewNameLbl, 0, 0);
+                Grid.SetColumnSpan(contentViewNameLbl, 4);
+                innerGrid.Children.Add(contentViewPlayBtn, 0, 1);
+                Grid.SetColumnSpan(contentViewPlayBtn, 2);
+                innerGrid.Children.Add(contentViewAddBtn, 2, 1);
+                innerGrid.Children.Add(contentViewQualityBtn, 3, 1);
+#endif
                 innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
                 Grid.SetColumnSpan(videoDescriptionScrollView, 4);
 #if __ANDROID__
-            Grid.SetRowSpan(videoDescriptionScrollView, 2);
+                Grid.SetRowSpan(videoDescriptionScrollView, 2);
 #endif
 #if __IOS__
                 innerGrid.Children.Add(backBtn, 0, 3);
@@ -271,6 +349,19 @@ namespace MahechaBJJ.Views
             else
             {
                 //building grid
+#if __ANDROID__
+                innerGrid.Children.Add(videoFrame, 0, 0);
+                Grid.SetColumnSpan(videoFrame, 4);
+                innerGrid.Children.Add(contentViewNameLbl, 0, 0);
+                Grid.SetColumnSpan(contentViewNameLbl, 4);
+                innerGrid.Children.Add(contentViewPlayBtn, 0, 1);
+                Grid.SetColumnSpan(contentViewPlayBtn, 2);
+                innerGrid.Children.Add(contentViewQualityBtn, 2, 1);
+                Grid.SetColumnSpan(contentViewQualityBtn, 2);
+                innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
+                Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+#endif
+#if __IOS__
                 innerGrid.Children.Add(videoFrame, 0, 0);
                 Grid.SetColumnSpan(videoFrame, 4);
                 innerGrid.Children.Add(videoNameLbl, 0, 0);
@@ -281,8 +372,9 @@ namespace MahechaBJJ.Views
                 Grid.SetColumnSpan(qualityBtn, 2);
                 innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
                 Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+#endif
 #if __ANDROID__
-            Grid.SetRowSpan(videoDescriptionScrollView, 2);
+                Grid.SetRowSpan(videoDescriptionScrollView, 2);
 #endif
 #if __IOS__
                 innerGrid.Children.Add(backBtn, 0, 3);
@@ -394,6 +486,31 @@ namespace MahechaBJJ.Views
         public async void ChangeVideoQuality(object sender, EventArgs e)
         {
             string result;
+#if __ANDROID__
+            if (androidQualityBtn.Text == "SD")
+            {
+                string[] videoQuality = { "HD" };
+                result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
+
+            }
+            else
+            {
+                string[] videoQuality = { "SD" };
+                result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
+            }
+
+            if (result == "SD")
+            {
+                videoUrl = videoTechnique.files[0].link;
+                androidQualityBtn.Text = "SD";
+            }
+            else if (result == "HD")
+            {
+                videoUrl = videoTechnique.files[1].link;
+                androidQualityBtn.Text = "HD";
+            }
+#endif
+#if __IOS__
             if (qualityBtn.Text == "SD")
             {
                 string[] videoQuality = { "HD" };
@@ -416,6 +533,7 @@ namespace MahechaBJJ.Views
                 videoUrl = videoTechnique.files[1].link;
                 qualityBtn.Text = "HD";
             }
+#endif
         }
 
         //Orientation
@@ -426,7 +544,7 @@ namespace MahechaBJJ.Views
             if (width > height)
             {
 #if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
+                Padding = new Thickness(10, 10, 10, 10);
 #endif
 #if __IOS__
                 Padding = new Thickness(10, 10, 10, 10);
@@ -444,6 +562,22 @@ namespace MahechaBJJ.Views
 
                 if (userHasAccount)
                 {
+                    
+#if __ANDROID__
+                    innerGrid.Children.Clear();
+                    innerGrid.Children.Add(videoFrame, 0, 0);
+                    Grid.SetRowSpan(videoFrame, 2);
+                    Grid.SetColumnSpan(videoFrame, 2);
+                    innerGrid.Children.Add(contentViewNameLbl, 0, 0);
+                    Grid.SetRowSpan(contentViewNameLbl, 2);
+                    Grid.SetColumnSpan(contentViewNameLbl, 2);
+
+                    innerGrid.Children.Add(contentViewPlayBtn, 2, 1);
+                    innerGrid.Children.Add(contentViewAddBtn, 3, 1);
+                    innerGrid.Children.Add(contentViewQualityBtn, 4, 1);
+                    Grid.SetColumnSpan(contentViewQualityBtn, 2);
+#endif
+#if __IOS__
                     innerGrid.Children.Clear();
                     innerGrid.Children.Add(videoFrame, 0, 0);
                     Grid.SetRowSpan(videoFrame, 2);
@@ -451,13 +585,6 @@ namespace MahechaBJJ.Views
                     innerGrid.Children.Add(videoNameLbl, 0, 0);
                     Grid.SetRowSpan(videoNameLbl, 2);
                     Grid.SetColumnSpan(videoNameLbl, 2);
-#if __ANDROID__
-                innerGrid.Children.Add(playBtn, 2, 1);
-                innerGrid.Children.Add(addBtn, 3, 1);
-                innerGrid.Children.Add(qualityBtn, 4, 1);
-                Grid.SetColumnSpan(qualityBtn, 2);
-#endif
-#if __IOS__
                     innerGrid.Children.Add(backBtn, 2, 1);
                     innerGrid.Children.Add(playBtn, 3, 1);
                     innerGrid.Children.Add(addBtn, 4, 1);
@@ -468,6 +595,20 @@ namespace MahechaBJJ.Views
                 }
                 else
                 {
+#if __ANDROID__
+                    innerGrid.Children.Clear();
+                    innerGrid.Children.Add(videoFrame, 0, 0);
+                    Grid.SetRowSpan(videoFrame, 2);
+                    Grid.SetColumnSpan(videoFrame, 2);
+                    innerGrid.Children.Add(contentViewNameLbl, 0, 0);
+                    Grid.SetRowSpan(contentViewNameLbl, 2);
+                    Grid.SetColumnSpan(contentViewNameLbl, 2);
+
+                    innerGrid.Children.Add(contentViewPlayBtn, 2, 1);
+                    innerGrid.Children.Add(contentViewQualityBtn, 3, 1);
+                    Grid.SetColumnSpan(contentViewQualityBtn, 3);
+#endif
+#if __IOS__
                     innerGrid.Children.Clear();
                     innerGrid.Children.Add(videoFrame, 0, 0);
                     Grid.SetRowSpan(videoFrame, 2);
@@ -475,12 +616,7 @@ namespace MahechaBJJ.Views
                     innerGrid.Children.Add(videoNameLbl, 0, 0);
                     Grid.SetRowSpan(videoNameLbl, 2);
                     Grid.SetColumnSpan(videoNameLbl, 2);
-#if __ANDROID__
-                innerGrid.Children.Add(playBtn, 2, 1);
-                innerGrid.Children.Add(qualityBtn, 3, 1);
-                Grid.SetColumnSpan(qualityBtn, 3);
-#endif
-#if __IOS__
+
                     innerGrid.Children.Add(backBtn, 2, 1);
                     innerGrid.Children.Add(playBtn, 3, 1);
                     innerGrid.Children.Add(qualityBtn, 4, 1);
@@ -493,7 +629,7 @@ namespace MahechaBJJ.Views
             else
             {
 #if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
+                Padding = new Thickness(10, 10, 10, 10);
 #endif
 #if __IOS__
                 Padding = new Thickness(10, 30, 10, 10);
@@ -512,44 +648,67 @@ namespace MahechaBJJ.Views
                     //building grid
                     innerGrid.Children.Add(videoFrame, 0, 0);
                     Grid.SetColumnSpan(videoFrame, 4);
-                    innerGrid.Children.Add(videoNameLbl, 0, 0);
-                    Grid.SetColumnSpan(videoNameLbl, 4);
-                    innerGrid.Children.Add(playBtn, 0, 1);
-                    Grid.SetColumnSpan(playBtn, 2);
-                    innerGrid.Children.Add(addBtn, 2, 1);
-                    innerGrid.Children.Add(qualityBtn, 3, 1);
+#if __IOS__
+                innerGrid.Children.Add(videoNameLbl, 0, 0);
+                Grid.SetColumnSpan(videoNameLbl, 4);
+                innerGrid.Children.Add(playBtn, 0, 1);
+                Grid.SetColumnSpan(playBtn, 2);
+                innerGrid.Children.Add(addBtn, 2, 1);
+                innerGrid.Children.Add(qualityBtn, 3, 1);
+#endif
+#if __ANDROID__
+                    innerGrid.Children.Add(contentViewNameLbl, 0, 0);
+                    Grid.SetColumnSpan(contentViewNameLbl, 4);
+                    innerGrid.Children.Add(contentViewPlayBtn, 0, 1);
+                    Grid.SetColumnSpan(contentViewPlayBtn, 2);
+                    innerGrid.Children.Add(contentViewAddBtn, 2, 1);
+                    innerGrid.Children.Add(contentViewQualityBtn, 3, 1);
+#endif
                     innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
                     Grid.SetColumnSpan(videoDescriptionScrollView, 4);
 #if __ANDROID__
-            Grid.SetRowSpan(videoDescriptionScrollView, 2);
+                    Grid.SetRowSpan(videoDescriptionScrollView, 2);
 #endif
 #if __IOS__
-                    innerGrid.Children.Add(backBtn, 0, 3);
-                    Grid.SetColumnSpan(backBtn, 4);
+                innerGrid.Children.Add(backBtn, 0, 3);
+                Grid.SetColumnSpan(backBtn, 4);
 #endif
                 }
                 else
                 {
                     //building grid
+#if __ANDROID__
                     innerGrid.Children.Add(videoFrame, 0, 0);
                     Grid.SetColumnSpan(videoFrame, 4);
-                    innerGrid.Children.Add(videoNameLbl, 0, 0);
-                    Grid.SetColumnSpan(videoNameLbl, 4);
-                    innerGrid.Children.Add(playBtn, 0, 1);
-                    Grid.SetColumnSpan(playBtn, 2);
-                    innerGrid.Children.Add(qualityBtn, 2, 1);
-                    Grid.SetColumnSpan(qualityBtn, 2);
+                    innerGrid.Children.Add(contentViewNameLbl, 0, 0);
+                    Grid.SetColumnSpan(contentViewNameLbl, 4);
+                    innerGrid.Children.Add(contentViewPlayBtn, 0, 1);
+                    Grid.SetColumnSpan(contentViewPlayBtn, 2);
+                    innerGrid.Children.Add(contentViewQualityBtn, 2, 1);
+                    Grid.SetColumnSpan(contentViewQualityBtn, 2);
                     innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
                     Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-#if __ANDROID__
-            Grid.SetRowSpan(videoDescriptionScrollView, 2);
 #endif
 #if __IOS__
-                    innerGrid.Children.Add(backBtn, 0, 3);
-                    Grid.SetColumnSpan(backBtn, 4);
+                innerGrid.Children.Add(videoFrame, 0, 0);
+                Grid.SetColumnSpan(videoFrame, 4);
+                innerGrid.Children.Add(videoNameLbl, 0, 0);
+                Grid.SetColumnSpan(videoNameLbl, 4);
+                innerGrid.Children.Add(playBtn, 0, 1);
+                Grid.SetColumnSpan(playBtn, 2);
+                innerGrid.Children.Add(qualityBtn, 2, 1);
+                Grid.SetColumnSpan(qualityBtn, 2);
+                innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
+                Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+#endif
+#if __ANDROID__
+                    Grid.SetRowSpan(videoDescriptionScrollView, 2);
+#endif
+#if __IOS__
+                innerGrid.Children.Add(backBtn, 0, 3);
+                Grid.SetColumnSpan(backBtn, 4);
 #endif
                 }
-
             }
         }
     }
