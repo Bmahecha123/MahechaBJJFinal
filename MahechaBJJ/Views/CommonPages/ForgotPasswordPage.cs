@@ -1,8 +1,10 @@
 ﻿using System;
+using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 
 namespace MahechaBJJ.Views.CommonPages
 {
@@ -18,6 +20,19 @@ namespace MahechaBJJ.Views.CommonPages
         private Button nextBtn;
         private BaseViewModel _baseViewModel;
         private User user;
+#if __ANDROID__
+        private Grid outerGrid;
+        private Grid innerGrid;
+        private Android.Widget.TextView androidHeaderLbl;
+        private Android.Widget.TextView androidEmailLbl;
+        private Android.Widget.EditText androidEmailEntry;
+        private Android.Widget.Button androidNextBtn;
+
+        private ContentView contentViewHeaderLbl;
+        private ContentView contentViewEmailLbl;
+        private ContentView contentViewEmailEntry;
+        private ContentView contentViewNextBtn;
+#endif
 
         public ForgotPasswordPage()
         {
@@ -52,6 +67,69 @@ namespace MahechaBJJ.Views.CommonPages
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
                 }
             };
+
+#if __ANDROID__
+            outerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }
+                }
+            };
+
+            innerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }
+                }
+            };
+
+            androidHeaderLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidHeaderLbl.Text = "Forgot Password";
+            androidHeaderLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidHeaderLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidHeaderLbl.Gravity = Android.Views.GravityFlags.Center;
+
+            androidEmailLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidEmailLbl.Text = "E-Mail Address";
+            androidEmailLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidEmailLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidEmailLbl.Gravity = Android.Views.GravityFlags.Center;
+
+            androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidEmailEntry.Hint = "Enter E-Mail";
+            androidEmailEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidEmailEntry.SetTextColor(Android.Graphics.Color.Black);
+            androidEmailEntry.Gravity = Android.Views.GravityFlags.Center;
+            androidEmailEntry.InputType = Android.Text.InputTypes.TextVariationEmailAddress;
+
+            androidNextBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidNextBtn.Text = "Next";
+            androidNextBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidNextBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidNextBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidNextBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(124, 37, 41));
+            androidNextBtn.Click += (object sender, EventArgs e) => {
+                CheckIfUserExists(sender, e);
+            };
+
+            contentViewHeaderLbl = new ContentView();
+            contentViewHeaderLbl.Content = androidHeaderLbl.ToView();
+            contentViewEmailLbl = new ContentView();
+            contentViewEmailLbl.Content = androidEmailLbl.ToView();
+            contentViewEmailEntry = new ContentView();
+            contentViewEmailEntry.Content = androidEmailEntry.ToView();
+            contentViewNextBtn = new ContentView();
+            contentViewNextBtn.Content = androidNextBtn.ToView();
+#endif
 
             headerLbl = new Label
             {
@@ -141,13 +219,18 @@ namespace MahechaBJJ.Views.CommonPages
 
             //building layouts
 #if __ANDROID__
-            buttonGrid.Children.Add(nextBtn, 0, 0);
-            Grid.SetColumnSpan(nextBtn, 2);
+            innerGrid.Children.Add(contentViewHeaderLbl, 0, 0);
+            innerGrid.Children.Add(contentViewEmailLbl, 0, 3);
+            innerGrid.Children.Add(contentViewEmailEntry, 0, 4);
+            innerGrid.Children.Add(contentViewNextBtn, 0, 7);
+
+            outerGrid.Children.Add(innerGrid, 0, 0);
+
+            Content = outerGrid;
 #endif
 #if __IOS__
             buttonGrid.Children.Add(backBtn, 0, 0);
             buttonGrid.Children.Add(nextBtn, 1, 0);
-#endif
 
             entryLayout.Children.Add(emailLbl);
             entryLayout.Children.Add(emailEntry);
@@ -156,7 +239,12 @@ namespace MahechaBJJ.Views.CommonPages
             stackLayout.Children.Add(headerLbl);
             stackLayout.Children.Add(entryLayout);
             stackLayout.Children.Add(buttonGrid);
+
             Content = stackLayout;
+#endif
+
+
+
         }
 
         private void GoBack(Object sender, EventArgs e)
