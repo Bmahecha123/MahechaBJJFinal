@@ -1,10 +1,12 @@
 ﻿using System;
+using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.MainTabPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 
 namespace MahechaBJJ.Views.CommonPages
 {
@@ -35,6 +37,23 @@ namespace MahechaBJJ.Views.CommonPages
         private Button backBtn;
         private Button purchaseBtn;
         private Package package;
+#if __ANDROID__
+        private Android.Widget.TextView androidGiTitle;
+        private Android.Widget.TextView androidGiPrice;
+        private Android.Widget.TextView androidGiBody;
+        private Android.Widget.TextView androidNoGiTitle;
+        private Android.Widget.TextView androidNoGiPrice;
+        private Android.Widget.TextView androidNoGiBody;
+        private Android.Widget.Button androidPurchaseBtn;
+
+        private ContentView contentViewGiTitle;
+        private ContentView contentViewGiPrice;
+        private ContentView contentViewGiBody;
+        private ContentView contentViewNoGiTitle;
+        private ContentView contentViewNoGiPrice;
+        private ContentView contentViewNoGiBody;
+        private ContentView contentViewPurchaseBtn;
+#endif
 
         public PurchasePage(Package package)
         {
@@ -61,7 +80,7 @@ namespace MahechaBJJ.Views.CommonPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}                
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
             };
 
@@ -69,8 +88,14 @@ namespace MahechaBJJ.Views.CommonPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
+                    #if __ANDROID__
+                    new RowDefinition { Height = new GridLength(6, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+#endif
+#if __IOS__
                     new RowDefinition { Height = new GridLength(9, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+#endif
                 }
             };
 
@@ -91,6 +116,40 @@ namespace MahechaBJJ.Views.CommonPages
             noGiStackLayout = new StackLayout();
 
 #region GI
+#if __ANDROID__
+            androidGiTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidGiTitle.Text = "Gi";
+            androidGiTitle.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidGiTitle.SetTextColor(Android.Graphics.Color.Black);
+            androidGiTitle.Gravity = Android.Views.GravityFlags.Start;
+            androidGiTitle.SetTypeface(androidGiTitle.Typeface, Android.Graphics.TypefaceStyle.Bold);
+            contentViewGiTitle = new ContentView();
+            contentViewGiTitle.Content = androidGiTitle.ToView();
+
+            androidGiPrice = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidGiPrice.Text = "$19.99";
+            androidGiPrice.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidGiPrice.SetTextColor(Android.Graphics.Color.Black);
+            androidGiPrice.Gravity = Android.Views.GravityFlags.Start;
+            androidGiPrice.SetTypeface(androidGiPrice.Typeface, Android.Graphics.TypefaceStyle.Bold);
+            contentViewGiPrice = new ContentView();
+            contentViewGiPrice.Content = androidGiPrice.ToView();
+
+            androidGiBody = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidGiBody.Text = "This library is growing constantly and there is no end in sight. The beauty of this package is that you get to follow our system as we develop and implement new transitions and positions. We’re constantly pushing the barrier in terms of our style and approach to Jiu-Jitsu. Every position that gets posted has been drilled to death and executed at the highest levels of competition. We’re proud of this; something I see wrong with other instructional resources is positions are shown that I know they have never ever hit in a competition or anything. You never have to worry about that with our techniques. One of the biggest advantages of our app is that you have direct access to us, if you have any questions or concerns; contacting us is a click away. Let’s grow and develop our Jiu Jitsu together!";
+            androidGiBody.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
+            androidGiBody.SetTextColor(Android.Graphics.Color.Black);
+            androidGiBody.Gravity = Android.Views.GravityFlags.Start;
+            androidGiBody.SetTypeface(androidGiBody.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
+            contentViewGiTitle = new ContentView();
+            contentViewGiTitle.Content = androidGiBody.ToView();
+            contentViewGiPrice = new ContentView();
+            contentViewGiPrice.Content = androidGiPrice.ToView();
+            contentViewGiBody = new ContentView();
+            contentViewGiBody.Content = androidGiBody.ToView();
+#endif
+
             giTitle = new Label
             {
 #if __IOS__
@@ -164,6 +223,36 @@ namespace MahechaBJJ.Views.CommonPages
             };
 #endregion
 #region NOGI
+#if __ANDROID__
+            androidNoGiTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidNoGiTitle.Text = "No-Gi";
+            androidNoGiTitle.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidNoGiTitle.SetTextColor(Android.Graphics.Color.Black);
+            androidNoGiTitle.Gravity = Android.Views.GravityFlags.Start;
+            androidNoGiTitle.SetTypeface(androidNoGiTitle.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
+            androidNoGiPrice = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidNoGiPrice.Text = "$19.99";
+            androidNoGiPrice.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidNoGiPrice.SetTextColor(Android.Graphics.Color.Black);
+            androidNoGiPrice.Gravity = Android.Views.GravityFlags.Start;
+            androidNoGiPrice.SetTypeface(androidNoGiPrice.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
+            androidNoGiBody = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidNoGiBody.Text = "Just like the other packages, the No-Gi library is constantly being updated. So that means you’ll grow along with us. As we come up with new tweaks and transitions you’ll see it first as we are constantly updating our libraries. Through these techniques and positions your game will be brought to a new technical level. All the while being exposed to a unique point of view on approaching Jiu Jitsu. Some of the biggest advantages of this package is that you have direct access to us, the ones who implement and recorded these techniques. We love to hear from our members and never ignore anyone. Lets grow together!";
+            androidNoGiBody.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
+            androidNoGiBody.SetTextColor(Android.Graphics.Color.Black);
+            androidNoGiBody.Gravity = Android.Views.GravityFlags.Start;
+            androidNoGiBody.SetTypeface(androidNoGiBody.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
+            contentViewNoGiTitle = new ContentView();
+            contentViewNoGiTitle.Content = androidNoGiTitle.ToView();
+            contentViewNoGiPrice = new ContentView();
+            contentViewNoGiPrice.Content = androidNoGiPrice.ToView();
+            contentViewNoGiBody = new ContentView();
+            contentViewNoGiBody.Content = androidNoGiBody.ToView();
+#endif
+
             noGiTitle = new Label
             {
 #if __IOS__
@@ -261,11 +350,6 @@ namespace MahechaBJJ.Views.CommonPages
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 1.5,
 #endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                Margin = -5,
-                FontSize = btnSize,
-#endif
                 Text = "Purchase",
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
@@ -275,23 +359,48 @@ namespace MahechaBJJ.Views.CommonPages
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
 
+#if __ANDROID__
+            androidPurchaseBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidPurchaseBtn.Text = "Purchase";
+            androidPurchaseBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidPurchaseBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidPurchaseBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidPurchaseBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidPurchaseBtn.Click += (object sender, EventArgs e) =>
+            {
+                PurchasePackage();
+            };
+
+            contentViewPurchaseBtn = new ContentView();
+            contentViewPurchaseBtn.Content = androidPurchaseBtn.ToView();
+#endif
+
             //events
-            backBtn.Clicked += (object sender, EventArgs e) => {
+            backBtn.Clicked += (object sender, EventArgs e) =>
+            {
                 ToggleButtons();
                 Navigation.PopModalAsync();
             };
-            purchaseBtn.Clicked += (object sender, EventArgs e) => {
+            purchaseBtn.Clicked += (object sender, EventArgs e) =>
+            {
                 PurchasePackage();
             };
 
 #if __ANDROID__
-            buttonGrid.Children.Add(purchaseBtn, 0, 0);
-            Grid.SetColumnSpan(purchaseBtn, 2);
+            giStackLayout.Children.Add(contentViewGiTitle);
+            giStackLayout.Children.Add(contentViewGiPrice);
+            giStackLayout.Children.Add(contentViewGiBody);
+            giStackLayout.Children.Add(giImageFrame);
+            giStackLayout.Orientation = StackOrientation.Vertical;
+            noGiStackLayout.Children.Add(contentViewNoGiTitle);
+            noGiStackLayout.Children.Add(contentViewNoGiPrice);
+            noGiStackLayout.Children.Add(contentViewNoGiBody);
+            noGiStackLayout.Children.Add(noGiImageFrame);
+            noGiStackLayout.Orientation = StackOrientation.Vertical;
 #endif
 #if __IOS__
             buttonGrid.Children.Add(backBtn, 0, 0);
             buttonGrid.Children.Add(purchaseBtn, 1, 0);
-#endif
 
             giStackLayout.Children.Add(giTitle);
             giStackLayout.Children.Add(giPrice);
@@ -303,18 +412,26 @@ namespace MahechaBJJ.Views.CommonPages
             noGiStackLayout.Children.Add(noGiBody);
             noGiStackLayout.Children.Add(noGiImageFrame);
             noGiStackLayout.Orientation = StackOrientation.Vertical;
+#endif
+
 
             if (this.package == Package.Gi)
             {
                 innerGrid.Children.Add(giFrame, 0, 0);
             }
-            else 
+            else
             {
                 innerGrid.Children.Add(noGiFrame, 0, 0);
             }
 
+#if __ANDROID__
+            innerGrid.Children.Add(contentViewPurchaseBtn, 0, 1);
+            outerGrid.Children.Add(innerGrid, 0, 0);
+#endif
+#if __IOS__
             innerGrid.Children.Add(buttonGrid, 0, 1);
             outerGrid.Children.Add(innerGrid, 0, 0);
+#endif
 
             Content = outerGrid;
         }

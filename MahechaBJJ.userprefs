@@ -1,17 +1,19 @@
 ﻿<Properties StartupConfiguration="{4A7FB70C-C450-4C8F-A39E-EE1FFC1B294B}|Default">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D0D6A1DA-CA20-42FD-B8A7-B1A1A9BEED45" automaticSigning="False" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/MainTabPages/HomePage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/CommonPages/PurchasePage.cs">
     <Files>
       <File FileName="MahechaBJJ/Views/MainTabPages/SearchPage.cs" Line="12" Column="24" />
       <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="201" Column="41" />
       <File FileName="MahechaBJJ/Views/CommonPages/AndroidVideoPage.cs" Line="1" Column="1" />
-      <File FileName="MahechaBJJ/Views/CommonPages/VideoDetailPage.cs" Line="687" Column="61" />
+      <File FileName="MahechaBJJ/Views/CommonPages/VideoDetailPage.cs" Line="139" Column="101" />
       <File FileName="MahechaBJJ/Views/MainTabPages/ProfilePage.cs" Line="47" Column="49" />
       <File FileName="MahechaBJJ/Views/MainTabPages/HomePage.cs" Line="160" Column="78" />
+      <File FileName="MahechaBJJ/Views/CommonPages/PurchasePage.cs" Line="15" Column="9" />
+      <File FileName="MahechaBJJ/Views/SignUpPages/PackagePage.cs" Line="306" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.Droid PreferredExecutionTarget="Android.FA7A61A08112" />
+  <MonoDevelop.Ide.ItemProperties.MahechaBJJ.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/MahechaBJJ/Views/SignUpPages/SignUpPage.cs" relfile="MahechaBJJ/Views/SignUpPages/SignUpPage.cs" line="572" column="29" />
