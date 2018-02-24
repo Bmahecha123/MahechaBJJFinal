@@ -26,7 +26,8 @@ namespace MahechaBJJ.Droid.Service
             //email.SetType("text/html");
             email.SetType("message/rfc822");
             //.StartActivity(Intent.CreateChooser(email, "Send Email"));
-            Android.App.Application.Context.StartActivity(Intent.CreateChooser(email, "Send Email"));
+            //Android.App.Application.Context.StartActivity(Intent.CreateChooser(email, "Send Email"));
+            Android.App.Application.Context.StartActivity(email);
         }
     }
 }
