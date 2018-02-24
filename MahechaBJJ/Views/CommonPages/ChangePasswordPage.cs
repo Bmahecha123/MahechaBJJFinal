@@ -28,14 +28,12 @@ namespace MahechaBJJ.Views.CommonPages
 #if __ANDROID__
         private Grid innerGrid;
         private Grid outerGrid;
-        private Android.Widget.TextView androidHeaderLbl;
         private Android.Widget.TextView androidSecretQuestionLbl;
         private Android.Widget.EditText androidSecretQuestionEntry;
         private Android.Widget.TextView androidNewPasswordLbl;
         private Android.Widget.EditText androidNewPasswordEntry;
         private Android.Widget.Button androidSubmitBtn;
 
-        private ContentView contentViewAndroidHeaderLbl;
         private ContentView contentViewAndroidSecretQuestionLbl;
         private ContentView contentViewAndroidSecretQuestionEntry;
         private ContentView contentViewAndroidNewPasswordLbl;
@@ -216,13 +214,6 @@ namespace MahechaBJJ.Views.CommonPages
             outerGrid = new Grid();
             outerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
-            androidHeaderLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidHeaderLbl.Text = "Change Password";
-            androidHeaderLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidHeaderLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidHeaderLbl.Gravity = Android.Views.GravityFlags.Center;
-            androidHeaderLbl.SetTypeface(androidHeaderLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
-
             androidSecretQuestionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidSecretQuestionLbl.Text = _user.SecretQuestion;
             androidSecretQuestionLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
@@ -259,9 +250,6 @@ namespace MahechaBJJ.Views.CommonPages
                 ChangePassword(sender, e);
             };
 
-            contentViewAndroidHeaderLbl = new ContentView();
-            contentViewAndroidHeaderLbl.Content = androidHeaderLbl.ToView();
-
             contentViewAndroidSecretQuestionLbl = new ContentView();
             contentViewAndroidSecretQuestionLbl.Content = androidSecretQuestionLbl.ToView();
 
@@ -289,7 +277,6 @@ namespace MahechaBJJ.Views.CommonPages
 
             //layout
 #if __ANDROID__
-            innerGrid.Children.Add(contentViewAndroidHeaderLbl, 0, 0);
             innerGrid.Children.Add(contentViewAndroidSecretQuestionLbl, 0, 3);
             innerGrid.Children.Add(contentViewAndroidSecretQuestionEntry, 0, 4);
             innerGrid.Children.Add(contentViewAndroidNewPasswordLbl, 0, 6);

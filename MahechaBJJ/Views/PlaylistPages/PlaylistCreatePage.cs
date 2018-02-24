@@ -218,7 +218,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidPlaylistDescriptionEntry.InputType = Android.Text.InputTypes.TextVariationLongMessage;
 
             androidCreateBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidCreateBtn.Text = "Create";
+            androidCreateBtn.Text = "Create Playlist";
             androidCreateBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidCreateBtn.SetTextColor(Android.Graphics.Color.Black);
             androidCreateBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
