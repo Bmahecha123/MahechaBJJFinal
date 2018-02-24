@@ -189,7 +189,7 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
             //androidLoginBtn.Click += Login;
             androidLoginBtn.Click += async (object sender, EventArgs e) => {
-                if (isButtonPressed)
+                /*if (isButtonPressed)
                 {
                     return;
                 }
@@ -198,7 +198,10 @@ namespace MahechaBJJ.Views.EntryPages
                     isButtonPressed = true;
                     await Navigation.PushModalAsync(new LoginPage());
                 }
-                isButtonPressed = false;
+                isButtonPressed = false;*/
+                ToggleButtons();
+                await Navigation.PushModalAsync(new LoginPage());
+                ToggleButtons();
             };
 
             androidSignUpBtn.Click += SignUp;
@@ -286,9 +289,9 @@ namespace MahechaBJJ.Views.EntryPages
         private void ToggleButtons()
         {
 #if __ANDROID__
-            androidLoginBtn.ToView().IsEnabled = !androidLoginBtn.ToView().IsEnabled;
-            androidSignUpBtn.ToView().IsEnabled = !androidSignUpBtn.ToView().IsEnabled;
-            androidBlogBtn.ToView().IsEnabled = !androidBlogBtn.ToView().IsEnabled;
+            androidLoginBtn.Clickable = !androidLoginBtn.Clickable;
+            androidSignUpBtn.Clickable = !androidSignUpBtn.Clickable;
+            androidBlogBtn.Clickable = !androidBlogBtn.Clickable;
 #endif
             loginBtn.IsEnabled = !loginBtn.IsEnabled;
             signUpBtn.IsEnabled = !signUpBtn.IsEnabled;
