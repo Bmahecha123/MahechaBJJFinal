@@ -7,6 +7,10 @@ using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.PlaylistPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+#if __ANDROID__
+using Xamarin.Forms.Platform.Android;
+using MahechaBJJ.Droid;
+#endif
 
 namespace MahechaBJJ.Views.PlaylistPages
 {
@@ -29,6 +33,12 @@ namespace MahechaBJJ.Views.PlaylistPages
         private TapGestureRecognizer timeOutTap;
         private ActivityIndicator activityIndicator;
         private ObservableCollection<PlayList> userPlaylist;
+
+#if __ANDROID__
+        private Android.Widget.TextView androidViewPlaylistLbl;
+
+        private ContentView contentViewAndroidViewPlaylistLbl;
+#endif
 
         public PlaylistViewPage()
         {
@@ -69,6 +79,17 @@ namespace MahechaBJJ.Views.PlaylistPages
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
             };
+
+#if __ANDROID__
+            androidViewPlaylistLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidViewPlaylistLbl.Text = "View Playlists";
+            androidViewPlaylistLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidViewPlaylistLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidViewPlaylistLbl.Gravity = Android.Views.GravityFlags.Center;
+
+            contentViewAndroidViewPlaylistLbl = new ContentView();
+            contentViewAndroidViewPlaylistLbl.Content = androidViewPlaylistLbl.ToView();
+#endif
 
             viewPlaylistLbl = new Label
             {
@@ -171,12 +192,14 @@ namespace MahechaBJJ.Views.PlaylistPages
 
                 //building grid
                 innerGrid.Children.Clear();
-                innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
+
 #if __ANDROID__
+                innerGrid.Children.Add(contentViewAndroidViewPlaylistLbl, 0, 0);
                 innerGrid.Children.Add(playlistView, 0, 1);
                 Grid.SetRowSpan(playlistView, 2);
 #endif
 #if __IOS__
+                innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
                 innerGrid.Children.Add(playlistView, 0, 1);
                 innerGrid.Children.Add(backBtn, 0, 2);
 #endif
@@ -222,14 +245,16 @@ namespace MahechaBJJ.Views.PlaylistPages
                 playlistLbl.SetBinding(Label.TextProperty, "Name");
                 playlistLbl.VerticalTextAlignment = TextAlignment.Center;
                 playlistLbl.HorizontalTextAlignment = TextAlignment.Center;
-                playlistLbl.TextColor = Color.Black;
                 playlistLbl.LineBreakMode = LineBreakMode.WordWrap;
 #if __IOS__
+                playlistLbl.TextColor = Color.Black;
                 playlistLbl.FontFamily = "AmericanTypewriter-Bold";
                 playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 2;
 #endif
 #if __ANDROID__
                 playlistLbl.FontFamily = "Roboto Bold";
+                playlistLbl.TextColor = Color.Black;
+                playlistLbl.FontAttributes = FontAttributes.Bold;
                 playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 #endif
 
@@ -237,7 +262,6 @@ namespace MahechaBJJ.Views.PlaylistPages
                 playlistFrame.BackgroundColor = Color.FromRgb(58, 93, 174);
                 playlistFrame.HasShadow = false;
                 playlistFrame.OutlineColor = Color.Black;
-                //playlistFrame.Padding = 3;
                 playlistFrame.Content = playlistLbl;
                 playlistFrame.Padding = new Thickness(10, 10, 10, 10);
 
@@ -301,12 +325,14 @@ namespace MahechaBJJ.Views.PlaylistPages
                     innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                     innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
                     innerGrid.Children.Clear();
-                    innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
+
 #if __ANDROID__
+                    innerGrid.Children.Add(contentViewAndroidViewPlaylistLbl, 0, 0);
                     innerGrid.Children.Add(playlistView, 1, 0);
                     Grid.SetRowSpan(playlistView, 3);  
 #endif
 #if __IOS__
+                    innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
             innerGrid.Children.Add(backBtn, 0, 2);
                     innerGrid.Children.Add(playlistView, 1, 0);
                     Grid.SetRowSpan(playlistView, 3);
@@ -336,7 +362,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                     innerGrid.Children.Add(backBtn, 0, 2);
 #endif
 #if __ANDROID__
-                    innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
+                    innerGrid.Children.Add(contentViewAndroidViewPlaylistLbl, 0, 0);
                     innerGrid.Children.Add(playlistView, 0, 1);
                     Grid.SetRowSpan(playlistView, 2);
 #endif
