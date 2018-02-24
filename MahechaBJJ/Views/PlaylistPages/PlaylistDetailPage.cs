@@ -7,6 +7,10 @@ using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.PlaylistPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+#if __ANDROID__
+using Xamarin.Forms.Platform.Android;
+using MahechaBJJ.Droid;
+#endif
 
 namespace MahechaBJJ.Views.PlaylistPages
 {
@@ -29,6 +33,15 @@ namespace MahechaBJJ.Views.PlaylistPages
         private Button deleteBtn;
         private PlayList userPlaylist;
         private ObservableCollection<Video> videos;
+#if __ANDROID__
+        private Android.Widget.TextView androidPlaylistNameLbl;
+        private Android.Widget.TextView androidPlaylistDescriptionLbl;
+        private Android.Widget.Button androidDeleteBtn;
+
+        private ContentView contentViewAndroidPlaylistNameLbl;
+        private ContentView contentViewAndroidPlaylistDescriptionLbl;
+        private ContentView contentViewAndroidDeleteBtn;
+#endif
 
         public PlaylistDetailPage(PlayList playlist)
         {
@@ -153,11 +166,54 @@ namespace MahechaBJJ.Views.PlaylistPages
                 TextColor = Color.White
             };
 
+#if __ANDROID__
+            androidPlaylistNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidPlaylistNameLbl.Text = userPlaylist.Name;
+            androidPlaylistNameLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidPlaylistNameLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidPlaylistNameLbl.Gravity = Android.Views.GravityFlags.Center;
+
+            androidPlaylistDescriptionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidPlaylistDescriptionLbl.Text = userPlaylist.Description;
+            androidPlaylistDescriptionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidPlaylistDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidPlaylistDescriptionLbl.Gravity = Android.Views.GravityFlags.Center;
+
+            androidDeleteBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidDeleteBtn.Text = "Delete";
+            androidDeleteBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidDeleteBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidDeleteBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidDeleteBtn.SetAllCaps(false);
+            androidDeleteBtn.SetBackgroundColor(Android.Graphics.Color.Red);
+            androidDeleteBtn.Click += async (object sender, EventArgs e) =>
+            {
+                await DeletePlaylist(sender, e);
+            };
+
+            contentViewAndroidPlaylistNameLbl = new ContentView();
+            contentViewAndroidPlaylistNameLbl.Content = androidPlaylistNameLbl.ToView();
+            contentViewAndroidPlaylistDescriptionLbl = new ContentView();
+            contentViewAndroidPlaylistDescriptionLbl.Content = androidPlaylistDescriptionLbl.ToView();
+            contentViewAndroidDeleteBtn = new ContentView();
+            contentViewAndroidDeleteBtn.Content = androidDeleteBtn.ToView();
+#endif
+
             //Events
             backBtn.Clicked += GoBack;
-            deleteBtn.Clicked += DeletePlaylist;
-            videosListView.ItemSelected += LoadVideo;
+            deleteBtn.Clicked += async (object sender, EventArgs e) =>
+            {
+                await DeletePlaylist(sender, e);
+            };
+            videosListView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) => {
+                //TODO PREVENT MULTIPLE VIDEOS FROM LOADING FUCK!
+                ToggleButtons();
+                await LoadVideo(sender, e);
+                ToggleButtons();
+            }; 
 
+
+#if __IOS__
             //Building Grid
             innerGrid.Children.Add(playlistNameLbl, 0, 0);
             Grid.SetColumnSpan(playlistNameLbl, 2);
@@ -165,13 +221,21 @@ namespace MahechaBJJ.Views.PlaylistPages
             Grid.SetColumnSpan(playlistDescriptionLbl, 2);
             innerGrid.Children.Add(videosListView, 0, 2);
             Grid.SetColumnSpan(videosListView, 2);
-#if __IOS__
+
             innerGrid.Children.Add(backBtn, 0, 3);
 			innerGrid.Children.Add(deleteBtn, 1, 3);
 #endif
 #if __ANDROID__
-            innerGrid.Children.Add(deleteBtn, 0, 3);
-            Grid.SetColumnSpan(deleteBtn, 2);
+            //Building Grid
+            innerGrid.Children.Add(contentViewAndroidPlaylistNameLbl, 0, 0);
+            Grid.SetColumnSpan(contentViewAndroidPlaylistNameLbl, 2);
+            innerGrid.Children.Add(contentViewAndroidPlaylistDescriptionLbl, 0, 1);
+            Grid.SetColumnSpan(contentViewAndroidPlaylistDescriptionLbl, 2);
+            innerGrid.Children.Add(videosListView, 0, 2);
+            Grid.SetColumnSpan(videosListView, 2);
+
+            innerGrid.Children.Add(contentViewAndroidDeleteBtn, 0, 3);
+            Grid.SetColumnSpan(contentViewAndroidDeleteBtn, 2);
 #endif
             outerGrid.Children.Add(innerGrid, 0, 0);
 
@@ -184,7 +248,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             Navigation.PopModalAsync();
         }
 
-        public async void DeletePlaylist(object sender, EventArgs e)
+        public async Task DeletePlaylist(object sender, EventArgs e)
         {
             ToggleButtons();
             bool delete = await DisplayAlert("Delete Playlist", "Are you sure you want to delete " + userPlaylist.Name + "?", "Yes", "No");
@@ -210,11 +274,14 @@ namespace MahechaBJJ.Views.PlaylistPages
 
         public void ToggleButtons()
         {
+#if __ANDROID__
+            androidDeleteBtn.Clickable = !androidDeleteBtn.Clickable;
+#endif
             backBtn.IsEnabled = !backBtn.IsEnabled;
             deleteBtn.IsEnabled = !deleteBtn.IsEnabled;
         }
 
-        public void LoadVideo(object sender, SelectedItemChangedEventArgs e)
+        public async Task LoadVideo(object sender, SelectedItemChangedEventArgs e)
         {
             Video video = (Video)((ListView)sender).SelectedItem;
             if (e.SelectedItem == null)
@@ -223,7 +290,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             }
             //VideoData videoData = new VideoData(video.Name, video.Description, video.Link, video.Image);
             ((ListView)sender).SelectedItem = null;
-            Navigation.PushModalAsync(new PlaylistVideoPage(video, userPlaylist));
+            await Navigation.PushModalAsync(new PlaylistVideoPage(video, userPlaylist));
 
         }
 
@@ -253,15 +320,16 @@ namespace MahechaBJJ.Views.PlaylistPages
 #if __IOS__
                     videoLbl.FontFamily = "AmericanTypewriter-Bold";
                     videoLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+                    videoLbl.TextColor = Color.White;
 #endif
 #if __ANDROID__
-                    videoLbl.FontFamily = "Roboto Bold";
-                    videoLbl.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
+                    videoLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+                    videoLbl.TextColor = Color.AntiqueWhite;
+                    videoLbl.FontAttributes = FontAttributes.Bold;
 #endif
                     videoLbl.SetBinding(Label.TextProperty, "Name");
                     videoLbl.VerticalTextAlignment = TextAlignment.Center;
                     videoLbl.HorizontalTextAlignment = TextAlignment.Center;
-                    videoLbl.TextColor = Color.White;
                     videoFrame = new Frame();
                     videoFrame.Content = videoImage;
                     videoFrame.OutlineColor = Color.Black;
@@ -320,11 +388,12 @@ namespace MahechaBJJ.Views.PlaylistPages
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
                 innerGrid.Children.Clear();
-                innerGrid.Children.Add(playlistNameLbl, 0, 0);
 #if __ANDROID__
-                innerGrid.Children.Add(deleteBtn, 0, 2);
+                innerGrid.Children.Add(contentViewAndroidPlaylistNameLbl, 0, 0);
+                innerGrid.Children.Add(contentViewAndroidDeleteBtn, 0, 2);
 #endif
 #if __IOS__
+                innerGrid.Children.Add(playlistNameLbl, 0, 0);
                 innerGrid.Children.Add(deleteBtn, 0, 1);
                 innerGrid.Children.Add(backBtn, 0, 2);
 #endif
@@ -355,6 +424,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 
                 innerGrid.Children.Clear();
+
+#if __IOS__
                 //Building Grid
                 innerGrid.Children.Add(playlistNameLbl, 0, 0);
                 Grid.SetColumnSpan(playlistNameLbl, 2);
@@ -362,13 +433,20 @@ namespace MahechaBJJ.Views.PlaylistPages
                 Grid.SetColumnSpan(playlistDescriptionLbl, 2);
                 innerGrid.Children.Add(videosListView, 0, 2);
                 Grid.SetColumnSpan(videosListView, 2);
-#if __IOS__
             innerGrid.Children.Add(backBtn, 0, 3);
             innerGrid.Children.Add(deleteBtn, 1, 3);
 #endif
 #if __ANDROID__
-                innerGrid.Children.Add(deleteBtn, 0, 3);
-                Grid.SetColumnSpan(deleteBtn, 2);
+
+                //Building Grid
+                innerGrid.Children.Add(contentViewAndroidPlaylistNameLbl, 0, 0);
+                Grid.SetColumnSpan(contentViewAndroidPlaylistNameLbl, 2);
+                innerGrid.Children.Add(contentViewAndroidPlaylistDescriptionLbl, 0, 1);
+                Grid.SetColumnSpan(contentViewAndroidPlaylistDescriptionLbl, 2);
+                innerGrid.Children.Add(videosListView, 0, 2);
+                Grid.SetColumnSpan(videosListView, 2);
+                innerGrid.Children.Add(contentViewAndroidDeleteBtn, 0, 3);
+                Grid.SetColumnSpan(contentViewAndroidDeleteBtn, 2);
 #endif
             }
         }

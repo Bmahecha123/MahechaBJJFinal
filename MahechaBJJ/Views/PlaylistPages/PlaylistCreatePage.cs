@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
@@ -6,6 +7,11 @@ using MahechaBJJ.ViewModel.PlaylistPages;
 using Xamarin.Auth;
 
 using Xamarin.Forms;
+
+#if __ANDROID__
+using Xamarin.Forms.Platform.Android;
+using MahechaBJJ.Droid;
+#endif
 
 namespace MahechaBJJ.Views.PlaylistPages
 {
@@ -26,6 +32,16 @@ namespace MahechaBJJ.Views.PlaylistPages
         private Account account;
         private User user;
         private PlayList playlist;
+
+#if __ANDROID__
+        private Android.Widget.EditText androidPlaylistNameEntry;
+        private Android.Widget.EditText androidPlaylistDescriptionEntry;
+        private Android.Widget.Button androidCreateBtn;
+
+        private ContentView contentViewAndroidPlaylistNameEntry;
+        private ContentView contentViewAndroidPlaylistDescriptionEntry;
+        private ContentView contentViewAndroidCreateBtn;
+#endif
 
         public PlaylistCreatePage()
         {
@@ -54,6 +70,16 @@ namespace MahechaBJJ.Views.PlaylistPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
+                    #if __ANDROID__
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+#endif
+#if __IOS__
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
@@ -62,15 +88,17 @@ namespace MahechaBJJ.Views.PlaylistPages
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-
-
-
+#endif
+                  
                 },
+#if __IOS__
                 ColumnDefinitions = new ColumnDefinitionCollection
                 {
+                    
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
                 }
+#endif
             };
             outerGrid = new Grid
             {
@@ -172,10 +200,57 @@ namespace MahechaBJJ.Views.PlaylistPages
                 TextColor = Color.Black
             };
 
+#if __ANDROID__
+
+
+            androidPlaylistNameEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidPlaylistNameEntry.Hint = "Enter Name";
+            androidPlaylistNameEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidPlaylistNameEntry.SetTextColor(Android.Graphics.Color.Black);
+            androidPlaylistNameEntry.Gravity = Android.Views.GravityFlags.Start;
+            androidPlaylistNameEntry.InputType = Android.Text.InputTypes.TextFlagNoSuggestions;
+
+            androidPlaylistDescriptionEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidPlaylistDescriptionEntry.Hint = "Enter Description";
+            androidPlaylistDescriptionEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidPlaylistDescriptionEntry.SetTextColor(Android.Graphics.Color.Black);
+            androidPlaylistDescriptionEntry.Gravity = Android.Views.GravityFlags.Start;
+            androidPlaylistDescriptionEntry.InputType = Android.Text.InputTypes.TextVariationLongMessage;
+
+            androidCreateBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidCreateBtn.Text = "Create";
+            androidCreateBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidCreateBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidCreateBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidCreateBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidCreateBtn.SetAllCaps(false);
+            androidCreateBtn.Click += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await CreatePlaylist(sender, e);
+                ToggleButtons();
+            };
+
+
+            contentViewAndroidPlaylistNameEntry = new ContentView();
+            contentViewAndroidPlaylistNameEntry.Content = androidPlaylistNameEntry.ToView();
+            contentViewAndroidPlaylistDescriptionEntry = new ContentView();
+            contentViewAndroidPlaylistDescriptionEntry.Content = androidPlaylistDescriptionEntry.ToView();
+            contentViewAndroidCreateBtn = new ContentView();
+            contentViewAndroidCreateBtn.Content = androidCreateBtn.ToView();
+#endif
+
             //events
             backBtn.Clicked += GoBack;
-            createBtn.Clicked += CreatePlaylist;
+            createBtn.Clicked += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await CreatePlaylist(sender, e);
+                ToggleButtons();
+            };
 
+
+#if __IOS__
             //building grid
             innerGrid.Children.Add(playListNameLbl, 0, 0);
             playListNameLbl.VerticalTextAlignment = TextAlignment.Center;
@@ -190,14 +265,15 @@ namespace MahechaBJJ.Views.PlaylistPages
             innerGrid.Children.Add(editorFrame, 0, 3);
             Grid.SetRowSpan(editorFrame, 3);
             Grid.SetColumnSpan(editorFrame, 2);
-#if __IOS__
+
             innerGrid.Children.Add(backBtn, 0, 7);
             innerGrid.Children.Add(createBtn, 1, 7);
 #endif
 #if __ANDROID__
-            innerGrid.Children.Add(createBtn, 0, 6);
-            Grid.SetRowSpan(createBtn, 2);
-            Grid.SetColumnSpan(createBtn, 2);
+            //building grid
+            innerGrid.Children.Add(contentViewAndroidPlaylistNameEntry, 0, 2);
+            innerGrid.Children.Add(contentViewAndroidPlaylistDescriptionEntry, 0, 3);
+            innerGrid.Children.Add(contentViewAndroidCreateBtn, 0, 6);
 #endif
 
             outerGrid.Children.Add(innerGrid, 0, 0);
@@ -207,14 +283,13 @@ namespace MahechaBJJ.Views.PlaylistPages
 
         public void GoBack(object sender, EventArgs e)
         {
-            backBtn.IsEnabled = false;
+            ToggleButtons();
             Navigation.PopModalAsync();
         }
 
-        public async void CreatePlaylist(object sender, EventArgs e)
+        public async Task CreatePlaylist(object sender, EventArgs e)
         {
-            createBtn.IsEnabled = false;
-            backBtn.IsEnabled = false;
+#if __IOS__
             if (playListNameEntry.Text != null)
             {
                 playlist = new PlayList();
@@ -237,8 +312,40 @@ namespace MahechaBJJ.Views.PlaylistPages
                 await DisplayAlert("Error", "Name cannot be empty, fill it in!", "Ok");
                 playListNameEntry.Focus();
             }
-            createBtn.IsEnabled = true;
-            backBtn.IsEnabled = true;
+#endif
+#if __ANDROID__
+            if (!string.IsNullOrWhiteSpace(androidPlaylistNameEntry.Text))
+            {
+                playlist = new PlayList();
+                playlist.Name = androidPlaylistNameEntry.Text;
+                playlist.Description = androidPlaylistDescriptionEntry.Text;
+                account = _baseViewModel.GetAccountInformation();
+                user = await _baseViewModel.FindUserByIdAsync(FINDUSER, account.Properties["Id"]);
+                await _playlistCreatePageViewModel.CreatePlaylist(playlist, user.Id);
+                if (_playlistCreatePageViewModel.Successful)
+                {
+                    await Navigation.PopModalAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Playlist Not Added", playlist.Name + " has not been added. Check your network connectivity!", "Ok");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Error", "Name cannot be empty, fill it in!", "Ok");
+                androidPlaylistNameEntry.RequestFocus();
+            }
+#endif
+        }
+
+        private void ToggleButtons()
+        {
+            backBtn.IsEnabled = !backBtn.IsEnabled;
+            createBtn.IsEnabled = !createBtn.IsEnabled;
+#if __ANDROID__
+            androidCreateBtn.Clickable = !androidCreateBtn.Clickable;
+#endif
         }
 
         //Orientation

@@ -525,12 +525,12 @@ namespace MahechaBJJ.Views.SignUpPages
             if (this.hasPackage)
             {
 #if __ANDROID__
-                if (androidNameEntry.Text != null || androidEmailAddressEntry.Text != null || androidPassWordEntry.Text != null
-                || androidSecretQuestionEntry.Text != null)
+                if (!string.IsNullOrWhiteSpace(androidNameEntry.Text)|| !string.IsNullOrWhiteSpace(androidEmailAddressEntry.Text) || !string.IsNullOrWhiteSpace(androidPassWordEntry.Text)
+                    || !string.IsNullOrWhiteSpace(androidSecretQuestionEntry.Text))
 #endif
 #if __IOS__
-                if (nameEntry.Text != null || emailAddressEntry.Text != null || passWordEntry.Text != null
-                || secretQuestionEntry.Text != null)
+                if (!string.IsNullOrWhiteSpace(nameEntry.Text) || !string.IsNullOrWhiteSpace(emailAddressEntry.Text) || !string.IsNullOrWhiteSpace(passWordEntry.Text)
+                    || !string.IsNullOrWhiteSpace(secretQuestionEntry.Text))
 #endif
                 {
                     CreateUser();
