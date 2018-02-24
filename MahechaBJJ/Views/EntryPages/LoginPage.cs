@@ -8,6 +8,7 @@ using Xamarin.Forms;
 #if __ANDROID__
 using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
+using Android.Text.Method;
 #endif
 
 namespace MahechaBJJ.Views.EntryPages
@@ -241,6 +242,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidPasswordEntry.SetTextColor(Android.Graphics.Color.Black);
             androidPasswordEntry.SetHighlightColor(Android.Graphics.Color.Transparent);
             androidPasswordEntry.InputType = Android.Text.InputTypes.TextVariationWebPassword;
+            androidPasswordEntry.TransformationMethod = new PasswordTransformationMethod();
 #endif
             //Events
             loginBtn.Clicked += Validate;
