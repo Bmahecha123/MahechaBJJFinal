@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.Service;
@@ -7,6 +9,7 @@ using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.PlaylistPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 
 namespace MahechaBJJ.Views.PlaylistPages
 {
@@ -30,6 +33,19 @@ namespace MahechaBJJ.Views.PlaylistPages
         private Grid outerGrid;
         private Video videoTechnique;
         private PlayList userPlaylist;
+#if __ANDROID__
+        private Android.Widget.TextView androidVideoNameLbl;
+        private Android.Widget.TextView androidVideoDescriptionLbl;
+        private Android.Widget.Button androidPlayBtn;
+        private Android.Widget.Button androidDeleteBtn;
+        private Android.Widget.Button androidQualityBtn;
+
+        private ContentView contentViewNameLbl;
+        private ContentView contentViewDescriptionLbl;
+        private ContentView contentViewPlayBtn;
+        private ContentView contentViewDeleteBtn;
+        private ContentView contentViewQualityBtn;
+#endif
 
         public PlaylistVideoPage(Video video, PlayList playlist)
         {
@@ -88,6 +104,71 @@ namespace MahechaBJJ.Views.PlaylistPages
                 }
             };
 
+            #if __ANDROID__
+            androidVideoNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidVideoNameLbl.Text = video.Name;
+            androidVideoNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidVideoNameLbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
+            androidVideoNameLbl.Gravity = Android.Views.GravityFlags.Center;
+            androidVideoNameLbl.SetTypeface(androidVideoNameLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
+
+            androidVideoDescriptionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidVideoDescriptionLbl.Text = video.Description;
+            androidVideoDescriptionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
+            androidVideoDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
+            androidVideoDescriptionLbl.Gravity = Android.Views.GravityFlags.Start;
+
+            androidPlayBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidPlayBtn.Text = "Play";
+            androidPlayBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidPlayBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidPlayBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidPlayBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidPlayBtn.SetAllCaps(false);
+            androidPlayBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await PlayAndroidVideo(sender, e);
+                ToggleButtons();
+            };
+
+            androidDeleteBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidDeleteBtn.Text = "D";
+            androidDeleteBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidDeleteBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidDeleteBtn.SetBackgroundColor(Android.Graphics.Color.Red);
+            androidDeleteBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidDeleteBtn.SetAllCaps(false);
+            androidDeleteBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await DeleteFromPlaylist(sender, e);
+                ToggleButtons();
+            };
+
+            androidQualityBtn = new Android.Widget.Button(MainApplication.ActivityContext);
+            androidQualityBtn.Text = "SD";
+            androidQualityBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidQualityBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidQualityBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidQualityBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidQualityBtn.SetAllCaps(false);
+            androidQualityBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await ChangeVideoQuality(sender, e);
+                ToggleButtons();
+            };
+
+            contentViewNameLbl = new ContentView();
+            contentViewNameLbl.Content = androidVideoNameLbl.ToView();
+            contentViewDescriptionLbl = new ContentView();
+            contentViewDescriptionLbl.Content = androidVideoDescriptionLbl.ToView();
+            contentViewPlayBtn = new ContentView();
+            contentViewPlayBtn.Content = androidPlayBtn.ToView();
+            contentViewDeleteBtn = new ContentView();
+            contentViewDeleteBtn.Content = androidDeleteBtn.ToView();
+            contentViewQualityBtn = new ContentView();
+            contentViewQualityBtn.Content = androidQualityBtn.ToView();
+#endif
+
             backBtn = new Button
             {
                 Text = "Back",
@@ -138,7 +219,12 @@ namespace MahechaBJJ.Views.PlaylistPages
             videoDescriptionScrollView = new ScrollView
             {
                 Padding = 0,
+#if __ANDROID__
+                Content = contentViewDescriptionLbl,
+#endif
+#if __IOS__
                 Content = videoDescription,
+#endif
                 Orientation = ScrollOrientation.Vertical
             };
 
@@ -210,17 +296,39 @@ namespace MahechaBJJ.Views.PlaylistPages
                 BackgroundColor = Color.FromRgb(58, 93, 174)
             };
 
-
             //Events
             backBtn.Clicked += GoBack;
-            deleteBtn.Clicked += DeleteFromPlaylist;
-            qualityBtn.Clicked += ChangeVideoQuality;
+            deleteBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await DeleteFromPlaylist(sender, e);
+                ToggleButtons();
+            }; 
+            qualityBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await ChangeVideoQuality(sender, e);
+                ToggleButtons();
+            }; 
 #if __IOS__
             playBtn.Clicked += PlayIOSVideo;
 #endif
+
+
 #if __ANDROID__
-            playBtn.Clicked += PlayAndroidVideo;
+            //building grid
+            innerGrid.Children.Add(videoFrame, 0, 0);
+            Grid.SetColumnSpan(videoFrame, 4);
+            innerGrid.Children.Add(contentViewNameLbl, 0, 0);
+            Grid.SetColumnSpan(contentViewNameLbl, 4);
+            innerGrid.Children.Add(contentViewPlayBtn, 0, 1);
+            innerGrid.Children.Add(contentViewQualityBtn, 3, 1);
+            innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
+            Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+
+            Grid.SetRowSpan(videoDescriptionScrollView, 3);
+            Grid.SetColumnSpan(contentViewPlayBtn, 2);
+            innerGrid.Children.Add(contentViewDeleteBtn, 2, 1);
 #endif
+#if __IOS__
             //building grid
             innerGrid.Children.Add(videoFrame, 0, 0);
             Grid.SetColumnSpan(videoFrame, 4);
@@ -231,12 +339,6 @@ namespace MahechaBJJ.Views.PlaylistPages
             innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
             Grid.SetColumnSpan(videoDescriptionScrollView, 4);
 
-#if __ANDROID__
-            Grid.SetRowSpan(videoDescriptionScrollView, 3);
-            Grid.SetColumnSpan(playBtn, 2);
-            innerGrid.Children.Add(deleteBtn, 2, 1);
-#endif
-#if __IOS__
             Grid.SetColumnSpan(playBtn, 3);
 
             innerGrid.Children.Add(deleteBtn, 0, 3);
@@ -256,13 +358,11 @@ namespace MahechaBJJ.Views.PlaylistPages
             ToggleButtons();
         }
 
-        public async void PlayAndroidVideo(object sender, EventArgs e)
+        public async Task PlayAndroidVideo(object sender, EventArgs e)
         {
-            ToggleButtons();
 #if __ANDROID__
             await Navigation.PushModalAsync(new AndroidVideoPage(videoUrl));
 #endif
-            ToggleButtons();
         }
 
         public void GoBack(object sender, EventArgs e)
@@ -271,9 +371,8 @@ namespace MahechaBJJ.Views.PlaylistPages
             Navigation.PopModalAsync();
         }
 
-        public async void DeleteFromPlaylist(object sender, EventArgs e)
+        public async Task DeleteFromPlaylist(object sender, EventArgs e)
         {
-            ToggleButtons();
             bool deleteVideo = await DisplayAlert("Delete Video From Playlist", "Remove " + videoTechnique.Name + " from " + userPlaylist.Name + "?", "Yes", "No");
 
             if (deleteVideo)
@@ -285,39 +384,38 @@ namespace MahechaBJJ.Views.PlaylistPages
                 {
                     await DisplayAlert("Video Deleted From Playlist", videoTechnique.Name + " has been successfully deleted from " + userPlaylist.Name + ".", "Ok");
                     await Navigation.PopModalAsync();
-                    ToggleButtons();
                 }
                 else
                 {
                     await DisplayAlert("Video Not Deleted From Playlist", videoTechnique.Name + " has not been deleted from " + userPlaylist.Name + ". Try again!", "Ok");
-                    ToggleButtons();
                 }
             }
             else
             {
-                ToggleButtons();
                 return;
             }
-
         }
 
         public void ToggleButtons()
         {
+#if __ANDROID__
+            androidPlayBtn.Clickable = !androidPlayBtn.Clickable;
+            androidDeleteBtn.Clickable = !androidDeleteBtn.Clickable;
+            androidQualityBtn.Clickable = !androidQualityBtn.Clickable;
+#endif
             deleteBtn.IsEnabled = !deleteBtn.IsEnabled;
             backBtn.IsEnabled = !backBtn.IsEnabled;
             qualityBtn.IsEnabled = !qualityBtn.IsEnabled;
             playBtn.IsEnabled = !playBtn.IsEnabled;
         }
 
-        public async void ChangeVideoQuality(object sender, EventArgs e)
+        public async Task ChangeVideoQuality(object sender, EventArgs e)
         {
-            ToggleButtons();
             string result;
             if (qualityBtn.Text == "SD")
             {
                 string[] videoQuality = { "HD" };
                 result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
-
             }
             else
             {
@@ -335,7 +433,6 @@ namespace MahechaBJJ.Views.PlaylistPages
                 videoUrl = videoTechnique.LinkHD;
                 qualityBtn.Text = "HD";
             }
-            ToggleButtons();
         }
 
         //Orientation

@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{4A7FB70C-C450-4C8F-A39E-EE1FFC1B294B}|Default">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D0D6A1DA-CA20-42FD-B8A7-B1A1A9BEED45" automaticSigning="False" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/SignUpPages/SignUpPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/PlaylistPages/PlaylistVideoPage.cs">
     <Files>
       <File FileName="MahechaBJJ/Views/MainTabPages/SearchPage.cs" Line="255" Column="67" />
       <File FileName="MahechaBJJ/Views/EntryPages/EntryPage.cs" Line="294" Column="66" />
@@ -12,10 +12,11 @@
       <File FileName="MahechaBJJ/Views/SignUpPages/PackagePage.cs" Line="306" Column="7" />
       <File FileName="MahechaBJJ/Views/CommonPages/ForgotPasswordPage.cs" Line="109" Column="84" />
       <File FileName="MahechaBJJ/Views/EntryPages/LoginPage.cs" Line="11" Column="27" />
-      <File FileName="MahechaBJJ/Views/CommonPages/ChangePasswordPage.cs" Line="249" Column="95" />
-      <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistCreatePage.cs" Line="210" Column="80" />
+      <File FileName="MahechaBJJ/Views/CommonPages/ChangePasswordPage.cs" Line="332" Column="29" />
+      <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistCreatePage.cs" Line="221" Column="53" />
       <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistDetailPage.cs" Line="12" Column="24" />
-      <File FileName="MahechaBJJ/Views/SignUpPages/SignUpPage.cs" Line="1" Column="1" />
+      <File FileName="MahechaBJJ/Views/SignUpPages/SignUpPage.cs" Line="533" Column="76" />
+      <File FileName="MahechaBJJ/Views/PlaylistPages/PlaylistVideoPage.cs" Line="35" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
