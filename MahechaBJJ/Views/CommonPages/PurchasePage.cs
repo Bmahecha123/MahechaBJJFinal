@@ -366,6 +366,7 @@ namespace MahechaBJJ.Views.CommonPages
             androidPurchaseBtn.SetTextColor(Android.Graphics.Color.Black);
             androidPurchaseBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidPurchaseBtn.Gravity = Android.Views.GravityFlags.Center;
+            androidPurchaseBtn.SetAllCaps(false);
             androidPurchaseBtn.Click += (object sender, EventArgs e) =>
             {
                 PurchasePackage();

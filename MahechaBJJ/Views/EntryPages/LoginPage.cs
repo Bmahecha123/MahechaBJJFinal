@@ -38,7 +38,6 @@ namespace MahechaBJJ.Views.EntryPages
         private Android.Widget.Button androidForgotPasswordBtn;
         private Android.Widget.EditText androidEmailEntry;
         private Android.Widget.EditText androidPasswordEntry;
-        private Android.Support.Design.Widget.TextInputEditText androidTextInputEditText;
 
 #endif
 
@@ -276,7 +275,6 @@ namespace MahechaBJJ.Views.EntryPages
             innerGrid.Children.Add(mahechaLogo, 0, 0);
             innerGrid.Children.Add(androidEmailEntry.ToView(), 0, 1);
             innerGrid.Children.Add(androidPasswordEntry.ToView(), 0, 2);
-            //innerGrid.Children.Add(androidTextInputEditText.ToView(), 0, 2);
             innerGrid.Children.Add(buttonGrid, 0, 3);
 
             outerGrid.Children.Add(innerGrid, 0, 0);
