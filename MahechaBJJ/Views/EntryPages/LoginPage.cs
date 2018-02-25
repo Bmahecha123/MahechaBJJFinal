@@ -155,58 +155,25 @@ namespace MahechaBJJ.Views.EntryPages
             loginBtn = new Button
             {
                 Text = "Login",
-#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-                Margin = -5,
-
-#endif
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
             backBtn = new Button
             {
                 Text = "Back",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-#endif
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
+                Style = (Style)Application.Current.Resources["common-red-btn"],
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
             forgotPasswordBtn = new Button
             {
                 Text = "?",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                Margin = -5,
-#endif
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -214,6 +181,7 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
             androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidLoginBtn.Text = "Login";
+            //androidLoginBtn.Typeface = Constants.COMMONFONT;
             androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLoginBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -222,6 +190,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidForgotPasswordBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidForgotPasswordBtn.Text = "?";
+            //androidForgotPasswordBtn.Typeface = Constants.COMMONFONT;
             androidForgotPasswordBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidForgotPasswordBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(124, 37, 41));
             androidForgotPasswordBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -230,6 +199,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidEmailEntry.Hint = "E-Mail Address";
+            //androidEmailEntry.Typeface = Constants.COMMONFONT;
             androidEmailEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidEmailEntry.SetPadding(0, 0, 0, 0);
             androidEmailEntry.SetTextColor(Android.Graphics.Color.Black);
@@ -237,6 +207,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidPasswordEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidPasswordEntry.Hint = "Password";
+            //androidPasswordEntry.Typeface = Constants.COMMONFONT;
             androidPasswordEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidPasswordEntry.SetPadding(0, 0, 0, 0);
             androidPasswordEntry.SetTextColor(Android.Graphics.Color.Black);

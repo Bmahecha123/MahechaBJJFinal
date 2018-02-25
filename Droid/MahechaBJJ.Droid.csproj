@@ -251,6 +251,20 @@
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Ubuntu-Bold.ttf" />
+    <AndroidAsset Include="Assets\Ubuntu-BoldItalic.ttf" />
+    <AndroidAsset Include="Assets\Ubuntu-Italic.ttf" />
+    <AndroidAsset Include="Assets\Ubuntu-Light.ttf" />
+    <AndroidAsset Include="Assets\Ubuntu-LightItalic.ttf" />
+    <AndroidAsset Include="Assets\Ubuntu-Medium.ttf" />
+    <AndroidAsset Include="Assets\Ubuntu-MediumItalic.ttf" />
+    <AndroidAsset Include="Assets\Ubuntu-Regular.ttf" />
+    <AndroidAsset Include="Assets\BerkshireSwash-Regular.ttf" />
+    <AndroidAsset Include="Assets\PressStart2P-Regular.ttf" />
+    <AndroidAsset Include="Assets\BadScript-Regular.ttf" />
+    <AndroidAsset Include="Assets\ChelseaMarket-Regular.ttf" />
+  </ItemGroup>
   <Import Project="..\MahechaBJJ\MahechaBJJ.projitems" Label="Shared" Condition="Exists('..\MahechaBJJ\MahechaBJJ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />

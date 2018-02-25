@@ -86,78 +86,35 @@ namespace MahechaBJJ.Views.EntryPages
                 Aspect = Aspect.AspectFit
             };
             var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
+
             loginBtn = new Button
             {
                 Text = "Login",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = size * 2,
-
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size,
-                Margin = -5,
-#endif
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black
+                Style = (Style)Application.Current.Resources["common-blue-btn"]
             };
             signUpBtn = new Button
             {
                 Text = "Sign Up",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = size * 2,
-
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size,
-                Margin = -5,
-#endif
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black
+                Style = (Style)Application.Current.Resources["common-blue-btn"]
             };
             blogBtn = new Button
             {
                 Text = "Learn More",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = size * 2,
-
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size,
-                Margin = -5,
-#endif
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black
+                Style = (Style)Application.Current.Resources["common-blue-btn"]
             };
 
             restoreBtn = new Button();
             restoreBtn.Text = "Restore Packages";
-            restoreBtn.FontFamily = "AmericanTypewriter-Bold";
+            restoreBtn.Style = (Style)Application.Current.Resources["common-blue-btn"];
             restoreBtn.FontSize = size * 1.5;
-            restoreBtn.BackgroundColor = Color.FromRgb(58, 93, 174);
-            restoreBtn.TextColor = Color.Black;
-            restoreBtn.BorderWidth = 3;
-            restoreBtn.BorderColor = Color.Black;
-            restoreBtn.Clicked += async (object sender, EventArgs e) => {
-                ToggleButtons();
-                await CheckIfUserHasPackage(sender, e);
-                ToggleButtons();
-            }; 
 
 #if __ANDROID__
             androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidLoginBtn.Text = "Login";
+            //androidLoginBtn.Typeface = Constants.COMMONFONT;
             androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLoginBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -166,6 +123,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidSignUpBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidSignUpBtn.Text = "Sign Up";
+            //androidSignUpBtn.Typeface = Constants.COMMONFONT;
             androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSignUpBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidSignUpBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -174,6 +132,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidBlogBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidBlogBtn.Text = "Learn More";
+            //androidBlogBtn.Typeface = Constants.COMMONFONT;
             androidBlogBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidBlogBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidBlogBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -182,6 +141,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidRestoreBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidRestoreBtn.Text = "Restore Packages";
+            //androidRestoreBtn.Typeface = Constants.COMMONFONT;
             androidRestoreBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidRestoreBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidRestoreBtn.SetTextColor(Android.Graphics.Color.Black);

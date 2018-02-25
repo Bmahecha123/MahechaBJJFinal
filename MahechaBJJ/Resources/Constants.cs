@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using MahechaBJJ.Model;
+#if __ANDROID__
+using Android.Graphics;
+using MahechaBJJ.Droid;
+#endif
 
 namespace MahechaBJJ.Resources
 {
@@ -11,21 +15,21 @@ namespace MahechaBJJ.Resources
         public static string NOGIPACKAGE = "nogi_package";
         public static string GIANDNOGIPACKAGE = "giandnogi_package";
 
-		public static string pivotalHost = "https://mahechabjj.cfapps.io/";
-		public static string localHost = "http://localhost:8080/";
-		public static string AppName = "mahechabjj";
+        public static string pivotalHost = "https://mahechabjj.cfapps.io/";
+        public static string localHost = "http://localhost:8080/";
+        public static string AppName = "mahechabjj";
 
         public static string GETUSER = "user/getUser";
-		public static string CREATEUSER = "user/create";
-		public static string FINDUSER = "user/findById/";
+        public static string CREATEUSER = "user/create";
+        public static string FINDUSER = "user/findById/";
         public static string FINDUSERBYEMAIL = "user/findByEmail/";
-		public static string FINDPLAYLIST = "user/getplaylist/";
-		public static string ADDPLAYLIST = "user/addplaylist/";
-		public static string GETPLAYLIST = "user/getplaylists/";
-		public static string UPDATEPLAYLIST = "user/updateplaylists/";
-		public static string DELETEPLAYLIST = "user/deleteplaylist/";
-		public static string DELETEVIDEOFROMPLAYLIST = "user/deleteVideo/";
-		public static string LOADBLOGPOSTS = "https://api.tumblr.com/v2/blog/mahechabjj/posts?api_key=vPbcUP6WSBbQ6RiVQC5ZO9paNGQE7QT4kXGefQXKlkM2jBJdos";
+        public static string FINDPLAYLIST = "user/getplaylist/";
+        public static string ADDPLAYLIST = "user/addplaylist/";
+        public static string GETPLAYLIST = "user/getplaylists/";
+        public static string UPDATEPLAYLIST = "user/updateplaylists/";
+        public static string DELETEPLAYLIST = "user/deleteplaylist/";
+        public static string DELETEVIDEOFROMPLAYLIST = "user/deleteVideo/";
+        public static string LOADBLOGPOSTS = "https://api.tumblr.com/v2/blog/mahechabjj/posts?api_key=vPbcUP6WSBbQ6RiVQC5ZO9paNGQE7QT4kXGefQXKlkM2jBJdos";
         public static string CHANGEPASSWORD = "password/changePassword";
 
         public static string VIMEOGIANDNOGIALBUM = "https://api.vimeo.com/me/albums/4802536/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&version=3.2";
@@ -84,5 +88,14 @@ namespace MahechaBJJ.Resources
 
             return albums[albumName.ToUpper()];
         }
+
+#if __ANDROID__
+        public static Typeface UBUNTUBOLD = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "Ubuntu-Bold.ttf");
+        public static Typeface UBUNTULIGHT = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "Ubuntu-Light.ttf");
+        public static Typeface UBUNTUMEDIUM = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "Ubuntu-Medium.ttf");
+        public static Typeface UBUNTUREGULAR = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "Ubuntu-Regular.ttf");
+        public static Typeface BERKSHIRE = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "BerkshireSwash-Regular.ttf");
+        public static Typeface COMMONFONT = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "Ubuntu-Regular.ttf");
+        #endif
     }
 }

@@ -1,6 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MahechaBJJ.App">
 	<Application.Resources>
 		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Style x:Key="common-blue-btn" TargetType="Button">
+                <Setter Property="FontFamily" Value="AmericanTypewriter-Bold" />
+                <Setter Property="BackgroundColor" Value="rgb(58, 93, 174)" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BorderWidth" Value="3" />
+                <Setter Property="BorderColor" Value="Black" />
+            </Style>
+            <Style x:Key="common-red-btn" TargetType="Button">
+                <Setter Property="FontFamily" Value="AmericanTypewriter-Bold" />
+                <Setter Property="BackgroundColor" Value="rgb(124, 37, 41)" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BorderWidth" Value="3" />
+                <Setter Property="BorderColor" Value="Black" />
+            </Style>
+            <Style x:Key="common-delete-btn" TargetType="Button">
+                <Setter Property="FontFamily" Value="AmericanTypewriter-Bold" />
+                <Setter Property="BackgroundColor" Value="red" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BorderWidth" Value="3" />
+                <Setter Property="BorderColor" Value="Black" />
+            </Style>
+        </ResourceDictionary>
 	</Application.Resources>
 </Application>
