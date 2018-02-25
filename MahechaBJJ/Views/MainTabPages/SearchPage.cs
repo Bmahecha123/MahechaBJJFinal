@@ -546,7 +546,7 @@ namespace MahechaBJJ.Views
                 Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
-                Padding = new Thickness(10, 10, 10, 10);
+                Padding = new Thickness(5, 5, 5, 5);
 #endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
@@ -610,7 +610,7 @@ namespace MahechaBJJ.Views
             Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
-                Padding = new Thickness(10, 10, 10, 10);
+                Padding = new Thickness(5, 5, 5, 5);
 #endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();

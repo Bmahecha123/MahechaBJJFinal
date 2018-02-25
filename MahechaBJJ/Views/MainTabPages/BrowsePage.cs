@@ -62,7 +62,7 @@ namespace MahechaBJJ.Views
 #endif
 #if __ANDROID__
             Icon = "openbook.png";
-            Padding = new Thickness(10, 10, 10, 10);
+            Padding = new Thickness(5, 5, 5, 5);
 #endif
             SetContent();
 
@@ -514,7 +514,7 @@ namespace MahechaBJJ.Views
             Content = outerGrid;
         }
 
-        private void ToggleButtons() 
+        private void ToggleButtons()
         {
 #if __ANDROID__
             androidBlogLbl.Clickable = !androidBlogLbl.Clickable;
@@ -536,7 +536,12 @@ namespace MahechaBJJ.Views
 
             if (width > height)
             {
+#if __IOS__
                 Padding = new Thickness(10, 10, 10, 10);
+#endif
+#if __ANDROID__
+                Padding = new Thickness(5, 5, 5, 5);
+#endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
@@ -560,7 +565,7 @@ namespace MahechaBJJ.Views
                 Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
-                Padding = new Thickness(10, 10, 10, 10);
+                Padding = new Thickness(5, 5, 5, 5);
 #endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();

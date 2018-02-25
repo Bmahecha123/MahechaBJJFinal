@@ -56,7 +56,7 @@ namespace MahechaBJJ.Views.SignUpPages
             _summaryPageViewModel = new SummaryPageViewModel();
             this.package = package;
 #if __ANDROID__
-            Padding = new Thickness(10, 10, 10, 10);
+            Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
@@ -72,7 +72,7 @@ namespace MahechaBJJ.Views.SignUpPages
         {
             _summaryPageViewModel = new SummaryPageViewModel();
 #if __ANDROID__
-            Padding = new Thickness(10, 10, 10, 10);
+            Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
@@ -189,7 +189,8 @@ namespace MahechaBJJ.Views.SignUpPages
             androidSignUpBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSignUpBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidSignUpBtn.Click += async (object sender, EventArgs e) => {
+            androidSignUpBtn.Click += async (object sender, EventArgs e) =>
+            {
                 ToggleButtons();
                 await SignUp();
                 ToggleButtons();
@@ -281,11 +282,11 @@ namespace MahechaBJJ.Views.SignUpPages
                 ToggleButtons();
             };
 
-            #if __IOS__
+#if __IOS__
             buttonGrid.Children.Add(backBtn, 0, 0);
             buttonGrid.Children.Add(signUpBtn, 1, 0);
 #endif
-          
+
             summaryLbl = new Label
             {
 #if __IOS__
@@ -648,7 +649,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 {
                     return Constants.NOGIPACKAGE;
                 }
-                else 
+                else
                 {
                     return Constants.GIANDNOGIPACKAGE;
                 }
@@ -663,7 +664,7 @@ namespace MahechaBJJ.Views.SignUpPages
             backBtn.IsEnabled = !backBtn.IsEnabled;
             signUpBtn.IsEnabled = !signUpBtn.IsEnabled;
         }
-          
+
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height); //must be called
@@ -672,7 +673,12 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 if (width > height)
                 {
-                    Padding = new Thickness(10, 10, 10, 0);
+#if __IOS__
+                    Padding = new Thickness(10, 10, 10, 10);
+#endif
+#if __ANDROID__
+                    Padding = new Thickness(5, 5, 5, 5);
+#endif
                     innerGrid.Children.Clear();
                     innerGrid.RowDefinitions.Clear();
                     innerGrid.ColumnDefinitions.Clear();
@@ -713,7 +719,7 @@ namespace MahechaBJJ.Views.SignUpPages
                     Padding = new Thickness(10, 30, 10, 10);
 #endif
 #if __ANDROID__
-                Padding = new Thickness(10, 10, 10, 10);
+                Padding = new Thickness(5, 5, 5, 5);
 #endif
                     innerGrid.Children.Clear();
                     innerGrid.RowDefinitions.Clear();

@@ -56,7 +56,7 @@ namespace MahechaBJJ.Views.SignUpPages
         public PackagePage()
         {
 #if __ANDROID__
-            Padding = new Thickness(10, 10, 10, 10);
+            Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
             Padding = new Thickness(10, 30, 10, 10);
@@ -527,7 +527,7 @@ namespace MahechaBJJ.Views.SignUpPages
             if (width > height)
             {
 #if __ANDROID__
-                Padding = new Thickness(10, 10, 10, 10);
+                Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
             Padding = new Thickness(10, 10, 10, 10);
@@ -562,7 +562,7 @@ namespace MahechaBJJ.Views.SignUpPages
             else
             {
 #if __ANDROID__
-                Padding = new Thickness(10, 10, 10, 10);
+                Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
             Padding = new Thickness(10, 30, 10, 10);

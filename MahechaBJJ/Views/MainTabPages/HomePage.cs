@@ -69,7 +69,7 @@ namespace MahechaBJJ.Views
 #endif
 #if __ANDROID__
             Icon = "construction.png";
-            Padding = new Thickness(5, -5, 5, 5);
+            Padding = new Thickness(5, 5, 5, 5);
 #endif
             SetVimeoUrl();
             BuildPageObjects();
