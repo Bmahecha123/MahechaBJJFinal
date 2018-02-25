@@ -179,6 +179,9 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
             accountScrollView = new ScrollView();
             accountScrollView.Content = accountStackLayout;
+#if __ANDROID__
+            accountScrollView.IsClippedToBounds = true;
+#endif
 
             accountFrame = new Frame();
             accountFrame.OutlineColor = Color.Black;

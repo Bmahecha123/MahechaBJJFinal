@@ -245,6 +245,7 @@ namespace MahechaBJJ.Views
                 Padding = 0,
 #if __ANDROID__
                 Content = contentViewDescriptionLbl,
+                IsClippedToBounds = true,
 #endif
 #if __IOS__
                 Content = videoDescription,

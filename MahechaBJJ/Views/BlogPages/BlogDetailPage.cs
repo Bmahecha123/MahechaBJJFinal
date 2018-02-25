@@ -118,7 +118,8 @@ namespace MahechaBJJ.Views.BlogPages
             scrollView = new ScrollView
             {
 #if __ANDROID__
-                Content = androidBlogContentLbl.ToView()
+                Content = androidBlogContentLbl.ToView(),
+                IsClippedToBounds = true
 #endif
 #if __IOS__
                     Content = blogContentLbl

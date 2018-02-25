@@ -243,6 +243,12 @@
     <AndroidResource Include="Resources\drawable-xhdpi\search.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\sweep.JPG" />
+    <AndroidResource Include="Resources\mipmap\mahechabjj.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\mahechabjj.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\mahechabjj.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\mahechabjj.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\mahechabjj.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\mahechabjj.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Service\" />
@@ -250,6 +256,12 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\mipmap\" />
+    <Folder Include="Resources\mipmap-hdpi\" />
+    <Folder Include="Resources\mipmap-mdpi\" />
+    <Folder Include="Resources\mipmap-xhdpi\" />
+    <Folder Include="Resources\mipmap-xxhdpi\" />
+    <Folder Include="Resources\mipmap-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Ubuntu-Bold.ttf" />

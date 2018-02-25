@@ -20,7 +20,7 @@ using Microsoft.AppCenter.Crashes;
 
 namespace MahechaBJJ.Droid
 {
-    [Activity(Label = "MahechaBJJ.Droid", Icon = "@drawable/mahechabjj", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, WindowSoftInputMode = SoftInput.AdjustResize)]
+    [Activity(Label = "MahechaBJJ.Droid", Icon = "@mipmap/mahechabjj", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, WindowSoftInputMode = SoftInput.AdjustResize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)

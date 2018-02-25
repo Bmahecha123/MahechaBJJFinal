@@ -213,7 +213,10 @@ namespace MahechaBJJ.Views.CommonPages
             giScrollView = new ScrollView
             {
                 BackgroundColor = Color.FromRgb(58, 93, 174),
-                Content = giStackLayout
+                Content = giStackLayout,
+                #if __ANDROID__
+                IsClippedToBounds = true
+#endif
             };
 
             giFrame = new Frame
@@ -316,7 +319,10 @@ namespace MahechaBJJ.Views.CommonPages
             noGiScrollView = new ScrollView
             {
                 BackgroundColor = Color.FromRgb(58, 93, 174),
-                Content = noGiStackLayout
+                Content = noGiStackLayout,
+                #if __ANDROID__
+                IsClippedToBounds = true
+#endif
             };
 
             noGiFrame = new Frame

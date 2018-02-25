@@ -494,6 +494,9 @@ namespace MahechaBJJ.Views.SignUpPages
             };
 #endif
             scrollView.Content = stackLayout;
+#if __ANDROID__
+            scrollView.IsClippedToBounds = true;
+#endif
 
 #if __IOS__
             innerGrid = new Grid

@@ -522,7 +522,10 @@ namespace MahechaBJJ.Views.SignUpPages
                 };
                 scrollView = new ScrollView
                 {
-                    Content = stackLayout
+                    Content = stackLayout,
+                #if __ANDROID__
+                    IsClippedToBounds = true
+#endif
                 };
 #endif
 #if __IOS__

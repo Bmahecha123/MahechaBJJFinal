@@ -499,6 +499,9 @@ namespace MahechaBJJ.Views
             stackLayout.Children.Add(backTakeFrame);
             stackLayout.Children.Add(drillsFrame);
             scrollView.Content = stackLayout;
+#if __ANDROID__
+            scrollView.IsClippedToBounds = true;
+#endif
 
             innerGrid.Children.Add(scrollView, 0, 0);
             innerGrid.Children.Add(blogFrame, 0, 1);
