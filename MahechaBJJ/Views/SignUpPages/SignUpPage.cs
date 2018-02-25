@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.Text;
 using MahechaBJJ.Views.SignUpPages;
 using MahechaBJJ.ViewModel.SignUpPages;
+using System.Threading.Tasks;
 #if __ANDROID__
 using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
@@ -362,9 +363,11 @@ namespace MahechaBJJ.Views.SignUpPages
             androidNextBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidNextBtn.SetTextColor(Android.Graphics.Color.Black);
             androidNextBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidNextBtn.Click += (object sender, EventArgs e) =>
+            androidNextBtn.Click += async (object sender, EventArgs e) =>
             {
-                Validate();
+                ToggleButtons();
+                await Validate();
+                ToggleButtons();
             };
             androidNextBtn.SetAllCaps(false);
 
@@ -384,11 +387,17 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 
             //Events
-            nextBtn.Clicked += (object sender, EventArgs e) =>
+            nextBtn.Clicked += async (object sender, EventArgs e) =>
             {
-                Validate();
+                ToggleButtons();
+                await Validate();
+                ToggleButtons();
             };
-            backBtn.Clicked += GoBack;
+            backBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PopModalAsync();
+                ToggleButtons();
+            };
             //passWordRepeatEntry.Unfocused += PasswordMatch;
             //TODO add specific validation events to make sure entries are correct.
 
@@ -519,9 +528,8 @@ namespace MahechaBJJ.Views.SignUpPages
             Content = outerGrid;
         }
 
-        private async void Validate()
+        private async Task Validate()
         {
-            ToggleButtons();
             if (this.hasPackage)
             {
 #if __ANDROID__
@@ -577,18 +585,13 @@ namespace MahechaBJJ.Views.SignUpPages
                     await DisplayAlert("Sign Up Error", "Make sure all fields are filled in!", "Okay, got it.");
                 }
             }
-
-            ToggleButtons();
-        }
-
-        private void GoBack(object sender, EventArgs e)
-        {
-            ToggleButtons();
-            Navigation.PopModalAsync();
         }
 
         private void ToggleButtons()
         {
+#if __ANDROID__
+            androidNextBtn.Clickable = !androidNextBtn.Clickable;
+#endif
             backBtn.IsEnabled = !backBtn.IsEnabled;
             nextBtn.IsEnabled = !nextBtn.IsEnabled;
         }

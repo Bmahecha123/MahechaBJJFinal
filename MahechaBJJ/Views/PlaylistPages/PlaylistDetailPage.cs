@@ -33,6 +33,7 @@ namespace MahechaBJJ.Views.PlaylistPages
         private Button deleteBtn;
         private PlayList userPlaylist;
         private ObservableCollection<Video> videos;
+        private bool isPressed;
 #if __ANDROID__
         private Android.Widget.TextView androidPlaylistNameLbl;
         private Android.Widget.TextView androidPlaylistDescriptionLbl;
@@ -188,7 +189,9 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidDeleteBtn.SetBackgroundColor(Android.Graphics.Color.Red);
             androidDeleteBtn.Click += async (object sender, EventArgs e) =>
             {
+                ToggleButtons();
                 await DeletePlaylist(sender, e);
+                ToggleButtons();
             };
 
             contentViewAndroidPlaylistNameLbl = new ContentView();
@@ -200,15 +203,29 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 
             //Events
-            backBtn.Clicked += GoBack;
+            backBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PopModalAsync();
+                ToggleButtons();
+            };
             deleteBtn.Clicked += async (object sender, EventArgs e) =>
             {
+                ToggleButtons();
                 await DeletePlaylist(sender, e);
+                ToggleButtons();
             };
             videosListView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) => {
-                //TODO PREVENT MULTIPLE VIDEOS FROM LOADING FUCK!
-                ToggleButtons();
-                await LoadVideo(sender, e);
+                if (isPressed)
+                {
+                    return;
+                }
+                else
+                {
+                    isPressed = true;
+                    ToggleButtons();
+                    await LoadVideo(sender, e);
+                }
+                isPressed = false;
                 ToggleButtons();
             }; 
 
@@ -242,15 +259,8 @@ namespace MahechaBJJ.Views.PlaylistPages
             Content = outerGrid;
         }
 
-        public void GoBack(object sender, EventArgs e)
-        {
-            ToggleButtons();
-            Navigation.PopModalAsync();
-        }
-
         public async Task DeletePlaylist(object sender, EventArgs e)
         {
-            ToggleButtons();
             bool delete = await DisplayAlert("Delete Playlist", "Are you sure you want to delete " + userPlaylist.Name + "?", "Yes", "No");
             if (delete)
             {
@@ -262,18 +272,17 @@ namespace MahechaBJJ.Views.PlaylistPages
                 else
                 {
                     await DisplayAlert("Unable To Delete", userPlaylist.Name + " has not been deleted. Try again.", "Ok");
-                    ToggleButtons();
                 }
             }
             else
             {
-                ToggleButtons();
                 return;
             }
         }
 
         public void ToggleButtons()
         {
+            videosListView.IsEnabled = !videosListView.IsEnabled;
 #if __ANDROID__
             androidDeleteBtn.Clickable = !androidDeleteBtn.Clickable;
 #endif

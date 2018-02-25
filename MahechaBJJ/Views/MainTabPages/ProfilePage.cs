@@ -116,11 +116,6 @@ namespace MahechaBJJ.Views
                 FontSize = size * 1.5,
                 HorizontalTextAlignment = TextAlignment.Center,
 #endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size,
-                HorizontalTextAlignment = TextAlignment.Start,
-#endif
                 VerticalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
@@ -132,10 +127,6 @@ namespace MahechaBJJ.Views
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = size,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size * .5,
 #endif
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -150,11 +141,6 @@ namespace MahechaBJJ.Views
                 FontSize = size * 1.5,
                 HorizontalTextAlignment = TextAlignment.Center,
 #endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size,
-                HorizontalTextAlignment = TextAlignment.Start,
-#endif
                 VerticalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
@@ -165,10 +151,6 @@ namespace MahechaBJJ.Views
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = size,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size * .5,
 #endif
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -184,11 +166,6 @@ namespace MahechaBJJ.Views
                 FontSize = size * 1.5,
                 HorizontalTextAlignment = TextAlignment.Center,
 #endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size,
-                HorizontalTextAlignment = TextAlignment.Start,
-#endif
                 VerticalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
@@ -199,10 +176,6 @@ namespace MahechaBJJ.Views
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = size,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size * .5,
 #endif
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -216,11 +189,6 @@ namespace MahechaBJJ.Views
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = size * 2,
 #endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size,
-                Margin = -5,
-#endif
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -233,11 +201,6 @@ namespace MahechaBJJ.Views
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = size * 2,
 #endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size,
-                Margin = -5,
-#endif
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -249,11 +212,6 @@ namespace MahechaBJJ.Views
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = size * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size,
-                Margin = -5,
 #endif
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
@@ -282,11 +240,6 @@ namespace MahechaBJJ.Views
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = size * 2,
 #endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = size,
-                Margin = -5,
-#endif
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 TextColor = Color.Black,
                 BorderWidth = 3,
@@ -301,8 +254,10 @@ namespace MahechaBJJ.Views
             createAccountBtn.FontSize = btnSize * 2;
             createAccountBtn.BackgroundColor = Color.FromRgb(58, 93, 174);
             createAccountBtn.TextColor = Color.Black;
-            createAccountBtn.Clicked += (object sender, EventArgs e) => {
-                Navigation.PushModalAsync(new SignUpPage());
+            createAccountBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new SignUpPage());
+                ToggleButtons();
             };
 
             timeOutLbl = new Label
@@ -335,7 +290,9 @@ namespace MahechaBJJ.Views
             timeOutTap = new TapGestureRecognizer();
             timeOutTap.Tapped += (sender, e) =>
             {
+                ToggleButtons();
                 SetContent();
+                ToggleButtons();
             };
             timeOutLbl.GestureRecognizers.Add(timeOutTap);
             activityIndicator = new ActivityIndicator
@@ -351,21 +308,18 @@ namespace MahechaBJJ.Views
             androidNameLbl.SetTextColor(Android.Graphics.Color.Black);
             androidNameLbl.Gravity = Android.Views.GravityFlags.Start;
             androidNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
-            //androidNameLbl.SetTypeface(androidNameLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
 
             androidEmailLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidEmailLbl.Text = "Email:";
             androidEmailLbl.SetTextColor(Android.Graphics.Color.Black);
             androidEmailLbl.Gravity = Android.Views.GravityFlags.Start;
             androidEmailLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
-            //androidEmailLbl.SetTypeface(androidNameLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
 
             androidBeltLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidBeltLbl.Text = "Belt:";
             androidBeltLbl.SetTextColor(Android.Graphics.Color.Black);
             androidBeltLbl.Gravity = Android.Views.GravityFlags.Start;
             androidBeltLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
-            //androidBeltLbl.SetTypeface(androidNameLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
 
             androidPackageBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidPackageBtn.Text = "Packages";
@@ -374,8 +328,10 @@ namespace MahechaBJJ.Views
             androidPackageBtn.SetTextColor(Android.Graphics.Color.Black);
             androidPackageBtn.Gravity = Android.Views.GravityFlags.Center;
             androidPackageBtn.SetAllCaps(false);
-            androidPackageBtn.Click += (object sender, EventArgs e) => {
-                SetPackages();
+            androidPackageBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await SetPackages();
+                ToggleButtons();
             };
 
             androidContactUsBtn = new Android.Widget.Button(MainApplication.ActivityContext);
@@ -386,7 +342,9 @@ namespace MahechaBJJ.Views
             androidContactUsBtn.Gravity = Android.Views.GravityFlags.Center;
             androidContactUsBtn.SetAllCaps(false);
             androidContactUsBtn.Click += (object sender, EventArgs e) => {
+                ToggleButtons();
                 ContactUs();
+                ToggleButtons();
             };
 
             androidLogOutBtn = new Android.Widget.Button(MainApplication.ActivityContext);
@@ -397,7 +355,9 @@ namespace MahechaBJJ.Views
             androidLogOutBtn.Gravity = Android.Views.GravityFlags.Center;
             androidLogOutBtn.SetAllCaps(false);
             androidLogOutBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
                 await LogOutClick();
+                ToggleButtons();
             };
 
             androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
@@ -407,19 +367,23 @@ namespace MahechaBJJ.Views
             androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
             androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
             androidLoginBtn.SetAllCaps(false);
-            androidLoginBtn.Click += (sender, e) => {
-                Navigation.PushModalAsync(new LoginPage());
+            androidLoginBtn.Click += async (sender, e) => {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new LoginPage());
+                ToggleButtons();
             };
 
             androidSettingsBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidSettingsBtn.Text = "Settings";
+            androidSettingsBtn.Text = "Change Password";
             androidSettingsBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSettingsBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidSettingsBtn.SetTextColor(Android.Graphics.Color.Black);
             androidSettingsBtn.Gravity = Android.Views.GravityFlags.Center;
             androidSettingsBtn.SetAllCaps(false);
             androidSettingsBtn.Click += async (object sender, EventArgs e) => {
-                await Settings();
+                ToggleButtons();
+                await Navigation.PushModalAsync(new ChangePasswordPage(user));
+                ToggleButtons();
             };
 
             androidCreateAccountBtn = new Android.Widget.Button(MainApplication.ActivityContext);
@@ -429,8 +393,10 @@ namespace MahechaBJJ.Views
             androidCreateAccountBtn.SetTextColor(Android.Graphics.Color.Black);
             androidCreateAccountBtn.Gravity = Android.Views.GravityFlags.Center;
             androidCreateAccountBtn.SetAllCaps(false);
-            androidCreateAccountBtn.Click += (object sender, EventArgs e) => {
-                Navigation.PushModalAsync(new SignUpPage());
+            androidCreateAccountBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new SignUpPage());
+                ToggleButtons();
             };
 
             contentViewNameLbl = new ContentView();
@@ -444,21 +410,29 @@ namespace MahechaBJJ.Views
 #endif
 
             //Events
-            packageBtn.Clicked += (object sender, EventArgs e) =>
+            packageBtn.Clicked += async (object sender, EventArgs e) =>
             {
-                SetPackages();
+                ToggleButtons();
+                await SetPackages();
+                ToggleButtons();
             };
             contactUsBtn.Clicked += (sender, e) =>
             {
+                ToggleButtons();
                 ContactUs();
+                ToggleButtons();
             };
             logOutBtn.Clicked += async (sender, e) =>
             {
+                ToggleButtons();
                 await LogOutClick();
+                ToggleButtons();
             };
             settingsBtn.Clicked += async (sender, e) =>
             {
+                ToggleButtons();
                 await Settings();
+                ToggleButtons();
             };
 
             outerGrid.Children.Add(innerGrid, 0, 0);
@@ -571,22 +545,22 @@ namespace MahechaBJJ.Views
             Application.Current.MainPage = entryPage;
         }
 
-        private void SetPackages()
+        private async Task SetPackages()
         {
             account = _baseViewModel.GetAccountInformation();
 
             if (account.Properties["Package"].Equals("GiAndNoGi"))
             {
-                DisplayAlert("No Packages", "No more packages are available for you to purchase.", "Ok");
+                await DisplayAlert("No Packages", "No more packages are available for you to purchase.", "Ok");
                 return;
             }
             else if (account.Properties["Package"].Equals("Gi"))
             {
-                Navigation.PushModalAsync(new PurchasePage(Package.NoGi));
+                await Navigation.PushModalAsync(new PurchasePage(Package.NoGi));
             }
             else
             {
-                Navigation.PushModalAsync(new PurchasePage(Package.Gi));
+                await Navigation.PushModalAsync(new PurchasePage(Package.Gi));
             }
         }
 
@@ -601,7 +575,6 @@ namespace MahechaBJJ.Views
 
         private void ContactUs()
         {
-            contactUsBtn.IsEnabled = false;
             var emailMessage = new EmailMessage();
             emailMessage.Subject = "Mahecha BJJ - <Insert Subject Here>";
 #if __IOS__
@@ -611,7 +584,6 @@ namespace MahechaBJJ.Views
             Xamarin.Forms.DependencyService.Register<IEmailService>();
             DependencyService.Get<IEmailService>().StartEmailActivity(emailMessage);
 #endif
-            contactUsBtn.IsEnabled = true;
         }
 
         private async Task Settings() 
@@ -622,6 +594,26 @@ namespace MahechaBJJ.Views
             {
                 await Navigation.PushModalAsync(new ChangePasswordPage(user));
             }
+        }
+
+        private void ToggleButtons()
+        {
+#if __ANDROID__
+            androidPackageBtn.Clickable = !androidPackageBtn.Clickable;
+            androidContactUsBtn.Clickable = !androidContactUsBtn.Clickable;
+            androidLogOutBtn.Clickable = !androidLogOutBtn.Clickable;
+            androidLoginBtn.Clickable = !androidLoginBtn.Clickable;
+            androidSettingsBtn.Clickable = !androidSettingsBtn.Clickable;
+            androidCreateAccountBtn.Clickable = !androidCreateAccountBtn.Clickable;
+#endif
+            timeOutLbl.IsEnabled = !timeOutLbl.IsEnabled;
+
+            packageBtn.IsEnabled = !packageBtn.IsEnabled;
+            contactUsBtn.IsEnabled = !contactUsBtn.IsEnabled;
+            logOutBtn.IsEnabled = !logOutBtn.IsEnabled;
+            loginBtn.IsEnabled = !loginBtn.IsEnabled;
+            settingsBtn.IsEnabled = !settingsBtn.IsEnabled;
+            createAccountBtn.IsEnabled = !createAccountBtn.IsEnabled;
         }
     }
 }

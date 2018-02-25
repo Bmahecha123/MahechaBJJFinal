@@ -144,10 +144,12 @@ namespace MahechaBJJ.Views
             androidVideo1Lbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidVideo1Lbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
             androidVideo1Lbl.Gravity = Android.Views.GravityFlags.Center;
-            androidVideo1Lbl.Click += (object sender, EventArgs e) =>
+            androidVideo1Lbl.Click += async (object sender, EventArgs e) =>
             {
+                ToggleButtons();
                 VideoData video = VimeoInfo.data[0];
-                Navigation.PushModalAsync(new VideoDetailPage(video));
+                await Navigation.PushModalAsync(new VideoDetailPage(video));
+                ToggleButtons();
             };
             androidVideo1Lbl.SetTypeface(androidVideo1Lbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
 
@@ -159,10 +161,12 @@ namespace MahechaBJJ.Views
             androidVideo2Lbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidVideo2Lbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
             androidVideo2Lbl.Gravity = Android.Views.GravityFlags.Center;
-            androidVideo2Lbl.Click += (object sender, EventArgs e) =>
+            androidVideo2Lbl.Click += async (object sender, EventArgs e) =>
             {
+                ToggleButtons();
                 VideoData video = VimeoInfo.data[1];
-                Navigation.PushModalAsync(new VideoDetailPage(video));
+                await Navigation.PushModalAsync(new VideoDetailPage(video));
+                ToggleButtons();
             };
             androidVideo2Lbl.SetTypeface(androidVideo2Lbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
 
@@ -195,7 +199,12 @@ namespace MahechaBJJ.Views
             androidAddPlaylistBtn.SetTextColor(Android.Graphics.Color.Black);
             androidAddPlaylistBtn.Gravity = Android.Views.GravityFlags.Center;
             androidAddPlaylistBtn.SetAllCaps(false);
-            androidAddPlaylistBtn.Click += CreatePlaylist;
+            androidAddPlaylistBtn.Click += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new PlaylistCreatePage());
+                ToggleButtons();
+            };
 
             androidViewPlaylistBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidViewPlaylistBtn.Text = "View";
@@ -204,7 +213,12 @@ namespace MahechaBJJ.Views
             androidViewPlaylistBtn.SetTextColor(Android.Graphics.Color.Black);
             androidViewPlaylistBtn.Gravity = Android.Views.GravityFlags.Center;
             androidViewPlaylistBtn.SetAllCaps(false);
-            androidViewPlaylistBtn.Click += ViewPlaylists;
+            androidViewPlaylistBtn.Click += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new PlaylistViewPage());
+                ToggleButtons();
+            };
 #endif
             whatsNewLbl = new Label
             {
@@ -249,10 +263,12 @@ namespace MahechaBJJ.Views
                 TextColor = Color.White
             };
             video1Tap = new TapGestureRecognizer();
-            video1Tap.Tapped += (sender, e) =>
+            video1Tap.Tapped += async (sender, e) =>
             {
+                ToggleButtons();
                 VideoData video = VimeoInfo.data[0];
-                Navigation.PushModalAsync(new VideoDetailPage(video));
+                await Navigation.PushModalAsync(new VideoDetailPage(video));
+                ToggleButtons();
             };
             video1Lbl.GestureRecognizers.Add(video1Tap);
             video2Image = new Image
@@ -283,10 +299,12 @@ namespace MahechaBJJ.Views
                 TextColor = Color.White
             };
             video2Tap = new TapGestureRecognizer();
-            video2Tap.Tapped += (sender, e) =>
+            video2Tap.Tapped += async (sender, e) =>
             {
+                ToggleButtons();
                 VideoData video = VimeoInfo.data[1];
-                Navigation.PushModalAsync(new VideoDetailPage(video));
+                await Navigation.PushModalAsync(new VideoDetailPage(video));
+                ToggleButtons();
             };
             video2Lbl.GestureRecognizers.Add(video2Tap);
 
@@ -370,7 +388,9 @@ namespace MahechaBJJ.Views
             timeOutTap = new TapGestureRecognizer();
             timeOutTap.Tapped += (sender, e) =>
             {
+                ToggleButtons();
                 SetContent(this.account);
+                ToggleButtons();
             };
             timeOutLbl.GestureRecognizers.Add(timeOutTap);
             activityIndicator = new ActivityIndicator
@@ -381,8 +401,18 @@ namespace MahechaBJJ.Views
             };
 
             //events
-            addPlaylistBtn.Clicked += CreatePlaylist;
-            viewPlaylistBtn.Clicked += ViewPlaylists;
+            addPlaylistBtn.Clicked += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new PlaylistCreatePage());
+                ToggleButtons();
+            };
+            viewPlaylistBtn.Clicked += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new PlaylistViewPage());
+                ToggleButtons();
+            };
 
             outerGrid.Children.Add(innerGrid, 0, 0);
             Content = outerGrid;
@@ -476,27 +506,35 @@ namespace MahechaBJJ.Views
             }
             else
             {
+#if __IOS__
                 innerGrid.Children.Clear();
                 innerGrid.Children.Add(timeOutFrame, 0, 0);
                 Grid.SetRowSpan(timeOutFrame, 5);
                 Grid.SetRowSpan(timeOutLbl, 5);
                 Grid.SetColumnSpan(timeOutFrame, 2);
                 Grid.SetColumnSpan(timeOutLbl, 2);
+#endif
+#if __ANDROID__
+                SetContent(this.account);
+#endif
             }
 
         }
 
-        private void CreatePlaylist(object sender, EventArgs e)
+        private void ToggleButtons()
         {
-            addPlaylistBtn.IsEnabled = false;
-            Navigation.PushModalAsync(new PlaylistCreatePage());
-            addPlaylistBtn.IsEnabled = true;
-        }
-        private void ViewPlaylists(object sender, EventArgs e)
-        {
-            viewPlaylistBtn.IsEnabled = false;
-            Navigation.PushModalAsync(new PlaylistViewPage());
-            viewPlaylistBtn.IsEnabled = true;
+            addPlaylistBtn.IsEnabled = !addPlaylistBtn.IsEnabled;
+            viewPlaylistBtn.IsEnabled = !viewPlaylistBtn.IsEnabled;
+            video1Lbl.IsEnabled = !video1Lbl.IsEnabled;
+            video2Lbl.IsEnabled = !video2Lbl.IsEnabled;
+            timeOutLbl.IsEnabled = !timeOutLbl.IsEnabled;
+
+#if __ANDROID__
+            androidAddPlaylistBtn.Clickable = !androidAddPlaylistBtn.Clickable;
+            androidViewPlaylistBtn.Clickable = !androidViewPlaylistBtn.Clickable;
+            androidVideo1Lbl.Clickable = !androidVideo1Lbl.Clickable;
+            androidVideo2Lbl.Clickable = !androidVideo2Lbl.Clickable;
+#endif
         }
     }
 }

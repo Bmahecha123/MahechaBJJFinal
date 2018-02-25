@@ -7,6 +7,7 @@ using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.MainTabPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 #if __ANDROID__
 using Xamarin.Forms.Platform.Android;
 using MahechaBJJ.Droid;
@@ -33,6 +34,7 @@ namespace MahechaBJJ.Views
         private Frame videoFrame;
         private Button backBtn;
         private bool modal;
+        private bool isPressed;
 #if __ANDROID__
         private Android.Widget.Button androidLoadBtn;
         private ContentView contentViewLoadBtn;
@@ -179,11 +181,6 @@ namespace MahechaBJJ.Views
 				FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 1.5,
 #endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-                Margin = -5,
-#endif
                 BackgroundColor = Color.FromRgb(58, 93, 174)
 
             };
@@ -192,9 +189,6 @@ namespace MahechaBJJ.Views
             {
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
 #endif
                 Text = "Back",
                 FontSize = btnSize * 1.5,
@@ -214,7 +208,11 @@ namespace MahechaBJJ.Views
             androidLoadBtn.SetTextColor(Android.Graphics.Color.Black);
             androidLoadBtn.Gravity = Android.Views.GravityFlags.Center;
             androidLoadBtn.SetAllCaps(false);
-            androidLoadBtn.Click += LoadMoreVideos;
+            androidLoadBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await LoadMoreVideos(sender, e);
+                ToggleButtons();
+            };
 
             contentViewLoadBtn = new ContentView();
             contentViewLoadBtn.Content = androidLoadBtn.ToView();
@@ -285,15 +283,38 @@ namespace MahechaBJJ.Views
             //Events
             searchBar.SearchButtonPressed += (object sender, EventArgs e) =>
             {
+                ToggleButtons();
                 SearchVimeo(false);
+                ToggleButtons();
             };
-            searchBar.Focused += FocusSearchBar;
-            videoListView.ItemSelected += LoadVideo;
+            searchBar.Focused += (object sender, FocusEventArgs e) => {
+                FocusSearchBar(sender, e);
+            };
+            videoListView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) => {
+                if (isPressed)
+                {
+                    return;
+                }
+                else
+                {
+                    isPressed = true;
+                    ToggleButtons();
+                    await LoadVideo(sender, e);
+                }
+                isPressed = false;
+                ToggleButtons();
+            };
             backBtn.Clicked += (object sender, EventArgs e) =>
             {
+                ToggleButtons();
                 Navigation.PopModalAsync();
+                ToggleButtons();
             };
-            loadBtn.Clicked += LoadMoreVideos;
+            loadBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await LoadMoreVideos(sender, e);
+                ToggleButtons();
+            };
 
             //Building grid
             if (modal)
@@ -449,7 +470,7 @@ namespace MahechaBJJ.Views
             }
         }
 
-        public void LoadVideo(object Sender, SelectedItemChangedEventArgs e)
+        public async Task LoadVideo(object Sender, SelectedItemChangedEventArgs e)
         {
             VideoData video = (VideoData)((ListView)Sender).SelectedItem;
             if (e.SelectedItem == null)
@@ -457,12 +478,11 @@ namespace MahechaBJJ.Views
                 return;
             }
             ((ListView)Sender).SelectedItem = null;
-            Navigation.PushModalAsync(new VideoDetailPage(video));
+            await Navigation.PushModalAsync(new VideoDetailPage(video));
         }
 
-        public async void LoadMoreVideos(object sender, EventArgs e)
+        public async Task LoadMoreVideos(object sender, EventArgs e)
         {
-            ToggleButtons();
             await _searchPageViewModel.SearchVideo(VIMEOBASEURL + _searchPageViewModel.Videos.paging.next);
 
             for (int i = 0; i < _searchPageViewModel.Videos.data.Length; i++)
@@ -470,7 +490,6 @@ namespace MahechaBJJ.Views
                 searchedVideos.Add(_searchPageViewModel.Videos.data[i]);
             }
             CheckIfNextPageIsNull(sender, e);
-            ToggleButtons();
         }
 
         //Checks if next page is null or not.
@@ -509,6 +528,8 @@ namespace MahechaBJJ.Views
         private void ToggleButtons()
         {
             loadBtn.IsEnabled = !loadBtn.IsEnabled;
+            backBtn.IsEnabled = !backBtn.IsEnabled;
+            videoListView.IsEnabled = !videoListView.IsEnabled;
 #if __ANDROID__
             androidLoadBtn.Clickable = !androidLoadBtn.Clickable;
 #endif

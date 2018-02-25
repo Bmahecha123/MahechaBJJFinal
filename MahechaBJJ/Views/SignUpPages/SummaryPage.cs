@@ -189,8 +189,10 @@ namespace MahechaBJJ.Views.SignUpPages
             androidSignUpBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSignUpBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidSignUpBtn.Click += (object sender, EventArgs e) => {
-                SignUp();
+            androidSignUpBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await SignUp();
+                ToggleButtons();
             };
             androidSignUpBtn.SetAllCaps(false);
 
@@ -247,9 +249,11 @@ namespace MahechaBJJ.Views.SignUpPages
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
-            backBtn.Clicked += (sender, e) =>
+            backBtn.Clicked += async (sender, e) =>
             {
-                GoBack();
+                ToggleButtons();
+                await Navigation.PopModalAsync();
+                ToggleButtons();
             };
 
             signUpBtn = new Button
@@ -270,9 +274,11 @@ namespace MahechaBJJ.Views.SignUpPages
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
             };
-            signUpBtn.Clicked += (sender, e) =>
+            signUpBtn.Clicked += async (sender, e) =>
             {
-                SignUp();
+                ToggleButtons();
+                await SignUp();
+                ToggleButtons();
             };
 
             #if __IOS__
@@ -570,9 +576,8 @@ namespace MahechaBJJ.Views.SignUpPages
             Content = outerGrid;
         }
 
-        private async void SignUp()
+        private async Task SignUp()
         {
-            ToggleButtons();
             bool purchased = true;
             if (userPassed)
             {
@@ -580,7 +585,6 @@ namespace MahechaBJJ.Views.SignUpPages
                 {
                     await DisplayAlert("Account Exists", $"An account with the email {user.Email} already exists. Use a different email address.", "Ok");
                     await Navigation.PopModalAsync();
-                    ToggleButtons();
 
                 }
                 else
@@ -593,13 +597,11 @@ namespace MahechaBJJ.Views.SignUpPages
                     _summaryPageViewModel.SaveCredentials();
                     Application.Current.MainPage = new MainTabbedPage(true);
                     await _summaryPageViewModel.Disconnect();
-                    ToggleButtons();
                 }
                 else
                 {
                     _summaryPageViewModel.DeleteUser(user);
                     await Navigation.PopModalAsync();
-                    ToggleButtons();
                 }
             }
             else
@@ -611,22 +613,12 @@ namespace MahechaBJJ.Views.SignUpPages
                     _summaryPageViewModel.SavePackageInfoWithNoAccount(package);
                     Application.Current.MainPage = new MainTabbedPage(false);
                     await _summaryPageViewModel.Disconnect();
-                    ToggleButtons();
                 }
                 else
                 {
                     await Navigation.PopModalAsync();
-                    ToggleButtons();
                 }
             }
-
-
-        }
-
-        private void GoBack()
-        {
-            ToggleButtons();
-            Navigation.PopModalAsync();
         }
 
         private string FindPackageName(bool hasUser)
@@ -665,6 +657,9 @@ namespace MahechaBJJ.Views.SignUpPages
 
         private void ToggleButtons()
         {
+#if __ANDROID__
+            androidSignUpBtn.Clickable = !androidSignUpBtn.Clickable;
+#endif
             backBtn.IsEnabled = !backBtn.IsEnabled;
             signUpBtn.IsEnabled = !signUpBtn.IsEnabled;
         }

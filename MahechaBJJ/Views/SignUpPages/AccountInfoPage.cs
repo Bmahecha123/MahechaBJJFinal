@@ -83,9 +83,11 @@ namespace MahechaBJJ.Views.SignUpPages
             accountBtn.TextColor = Color.Black;
             accountBtn.BorderWidth = 3;
             accountBtn.BorderColor = Color.Black;
-            accountBtn.Clicked += (sender, e) =>
+            accountBtn.Clicked += async (sender, e) =>
             {
-                Navigation.PushModalAsync(new SignUpPage(package));
+                ToggleButtons();
+                await Navigation.PushModalAsync(new SignUpPage(package));
+                ToggleButtons();
             };
 
             noAccountBtn = new Button();
@@ -96,9 +98,11 @@ namespace MahechaBJJ.Views.SignUpPages
             noAccountBtn.TextColor = Color.Black;
             noAccountBtn.BorderWidth = 3;
             noAccountBtn.BorderColor = Color.Black;
-            noAccountBtn.Clicked += (object sender, EventArgs e) =>
+            noAccountBtn.Clicked += async (object sender, EventArgs e) =>
             {
-                Navigation.PushModalAsync(new SummaryPage(package));
+                ToggleButtons();
+                await Navigation.PushModalAsync(new SummaryPage(package));
+                ToggleButtons();
             };
 
             backBtn = new Button();
@@ -111,9 +115,11 @@ namespace MahechaBJJ.Views.SignUpPages
             backBtn.HorizontalOptions = LayoutOptions.FillAndExpand;
             backBtn.BorderWidth = 3;
             backBtn.BorderColor = Color.Black;
-            backBtn.Clicked += (object sender, EventArgs e) =>
+            backBtn.Clicked += async (object sender, EventArgs e) =>
             {
-                Navigation.PopModalAsync();
+                ToggleButtons();
+                await Navigation.PopModalAsync();
+                ToggleButtons();
             };
 
 #if __ANDROID__
@@ -123,9 +129,11 @@ namespace MahechaBJJ.Views.SignUpPages
             androidNoAccountBtn.SetBackgroundColor(Android.Graphics.Color.DarkRed);
             androidNoAccountBtn.SetTextColor(Android.Graphics.Color.Black);
             androidNoAccountBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidNoAccountBtn.Click += (object sender, EventArgs e) =>
+            androidNoAccountBtn.Click += async (object sender, EventArgs e) =>
             {
-                Navigation.PushModalAsync(new SummaryPage(package));
+                ToggleButtons();
+                await Navigation.PushModalAsync(new SummaryPage(package));
+                ToggleButtons();
             };
             androidNoAccountBtn.SetAllCaps(false);
 
@@ -135,9 +143,11 @@ namespace MahechaBJJ.Views.SignUpPages
             androidAccountBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidAccountBtn.SetTextColor(Android.Graphics.Color.Black);
             androidAccountBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidAccountBtn.Click += (object sender, EventArgs e) =>
+            androidAccountBtn.Click += async (object sender, EventArgs e) =>
             {
-                Navigation.PushModalAsync(new SignUpPage(package));
+                ToggleButtons();
+                await Navigation.PushModalAsync(new SignUpPage(package));
+                ToggleButtons();
             };
             androidAccountBtn.SetAllCaps(false);
 
@@ -190,6 +200,16 @@ namespace MahechaBJJ.Views.SignUpPages
             outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = outerGrid;
+        }
+
+        private void ToggleButtons()
+        {
+#if __ANDROID__
+            androidAccountBtn.Clickable = !androidAccountBtn.Clickable;
+            androidNoAccountBtn.Clickable = !androidNoAccountBtn.Clickable;
+#endif
+            accountBtn.IsEnabled = !accountBtn.IsEnabled;
+            noAccountBtn.IsEnabled = !noAccountBtn.IsEnabled;
         }
     }
 }

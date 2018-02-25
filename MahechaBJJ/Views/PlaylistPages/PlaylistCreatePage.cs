@@ -241,7 +241,11 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 
             //events
-            backBtn.Clicked += GoBack;
+            backBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PopModalAsync();
+                ToggleButtons();
+            };
             createBtn.Clicked += async (object sender, EventArgs e) =>
             {
                 ToggleButtons();
@@ -279,12 +283,6 @@ namespace MahechaBJJ.Views.PlaylistPages
             outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = outerGrid;
-        }
-
-        public void GoBack(object sender, EventArgs e)
-        {
-            ToggleButtons();
-            Navigation.PopModalAsync();
         }
 
         public async Task CreatePlaylist(object sender, EventArgs e)

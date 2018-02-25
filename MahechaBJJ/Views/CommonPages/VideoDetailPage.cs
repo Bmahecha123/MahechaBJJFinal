@@ -9,6 +9,7 @@ using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.PlaylistPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 #if __ANDROID__
 using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
@@ -141,7 +142,12 @@ namespace MahechaBJJ.Views
             androidPlayBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidPlayBtn.Gravity = Android.Views.GravityFlags.Center;
             androidPlayBtn.SetAllCaps(false);
-            androidPlayBtn.Click += PlayAndroidVideo;
+            androidPlayBtn.Click += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await PlayAndroidVideo(sender, e);
+                ToggleButtons();
+            };
 
             androidAddBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidAddBtn.Text = "+";
@@ -150,7 +156,12 @@ namespace MahechaBJJ.Views
             androidAddBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidAddBtn.Gravity = Android.Views.GravityFlags.Center;
             androidAddBtn.SetAllCaps(false);
-            androidAddBtn.Click += AddVideoToPlaylist;
+            androidAddBtn.Click += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await AddVideoToPlaylist(sender, e);
+                ToggleButtons();
+            };
 
             androidQualityBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidQualityBtn.Text = "SD";
@@ -159,7 +170,12 @@ namespace MahechaBJJ.Views
             androidQualityBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidQualityBtn.Gravity = Android.Views.GravityFlags.Center;
             androidQualityBtn.SetAllCaps(false);
-            androidQualityBtn.Click += ChangeVideoQuality;
+            androidQualityBtn.Click += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await ChangeVideoQuality(sender, e);
+                ToggleButtons();
+            };
 
             contentViewNameLbl = new ContentView();
             contentViewNameLbl.Content = androidVideoNameLbl.ToView();
@@ -305,14 +321,34 @@ namespace MahechaBJJ.Views
             };
 
             //Events
-            backBtn.Clicked += GoBack;
-            addBtn.Clicked += AddVideoToPlaylist;
-            qualityBtn.Clicked += ChangeVideoQuality;
+            backBtn.Clicked += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await Navigation.PopModalAsync();
+                ToggleButtons();
+            };
+            addBtn.Clicked += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await AddVideoToPlaylist(sender, e);
+                ToggleButtons();
+            };
+            qualityBtn.Clicked += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await ChangeVideoQuality(sender, e);
+                ToggleButtons();
+            };
 #if __IOS__
             playBtn.Clicked += PlayIOSVideo;
 #endif
 #if __ANDROID__
-            playBtn.Clicked += PlayAndroidVideo;
+            playBtn.Clicked += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await PlayAndroidVideo(sender, e);
+                ToggleButtons();
+            };
 #endif
 
             if (userHasAccount)
@@ -396,32 +432,28 @@ namespace MahechaBJJ.Views
             ToggleButtons();
         }
 
-        public async void PlayAndroidVideo(object sender, EventArgs e)
+        public async Task PlayAndroidVideo(object sender, EventArgs e)
         {
-            ToggleButtons();
 #if __ANDROID__
             await Navigation.PushModalAsync(new AndroidVideoPage(videoTechnique.files[1].link));
 #endif
-            ToggleButtons();
-        }
-
-        public void GoBack(object sender, EventArgs e)
-        {
-            ToggleButtons();
-            Navigation.PopModalAsync();
         }
 
         public void ToggleButtons()
         {
+#if __ANDROID__
+            androidAddBtn.Clickable = !androidAddBtn.Clickable;
+            androidPlayBtn.Clickable = !androidPlayBtn.Clickable;
+            androidQualityBtn.Clickable = !androidQualityBtn.Clickable;
+#endif
             backBtn.IsEnabled = !backBtn.IsEnabled;
             addBtn.IsEnabled = !addBtn.IsEnabled;
             playBtn.IsEnabled = !playBtn.IsEnabled;
             qualityBtn.IsEnabled = !qualityBtn.IsEnabled;
         }
 
-        public async void AddVideoToPlaylist(object sender, EventArgs e)
+        public async Task AddVideoToPlaylist(object sender, EventArgs e)
         {
-            ToggleButtons();
             //get user info
             //Get playlist information
             await _videoDetailPageViewModel.GetUserPlaylists(Constants.GETPLAYLIST, account.Properties["Id"]);
@@ -433,11 +465,15 @@ namespace MahechaBJJ.Views
             {
                 await Navigation.PushModalAsync(new PlaylistCreatePage());
             }
+#if __ANDROID__
+            else if (answer != "Cancel" && answer != null)
+#endif
+#if __IOS__
             else if (answer != "Cancel")
+#endif
             {
-                UpdatePlaylist(userPlaylists, answer);
+                await UpdatePlaylist(userPlaylists, answer);
             }
-            ToggleButtons();
         }
 
         public List<string> GetPlaylistNames(ObservableCollection<PlayList> playlists)
@@ -451,7 +487,7 @@ namespace MahechaBJJ.Views
             return playlistNames;
         }
 
-        public async void UpdatePlaylist(ObservableCollection<PlayList> playlists, string playlistName)
+        public async Task UpdatePlaylist(ObservableCollection<PlayList> playlists, string playlistName)
         {
             Video videoToBeAdded = new Video(videoTechnique.name, videoTechnique.pictures.sizes[3].link, videoTechnique.files[0].link, videoTechnique.files[1].link, videoTechnique.description);
             PlayList playlist = playlists.FirstOrDefault(x => x.Name == playlistName);
@@ -483,7 +519,7 @@ namespace MahechaBJJ.Views
             }
         }
 
-        public async void ChangeVideoQuality(object sender, EventArgs e)
+        public async Task ChangeVideoQuality(object sender, EventArgs e)
         {
             string result;
 #if __ANDROID__

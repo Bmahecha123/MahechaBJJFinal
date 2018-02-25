@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
@@ -367,9 +368,11 @@ namespace MahechaBJJ.Views.CommonPages
             androidPurchaseBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidPurchaseBtn.Gravity = Android.Views.GravityFlags.Center;
             androidPurchaseBtn.SetAllCaps(false);
-            androidPurchaseBtn.Click += (object sender, EventArgs e) =>
+            androidPurchaseBtn.Click += async (object sender, EventArgs e) =>
             {
-                PurchasePackage();
+                ToggleButtons();
+                await PurchasePackage();
+                ToggleButtons();
             };
 
             contentViewPurchaseBtn = new ContentView();
@@ -381,10 +384,13 @@ namespace MahechaBJJ.Views.CommonPages
             {
                 ToggleButtons();
                 Navigation.PopModalAsync();
+                ToggleButtons();
             };
-            purchaseBtn.Clicked += (object sender, EventArgs e) =>
+            purchaseBtn.Clicked += async (object sender, EventArgs e) =>
             {
-                PurchasePackage();
+                ToggleButtons();
+                await PurchasePackage();
+                ToggleButtons();
             };
 
 #if __ANDROID__
@@ -437,11 +443,9 @@ namespace MahechaBJJ.Views.CommonPages
             Content = outerGrid;
         }
 
-        private async void PurchasePackage()
+        private async Task PurchasePackage()
         {
-            ToggleButtons();
             bool purchased = false;
-
 
             purchased = await _purchasePageViewModel.PurchasePackage(FindPackageName());
 
@@ -453,12 +457,10 @@ namespace MahechaBJJ.Views.CommonPages
                 _baseViewModel.UpdateCredentials(account);
                 await _purchasePageViewModel.Disconnect();
                 await Navigation.PopModalAsync();
-                ToggleButtons();
             }
             else
             {
                 await Navigation.PopModalAsync();
-                ToggleButtons();
             }
         }
 
@@ -466,6 +468,9 @@ namespace MahechaBJJ.Views.CommonPages
         {
             purchaseBtn.IsEnabled = !purchaseBtn.IsEnabled;
             backBtn.IsEnabled = !backBtn.IsEnabled;
+#if __ANDROID__
+            androidPurchaseBtn.Clickable = !androidPurchaseBtn.Clickable;
+#endif
         }
 
         private string FindPackageName()

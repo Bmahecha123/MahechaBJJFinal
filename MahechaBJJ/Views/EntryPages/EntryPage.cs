@@ -149,7 +149,11 @@ namespace MahechaBJJ.Views.EntryPages
             restoreBtn.TextColor = Color.Black;
             restoreBtn.BorderWidth = 3;
             restoreBtn.BorderColor = Color.Black;
-            restoreBtn.Clicked += CheckIfUserHasPackage;
+            restoreBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await CheckIfUserHasPackage(sender, e);
+                ToggleButtons();
+            }; 
 
 #if __ANDROID__
             androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
@@ -204,25 +208,44 @@ namespace MahechaBJJ.Views.EntryPages
                 ToggleButtons();
             };
 
-            androidSignUpBtn.Click += SignUp;
+            androidSignUpBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new PackagePage());
+                ToggleButtons();
+            }; 
 
-            androidBlogBtn.Click += Blog;
+            androidBlogBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new BlogViewPage());
+                ToggleButtons();
+            };
+
+            androidRestoreBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await CheckIfUserHasPackage(sender, e);
+                ToggleButtons();
+            }; 
 #endif
 #if __IOS__
-            loginBtn.Clicked += (object sender, EventArgs e) =>
+            loginBtn.Clicked += async (object sender, EventArgs e) =>
             {
-                Navigation.PushModalAsync(new LoginPage());
+                ToggleButtons();
+                await Navigation.PushModalAsync(new LoginPage());
+                ToggleButtons();
             };
 
-            signUpBtn.Clicked += (sender, args) =>
+            signUpBtn.Clicked += async (sender, args) =>
             {
-                Navigation.PushModalAsync(new PackagePage());
+                ToggleButtons();
+                await Navigation.PushModalAsync(new PackagePage());
+                ToggleButtons();
             };
 
-            blogBtn.Clicked += (sender, e) =>
+            blogBtn.Clicked += async (sender, e) =>
             {
-                Navigation.PushModalAsync(new BlogViewPage());
-
+                ToggleButtons();
+                await Navigation.PushModalAsync(new BlogViewPage());
+                ToggleButtons();
             };
 #endif
 
@@ -248,9 +271,8 @@ namespace MahechaBJJ.Views.EntryPages
             Content = outerGrid;
         }
 
-        private async void CheckIfUserHasPackage(object sender, EventArgs e)
+        private async Task CheckIfUserHasPackage(object sender, EventArgs e)
         {
-            ToggleButtons();
             await _entryPageViewModel.CheckIfUserHasPackage();
             if (_entryPageViewModel.HasGiAndNoGiPackage)
             {
@@ -275,7 +297,6 @@ namespace MahechaBJJ.Views.EntryPages
             else 
             {
                 await DisplayAlert("No Packages Found", "There were no packages found.", "Ok");
-                ToggleButtons();
             }
         }
 
@@ -283,7 +304,6 @@ namespace MahechaBJJ.Views.EntryPages
         {
             _summaryPageViewModel.SavePackageInfoWithNoAccount(package);
             Application.Current.MainPage = new MainTabbedPage(false);
-            ToggleButtons();
         }
 
         private void ToggleButtons()
@@ -297,29 +317,6 @@ namespace MahechaBJJ.Views.EntryPages
             signUpBtn.IsEnabled = !signUpBtn.IsEnabled;
             blogBtn.IsEnabled = !blogBtn.IsEnabled;
             restoreBtn.IsEnabled = !restoreBtn.IsEnabled;
-        }
-
-        private void Login(object sender, EventArgs e)
-        {
-#if __ANDROID__
-            androidLoginBtn.Click -= Login;
-            Navigation.PushModalAsync(new LoginPage());
-            androidLoginBtn.Click += Login;
-#endif
-        }
-
-        private void SignUp(object sender, EventArgs e)
-        {
-            ToggleButtons();
-            Navigation.PushModalAsync(new PackagePage());
-            ToggleButtons();
-        }
-
-        private void Blog(object sender, EventArgs e)
-        {
-            ToggleButtons();
-            Navigation.PushModalAsync(new BlogViewPage());
-            ToggleButtons();
         }
 
         //Orientation

@@ -3,6 +3,7 @@ using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.BlogPages;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 #if __ANDROID__
 using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
@@ -29,6 +30,7 @@ namespace MahechaBJJ.Views.BlogPages
         private Frame timeOutFrame;
         private TapGestureRecognizer timeOutTap;
         private ActivityIndicator activityIndicator;
+        private bool isPressed;
 #if __ANDROID__
         private Android.Widget.TextView androidViewBlogLbl;
 #endif
@@ -150,7 +152,6 @@ namespace MahechaBJJ.Views.BlogPages
             androidViewBlogLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidViewBlogLbl.Text = "Mahecha BJJ Blog";
             androidViewBlogLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
-            //androidViewBlogLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidViewBlogLbl.SetTextColor(Android.Graphics.Color.Black);
             androidViewBlogLbl.Gravity = Android.Views.GravityFlags.Center;
             androidViewBlogLbl.SetTypeface(androidViewBlogLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
@@ -158,9 +159,28 @@ namespace MahechaBJJ.Views.BlogPages
 
             //Events
             backBtn.Clicked += GoBack;
-            blogListView.ItemSelected += LoadBlogpost;
-
-
+#if __ANDROID__
+            blogListView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) =>
+            {
+                if (isPressed)
+                {
+                    return;
+                }
+                else
+                {
+                    isPressed = true;
+                    blogListView.IsEnabled = false;
+                    await LoadBlogpost(sender, e);
+                }
+                isPressed = false;
+                blogListView.IsEnabled = true;
+            };
+#endif
+#if __IOS__
+            blogListView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) => {
+                await LoadBlogpost(sender, e);
+            };
+#endif
 
             outerGrid.Children.Add(innerGrid, 0, 0);
 
@@ -174,7 +194,7 @@ namespace MahechaBJJ.Views.BlogPages
             backBtn.IsEnabled = true;
         }
 
-        public void LoadBlogpost(object sender, SelectedItemChangedEventArgs e)
+        public async Task LoadBlogpost(object sender, SelectedItemChangedEventArgs e)
         {
             BlogPosts.Post blogPost = (BlogPosts.Post)((ListView)sender).SelectedItem;
             if (e.SelectedItem == null)
@@ -182,7 +202,7 @@ namespace MahechaBJJ.Views.BlogPages
                 return;
             }
             ((ListView)sender).SelectedItem = null;
-            Navigation.PushModalAsync(new BlogDetailPage(blogPost));
+            await Navigation.PushModalAsync(new BlogDetailPage(blogPost));
         }
 
         public async void SetContent()

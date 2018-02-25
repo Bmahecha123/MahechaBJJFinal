@@ -145,10 +145,10 @@ namespace MahechaBJJ.Views.BlogPages
         }
 
 
-        public void GoBack(object sender, EventArgs e)
+        public async void GoBack(object sender, EventArgs e)
         {
             backBtn.IsEnabled = false;
-            Navigation.PopModalAsync();
+            await Navigation.PopModalAsync();
             backBtn.IsEnabled = true;
         }
         public string StripHtml(string input)

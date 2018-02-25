@@ -245,13 +245,33 @@ namespace MahechaBJJ.Views.EntryPages
             androidPasswordEntry.TransformationMethod = new PasswordTransformationMethod();
 #endif
             //Events
-            loginBtn.Clicked += Validate;
-            backBtn.Clicked += GoBack;
-            forgotPasswordBtn.Clicked += ForgotPasswordForm;
+            loginBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Validate(sender, e); 
+                ToggleButtons();
+            }; 
+            backBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PopModalAsync();
+                ToggleButtons();
+            };
+            forgotPasswordBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new ForgotPasswordPage());
+                ToggleButtons();
+            };
 
 #if __ANDROID__
-            androidLoginBtn.Click += Validate;
-            androidForgotPasswordBtn.Click += ForgotPasswordForm;
+            androidLoginBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Validate(sender, e);
+                ToggleButtons();
+            };
+            androidForgotPasswordBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new ForgotPasswordPage());
+                ToggleButtons();
+            }; 
 #endif
 
 #if __IOS__
@@ -285,30 +305,28 @@ namespace MahechaBJJ.Views.EntryPages
 #endif
         }
 
-        private void Validate(object sender, EventArgs e)
+        private async Task Validate(object sender, EventArgs e)
         {
-            ToggleButtons();
 #if __ANDROID__
             if (androidEmailEntry.Text != null || androidPasswordEntry.Text != null)
             {
-                Login(sender, e);
+                await Login(sender, e);
             }
 #endif
 #if __IOS__
             if (emailEntry.Text != null || passwordEntry.Text != null)
             {
-                Login(sender, e);
+                await Login(sender, e);
             }
 #endif
 
             else
             {
-                DisplayAlert("Login Error!", "Make sure all fields are filled in!", "Ok, got it.");
+                await DisplayAlert("Login Error!", "Make sure all fields are filled in!", "Ok, got it.");
             }
-            ToggleButtons();
         }
 
-        private async void Login(object sender, EventArgs e)
+        private async Task Login(object sender, EventArgs e)
         {
 #if __ANDROID__
             user = await _baseViewModel.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, androidEmailEntry.Text.ToLower(), androidPasswordEntry.Text.ToLower());
@@ -325,13 +343,6 @@ namespace MahechaBJJ.Views.EntryPages
                 _baseViewModel.SaveCredentials(user);
                 Application.Current.MainPage = new MainTabbedPage(true);
             }
-
-        }
-
-        private void GoBack(object sender, EventArgs e)
-        {
-            ToggleButtons();
-            Navigation.PopModalAsync();
         }
 
         private void ToggleButtons()
@@ -345,12 +356,6 @@ namespace MahechaBJJ.Views.EntryPages
             forgotPasswordBtn.IsEnabled = !forgotPasswordBtn.IsEnabled;
         }
 
-        private void ForgotPasswordForm(object sender, EventArgs e)
-        {
-            ToggleButtons();
-            Navigation.PushModalAsync(new ForgotPasswordPage());
-            ToggleButtons();
-        }
 #if __IOS__
 
         protected override void OnSizeAllocated(double width, double height)

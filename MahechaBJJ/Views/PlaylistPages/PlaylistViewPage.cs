@@ -7,6 +7,7 @@ using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.PlaylistPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 #if __ANDROID__
 using Xamarin.Forms.Platform.Android;
 using MahechaBJJ.Droid;
@@ -33,6 +34,7 @@ namespace MahechaBJJ.Views.PlaylistPages
         private TapGestureRecognizer timeOutTap;
         private ActivityIndicator activityIndicator;
         private ObservableCollection<PlayList> userPlaylist;
+        private bool isPressed;
 
 #if __ANDROID__
         private Android.Widget.TextView androidViewPlaylistLbl;
@@ -168,8 +170,26 @@ namespace MahechaBJJ.Views.PlaylistPages
             };
 
             //Events
-            backBtn.Clicked += GoBack;
-            playlistView.ItemSelected += LoadPlaylist;
+            backBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PopModalAsync();    
+                ToggleButtons();
+            };
+
+            playlistView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) => {
+                if (isPressed)
+                {
+                    return;
+                }
+                else
+                {
+                    isPressed = true;
+                    ToggleButtons();
+                    await LoadPlaylist(sender, e);
+                }
+                isPressed = false;
+                ToggleButtons();
+            };
 
             outerGrid.Children.Add(innerGrid, 0, 0);
 
@@ -221,12 +241,6 @@ namespace MahechaBJJ.Views.PlaylistPages
             }
         }
 
-        public void GoBack(object sender, EventArgs e)
-        {
-            backBtn.IsEnabled = false;
-            Navigation.PopModalAsync();
-            backBtn.IsEnabled = true;
-        }
         public async void FindPlaylists()
         {
             account = _baseViewModel.GetAccountInformation();
@@ -282,7 +296,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             });
         }
 
-        public void LoadPlaylist(object sender, SelectedItemChangedEventArgs e)
+        public async Task LoadPlaylist(object sender, SelectedItemChangedEventArgs e)
         {
             PlayList playlist = (PlayList)((ListView)sender).SelectedItem;
             if (e.SelectedItem == null)
@@ -290,7 +304,13 @@ namespace MahechaBJJ.Views.PlaylistPages
                 return;
             }
             ((ListView)sender).SelectedItem = null;
-            Navigation.PushModalAsync(new PlaylistDetailPage(playlist));
+            await Navigation.PushModalAsync(new PlaylistDetailPage(playlist));
+        }
+
+        private void ToggleButtons()
+        {
+            playlistView.IsEnabled = !playlistView.IsEnabled;
+            timeOutLbl.IsEnabled = !timeOutLbl.IsEnabled;
         }
 
         //page reloading

@@ -112,22 +112,24 @@ namespace MahechaBJJ.Views
             };
 
             sweepTap = new TapGestureRecognizer();
-            sweepTap.Tapped += (sender, e) =>
+            sweepTap.Tapped += async (sender, e) =>
             {
+                ToggleButtons();
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.GiSweep));
+                    await Navigation.PushModalAsync(new SearchPage(Album.GiSweep));
                 }
                 else if (account.Properties["Package"] == "NoGi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.NoGiSweep));
+                    await Navigation.PushModalAsync(new SearchPage(Album.NoGiSweep));
                 }
                 else
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.Sweep));
+                    await Navigation.PushModalAsync(new SearchPage(Album.Sweep));
                 }
+                ToggleButtons();
             };
             sweepLbl.GestureRecognizers.Add(sweepTap);
 
@@ -158,22 +160,24 @@ namespace MahechaBJJ.Views
             };
 
             takeDownTap = new TapGestureRecognizer();
-            takeDownTap.Tapped += (sender, e) =>
+            takeDownTap.Tapped += async (sender, e) =>
             {
+                ToggleButtons();
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.GiTakeDown));
+                    await Navigation.PushModalAsync(new SearchPage(Album.GiTakeDown));
                 }
                 else if (account.Properties["Package"] == "NoGi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.NoGiTakeDown));
+                    await Navigation.PushModalAsync(new SearchPage(Album.NoGiTakeDown));
                 }
                 else
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.TakeDown));
+                    await Navigation.PushModalAsync(new SearchPage(Album.TakeDown));
                 }
+                ToggleButtons();
             };
             takeDownLbl.GestureRecognizers.Add(takeDownTap);
 
@@ -205,22 +209,24 @@ namespace MahechaBJJ.Views
             };
 
             submissionTap = new TapGestureRecognizer();
-            submissionTap.Tapped += (sender, e) =>
+            submissionTap.Tapped += async (sender, e) =>
             {
+                ToggleButtons();
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.GiSubmission));
+                    await Navigation.PushModalAsync(new SearchPage(Album.GiSubmission));
                 }
                 else if (account.Properties["Package"] == "NoGi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.NoGiSubmission));
+                    await Navigation.PushModalAsync(new SearchPage(Album.NoGiSubmission));
                 }
                 else
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.Submission));
+                    await Navigation.PushModalAsync(new SearchPage(Album.Submission));
                 }
+                ToggleButtons();
             };
             submissionLbl.GestureRecognizers.Add(submissionTap);
 
@@ -252,22 +258,24 @@ namespace MahechaBJJ.Views
             };
 
             guardPassTap = new TapGestureRecognizer();
-            guardPassTap.Tapped += (sender, e) =>
+            guardPassTap.Tapped += async (sender, e) =>
             {
+                ToggleButtons();
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.GiGuardPass));
+                    await Navigation.PushModalAsync(new SearchPage(Album.GiGuardPass));
                 }
                 else if (account.Properties["Package"] == "NoGi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.NoGiGuardPass));
+                    await Navigation.PushModalAsync(new SearchPage(Album.NoGiGuardPass));
                 }
                 else
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.GuardPass));
+                    await Navigation.PushModalAsync(new SearchPage(Album.GuardPass));
                 }
+                ToggleButtons();
             };
             guardPassLbl.GestureRecognizers.Add(guardPassTap);
 
@@ -299,22 +307,24 @@ namespace MahechaBJJ.Views
             };
 
             defenseTap = new TapGestureRecognizer();
-            defenseTap.Tapped += (sender, e) =>
+            defenseTap.Tapped += async (sender, e) =>
             {
+                ToggleButtons();
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.GiDefense));
+                    await Navigation.PushModalAsync(new SearchPage(Album.GiDefense));
                 }
                 else if (account.Properties["Package"] == "NoGi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.NoGiDefense));
+                    await Navigation.PushModalAsync(new SearchPage(Album.NoGiDefense));
                 }
                 else
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.Defense));
+                    await Navigation.PushModalAsync(new SearchPage(Album.Defense));
                 }
+                ToggleButtons();
             };
             defenseLbl.GestureRecognizers.Add(defenseTap);
 
@@ -346,22 +356,24 @@ namespace MahechaBJJ.Views
             };
 
             backTakeTap = new TapGestureRecognizer();
-            backTakeTap.Tapped += (sender, e) =>
+            backTakeTap.Tapped += async (sender, e) =>
             {
+                ToggleButtons();
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.GiBackTake));
+                    await Navigation.PushModalAsync(new SearchPage(Album.GiBackTake));
                 }
                 else if (account.Properties["Package"] == "NoGi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.NoGiBackTake));
+                    await Navigation.PushModalAsync(new SearchPage(Album.NoGiBackTake));
                 }
                 else
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.BackTake));
+                    await Navigation.PushModalAsync(new SearchPage(Album.BackTake));
                 }
+                ToggleButtons();
             };
             backTakeLbl.GestureRecognizers.Add(backTakeTap);
 
@@ -398,22 +410,24 @@ namespace MahechaBJJ.Views
             };
 
             drillsTap = new TapGestureRecognizer();
-            drillsTap.Tapped += (object sender, EventArgs e) =>
+            drillsTap.Tapped += async (object sender, EventArgs e) =>
             {
+                ToggleButtons();
                 account = _baseViewModel.GetAccountInformation();
 
                 if (account.Properties["Package"] == "Gi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.GiDrills));
+                    await Navigation.PushModalAsync(new SearchPage(Album.GiDrills));
                 }
                 else if (account.Properties["Package"] == "NoGi")
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.NoGiDrills));
+                    await Navigation.PushModalAsync(new SearchPage(Album.NoGiDrills));
                 }
                 else
                 {
-                    Navigation.PushModalAsync(new SearchPage(Album.Drills));
+                    await Navigation.PushModalAsync(new SearchPage(Album.Drills));
                 }
+                ToggleButtons();
             };
             drillsLbl.GestureRecognizers.Add(drillsTap);
 
@@ -439,9 +453,11 @@ namespace MahechaBJJ.Views
                 HorizontalTextAlignment = TextAlignment.Center
             };
             blogTap = new TapGestureRecognizer();
-            blogTap.Tapped += (sender, e) =>
+            blogTap.Tapped += async (sender, e) =>
             {
-                Navigation.PushModalAsync(new BlogViewPage());
+                ToggleButtons();
+                await Navigation.PushModalAsync(new BlogViewPage());
+                ToggleButtons();
             };
             blogLbl.GestureRecognizers.Add(blogTap);
             blogImage = new Image
@@ -464,9 +480,11 @@ namespace MahechaBJJ.Views
             androidBlogLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidBlogLbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
             androidBlogLbl.Gravity = Android.Views.GravityFlags.Center;
-            androidBlogLbl.Click += (object sender, EventArgs e) =>
+            androidBlogLbl.Click += async (object sender, EventArgs e) =>
             {
-                Navigation.PushModalAsync(new BlogViewPage());
+                ToggleButtons();
+                await Navigation.PushModalAsync(new BlogViewPage());
+                ToggleButtons();
             };
 
 #endif
@@ -494,6 +512,21 @@ namespace MahechaBJJ.Views
             outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = outerGrid;
+        }
+
+        private void ToggleButtons() 
+        {
+#if __ANDROID__
+            androidBlogLbl.Clickable = !androidBlogLbl.Clickable;
+#endif
+            sweepLbl.IsEnabled = !sweepLbl.IsEnabled;
+            backTakeLbl.IsEnabled = !backTakeLbl.IsEnabled;
+            takeDownLbl.IsEnabled = !takeDownLbl.IsEnabled;
+            guardPassLbl.IsEnabled = !guardPassLbl.IsEnabled;
+            submissionLbl.IsEnabled = !submissionLbl.IsEnabled;
+            defenseLbl.IsEnabled = !defenseLbl.IsEnabled;
+            drillsLbl.IsEnabled = !drillsLbl.IsEnabled;
+            blogLbl.IsEnabled = !blogLbl.IsEnabled;
         }
 
         //Orientation

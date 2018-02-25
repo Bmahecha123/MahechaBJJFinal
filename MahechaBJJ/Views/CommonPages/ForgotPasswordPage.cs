@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
@@ -117,8 +118,10 @@ namespace MahechaBJJ.Views.CommonPages
             androidNextBtn.SetTextColor(Android.Graphics.Color.Black);
             androidNextBtn.Gravity = Android.Views.GravityFlags.Center;
             androidNextBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(124, 37, 41));
-            androidNextBtn.Click += (object sender, EventArgs e) => {
-                CheckIfUserExists(sender, e);
+            androidNextBtn.Click += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await CheckIfUserExists(sender, e);
+                ToggleButtons();
             };
 
             contentViewHeaderLbl = new ContentView();
@@ -214,8 +217,16 @@ namespace MahechaBJJ.Views.CommonPages
             };
 
             //events
-            backBtn.Clicked += GoBack;
-            nextBtn.Clicked += CheckIfUserExists;
+            backBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PopModalAsync();
+                ToggleButtons();
+            };
+            nextBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await CheckIfUserExists(sender, e);
+                ToggleButtons();
+            }; 
 
             //building layouts
 #if __ANDROID__
@@ -242,21 +253,10 @@ namespace MahechaBJJ.Views.CommonPages
 
             Content = stackLayout;
 #endif
-
-
-
         }
 
-        private void GoBack(Object sender, EventArgs e)
+        private async Task CheckIfUserExists(Object sender, EventArgs e)
         {
-            backBtn.IsEnabled = false;
-            Navigation.PopModalAsync();
-            backBtn.IsEnabled = true;
-        }
-
-        private async void CheckIfUserExists(Object sender, EventArgs e)
-        {
-            ToggleButtons();
             //logic to check if email exists
             if (emailEntry.Text != null){
                 user = await _baseViewModel.GetUser(emailEntry.Text.ToLower());
@@ -269,13 +269,15 @@ namespace MahechaBJJ.Views.CommonPages
             } else {
                 await DisplayAlert("Empty Field", "Email Field is Empty, Fill In.", "Ok");
             }
-            ToggleButtons();
         }
 
         private void ToggleButtons()
         {
             backBtn.IsEnabled = !backBtn.IsEnabled;
             nextBtn.IsEnabled = !nextBtn.IsEnabled;
+#if __ANDROID__
+            androidNextBtn.Clickable = !androidNextBtn.Clickable;
+#endif
         }
     }
 }

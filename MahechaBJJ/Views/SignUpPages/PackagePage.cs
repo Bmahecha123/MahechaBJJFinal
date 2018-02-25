@@ -154,9 +154,11 @@ namespace MahechaBJJ.Views.SignUpPages
             };
 
             giTap = new TapGestureRecognizer();
-            giTap.Tapped += (sender, e) =>
+            giTap.Tapped += async (sender, e) =>
             {
-                Navigation.PushModalAsync(new AccountInfoPage(Package.Gi));
+                ToggleButtons();
+                await Navigation.PushModalAsync(new AccountInfoPage(Package.Gi));
+                ToggleButtons();
             };
             giStackLayout.GestureRecognizers.Add(giTap);
 
@@ -261,9 +263,11 @@ namespace MahechaBJJ.Views.SignUpPages
             };
 
             noGiTap = new TapGestureRecognizer();
-            noGiTap.Tapped += (sender, e) =>
+            noGiTap.Tapped += async (sender, e) =>
             {
-                Navigation.PushModalAsync(new AccountInfoPage(Package.NoGi));
+                ToggleButtons();
+                await Navigation.PushModalAsync(new AccountInfoPage(Package.NoGi));
+                ToggleButtons();
             };
             noGiStackLayout.GestureRecognizers.Add(noGiTap);
 
@@ -369,12 +373,13 @@ namespace MahechaBJJ.Views.SignUpPages
             };
 
             giAndNoGiTap = new TapGestureRecognizer();
-            giAndNoGiTap.Tapped += (sender, e) =>
+            giAndNoGiTap.Tapped += async (sender, e) =>
             {
-                Navigation.PushModalAsync(new AccountInfoPage(Package.GiAndNoGi));
+                ToggleButtons();
+                await Navigation.PushModalAsync(new AccountInfoPage(Package.GiAndNoGi));
+                ToggleButtons();
             };
             giAndNoGiStackLayout.GestureRecognizers.Add(giAndNoGiTap);
-
 
             giAndNoGiScrollView = new ScrollView
             {
@@ -506,6 +511,13 @@ namespace MahechaBJJ.Views.SignUpPages
             outerGrid.Children.Add(innerGrid, 0, 0);
 
             Content = outerGrid;
+        }
+
+        private void ToggleButtons()
+        {
+            giStackLayout.IsEnabled = !giStackLayout.IsEnabled;
+            noGiStackLayout.IsEnabled = !noGiStackLayout.IsEnabled;
+            giAndNoGiStackLayout.IsEnabled = !giAndNoGiStackLayout.IsEnabled;
         }
 
         protected override void OnSizeAllocated(double width, double height)

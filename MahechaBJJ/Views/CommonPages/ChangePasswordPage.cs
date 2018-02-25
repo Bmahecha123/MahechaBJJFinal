@@ -3,6 +3,7 @@ using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.EntryPages;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 #if __ANDROID__
 using Xamarin.Forms.Platform.Android;
 using MahechaBJJ.Droid;
@@ -245,9 +246,11 @@ namespace MahechaBJJ.Views.CommonPages
             androidSubmitBtn.SetTextColor(Android.Graphics.Color.Black);
             androidSubmitBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidSubmitBtn.SetAllCaps(false);
-            androidSubmitBtn.Click += (object sender, EventArgs e) =>
+            androidSubmitBtn.Click += async (object sender, EventArgs e) =>
             {
-                ChangePassword(sender, e);
+                ToggleButtons();
+                await ChangePassword(sender, e);
+                ToggleButtons();
             };
 
             contentViewAndroidSecretQuestionLbl = new ContentView();
@@ -273,7 +276,11 @@ namespace MahechaBJJ.Views.CommonPages
                 Navigation.PopModalAsync();
                 backBtn.IsEnabled = true;
             };
-            submitBtn.Clicked += ChangePassword;
+            submitBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await ChangePassword(sender, e);
+                ToggleButtons();
+            };
 
             //layout
 #if __ANDROID__
@@ -310,9 +317,12 @@ namespace MahechaBJJ.Views.CommonPages
         {
             backBtn.IsEnabled = !backBtn.IsEnabled;
             submitBtn.IsEnabled = !submitBtn.IsEnabled;
+#if __ANDROID__
+            androidSubmitBtn.Clickable = !androidSubmitBtn.Clickable;
+#endif
         }
 
-        public async void ChangePassword(object sender, EventArgs e)
+        public async Task ChangePassword(object sender, EventArgs e)
         {
 #if __IOS__
             ToggleButtons();
