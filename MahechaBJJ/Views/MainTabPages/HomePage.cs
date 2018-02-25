@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
@@ -9,7 +8,11 @@ using MahechaBJJ.ViewModel.MainTabPages;
 using MahechaBJJ.Views.PlaylistPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+#if __ANDROID__
+using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
+#endif
+
 
 namespace MahechaBJJ.Views
 {

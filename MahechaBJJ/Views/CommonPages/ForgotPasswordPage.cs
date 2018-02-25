@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
-using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using Xamarin.Forms;
+#if __ANDROID__
+using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
+#endif
 
 namespace MahechaBJJ.Views.CommonPages
 {

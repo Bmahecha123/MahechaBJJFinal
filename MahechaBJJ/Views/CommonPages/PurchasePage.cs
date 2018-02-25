@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Threading.Tasks;
-using MahechaBJJ.Droid;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.MainTabPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
+#if __ANDROID__
+using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
+#endif
 
 namespace MahechaBJJ.Views.CommonPages
 {
@@ -89,7 +91,7 @@ namespace MahechaBJJ.Views.CommonPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
-                    #if __ANDROID__
+#if __ANDROID__
                     new RowDefinition { Height = new GridLength(6, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
 #endif
