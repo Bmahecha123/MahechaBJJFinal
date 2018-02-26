@@ -126,9 +126,8 @@ namespace MahechaBJJ.Views
 
             activityIndicator = new ActivityIndicator
             {
-                IsRunning = false,
-                IsEnabled = false,
-                IsVisible = false
+                Style = (Style)Application.Current.Resources["common-activity-indicator"]
+
             };
 
             //View Objects

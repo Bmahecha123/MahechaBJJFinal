@@ -118,7 +118,7 @@ namespace MahechaBJJ.Views.CommonPages
             giStackLayout = new StackLayout();
             noGiStackLayout = new StackLayout();
 
-#region GI
+            #region GI
 #if __ANDROID__
             androidGiTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidGiTitle.Text = "Gi";
@@ -214,7 +214,7 @@ namespace MahechaBJJ.Views.CommonPages
             {
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 Content = giStackLayout,
-                #if __ANDROID__
+#if __ANDROID__
                 IsClippedToBounds = true
 #endif
             };
@@ -223,12 +223,17 @@ namespace MahechaBJJ.Views.CommonPages
             {
                 OutlineColor = Color.Black,
                 BackgroundColor = Color.Black,
+                #if __ANDROID__
+                Padding = 0,
+#endif
+#if __IOS__
                 Padding = 5,
+#endif
                 Content = giScrollView,
                 HasShadow = false
             };
-#endregion
-#region NOGI
+            #endregion
+            #region NOGI
 #if __ANDROID__
             androidNoGiTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidNoGiTitle.Text = "No-Gi";
@@ -320,8 +325,9 @@ namespace MahechaBJJ.Views.CommonPages
             {
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 Content = noGiStackLayout,
-                #if __ANDROID__
-                IsClippedToBounds = true
+#if __ANDROID__
+                IsClippedToBounds = true,
+                Padding = new Thickness(5, 5, 5, 0)
 #endif
             };
 
@@ -329,7 +335,12 @@ namespace MahechaBJJ.Views.CommonPages
             {
                 OutlineColor = Color.Black,
                 BackgroundColor = Color.Black,
+#if __ANDROID__
+                Padding = 0,
+#endif
+#if __IOS__
                 Padding = 5,
+#endif
                 Content = noGiScrollView,
                 HasShadow = false
             };
@@ -428,7 +439,6 @@ namespace MahechaBJJ.Views.CommonPages
             noGiStackLayout.Children.Add(noGiImageFrame);
             noGiStackLayout.Orientation = StackOrientation.Vertical;
 #endif
-
 
             if (this.package == Package.Gi)
             {

@@ -167,7 +167,8 @@ namespace MahechaBJJ.Views.SignUpPages
                 Content = giStackLayout,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
 #if __ANDROID__
-                IsClippedToBounds = true
+                IsClippedToBounds = true,
+                Padding = new Thickness(5, 5, 5, 0)
 #endif
             };
 
@@ -175,7 +176,12 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 OutlineColor = Color.Black,
                 BackgroundColor = Color.Black,
+#if __ANDROID__
+                Padding = 0,
+#endif
+#if __IOS__
                 Padding = 5,
+#endif
                 Content = giScrollView,
                 HasShadow = false
             };
@@ -278,8 +284,9 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 Content = noGiStackLayout,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
-                #if __ANDROID__
-                IsClippedToBounds = true
+#if __ANDROID__
+                IsClippedToBounds = true,
+                Padding = new Thickness(5, 5, 5, 0)
 #endif
             };
 
@@ -287,7 +294,12 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 OutlineColor = Color.Black,
                 BackgroundColor = Color.Black,
+#if __ANDROID__
+                Padding = 0,
+#endif
+#if __IOS__
                 Padding = 5,
+#endif
                 Content = noGiScrollView,
                 HasShadow = false
             };
@@ -391,8 +403,9 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 Content = giAndNoGiStackLayout,
                 BackgroundColor = Color.FromRgb(58, 93, 174),
-                #if __ANDROID__
-                IsClippedToBounds = true
+#if __ANDROID__
+                IsClippedToBounds = true,
+                Padding = new Thickness(5, 5, 5, 0)
 #endif
             };
 
@@ -400,7 +413,12 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 OutlineColor = Color.Black,
                 BackgroundColor = Color.Black,
+#if __ANDROID__
+                Padding = 0,
+#endif
+#if __IOS__
                 Padding = 5,
+#endif
                 HasShadow = false,
                 Content = giAndNoGiScrollView
             };
@@ -566,7 +584,6 @@ namespace MahechaBJJ.Views.SignUpPages
                 innerGrid.Children.Add(giFrame, 1, 0);
                 innerGrid.Children.Add(noGiFrame, 2, 0);
 #endif
-
             }
             else
             {

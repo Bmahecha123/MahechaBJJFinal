@@ -36,7 +36,6 @@ namespace MahechaBJJ.Views.EntryPages
         private Button blogBtn;
         private Button restoreBtn;
         private Package package;
-        private bool isButtonPressed;
 #if __ANDROID__
         private Android.Widget.Button androidLoginBtn;
         private Android.Widget.Button androidSignUpBtn;

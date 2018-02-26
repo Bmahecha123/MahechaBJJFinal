@@ -143,9 +143,7 @@ namespace MahechaBJJ.Views.BlogPages
             timeOutLbl.GestureRecognizers.Add(timeOutTap);
             activityIndicator = new ActivityIndicator
             {
-                IsRunning = false,
-                IsEnabled = true,
-                IsVisible = true
+                Style = (Style)Application.Current.Resources["common-activity-indicator"]
             };
 
 #if __ANDROID__

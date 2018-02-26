@@ -244,6 +244,7 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Xamarin.Forms.Xaml.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Xamarin.Forms.Xaml.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Xamarin.Forms.Xaml.xml
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/MahechaBJJ.Droid.csprojResolveAssemblyReference.cache
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/MahechaBJJ.Droid.csproj.CoreCompileInputs.cache
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/MahechaBJJ.Droid.App.xaml.g.cs
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/MahechaBJJ.Droid.dll
@@ -296,9 +297,14 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/drawable-xhdpi/search.png
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/drawable-xhdpi/settings.png
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/drawable-xhdpi/sweep.jpg
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/mipmap/mahechabjj.png
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/mipmap-hdpi/mahechabjj.png
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/mipmap-mdpi/mahechabjj.png
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/mipmap-xhdpi/mahechabjj.png
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/mipmap-xxhdpi/mahechabjj.png
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/mipmap-xxxhdpi/mahechabjj.png
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/R.cs.flag
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/uploadflags.txt
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/MahechaBJJ.Droid.csprojResolveAssemblyReference.cache
 bin/Debug/Mono.Android.pdb
 obj/Debug/linksrc/FormsViewGroup.dll.mdb
 obj/Debug/linksrc/Plugin.InAppBilling.dll.mdb

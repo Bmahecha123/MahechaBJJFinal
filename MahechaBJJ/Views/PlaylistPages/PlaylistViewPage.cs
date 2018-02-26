@@ -164,9 +164,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             timeOutLbl.GestureRecognizers.Add(timeOutTap);
             activityIndicator = new ActivityIndicator
             {
-                IsRunning = false,
-                IsEnabled = true,
-                IsVisible = true
+                Style = (Style)Application.Current.Resources["common-activity-indicator"]
             };
 
             //Events

@@ -18,14 +18,12 @@ namespace MahechaBJJ.Views
 		private VideoView videoView;
 		private MediaController mediaController;
         private ContentView contentView;
-        private ContentView landscapeContentView;
 		private Android.Net.Uri uriHd;
-        private int currentPosition;
 
         //added string link instead of passing whole video
 		public AndroidVideoPage(string url)
         {
-            BackgroundColor = Color.Black;
+            //BackgroundColor = Color.Black;
             SetContent(url);
 		}
 
@@ -46,7 +44,7 @@ namespace MahechaBJJ.Views
             videoView.SetVideoURI(uriHd);
 
             contentView = new ContentView();
-            contentView.BackgroundColor = Color.Red;
+            contentView.BackgroundColor = Color.Black;
             contentView.Content = videoView.ToView();
             contentView.HorizontalOptions = LayoutOptions.FillAndExpand;
             contentView.VerticalOptions = LayoutOptions.CenterAndExpand;
@@ -55,6 +53,7 @@ namespace MahechaBJJ.Views
 
             videoView.Start();
 		}
+
         //Orientation
         protected override void OnSizeAllocated(double width, double height)
         {
