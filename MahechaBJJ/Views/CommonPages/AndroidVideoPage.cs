@@ -23,7 +23,7 @@ namespace MahechaBJJ.Views
         //added string link instead of passing whole video
 		public AndroidVideoPage(string url)
         {
-            //BackgroundColor = Color.Black;
+            BackgroundColor = Color.Black;
             SetContent(url);
 		}
 
@@ -44,7 +44,7 @@ namespace MahechaBJJ.Views
             videoView.SetVideoURI(uriHd);
 
             contentView = new ContentView();
-            contentView.BackgroundColor = Color.Black;
+            //contentView.BackgroundColor = Color.Black;
             contentView.Content = videoView.ToView();
             contentView.HorizontalOptions = LayoutOptions.FillAndExpand;
             contentView.VerticalOptions = LayoutOptions.CenterAndExpand;
