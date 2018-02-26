@@ -28,9 +28,6 @@ namespace MahechaBJJ.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            AppCenter.Start("89e42d8d-063a-4f4c-ab30-7151b11e7395",
-                   typeof(Analytics), typeof(Crashes));
-
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
