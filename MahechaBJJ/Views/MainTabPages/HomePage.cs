@@ -144,6 +144,7 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
             androidVideo1Lbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidVideo1Lbl.Text = "Spider Guard Stuff!";
+            androidVideo1Lbl.Typeface = Constants.COMMONFONT;
             androidVideo1Lbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidVideo1Lbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
             androidVideo1Lbl.Gravity = Android.Views.GravityFlags.Center;
@@ -161,6 +162,7 @@ namespace MahechaBJJ.Views
 
             androidVideo2Lbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidVideo2Lbl.Text = "Spider Guard Stuff!";
+            androidVideo2Lbl.Typeface = Constants.COMMONFONT;
             androidVideo2Lbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidVideo2Lbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
             androidVideo2Lbl.Gravity = Android.Views.GravityFlags.Center;
@@ -179,6 +181,7 @@ namespace MahechaBJJ.Views
 
             androidWhatsNewLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidWhatsNewLbl.Text = "What's New";
+            androidWhatsNewLbl.Typeface = Constants.COMMONFONT;
             androidWhatsNewLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidWhatsNewLbl.SetTextColor(Android.Graphics.Color.Black);
             androidWhatsNewLbl.Gravity = Android.Views.GravityFlags.Center;
@@ -188,6 +191,7 @@ namespace MahechaBJJ.Views
 
             androidPlayListLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidPlayListLbl.Text = "Playlists";
+            androidPlayListLbl.Typeface = Constants.COMMONFONT;
             androidPlayListLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidPlayListLbl.SetTextColor(Android.Graphics.Color.Black);
             androidPlayListLbl.Gravity = Android.Views.GravityFlags.Center;
@@ -197,6 +201,7 @@ namespace MahechaBJJ.Views
 
             androidAddPlaylistBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidAddPlaylistBtn.Text = "Create";
+            androidAddPlaylistBtn.Typeface = Constants.COMMONFONT;
             androidAddPlaylistBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidAddPlaylistBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidAddPlaylistBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -211,6 +216,7 @@ namespace MahechaBJJ.Views
 
             androidViewPlaylistBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidViewPlaylistBtn.Text = "View";
+            androidViewPlaylistBtn.Typeface = Constants.COMMONFONT;
             androidViewPlaylistBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidViewPlaylistBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidViewPlaylistBtn.SetTextColor(Android.Graphics.Color.Black);

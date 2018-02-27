@@ -2,6 +2,7 @@
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.EntryPages;
+using MahechaBJJ.Resources;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 #if __ANDROID__
@@ -217,11 +218,13 @@ namespace MahechaBJJ.Views.CommonPages
 
             androidSecretQuestionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidSecretQuestionLbl.Text = _user.SecretQuestion;
+            androidSecretQuestionLbl.Typeface = Constants.COMMONFONT;
             androidSecretQuestionLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSecretQuestionLbl.SetTextColor(Android.Graphics.Color.Black);
             androidSecretQuestionLbl.Gravity = Android.Views.GravityFlags.Center;
 
             androidSecretQuestionEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidSecretQuestionEntry.Typeface = Constants.COMMONFONT;
             androidSecretQuestionEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidSecretQuestionEntry.SetTextColor(Android.Graphics.Color.Black);
             androidSecretQuestionEntry.Gravity = Android.Views.GravityFlags.Start;
@@ -229,11 +232,13 @@ namespace MahechaBJJ.Views.CommonPages
 
             androidNewPasswordLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidNewPasswordLbl.Text = "New Password";
+            androidNewPasswordLbl.Typeface = Constants.COMMONFONT;
             androidNewPasswordLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidNewPasswordLbl.SetTextColor(Android.Graphics.Color.Black);
             androidNewPasswordLbl.Gravity = Android.Views.GravityFlags.Center;
 
             androidNewPasswordEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
+            androidNewPasswordEntry.Typeface = Constants.COMMONFONT;
             androidNewPasswordEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidNewPasswordEntry.SetTextColor(Android.Graphics.Color.Black);
             androidNewPasswordEntry.Gravity = Android.Views.GravityFlags.Start;
@@ -242,6 +247,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             androidSubmitBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidSubmitBtn.Text = "Change Password";
+            androidSubmitBtn.Typeface = Constants.COMMONFONT;
             androidSubmitBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSubmitBtn.SetTextColor(Android.Graphics.Color.Black);
             androidSubmitBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));

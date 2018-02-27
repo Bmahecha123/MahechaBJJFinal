@@ -205,6 +205,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             androidPlaylistNameEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidPlaylistNameEntry.Hint = "Enter Name";
+            androidPlaylistNameEntry.Typeface = Constants.COMMONFONT;
             androidPlaylistNameEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidPlaylistNameEntry.SetTextColor(Android.Graphics.Color.Black);
             androidPlaylistNameEntry.Gravity = Android.Views.GravityFlags.Start;
@@ -212,6 +213,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             androidPlaylistDescriptionEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidPlaylistDescriptionEntry.Hint = "Enter Description";
+            androidPlaylistDescriptionEntry.Typeface = Constants.COMMONFONT;
             androidPlaylistDescriptionEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidPlaylistDescriptionEntry.SetTextColor(Android.Graphics.Color.Black);
             androidPlaylistDescriptionEntry.Gravity = Android.Views.GravityFlags.Start;
@@ -219,6 +221,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             androidCreateBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidCreateBtn.Text = "Create Playlist";
+            androidCreateBtn.Typeface = Constants.COMMONFONT;
             androidCreateBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidCreateBtn.SetTextColor(Android.Graphics.Color.Black);
             androidCreateBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));

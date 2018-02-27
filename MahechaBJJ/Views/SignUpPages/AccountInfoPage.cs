@@ -4,6 +4,7 @@ using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
 #endif
 using MahechaBJJ.Model;
+using MahechaBJJ.Resources;
 using Xamarin.Forms;
 
 namespace MahechaBJJ.Views.SignUpPages
@@ -125,6 +126,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #if __ANDROID__
             androidNoAccountBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidNoAccountBtn.Text = "No Account";
+            androidNoAccountBtn.Typeface = Constants.COMMONFONT;
             androidNoAccountBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidNoAccountBtn.SetBackgroundColor(Android.Graphics.Color.DarkRed);
             androidNoAccountBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -139,6 +141,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             androidAccountBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidAccountBtn.Text = "Create";
+            androidAccountBtn.Typeface = Constants.COMMONFONT;
             androidAccountBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidAccountBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidAccountBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -153,6 +156,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             androidAccountTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidAccountTitle.Text = "Mahecha BJJ Account";
+            androidAccountTitle.Typeface = Constants.COMMONFONT;
             androidAccountTitle.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidAccountTitle.SetTextColor(Android.Graphics.Color.Black);
             androidAccountTitle.Gravity = Android.Views.GravityFlags.Center;
@@ -161,6 +165,7 @@ namespace MahechaBJJ.Views.SignUpPages
             androidAccountInfo = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidAccountInfo.Text = "-Ability to create and manage you're own playlists.\n-Access to Mahecha BJJ Web Application(Coming soon)";
             androidAccountInfo.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidAccountInfo.Typeface = Constants.COMMONFONT;
             androidAccountInfo.SetTextColor(Android.Graphics.Color.Black);
             androidAccountInfo.Gravity = Android.Views.GravityFlags.Start;
 #endif

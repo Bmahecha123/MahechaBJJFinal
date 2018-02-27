@@ -170,18 +170,21 @@ namespace MahechaBJJ.Views.PlaylistPages
 #if __ANDROID__
             androidPlaylistNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidPlaylistNameLbl.Text = userPlaylist.Name;
+            androidPlaylistNameLbl.Typeface = Constants.COMMONFONT;
             androidPlaylistNameLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidPlaylistNameLbl.SetTextColor(Android.Graphics.Color.Black);
             androidPlaylistNameLbl.Gravity = Android.Views.GravityFlags.Center;
 
             androidPlaylistDescriptionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidPlaylistDescriptionLbl.Text = userPlaylist.Description;
+            androidPlaylistDescriptionLbl.Typeface = Constants.COMMONFONT;
             androidPlaylistDescriptionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidPlaylistDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
             androidPlaylistDescriptionLbl.Gravity = Android.Views.GravityFlags.Center;
 
             androidDeleteBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidDeleteBtn.Text = "Delete";
+            androidDeleteBtn.Typeface = Constants.COMMONFONT;
             androidDeleteBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidDeleteBtn.SetTextColor(Android.Graphics.Color.Black);
             androidDeleteBtn.Gravity = Android.Views.GravityFlags.Center;
@@ -334,7 +337,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 #if __ANDROID__
                     videoLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
                     videoLbl.TextColor = Color.AntiqueWhite;
-                    videoLbl.FontAttributes = FontAttributes.Bold;
+                    videoLbl.FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt";
+
 #endif
                     videoLbl.SetBinding(Label.TextProperty, "Name");
                     videoLbl.VerticalTextAlignment = TextAlignment.Center;

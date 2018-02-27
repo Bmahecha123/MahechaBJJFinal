@@ -109,6 +109,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 #if __ANDROID__
             androidVideoNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidVideoNameLbl.Text = video.Name;
+            androidVideoNameLbl.Typeface = Constants.COMMONFONT;
             androidVideoNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidVideoNameLbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
             androidVideoNameLbl.Gravity = Android.Views.GravityFlags.Center;
@@ -116,12 +117,14 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             androidVideoDescriptionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidVideoDescriptionLbl.Text = video.Description;
+            androidVideoDescriptionLbl.Typeface = Constants.COMMONFONT;
             androidVideoDescriptionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
             androidVideoDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
             androidVideoDescriptionLbl.Gravity = Android.Views.GravityFlags.Start;
 
             androidPlayBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidPlayBtn.Text = "Play";
+            androidPlayBtn.Typeface = Constants.COMMONFONT;
             androidPlayBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidPlayBtn.SetTextColor(Android.Graphics.Color.Black);
             androidPlayBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
@@ -136,6 +139,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             androidDeleteBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidDeleteBtn.Text = "D";
+            androidDeleteBtn.Typeface = Constants.COMMONFONT;
             androidDeleteBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidDeleteBtn.SetTextColor(Android.Graphics.Color.Black);
             androidDeleteBtn.SetBackgroundColor(Android.Graphics.Color.Red);
@@ -150,6 +154,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             androidQualityBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidQualityBtn.Text = "SD";
+            androidQualityBtn.Typeface = Constants.COMMONFONT;
             androidQualityBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidQualityBtn.SetTextColor(Android.Graphics.Color.Black);
             androidQualityBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
@@ -224,14 +229,15 @@ namespace MahechaBJJ.Views.PlaylistPages
             videoDescriptionScrollView = new ScrollView
             {
                 Padding = 0,
+                Orientation = ScrollOrientation.Vertical,
 #if __ANDROID__
                 Content = contentViewDescriptionLbl,
-                IsClippedToBounds = true,
+                IsClippedToBounds = true
 #endif
 #if __IOS__
                 Content = videoDescription,
+
 #endif
-                Orientation = ScrollOrientation.Vertical
             };
 
             videoImage = new Image
@@ -334,12 +340,13 @@ namespace MahechaBJJ.Views.PlaylistPages
             Grid.SetColumnSpan(contentViewNameLbl, 4);
             innerGrid.Children.Add(contentViewPlayBtn, 0, 1);
             innerGrid.Children.Add(contentViewQualityBtn, 3, 1);
-            innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-            Grid.SetColumnSpan(videoDescriptionScrollView, 4);
 
-            Grid.SetRowSpan(videoDescriptionScrollView, 3);
             Grid.SetColumnSpan(contentViewPlayBtn, 2);
             innerGrid.Children.Add(contentViewDeleteBtn, 2, 1);
+            //XAMARIN BUG - ADDING SCROLLVIEW BEFORE OTHER ELEMENTS WILL CAUSE CONTENTS TO OVERFLOW.. ADD TO END OF LAYOUT..
+            innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
+            Grid.SetColumnSpan(videoDescriptionScrollView, 4);
+            Grid.SetRowSpan(videoDescriptionScrollView, 3);
 #endif
 #if __IOS__
             //building grid

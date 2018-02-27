@@ -97,18 +97,21 @@ namespace MahechaBJJ.Views.CommonPages
 
             androidHeaderLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidHeaderLbl.Text = "Forgot Password";
+            androidHeaderLbl.Typeface = Constants.COMMONFONT;
             androidHeaderLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidHeaderLbl.SetTextColor(Android.Graphics.Color.Black);
             androidHeaderLbl.Gravity = Android.Views.GravityFlags.Center;
 
             androidEmailLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidEmailLbl.Text = "E-Mail Address";
+            androidEmailLbl.Typeface = Constants.COMMONFONT;
             androidEmailLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidEmailLbl.SetTextColor(Android.Graphics.Color.Black);
             androidEmailLbl.Gravity = Android.Views.GravityFlags.Center;
 
             androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidEmailEntry.Hint = "Enter E-Mail";
+            androidEmailEntry.Typeface = Constants.COMMONFONT;
             androidEmailEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidEmailEntry.SetTextColor(Android.Graphics.Color.Black);
             androidEmailEntry.Gravity = Android.Views.GravityFlags.Center;
@@ -116,6 +119,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             androidNextBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidNextBtn.Text = "Next";
+            androidNextBtn.Typeface = Constants.COMMONFONT;
             androidNextBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidNextBtn.SetTextColor(Android.Graphics.Color.Black);
             androidNextBtn.Gravity = Android.Views.GravityFlags.Center;

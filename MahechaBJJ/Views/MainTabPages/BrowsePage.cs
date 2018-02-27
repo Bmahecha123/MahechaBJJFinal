@@ -2,6 +2,7 @@
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.BlogPages;
+using MahechaBJJ.Resources;
 using MahechaBJJ.Views.CommonPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
@@ -94,6 +95,22 @@ namespace MahechaBJJ.Views
             stackLayout = new StackLayout();
             scrollView = new ScrollView();
 
+            #if __ANDROID__
+            androidBlogLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
+            androidBlogLbl.Text = "Blog";
+            androidBlogLbl.Typeface = Constants.COMMONFONT;
+            androidBlogLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
+            androidBlogLbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
+            androidBlogLbl.Gravity = Android.Views.GravityFlags.Center;
+            androidBlogLbl.Click += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new BlogViewPage());
+                ToggleButtons();
+            };
+
+#endif
+
             sweepLbl = new Label
             {
                 Text = "Sweep",
@@ -106,6 +123,7 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
+                FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt",
                 FontSize = lblSize * 1.5,
                 FontAttributes = FontAttributes.Bold
 #endif
@@ -154,6 +172,7 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
+                FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt",
                 FontSize = lblSize * 1.5,
                 FontAttributes = FontAttributes.Bold
 #endif
@@ -203,6 +222,7 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
+                FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt",
                 FontSize = lblSize * 1.5,
                 FontAttributes = FontAttributes.Bold
 #endif
@@ -252,6 +272,7 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
+                FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt",
                 FontSize = lblSize * 1.5,
                 FontAttributes = FontAttributes.Bold
 #endif
@@ -301,6 +322,7 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
+                FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt",
                 FontSize = lblSize * 1.5,
                 FontAttributes = FontAttributes.Bold
 #endif
@@ -350,6 +372,7 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
+                FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt",
                 FontSize = lblSize * 1.5,
                 FontAttributes = FontAttributes.Bold
 #endif
@@ -404,6 +427,7 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize
 #endif
 #if __ANDROID__
+                FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt",
                 FontSize = lblSize * 1.5,
                 FontAttributes = FontAttributes.Bold
 #endif
@@ -473,21 +497,6 @@ namespace MahechaBJJ.Views
                 HasShadow = false,
                 Padding = 3
             };
-
-#if __ANDROID__
-            androidBlogLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidBlogLbl.Text = "Blog";
-            androidBlogLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidBlogLbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
-            androidBlogLbl.Gravity = Android.Views.GravityFlags.Center;
-            androidBlogLbl.Click += async (object sender, EventArgs e) =>
-            {
-                ToggleButtons();
-                await Navigation.PushModalAsync(new BlogViewPage());
-                ToggleButtons();
-            };
-
-#endif
 
             //Events
             //adding children

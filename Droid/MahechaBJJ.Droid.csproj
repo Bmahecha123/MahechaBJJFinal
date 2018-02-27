@@ -276,6 +276,7 @@
     <AndroidAsset Include="Assets\PressStart2P-Regular.ttf" />
     <AndroidAsset Include="Assets\BadScript-Regular.ttf" />
     <AndroidAsset Include="Assets\ChelseaMarket-Regular.ttf" />
+    <AndroidAsset Include="Assets\american_typewriter_bold_bt.ttf" />
   </ItemGroup>
   <Import Project="..\MahechaBJJ\MahechaBJJ.projitems" Label="Shared" Condition="Exists('..\MahechaBJJ\MahechaBJJ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

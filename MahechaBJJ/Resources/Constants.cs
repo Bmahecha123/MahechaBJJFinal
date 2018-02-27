@@ -95,7 +95,7 @@ namespace MahechaBJJ.Resources
         public static Typeface UBUNTUMEDIUM = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "Ubuntu-Medium.ttf");
         public static Typeface UBUNTUREGULAR = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "Ubuntu-Regular.ttf");
         public static Typeface BERKSHIRE = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "BerkshireSwash-Regular.ttf");
-        public static Typeface COMMONFONT = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "Ubuntu-Regular.ttf");
+        public static Typeface COMMONFONT = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "american_typewriter_bold_bt.ttf");
         #endif
     }
 }

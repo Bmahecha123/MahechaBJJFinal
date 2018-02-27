@@ -85,6 +85,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 #if __ANDROID__
             androidViewPlaylistLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidViewPlaylistLbl.Text = "View Playlists";
+            androidViewPlaylistLbl.Typeface = Constants.COMMONFONT;
             androidViewPlaylistLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidViewPlaylistLbl.SetTextColor(Android.Graphics.Color.Black);
             androidViewPlaylistLbl.Gravity = Android.Views.GravityFlags.Center;
@@ -264,7 +265,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 2;
 #endif
 #if __ANDROID__
-                playlistLbl.FontFamily = "Roboto Bold";
+                playlistLbl.FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt";
                 playlistLbl.TextColor = Color.Black;
                 playlistLbl.FontAttributes = FontAttributes.Bold;
                 playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));

@@ -149,6 +149,7 @@ namespace MahechaBJJ.Views.BlogPages
 #if __ANDROID__
             androidViewBlogLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidViewBlogLbl.Text = "Mahecha BJJ Blog";
+            androidViewBlogLbl.Typeface = Constants.COMMONFONT;
             androidViewBlogLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidViewBlogLbl.SetTextColor(Android.Graphics.Color.Black);
             androidViewBlogLbl.Gravity = Android.Views.GravityFlags.Center;

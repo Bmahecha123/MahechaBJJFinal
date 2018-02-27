@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using MahechaBJJ.Model;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.EntryPages;
+using MahechaBJJ.Resources;
 using Xamarin.Forms;
 using Xamarin.Auth;
 using System.Net.Http;
@@ -319,6 +320,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #if __ANDROID__
             androidNameEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidNameEntry.Hint = "Name";
+            androidNameEntry.Typeface = Constants.COMMONFONT;
             androidNameEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidNameEntry.SetTextColor(Android.Graphics.Color.Black);
             androidNameEntry.Gravity = Android.Views.GravityFlags.Start;
@@ -326,12 +328,14 @@ namespace MahechaBJJ.Views.SignUpPages
 
             androidBeltLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidBeltLbl.Text = "Belt";
+            androidBeltLbl.Typeface = Constants.COMMONFONT;
             androidBeltLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidBeltLbl.SetTextColor(Android.Graphics.Color.Black);
             androidBeltLbl.Gravity = Android.Views.GravityFlags.Center;
 
             androidEmailAddressEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidEmailAddressEntry.Hint = "E-Mail Address";
+            androidEmailAddressEntry.Typeface = Constants.COMMONFONT;
             androidEmailAddressEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidEmailAddressEntry.SetTextColor(Android.Graphics.Color.Black);
             androidEmailAddressEntry.Gravity = Android.Views.GravityFlags.Start;
@@ -339,6 +343,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             androidPassWordEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidPassWordEntry.Hint = "Password";
+            androidPassWordEntry.Typeface = Constants.COMMONFONT;
             androidPassWordEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidPassWordEntry.SetTextColor(Android.Graphics.Color.Black);
             androidPassWordEntry.Gravity = Android.Views.GravityFlags.Start;
@@ -346,12 +351,14 @@ namespace MahechaBJJ.Views.SignUpPages
 
             androidSecretQuestionsLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidSecretQuestionsLbl.Text = "Secret Questions";
+            androidSecretQuestionsLbl.Typeface = Constants.COMMONFONT;
             androidSecretQuestionsLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidSecretQuestionsLbl.SetTextColor(Android.Graphics.Color.Black);
             androidSecretQuestionsLbl.Gravity = Android.Views.GravityFlags.Center;
 
             androidSecretQuestionEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidSecretQuestionEntry.Hint = "Answer for your own security!";
+            androidSecretQuestionEntry.Typeface = Constants.COMMONFONT;
             androidSecretQuestionEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidSecretQuestionEntry.SetTextColor(Android.Graphics.Color.Black);
             androidSecretQuestionEntry.Gravity = Android.Views.GravityFlags.Start;
@@ -359,6 +366,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             androidNextBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidNextBtn.Text = "Next";
+            androidNextBtn.Typeface = Constants.COMMONFONT;
             androidNextBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidNextBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidNextBtn.SetTextColor(Android.Graphics.Color.Black);

@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using MahechaBJJ.Model;
 using Xamarin.Forms;
+using MahechaBJJ.Resources;
 #if __ANDROID__
 using Xamarin.Forms.Platform.Android;
 using MahechaBJJ.Droid;
@@ -110,6 +111,7 @@ namespace MahechaBJJ.Views.BlogPages
 
             androidBlogContentLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidBlogContentLbl.Text = blogString;
+            androidBlogContentLbl.Typeface = Constants.COMMONFONT;
             androidBlogContentLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
             androidBlogContentLbl.SetTextColor(Android.Graphics.Color.Black);
             androidBlogContentLbl.Gravity = Android.Views.GravityFlags.Start;

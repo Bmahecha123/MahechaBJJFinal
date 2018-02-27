@@ -303,24 +303,28 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
             androidNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidNameLbl.Text = "Name:";
+            androidNameLbl.Typeface = Constants.COMMONFONT;
             androidNameLbl.SetTextColor(Android.Graphics.Color.Black);
             androidNameLbl.Gravity = Android.Views.GravityFlags.Start;
-            androidNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
 
             androidEmailLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidEmailLbl.Text = "Email:";
+            androidEmailLbl.Typeface = Constants.COMMONFONT;
             androidEmailLbl.SetTextColor(Android.Graphics.Color.Black);
             androidEmailLbl.Gravity = Android.Views.GravityFlags.Start;
-            androidEmailLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidEmailLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
 
             androidBeltLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidBeltLbl.Text = "Belt:";
+            androidBeltLbl.Typeface = Constants.COMMONFONT;
             androidBeltLbl.SetTextColor(Android.Graphics.Color.Black);
             androidBeltLbl.Gravity = Android.Views.GravityFlags.Start;
-            androidBeltLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
+            androidBeltLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
 
             androidPackageBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidPackageBtn.Text = "Packages";
+            androidPackageBtn.Typeface = Constants.COMMONFONT;
             androidPackageBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidPackageBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidPackageBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -334,6 +338,7 @@ namespace MahechaBJJ.Views
 
             androidContactUsBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidContactUsBtn.Text = "Contact Us";
+            androidContactUsBtn.Typeface = Constants.COMMONFONT;
             androidContactUsBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidContactUsBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidContactUsBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -347,6 +352,7 @@ namespace MahechaBJJ.Views
 
             androidLogOutBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidLogOutBtn.Text = "Log Out";
+            androidLogOutBtn.Typeface = Constants.COMMONFONT;
             androidLogOutBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLogOutBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidLogOutBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -360,6 +366,7 @@ namespace MahechaBJJ.Views
 
             androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidLoginBtn.Text = "Login";
+            androidLoginBtn.Typeface = Constants.COMMONFONT;
             androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLoginBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -373,6 +380,7 @@ namespace MahechaBJJ.Views
 
             androidSettingsBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidSettingsBtn.Text = "Change Password";
+            androidSettingsBtn.Typeface = Constants.COMMONFONT;
             androidSettingsBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSettingsBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidSettingsBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -386,6 +394,7 @@ namespace MahechaBJJ.Views
 
             androidCreateAccountBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidCreateAccountBtn.Text = "Create Account";
+            androidCreateAccountBtn.Typeface = Constants.COMMONFONT;
             androidCreateAccountBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidCreateAccountBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidCreateAccountBtn.SetTextColor(Android.Graphics.Color.Black);

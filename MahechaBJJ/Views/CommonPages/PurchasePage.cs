@@ -122,6 +122,7 @@ namespace MahechaBJJ.Views.CommonPages
 #if __ANDROID__
             androidGiTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidGiTitle.Text = "Gi";
+            androidGiTitle.Typeface = Constants.COMMONFONT;
             androidGiTitle.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidGiTitle.SetTextColor(Android.Graphics.Color.Black);
             androidGiTitle.Gravity = Android.Views.GravityFlags.Start;
@@ -131,6 +132,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             androidGiPrice = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidGiPrice.Text = "$19.99";
+            androidGiPrice.Typeface = Constants.COMMONFONT;
             androidGiPrice.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidGiPrice.SetTextColor(Android.Graphics.Color.Black);
             androidGiPrice.Gravity = Android.Views.GravityFlags.Start;
@@ -140,6 +142,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             androidGiBody = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidGiBody.Text = "This library is growing constantly and there is no end in sight. The beauty of this package is that you get to follow our system as we develop and implement new transitions and positions. We’re constantly pushing the barrier in terms of our style and approach to Jiu-Jitsu. Every position that gets posted has been drilled to death and executed at the highest levels of competition. We’re proud of this; something I see wrong with other instructional resources is positions are shown that I know they have never ever hit in a competition or anything. You never have to worry about that with our techniques. One of the biggest advantages of our app is that you have direct access to us, if you have any questions or concerns; contacting us is a click away. Let’s grow and develop our Jiu Jitsu together!";
+            androidGiBody.Typeface = Constants.COMMONFONT;
             androidGiBody.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
             androidGiBody.SetTextColor(Android.Graphics.Color.Black);
             androidGiBody.Gravity = Android.Views.GravityFlags.Start;
@@ -237,6 +240,7 @@ namespace MahechaBJJ.Views.CommonPages
 #if __ANDROID__
             androidNoGiTitle = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidNoGiTitle.Text = "No-Gi";
+            androidNoGiTitle.Typeface = Constants.COMMONFONT;
             androidNoGiTitle.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidNoGiTitle.SetTextColor(Android.Graphics.Color.Black);
             androidNoGiTitle.Gravity = Android.Views.GravityFlags.Start;
@@ -244,6 +248,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             androidNoGiPrice = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidNoGiPrice.Text = "$19.99";
+            androidNoGiPrice.Typeface = Constants.COMMONFONT;
             androidNoGiPrice.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidNoGiPrice.SetTextColor(Android.Graphics.Color.Black);
             androidNoGiPrice.Gravity = Android.Views.GravityFlags.Start;
@@ -251,6 +256,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             androidNoGiBody = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidNoGiBody.Text = "Just like the other packages, the No-Gi library is constantly being updated. So that means you’ll grow along with us. As we come up with new tweaks and transitions you’ll see it first as we are constantly updating our libraries. Through these techniques and positions your game will be brought to a new technical level. All the while being exposed to a unique point of view on approaching Jiu Jitsu. Some of the biggest advantages of this package is that you have direct access to us, the ones who implement and recorded these techniques. We love to hear from our members and never ignore anyone. Lets grow together!";
+            androidNoGiBody.Typeface = Constants.COMMONFONT;
             androidNoGiBody.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
             androidNoGiBody.SetTextColor(Android.Graphics.Color.Black);
             androidNoGiBody.Gravity = Android.Views.GravityFlags.Start;
@@ -382,6 +388,7 @@ namespace MahechaBJJ.Views.CommonPages
 #if __ANDROID__
             androidPurchaseBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidPurchaseBtn.Text = "Purchase";
+            androidPurchaseBtn.Typeface = Constants.COMMONFONT;
             androidPurchaseBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidPurchaseBtn.SetTextColor(Android.Graphics.Color.Black);
             androidPurchaseBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);

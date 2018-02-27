@@ -181,7 +181,7 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
             androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidLoginBtn.Text = "Login";
-            //androidLoginBtn.Typeface = Constants.COMMONFONT;
+            androidLoginBtn.Typeface = Constants.COMMONFONT;
             androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLoginBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -190,7 +190,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidForgotPasswordBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidForgotPasswordBtn.Text = "?";
-            //androidForgotPasswordBtn.Typeface = Constants.COMMONFONT;
+            androidForgotPasswordBtn.Typeface = Constants.COMMONFONT;
             androidForgotPasswordBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidForgotPasswordBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(124, 37, 41));
             androidForgotPasswordBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -199,7 +199,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidEmailEntry.Hint = "E-Mail Address";
-            //androidEmailEntry.Typeface = Constants.COMMONFONT;
+            androidEmailEntry.Typeface = Constants.COMMONFONT;
             androidEmailEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidEmailEntry.SetPadding(0, 0, 0, 0);
             androidEmailEntry.SetTextColor(Android.Graphics.Color.Black);
@@ -207,7 +207,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidPasswordEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidPasswordEntry.Hint = "Password";
-            //androidPasswordEntry.Typeface = Constants.COMMONFONT;
+            androidPasswordEntry.Typeface = Constants.COMMONFONT;
             androidPasswordEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidPasswordEntry.SetPadding(0, 0, 0, 0);
             androidPasswordEntry.SetTextColor(Android.Graphics.Color.Black);

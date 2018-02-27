@@ -166,6 +166,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             androidSummaryLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidSummaryLbl.Text = "Summary";
+            androidSummaryLbl.Typeface = Constants.COMMONFONT;
             androidSummaryLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidSummaryLbl.SetTextColor(Android.Graphics.Color.Black);
             androidSummaryLbl.Gravity = Android.Views.GravityFlags.Center;
@@ -173,18 +174,21 @@ namespace MahechaBJJ.Views.SignUpPages
 
             androidPackageLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidPackageLbl.Text = $"Package: {packageName}";
+            androidPackageLbl.Typeface = Constants.COMMONFONT;
             androidPackageLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidPackageLbl.SetTextColor(Android.Graphics.Color.Black);
             androidPackageLbl.Gravity = Android.Views.GravityFlags.Start;
 
             androidPriceLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidPriceLbl.Text = $"Price: {packagePrice}";
+            androidPriceLbl.Typeface = Constants.COMMONFONT;
             androidPriceLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidPriceLbl.SetTextColor(Android.Graphics.Color.Black);
             androidPriceLbl.Gravity = Android.Views.GravityFlags.Start;
 
             androidSignUpBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidSignUpBtn.Text = "Sign Up";
+            androidSignUpBtn.Typeface = Constants.COMMONFONT;
             androidSignUpBtn.SetTextColor(Android.Graphics.Color.Black);
             androidSignUpBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
@@ -201,6 +205,7 @@ namespace MahechaBJJ.Views.SignUpPages
             {
                 androidUserDetailsLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
                 androidUserDetailsLbl.Text = "User Details";
+                androidUserDetailsLbl.Typeface = Constants.COMMONFONT;
                 androidUserDetailsLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
                 androidUserDetailsLbl.SetTextColor(Android.Graphics.Color.Black);
                 androidUserDetailsLbl.Gravity = Android.Views.GravityFlags.Center;
@@ -208,29 +213,34 @@ namespace MahechaBJJ.Views.SignUpPages
 
                 androidNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
                 androidNameLbl.Text = $"Name: {user.Name}";
+                androidNameLbl.Typeface = Constants.COMMONFONT;
                 androidNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
                 androidNameLbl.SetTextColor(Android.Graphics.Color.Black);
                 androidNameLbl.Gravity = Android.Views.GravityFlags.Start;
 
                 androidEmailLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
                 androidEmailLbl.Text = $"E-Mail: {user.Email}";
+                androidEmailLbl.Typeface = Constants.COMMONFONT;
                 androidEmailLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
                 androidEmailLbl.SetTextColor(Android.Graphics.Color.Black);
                 androidEmailLbl.Gravity = Android.Views.GravityFlags.Start;
 
                 androidBeltLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
                 androidBeltLbl.Text = $"Belt: {user.Belt}";
+                androidBeltLbl.Typeface = Constants.COMMONFONT;
                 androidBeltLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
                 androidBeltLbl.SetTextColor(Android.Graphics.Color.Black);
                 androidBeltLbl.Gravity = Android.Views.GravityFlags.Start;
 
                 androidSecretQuestionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
                 androidSecretQuestionLbl.Text = $"Secret Question: {user.SecretQuestion}";
+                androidSecretQuestionLbl.Typeface = Constants.COMMONFONT;
                 androidSecretQuestionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
                 androidSecretQuestionLbl.Gravity = Android.Views.GravityFlags.Start;
 
                 androidSecretQuestionAnswerLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
                 androidSecretQuestionAnswerLbl.Text = $"Answer: {user.SecretQuestionAnswer}";
+                androidSecretQuestionAnswerLbl.Typeface = Constants.COMMONFONT;
                 androidSecretQuestionAnswerLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
                 androidSecretQuestionAnswerLbl.Gravity = Android.Views.GravityFlags.Start;
             }

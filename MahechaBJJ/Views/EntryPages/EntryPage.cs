@@ -113,7 +113,7 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
             androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidLoginBtn.Text = "Login";
-            //androidLoginBtn.Typeface = Constants.COMMONFONT;
+            androidLoginBtn.Typeface = Constants.COMMONFONT;
             androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLoginBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -122,7 +122,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidSignUpBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidSignUpBtn.Text = "Sign Up";
-            //androidSignUpBtn.Typeface = Constants.COMMONFONT;
+            androidSignUpBtn.Typeface = Constants.COMMONFONT;
             androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSignUpBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidSignUpBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -131,7 +131,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidBlogBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidBlogBtn.Text = "Learn More";
-            //androidBlogBtn.Typeface = Constants.COMMONFONT;
+            androidBlogBtn.Typeface = Constants.COMMONFONT;
             androidBlogBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidBlogBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidBlogBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -140,7 +140,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             androidRestoreBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidRestoreBtn.Text = "Restore Packages";
-            //androidRestoreBtn.Typeface = Constants.COMMONFONT;
+            androidRestoreBtn.Typeface = Constants.COMMONFONT;
             androidRestoreBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidRestoreBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidRestoreBtn.SetTextColor(Android.Graphics.Color.Black);

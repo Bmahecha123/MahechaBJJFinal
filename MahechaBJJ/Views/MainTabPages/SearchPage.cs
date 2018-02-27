@@ -202,6 +202,7 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
             androidLoadBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidLoadBtn.Text = "Load More...";
+            androidLoadBtn.Typeface = Constants.COMMONFONT;
             androidLoadBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLoadBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
             androidLoadBtn.SetTextColor(Android.Graphics.Color.Black);
@@ -248,6 +249,7 @@ namespace MahechaBJJ.Views
 					videoLbl.FontFamily = "AmericanTypewriter-Bold";
 #endif
 #if __ANDROID__
+                    videoLbl.FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt";
                     videoLbl.TextColor = Color.AntiqueWhite;
                     videoLbl.FontAttributes = FontAttributes.Bold;
 #endif

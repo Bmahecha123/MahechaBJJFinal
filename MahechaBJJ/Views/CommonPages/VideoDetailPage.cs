@@ -124,6 +124,7 @@ namespace MahechaBJJ.Views
 #if __ANDROID__
             androidVideoNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidVideoNameLbl.Text = videoTechnique.name;
+            androidVideoNameLbl.Typeface = Constants.COMMONFONT;
             androidVideoNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidVideoNameLbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
             androidVideoNameLbl.Gravity = Android.Views.GravityFlags.Center;
@@ -131,12 +132,14 @@ namespace MahechaBJJ.Views
 
             androidVideoDescriptionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidVideoDescriptionLbl.Text = videoTechnique.description;
+            androidVideoDescriptionLbl.Typeface = Constants.COMMONFONT;
             androidVideoDescriptionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
             androidVideoDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
             androidVideoDescriptionLbl.Gravity = Android.Views.GravityFlags.Start;
 
             androidPlayBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidPlayBtn.Text = "Play";
+            androidPlayBtn.Typeface = Constants.COMMONFONT;
             androidPlayBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidPlayBtn.SetTextColor(Android.Graphics.Color.Black);
             androidPlayBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
@@ -151,6 +154,7 @@ namespace MahechaBJJ.Views
 
             androidAddBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidAddBtn.Text = "+";
+            androidAddBtn.Typeface = Constants.COMMONFONT;
             androidAddBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidAddBtn.SetTextColor(Android.Graphics.Color.Black);
             androidAddBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
@@ -165,6 +169,7 @@ namespace MahechaBJJ.Views
 
             androidQualityBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidQualityBtn.Text = "SD";
+            androidQualityBtn.Typeface = Constants.COMMONFONT;
             androidQualityBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidQualityBtn.SetTextColor(Android.Graphics.Color.Black);
             androidQualityBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
