@@ -167,9 +167,9 @@ namespace MahechaBJJ.Views.SignUpPages
             androidSummaryLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidSummaryLbl.Text = "Summary";
             androidSummaryLbl.Typeface = Constants.COMMONFONT;
-            androidSummaryLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidSummaryLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
             androidSummaryLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidSummaryLbl.Gravity = Android.Views.GravityFlags.Center;
+            androidSummaryLbl.Gravity = Android.Views.GravityFlags.Start;
             androidSummaryLbl.SetTypeface(androidSummaryLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
 
             androidPackageLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
@@ -206,9 +206,9 @@ namespace MahechaBJJ.Views.SignUpPages
                 androidUserDetailsLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
                 androidUserDetailsLbl.Text = "User Details";
                 androidUserDetailsLbl.Typeface = Constants.COMMONFONT;
-                androidUserDetailsLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+                androidUserDetailsLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
                 androidUserDetailsLbl.SetTextColor(Android.Graphics.Color.Black);
-                androidUserDetailsLbl.Gravity = Android.Views.GravityFlags.Center;
+                androidUserDetailsLbl.Gravity = Android.Views.GravityFlags.Start;
                 androidUserDetailsLbl.SetTypeface(androidUserDetailsLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
 
                 androidNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
@@ -236,12 +236,14 @@ namespace MahechaBJJ.Views.SignUpPages
                 androidSecretQuestionLbl.Text = $"Secret Question: {user.SecretQuestion}";
                 androidSecretQuestionLbl.Typeface = Constants.COMMONFONT;
                 androidSecretQuestionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+                androidSecretQuestionLbl.SetTextColor(Android.Graphics.Color.Black);
                 androidSecretQuestionLbl.Gravity = Android.Views.GravityFlags.Start;
 
                 androidSecretQuestionAnswerLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
                 androidSecretQuestionAnswerLbl.Text = $"Answer: {user.SecretQuestionAnswer}";
                 androidSecretQuestionAnswerLbl.Typeface = Constants.COMMONFONT;
                 androidSecretQuestionAnswerLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+                androidSecretQuestionAnswerLbl.SetTextColor(Android.Graphics.Color.Black);
                 androidSecretQuestionAnswerLbl.Gravity = Android.Views.GravityFlags.Start;
             }
 #endif
@@ -509,7 +511,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 {
                     RowDefinitions = new RowDefinitionCollection
                 {
-                    new RowDefinition { Height = new GridLength(6, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(9, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
                 };
@@ -530,6 +532,8 @@ namespace MahechaBJJ.Views.SignUpPages
                         androidSecretQuestionAnswerLbl.ToView()
                 }
                 };
+                stackLayout.VerticalOptions = LayoutOptions.CenterAndExpand;
+                stackLayout.HorizontalOptions = LayoutOptions.CenterAndExpand;
                 scrollView = new ScrollView
                 {
                     Content = stackLayout,

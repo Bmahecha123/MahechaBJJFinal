@@ -235,6 +235,8 @@ namespace MahechaBJJ.Views.BlogPages
                     blogLbl.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
                     blogLbl.LineBreakMode = LineBreakMode.WordWrap;
                     blogLbl.FontAttributes = FontAttributes.Bold;
+                    blogLbl.FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt";
+
 #endif
 #if __IOS__
                     blogLbl.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));

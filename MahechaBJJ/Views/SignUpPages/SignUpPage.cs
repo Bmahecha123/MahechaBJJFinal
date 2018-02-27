@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 #if __ANDROID__
 using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
+using Android.Text.Method;
 #endif
 
 namespace MahechaBJJ.Views.SignUpPages
@@ -331,7 +332,7 @@ namespace MahechaBJJ.Views.SignUpPages
             androidBeltLbl.Typeface = Constants.COMMONFONT;
             androidBeltLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidBeltLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidBeltLbl.Gravity = Android.Views.GravityFlags.Center;
+            androidBeltLbl.Gravity = Android.Views.GravityFlags.Start;
 
             androidEmailAddressEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidEmailAddressEntry.Hint = "E-Mail Address";
@@ -348,13 +349,15 @@ namespace MahechaBJJ.Views.SignUpPages
             androidPassWordEntry.SetTextColor(Android.Graphics.Color.Black);
             androidPassWordEntry.Gravity = Android.Views.GravityFlags.Start;
             androidPassWordEntry.InputType = Android.Text.InputTypes.TextVariationPassword;
+            androidPassWordEntry.TransformationMethod = new PasswordTransformationMethod();
+
 
             androidSecretQuestionsLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidSecretQuestionsLbl.Text = "Secret Questions";
             androidSecretQuestionsLbl.Typeface = Constants.COMMONFONT;
             androidSecretQuestionsLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidSecretQuestionsLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidSecretQuestionsLbl.Gravity = Android.Views.GravityFlags.Center;
+            androidSecretQuestionsLbl.Gravity = Android.Views.GravityFlags.Start;
 
             androidSecretQuestionEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidSecretQuestionEntry.Hint = "Answer for your own security!";
@@ -401,7 +404,8 @@ namespace MahechaBJJ.Views.SignUpPages
                 await Validate();
                 ToggleButtons();
             };
-            backBtn.Clicked += async (object sender, EventArgs e) => {
+            backBtn.Clicked += async (object sender, EventArgs e) =>
+            {
                 ToggleButtons();
                 await Navigation.PopModalAsync();
                 ToggleButtons();
@@ -544,7 +548,7 @@ namespace MahechaBJJ.Views.SignUpPages
             if (this.hasPackage)
             {
 #if __ANDROID__
-                if (!string.IsNullOrWhiteSpace(androidNameEntry.Text)|| !string.IsNullOrWhiteSpace(androidEmailAddressEntry.Text) || !string.IsNullOrWhiteSpace(androidPassWordEntry.Text)
+                if (!string.IsNullOrWhiteSpace(androidNameEntry.Text) || !string.IsNullOrWhiteSpace(androidEmailAddressEntry.Text) || !string.IsNullOrWhiteSpace(androidPassWordEntry.Text)
                     || !string.IsNullOrWhiteSpace(androidSecretQuestionEntry.Text))
 #endif
 #if __IOS__
@@ -610,6 +614,7 @@ namespace MahechaBJJ.Views.SignUpPages
         private void CreateUser()
         {
             user = new User();
+#if __IOS__
             user.Name = nameEntry.Text;
             user.Email = emailAddressEntry.Text;
             Packages packages = new Packages();
@@ -630,6 +635,29 @@ namespace MahechaBJJ.Views.SignUpPages
             user.SecretQuestion = secretQuestionPicker.SelectedItem.ToString();
             user.SecretQuestionAnswer = secretQuestionEntry.Text.ToLower();
             user.Belt = beltPicker.SelectedItem.ToString();
+#endif
+#if __ANDROID__
+            user.Name = androidNameEntry.Text;
+            user.Email = androidEmailAddressEntry.Text;
+            Packages packages = new Packages();
+            if (package == Package.Gi)
+            {
+                packages.GiJiuJitsu = true;
+            }
+            else if (package == Package.NoGi)
+            {
+                packages.NoGiJiuJitsu = true;
+            }
+            else
+            {
+                packages.GiAndNoGiJiuJitsu = true;
+            }
+            user.Packages = packages;
+            user.Password = androidPassWordEntry.Text;
+            user.SecretQuestion = secretQuestionPicker.SelectedItem.ToString();
+            user.SecretQuestionAnswer = androidSecretQuestionEntry.Text.ToLower();
+            user.Belt = beltPicker.SelectedItem.ToString();
+#endif
         }
 
 #if __ANDROID__
