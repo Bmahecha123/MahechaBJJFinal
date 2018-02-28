@@ -300,7 +300,7 @@ namespace MahechaBJJ.Views.EntryPages
         private async Task Login(object sender, EventArgs e)
         {
 #if __ANDROID__
-            user = await _baseViewModel.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, androidEmailEntry.Text.ToLower(), androidPasswordEntry.Text.ToLower());
+            user = await _baseViewModel.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, androidEmailEntry.Text.ToLower(), androidPasswordEntry.Text);
 #endif
 #if __IOS__
             user = await _baseViewModel.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, emailEntry.Text.ToLower(), passwordEntry.Text);

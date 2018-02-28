@@ -178,7 +178,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidPlaylistDescriptionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidPlaylistDescriptionLbl.Text = userPlaylist.Description;
             androidPlaylistDescriptionLbl.Typeface = Constants.COMMONFONT;
-            androidPlaylistDescriptionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidPlaylistDescriptionLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidPlaylistDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
             androidPlaylistDescriptionLbl.Gravity = Android.Views.GravityFlags.Center;
 
