@@ -7,6 +7,7 @@ using MahechaBJJ.Views.CommonPages;
 using Xamarin.Forms;
 #if __ANDROID__
 using MahechaBJJ.Droid;
+using Android.Graphics.Drawables;
 using Xamarin.Forms.Platform.Android;
 using Android.Text.Method;
 #endif
@@ -179,11 +180,17 @@ namespace MahechaBJJ.Views.EntryPages
             };
 
 #if __ANDROID__
+            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
+            pd.SetCornerRadius(100);
+
+            var pdTwo = new PaintDrawable(Android.Graphics.Color.Rgb(124, 37, 41));
+            pdTwo.SetCornerRadius(100);
+
             androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidLoginBtn.Text = "Login";
             androidLoginBtn.Typeface = Constants.COMMONFONT;
             androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidLoginBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidLoginBtn.SetBackground(pd);
             androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
             androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
             androidLoginBtn.SetAllCaps(false);
@@ -192,7 +199,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidForgotPasswordBtn.Text = "?";
             androidForgotPasswordBtn.Typeface = Constants.COMMONFONT;
             androidForgotPasswordBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidForgotPasswordBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(124, 37, 41));
+            androidForgotPasswordBtn.SetBackground(pdTwo);
             androidForgotPasswordBtn.SetTextColor(Android.Graphics.Color.Black);
             androidForgotPasswordBtn.Gravity = Android.Views.GravityFlags.Center;
             androidForgotPasswordBtn.SetAllCaps(false);

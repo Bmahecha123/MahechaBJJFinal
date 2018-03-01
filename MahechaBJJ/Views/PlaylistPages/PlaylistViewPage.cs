@@ -268,7 +268,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 playlistLbl.FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt";
                 playlistLbl.TextColor = Color.Black;
                 playlistLbl.FontAttributes = FontAttributes.Bold;
-                playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+                playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 2;
 #endif
 
                 playlistFrame = new Frame();

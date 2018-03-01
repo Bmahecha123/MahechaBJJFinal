@@ -6,6 +6,7 @@ using MahechaBJJ.ViewModel.CommonPages;
 using Xamarin.Forms;
 #if __ANDROID__
 using MahechaBJJ.Droid;
+using Android.Graphics.Drawables;
 using Xamarin.Forms.Platform.Android;
 #endif
 
@@ -72,6 +73,9 @@ namespace MahechaBJJ.Views.CommonPages
             };
 
 #if __ANDROID__
+            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
+            pd.SetCornerRadius(100);
+
             outerGrid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection
@@ -123,7 +127,7 @@ namespace MahechaBJJ.Views.CommonPages
             androidNextBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidNextBtn.SetTextColor(Android.Graphics.Color.Black);
             androidNextBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidNextBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(124, 37, 41));
+            androidNextBtn.SetBackground(pd);
             androidNextBtn.Click += async (object sender, EventArgs e) => {
                 ToggleButtons();
                 await CheckIfUserExists(sender, e);

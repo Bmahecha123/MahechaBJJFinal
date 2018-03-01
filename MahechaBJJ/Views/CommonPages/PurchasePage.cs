@@ -9,6 +9,7 @@ using Xamarin.Forms;
 #if __ANDROID__
 using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
+using Android.Graphics.Drawables;
 #endif
 
 namespace MahechaBJJ.Views.CommonPages
@@ -215,7 +216,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             giScrollView = new ScrollView
             {
-                BackgroundColor = Color.FromRgb(58, 93, 174),
+                BackgroundColor = Color.FromRgb(57, 172, 166),
                 Content = giStackLayout,
 #if __ANDROID__
                 IsClippedToBounds = true
@@ -329,7 +330,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             noGiScrollView = new ScrollView
             {
-                BackgroundColor = Color.FromRgb(58, 93, 174),
+                BackgroundColor = Color.FromRgb(57, 172, 166),
                 Content = noGiStackLayout,
 #if __ANDROID__
                 IsClippedToBounds = true,
@@ -386,10 +387,13 @@ namespace MahechaBJJ.Views.CommonPages
             };
 
 #if __ANDROID__
+            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
+            pd.SetCornerRadius(100);
+
             androidPurchaseBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidPurchaseBtn.Text = "Purchase";
             androidPurchaseBtn.Typeface = Constants.COMMONFONT;
-            androidPurchaseBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidPurchaseBtn.SetBackground(pd);
             androidPurchaseBtn.SetTextColor(Android.Graphics.Color.Black);
             androidPurchaseBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidPurchaseBtn.Gravity = Android.Views.GravityFlags.Center;

@@ -10,6 +10,7 @@ using Xamarin.Auth;
 using Xamarin.Forms;
 #if __ANDROID__
 using MahechaBJJ.Droid;
+using Android.Graphics.Drawables;
 using Xamarin.Forms.Platform.Android;
 #endif
 
@@ -142,6 +143,9 @@ namespace MahechaBJJ.Views
             };
 
 #if __ANDROID__
+            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
+            pd.SetCornerRadius(100);
+
             androidVideo1Lbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidVideo1Lbl.Text = "Spider Guard Stuff!";
             androidVideo1Lbl.Typeface = Constants.COMMONFONT;
@@ -203,7 +207,7 @@ namespace MahechaBJJ.Views
             androidAddPlaylistBtn.Text = "Create";
             androidAddPlaylistBtn.Typeface = Constants.COMMONFONT;
             androidAddPlaylistBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidAddPlaylistBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidAddPlaylistBtn.SetBackground(pd);
             androidAddPlaylistBtn.SetTextColor(Android.Graphics.Color.Black);
             androidAddPlaylistBtn.Gravity = Android.Views.GravityFlags.Center;
             androidAddPlaylistBtn.SetAllCaps(false);
@@ -218,7 +222,7 @@ namespace MahechaBJJ.Views
             androidViewPlaylistBtn.Text = "View";
             androidViewPlaylistBtn.Typeface = Constants.COMMONFONT;
             androidViewPlaylistBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidViewPlaylistBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidViewPlaylistBtn.SetBackground(pd);
             androidViewPlaylistBtn.SetTextColor(Android.Graphics.Color.Black);
             androidViewPlaylistBtn.Gravity = Android.Views.GravityFlags.Center;
             androidViewPlaylistBtn.SetAllCaps(false);

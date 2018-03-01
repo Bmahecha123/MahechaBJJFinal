@@ -6,6 +6,7 @@ using MahechaBJJ.Resources;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 #if __ANDROID__
+using Android.Graphics.Drawables;
 using Xamarin.Forms.Platform.Android;
 using MahechaBJJ.Droid;
 using Android.Text.Method;
@@ -200,6 +201,9 @@ namespace MahechaBJJ.Views.CommonPages
             };
 
 #if __ANDROID__
+            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
+            pd.SetCornerRadius(100);
+
             innerGrid = new Grid();
             innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
             innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
@@ -250,7 +254,7 @@ namespace MahechaBJJ.Views.CommonPages
             androidSubmitBtn.Typeface = Constants.COMMONFONT;
             androidSubmitBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSubmitBtn.SetTextColor(Android.Graphics.Color.Black);
-            androidSubmitBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidSubmitBtn.SetBackground(pd);
             androidSubmitBtn.SetAllCaps(false);
             androidSubmitBtn.Click += async (object sender, EventArgs e) =>
             {

@@ -166,7 +166,7 @@ namespace MahechaBJJ.Views.SignUpPages
             giScrollView = new ScrollView
             {
                 Content = giStackLayout,
-                BackgroundColor = Color.FromRgb(58, 93, 174),
+                BackgroundColor = Color.FromRgb(57, 172, 166),
 #if __ANDROID__
                 IsClippedToBounds = true,
                 Padding = new Thickness(5, 5, 5, 0)
@@ -287,7 +287,7 @@ namespace MahechaBJJ.Views.SignUpPages
             noGiScrollView = new ScrollView
             {
                 Content = noGiStackLayout,
-                BackgroundColor = Color.FromRgb(58, 93, 174),
+                BackgroundColor = Color.FromRgb(57, 172, 166),
 #if __ANDROID__
                 IsClippedToBounds = true,
                 Padding = new Thickness(5, 5, 5, 0)
@@ -409,7 +409,7 @@ namespace MahechaBJJ.Views.SignUpPages
             giAndNoGiScrollView = new ScrollView
             {
                 Content = giAndNoGiStackLayout,
-                BackgroundColor = Color.FromRgb(58, 93, 174),
+                BackgroundColor = Color.FromRgb(57, 172, 166),
 #if __ANDROID__
                 IsClippedToBounds = true,
                 Padding = new Thickness(5, 5, 5, 0)

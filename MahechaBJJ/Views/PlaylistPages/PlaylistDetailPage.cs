@@ -9,6 +9,7 @@ using Xamarin.Auth;
 using Xamarin.Forms;
 #if __ANDROID__
 using Xamarin.Forms.Platform.Android;
+using Android.Graphics.Drawables;
 using MahechaBJJ.Droid;
 #endif
 
@@ -168,6 +169,9 @@ namespace MahechaBJJ.Views.PlaylistPages
             };
 
 #if __ANDROID__
+            var pd = new PaintDrawable(Android.Graphics.Color.Red);
+            pd.SetCornerRadius(100);
+
             androidPlaylistNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidPlaylistNameLbl.Text = userPlaylist.Name;
             androidPlaylistNameLbl.Typeface = Constants.COMMONFONT;
@@ -189,7 +193,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidDeleteBtn.SetTextColor(Android.Graphics.Color.Black);
             androidDeleteBtn.Gravity = Android.Views.GravityFlags.Center;
             androidDeleteBtn.SetAllCaps(false);
-            androidDeleteBtn.SetBackgroundColor(Android.Graphics.Color.Red);
+            androidDeleteBtn.SetBackground(pd);
             androidDeleteBtn.Click += async (object sender, EventArgs e) =>
             {
                 ToggleButtons();

@@ -9,6 +9,7 @@ using Xamarin.Forms;
 #if __ANDROID__
 using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
+using Android.Graphics.Drawables;
 #endif
 
 namespace MahechaBJJ.Views.SignUpPages
@@ -163,6 +164,8 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 
 #if __ANDROID__
+            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
+            pd.SetCornerRadius(100);
 
             androidSummaryLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidSummaryLbl.Text = "Summary";
@@ -190,7 +193,7 @@ namespace MahechaBJJ.Views.SignUpPages
             androidSignUpBtn.Text = "Sign Up";
             androidSignUpBtn.Typeface = Constants.COMMONFONT;
             androidSignUpBtn.SetTextColor(Android.Graphics.Color.Black);
-            androidSignUpBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidSignUpBtn.SetBackground(pd);
             androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSignUpBtn.Gravity = Android.Views.GravityFlags.Center;
             androidSignUpBtn.Click += async (object sender, EventArgs e) =>

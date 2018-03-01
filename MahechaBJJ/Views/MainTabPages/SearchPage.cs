@@ -10,6 +10,7 @@ using Xamarin.Forms;
 using System.Threading.Tasks;
 #if __ANDROID__
 using Xamarin.Forms.Platform.Android;
+using Android.Graphics.Drawables;
 using MahechaBJJ.Droid;
 #endif
 
@@ -200,11 +201,14 @@ namespace MahechaBJJ.Views
             };
 
 #if __ANDROID__
+            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
+            pd.SetCornerRadius(100);
+
             androidLoadBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidLoadBtn.Text = "Load More...";
             androidLoadBtn.Typeface = Constants.COMMONFONT;
             androidLoadBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidLoadBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidLoadBtn.SetBackground(pd);
             androidLoadBtn.SetTextColor(Android.Graphics.Color.Black);
             androidLoadBtn.Gravity = Android.Views.GravityFlags.Center;
             androidLoadBtn.SetAllCaps(false);

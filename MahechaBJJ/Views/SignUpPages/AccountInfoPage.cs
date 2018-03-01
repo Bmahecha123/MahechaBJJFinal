@@ -2,6 +2,7 @@
 #if __ANDROID__
 using MahechaBJJ.Droid;
 using Xamarin.Forms.Platform.Android;
+using Android.Graphics.Drawables;
 #endif
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
@@ -124,11 +125,14 @@ namespace MahechaBJJ.Views.SignUpPages
             };
 
 #if __ANDROID__
+            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
+            pd.SetCornerRadius(100);
+
             androidNoAccountBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidNoAccountBtn.Text = "No Account";
             androidNoAccountBtn.Typeface = Constants.COMMONFONT;
             androidNoAccountBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidNoAccountBtn.SetBackgroundColor(Android.Graphics.Color.DarkRed);
+            androidNoAccountBtn.SetBackground(pd);
             androidNoAccountBtn.SetTextColor(Android.Graphics.Color.Black);
             androidNoAccountBtn.Gravity = Android.Views.GravityFlags.Center;
             androidNoAccountBtn.Click += async (object sender, EventArgs e) =>
@@ -143,7 +147,7 @@ namespace MahechaBJJ.Views.SignUpPages
             androidAccountBtn.Text = "Create";
             androidAccountBtn.Typeface = Constants.COMMONFONT;
             androidAccountBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidAccountBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidAccountBtn.SetBackground(pd);
             androidAccountBtn.SetTextColor(Android.Graphics.Color.Black);
             androidAccountBtn.Gravity = Android.Views.GravityFlags.Center;
             androidAccountBtn.Click += async (object sender, EventArgs e) =>
@@ -191,7 +195,7 @@ namespace MahechaBJJ.Views.SignUpPages
             accountFrame = new Frame();
             accountFrame.OutlineColor = Color.Black;
             accountFrame.HasShadow = false;
-            accountFrame.BackgroundColor = Color.FromRgb(58, 93, 174);
+            accountFrame.BackgroundColor = Color.FromRgb(57, 172, 166);
             accountFrame.Content = accountScrollView;
 #if __ANDROID__
             innerGrid.Children.Add(accountFrame, 0, 0);

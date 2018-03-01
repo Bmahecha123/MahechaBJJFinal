@@ -10,6 +10,7 @@ using Xamarin.Auth;
 using Xamarin.Forms;
 #if __ANDROID__
 using Xamarin.Forms.Platform.Android;
+using Android.Graphics.Drawables;
 using MahechaBJJ.Droid;
 #endif
 
@@ -36,6 +37,7 @@ namespace MahechaBJJ.Views.PlaylistPages
         private Video videoTechnique;
         private PlayList userPlaylist;
 #if __ANDROID__
+        private Grid buttonGrid;
         private Android.Widget.TextView androidVideoNameLbl;
         private Android.Widget.TextView androidVideoDescriptionLbl;
         private Android.Widget.Button androidPlayBtn;
@@ -74,17 +76,13 @@ namespace MahechaBJJ.Views.PlaylistPages
             var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 
             //view objects
+#if __IOS__
             innerGrid = new Grid
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
                     new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
-                    #if __ANDROID__
-                    new RowDefinition { Height = new GridLength(2, GridUnitType.Star)},
-                    #endif
-#if __IOS__
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-#endif
                     new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
@@ -97,6 +95,27 @@ namespace MahechaBJJ.Views.PlaylistPages
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
                 }
             };
+#endif
+#if __ANDROID__
+            innerGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(4, GridUnitType.Star)}
+                }            
+            };
+            buttonGrid = new Grid
+            {
+                ColumnDefinitions = new ColumnDefinitionCollection
+                {
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
+                }
+            };
+#endif
 
             outerGrid = new Grid
             {
@@ -107,6 +126,12 @@ namespace MahechaBJJ.Views.PlaylistPages
             };
 
 #if __ANDROID__
+            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
+            pd.SetCornerRadius(100);
+
+            var pdRed = new PaintDrawable(Android.Graphics.Color.Red);
+            pdRed.SetCornerRadius(100);
+
             androidVideoNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidVideoNameLbl.Text = video.Name;
             androidVideoNameLbl.Typeface = Constants.COMMONFONT;
@@ -127,7 +152,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidPlayBtn.Typeface = Constants.COMMONFONT;
             androidPlayBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidPlayBtn.SetTextColor(Android.Graphics.Color.Black);
-            androidPlayBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidPlayBtn.SetBackground(pd);
             androidPlayBtn.Gravity = Android.Views.GravityFlags.Center;
             androidPlayBtn.SetAllCaps(false);
             androidPlayBtn.Click += async (object sender, EventArgs e) =>
@@ -142,7 +167,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidDeleteBtn.Typeface = Constants.COMMONFONT;
             androidDeleteBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidDeleteBtn.SetTextColor(Android.Graphics.Color.Black);
-            androidDeleteBtn.SetBackgroundColor(Android.Graphics.Color.Red);
+            androidDeleteBtn.SetBackground(pdRed);
             androidDeleteBtn.Gravity = Android.Views.GravityFlags.Center;
             androidDeleteBtn.SetAllCaps(false);
             androidDeleteBtn.Click += async (object sender, EventArgs e) =>
@@ -157,7 +182,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidQualityBtn.Typeface = Constants.COMMONFONT;
             androidQualityBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidQualityBtn.SetTextColor(Android.Graphics.Color.Black);
-            androidQualityBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidQualityBtn.SetBackground(pd);
             androidQualityBtn.Gravity = Android.Views.GravityFlags.Center;
             androidQualityBtn.SetAllCaps(false);
             androidQualityBtn.Click += async (object sender, EventArgs e) =>
@@ -185,26 +210,15 @@ namespace MahechaBJJ.Views.PlaylistPages
                 BorderWidth = 3,
                 BorderColor = Color.Black,
                 TextColor = Color.Black,
-#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
                 FontSize = btnSize * 2,
                 BackgroundColor = Color.FromRgb(124, 37, 41)
             };
             videoNameLbl = new Label
             {
                 Text = video.Name,
-#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = lblSize,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
-#endif
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.White
@@ -213,17 +227,11 @@ namespace MahechaBJJ.Views.PlaylistPages
             videoDescription = new Label
             {
                 Text = video.Description,
-#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
                 VerticalTextAlignment = TextAlignment.Start,
                 HorizontalTextAlignment = TextAlignment.Start,
                 FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
                 LineBreakMode = LineBreakMode.WordWrap,
-
             };
 
             videoDescriptionScrollView = new ScrollView
@@ -260,15 +268,8 @@ namespace MahechaBJJ.Views.PlaylistPages
                 BorderWidth = 3,
                 BorderColor = Color.Black,
                 TextColor = Color.Black,
-#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-                Margin = -5,
-#endif
                 BackgroundColor = Color.FromRgb(58, 93, 174)
             };
             deleteBtn = new Button
@@ -276,17 +277,9 @@ namespace MahechaBJJ.Views.PlaylistPages
                 BorderWidth = 3,
                 BorderColor = Color.Black,
                 TextColor = Color.White,
-#if __IOS__
                 Text = "Delete From Playlist",
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 1.5,
-#endif
-#if __ANDROID__
-                Text = "D",
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-                Margin = -5,
-#endif
                 BackgroundColor = Color.Red
             };
 
@@ -296,15 +289,8 @@ namespace MahechaBJJ.Views.PlaylistPages
                 BorderWidth = 3,
                 BorderColor = Color.Black,
                 TextColor = Color.Black,
-#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-                Margin = -5,
-#endif
                 BackgroundColor = Color.FromRgb(58, 93, 174)
             };
 
@@ -334,19 +320,16 @@ namespace MahechaBJJ.Views.PlaylistPages
 
 #if __ANDROID__
             //building grid
-            innerGrid.Children.Add(videoFrame, 0, 0);
-            Grid.SetColumnSpan(videoFrame, 4);
-            innerGrid.Children.Add(contentViewNameLbl, 0, 0);
-            Grid.SetColumnSpan(contentViewNameLbl, 4);
-            innerGrid.Children.Add(contentViewPlayBtn, 0, 1);
-            innerGrid.Children.Add(contentViewQualityBtn, 3, 1);
+            buttonGrid.Children.Add(contentViewPlayBtn, 0, 0);
+            buttonGrid.Children.Add(contentViewDeleteBtn, 1, 0);
+            buttonGrid.Children.Add(contentViewQualityBtn, 2, 0);
 
-            Grid.SetColumnSpan(contentViewPlayBtn, 2);
-            innerGrid.Children.Add(contentViewDeleteBtn, 2, 1);
+            innerGrid.Children.Add(videoFrame, 0, 0);
+            innerGrid.Children.Add(contentViewNameLbl, 0, 0);
+            innerGrid.Children.Add(buttonGrid, 0, 1);
+
             //XAMARIN BUG - ADDING SCROLLVIEW BEFORE OTHER ELEMENTS WILL CAUSE CONTENTS TO OVERFLOW.. ADD TO END OF LAYOUT..
             innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-            Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-            Grid.SetRowSpan(videoDescriptionScrollView, 3);
 #endif
 #if __IOS__
             //building grid
@@ -378,12 +361,14 @@ namespace MahechaBJJ.Views.PlaylistPages
             ToggleButtons();
         }
 
+#if __ANDROID__
         public async Task PlayAndroidVideo(object sender, EventArgs e)
         {
-#if __ANDROID__
+
             await Navigation.PushModalAsync(new AndroidVideoPage(videoUrl));
-#endif
         }
+#endif
+
 
         public async Task DeleteFromPlaylist(object sender, EventArgs e)
         {
@@ -483,12 +468,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             if (width > height)
             {
-#if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
                 Padding = new Thickness(10, 10, 10, 10);
-#endif
+
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
@@ -518,12 +499,8 @@ namespace MahechaBJJ.Views.PlaylistPages
             }
             else
             {
-#if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
                 Padding = new Thickness(10, 30, 10, 10);
-#endif
+
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });

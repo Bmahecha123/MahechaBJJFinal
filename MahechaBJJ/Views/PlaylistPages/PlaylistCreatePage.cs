@@ -10,6 +10,7 @@ using Xamarin.Forms;
 
 #if __ANDROID__
 using Xamarin.Forms.Platform.Android;
+using Android.Graphics.Drawables;
 using MahechaBJJ.Droid;
 #endif
 
@@ -201,7 +202,8 @@ namespace MahechaBJJ.Views.PlaylistPages
             };
 
 #if __ANDROID__
-
+            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
+            pd.SetCornerRadius(100);
 
             androidPlaylistNameEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidPlaylistNameEntry.Hint = "Enter Name";
@@ -224,7 +226,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidCreateBtn.Typeface = Constants.COMMONFONT;
             androidCreateBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidCreateBtn.SetTextColor(Android.Graphics.Color.Black);
-            androidCreateBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidCreateBtn.SetBackground(pd);
             androidCreateBtn.Gravity = Android.Views.GravityFlags.Center;
             androidCreateBtn.SetAllCaps(false);
             androidCreateBtn.Click += async (object sender, EventArgs e) =>

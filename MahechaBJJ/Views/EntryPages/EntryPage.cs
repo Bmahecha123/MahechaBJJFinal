@@ -15,6 +15,7 @@ using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.SignUpPages;
 #if __ANDROID__
+using Android.Graphics.Drawables;
 using Xamarin.Forms.Platform.Android;
 using MahechaBJJ.Droid;
 #endif
@@ -111,11 +112,14 @@ namespace MahechaBJJ.Views.EntryPages
             restoreBtn.FontSize = size * 1.5;
 
 #if __ANDROID__
+            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
+            pd.SetCornerRadius(100);
+
             androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidLoginBtn.Text = "Login";
             androidLoginBtn.Typeface = Constants.COMMONFONT;
             androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidLoginBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidLoginBtn.SetBackground(pd);
             androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
             androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
             androidLoginBtn.SetAllCaps(false);
@@ -124,7 +128,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidSignUpBtn.Text = "Sign Up";
             androidSignUpBtn.Typeface = Constants.COMMONFONT;
             androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidSignUpBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidSignUpBtn.SetBackground(pd);
             androidSignUpBtn.SetTextColor(Android.Graphics.Color.Black);
             androidSignUpBtn.Gravity = Android.Views.GravityFlags.Center;
             androidSignUpBtn.SetAllCaps(false);
@@ -133,7 +137,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidBlogBtn.Text = "Learn More";
             androidBlogBtn.Typeface = Constants.COMMONFONT;
             androidBlogBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidBlogBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidBlogBtn.SetBackground(pd);
             androidBlogBtn.SetTextColor(Android.Graphics.Color.Black);
             androidBlogBtn.Gravity = Android.Views.GravityFlags.Center;
             androidBlogBtn.SetAllCaps(false);
@@ -142,7 +146,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidRestoreBtn.Text = "Restore Packages";
             androidRestoreBtn.Typeface = Constants.COMMONFONT;
             androidRestoreBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidRestoreBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
+            androidRestoreBtn.SetBackground(pd);
             androidRestoreBtn.SetTextColor(Android.Graphics.Color.Black);
             androidRestoreBtn.Gravity = Android.Views.GravityFlags.Center;
             androidRestoreBtn.SetAllCaps(false);
