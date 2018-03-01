@@ -304,6 +304,7 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/mipmap-xxxhdpi/mahechabjj.png
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/R.cs.flag
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/uploadflags.txt
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/MahechaBJJ.Droid.csprojResolveAssemblyReference.cache
 bin/Debug/Mono.Android.pdb
 obj/Debug/linksrc/FormsViewGroup.dll.mdb
 obj/Debug/linksrc/Plugin.InAppBilling.dll.mdb

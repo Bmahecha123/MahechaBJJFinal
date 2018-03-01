@@ -513,6 +513,23 @@ namespace MahechaBJJ.Views
                     Grid.SetColumnSpan(video2Lbl, 2);
                     Grid.SetRowSpan(video2Lbl, 3);
 #endif
+#if __ANDROID__
+                    innerGrid.Children.Clear();
+                    innerGrid.Children.Add(contenViewWhatsNewLbl, 0, 0);
+                    Grid.SetColumnSpan(contenViewWhatsNewLbl, 2);
+                    innerGrid.Children.Add(video1Frame, 0, 1);
+                    Grid.SetColumnSpan(video1Frame, 2);
+                    Grid.SetRowSpan(video1Frame, 2);
+                    innerGrid.Children.Add(contentViewVideo1Lbl, 0, 1);
+                    Grid.SetColumnSpan(contentViewVideo1Lbl, 2);
+                    Grid.SetRowSpan(contentViewVideo1Lbl, 2);
+                    innerGrid.Children.Add(video2Frame, 0, 3);
+                    Grid.SetColumnSpan(video2Frame, 2);
+                    Grid.SetRowSpan(video2Frame, 3);
+                    innerGrid.Children.Add(contentViewVideo2Lbl, 0, 3);
+                    Grid.SetColumnSpan(contentViewVideo2Lbl, 2);
+                    Grid.SetRowSpan(contentViewVideo2Lbl, 3);
+#endif
                 }
             }
             else
