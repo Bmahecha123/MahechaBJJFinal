@@ -181,7 +181,7 @@ namespace MahechaBJJ.Views.CommonPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "$19.99",
+                Text = "$19.99 (One Time Purchase)",
                 FontSize = lblSize * 1.5,
                 TextColor = Color.Black,
                 FontAttributes = FontAttributes.Bold
@@ -295,7 +295,7 @@ namespace MahechaBJJ.Views.CommonPages
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
 #endif
-                Text = "$19.99",
+                Text = "$19.99 (One Time Purchase)",
                 FontSize = lblSize * 1.5,
                 TextColor = Color.Black,
                 FontAttributes = FontAttributes.Bold
