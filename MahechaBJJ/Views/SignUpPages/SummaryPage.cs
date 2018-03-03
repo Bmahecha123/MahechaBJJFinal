@@ -599,7 +599,9 @@ namespace MahechaBJJ.Views.SignUpPages
 
         private async Task SignUp()
         {
-            bool purchased = true;
+            bool purchased = false;
+
+            //bool purchased = true;
             if (userPassed)
             {
                 if (await _summaryPageViewModel.UserExist(user))

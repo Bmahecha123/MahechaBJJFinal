@@ -21,6 +21,7 @@ namespace MahechaBJJ.Resources
 
         public static string GETUSER = "user/getUser";
         public static string CREATEUSER = "user/create";
+        public static string EDITUSER = "user/edit";
         public static string FINDUSER = "user/findById/";
         public static string FINDUSERBYEMAIL = "user/findByEmail/";
         public static string FINDPLAYLIST = "user/getplaylist/";

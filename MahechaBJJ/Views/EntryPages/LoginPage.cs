@@ -35,6 +35,7 @@ namespace MahechaBJJ.Views.EntryPages
         private StackLayout stackLayout;
         private StackLayout innerStackLayout;
         private StackLayout buttonLayout;
+        private Package package;
 #if __ANDROID__
         private Android.Widget.Button androidLoginBtn;
         private Android.Widget.Button androidForgotPasswordBtn;
@@ -318,8 +319,56 @@ namespace MahechaBJJ.Views.EntryPages
             }
             else
             {
-                _baseViewModel.SaveCredentials(user);
-                Application.Current.MainPage = new MainTabbedPage(true);
+                bool UserMatchesPackages = await CheckIfUserMatchesPackages(user);
+                if (UserMatchesPackages)
+                {
+                    _baseViewModel.SaveCredentials(user);
+                    Application.Current.MainPage = new MainTabbedPage(true);
+                }
+                else 
+                {
+                    await DisplayAlert("Missing Packages", "Missing packages required to access the content of this account.", "Ok");
+                    await Navigation.PopModalAsync();
+                }
+            }
+        }
+
+        private async Task<bool> CheckIfUserMatchesPackages(User passedUser)
+        {
+            await _baseViewModel.CheckIfUserHasPackage();
+
+            if (_baseViewModel.HasGiPackage && _baseViewModel.HasNoGiPackage)
+            {
+                _baseViewModel.HasGiAndNoGiPackage = true;
+            }
+
+            if (_baseViewModel.HasGiAndNoGiPackage && passedUser.Packages.GiAndNoGiJiuJitsu)
+            {
+                return true;
+            }
+            else if (_baseViewModel.HasGiPackage && _baseViewModel.HasNoGiPackage && passedUser.Packages.GiJiuJitsu && passedUser.Packages.NoGiJiuJitsu)
+            {
+                return true;
+            }
+            else if (_baseViewModel.HasGiPackage && _baseViewModel.HasNoGiPackage && passedUser.Packages.GiJiuJitsu && !passedUser.Packages.NoGiJiuJitsu)
+            {
+                return true;
+            }
+            else if (_baseViewModel.HasGiPackage && _baseViewModel.HasNoGiPackage && !passedUser.Packages.GiJiuJitsu && passedUser.Packages.NoGiJiuJitsu)
+            {
+                return true;
+            }
+            else if (_baseViewModel.HasGiPackage && !_baseViewModel.HasNoGiPackage && passedUser.Packages.GiJiuJitsu && !passedUser.Packages.NoGiJiuJitsu)
+            {
+                return true;
+            }
+            else if (_baseViewModel.HasNoGiPackage && !_baseViewModel.HasGiPackage && passedUser.Packages.NoGiJiuJitsu && !passedUser.Packages.GiJiuJitsu)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

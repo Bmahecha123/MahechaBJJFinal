@@ -20,7 +20,7 @@ namespace MahechaBJJ.Service
         public UserService()
         {
             client = new HttpClient();
-            client.DefaultRequestHeaders.ConnectionClose = true;
+            //client.DefaultRequestHeaders.ConnectionClose = true;
             client.BaseAddress = new Uri(Constants.pivotalHost);
             //client.BaseAddress = new Uri(Constants.localHost);
             timeSpan = new TimeSpan(0, 0, 20);
@@ -78,6 +78,23 @@ namespace MahechaBJJ.Service
                 return null;
             }
 		}
+
+        public async Task<User> UpdateUser(User user)
+        {
+            try 
+            {
+                string jsonObject = JsonConvert.SerializeObject(user);
+                StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PutAsync(Constants.EDITUSER, content);
+                user = JsonConvert.DeserializeObject<User>(await response.Content.ReadAsStringAsync());
+                return user;
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
 
         public async Task<bool> AddPlaylist(PlayList playlist, string id)
         {

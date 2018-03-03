@@ -41,6 +41,7 @@ namespace MahechaBJJ.Views.CommonPages
         private Button backBtn;
         private Button purchaseBtn;
         private Package package;
+        private bool isLoggedIn;
 #if __ANDROID__
         private Android.Widget.TextView androidGiTitle;
         private Android.Widget.TextView androidGiPrice;
@@ -59,12 +60,13 @@ namespace MahechaBJJ.Views.CommonPages
         private ContentView contentViewPurchaseBtn;
 #endif
 
-        public PurchasePage(Package package)
+        public PurchasePage(Package package, bool hasAccount)
         {
             _baseViewModel = new BaseViewModel();
             _purchasePageViewModel = new PurchasePageViewModel();
             account = _baseViewModel.GetAccountInformation();
             this.package = package;
+            this.isLoggedIn = hasAccount;
 #if __ANDROID__
             Padding = new Thickness(5, 5, 5, 5);
 #endif
@@ -476,6 +478,7 @@ namespace MahechaBJJ.Views.CommonPages
         {
             bool purchased = false;
 
+            //bool purchased = true;
             purchased = await _purchasePageViewModel.PurchasePackage(FindPackageName());
 
             if (purchased)
@@ -483,7 +486,7 @@ namespace MahechaBJJ.Views.CommonPages
                 //insert logic for Itunes or Play Store APIS
                 account.Properties.Remove("Package");
                 account.Properties.Add("Package", "GiAndNoGi");
-                _baseViewModel.UpdateCredentials(account);
+                await _baseViewModel.UpdateCredentialsToFullAccess(account, isLoggedIn);
                 await _purchasePageViewModel.Disconnect();
                 await Navigation.PopModalAsync();
             }

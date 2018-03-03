@@ -210,6 +210,13 @@ namespace MahechaBJJ.Views.EntryPages
                 await Navigation.PushModalAsync(new BlogViewPage());
                 ToggleButtons();
             };
+
+            restoreBtn.Clicked += async (sender, e) =>
+            {
+                ToggleButtons();
+                await CheckIfUserHasPackage(sender, e);
+                ToggleButtons();
+            };
 #endif
 
             //building Grid

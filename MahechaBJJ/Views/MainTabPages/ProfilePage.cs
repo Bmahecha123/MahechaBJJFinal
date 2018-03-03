@@ -567,11 +567,11 @@ namespace MahechaBJJ.Views
             }
             else if (account.Properties["Package"].Equals("Gi"))
             {
-                await Navigation.PushModalAsync(new PurchasePage(Package.NoGi));
+                await Navigation.PushModalAsync(new PurchasePage(Package.NoGi, hasAccount));
             }
             else
             {
-                await Navigation.PushModalAsync(new PurchasePage(Package.Gi));
+                await Navigation.PushModalAsync(new PurchasePage(Package.Gi, hasAccount));
             }
         }
 

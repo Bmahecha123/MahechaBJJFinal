@@ -184,14 +184,17 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Xamarin.Forms.Platform.dll
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Xamarin.Forms.Platform.iOS.dll
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Xamarin.Forms.Xaml.dll
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Newtonsoft.Json.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/PCLCrypto.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Xamarin.Auth.pdb
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Validation.xml
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Plugin.InAppBilling.Abstractions.pdb
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Plugin.InAppBilling.Abstractions.xml
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Plugin.InAppBilling.pdb
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Plugin.InAppBilling.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/PInvoke.Windows.Core.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/PInvoke.Kernel32.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/PInvoke.BCrypt.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/PInvoke.NCrypt.xml
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Validation.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Xamarin.Forms.Core.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Xamarin.Forms.Core.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Xamarin.Forms.Core.xml
@@ -199,10 +202,7 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Xamarin.Forms.Xaml.pdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Xamarin.Forms.Xaml.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Xamarin.Forms.Xaml.xml
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Plugin.InAppBilling.Abstractions.pdb
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Plugin.InAppBilling.Abstractions.xml
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Plugin.InAppBilling.pdb
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Plugin.InAppBilling.xml
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/Newtonsoft.Json.xml
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/ar/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/ca/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/bin/iPhone/Debug/cs/Xamarin.Forms.Platform.iOS.resources.dll
@@ -261,4 +261,3 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.App.xaml.g.cs
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.exe
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.pdb
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/iOS/obj/iPhone/Debug/MahechaBJJ.iOS.csprojResolveAssemblyReference.cache

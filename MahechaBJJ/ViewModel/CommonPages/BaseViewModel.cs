@@ -21,6 +21,49 @@ namespace MahechaBJJ.ViewModel.CommonPages
 		private VimeoAPIService _vimeoApiService;
         private UserService _userService;
         private AccountService _accountService;
+        private PurchaseService _purchaseService;
+
+        private bool _hasGiAndNoGiPackage;
+        public bool HasGiAndNoGiPackage
+        {
+            get
+            {
+                return _hasGiAndNoGiPackage;
+            }
+            set
+            {
+                _hasGiAndNoGiPackage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _hasGiPackage;
+        public bool HasGiPackage
+        {
+            get
+            {
+                return _hasGiPackage;
+            }
+            set
+            {
+                _hasGiPackage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _hasNoGiPackage;
+        public bool HasNoGiPackage
+        {
+            get
+            {
+                return _hasNoGiPackage;
+            }
+            set
+            {
+                _hasNoGiPackage = value;
+                OnPropertyChanged();
+            }
+        }
 
 		private BaseInfo _baseInfo;
 		public BaseInfo VimeoInfo
@@ -82,6 +125,7 @@ namespace MahechaBJJ.ViewModel.CommonPages
             _vimeoApiService = new VimeoAPIService();
             _userService = new UserService();
             _accountService = new AccountService();
+            _purchaseService = new PurchaseService();
         }
 
         //methods
@@ -131,26 +175,44 @@ namespace MahechaBJJ.ViewModel.CommonPages
             _account = new Account();
             _account.Username = user.Email;
             _account.Properties.Add("Id", user.Id);
-            if (user.Packages.GiJiuJitsu == true)
+
+
+            if (user.Packages.GiAndNoGiJiuJitsu)
+            {
+                _account.Properties.Add("Package", "GiAndNoGi");
+            }
+            else if (user.Packages.GiJiuJitsu && user.Packages.NoGiJiuJitsu)
+            {
+                _account.Properties.Add("Package", "GiAndNoGi");
+            }
+            else if (user.Packages.GiJiuJitsu && !user.Packages.NoGiJiuJitsu)
             {
                 _account.Properties.Add("Package", "Gi");
             }
-            else if (user.Packages.NoGiJiuJitsu == true)
+            else if (!user.Packages.GiJiuJitsu && user.Packages.NoGiJiuJitsu)
             {
                 _account.Properties.Add("Package", "NoGi");
-            }
-            else
-            {
-                _account.Properties.Add("Package", "GiAndNoGi");
             }
 
             _accountService.SaveCredentials(_account);
 		}
 
-        public void UpdateCredentials(Account account)
+        public async Task UpdateCredentialsToFullAccess(Account account, bool hasAccount)
         {
             _accountService.DeleteCredentials();
-            _accountService.SaveCredentials(account);
+
+            if (hasAccount)
+            {
+                var user = await _userService.FindUserByIdAsync(Constants.FINDUSER, account.Properties["Id"]);
+                user.Packages.GiAndNoGiJiuJitsu = true;
+                user.Packages.GiJiuJitsu = true;
+                user.Packages.NoGiJiuJitsu = true;
+
+                this._user = await _userService.UpdateUser(user);
+
+            }
+
+            _accountService.SaveCredentials(account); 
         }
 
         public async Task<User> FindUserByEmailAsync(string url, string email, string password)
@@ -179,6 +241,13 @@ namespace MahechaBJJ.ViewModel.CommonPages
         {
             var user = await _userService.GetUser(email);
             return user;
+        }
+
+        public async Task CheckIfUserHasPackage()
+        {
+            _hasGiAndNoGiPackage = await _purchaseService.WasPackagePurchased(Constants.GIANDNOGIPACKAGE);
+            _hasGiPackage = await _purchaseService.WasPackagePurchased(Constants.GIPACKAGE);
+            _hasNoGiPackage = await _purchaseService.WasPackagePurchased(Constants.NOGIPACKAGE);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
