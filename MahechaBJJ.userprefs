@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{D791D245-ACCE-4D0D-BF65-B046C0F5EF41}|Default">
   <MonoDevelop.Ide.ItemProperties.MahechaBJJ.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" automaticSigning="False" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Info.plist">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MahechaBJJ/Views/SignUpPages/PackagePage.cs">
     <Files>
       <File FileName="MahechaBJJ/Service/UserService.cs" Line="1" Column="1" />
       <File FileName="MahechaBJJ/ViewModel/CommonPages/BaseViewModel.cs" Line="1" Column="1" />
@@ -19,6 +19,7 @@
       <File FileName="MahechaBJJ/App.xaml.cs" Line="21" Column="1" />
       <File FileName="iOS/Entitlements.plist" />
       <File FileName="iOS/Info.plist" />
+      <File FileName="MahechaBJJ/Views/SignUpPages/PackagePage.cs" Line="122" Column="51" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />

@@ -119,7 +119,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 FontFamily = "Roboto Bold",
                 FontSize = lblSize * 1.5,
 #endif
-                Text = "$19.99",
+                Text = "$19.99 (One Time Purchase)",
                 TextColor = Color.Black,
                 FontAttributes = FontAttributes.Bold
             };
@@ -240,7 +240,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 FontFamily = "Roboto Bold",
                 FontSize = lblSize * 1.5,
 #endif
-                Text = "$19.99",
+                Text = "$19.99 (One Time Purchase)",
                 TextColor = Color.Black,
                 FontAttributes = FontAttributes.Bold
             };
@@ -362,7 +362,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 FontFamily = "Roboto Bold",
                 FontSize = lblSize * 1.5,
 #endif
-                Text = "$29.99",
+                Text = "$29.99 (One Time Purchase)",
                 TextColor = Color.Black,
                 FontAttributes = FontAttributes.Bold
             };
