@@ -264,22 +264,45 @@ namespace MahechaBJJ.Views.CommonPages
             Content = stackLayout;
 #endif
         }
-
+#if __ANDROID__
         private async Task CheckIfUserExists(Object sender, EventArgs e)
         {
             //logic to check if email exists
-            if (emailEntry.Text != null){
-                user = await _baseViewModel.GetUser(emailEntry.Text.ToLower());
+            if (androidEmailEntry.Text.Length > 0){
+                user = await _baseViewModel.GetUser(androidEmailEntry.Text.ToLower());
                 if (user != null)
                 {
                     await Navigation.PushModalAsync(new ChangePasswordPage(user));
                 } else {
-                    await DisplayAlert("User Not Found", emailEntry.Text + " does not exist.", "Ok");
+                    await DisplayAlert("User Not Found", androidEmailEntry.Text + " does not exist.", "Ok");
                 }
             } else {
                 await DisplayAlert("Empty Field", "Email Field is Empty, Fill In.", "Ok");
             }
         }
+#endif
+#if __IOS__
+        private async Task CheckIfUserExists(Object sender, EventArgs e)
+        {
+            //logic to check if email exists
+            if (emailEntry.Text != null)
+            {
+                user = await _baseViewModel.GetUser(emailEntry.Text.ToLower());
+                if (user != null)
+                {
+                    await Navigation.PushModalAsync(new ChangePasswordPage(user));
+                }
+                else
+                {
+                    await DisplayAlert("User Not Found", emailEntry.Text + " does not exist.", "Ok");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Empty Field", "Email Field is Empty, Fill In.", "Ok");
+            }
+        }
+#endif
 
         private void ToggleButtons()
         {
