@@ -299,9 +299,9 @@
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/res/mipmap-xxxhdpi/mahechabjj.png
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/R.cs.flag
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/obj/Debug/uploadflags.txt
-/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/FormsViewGroup.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Plugin.InAppBilling.VendingLibrary.dll.mdb
+/Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/FormsViewGroup.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Xamarin.Forms.Core.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Xamarin.Forms.Platform.Android.dll.mdb
 /Users/bmahecha/Desktop/projects/MahechaBJJ/MahechaBJJXForms/Droid/bin/Debug/Xamarin.Forms.Xaml.dll.mdb

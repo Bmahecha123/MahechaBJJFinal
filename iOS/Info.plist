@@ -9,9 +9,9 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.mahechabjj.mahecha-bjj</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.03</string>
+	<string>1.04</string>
 	<key>CFBundleVersion</key>
-	<string>8.0</string>
+	<string>9.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
