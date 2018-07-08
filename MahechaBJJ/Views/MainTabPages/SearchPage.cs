@@ -295,6 +295,7 @@ namespace MahechaBJJ.Views
             searchBar.Focused += (object sender, FocusEventArgs e) => {
                 FocusSearchBar(sender, e);
             };
+
             videoListView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) => {
                 if (isPressed)
                 {

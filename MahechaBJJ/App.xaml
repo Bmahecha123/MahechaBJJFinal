@@ -27,8 +27,8 @@
             <Style x:Key="common-activity-indicator" TargetType="ActivityIndicator">
                 <Setter Property="Color" Value="rgb(58, 93, 174)" />
                 <Setter Property="IsRunning" Value="false" />
-                <Setter Property="IsEnabled" Value="true" />
-                <Setter Property="IsVisible" Value="true" />
+                <Setter Property="IsEnabled" Value="false" />
+                <Setter Property="IsVisible" Value="false" />
             </Style>
         </ResourceDictionary>
 	</Application.Resources>
