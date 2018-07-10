@@ -227,6 +227,10 @@
     <BundleResource Include="Resources\gi%402x.jpg">
       <LogicalName>gi</LogicalName>
     </BundleResource>
+    <BundleResource Include="Resources\password.png" />
+    <BundleResource Include="Resources\mail.png" />
+    <BundleResource Include="Resources\password%402x.png" />
+    <BundleResource Include="Resources\mail%402x.png" />
   </ItemGroup>
   <Import Project="..\MahechaBJJ\MahechaBJJ.projitems" Label="Shared" Condition="Exists('..\MahechaBJJ\MahechaBJJ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

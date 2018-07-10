@@ -24,8 +24,10 @@ namespace MahechaBJJ.Views.EntryPages
         private Grid buttonGrid;
         private Image mahechaLogo;
         private Label emailLbl;
+        private Image emailImg;
         private Entry emailEntry;
         private Label passwordLbl;
+        private Image passwordImg;
         private Entry passwordEntry;
         private Button loginBtn;
         private Button backBtn;
@@ -35,6 +37,8 @@ namespace MahechaBJJ.Views.EntryPages
         private StackLayout stackLayout;
         private StackLayout innerStackLayout;
         private StackLayout buttonLayout;
+        private StackLayout emailLayout;
+        private StackLayout passwordLayout;
         private Package package;
 #if __ANDROID__
         private Android.Widget.Button androidLoginBtn;
@@ -67,8 +71,10 @@ namespace MahechaBJJ.Views.EntryPages
             scrollView = new ScrollView();
             stackLayout = new StackLayout();
             buttonLayout = new StackLayout();
+            emailLayout = new StackLayout();
+            passwordLayout = new StackLayout();
             innerStackLayout = new StackLayout();
-
+            innerStackLayout.Spacing = 50;
             //View objects
             innerGrid = new Grid
             {
@@ -100,6 +106,11 @@ namespace MahechaBJJ.Views.EntryPages
                 Source = ImageSource.FromResource("mahechabjjlogo.png"),
                 Aspect = Aspect.AspectFit
             };
+            emailImg = new Image
+            {
+                Source = "mail.png",
+                Aspect = Aspect.AspectFit
+            };
             emailLbl = new Label
             {
                 Text = "E-Mail Address",
@@ -118,14 +129,19 @@ namespace MahechaBJJ.Views.EntryPages
             emailEntry = new Entry
             {
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-                Placeholder = "SpiderGuard123@gmail.com",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
                 Placeholder = "E-Mail Address",
 #endif
-                FontSize = entrySize
+                FontSize = entrySize,
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+            passwordImg = new Image
+            {
+                Source = "password.png",
+                Aspect = Aspect.AspectFit
             };
             passwordLbl = new Label
             {
@@ -152,7 +168,8 @@ namespace MahechaBJJ.Views.EntryPages
                 FontFamily = "Roboto Bold",
                 Placeholder = "Password",
 #endif
-                FontSize = entrySize
+                FontSize = entrySize,
+                HorizontalOptions = LayoutOptions.FillAndExpand
             };
             loginBtn = new Button
             {
@@ -258,14 +275,25 @@ namespace MahechaBJJ.Views.EntryPages
             buttonLayout.Children.Add(loginBtn);
             buttonLayout.Children.Add(forgotPasswordBtn);
             buttonLayout.Orientation = StackOrientation.Horizontal;
-            innerStackLayout.Children.Add(emailLbl);
-            innerStackLayout.Children.Add(emailEntry);
-            innerStackLayout.Children.Add(passwordLbl);
-            innerStackLayout.Children.Add(passwordEntry);
+            emailLayout.Children.Add(emailImg);
+            emailLayout.Children.Add(emailEntry);
+            emailLayout.Orientation = StackOrientation.Horizontal;
+            passwordLayout.Children.Add(passwordImg);
+            passwordLayout.Children.Add(passwordEntry);
+            passwordLayout.Orientation = StackOrientation.Horizontal;
+            innerStackLayout.Children.Add(emailLayout);
+            innerStackLayout.Children.Add(passwordLayout);
+            //innerStackLayout.Children.Add(emailImg);
+            //innerStackLayout.Children.Add(emailEntry);
+
+            //innerStackLayout.Children.Add(passwordImg);
+            //innerStackLayout.Children.Add(passwordEntry);
             innerStackLayout.Children.Add(buttonLayout);
             stackLayout.Children.Add(mahechaLogo);
             stackLayout.Children.Add(innerStackLayout);
             stackLayout.Orientation = StackOrientation.Vertical;
+            stackLayout.VerticalOptions = LayoutOptions.CenterAndExpand;
+            stackLayout.HorizontalOptions = LayoutOptions.CenterAndExpand;
 
             scrollView.Content = stackLayout;
             Content = scrollView;
@@ -400,8 +428,6 @@ namespace MahechaBJJ.Views.EntryPages
                 mahechaLogo.Scale = 0;
                 mahechaLogo.IsVisible = false;
                 stackLayout.Orientation = StackOrientation.Horizontal;
-                stackLayout.HorizontalOptions = LayoutOptions.CenterAndExpand;
-                stackLayout.VerticalOptions = LayoutOptions.CenterAndExpand;
                 buttonLayout.VerticalOptions = LayoutOptions.EndAndExpand;
             }
             else
