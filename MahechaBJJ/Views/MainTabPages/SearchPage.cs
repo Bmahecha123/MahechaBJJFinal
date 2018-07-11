@@ -249,7 +249,7 @@ namespace MahechaBJJ.Views
                     videoLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 
 #if __IOS__
-                    videoLbl.TextColor = Color.White;
+                    videoLbl.Style = (Style)Application.Current.Resources["common-technique-lbl"];
 					videoLbl.FontFamily = "AmericanTypewriter-Bold";
 #endif
 #if __ANDROID__

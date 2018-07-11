@@ -84,7 +84,6 @@ namespace MahechaBJJ.Views.PlaylistPages
                     new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 },
                 ColumnDefinitions = new ColumnDefinitionCollection
@@ -277,10 +276,11 @@ namespace MahechaBJJ.Views.PlaylistPages
                 BorderWidth = 3,
                 BorderColor = Color.Black,
                 TextColor = Color.White,
-                Text = "Delete From Playlist",
+                //Text = "Delete From Playlist",
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 1.5,
-                BackgroundColor = Color.Red
+                BackgroundColor = Color.Red,
+                Image = "trash.png"
             };
 
             qualityBtn = new Button
@@ -338,16 +338,13 @@ namespace MahechaBJJ.Views.PlaylistPages
             innerGrid.Children.Add(videoNameLbl, 0, 0);
             Grid.SetColumnSpan(videoNameLbl, 4);
             innerGrid.Children.Add(playBtn, 0, 1);
+            Grid.SetColumnSpan(playBtn, 3);
             innerGrid.Children.Add(qualityBtn, 3, 1);
             innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
             Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-
-            Grid.SetColumnSpan(playBtn, 3);
-
-            innerGrid.Children.Add(deleteBtn, 0, 3);
-            Grid.SetColumnSpan(deleteBtn, 4);
-            innerGrid.Children.Add(backBtn, 0, 4);
-            Grid.SetColumnSpan(backBtn, 4);
+            innerGrid.Children.Add(deleteBtn, 3, 3);
+            innerGrid.Children.Add(backBtn, 0, 3);
+            Grid.SetColumnSpan(backBtn, 3);
 #endif
             outerGrid.Children.Add(innerGrid, 0, 0);
 
@@ -481,8 +478,6 @@ namespace MahechaBJJ.Views.PlaylistPages
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
-                deleteBtn.Text = "D";
-
                 innerGrid.Children.Clear();
                 innerGrid.Children.Add(videoFrame, 0, 0);
                 Grid.SetRowSpan(videoFrame, 2);
@@ -507,11 +502,10 @@ namespace MahechaBJJ.Views.PlaylistPages
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-
-                deleteBtn.Text = "Delete From Playlist";
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
                 innerGrid.Children.Clear();
                 //building grid
@@ -524,10 +518,10 @@ namespace MahechaBJJ.Views.PlaylistPages
                 innerGrid.Children.Add(qualityBtn, 3, 1);
                 innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
                 Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-                innerGrid.Children.Add(deleteBtn, 0, 3);
-                Grid.SetColumnSpan(deleteBtn, 4);
-                innerGrid.Children.Add(backBtn, 0, 4);
-                Grid.SetColumnSpan(backBtn, 4);
+                innerGrid.Children.Add(deleteBtn, 3, 3);
+                //Grid.SetColumnSpan(deleteBtn, 4);
+                innerGrid.Children.Add(backBtn, 0, 3);
+                Grid.SetColumnSpan(backBtn, 3);
             }
         }
 #endif

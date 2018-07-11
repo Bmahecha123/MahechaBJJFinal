@@ -19,7 +19,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Brian Mahecha (8258VBD76N)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -30,7 +30,6 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>VS: com.mahechabjj.mahecha-bjj Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -195,12 +194,10 @@
     <BundleResource Include="Resources\mahechabjj.png" />
     <BundleResource Include="Resources\interface.png" />
     <BundleResource Include="Resources\openbook.png" />
-    <BundleResource Include="Resources\settings.png" />
     <BundleResource Include="Resources\search.png" />
     <BundleResource Include="Resources\construction.png" />
     <BundleResource Include="Resources\interface%402x.png" />
     <BundleResource Include="Resources\openbook%402x.png" />
-    <BundleResource Include="Resources\settings%402x.png" />
     <BundleResource Include="Resources\search%402x.png" />
     <BundleResource Include="Resources\construction%402x.png" />
     <BundleResource Include="Resources\top.jpg" />
@@ -231,6 +228,12 @@
     <BundleResource Include="Resources\mail.png" />
     <BundleResource Include="Resources\password%402x.png" />
     <BundleResource Include="Resources\mail%402x.png" />
+    <BundleResource Include="Resources\trash.png" />
+    <BundleResource Include="Resources\trash%402x.png" />
+    <BundleResource Include="Resources\back.png" />
+    <BundleResource Include="Resources\back%402x.png" />
+    <BundleResource Include="Resources\settings.png" />
+    <BundleResource Include="Resources\settings%402x.png" />
   </ItemGroup>
   <Import Project="..\MahechaBJJ\MahechaBJJ.projitems" Label="Shared" Condition="Exists('..\MahechaBJJ\MahechaBJJ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

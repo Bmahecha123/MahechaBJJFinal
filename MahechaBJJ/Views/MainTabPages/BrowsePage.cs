@@ -155,7 +155,7 @@ namespace MahechaBJJ.Views
             {
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 HasShadow = false,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 Content = sweepLbl,
                 Padding = new Thickness(10, 10, 10, 10)
             };
@@ -205,7 +205,7 @@ namespace MahechaBJJ.Views
             {
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 HasShadow = false,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 Content = takeDownLbl,
                 Padding = new Thickness(10, 10, 10, 10)
             };
@@ -255,7 +255,7 @@ namespace MahechaBJJ.Views
             {
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 HasShadow = false,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 Content = submissionLbl,
                 Padding = new Thickness(10, 10, 10, 10)
             };
@@ -305,7 +305,7 @@ namespace MahechaBJJ.Views
             {
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 HasShadow = false,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 Content = guardPassLbl,
                 Padding = new Thickness(10, 10, 10, 10)
             };
@@ -355,7 +355,7 @@ namespace MahechaBJJ.Views
             {
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 HasShadow = false,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 Content = defenseLbl,
                 Padding = new Thickness(10, 10, 10, 10)
             };
@@ -405,7 +405,7 @@ namespace MahechaBJJ.Views
             {
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 HasShadow = false,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
 #if __ANDROID__
                 Content = backTakeLbl,
 #endif
@@ -459,7 +459,7 @@ namespace MahechaBJJ.Views
             {
                 BackgroundColor = Color.FromRgb(58, 93, 174),
                 HasShadow = false,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 Content = drillsLbl,
                 Padding = new Thickness(10, 10, 10, 10)
             };
@@ -467,14 +467,12 @@ namespace MahechaBJJ.Views
             //blog objects
             blogLbl = new Label
             {
+                Style = (Style)Application.Current.Resources["common-technique-lbl"],
                 Text = "Blog",
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
-                FontSize = lblSize * 2,
-                TextColor = Color.White,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center
+                FontSize = lblSize * 2
             };
             blogTap = new TapGestureRecognizer();
             blogTap.Tapped += async (sender, e) =>
@@ -492,7 +490,7 @@ namespace MahechaBJJ.Views
             blogFrame = new Frame
             {
                 Content = blogImage,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 HasShadow = false,
                 Padding = 3

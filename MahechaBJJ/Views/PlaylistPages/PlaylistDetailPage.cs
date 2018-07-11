@@ -103,7 +103,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             playlistNameLbl = new Label
             {
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = lblSize * 2,
 #endif
 #if __ANDROID__
@@ -119,7 +119,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             playlistDescriptionLbl = new Label
             {
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
@@ -140,7 +140,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             backBtn = new Button
             {
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
@@ -155,14 +155,14 @@ namespace MahechaBJJ.Views.PlaylistPages
             deleteBtn = new Button
             {
 #if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
 #endif
 #if __ANDROID__
                 FontFamily = "Roboto Bold",
                 FontSize = btnSize,
 #endif
-                Text = "Delete",
+                Image = "trash.png",
                 BackgroundColor = Color.Red,
                 BorderWidth = 3,
                 TextColor = Color.White
@@ -210,7 +210,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 
             //Events
-            backBtn.Clicked += async (object sender, EventArgs e) => {
+            backBtn.Clicked += async (object sender, EventArgs e) =>
+            {
                 ToggleButtons();
                 await Navigation.PopModalAsync();
                 ToggleButtons();
@@ -221,7 +222,8 @@ namespace MahechaBJJ.Views.PlaylistPages
                 await DeletePlaylist(sender, e);
                 ToggleButtons();
             };
-            videosListView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) => {
+            videosListView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) =>
+            {
                 if (isPressed)
                 {
                     return;
@@ -234,7 +236,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 }
                 isPressed = false;
                 ToggleButtons();
-            }; 
+            };
 
 
 #if __IOS__
@@ -247,7 +249,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             Grid.SetColumnSpan(videosListView, 2);
 
             innerGrid.Children.Add(backBtn, 0, 3);
-			innerGrid.Children.Add(deleteBtn, 1, 3);
+            innerGrid.Children.Add(deleteBtn, 1, 3);
 #endif
 #if __ANDROID__
             //Building Grid
@@ -395,7 +397,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
-            Padding = new Thickness(10, 10, 10, 10);
+                Padding = new Thickness(10, 10, 10, 10);
 #endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
@@ -423,7 +425,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
+                Padding = new Thickness(10, 30, 10, 10);
 #endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
@@ -450,8 +452,8 @@ namespace MahechaBJJ.Views.PlaylistPages
                 Grid.SetColumnSpan(playlistDescriptionLbl, 2);
                 innerGrid.Children.Add(videosListView, 0, 2);
                 Grid.SetColumnSpan(videosListView, 2);
-            innerGrid.Children.Add(backBtn, 0, 3);
-            innerGrid.Children.Add(deleteBtn, 1, 3);
+                innerGrid.Children.Add(backBtn, 0, 3);
+                innerGrid.Children.Add(deleteBtn, 1, 3);
 #endif
 #if __ANDROID__
 

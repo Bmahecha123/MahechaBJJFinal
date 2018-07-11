@@ -255,6 +255,7 @@ namespace MahechaBJJ.Views
             };
             videoNameLbl = new Label
             {
+                Style = (Style)Application.Current.Resources["common-technique-lbl"],
                 Text = videoTechnique.name,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
@@ -264,9 +265,6 @@ namespace MahechaBJJ.Views
                 FontFamily = "Roboto Bold",
                 FontSize = lblSize * .75,
 #endif
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.White
             };
 
             videoDescription = new Label

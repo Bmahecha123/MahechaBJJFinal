@@ -30,6 +30,11 @@
                 <Setter Property="IsEnabled" Value="false" />
                 <Setter Property="IsVisible" Value="false" />
             </Style>
+            <Style x:Key="common-technique-lbl" TargetType="Label">
+                <Setter Property="TextColor" Value="#F2FDFF" />
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
         </ResourceDictionary>
 	</Application.Resources>
 </Application>

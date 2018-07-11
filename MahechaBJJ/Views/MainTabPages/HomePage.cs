@@ -254,7 +254,7 @@ namespace MahechaBJJ.Views
             video1Frame = new Frame
             {
                 Content = video1Image,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 HasShadow = false,
                 Padding = 3
@@ -271,9 +271,8 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize * .75,
 #endif
                 Text = "Spider Guard Stuff!",
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.White
+                Style = (Style)Application.Current.Resources["common-technique-lbl"]
+
             };
             video1Tap = new TapGestureRecognizer();
             video1Tap.Tapped += async (sender, e) =>
@@ -291,7 +290,7 @@ namespace MahechaBJJ.Views
             video2Frame = new Frame
             {
                 Content = video2Image,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 HasShadow = false,
                 Padding = 3
@@ -307,9 +306,8 @@ namespace MahechaBJJ.Views
                 FontSize = lblSize * .75,
 #endif
                 Text = "Spider Guard Stuff!",
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.White
+                Style = (Style)Application.Current.Resources["common-technique-lbl"]
+
             };
             video2Tap = new TapGestureRecognizer();
             video2Tap.Tapped += async (sender, e) =>

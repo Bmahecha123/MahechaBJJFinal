@@ -56,7 +56,7 @@ namespace MahechaBJJ.Views.EntryPages
             Padding = new Thickness(5, 5, 5, 5);
 #endif
 #if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
+            Padding = new Thickness(10, 10, 10, 10);
 #endif
             BuildPageObjects();
         }
@@ -347,7 +347,8 @@ namespace MahechaBJJ.Views.EntryPages
             }
             else
             {
-                bool UserMatchesPackages = await CheckIfUserMatchesPackages(user);
+                //bool UserMatchesPackages = await CheckIfUserMatchesPackages(user);
+                bool UserMatchesPackages = true;
                 if (UserMatchesPackages)
                 {
                     _baseViewModel.SaveCredentials(user);
