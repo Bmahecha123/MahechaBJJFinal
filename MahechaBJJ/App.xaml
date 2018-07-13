@@ -6,7 +6,7 @@
             <Style x:Key="common-blue-btn" TargetType="Button">
                 <Setter Property="FontFamily" Value="AmericanTypewriter-Bold" />
                 <Setter Property="BackgroundColor" Value="rgb(58, 93, 174)" />
-                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="TextColor" Value="#F2FDFF" />
                 <Setter Property="BorderWidth" Value="3" />
                 <Setter Property="BorderColor" Value="Black" />
             </Style>
@@ -31,9 +31,15 @@
                 <Setter Property="IsVisible" Value="false" />
             </Style>
             <Style x:Key="common-technique-lbl" TargetType="Label">
+                <Setter Property="TextColor" Value="#F1ECCE" />
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="common-blue-lbl" TargetType="Label">
                 <Setter Property="TextColor" Value="#F2FDFF" />
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="LineBreakMode" Value="NoWrap" />
             </Style>
         </ResourceDictionary>
 	</Application.Resources>

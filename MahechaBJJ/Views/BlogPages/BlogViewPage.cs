@@ -38,6 +38,7 @@ namespace MahechaBJJ.Views.BlogPages
         public BlogViewPage()
         {
             _blogViewPageViewModel = new BlogViewPageViewModel();
+            BackgroundColor = Color.FromHex("#F1ECCE");
             Title = "Blog Posts";
 #if __ANDROID__
             Padding = new Thickness(5, 5, 5, 5);

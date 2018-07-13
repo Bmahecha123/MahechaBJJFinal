@@ -48,6 +48,7 @@ namespace MahechaBJJ.Views.CommonPages
 #endif
             Title = "Forgot Password";
             _baseViewModel = new BaseViewModel();
+            BackgroundColor = Color.FromHex("#F1ECCE");
             BuildPageObjects();
         }
 

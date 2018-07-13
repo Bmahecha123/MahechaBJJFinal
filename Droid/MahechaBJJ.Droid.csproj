@@ -246,10 +246,6 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\mahechabjj.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\mahechabjj.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\mahechabjj.png" />
-    <AndroidResource Include="Resources\drawable\trash.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\trash.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\trash.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\trash.png" />
     <AndroidResource Include="Resources\drawable\back.png" />
     <AndroidResource Include="Resources\drawable-hdpi\back.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\back.png" />
@@ -258,6 +254,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\settings.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable\trash.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\trash.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\trash.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\trash.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Service\" />

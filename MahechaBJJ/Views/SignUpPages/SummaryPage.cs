@@ -55,6 +55,7 @@ namespace MahechaBJJ.Views.SignUpPages
         public SummaryPage(Package package)
         {
             _summaryPageViewModel = new SummaryPageViewModel();
+            BackgroundColor = Color.FromHex("#F1ECCE");
             this.package = package;
 #if __ANDROID__
             Padding = new Thickness(5, 5, 5, 5);
@@ -72,6 +73,7 @@ namespace MahechaBJJ.Views.SignUpPages
         public SummaryPage(User user)
         {
             _summaryPageViewModel = new SummaryPageViewModel();
+            BackgroundColor = Color.FromHex("#F1ECCE");
 #if __ANDROID__
             Padding = new Thickness(5, 5, 5, 5);
 #endif

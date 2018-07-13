@@ -62,6 +62,7 @@ namespace MahechaBJJ.Views
             _baseViewModel = new BaseViewModel();
             _homePageViewModel = new HomePageViewModel();
             _account = _baseViewModel.GetAccountInformation();
+            BackgroundColor = Color.FromHex("#F1ECCE");
             this.account = true;
 #if __IOS__
             Icon = "construction.png";
@@ -82,6 +83,7 @@ namespace MahechaBJJ.Views
             _baseViewModel = new BaseViewModel();
             _homePageViewModel = new HomePageViewModel();
             _account = _baseViewModel.GetAccountInformation();
+            BackgroundColor = Color.FromHex("#F1ECCE");
             this.account = hasAccount;
 #if __IOS__
             Icon = "construction.png";
@@ -336,12 +338,9 @@ namespace MahechaBJJ.Views
 
             addPlaylistBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "Create",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 1.5,
 #endif
 #if __ANDROID__
@@ -349,15 +348,12 @@ namespace MahechaBJJ.Views
                 FontSize = btnSize * .75,
                 Margin = -5,
 #endif
-                BackgroundColor = Color.FromRgb(58, 93, 174)
             };
             viewPlaylistBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "View",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
 #if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 1.5,
 #endif
 #if __ANDROID__
@@ -365,8 +361,6 @@ namespace MahechaBJJ.Views
                 FontSize = btnSize * .75,
                 Margin = -5,
 #endif
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black
             };
 
             timeOutLbl = new Label

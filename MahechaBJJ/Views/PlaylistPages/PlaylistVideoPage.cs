@@ -55,6 +55,8 @@ namespace MahechaBJJ.Views.PlaylistPages
         {
             _baseViewModel = new BaseViewModel();
             _playListVideoPageViewModel = new PlaylistVideoPageViewModel();
+            BackgroundColor = Color.FromHex("#F1ECCE");
+
             videoUrl = video.Link;
 #if __ANDROID__
             Padding = new Thickness(5, 5, 5, 5);

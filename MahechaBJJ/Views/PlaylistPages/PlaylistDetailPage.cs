@@ -49,6 +49,8 @@ namespace MahechaBJJ.Views.PlaylistPages
         {
             _baseViewModel = new BaseViewModel();
             _playListDetailPageViewModel = new PlaylistDetailPageViewModel();
+            BackgroundColor = Color.FromHex("#F1ECCE");
+
             Title = playlist.Name;
 #if __ANDROID__
             Padding = new Thickness(5, 5, 5, 5);
@@ -134,7 +136,8 @@ namespace MahechaBJJ.Views.PlaylistPages
             videosListView = new ListView
             {
                 HasUnevenRows = true,
-                SeparatorVisibility = SeparatorVisibility.None
+                SeparatorVisibility = SeparatorVisibility.None,
+                BackgroundColor = Color.FromHex("#F1ECCE")
             };
 
             backBtn = new Button

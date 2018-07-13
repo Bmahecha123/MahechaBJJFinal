@@ -65,6 +65,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
         public SignUpPage(Package package)
         {
+            BackgroundColor = Color.FromHex("#F1ECCE");
             _baseViewModel = new BaseViewModel();
             this.hasPackage = true;
 #if __ANDROID__
@@ -79,6 +80,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
         public SignUpPage()
         {
+            BackgroundColor = Color.FromHex("#F1ECCE");
             _summaryPageViewModel = new SummaryPageViewModel();
             _baseViewModel = new BaseViewModel();
             this.hasPackage = false;

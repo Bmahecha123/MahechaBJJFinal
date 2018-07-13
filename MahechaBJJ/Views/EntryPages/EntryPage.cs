@@ -49,6 +49,8 @@ namespace MahechaBJJ.Views.EntryPages
             _entryPageViewModel = new EntryPageViewModel();
             _baseViewModel = new BaseViewModel();
             _summaryPageViewModel = new SummaryPageViewModel();
+            BackgroundColor = Color.FromHex("#F1ECCE");
+
 #if __ANDROID__
             Padding = new Thickness(5, 5, 5, 5);
 #endif

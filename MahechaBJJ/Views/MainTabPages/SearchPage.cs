@@ -53,6 +53,8 @@ namespace MahechaBJJ.Views
             _searchPageViewModel = new SearchPageViewModel();
             _baseViewModel = new BaseViewModel();
             searchedVideos = new ObservableCollection<VideoData>();
+            BackgroundColor = Color.FromHex("#F1ECCE");
+
             this.modal = false;
 #if __IOS__
             Icon = "search.png";
@@ -73,9 +75,9 @@ namespace MahechaBJJ.Views
             _searchPageViewModel = new SearchPageViewModel();
             _baseViewModel = new BaseViewModel();
             searchedVideos = new ObservableCollection<VideoData>();
+            BackgroundColor = Color.FromHex("#F1ECCE");
+
             this.modal = true;
-            Title = "Search";
-            Icon = "004-search.png";
 #if __IOS__
             Icon = "search.png";
             Title = "Search";
@@ -225,6 +227,7 @@ namespace MahechaBJJ.Views
             videoListView = new ListView
             {
                 ItemsSource = searchedVideos,
+                BackgroundColor = Color.FromHex("#F1ECCE"),
                 HasUnevenRows = true,
                 SeparatorVisibility = SeparatorVisibility.None,
                 ItemTemplate = new DataTemplate(() =>

@@ -56,6 +56,8 @@ namespace MahechaBJJ.Views.SignUpPages
 
         public PackagePage()
         {
+            BackgroundColor = Color.FromHex("#F1ECCE");
+
 #if __ANDROID__
             Padding = new Thickness(5, 5, 5, 5);
 #endif

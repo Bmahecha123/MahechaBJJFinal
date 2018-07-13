@@ -65,6 +65,8 @@ namespace MahechaBJJ.Views.CommonPages
             _baseViewModel = new BaseViewModel();
             _purchasePageViewModel = new PurchasePageViewModel();
             account = _baseViewModel.GetAccountInformation();
+            BackgroundColor = Color.FromHex("#F1ECCE");
+
             this.package = package;
             this.isLoggedIn = hasAccount;
 #if __ANDROID__

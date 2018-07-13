@@ -48,6 +48,8 @@ namespace MahechaBJJ.Views.PlaylistPages
         {
             _baseViewModel = new BaseViewModel();
             _playlistCreatePageViewModel = new PlaylistCreatePageViewModel();
+            BackgroundColor = Color.FromHex("#F1ECCE");
+
             //View objects
             Title = "Create Playlist";
 #if __ANDROID__

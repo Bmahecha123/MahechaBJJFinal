@@ -59,6 +59,8 @@ namespace MahechaBJJ.Views
             _baseViewModel = new BaseViewModel();
             _videoDetailPageViewModel = new VideoDetailPageViewModel();
             userPlaylists = new ObservableCollection<PlayList>();
+            BackgroundColor = Color.FromHex("#F1ECCE");
+
             videoUrl = video.files[0].link;
 #if __ANDROID__
             Padding = new Thickness(5, 5, 5, 5);

@@ -64,6 +64,7 @@ namespace MahechaBJJ.Views
         {
             _baseViewModel = new BaseViewModel();
             this.hasAccount = hasAccount;
+            BackgroundColor = Color.FromHex("#F1ECCE");
 
 #if __IOS__
             Icon = "karate.png";

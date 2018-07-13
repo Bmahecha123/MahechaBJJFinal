@@ -56,6 +56,7 @@ namespace MahechaBJJ.Views
         {
             _baseViewModel = new BaseViewModel();
             account = _baseViewModel.GetAccountInformation();
+            BackgroundColor = Color.FromHex("#F1ECCE");
 #if __IOS__
             Icon = "openbook.png";
             Title = "Browse";
@@ -113,11 +114,8 @@ namespace MahechaBJJ.Views
 
             sweepLbl = new Label
             {
+                Style = (Style)Application.Current.Resources["common-blue-lbl"],
                 Text = "Sweep",
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
-                LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = lblSize
@@ -162,11 +160,8 @@ namespace MahechaBJJ.Views
 
             takeDownLbl = new Label
             {
+                Style = (Style)Application.Current.Resources["common-blue-lbl"],
                 Text = "Take Down",
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
-                LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = lblSize
@@ -212,11 +207,8 @@ namespace MahechaBJJ.Views
 
             submissionLbl = new Label
             {
+                Style = (Style)Application.Current.Resources["common-blue-lbl"],
                 Text = "Submission",
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
-                LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = lblSize
@@ -262,11 +254,8 @@ namespace MahechaBJJ.Views
 
             guardPassLbl = new Label
             {
+                Style = (Style)Application.Current.Resources["common-blue-lbl"],
                 Text = "Guard Pass",
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
-                LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = lblSize
@@ -312,11 +301,8 @@ namespace MahechaBJJ.Views
 
             defenseLbl = new Label
             {
+                Style = (Style)Application.Current.Resources["common-blue-lbl"],
                 Text = "Defense",
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
-                LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = lblSize
@@ -362,11 +348,8 @@ namespace MahechaBJJ.Views
 
             backTakeLbl = new Label
             {
+                Style = (Style)Application.Current.Resources["common-blue-lbl"],
                 Text = "Back Take",
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
-                LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = lblSize
@@ -417,11 +400,8 @@ namespace MahechaBJJ.Views
 
             drillsLbl = new Label
             {
+                Style = (Style)Application.Current.Resources["common-blue-lbl"],
                 Text = "Drills",
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
-                LineBreakMode = LineBreakMode.NoWrap,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = lblSize

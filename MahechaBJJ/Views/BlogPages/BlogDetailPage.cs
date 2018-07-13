@@ -28,6 +28,7 @@ namespace MahechaBJJ.Views.BlogPages
 
         public BlogDetailPage(BlogPosts.Post blogPost)
         {
+            BackgroundColor = Color.FromHex("#F1ECCE");
             Title = "Blog Post";
             blogString = StripHtml(blogPost.caption);
 #if __ANDROID__
