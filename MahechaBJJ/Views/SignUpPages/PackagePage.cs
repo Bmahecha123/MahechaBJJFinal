@@ -80,18 +80,8 @@ namespace MahechaBJJ.Views.SignUpPages
 
             backBtn = new Button
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-                Text = "Back",
-                FontSize = btnSize * 2,
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
+                Style = (Style)Application.Current.Resources["common-red-btn"],
+                Image = "back.png",
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -149,7 +139,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             giImageFrame = new Frame
             {
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 Padding = 2,
                 Content = giImage,
@@ -177,7 +167,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             giFrame = new Frame
             {
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
 #if __ANDROID__
                 Padding = 0,
@@ -270,7 +260,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             noGiImageFrame = new Frame
             {
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 Padding = 2,
                 Content = noGiImage,
@@ -298,7 +288,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             noGiFrame = new Frame
             {
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
 #if __ANDROID__
                 Padding = 0,
@@ -392,7 +382,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             giAndNoGiImageFrame = new Frame
             {
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 Padding = 2,
                 Content = giAndNoGiImage,
@@ -420,7 +410,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             giAndNoGiFrame = new Frame
             {
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
 #if __ANDROID__
                 Padding = 0,

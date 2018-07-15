@@ -75,7 +75,7 @@ namespace MahechaBJJ.Views.BlogPages
             {
                 BackgroundColor = Color.Black,
                 HasShadow = false,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 Padding = 3,
                 Content = blogImage
             };
@@ -95,17 +95,8 @@ namespace MahechaBJJ.Views.BlogPages
 
             backBtn = new Button
             {
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-                Text = "Back",
-                FontSize = btnSize * 2,
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                BorderWidth = 3,
-                TextColor = Color.Black
+                Image = "back.png",
+                Style = (Style)Application.Current.Resources["common-red-btn"]
             };
 
 #if __ANDROID__

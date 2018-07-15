@@ -186,76 +186,50 @@ namespace MahechaBJJ.Views
             };
             packageBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "Packages",
-#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size * 2,
-#endif
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
+                FontSize = size * 2
             };
             contactUsBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "Contact Us",
-#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size * 2,
-#endif
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
+                FontSize = size * 2
             };
             logOutBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "Log Out",
-#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size * 2,
-#endif
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
+                FontSize = size * 2
             };
 
             loginBtn = new Button();
+            loginBtn.Style = (Style)Application.Current.Resources["common-blue-btn"];
             loginBtn.Text = "Login";
 #if __IOS__
             loginBtn.FontFamily = "AmericanTypewriter-Bold";
             loginBtn.FontSize = size * 2;
 #endif
-            loginBtn.BackgroundColor = Color.FromRgb(58, 93, 174);
-            loginBtn.TextColor = Color.Black;
-            loginBtn.BorderWidth = 3;
-            loginBtn.BorderColor = Color.Black;
             loginBtn.Clicked += (object sender, EventArgs e) => {
                 Navigation.PushModalAsync(new LoginPage());
             };
 
             settingsBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "Settings",
-#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size * 2,
-#endif
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
+                FontSize = size * 2
             };
 
             createAccountBtn = new Button();
             createAccountBtn.Text = "Create Account";
-            createAccountBtn.BorderWidth = 3;
-            createAccountBtn.BorderColor = Color.Black;
+            createAccountBtn.Style = (Style)Application.Current.Resources["common-blue-btn"];
             createAccountBtn.FontFamily = "AmericanTypewriter-Bold";
             createAccountBtn.FontSize = btnSize * 2;
-            createAccountBtn.BackgroundColor = Color.FromRgb(58, 93, 174);
-            createAccountBtn.TextColor = Color.Black;
             createAccountBtn.Clicked += async (object sender, EventArgs e) => {
                 ToggleButtons();
                 await Navigation.PushModalAsync(new SignUpPage());
@@ -282,7 +256,7 @@ namespace MahechaBJJ.Views
             timeOutFrame = new Frame
             {
                 Content = timeOutLbl,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 HasShadow = false,
                 Padding = 3,

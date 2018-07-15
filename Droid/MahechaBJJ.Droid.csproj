@@ -258,6 +258,18 @@
     <AndroidResource Include="Resources\drawable-hdpi\trash.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\trash.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\trash.png" />
+    <AndroidResource Include="Resources\drawable\forgotpassword.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\forgotpassword.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\forgotpassword.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\forgotpassword.png" />
+    <AndroidResource Include="Resources\drawable\mail.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\mail.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\mail.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\mail.png" />
+    <AndroidResource Include="Resources\drawable\password.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\password.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\password.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\password.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Service\" />

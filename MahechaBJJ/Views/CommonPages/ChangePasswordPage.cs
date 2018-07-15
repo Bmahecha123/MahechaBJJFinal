@@ -47,6 +47,7 @@ namespace MahechaBJJ.Views.CommonPages
         public ChangePasswordPage(User user)
         {
             _baseViewModel = new BaseViewModel();
+            BackgroundColor = Color.FromHex("#F1ECCE");
 #if __ANDROID__
             Padding = new Thickness(5, 5, 5, 5);
 #endif
@@ -73,13 +74,12 @@ namespace MahechaBJJ.Views.CommonPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-
                 },
                 ColumnDefinitions = new ColumnDefinitionCollection
                 {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+                    new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star)}
                 }
             };
 
@@ -165,24 +165,14 @@ namespace MahechaBJJ.Views.CommonPages
 
             backBtn = new Button
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-                Text = "Back",
-                FontSize = btnSize * 1.5,
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                Image = "back.png",
+                Style = (Style)Application.Current.Resources["common-red-btn"]
             };
 
             submitBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
+
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 1.5,
@@ -191,13 +181,7 @@ namespace MahechaBJJ.Views.CommonPages
                 FontFamily = "Roboto Bold",
                 FontSize = btnSize * .75,
 #endif
-                Text = "Change Password",
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                Text = "Submit"
             };
 
 #if __ANDROID__
@@ -305,8 +289,8 @@ namespace MahechaBJJ.Views.CommonPages
             Content = outerGrid;
 #endif
 #if __IOS__
-            buttonGrid.Children.Add(backBtn, 0, 1);
-            buttonGrid.Children.Add(submitBtn, 0, 0);
+            buttonGrid.Children.Add(backBtn, 0, 0);
+            buttonGrid.Children.Add(submitBtn, 1, 0);
 
             stackLayout.Children.Add(headerLbl);
             stackLayout.Children.Add(secretQuestionLbl);

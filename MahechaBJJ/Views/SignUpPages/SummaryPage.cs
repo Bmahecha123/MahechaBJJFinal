@@ -255,15 +255,8 @@ namespace MahechaBJJ.Views.SignUpPages
 
             backBtn = new Button
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-#endif
-                Text = "Back",
-                FontSize = btnSize * 1.5,
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
+                Style = (Style)Application.Current.Resources["common-red-btn"],
+                Image = "back.png",
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -276,6 +269,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
             signUpBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 1.5,
@@ -285,10 +279,6 @@ namespace MahechaBJJ.Views.SignUpPages
                 FontSize = btnSize,
 #endif
                 Text = "Sign Up",
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
             };

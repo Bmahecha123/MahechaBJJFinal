@@ -165,32 +165,20 @@ namespace MahechaBJJ.Views.PlaylistPages
             editorFrame = new Frame
             {
                 Content = playListDescriptionEditor,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 HasShadow = false,
                 Padding = 3
             };
             backBtn = new Button
             {
-                Text = "Back",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-#endif
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                TextColor = Color.Black
+                Style = (Style)Application.Current.Resources["common-red-btn"],
+                Image = "back.png"
             };
             createBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "Create",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
@@ -199,8 +187,6 @@ namespace MahechaBJJ.Views.PlaylistPages
                 FontFamily = "Roboto Bold",
                 FontSize = btnSize * 1.25,
 #endif
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black
             };
 
 #if __ANDROID__

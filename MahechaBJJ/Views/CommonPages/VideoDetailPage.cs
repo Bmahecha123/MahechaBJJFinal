@@ -241,19 +241,8 @@ namespace MahechaBJJ.Views
 
             backBtn = new Button
             {
-                Text = "Back",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-#endif
-                BackgroundColor = Color.FromRgb(124, 37, 41)
+                Image = "back.png",
+                Style = (Style)Application.Current.Resources["common-red-btn"]
             };
             videoNameLbl = new Label
             {

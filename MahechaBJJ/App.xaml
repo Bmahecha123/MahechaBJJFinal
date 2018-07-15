@@ -13,16 +13,16 @@
             <Style x:Key="common-red-btn" TargetType="Button">
                 <Setter Property="FontFamily" Value="AmericanTypewriter-Bold" />
                 <Setter Property="BackgroundColor" Value="rgb(124, 37, 41)" />
-                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="TextColor" Value="#F2FDFF" />
                 <Setter Property="BorderWidth" Value="3" />
                 <Setter Property="BorderColor" Value="Black" />
             </Style>
             <Style x:Key="common-delete-btn" TargetType="Button">
-                <Setter Property="FontFamily" Value="AmericanTypewriter-Bold" />
                 <Setter Property="BackgroundColor" Value="red" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="BorderWidth" Value="3" />
                 <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="Image" Value="trash.png" />
             </Style>
             <Style x:Key="common-activity-indicator" TargetType="ActivityIndicator">
                 <Setter Property="Color" Value="rgb(58, 93, 174)" />

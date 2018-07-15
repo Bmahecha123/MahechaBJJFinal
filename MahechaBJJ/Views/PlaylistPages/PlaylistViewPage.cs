@@ -120,17 +120,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             backBtn = new Button
             {
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-                Text = "Back",
-                FontSize = btnSize * 2,
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                BorderWidth = 3,
-                TextColor = Color.Black
+                Style = (Style)Application.Current.Resources["common-red-btn"],
+                Image = "back.png"
             };
 
             timeOutLbl = new Label
@@ -153,7 +144,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             timeOutFrame = new Frame
             {
                 Content = timeOutLbl,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 HasShadow = false,
                 Padding = 3,
@@ -277,7 +268,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 playlistFrame = new Frame();
                 playlistFrame.BackgroundColor = Color.FromRgb(58, 93, 174);
                 playlistFrame.HasShadow = false;
-                playlistFrame.OutlineColor = Color.Black;
+                playlistFrame.BorderColor = Color.Black;
                 playlistFrame.Content = playlistLbl;
                 playlistFrame.Padding = new Thickness(10, 10, 10, 10);
 

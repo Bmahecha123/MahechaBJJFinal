@@ -142,33 +142,15 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             backBtn = new Button
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-                Text = "Back",
-                FontSize = btnSize * 2,
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                BorderWidth = 3,
-                TextColor = Color.Black
+                Style = (Style)Application.Current.Resources["common-red-btn"],
+                Image = "back.png"
             };
 
             deleteBtn = new Button
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-#endif
                 Image = "trash.png",
                 BackgroundColor = Color.Red,
-                BorderWidth = 3,
-                TextColor = Color.White
+                BorderWidth = 3
             };
 
 #if __ANDROID__
@@ -354,7 +336,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                     videoLbl.HorizontalTextAlignment = TextAlignment.Center;
                     videoFrame = new Frame();
                     videoFrame.Content = videoImage;
-                    videoFrame.OutlineColor = Color.Black;
+                    videoFrame.BorderColor = Color.Black;
                     videoFrame.BackgroundColor = Color.Black;
                     videoFrame.HasShadow = false;
                     videoFrame.Padding = 3;

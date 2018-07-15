@@ -207,13 +207,8 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             backBtn = new Button
             {
-                Text = "Back",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 2,
-                BackgroundColor = Color.FromRgb(124, 37, 41)
+                Style = (Style)Application.Current.Resources["common-red-btn"],
+                Image = "back.png"
             };
             videoNameLbl = new Label
             {
@@ -245,7 +240,6 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
 #if __IOS__
                 Content = videoDescription,
-
 #endif
             };
 
@@ -257,43 +251,31 @@ namespace MahechaBJJ.Views.PlaylistPages
             videoFrame = new Frame
             {
                 Content = videoImage,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 HasShadow = false,
                 Padding = 3
 
             };
+            //TODO ICONS FOR PLAY and DELETE in the AZURE color.
             playBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"]
                 Text = "Play",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
-                BackgroundColor = Color.FromRgb(58, 93, 174)
             };
             deleteBtn = new Button
             {
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.White,
-                //Text = "Delete From Playlist",
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 1.5,
-                BackgroundColor = Color.Red,
-                Image = "trash.png"
+                Style = (Style)Application.Current.Resources["common-delete-btn"]
             };
 
             qualityBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"]
                 Text = "SD",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
-                BackgroundColor = Color.FromRgb(58, 93, 174)
             };
 
             //Events

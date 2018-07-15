@@ -271,6 +271,7 @@ namespace MahechaBJJ.Views.SignUpPages
             };
             nextBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 1.5,
@@ -280,33 +281,19 @@ namespace MahechaBJJ.Views.SignUpPages
                 FontSize = btnSize,
 #endif
                 Text = "Next",
-
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
             backBtn = new Button
             {
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-                Text = "Back",
-                FontSize = btnSize * 1.5,
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
+                Style = (Style)Application.Current.Resources["common-red-btn"],
+                Image = "trash.png",
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
             clearBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-red-btn"],
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
 #endif
@@ -314,11 +301,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 FontFamily = "Roboto Bold",
 #endif
                 Text = "Clear",
-                FontSize = btnSize,
-                BackgroundColor = Color.Red,
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black
+                FontSize = btnSize
             };
 
 #if __ANDROID__

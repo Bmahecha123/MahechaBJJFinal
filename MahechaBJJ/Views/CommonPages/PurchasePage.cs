@@ -359,20 +359,8 @@ namespace MahechaBJJ.Views.CommonPages
 
             backBtn = new Button
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-                Text = "Back",
-                FontSize = btnSize * 1.5,
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                Image = "back.png",
+                Style = (Style)Application.Current.Resources["common-red-btn"]
             };
 
             purchaseBtn = new Button

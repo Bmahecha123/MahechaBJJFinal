@@ -175,31 +175,16 @@ namespace MahechaBJJ.Views
 
             loadBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "Load More...",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
-#if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 1.5,
-#endif
-                BackgroundColor = Color.FromRgb(58, 93, 174)
-
             };
 
             backBtn = new Button
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-#endif
-                Text = "Back",
-                FontSize = btnSize * 1.5,
-                BackgroundColor = Color.FromRgb(124, 37, 41),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                Style = (Style)Application.Current.Resources["common-red-btn"],
+                Image = "back.png"
             };
 
 #if __ANDROID__
@@ -264,7 +249,7 @@ namespace MahechaBJJ.Views
 
                     videoFrame = new Frame();
                     videoFrame.Content = videoImage;
-                    videoFrame.OutlineColor = Color.Black;
+                    videoFrame.BorderColor = Color.Black;
                     videoFrame.BackgroundColor = Color.Black;
                     videoFrame.HasShadow = false;
                     videoFrame.Padding = 3;

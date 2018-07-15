@@ -80,13 +80,10 @@ namespace MahechaBJJ.Views.SignUpPages
             accountInfo.TextColor = Color.Black;
 
             accountBtn = new Button();
+            accountBtn.Style = (Style)Application.Current.Resources["common-blue-btn"];
             accountBtn.FontFamily = "AmericanTypewriter-Bold";
             accountBtn.FontSize = btnSize * 2;
             accountBtn.Text = "Create";
-            accountBtn.BackgroundColor = Color.FromRgb(58, 93, 174);
-            accountBtn.TextColor = Color.Black;
-            accountBtn.BorderWidth = 3;
-            accountBtn.BorderColor = Color.Black;
             accountBtn.Clicked += async (sender, e) =>
             {
                 ToggleButtons();
@@ -95,13 +92,10 @@ namespace MahechaBJJ.Views.SignUpPages
             };
 
             noAccountBtn = new Button();
+            noAccountBtn.Style = (Style)Application.Current.Resources["common-red-btn"];
             noAccountBtn.FontFamily = "AmericanTypewriter-Bold";
             noAccountBtn.FontSize = btnSize * 2;
             noAccountBtn.Text = "No Account";
-            noAccountBtn.BackgroundColor = Color.DarkRed;
-            noAccountBtn.TextColor = Color.Black;
-            noAccountBtn.BorderWidth = 3;
-            noAccountBtn.BorderColor = Color.Black;
             noAccountBtn.Clicked += async (object sender, EventArgs e) =>
             {
                 ToggleButtons();
@@ -110,15 +104,10 @@ namespace MahechaBJJ.Views.SignUpPages
             };
 
             backBtn = new Button();
-            backBtn.FontFamily = "AmericanTypewriter-Bold";
-            backBtn.FontSize = btnSize * 2;
-            backBtn.Text = "Back";
-            backBtn.BackgroundColor = Color.FromRgb(124, 37, 41);
-            backBtn.TextColor = Color.Black;
+            backBtn.Style = (Style)Application.Current.Resources["common-red-btn"];
+            backBtn.Image = "back.png";
             backBtn.VerticalOptions = LayoutOptions.FillAndExpand;
             backBtn.HorizontalOptions = LayoutOptions.FillAndExpand;
-            backBtn.BorderWidth = 3;
-            backBtn.BorderColor = Color.Black;
             backBtn.Clicked += async (object sender, EventArgs e) =>
             {
                 ToggleButtons();
@@ -195,7 +184,7 @@ namespace MahechaBJJ.Views.SignUpPages
 #endif
 
             accountFrame = new Frame();
-            accountFrame.OutlineColor = Color.Black;
+            accountFrame.BorderColor = Color.Black;
             accountFrame.HasShadow = false;
             accountFrame.BackgroundColor = Color.FromRgb(57, 172, 166);
             accountFrame.Content = accountScrollView;

@@ -184,16 +184,14 @@ namespace MahechaBJJ.Views.EntryPages
             };
             backBtn = new Button
             {
-                Text = "Back",
-                FontSize = btnSize * 2,
+                Image = "back.png",
                 Style = (Style)Application.Current.Resources["common-red-btn"],
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
             forgotPasswordBtn = new Button
             {
-                Text = "?",
-                FontSize = btnSize * 2,
+                Image= "forgotpassword.png",
                 Style = (Style)Application.Current.Resources["common-blue-btn"],
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
