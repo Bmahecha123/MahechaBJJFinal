@@ -260,7 +260,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             //TODO ICONS FOR PLAY and DELETE in the AZURE color.
             playBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-blue-btn"]
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "Play",
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
@@ -272,7 +272,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             qualityBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-blue-btn"]
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "SD",
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
