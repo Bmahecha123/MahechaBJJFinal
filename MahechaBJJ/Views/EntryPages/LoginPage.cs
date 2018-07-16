@@ -22,6 +22,8 @@ namespace MahechaBJJ.Views.EntryPages
         private Grid outerGrid;
         private Grid innerGrid;
         private Grid buttonGrid;
+        private Grid emailGrid;
+        private Grid passwordGrid;
         private Image mahechaLogo;
         private Label emailLbl;
         private Image emailImg;
@@ -43,9 +45,11 @@ namespace MahechaBJJ.Views.EntryPages
 #if __ANDROID__
         private Android.Widget.Button androidLoginBtn;
         private Android.Widget.Button androidForgotPasswordBtn;
+        private Android.Widget.ImageView androidImageEmail;
+        private Android.Widget.ImageView androidImagePassword;
         private Android.Widget.EditText androidEmailEntry;
         private Android.Widget.EditText androidPasswordEntry;
-
+        private Android.Widget.ImageButton androidForgetPasswordImgBtn;
 #endif
 
 
@@ -101,6 +105,33 @@ namespace MahechaBJJ.Views.EntryPages
                 {
                     new ColumnDefinition {Width = new GridLength(3, GridUnitType.Star)},
                     new ColumnDefinition {Width = new GridLength(1, GridUnitType.Star)}
+                }
+            };
+            emailGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}
+                },
+                ColumnDefinitions = new ColumnDefinitionCollection
+                {
+                    new ColumnDefinition {Width = new GridLength(1, GridUnitType.Star)},
+                    new ColumnDefinition {Width = new GridLength(3, GridUnitType.Star)}
+                }
+
+            };
+            passwordGrid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
+                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}
+                },
+                ColumnDefinitions = new ColumnDefinitionCollection
+                {
+                    new ColumnDefinition {Width = new GridLength(1, GridUnitType.Star)},
+                    new ColumnDefinition {Width = new GridLength(3, GridUnitType.Star)}
                 }
             };
             mahechaLogo = new Image
@@ -209,7 +240,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidLoginBtn.Typeface = Constants.COMMONFONT;
             androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLoginBtn.SetBackground(pd);
-            androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidLoginBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
             androidLoginBtn.SetAllCaps(false);
 
@@ -218,20 +249,27 @@ namespace MahechaBJJ.Views.EntryPages
             androidForgotPasswordBtn.Typeface = Constants.COMMONFONT;
             androidForgotPasswordBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidForgotPasswordBtn.SetBackground(pdTwo);
-            androidForgotPasswordBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidForgotPasswordBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidForgotPasswordBtn.Gravity = Android.Views.GravityFlags.Center;
             androidForgotPasswordBtn.SetAllCaps(false);
 
+            androidForgetPasswordImgBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
+            androidForgetPasswordImgBtn.SetImageResource(2130837598);
+            androidForgetPasswordImgBtn.SetAdjustViewBounds(true);
+            androidForgetPasswordImgBtn.SetBackground(pdTwo);
+
             androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
-            androidEmailEntry.Hint = "E-Mail Address";
             androidEmailEntry.Typeface = Constants.COMMONFONT;
             androidEmailEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-            androidEmailEntry.SetPadding(0, 0, 0, 0);
             androidEmailEntry.SetTextColor(Android.Graphics.Color.Black);
             androidEmailEntry.InputType = Android.Text.InputTypes.TextVariationEmailAddress;
 
+            androidImageEmail = new Android.Widget.ImageView(MainApplication.ActivityContext);
+            androidImageEmail.SetImageResource(2130837780);
+            androidImageEmail.SetPadding(0, 0, 0, 0);
+            androidImageEmail.SetAdjustViewBounds(true);
+
             androidPasswordEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
-            androidPasswordEntry.Hint = "Password";
             androidPasswordEntry.Typeface = Constants.COMMONFONT;
             androidPasswordEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
             androidPasswordEntry.SetPadding(0, 0, 0, 0);
@@ -239,6 +277,11 @@ namespace MahechaBJJ.Views.EntryPages
             androidPasswordEntry.SetHighlightColor(Android.Graphics.Color.Transparent);
             androidPasswordEntry.InputType = Android.Text.InputTypes.TextVariationWebPassword;
             androidPasswordEntry.TransformationMethod = new PasswordTransformationMethod();
+
+            androidImagePassword = new Android.Widget.ImageView(MainApplication.ActivityContext);
+            androidImagePassword.SetImageResource(2130837816);
+            androidImagePassword.SetAdjustViewBounds(true);
+            androidImagePassword.SetPadding(0, 0, 0, 0);
 #endif
             //Events
             loginBtn.Clicked += async (object sender, EventArgs e) => {
@@ -251,7 +294,7 @@ namespace MahechaBJJ.Views.EntryPages
                 await Navigation.PopModalAsync();
                 ToggleButtons();
             };
-            forgotPasswordBtn.Clicked += async (object sender, EventArgs e) => {
+            androidForgetPasswordImgBtn.Click += async (object sender, EventArgs e) => {
                 ToggleButtons();
                 await Navigation.PushModalAsync(new ForgotPasswordPage());
                 ToggleButtons();
@@ -300,10 +343,14 @@ namespace MahechaBJJ.Views.EntryPages
 #endif
 #if __ANDROID__
             buttonGrid.Children.Add(androidLoginBtn.ToView(), 0, 0);
-            buttonGrid.Children.Add(androidForgotPasswordBtn.ToView(), 1, 0);
+            buttonGrid.Children.Add(androidForgetPasswordImgBtn.ToView(), 1, 0);
+            emailGrid.Children.Add(androidImageEmail.ToView(), 0, 0);
+            emailGrid.Children.Add(androidEmailEntry.ToView(), 1, 0);
+            passwordGrid.Children.Add(androidImagePassword.ToView(), 0, 0);
+            passwordGrid.Children.Add(androidPasswordEntry.ToView(), 1, 0);
             innerGrid.Children.Add(mahechaLogo, 0, 0);
-            innerGrid.Children.Add(androidEmailEntry.ToView(), 0, 1);
-            innerGrid.Children.Add(androidPasswordEntry.ToView(), 0, 2);
+            innerGrid.Children.Add(emailGrid, 0, 1);
+            innerGrid.Children.Add(passwordGrid, 0, 2);
             innerGrid.Children.Add(buttonGrid, 0, 3);
 
             outerGrid.Children.Add(innerGrid, 0, 0);
@@ -405,7 +452,7 @@ namespace MahechaBJJ.Views.EntryPages
         {
 #if __ANDROID__
             androidLoginBtn.Clickable = !androidLoginBtn.Clickable;
-            androidForgotPasswordBtn.Clickable = !androidForgotPasswordBtn.Clickable;
+            androidForgetPasswordImgBtn.Clickable = !androidForgetPasswordImgBtn.Clickable;
 #endif
             backBtn.IsEnabled = !backBtn.IsEnabled;
             loginBtn.IsEnabled = !loginBtn.IsEnabled;

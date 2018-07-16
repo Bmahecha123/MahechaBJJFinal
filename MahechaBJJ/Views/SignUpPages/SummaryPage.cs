@@ -194,7 +194,7 @@ namespace MahechaBJJ.Views.SignUpPages
             androidSignUpBtn = new Android.Widget.Button(MainApplication.ActivityContext);
             androidSignUpBtn.Text = "Sign Up";
             androidSignUpBtn.Typeface = Constants.COMMONFONT;
-            androidSignUpBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidSignUpBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidSignUpBtn.SetBackground(pd);
             androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSignUpBtn.Gravity = Android.Views.GravityFlags.Center;

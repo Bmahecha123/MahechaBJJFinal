@@ -254,10 +254,6 @@
     <AndroidResource Include="Resources\drawable-hdpi\settings.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\settings.png" />
-    <AndroidResource Include="Resources\drawable\trash.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\trash.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\trash.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\trash.png" />
     <AndroidResource Include="Resources\drawable\forgotpassword.png" />
     <AndroidResource Include="Resources\drawable-hdpi\forgotpassword.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\forgotpassword.png" />
@@ -270,6 +266,18 @@
     <AndroidResource Include="Resources\drawable-hdpi\password.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\password.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\password.png" />
+    <AndroidResource Include="Resources\drawable\trash.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\trash.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\trash.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\trash.png" />
+    <AndroidResource Include="Resources\drawable\next.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\next.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\next.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\next.png" />
+    <AndroidResource Include="Resources\drawable\play.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\play.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\play.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\play.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Service\" />

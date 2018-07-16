@@ -126,7 +126,7 @@ namespace MahechaBJJ.Views.CommonPages
             androidNextBtn.Text = "Next";
             androidNextBtn.Typeface = Constants.COMMONFONT;
             androidNextBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidNextBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidNextBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidNextBtn.Gravity = Android.Views.GravityFlags.Center;
             androidNextBtn.SetBackground(pd);
             androidNextBtn.Click += async (object sender, EventArgs e) => {

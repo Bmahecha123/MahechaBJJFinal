@@ -101,7 +101,7 @@ namespace MahechaBJJ.Views
             androidBlogLbl.Text = "Blog";
             androidBlogLbl.Typeface = Constants.COMMONFONT;
             androidBlogLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidBlogLbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
+            androidBlogLbl.SetTextColor(Android.Graphics.Color.Rgb(241, 236, 206));
             androidBlogLbl.Gravity = Android.Views.GravityFlags.Center;
             androidBlogLbl.Click += async (object sender, EventArgs e) =>
             {

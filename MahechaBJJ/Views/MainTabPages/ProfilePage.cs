@@ -306,7 +306,7 @@ namespace MahechaBJJ.Views
             androidPackageBtn.Typeface = Constants.COMMONFONT;
             androidPackageBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidPackageBtn.SetBackground(pd);
-            androidPackageBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidPackageBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidPackageBtn.Gravity = Android.Views.GravityFlags.Center;
             androidPackageBtn.SetAllCaps(false);
             androidPackageBtn.Click += async (object sender, EventArgs e) => {
@@ -320,7 +320,7 @@ namespace MahechaBJJ.Views
             androidContactUsBtn.Typeface = Constants.COMMONFONT;
             androidContactUsBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidContactUsBtn.SetBackground(pd);
-            androidContactUsBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidContactUsBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidContactUsBtn.Gravity = Android.Views.GravityFlags.Center;
             androidContactUsBtn.SetAllCaps(false);
             androidContactUsBtn.Click += (object sender, EventArgs e) => {
@@ -334,7 +334,7 @@ namespace MahechaBJJ.Views
             androidLogOutBtn.Typeface = Constants.COMMONFONT;
             androidLogOutBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLogOutBtn.SetBackground(pd);
-            androidLogOutBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidLogOutBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidLogOutBtn.Gravity = Android.Views.GravityFlags.Center;
             androidLogOutBtn.SetAllCaps(false);
             androidLogOutBtn.Click += async (object sender, EventArgs e) => {
@@ -348,7 +348,7 @@ namespace MahechaBJJ.Views
             androidLoginBtn.Typeface = Constants.COMMONFONT;
             androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLoginBtn.SetBackground(pd);
-            androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidLoginBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
             androidLoginBtn.SetAllCaps(false);
             androidLoginBtn.Click += async (sender, e) => {
@@ -362,7 +362,7 @@ namespace MahechaBJJ.Views
             androidSettingsBtn.Typeface = Constants.COMMONFONT;
             androidSettingsBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSettingsBtn.SetBackground(pd);
-            androidSettingsBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidSettingsBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidSettingsBtn.Gravity = Android.Views.GravityFlags.Center;
             androidSettingsBtn.SetAllCaps(false);
             androidSettingsBtn.Click += async (object sender, EventArgs e) => {
@@ -376,7 +376,7 @@ namespace MahechaBJJ.Views
             androidCreateAccountBtn.Typeface = Constants.COMMONFONT;
             androidCreateAccountBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidCreateAccountBtn.SetBackground(pd);
-            androidCreateAccountBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidCreateAccountBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidCreateAccountBtn.Gravity = Android.Views.GravityFlags.Center;
             androidCreateAccountBtn.SetAllCaps(false);
             androidCreateAccountBtn.Click += async (object sender, EventArgs e) => {

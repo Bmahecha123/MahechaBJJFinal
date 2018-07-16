@@ -196,7 +196,7 @@ namespace MahechaBJJ.Views
             androidLoadBtn.Typeface = Constants.COMMONFONT;
             androidLoadBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLoadBtn.SetBackground(pd);
-            androidLoadBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidLoadBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidLoadBtn.Gravity = Android.Views.GravityFlags.Center;
             androidLoadBtn.SetAllCaps(false);
             androidLoadBtn.Click += async (object sender, EventArgs e) => {

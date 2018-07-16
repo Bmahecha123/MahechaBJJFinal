@@ -237,7 +237,7 @@ namespace MahechaBJJ.Views.CommonPages
             androidSubmitBtn.Text = "Change Password";
             androidSubmitBtn.Typeface = Constants.COMMONFONT;
             androidSubmitBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidSubmitBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidSubmitBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidSubmitBtn.SetBackground(pd);
             androidSubmitBtn.SetAllCaps(false);
             androidSubmitBtn.Click += async (object sender, EventArgs e) =>

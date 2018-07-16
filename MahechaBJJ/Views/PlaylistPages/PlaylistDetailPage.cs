@@ -38,6 +38,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 #if __ANDROID__
         private Android.Widget.TextView androidPlaylistNameLbl;
         private Android.Widget.TextView androidPlaylistDescriptionLbl;
+        private Android.Widget.ImageButton androidImgDeleteBtn;
         private Android.Widget.Button androidDeleteBtn;
 
         private ContentView contentViewAndroidPlaylistNameLbl;
@@ -84,13 +85,19 @@ namespace MahechaBJJ.Views.PlaylistPages
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(10, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(2, GridUnitType.Star)}
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
 #endif
                 },
                 ColumnDefinitions = new ColumnDefinitionCollection
                 {
+                    #if __ANDROID__
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
+                    new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star)}
+                    #endif
+#if __IOS__
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
+#endif
                 }
             };
 
@@ -171,15 +178,12 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidPlaylistDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
             androidPlaylistDescriptionLbl.Gravity = Android.Views.GravityFlags.Center;
 
-            androidDeleteBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidDeleteBtn.Text = "Delete";
-            androidDeleteBtn.Typeface = Constants.COMMONFONT;
-            androidDeleteBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidDeleteBtn.SetTextColor(Android.Graphics.Color.Black);
-            androidDeleteBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidDeleteBtn.SetAllCaps(false);
-            androidDeleteBtn.SetBackground(pd);
-            androidDeleteBtn.Click += async (object sender, EventArgs e) =>
+            //TODO FIGURE OUT HOW TO ADD IMAGES TO ANDROID BUTTONS
+            androidImgDeleteBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
+            androidImgDeleteBtn.SetAdjustViewBounds(true);
+            androidImgDeleteBtn.SetImageResource(2130837821);
+            androidImgDeleteBtn.SetBackground(pd);
+            androidImgDeleteBtn.Click += async (object sender, EventArgs e) =>
             {
                 ToggleButtons();
                 await DeletePlaylist(sender, e);
@@ -191,7 +195,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             contentViewAndroidPlaylistDescriptionLbl = new ContentView();
             contentViewAndroidPlaylistDescriptionLbl.Content = androidPlaylistDescriptionLbl.ToView();
             contentViewAndroidDeleteBtn = new ContentView();
-            contentViewAndroidDeleteBtn.Content = androidDeleteBtn.ToView();
+            contentViewAndroidDeleteBtn.Content = androidImgDeleteBtn.ToView();
 #endif
 
             //Events
@@ -244,9 +248,9 @@ namespace MahechaBJJ.Views.PlaylistPages
             Grid.SetColumnSpan(contentViewAndroidPlaylistDescriptionLbl, 2);
             innerGrid.Children.Add(videosListView, 0, 2);
             Grid.SetColumnSpan(videosListView, 2);
+            Grid.SetRowSpan(videosListView, 2);
 
             innerGrid.Children.Add(contentViewAndroidDeleteBtn, 0, 3);
-            Grid.SetColumnSpan(contentViewAndroidDeleteBtn, 2);
 #endif
             outerGrid.Children.Add(innerGrid, 0, 0);
 
@@ -278,7 +282,7 @@ namespace MahechaBJJ.Views.PlaylistPages
         {
             videosListView.IsEnabled = !videosListView.IsEnabled;
 #if __ANDROID__
-            androidDeleteBtn.Clickable = !androidDeleteBtn.Clickable;
+            androidImgDeleteBtn.Clickable = !androidImgDeleteBtn.Clickable;
 #endif
             backBtn.IsEnabled = !backBtn.IsEnabled;
             deleteBtn.IsEnabled = !deleteBtn.IsEnabled;
@@ -386,7 +390,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 #endif
                 innerGrid.RowDefinitions.Clear();
                 innerGrid.ColumnDefinitions.Clear();
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
@@ -418,7 +422,10 @@ namespace MahechaBJJ.Views.PlaylistPages
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(10, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star) });
 #endif
 #if __IOS__
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
@@ -449,8 +456,9 @@ namespace MahechaBJJ.Views.PlaylistPages
                 Grid.SetColumnSpan(contentViewAndroidPlaylistDescriptionLbl, 2);
                 innerGrid.Children.Add(videosListView, 0, 2);
                 Grid.SetColumnSpan(videosListView, 2);
+                Grid.SetRowSpan(videosListView, 2);
+
                 innerGrid.Children.Add(contentViewAndroidDeleteBtn, 0, 3);
-                Grid.SetColumnSpan(contentViewAndroidDeleteBtn, 2);
 #endif
             }
         }

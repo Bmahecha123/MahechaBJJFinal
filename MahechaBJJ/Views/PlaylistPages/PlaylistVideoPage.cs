@@ -41,7 +41,7 @@ namespace MahechaBJJ.Views.PlaylistPages
         private Android.Widget.TextView androidVideoNameLbl;
         private Android.Widget.TextView androidVideoDescriptionLbl;
         private Android.Widget.Button androidPlayBtn;
-        private Android.Widget.Button androidDeleteBtn;
+        private Android.Widget.ImageButton androidImgDeleteBtn;
         private Android.Widget.Button androidQualityBtn;
 
         private ContentView contentViewNameLbl;
@@ -152,7 +152,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidPlayBtn.Text = "Play";
             androidPlayBtn.Typeface = Constants.COMMONFONT;
             androidPlayBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidPlayBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidPlayBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidPlayBtn.SetBackground(pd);
             androidPlayBtn.Gravity = Android.Views.GravityFlags.Center;
             androidPlayBtn.SetAllCaps(false);
@@ -163,15 +163,11 @@ namespace MahechaBJJ.Views.PlaylistPages
                 ToggleButtons();
             };
 
-            androidDeleteBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidDeleteBtn.Text = "D";
-            androidDeleteBtn.Typeface = Constants.COMMONFONT;
-            androidDeleteBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidDeleteBtn.SetTextColor(Android.Graphics.Color.Black);
-            androidDeleteBtn.SetBackground(pdRed);
-            androidDeleteBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidDeleteBtn.SetAllCaps(false);
-            androidDeleteBtn.Click += async (object sender, EventArgs e) =>
+            androidImgDeleteBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
+            androidImgDeleteBtn.SetAdjustViewBounds(true);
+            androidImgDeleteBtn.SetImageResource(2130837821);
+            androidImgDeleteBtn.SetBackground(pdRed);
+            androidImgDeleteBtn.Click += async (object sender, EventArgs e) =>
             {
                 ToggleButtons();
                 await DeleteFromPlaylist(sender, e);
@@ -182,7 +178,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidQualityBtn.Text = "SD";
             androidQualityBtn.Typeface = Constants.COMMONFONT;
             androidQualityBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidQualityBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidQualityBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidQualityBtn.SetBackground(pd);
             androidQualityBtn.Gravity = Android.Views.GravityFlags.Center;
             androidQualityBtn.SetAllCaps(false);
@@ -200,7 +196,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             contentViewPlayBtn = new ContentView();
             contentViewPlayBtn.Content = androidPlayBtn.ToView();
             contentViewDeleteBtn = new ContentView();
-            contentViewDeleteBtn.Content = androidDeleteBtn.ToView();
+            contentViewDeleteBtn.Content = androidImgDeleteBtn.ToView();
             contentViewQualityBtn = new ContentView();
             contentViewQualityBtn.Content = androidQualityBtn.ToView();
 #endif
@@ -380,7 +376,7 @@ namespace MahechaBJJ.Views.PlaylistPages
         {
 #if __ANDROID__
             androidPlayBtn.Clickable = !androidPlayBtn.Clickable;
-            androidDeleteBtn.Clickable = !androidDeleteBtn.Clickable;
+            androidImgDeleteBtn.Clickable = !androidImgDeleteBtn.Clickable;
             androidQualityBtn.Clickable = !androidQualityBtn.Clickable;
 #endif
             deleteBtn.IsEnabled = !deleteBtn.IsEnabled;

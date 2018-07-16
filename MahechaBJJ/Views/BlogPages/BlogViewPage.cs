@@ -121,7 +121,7 @@ namespace MahechaBJJ.Views.BlogPages
             timeOutFrame = new Frame
             {
                 Content = timeOutLbl,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 HasShadow = false,
                 Padding = 3,

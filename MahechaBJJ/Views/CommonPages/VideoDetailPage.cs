@@ -171,7 +171,7 @@ namespace MahechaBJJ.Views
             androidVideoNameLbl.Text = videoTechnique.name;
             androidVideoNameLbl.Typeface = Constants.COMMONFONT;
             androidVideoNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
-            androidVideoNameLbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
+            androidVideoNameLbl.SetTextColor(Android.Graphics.Color.Rgb(241, 236, 206));
             androidVideoNameLbl.Gravity = Android.Views.GravityFlags.Center;
             androidVideoNameLbl.SetTypeface(androidVideoNameLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
 
@@ -186,7 +186,7 @@ namespace MahechaBJJ.Views
             androidPlayBtn.Text = "Play";
             androidPlayBtn.Typeface = Constants.COMMONFONT;
             androidPlayBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidPlayBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidPlayBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidPlayBtn.SetBackground(pd);
             androidPlayBtn.Gravity = Android.Views.GravityFlags.Center;
             androidPlayBtn.SetAllCaps(false);
@@ -201,7 +201,7 @@ namespace MahechaBJJ.Views
             androidAddBtn.Text = "+";
             androidAddBtn.Typeface = Constants.COMMONFONT;
             androidAddBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidAddBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidAddBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidAddBtn.SetBackground(pd);
             androidAddBtn.Gravity = Android.Views.GravityFlags.Center;
             androidAddBtn.SetAllCaps(false);
@@ -216,7 +216,7 @@ namespace MahechaBJJ.Views
             androidQualityBtn.Text = "SD";
             androidQualityBtn.Typeface = Constants.COMMONFONT;
             androidQualityBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidQualityBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidQualityBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidQualityBtn.SetBackground(pd);
             androidQualityBtn.Gravity = Android.Views.GravityFlags.Center;
             androidQualityBtn.SetAllCaps(false);
@@ -299,7 +299,7 @@ namespace MahechaBJJ.Views
             videoFrame = new Frame
             {
                 Content = videoImage,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 HasShadow = false,
                 Padding = 3

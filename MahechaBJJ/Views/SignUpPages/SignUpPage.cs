@@ -361,7 +361,7 @@ namespace MahechaBJJ.Views.SignUpPages
             androidNextBtn.Typeface = Constants.COMMONFONT;
             androidNextBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidNextBtn.SetBackground(pd);
-            androidNextBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidNextBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidNextBtn.Gravity = Android.Views.GravityFlags.Center;
             androidNextBtn.Click += async (object sender, EventArgs e) =>
             {

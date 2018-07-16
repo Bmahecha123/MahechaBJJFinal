@@ -152,7 +152,7 @@ namespace MahechaBJJ.Views
             androidVideo1Lbl.Text = "Spider Guard Stuff!";
             androidVideo1Lbl.Typeface = Constants.COMMONFONT;
             androidVideo1Lbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-            androidVideo1Lbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
+            androidVideo1Lbl.SetTextColor(Android.Graphics.Color.Rgb(241, 236, 206));
             androidVideo1Lbl.Gravity = Android.Views.GravityFlags.Center;
             androidVideo1Lbl.Click += async (object sender, EventArgs e) =>
             {
@@ -170,7 +170,7 @@ namespace MahechaBJJ.Views
             androidVideo2Lbl.Text = "Spider Guard Stuff!";
             androidVideo2Lbl.Typeface = Constants.COMMONFONT;
             androidVideo2Lbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-            androidVideo2Lbl.SetTextColor(Android.Graphics.Color.AntiqueWhite);
+            androidVideo2Lbl.SetTextColor(Android.Graphics.Color.Rgb(241, 236, 206));
             androidVideo2Lbl.Gravity = Android.Views.GravityFlags.Center;
             androidVideo2Lbl.Click += async (object sender, EventArgs e) =>
             {
@@ -210,7 +210,7 @@ namespace MahechaBJJ.Views
             androidAddPlaylistBtn.Typeface = Constants.COMMONFONT;
             androidAddPlaylistBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidAddPlaylistBtn.SetBackground(pd);
-            androidAddPlaylistBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidAddPlaylistBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidAddPlaylistBtn.Gravity = Android.Views.GravityFlags.Center;
             androidAddPlaylistBtn.SetAllCaps(false);
             androidAddPlaylistBtn.Click += async (object sender, EventArgs e) =>
@@ -225,7 +225,7 @@ namespace MahechaBJJ.Views
             androidViewPlaylistBtn.Typeface = Constants.COMMONFONT;
             androidViewPlaylistBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidViewPlaylistBtn.SetBackground(pd);
-            androidViewPlaylistBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidViewPlaylistBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidViewPlaylistBtn.Gravity = Android.Views.GravityFlags.Center;
             androidViewPlaylistBtn.SetAllCaps(false);
             androidViewPlaylistBtn.Click += async (object sender, EventArgs e) =>
@@ -383,7 +383,7 @@ namespace MahechaBJJ.Views
             timeOutFrame = new Frame
             {
                 Content = timeOutLbl,
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 HasShadow = false,
                 Padding = 3,

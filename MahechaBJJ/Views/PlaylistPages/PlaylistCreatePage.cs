@@ -213,7 +213,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidCreateBtn.Text = "Create Playlist";
             androidCreateBtn.Typeface = Constants.COMMONFONT;
             androidCreateBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidCreateBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidCreateBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidCreateBtn.SetBackground(pd);
             androidCreateBtn.Gravity = Android.Views.GravityFlags.Center;
             androidCreateBtn.SetAllCaps(false);

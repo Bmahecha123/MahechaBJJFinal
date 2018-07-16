@@ -124,7 +124,7 @@ namespace MahechaBJJ.Views.SignUpPages
             androidNoAccountBtn.Typeface = Constants.COMMONFONT;
             androidNoAccountBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidNoAccountBtn.SetBackground(pd);
-            androidNoAccountBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidNoAccountBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidNoAccountBtn.Gravity = Android.Views.GravityFlags.Center;
             androidNoAccountBtn.Click += async (object sender, EventArgs e) =>
             {
@@ -139,7 +139,7 @@ namespace MahechaBJJ.Views.SignUpPages
             androidAccountBtn.Typeface = Constants.COMMONFONT;
             androidAccountBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidAccountBtn.SetBackground(pd);
-            androidAccountBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidAccountBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidAccountBtn.Gravity = Android.Views.GravityFlags.Center;
             androidAccountBtn.Click += async (object sender, EventArgs e) =>
             {

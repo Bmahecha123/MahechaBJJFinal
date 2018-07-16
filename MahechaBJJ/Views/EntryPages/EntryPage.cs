@@ -122,7 +122,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidLoginBtn.Typeface = Constants.COMMONFONT;
             androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidLoginBtn.SetBackground(pd);
-            androidLoginBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidLoginBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
             androidLoginBtn.SetAllCaps(false);
 
@@ -131,7 +131,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidSignUpBtn.Typeface = Constants.COMMONFONT;
             androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidSignUpBtn.SetBackground(pd);
-            androidSignUpBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidSignUpBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidSignUpBtn.Gravity = Android.Views.GravityFlags.Center;
             androidSignUpBtn.SetAllCaps(false);
 
@@ -140,7 +140,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidBlogBtn.Typeface = Constants.COMMONFONT;
             androidBlogBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidBlogBtn.SetBackground(pd);
-            androidBlogBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidBlogBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidBlogBtn.Gravity = Android.Views.GravityFlags.Center;
             androidBlogBtn.SetAllCaps(false);
 
@@ -149,7 +149,7 @@ namespace MahechaBJJ.Views.EntryPages
             androidRestoreBtn.Typeface = Constants.COMMONFONT;
             androidRestoreBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
             androidRestoreBtn.SetBackground(pd);
-            androidRestoreBtn.SetTextColor(Android.Graphics.Color.Black);
+            androidRestoreBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
             androidRestoreBtn.Gravity = Android.Views.GravityFlags.Center;
             androidRestoreBtn.SetAllCaps(false);
 #endif
