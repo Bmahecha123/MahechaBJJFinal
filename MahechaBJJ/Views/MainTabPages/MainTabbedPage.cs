@@ -11,6 +11,9 @@ namespace MahechaBJJ.Views
     {
         public MainTabbedPage(bool hasAccount)
         {
+            BarTextColor = Color.FromHex("#F2FDFF");
+            BarBackgroundColor = Color.FromRgb(58, 93, 174);
+                
             if (hasAccount)
             {
                 Children.Add(new HomePage());

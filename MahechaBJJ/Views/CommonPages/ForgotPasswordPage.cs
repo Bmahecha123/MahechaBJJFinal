@@ -31,6 +31,7 @@ namespace MahechaBJJ.Views.CommonPages
         private Android.Widget.TextView androidEmailLbl;
         private Android.Widget.EditText androidEmailEntry;
         private Android.Widget.Button androidNextBtn;
+        private Android.Widget.ImageButton androidNextImgBtn;
 
         private ContentView contentViewHeaderLbl;
         private ContentView contentViewEmailLbl;
@@ -135,6 +136,17 @@ namespace MahechaBJJ.Views.CommonPages
                 ToggleButtons();
             };
 
+            androidNextImgBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
+            androidNextImgBtn.SetImageResource(2130837802);
+            androidNextImgBtn.SetAdjustViewBounds(true);
+            androidNextImgBtn.SetBackground(pd);
+            androidNextImgBtn.Click += async (object sender, EventArgs e) =>
+            {
+                ToggleButtons();
+                await CheckIfUserExists(sender, e);
+                ToggleButtons();
+            };
+
             contentViewHeaderLbl = new ContentView();
             contentViewHeaderLbl.Content = androidHeaderLbl.ToView();
             contentViewEmailLbl = new ContentView();
@@ -142,7 +154,7 @@ namespace MahechaBJJ.Views.CommonPages
             contentViewEmailEntry = new ContentView();
             contentViewEmailEntry.Content = androidEmailEntry.ToView();
             contentViewNextBtn = new ContentView();
-            contentViewNextBtn.Content = androidNextBtn.ToView();
+            contentViewNextBtn.Content = androidNextImgBtn.ToView();
 #endif
 
             headerLbl = new Label
@@ -198,19 +210,8 @@ namespace MahechaBJJ.Views.CommonPages
 
             nextBtn = new Button
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 1.5,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-#endif
-                Text = "Next",
-                BackgroundColor = Color.FromRgb(58, 93, 174),
-                TextColor = Color.Black,
-                BorderWidth = 3,
-                BorderColor = Color.Black,
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
+                Image = "next.png",
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -298,7 +299,7 @@ namespace MahechaBJJ.Views.CommonPages
             backBtn.IsEnabled = !backBtn.IsEnabled;
             nextBtn.IsEnabled = !nextBtn.IsEnabled;
 #if __ANDROID__
-            androidNextBtn.Clickable = !androidNextBtn.Clickable;
+            androidNextImgBtn.Clickable = !androidNextImgBtn.Clickable;
 #endif
         }
     }

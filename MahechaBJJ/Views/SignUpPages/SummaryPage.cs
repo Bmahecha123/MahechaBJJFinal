@@ -763,7 +763,7 @@ namespace MahechaBJJ.Views.SignUpPages
 
 #endif
 #if __ANDROID__
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
+                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(9, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
                 innerGrid.Children.Add(scrollView, 0, 0);

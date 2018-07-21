@@ -60,7 +60,7 @@ namespace MahechaBJJ.Views.SignUpPages
         Android.Widget.EditText androidPassWordEntry;
         Android.Widget.TextView androidSecretQuestionsLbl;
         Android.Widget.EditText androidSecretQuestionEntry;
-        Android.Widget.Button androidNextBtn;
+        Android.Widget.ImageButton androidNextImgBtn;
 #endif
 
         public SignUpPage(Package package)
@@ -272,22 +272,14 @@ namespace MahechaBJJ.Views.SignUpPages
             nextBtn = new Button
             {
                 Style = (Style)Application.Current.Resources["common-blue-btn"],
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 1.5,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-#endif
-                Text = "Next",
+                Image = "next.png",
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
             backBtn = new Button
             {
                 Style = (Style)Application.Current.Resources["common-red-btn"],
-                Image = "trash.png",
+                Image = "back.png",
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -340,7 +332,6 @@ namespace MahechaBJJ.Views.SignUpPages
             androidPassWordEntry.InputType = Android.Text.InputTypes.TextVariationPassword;
             androidPassWordEntry.TransformationMethod = new PasswordTransformationMethod();
 
-
             androidSecretQuestionsLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
             androidSecretQuestionsLbl.Text = "Secret Questions";
             androidSecretQuestionsLbl.Typeface = Constants.COMMONFONT;
@@ -356,34 +347,16 @@ namespace MahechaBJJ.Views.SignUpPages
             androidSecretQuestionEntry.Gravity = Android.Views.GravityFlags.Start;
             androidSecretQuestionEntry.InputType = Android.Text.InputTypes.TextVariationShortMessage;
 
-            androidNextBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidNextBtn.Text = "Next";
-            androidNextBtn.Typeface = Constants.COMMONFONT;
-            androidNextBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidNextBtn.SetBackground(pd);
-            androidNextBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidNextBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidNextBtn.Click += async (object sender, EventArgs e) =>
+            androidNextImgBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
+            androidNextImgBtn.SetImageResource(2130837802);
+            androidNextImgBtn.SetAdjustViewBounds(true);
+            androidNextImgBtn.SetBackground(pd);
+            androidNextImgBtn.Click += async (object sender, EventArgs e) =>
             {
                 ToggleButtons();
                 await Validate();
                 ToggleButtons();
             };
-            androidNextBtn.SetAllCaps(false);
-
-            /*androidBlogBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidBlogBtn.Text = "Learn More";
-            androidBlogBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidBlogBtn.SetBackgroundColor(Android.Graphics.Color.Rgb(58, 93, 174));
-            androidBlogBtn.SetTextColor(Android.Graphics.Color.Black);
-            androidBlogBtn.Gravity = Android.Views.GravityFlags.Center; 
-
-            androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
-            androidEmailEntry.Hint = "E-Mail Address";
-            androidEmailEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-            androidEmailEntry.SetPadding(0, 0, 0, 0);
-            androidEmailEntry.SetTextColor(Android.Graphics.Color.Black);
-            androidEmailEntry.InputType = Android.Text.InputTypes.TextVariationEmailAddress;*/
 #endif
 
             //Events
@@ -403,8 +376,8 @@ namespace MahechaBJJ.Views.SignUpPages
             //TODO add specific validation events to make sure entries are correct.
 
             tableView = new TableView();
+            tableView.BackgroundColor = Color.FromHex("#F1ECCE");
             tableView.Intent = TableIntent.Form;
-            tableView.BackgroundColor = Color.White;
             tableView.Root = new TableRoot()
             {
                 new TableSection() {
@@ -467,7 +440,7 @@ namespace MahechaBJJ.Views.SignUpPages
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
             };
-            buttonGrid.Children.Add(androidNextBtn.ToView(), 0, 0);
+            buttonGrid.Children.Add(androidNextImgBtn.ToView(), 0, 0);
 #endif
 
             scrollView = new ScrollView();
@@ -594,7 +567,7 @@ namespace MahechaBJJ.Views.SignUpPages
         private void ToggleButtons()
         {
 #if __ANDROID__
-            androidNextBtn.Clickable = !androidNextBtn.Clickable;
+            androidNextImgBtn.Clickable = !androidNextImgBtn.Clickable;
 #endif
             backBtn.IsEnabled = !backBtn.IsEnabled;
             nextBtn.IsEnabled = !nextBtn.IsEnabled;

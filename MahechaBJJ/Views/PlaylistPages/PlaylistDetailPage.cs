@@ -39,7 +39,6 @@ namespace MahechaBJJ.Views.PlaylistPages
         private Android.Widget.TextView androidPlaylistNameLbl;
         private Android.Widget.TextView androidPlaylistDescriptionLbl;
         private Android.Widget.ImageButton androidImgDeleteBtn;
-        private Android.Widget.Button androidDeleteBtn;
 
         private ContentView contentViewAndroidPlaylistNameLbl;
         private ContentView contentViewAndroidPlaylistDescriptionLbl;
@@ -178,10 +177,9 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidPlaylistDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
             androidPlaylistDescriptionLbl.Gravity = Android.Views.GravityFlags.Center;
 
-            //TODO FIGURE OUT HOW TO ADD IMAGES TO ANDROID BUTTONS
             androidImgDeleteBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
             androidImgDeleteBtn.SetAdjustViewBounds(true);
-            androidImgDeleteBtn.SetImageResource(2130837821);
+            androidImgDeleteBtn.SetImageResource(2130837823);
             androidImgDeleteBtn.SetBackground(pd);
             androidImgDeleteBtn.Click += async (object sender, EventArgs e) =>
             {

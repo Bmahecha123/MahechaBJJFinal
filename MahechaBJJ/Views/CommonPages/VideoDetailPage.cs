@@ -40,10 +40,11 @@ namespace MahechaBJJ.Views
         private VideoData videoTechnique;
         private bool userHasAccount;
 #if __ANDROID__
+        //TODO IMPLEMENT IMAGE BUTTONS!!!!!!!!
         private Grid buttonGrid;
         private Android.Widget.TextView androidVideoNameLbl;
         private Android.Widget.TextView androidVideoDescriptionLbl;
-        private Android.Widget.Button androidPlayBtn;
+        private Android.Widget.ImageButton androidPlayImgBtn;
         private Android.Widget.Button androidAddBtn;
         private Android.Widget.Button androidQualityBtn;
 
@@ -125,7 +126,7 @@ namespace MahechaBJJ.Views
                 {
                     new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
+                    new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
             };
@@ -182,15 +183,11 @@ namespace MahechaBJJ.Views
             androidVideoDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
             androidVideoDescriptionLbl.Gravity = Android.Views.GravityFlags.Start;
 
-            androidPlayBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidPlayBtn.Text = "Play";
-            androidPlayBtn.Typeface = Constants.COMMONFONT;
-            androidPlayBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidPlayBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidPlayBtn.SetBackground(pd);
-            androidPlayBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidPlayBtn.SetAllCaps(false);
-            androidPlayBtn.Click += async (object sender, EventArgs e) =>
+            androidPlayImgBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
+            androidPlayImgBtn.SetAdjustViewBounds(true);
+            androidPlayImgBtn.SetImageResource(2130837817);
+            androidPlayImgBtn.SetBackground(pd);
+            androidPlayImgBtn.Click += async (object sender, EventArgs e) =>
             {
                 ToggleButtons();
                 await PlayAndroidVideo(sender, e);
@@ -232,7 +229,7 @@ namespace MahechaBJJ.Views
             contentViewDescriptionLbl = new ContentView();
             contentViewDescriptionLbl.Content = androidVideoDescriptionLbl.ToView();
             contentViewPlayBtn = new ContentView();
-            contentViewPlayBtn.Content = androidPlayBtn.ToView();
+            contentViewPlayBtn.Content = androidPlayImgBtn.ToView();
             contentViewAddBtn = new ContentView();
             contentViewAddBtn.Content = androidAddBtn.ToView();
             contentViewQualityBtn = new ContentView();
@@ -307,27 +304,13 @@ namespace MahechaBJJ.Views
             };
             playBtn = new Button
             {
-                Text = "Play",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-                Margin = -5,
-#endif
-                BackgroundColor = Color.FromRgb(58, 93, 174)
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
+                Image = "play.png"
             };
             addBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "+",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
 #if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 3,
@@ -337,25 +320,14 @@ namespace MahechaBJJ.Views
                 FontSize = btnSize,
                 Margin = -5,
 #endif
-                BackgroundColor = Color.FromRgb(58, 93, 174)
             };
 
             qualityBtn = new Button
             {
+                Style = (Style)Application.Current.Resources["common-blue-btn"],
                 Text = "SD",
-                BorderWidth = 3,
-                BorderColor = Color.Black,
-                TextColor = Color.Black,
-#if __IOS__
                 FontFamily = "AmericanTypewriter-Bold",
                 FontSize = btnSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-                Margin = -5,
-#endif
-                BackgroundColor = Color.FromRgb(58, 93, 174)
             };
 
             //Events
@@ -477,7 +449,7 @@ namespace MahechaBJJ.Views
         {
 #if __ANDROID__
             androidAddBtn.Clickable = !androidAddBtn.Clickable;
-            androidPlayBtn.Clickable = !androidPlayBtn.Clickable;
+            androidPlayImgBtn.Clickable = !androidPlayImgBtn.Clickable;
             androidQualityBtn.Clickable = !androidQualityBtn.Clickable;
 #endif
             backBtn.IsEnabled = !backBtn.IsEnabled;

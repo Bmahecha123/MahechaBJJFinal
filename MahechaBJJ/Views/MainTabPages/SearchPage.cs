@@ -141,14 +141,7 @@ namespace MahechaBJJ.Views
                 {
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(10, GridUnitType.Star)},
-                    #if __ANDROID__
-                    new RowDefinition { Height = new GridLength(2, GridUnitType.Star)}
-
-                    #endif
-                    #if __IOS__
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-
-                    #endif
                 }
             };
 
@@ -164,6 +157,7 @@ namespace MahechaBJJ.Views
             searchBar = new SearchBar
             {
                 Placeholder = "Enter technique to search for...",
+                BackgroundColor = Color.FromHex("#F1ECCE"),
                 CancelButtonColor = Color.Red,
 #if __IOS__
 				FontFamily = "AmericanTypewriter-Bold",
@@ -610,16 +604,8 @@ namespace MahechaBJJ.Views
                 innerGrid.ColumnDefinitions.Clear();
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(10, GridUnitType.Star) });
-#if __ANDROID__
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-                loadBtn.Text = "Load More...";
-                androidLoadBtn.Text = "Load More...";
-
-#endif
-#if __IOS__
                 innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
-#endif
                 innerGrid.Children.Clear();
 
                 //Building grid

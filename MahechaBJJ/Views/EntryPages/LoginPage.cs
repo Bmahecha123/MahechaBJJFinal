@@ -86,10 +86,13 @@ namespace MahechaBJJ.Views.EntryPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
-                    new RowDefinition {Height = new GridLength(4, GridUnitType.Star)},
+                    new RowDefinition {Height = new GridLength(7, GridUnitType.Star)},
+                    new RowDefinition {Height = new GridLength(2, GridUnitType.Star)},
+                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}, 
                     new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}
+                    new RowDefinition {Height = new GridLength(2, GridUnitType.Star)},
+                    new RowDefinition {Height = new GridLength(2, GridUnitType.Star)}
                 }
             };
             outerGrid = new Grid
@@ -111,7 +114,6 @@ namespace MahechaBJJ.Views.EntryPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
-                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}
                 },
                 ColumnDefinitions = new ColumnDefinitionCollection
@@ -125,7 +127,6 @@ namespace MahechaBJJ.Views.EntryPages
             {
                 RowDefinitions = new RowDefinitionCollection
                 {
-                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
                     new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}
                 },
                 ColumnDefinitions = new ColumnDefinitionCollection
@@ -261,12 +262,12 @@ namespace MahechaBJJ.Views.EntryPages
             androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
             androidEmailEntry.Typeface = Constants.COMMONFONT;
             androidEmailEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
+            androidEmailEntry.SetPadding(0, 10, 0, 10);
             androidEmailEntry.SetTextColor(Android.Graphics.Color.Black);
             androidEmailEntry.InputType = Android.Text.InputTypes.TextVariationEmailAddress;
 
             androidImageEmail = new Android.Widget.ImageView(MainApplication.ActivityContext);
             androidImageEmail.SetImageResource(2130837780);
-            androidImageEmail.SetPadding(0, 0, 0, 0);
             androidImageEmail.SetAdjustViewBounds(true);
 
             androidPasswordEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
@@ -281,7 +282,6 @@ namespace MahechaBJJ.Views.EntryPages
             androidImagePassword = new Android.Widget.ImageView(MainApplication.ActivityContext);
             androidImagePassword.SetImageResource(2130837816);
             androidImagePassword.SetAdjustViewBounds(true);
-            androidImagePassword.SetPadding(0, 0, 0, 0);
 #endif
             //Events
             loginBtn.Clicked += async (object sender, EventArgs e) => {
@@ -294,7 +294,7 @@ namespace MahechaBJJ.Views.EntryPages
                 await Navigation.PopModalAsync();
                 ToggleButtons();
             };
-            androidForgetPasswordImgBtn.Click += async (object sender, EventArgs e) => {
+            forgotPasswordBtn.Clicked += async (object sender, EventArgs e) => {
                 ToggleButtons();
                 await Navigation.PushModalAsync(new ForgotPasswordPage());
                 ToggleButtons();
@@ -306,11 +306,11 @@ namespace MahechaBJJ.Views.EntryPages
                 await Validate(sender, e);
                 ToggleButtons();
             };
-            androidForgotPasswordBtn.Click += async (object sender, EventArgs e) => {
+            androidForgetPasswordImgBtn.Click += async (object sender, EventArgs e) => {
                 ToggleButtons();
                 await Navigation.PushModalAsync(new ForgotPasswordPage());
                 ToggleButtons();
-            }; 
+            };
 #endif
 
 #if __IOS__
@@ -346,12 +346,14 @@ namespace MahechaBJJ.Views.EntryPages
             buttonGrid.Children.Add(androidForgetPasswordImgBtn.ToView(), 1, 0);
             emailGrid.Children.Add(androidImageEmail.ToView(), 0, 0);
             emailGrid.Children.Add(androidEmailEntry.ToView(), 1, 0);
+            emailGrid.Padding = new Thickness(10, 0);
             passwordGrid.Children.Add(androidImagePassword.ToView(), 0, 0);
             passwordGrid.Children.Add(androidPasswordEntry.ToView(), 1, 0);
+            passwordGrid.Padding = new Thickness(10, 0);
             innerGrid.Children.Add(mahechaLogo, 0, 0);
-            innerGrid.Children.Add(emailGrid, 0, 1);
-            innerGrid.Children.Add(passwordGrid, 0, 2);
-            innerGrid.Children.Add(buttonGrid, 0, 3);
+            innerGrid.Children.Add(emailGrid, 0, 2);
+            innerGrid.Children.Add(passwordGrid, 0, 4);
+            innerGrid.Children.Add(buttonGrid, 0, 6);
 
             outerGrid.Children.Add(innerGrid, 0, 0);
 

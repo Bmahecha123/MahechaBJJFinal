@@ -40,6 +40,7 @@ namespace MahechaBJJ.Views.PlaylistPages
         private Grid buttonGrid;
         private Android.Widget.TextView androidVideoNameLbl;
         private Android.Widget.TextView androidVideoDescriptionLbl;
+        private Android.Widget.ImageButton androidPlayImgBtn;
         private Android.Widget.Button androidPlayBtn;
         private Android.Widget.ImageButton androidImgDeleteBtn;
         private Android.Widget.Button androidQualityBtn;
@@ -104,7 +105,7 @@ namespace MahechaBJJ.Views.PlaylistPages
                 {
                     new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(4, GridUnitType.Star)}
+                    new RowDefinition { Height = new GridLength(5, GridUnitType.Star)}
                 }            
             };
             buttonGrid = new Grid
@@ -148,15 +149,11 @@ namespace MahechaBJJ.Views.PlaylistPages
             androidVideoDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
             androidVideoDescriptionLbl.Gravity = Android.Views.GravityFlags.Start;
 
-            androidPlayBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidPlayBtn.Text = "Play";
-            androidPlayBtn.Typeface = Constants.COMMONFONT;
-            androidPlayBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidPlayBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidPlayBtn.SetBackground(pd);
-            androidPlayBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidPlayBtn.SetAllCaps(false);
-            androidPlayBtn.Click += async (object sender, EventArgs e) =>
+            androidPlayImgBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
+            androidPlayImgBtn.SetAdjustViewBounds(true);
+            androidPlayImgBtn.SetImageResource(2130837817);
+            androidPlayImgBtn.SetBackground(pd);
+            androidPlayImgBtn.Click += async (object sender, EventArgs e) =>
             {
                 ToggleButtons();
                 await PlayAndroidVideo(sender, e);
@@ -165,7 +162,7 @@ namespace MahechaBJJ.Views.PlaylistPages
 
             androidImgDeleteBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
             androidImgDeleteBtn.SetAdjustViewBounds(true);
-            androidImgDeleteBtn.SetImageResource(2130837821);
+            androidImgDeleteBtn.SetImageResource(2130837823);
             androidImgDeleteBtn.SetBackground(pdRed);
             androidImgDeleteBtn.Click += async (object sender, EventArgs e) =>
             {
@@ -194,7 +191,7 @@ namespace MahechaBJJ.Views.PlaylistPages
             contentViewDescriptionLbl = new ContentView();
             contentViewDescriptionLbl.Content = androidVideoDescriptionLbl.ToView();
             contentViewPlayBtn = new ContentView();
-            contentViewPlayBtn.Content = androidPlayBtn.ToView();
+            contentViewPlayBtn.Content = androidPlayImgBtn.ToView();
             contentViewDeleteBtn = new ContentView();
             contentViewDeleteBtn.Content = androidImgDeleteBtn.ToView();
             contentViewQualityBtn = new ContentView();
@@ -253,13 +250,10 @@ namespace MahechaBJJ.Views.PlaylistPages
                 Padding = 3
 
             };
-            //TODO ICONS FOR PLAY and DELETE in the AZURE color.
             playBtn = new Button
             {
                 Style = (Style)Application.Current.Resources["common-blue-btn"],
-                Text = "Play",
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 2,
+                Image = "play.png"
             };
             deleteBtn = new Button
             {
@@ -375,7 +369,7 @@ namespace MahechaBJJ.Views.PlaylistPages
         public void ToggleButtons()
         {
 #if __ANDROID__
-            androidPlayBtn.Clickable = !androidPlayBtn.Clickable;
+            androidPlayImgBtn.Clickable = !androidPlayImgBtn.Clickable;
             androidImgDeleteBtn.Clickable = !androidImgDeleteBtn.Clickable;
             androidQualityBtn.Clickable = !androidQualityBtn.Clickable;
 #endif
