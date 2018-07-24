@@ -887,14 +887,14 @@
             No flags.
             </summary>
         </member>
-        <member name="F:PInvoke.BCrypt.BCryptOpenAlgorithmProviderFlags.AlgorithmHandleHmac">
+        <member name="F:PInvoke.BCrypt.BCryptOpenAlgorithmProviderFlags.BCRYPT_ALG_HANDLE_HMAC_FLAG">
             <summary>
             The provider will perform the Hash-Based Message Authentication Code (HMAC)
             algorithm with the specified hash algorithm. This flag is only used by hash
             algorithm providers.
             </summary>
         </member>
-        <member name="F:PInvoke.BCrypt.BCryptOpenAlgorithmProviderFlags.HashReusable">
+        <member name="F:PInvoke.BCrypt.BCryptOpenAlgorithmProviderFlags.BCRYPT_HASH_REUSABLE_FLAG">
             <summary>
             Creates a reusable hashing object. The object can be used for a new hashing
             operation immediately after calling BCryptFinishHash. For more information,
@@ -2116,7 +2116,7 @@
             Windows 7:  This memory management functionality is available beginning with Windows 7.
             </param>
             <param name="pbSecret">
-            A pointer to a buffer that contains the key to use for the hash or MAC. The <paramref name="cbSecret"/> parameter contains the size of this buffer. This key only applies to hash algorithms opened by the BCryptOpenAlgorithmProvider function by using the <see cref="F:PInvoke.BCrypt.BCryptOpenAlgorithmProviderFlags.AlgorithmHandleHmac"/> flag. Otherwise, set this parameter to NULL.
+            A pointer to a buffer that contains the key to use for the hash or MAC. The <paramref name="cbSecret"/> parameter contains the size of this buffer. This key only applies to hash algorithms opened by the BCryptOpenAlgorithmProvider function by using the <see cref="F:PInvoke.BCrypt.BCryptOpenAlgorithmProviderFlags.BCRYPT_ALG_HANDLE_HMAC_FLAG"/> flag. Otherwise, set this parameter to NULL.
             </param>
             <param name="cbSecret">
             The size, in bytes, of the <paramref name="pbSecret"/> buffer. If no key is used, set this parameter to zero.
@@ -2644,7 +2644,7 @@
             Windows 7:  This memory management functionality is available beginning with Windows 7.
             </param>
             <param name="secret">
-            A pointer to a buffer that contains the key to use for the hash or MAC. This key only applies to hash algorithms opened by the BCryptOpenAlgorithmProvider function by using the <see cref="F:PInvoke.BCrypt.BCryptOpenAlgorithmProviderFlags.AlgorithmHandleHmac"/> flag. Otherwise, set this parameter to NULL.
+            A pointer to a buffer that contains the key to use for the hash or MAC. This key only applies to hash algorithms opened by the BCryptOpenAlgorithmProvider function by using the <see cref="F:PInvoke.BCrypt.BCryptOpenAlgorithmProviderFlags.BCRYPT_ALG_HANDLE_HMAC_FLAG"/> flag. Otherwise, set this parameter to NULL.
             </param>
             <param name="flags">Flags that modify the behavior of the function.</param>
             <returns>
