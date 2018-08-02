@@ -243,7 +243,7 @@ namespace MahechaBJJ.Views.BlogPages
                     blogFrame = new Frame();
                     blogFrame.BackgroundColor = Color.Black;
                     blogFrame.HasShadow = false;
-                    blogFrame.OutlineColor = Color.Black;
+                    blogFrame.BorderColor = Color.Black;
                     blogFrame.Padding = 3;
                     blogFrame.Content = blogImage;
 

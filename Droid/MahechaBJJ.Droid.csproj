@@ -174,13 +174,13 @@
       <HintPath>..\packages\Microsoft.AppCenter.Analytics.1.7.0\lib\MonoAndroid403\Microsoft.AppCenter.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.InAppBilling.Abstractions">
-      <HintPath>..\packages\Plugin.InAppBilling.1.2.1\lib\MonoAndroid10\Plugin.InAppBilling.Abstractions.dll</HintPath>
+      <HintPath>..\packages\Plugin.InAppBilling.2.0.0\lib\MonoAndroid10\Plugin.InAppBilling.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.InAppBilling">
-      <HintPath>..\packages\Plugin.InAppBilling.1.2.1\lib\MonoAndroid10\Plugin.InAppBilling.dll</HintPath>
+      <HintPath>..\packages\Plugin.InAppBilling.2.0.0\lib\MonoAndroid10\Plugin.InAppBilling.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.InAppBilling.VendingLibrary">
-      <HintPath>..\packages\Plugin.InAppBilling.1.2.1\lib\MonoAndroid10\Plugin.InAppBilling.VendingLibrary.dll</HintPath>
+      <HintPath>..\packages\Plugin.InAppBilling.2.0.0\lib\MonoAndroid10\Plugin.InAppBilling.VendingLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

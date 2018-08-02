@@ -211,7 +211,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             giImageFrame = new Frame
             {
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 Padding = 2,
                 Content = giImage,
@@ -229,7 +229,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             giFrame = new Frame
             {
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 #if __ANDROID__
                 Padding = 0,
@@ -325,7 +325,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             noGiImageFrame = new Frame
             {
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
                 Padding = 2,
                 Content = noGiImage,
@@ -344,7 +344,7 @@ namespace MahechaBJJ.Views.CommonPages
 
             noGiFrame = new Frame
             {
-                OutlineColor = Color.Black,
+                BorderColor = Color.Black,
                 BackgroundColor = Color.Black,
 #if __ANDROID__
                 Padding = 0,

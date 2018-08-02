@@ -147,10 +147,10 @@
       <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.InAppBilling.Abstractions">
-      <HintPath>..\packages\Plugin.InAppBilling.1.2.1\lib\Xamarin.iOS10\Plugin.InAppBilling.Abstractions.dll</HintPath>
+      <HintPath>..\packages\Plugin.InAppBilling.2.0.0\lib\Xamarin.iOS10\Plugin.InAppBilling.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.InAppBilling">
-      <HintPath>..\packages\Plugin.InAppBilling.1.2.1\lib\Xamarin.iOS10\Plugin.InAppBilling.dll</HintPath>
+      <HintPath>..\packages\Plugin.InAppBilling.2.0.0\lib\Xamarin.iOS10\Plugin.InAppBilling.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
