@@ -8,10 +8,8 @@
 	<string>Mahecha BJJ</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.mahechabjj.mahecha-bjj</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.04</string>
 	<key>CFBundleVersion</key>
-	<string>9.0</string>
+	<string>10.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
@@ -60,5 +58,7 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0</string>
 </dict>
 </plist>
