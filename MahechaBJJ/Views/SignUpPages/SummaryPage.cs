@@ -1,16 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.SignUpPages;
-using Plugin.InAppBilling;
-using Plugin.InAppBilling.Abstractions;
 using Xamarin.Forms;
-#if __ANDROID__
-using MahechaBJJ.Droid;
-using Xamarin.Forms.Platform.Android;
-using Android.Graphics.Drawables;
-#endif
 
 namespace MahechaBJJ.Views.SignUpPages
 {
@@ -23,67 +15,58 @@ namespace MahechaBJJ.Views.SignUpPages
         private Label priceLbl;
         private Label nameLbl;
         private Label emailLbl;
-        private Label beltLbl;
         private Label secretQuestionLbl;
         private Label secretQuestionAnswerLbl;
         private Button backBtn;
         private Button signUpBtn;
         private User user;
-        private Grid buttonGrid;
-        private Grid innerGrid;
-        private Grid outerGrid;
-        private StackLayout stackLayout;
-        private ScrollView scrollView;
+        private FlexLayout flexLayout;
+        private FlexLayout userDetailsFlexLayout;
+        private StackLayout buttonStackLayout;
         private string packageName;
         private string packagePrice;
         private Image packageImage;
+        private Frame packageImageFrame;
         private Package package;
         private bool userPassed;
-#if __ANDROID__
-        private Android.Widget.TextView androidSummaryLbl;
-        private Android.Widget.TextView androidUserDetailsLbl;
-        private Android.Widget.TextView androidPackageLbl;
-        private Android.Widget.TextView androidPriceLbl;
-        private Android.Widget.TextView androidNameLbl;
-        private Android.Widget.TextView androidEmailLbl;
-        private Android.Widget.TextView androidBeltLbl;
-        private Android.Widget.TextView androidSecretQuestionLbl;
-        private Android.Widget.TextView androidSecretQuestionAnswerLbl;
-        private Android.Widget.Button androidSignUpBtn;
-#endif
+        private double width;
+        private double height;
 
         public SummaryPage(Package package)
         {
             _summaryPageViewModel = new SummaryPageViewModel();
-            BackgroundColor = Color.FromHex("#F1ECCE");
+            BackgroundColor = Theme.White;
             this.package = package;
-#if __ANDROID__
-            Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
-#endif
+            Padding = Theme.Thickness;
+            Visual = VisualMarker.Material;
+
+            width = this.Width;
+            height = this.Height;
             this.userPassed = false;
             SetPackageInfo(false);
             SetContent(false);
+            UpdateLayout();
 
+            Content = flexLayout;
         }
 
 
         public SummaryPage(User user)
         {
             _summaryPageViewModel = new SummaryPageViewModel();
-            BackgroundColor = Color.FromHex("#F1ECCE");
-#if __ANDROID__
-            Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
-#endif
+            BackgroundColor = Theme.White;
+            Padding = Theme.Thickness;
+            Visual = VisualMarker.Material;
+
+            width = this.Width;
+            height = this.Height;
             this.user = user;
             this.userPassed = true;
             SetPackageInfo(true);
             SetContent(true);
+            UpdateLayout();
+
+            Content = flexLayout;
         }
 
         private void SetPackageInfo(bool hasUser)
@@ -128,137 +111,24 @@ namespace MahechaBJJ.Views.SignUpPages
 
         private void SetContent(bool hasUser)
         {
-            var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
             var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-            var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));
 
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
+            flexLayout = new FlexLayout();
+            flexLayout.Direction = FlexDirection.Column;
+            flexLayout.JustifyContent = FlexJustify.SpaceEvenly;
 
-#if __IOS__
+            userDetailsFlexLayout = new FlexLayout();
+            userDetailsFlexLayout.Direction = FlexDirection.Column;
+            userDetailsFlexLayout.JustifyContent = FlexJustify.SpaceEvenly;
 
-            buttonGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                },
-                ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-#endif
-#if __ANDROID__
-            buttonGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-#endif
-
-#if __ANDROID__
-            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
-            pd.SetCornerRadius(100);
-
-            androidSummaryLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidSummaryLbl.Text = "Summary";
-            androidSummaryLbl.Typeface = Constants.COMMONFONT;
-            androidSummaryLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
-            androidSummaryLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidSummaryLbl.Gravity = Android.Views.GravityFlags.Start;
-            androidSummaryLbl.SetTypeface(androidSummaryLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
-
-            androidPackageLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidPackageLbl.Text = $"Package: {packageName}";
-            androidPackageLbl.Typeface = Constants.COMMONFONT;
-            androidPackageLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-            androidPackageLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidPackageLbl.Gravity = Android.Views.GravityFlags.Start;
-
-            androidPriceLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidPriceLbl.Text = $"Price: {packagePrice}";
-            androidPriceLbl.Typeface = Constants.COMMONFONT;
-            androidPriceLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-            androidPriceLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidPriceLbl.Gravity = Android.Views.GravityFlags.Start;
-
-            androidSignUpBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidSignUpBtn.Text = "Sign Up";
-            androidSignUpBtn.Typeface = Constants.COMMONFONT;
-            androidSignUpBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidSignUpBtn.SetBackground(pd);
-            androidSignUpBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidSignUpBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidSignUpBtn.Click += async (object sender, EventArgs e) =>
-            {
-                ToggleButtons();
-                await SignUp();
-                ToggleButtons();
-            };
-            androidSignUpBtn.SetAllCaps(false);
-
-            if (hasUser)
-            {
-                androidUserDetailsLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-                androidUserDetailsLbl.Text = "User Details";
-                androidUserDetailsLbl.Typeface = Constants.COMMONFONT;
-                androidUserDetailsLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
-                androidUserDetailsLbl.SetTextColor(Android.Graphics.Color.Black);
-                androidUserDetailsLbl.Gravity = Android.Views.GravityFlags.Start;
-                androidUserDetailsLbl.SetTypeface(androidUserDetailsLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
-
-                androidNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-                androidNameLbl.Text = $"Name: {user.Name}";
-                androidNameLbl.Typeface = Constants.COMMONFONT;
-                androidNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-                androidNameLbl.SetTextColor(Android.Graphics.Color.Black);
-                androidNameLbl.Gravity = Android.Views.GravityFlags.Start;
-
-                androidEmailLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-                androidEmailLbl.Text = $"E-Mail: {user.Email}";
-                androidEmailLbl.Typeface = Constants.COMMONFONT;
-                androidEmailLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-                androidEmailLbl.SetTextColor(Android.Graphics.Color.Black);
-                androidEmailLbl.Gravity = Android.Views.GravityFlags.Start;
-
-                androidBeltLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-                androidBeltLbl.Text = $"Belt: {user.Belt}";
-                androidBeltLbl.Typeface = Constants.COMMONFONT;
-                androidBeltLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-                androidBeltLbl.SetTextColor(Android.Graphics.Color.Black);
-                androidBeltLbl.Gravity = Android.Views.GravityFlags.Start;
-
-                androidSecretQuestionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-                androidSecretQuestionLbl.Text = $"Secret Question: {user.SecretQuestion}";
-                androidSecretQuestionLbl.Typeface = Constants.COMMONFONT;
-                androidSecretQuestionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-                androidSecretQuestionLbl.SetTextColor(Android.Graphics.Color.Black);
-                androidSecretQuestionLbl.Gravity = Android.Views.GravityFlags.Start;
-
-                androidSecretQuestionAnswerLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-                androidSecretQuestionAnswerLbl.Text = $"Answer: {user.SecretQuestionAnswer}";
-                androidSecretQuestionAnswerLbl.Typeface = Constants.COMMONFONT;
-                androidSecretQuestionAnswerLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-                androidSecretQuestionAnswerLbl.SetTextColor(Android.Graphics.Color.Black);
-                androidSecretQuestionAnswerLbl.Gravity = Android.Views.GravityFlags.Start;
-            }
-#endif
+            buttonStackLayout = new StackLayout();
+            buttonStackLayout.Orientation = StackOrientation.Horizontal;
 
             backBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-red-btn"],
-                Image = "back.png",
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                Style = Theme.RedButton,
+                ImageSource = "back.png",
+                HorizontalOptions = LayoutOptions.CenterAndExpand
             };
             backBtn.Clicked += async (sender, e) =>
             {
@@ -269,18 +139,9 @@ namespace MahechaBJJ.Views.SignUpPages
 
             signUpBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 1.5,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-#endif
+                Style = Theme.BlueButton,
                 Text = "Sign Up",
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
             };
             signUpBtn.Clicked += async (sender, e) =>
             {
@@ -289,304 +150,94 @@ namespace MahechaBJJ.Views.SignUpPages
                 ToggleButtons();
             };
 
-#if __IOS__
-            buttonGrid.Children.Add(backBtn, 0, 0);
-            buttonGrid.Children.Add(signUpBtn, 1, 0);
-#endif
-
             summaryLbl = new Label
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize * 1.5,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
                 FontSize = lblSize,
-#endif
+                FontFamily = Theme.Font,
                 Text = "Summary",
-                LineBreakMode = LineBreakMode.WordWrap,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                TextColor = Theme.Black
             };
 
             userDetailsLbl = new Label
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize * 1.5,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
+                FontFamily = Theme.Font,
                 FontSize = lblSize,
-#endif
                 Text = "User Details",
-                LineBreakMode = LineBreakMode.WordWrap,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                TextColor = Theme.Black
             };
-
-
 
             packageLbl = new Label
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = Theme.Font,
                 FontSize = lblSize,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
-#endif
-                Text = $"Package: {packageName}",
-                LineBreakMode = LineBreakMode.WordWrap,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Start,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-
+                Text = packageName,
+                TextColor = Theme.Black,
+                LineBreakMode = LineBreakMode.WordWrap
             };
 
             priceLbl = new Label
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = Theme.Font,
                 FontSize = lblSize,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
-#endif
                 Text = $"Price: {packagePrice}",
-                LineBreakMode = LineBreakMode.WordWrap,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Start,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-
+                TextColor = Theme.Black,
+                LineBreakMode = LineBreakMode.WordWrap
             };
 
             packageImage = new Image();
-            if (packageName.Equals("Gi Jiu-Jitsu Package"))
+            packageImage.Source = "giguard.jpg";
+            packageImage.Aspect = Aspect.AspectFill;
+
+            packageImageFrame = new Frame
             {
-                packageImage.Source = "gi.jpg";
-            }
-            else if (packageName.Equals("No-Gi Jiu-Jitsu Package"))
-            {
-                packageImage.Source = "nogi6.jpeg";
-            }
-            else
-            {
-                packageImage.Source = "sweep.JPG";
-            }
-            packageImage.Aspect = Aspect.AspectFit;
+                IsClippedToBounds = true,
+                CornerRadius = 10,
+                Content = packageImage,
+                Padding = 0
+            };
+#if __IOS__
+            buttonStackLayout.Children.Add(backBtn);
+#endif
+            buttonStackLayout.Children.Add(signUpBtn);
 
             if (hasUser)
             {
                 nameLbl = new Label
                 {
-#if __IOS__
-                    FontFamily = "AmericanTypewriter-Bold",
+                    FontFamily = Theme.Font,
                     FontSize = lblSize,
-#endif
-#if __ANDROID__
-                    FontFamily = "Roboto Bold",
-                    FontSize = lblSize * .75,
-#endif
                     Text = $"Name: {user.Name}",
-                    LineBreakMode = LineBreakMode.WordWrap,
-                    VerticalTextAlignment = TextAlignment.Center,
-                    HorizontalTextAlignment = TextAlignment.Start,
-                    VerticalOptions = LayoutOptions.FillAndExpand,
-                    HorizontalOptions = LayoutOptions.FillAndExpand
-
+                    TextColor = Theme.Black,
+                    LineBreakMode = LineBreakMode.WordWrap
                 };
 
                 emailLbl = new Label
                 {
-#if __IOS__
-                    FontFamily = "AmericanTypewriter-Bold",
+                    FontFamily = Theme.Font,
                     FontSize = lblSize,
-#endif
-#if __ANDROID__
-                    FontFamily = "Roboto Bold",
-                    FontSize = lblSize * .75,
-#endif
                     Text = $"E-Mail: {user.Email}",
-                    LineBreakMode = LineBreakMode.WordWrap,
-                    VerticalTextAlignment = TextAlignment.Center,
-                    HorizontalTextAlignment = TextAlignment.Start,
-                    VerticalOptions = LayoutOptions.FillAndExpand,
-                    HorizontalOptions = LayoutOptions.FillAndExpand
-
-                };
-
-                beltLbl = new Label
-                {
-#if __IOS__
-                    FontFamily = "AmericanTypewriter-Bold",
-                    FontSize = lblSize,
-#endif
-#if __ANDROID__
-                    FontFamily = "Roboto Bold",
-                    FontSize = lblSize * .75,
-#endif
-                    Text = $"Belt: {user.Belt}",
-                    LineBreakMode = LineBreakMode.WordWrap,
-                    VerticalTextAlignment = TextAlignment.Center,
-                    HorizontalTextAlignment = TextAlignment.Start,
-                    VerticalOptions = LayoutOptions.FillAndExpand,
-                    HorizontalOptions = LayoutOptions.FillAndExpand
-
+                    TextColor = Theme.Black,
+                    LineBreakMode = LineBreakMode.WordWrap
                 };
 
                 secretQuestionLbl = new Label
                 {
-#if __IOS__
-                    FontFamily = "AmericanTypewriter-Bold",
                     FontSize = lblSize,
-#endif
-#if __ANDROID__
-                    FontFamily = "Roboto Bold",
-                    FontSize = lblSize * .75,
-#endif
+                    FontFamily = Theme.Font,
+                    TextColor = Theme.Black,
                     Text = $"Secret Question: {user.SecretQuestion}",
                     LineBreakMode = LineBreakMode.WordWrap,
-                    VerticalTextAlignment = TextAlignment.Center,
-                    HorizontalTextAlignment = TextAlignment.Start,
-                    VerticalOptions = LayoutOptions.FillAndExpand,
-                    HorizontalOptions = LayoutOptions.FillAndExpand
-
                 };
 
                 secretQuestionAnswerLbl = new Label
                 {
-#if __IOS__
-                    FontFamily = "AmericanTypewriter-Bold",
                     FontSize = lblSize,
-#endif
-#if __ANDROID__
-                    FontFamily = "Roboto Bold",
-                    FontSize = lblSize * .75,
-#endif
+                    FontFamily = Theme.Font,
+                    TextColor = Theme.Black,
                     Text = $"Answer: {user.SecretQuestionAnswer}",
                     LineBreakMode = LineBreakMode.WordWrap,
-                    VerticalTextAlignment = TextAlignment.Center,
-                    HorizontalTextAlignment = TextAlignment.Start,
-                    VerticalOptions = LayoutOptions.FillAndExpand,
-                    HorizontalOptions = LayoutOptions.FillAndExpand
-
                 };
-
-#if __IOS__
-                innerGrid = new Grid
-                {
-                    RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(2, GridUnitType.Star)}
-                }
-                };
-
-#endif
-#if __ANDROID__
-                innerGrid = new Grid
-                {
-                    RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(9, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-                };
-#endif
-
-#if __ANDROID__
-                stackLayout = new StackLayout
-                {
-                    Children = {
-                        androidSummaryLbl.ToView(),
-                        androidPackageLbl.ToView(),
-                        androidPriceLbl.ToView(),
-                        androidUserDetailsLbl.ToView(),
-                        androidNameLbl.ToView(),
-                        androidEmailLbl.ToView(),
-                        androidBeltLbl.ToView(),
-                        androidSecretQuestionLbl.ToView(),
-                        androidSecretQuestionAnswerLbl.ToView()
-                }
-                };
-                stackLayout.VerticalOptions = LayoutOptions.CenterAndExpand;
-                stackLayout.HorizontalOptions = LayoutOptions.CenterAndExpand;
-                scrollView = new ScrollView
-                {
-                    Content = stackLayout,
-                #if __ANDROID__
-                    IsClippedToBounds = true
-#endif
-                };
-#endif
-#if __IOS__
-
-                innerGrid.Children.Add(summaryLbl, 0, 0);
-                innerGrid.Children.Add(packageLbl, 0, 1);
-                innerGrid.Children.Add(priceLbl, 0, 2);
-                innerGrid.Children.Add(userDetailsLbl, 0, 3);
-                innerGrid.Children.Add(nameLbl, 0, 4);
-                innerGrid.Children.Add(emailLbl, 0, 5);
-                innerGrid.Children.Add(beltLbl, 0, 6);
-                innerGrid.Children.Add(secretQuestionLbl, 0, 7);
-                innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
-                innerGrid.Children.Add(buttonGrid, 0, 9);
-#endif
-#if __ANDROID__
-                buttonGrid.Children.Add(androidSignUpBtn.ToView(), 0, 0);
-
-                innerGrid.Children.Add(scrollView, 0, 0);
-                innerGrid.Children.Add(buttonGrid, 0, 1);
-#endif
-
             }
-            else
-            {
-                innerGrid = new Grid();
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-#if __IOS__
-                innerGrid.Children.Add(summaryLbl, 0, 0);
-                innerGrid.Children.Add(packageLbl, 0, 1);
-                innerGrid.Children.Add(priceLbl, 0, 2);
-                innerGrid.Children.Add(packageImage, 0, 3);
-                innerGrid.Children.Add(buttonGrid, 0, 4);
-#endif
-#if __ANDROID__
-                buttonGrid.Children.Add(androidSignUpBtn.ToView(), 0, 0);
-
-                innerGrid.Children.Add(androidSummaryLbl.ToView(), 0, 0);
-                innerGrid.Children.Add(androidPackageLbl.ToView(), 0, 1);
-                innerGrid.Children.Add(androidPriceLbl.ToView(), 0, 2);
-                innerGrid.Children.Add(packageImage, 0, 3);
-                innerGrid.Children.Add(buttonGrid, 0, 4);
-#endif
-            }
-
-            outerGrid.Children.Add(innerGrid, 0, 0);
-
-            Content = outerGrid;
         }
 
         private async Task SignUp()
@@ -672,104 +323,104 @@ namespace MahechaBJJ.Views.SignUpPages
 
         private void ToggleButtons()
         {
-#if __ANDROID__
-            androidSignUpBtn.Clickable = !androidSignUpBtn.Clickable;
-#endif
             backBtn.IsEnabled = !backBtn.IsEnabled;
             signUpBtn.IsEnabled = !signUpBtn.IsEnabled;
+        }
+
+        private void PortraitLayout()
+        {
+            flexLayout.Children.Clear();
+
+            if (this.userPassed)
+            {
+                FlexLayout.SetAlignSelf(summaryLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(packageLbl, FlexAlignSelf.Start);
+                FlexLayout.SetAlignSelf(priceLbl, FlexAlignSelf.Start);
+                FlexLayout.SetAlignSelf(userDetailsLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(nameLbl, FlexAlignSelf.Start);
+                FlexLayout.SetAlignSelf(emailLbl, FlexAlignSelf.Start);
+                FlexLayout.SetAlignSelf(secretQuestionLbl, FlexAlignSelf.Start);
+                FlexLayout.SetAlignSelf(secretQuestionAnswerLbl, FlexAlignSelf.Start);
+
+                flexLayout.Children.Add(summaryLbl);
+                flexLayout.Children.Add(packageLbl);
+                flexLayout.Children.Add(priceLbl);
+                flexLayout.Children.Add(userDetailsLbl);
+                flexLayout.Children.Add(nameLbl);
+                flexLayout.Children.Add(emailLbl);
+                flexLayout.Children.Add(secretQuestionLbl);
+                flexLayout.Children.Add(secretQuestionAnswerLbl);
+                flexLayout.Children.Add(buttonStackLayout);
+            } else
+            {
+                FlexLayout.SetAlignSelf(summaryLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(packageLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(priceLbl, FlexAlignSelf.Center);
+
+                flexLayout.Children.Add(summaryLbl);
+                flexLayout.Children.Add(packageLbl);
+                flexLayout.Children.Add(priceLbl);
+                flexLayout.Children.Add(packageImageFrame);
+                flexLayout.Children.Add(buttonStackLayout);
+            }
+
+        }
+
+        private void LandscapeLayout()
+        {
+            flexLayout.Children.Clear();
+
+            if (this.userPassed)
+            {
+                FlexLayout.SetAlignSelf(summaryLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(packageLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(priceLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(userDetailsLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(nameLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(emailLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(secretQuestionLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(secretQuestionAnswerLbl, FlexAlignSelf.Center);
+
+                flexLayout.Children.Add(summaryLbl);
+                flexLayout.Children.Add(packageLbl);
+                flexLayout.Children.Add(priceLbl);
+                flexLayout.Children.Add(userDetailsLbl);
+                flexLayout.Children.Add(nameLbl);
+                flexLayout.Children.Add(emailLbl);
+                flexLayout.Children.Add(secretQuestionLbl);
+                flexLayout.Children.Add(secretQuestionAnswerLbl);
+                flexLayout.Children.Add(buttonStackLayout);
+            } else
+            {
+                FlexLayout.SetAlignSelf(summaryLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(packageLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(priceLbl, FlexAlignSelf.Center);
+
+                flexLayout.Children.Add(summaryLbl);
+                flexLayout.Children.Add(packageLbl);
+                flexLayout.Children.Add(priceLbl);
+                flexLayout.Children.Add(buttonStackLayout);
+            }
+        }
+
+        private void UpdateLayout()
+        {
+            if (this.Width > this.Height)
+                LandscapeLayout();
+            else
+                PortraitLayout();
         }
 
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height); //must be called
 
-            if (userPassed)
+            if (this.width != width || this.height != height)
             {
-                if (width > height)
-                {
-#if __IOS__
-                    Padding = new Thickness(10, 10, 10, 10);
-#endif
-#if __ANDROID__
-                    Padding = new Thickness(5, 5, 5, 5);
-#endif
-                    innerGrid.Children.Clear();
-                    innerGrid.RowDefinitions.Clear();
-                    innerGrid.ColumnDefinitions.Clear();
-#if __IOS__
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+                this.width = width;
+                this.height = height;
 
-                    innerGrid.Children.Add(summaryLbl, 0, 0);
-                    innerGrid.Children.Add(packageLbl, 0, 1);
-                    innerGrid.Children.Add(priceLbl, 0, 2);
-                    innerGrid.Children.Add(userDetailsLbl, 0, 3);
-                    innerGrid.Children.Add(nameLbl, 0, 4);
-                    innerGrid.Children.Add(emailLbl, 0, 5);
-                    innerGrid.Children.Add(beltLbl, 0, 6);
-                    innerGrid.Children.Add(secretQuestionLbl, 0, 7);
-                    innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
-                    innerGrid.Children.Add(buttonGrid, 0, 9);
-#endif
-#if __ANDROID__
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(5, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-
-                innerGrid.Children.Add(scrollView, 0, 0);
-                innerGrid.Children.Add(buttonGrid, 0, 1);
-#endif
-                }
-                else
-                {
-#if __IOS__
-                    Padding = new Thickness(10, 30, 10, 10);
-#endif
-#if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
-#endif
-                    innerGrid.Children.Clear();
-                    innerGrid.RowDefinitions.Clear();
-                    innerGrid.ColumnDefinitions.Clear();
-#if __IOS__
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-
-                    innerGrid.Children.Add(summaryLbl, 0, 0);
-                    innerGrid.Children.Add(packageLbl, 0, 1);
-                    innerGrid.Children.Add(priceLbl, 0, 2);
-                    innerGrid.Children.Add(userDetailsLbl, 0, 3);
-                    innerGrid.Children.Add(nameLbl, 0, 4);
-                    innerGrid.Children.Add(emailLbl, 0, 5);
-                    innerGrid.Children.Add(beltLbl, 0, 6);
-                    innerGrid.Children.Add(secretQuestionLbl, 0, 7);
-                    innerGrid.Children.Add(secretQuestionAnswerLbl, 0, 8);
-                    innerGrid.Children.Add(buttonGrid, 0, 9);
-
-#endif
-#if __ANDROID__
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(9, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-
-                innerGrid.Children.Add(scrollView, 0, 0);
-                innerGrid.Children.Add(buttonGrid, 0, 1);
-#endif
-                }
+                UpdateLayout();
             }
         }
     }

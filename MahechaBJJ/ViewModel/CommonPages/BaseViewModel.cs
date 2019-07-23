@@ -174,24 +174,24 @@ namespace MahechaBJJ.ViewModel.CommonPages
             DeleteCredentials();
             _account = new Account();
             _account.Username = user.Email;
-            _account.Properties.Add("Id", user.Id);
+            _account.Properties.Add(Constants.ACCOUNT_ID, user.Id);
 
 
             if (user.Packages.GiAndNoGiJiuJitsu)
             {
-                _account.Properties.Add("Package", "GiAndNoGi");
+                _account.Properties.Add(Constants.ACCOUNT_PACKAGE, "GiAndNoGi");
             }
             else if (user.Packages.GiJiuJitsu && user.Packages.NoGiJiuJitsu)
             {
-                _account.Properties.Add("Package", "GiAndNoGi");
+                _account.Properties.Add(Constants.ACCOUNT_PACKAGE, "GiAndNoGi");
             }
             else if (user.Packages.GiJiuJitsu && !user.Packages.NoGiJiuJitsu)
             {
-                _account.Properties.Add("Package", "Gi");
+                _account.Properties.Add(Constants.ACCOUNT_PACKAGE, "Gi");
             }
             else if (!user.Packages.GiJiuJitsu && user.Packages.NoGiJiuJitsu)
             {
-                _account.Properties.Add("Package", "NoGi");
+                _account.Properties.Add(Constants.ACCOUNT_PACKAGE, "NoGi");
             }
 
             _accountService.SaveCredentials(_account);

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
@@ -11,7 +9,6 @@ namespace MahechaBJJ.ViewModel.PlaylistPages
     public class PlaylistVideoPageViewModel : INotifyPropertyChanged
     {
 		private UserService _userService;
-		private AccountService _accountService;
 
 		private bool _successful;
 		public bool Successful
@@ -30,7 +27,6 @@ namespace MahechaBJJ.ViewModel.PlaylistPages
         public PlaylistVideoPageViewModel()
         {
 			_userService = new UserService();
-			_accountService = new AccountService();
         }
 
         public async Task DeleteVideoFromPlaylist(string url, string id, PlayList playlist, string videoName)

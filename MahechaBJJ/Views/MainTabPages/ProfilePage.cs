@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
@@ -11,72 +10,42 @@ using MahechaBJJ.Views.EntryPages;
 using MahechaBJJ.Views.SignUpPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
-#if __ANDROID__
-using Xamarin.Forms.Platform.Android;
-using Android.Graphics.Drawables;
-using MahechaBJJ.Droid;
-#endif
 
 namespace MahechaBJJ.Views
 {
     public class ProfilePage : ContentPage
     {
         private BaseViewModel _baseViewModel;
-        private Grid outerGrid;
-        private Grid innerGrid;
+        private FlexLayout flexLayout;
         private Label nameLbl;
         private Label nameTextLbl;
         private Label emailLbl;
         private Label emailTextLbl;
-        private Label beltLbl;
-        private Label beltTextLbl;
-        private Button packageBtn;
         private Button contactUsBtn;
         private Button logOutBtn;
         private Button loginBtn;
         private Button settingsBtn;
+        private Button backBtn;
         private Account account;
         private User user;
-        private Label timeOutLbl;
-        private Frame timeOutFrame;
-        private TapGestureRecognizer timeOutTap;
         private ActivityIndicator activityIndicator;
-        private StackLayout userCredentialStack;
         private Button createAccountBtn;
         private bool hasAccount;
-#if __ANDROID__
-        private Android.Widget.TextView androidNameLbl;
-        private Android.Widget.TextView androidEmailLbl;
-        private Android.Widget.TextView androidBeltLbl;
-        private Android.Widget.Button androidPackageBtn;
-        private Android.Widget.Button androidContactUsBtn;
-        private Android.Widget.Button androidLogOutBtn;
-        private Android.Widget.Button androidLoginBtn;
-        private Android.Widget.Button androidSettingsBtn;
-        private Android.Widget.Button androidCreateAccountBtn;
-        private ContentView contentViewNameLbl;
-        private ContentView contentViewEmailLbl;
-        private ContentView contentViewBeltLbl;
-
-#endif
 
         public ProfilePage(bool hasAccount)
         {
             _baseViewModel = new BaseViewModel();
             this.hasAccount = hasAccount;
-            BackgroundColor = Color.FromHex("#F1ECCE");
+            BackgroundColor = Theme.White;
+            Visual = VisualMarker.Material;
 
-#if __IOS__
-            Icon = "karate.png";
-            Title = "Profile";
-            Padding = new Thickness(10, 30, 10, 10);
-#endif
-#if __ANDROID__
-            Icon = "karate.png";
-            Padding = new Thickness(5, 5, 5, 5);
-#endif
+            IconImageSource = "karate.png";
+            Padding = Theme.Thickness;
+
             BuildPageObjects();
             SetContent();
+
+            Content = flexLayout;
         }
 
         //functions
@@ -85,323 +54,89 @@ namespace MahechaBJJ.Views
             var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
             var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-
-            userCredentialStack = new StackLayout();
-
-            //load User
-            var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
-            //grid definiton
+            flexLayout = new FlexLayout();
+            flexLayout.Direction = FlexDirection.Column;
+            flexLayout.JustifyContent = FlexJustify.SpaceEvenly;
 
             nameLbl = new Label
             {
                 Text = "Name",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size * 1.5,
-                HorizontalTextAlignment = TextAlignment.Center,
-#endif
-                VerticalTextAlignment = TextAlignment.Center,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                FontFamily = Theme.Font,
+                FontSize = lblSize,
+                TextColor = Theme.Black
             };
 
             nameTextLbl = new Label
             {
                 Text = "Jon",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size,
-#endif
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                FontFamily = Theme.Font,
+                FontSize = lblSize,
+                TextColor = Theme.Black,
+                LineBreakMode = LineBreakMode.NoWrap
             };
+
             emailLbl = new Label
             {
                 Text = "E-Mail",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size * 1.5,
-                HorizontalTextAlignment = TextAlignment.Center,
-#endif
-                VerticalTextAlignment = TextAlignment.Center,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                FontFamily = Theme.Font,
+                FontSize = lblSize,
+                TextColor = Theme.Black
             };
+
             emailTextLbl = new Label
             {
                 Text = "Doe",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size,
-#endif
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                LineBreakMode = LineBreakMode.TailTruncation,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-            };
-            beltLbl = new Label
-            {
-                Text = "Belt",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size * 1.5,
-                HorizontalTextAlignment = TextAlignment.Center,
-#endif
-                VerticalTextAlignment = TextAlignment.Center,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-            };
-            beltTextLbl = new Label
-            {
-                Text = "White",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size,
-#endif
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-            };
-            packageBtn = new Button
-            {
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
-                Text = "Packages",
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size * 2
-            };
-            contactUsBtn = new Button
-            {
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
-                Text = "Contact Us",
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size * 2
-            };
-            logOutBtn = new Button
-            {
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
-                Text = "Log Out",
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size * 2
+                FontFamily = Theme.Font,
+                FontSize = lblSize,
+                TextColor = Theme.Black,
+                LineBreakMode = LineBreakMode.NoWrap
             };
 
-            loginBtn = new Button();
-            loginBtn.Style = (Style)Application.Current.Resources["common-blue-btn"];
-            loginBtn.Text = "Login";
-#if __IOS__
-            loginBtn.FontFamily = "AmericanTypewriter-Bold";
-            loginBtn.FontSize = size * 2;
-#endif
-            loginBtn.Clicked += (object sender, EventArgs e) => {
-                Navigation.PushModalAsync(new LoginPage());
+            contactUsBtn = new Button
+            {
+                Style = Theme.BlueButton,
+                Text = "Contact Us"
+            };
+
+            logOutBtn = new Button
+            {
+                Style = Theme.BlueButton,
+                Text = "Log Out"
+            };
+
+            loginBtn = new Button
+            {
+                Style = Theme.BlueButton,
+                Text = "Login"
             };
 
             settingsBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
-                Text = "Settings",
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = size * 2
+                Style = Theme.BlueButton,
+                Text = "Settings"
             };
 
-            createAccountBtn = new Button();
-            createAccountBtn.Text = "Create Account";
-            createAccountBtn.Style = (Style)Application.Current.Resources["common-blue-btn"];
-            createAccountBtn.FontFamily = "AmericanTypewriter-Bold";
-            createAccountBtn.FontSize = btnSize * 2;
-            createAccountBtn.Clicked += async (object sender, EventArgs e) => {
-                ToggleButtons();
-                await Navigation.PushModalAsync(new SignUpPage());
-                ToggleButtons();
+            createAccountBtn = new Button
+            {
+                Style = Theme.BlueButton,
+                Text = "Create Account"
             };
 
-            timeOutLbl = new Label
+            backBtn = new Button
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
-                Text = "Network Has Timed Out! \n Click To Try Again!",
-                LineBreakMode = LineBreakMode.WordWrap,
-                FontSize = lblSize,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                TextColor = Color.White
+                ImageSource = "back.png",
+                Style = Theme.RedButton
             };
-            timeOutFrame = new Frame
-            {
-                Content = timeOutLbl,
-                BorderColor = Color.Black,
-                BackgroundColor = Color.Black,
-                HasShadow = false,
-                Padding = 3,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand
-            };
-            timeOutTap = new TapGestureRecognizer();
-            timeOutTap.Tapped += (sender, e) =>
-            {
-                ToggleButtons();
-                SetContent();
-                ToggleButtons();
-            };
-            timeOutLbl.GestureRecognizers.Add(timeOutTap);
+
             activityIndicator = new ActivityIndicator
             {
-                Style = (Style)Application.Current.Resources["common-activity-indicator"]
+                Color = Theme.Blue,
+                IsRunning = false,
+                IsVisible = false,
+                IsEnabled = false
             };
-
-#if __ANDROID__
-            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
-            pd.SetCornerRadius(100);
-
-            androidNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidNameLbl.Text = "Name:";
-            androidNameLbl.Typeface = Constants.COMMONFONT;
-            androidNameLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidNameLbl.Gravity = Android.Views.GravityFlags.Start;
-            androidNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-
-            androidEmailLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidEmailLbl.Text = "Email:";
-            androidEmailLbl.Typeface = Constants.COMMONFONT;
-            androidEmailLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidEmailLbl.Gravity = Android.Views.GravityFlags.Start;
-            androidEmailLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-
-            androidBeltLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidBeltLbl.Text = "Belt:";
-            androidBeltLbl.Typeface = Constants.COMMONFONT;
-            androidBeltLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidBeltLbl.Gravity = Android.Views.GravityFlags.Start;
-            androidBeltLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-
-            androidPackageBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidPackageBtn.Text = "Packages";
-            androidPackageBtn.Typeface = Constants.COMMONFONT;
-            androidPackageBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidPackageBtn.SetBackground(pd);
-            androidPackageBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidPackageBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidPackageBtn.SetAllCaps(false);
-            androidPackageBtn.Click += async (object sender, EventArgs e) => {
-                ToggleButtons();
-                await SetPackages();
-                ToggleButtons();
-            };
-
-            androidContactUsBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidContactUsBtn.Text = "Contact Us";
-            androidContactUsBtn.Typeface = Constants.COMMONFONT;
-            androidContactUsBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidContactUsBtn.SetBackground(pd);
-            androidContactUsBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidContactUsBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidContactUsBtn.SetAllCaps(false);
-            androidContactUsBtn.Click += (object sender, EventArgs e) => {
-                ToggleButtons();
-                ContactUs();
-                ToggleButtons();
-            };
-
-            androidLogOutBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidLogOutBtn.Text = "Log Out";
-            androidLogOutBtn.Typeface = Constants.COMMONFONT;
-            androidLogOutBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidLogOutBtn.SetBackground(pd);
-            androidLogOutBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidLogOutBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidLogOutBtn.SetAllCaps(false);
-            androidLogOutBtn.Click += async (object sender, EventArgs e) => {
-                ToggleButtons();
-                await LogOutClick();
-                ToggleButtons();
-            };
-
-            androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidLoginBtn.Text = "Login";
-            androidLoginBtn.Typeface = Constants.COMMONFONT;
-            androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidLoginBtn.SetBackground(pd);
-            androidLoginBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidLoginBtn.SetAllCaps(false);
-            androidLoginBtn.Click += async (sender, e) => {
-                ToggleButtons();
-                await Navigation.PushModalAsync(new LoginPage());
-                ToggleButtons();
-            };
-
-            androidSettingsBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidSettingsBtn.Text = "Change Password";
-            androidSettingsBtn.Typeface = Constants.COMMONFONT;
-            androidSettingsBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidSettingsBtn.SetBackground(pd);
-            androidSettingsBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidSettingsBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidSettingsBtn.SetAllCaps(false);
-            androidSettingsBtn.Click += async (object sender, EventArgs e) => {
-                ToggleButtons();
-                await Navigation.PushModalAsync(new ChangePasswordPage(user));
-                ToggleButtons();
-            };
-
-            androidCreateAccountBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidCreateAccountBtn.Text = "Create Account";
-            androidCreateAccountBtn.Typeface = Constants.COMMONFONT;
-            androidCreateAccountBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidCreateAccountBtn.SetBackground(pd);
-            androidCreateAccountBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidCreateAccountBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidCreateAccountBtn.SetAllCaps(false);
-            androidCreateAccountBtn.Click += async (object sender, EventArgs e) => {
-                ToggleButtons();
-                await Navigation.PushModalAsync(new SignUpPage());
-                ToggleButtons();
-            };
-
-            contentViewNameLbl = new ContentView();
-            contentViewNameLbl.Content = androidNameLbl.ToView();
-
-            contentViewEmailLbl = new ContentView();
-            contentViewEmailLbl.Content = androidEmailLbl.ToView();
-
-            contentViewBeltLbl = new ContentView();
-            contentViewBeltLbl.Content = androidBeltLbl.ToView();
-#endif
 
             //Events
-            packageBtn.Clicked += async (object sender, EventArgs e) =>
-            {
-                ToggleButtons();
-                await SetPackages();
-                ToggleButtons();
-            };
             contactUsBtn.Clicked += (sender, e) =>
             {
                 ToggleButtons();
@@ -420,24 +155,38 @@ namespace MahechaBJJ.Views
                 await Settings();
                 ToggleButtons();
             };
-
-            outerGrid.Children.Add(innerGrid, 0, 0);
-
-            Content = outerGrid;
+            createAccountBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PushModalAsync(new SignUpPage());
+                ToggleButtons();
+            };
+            loginBtn.Clicked += (object sender, EventArgs e) => {
+                Navigation.PushModalAsync(new LoginPage());
+            };
+            backBtn.Clicked += async (object sender, EventArgs e) => {
+                ToggleButtons();
+                await Navigation.PopModalAsync();
+                ToggleButtons();
+            };
         }
 
         public async void SetContent()
         {
             account = _baseViewModel.GetAccountInformation();
 
+            FlexLayout.SetAlignSelf(nameLbl, FlexAlignSelf.Center);
+            FlexLayout.SetAlignSelf(nameTextLbl, FlexAlignSelf.Center);
+            FlexLayout.SetAlignSelf(emailLbl, FlexAlignSelf.Center);
+            FlexLayout.SetAlignSelf(emailTextLbl, FlexAlignSelf.Center);
+
             //add activity indicator while contents load
             if (hasAccount)
             {
-                innerGrid.Children.Clear();
+                flexLayout.Children.Clear();
+
                 activityIndicator.IsRunning = true;
-                innerGrid.Children.Add(activityIndicator, 0, 0);
-                Grid.SetRowSpan(activityIndicator, 6);
-                Grid.SetColumnSpan(activityIndicator, 3);
+
+                flexLayout.Children.Add(activityIndicator);
 
                 if (_baseViewModel.User == null)
                 {
@@ -455,47 +204,22 @@ namespace MahechaBJJ.Views
                 if (_baseViewModel.Successful)
                 {
                     activityIndicator.IsRunning = false;
-#if __IOS__
+
                     nameTextLbl.Text = user.Name;
                     emailTextLbl.Text = user.Email;
-                    beltTextLbl.Text = user.Belt;
-
-                    userCredentialStack.Children.Add(nameLbl);
-                    userCredentialStack.Children.Add(nameTextLbl);
-                    userCredentialStack.Children.Add(beltLbl);
-                    userCredentialStack.Children.Add(beltTextLbl);
-                    userCredentialStack.Children.Add(emailLbl);
-                    userCredentialStack.Children.Add(emailTextLbl);
 
                     //Building Grid
-                    innerGrid.Children.Clear();
-                    innerGrid.Children.Add(userCredentialStack, 0, 0);
-                    Grid.SetRowSpan(userCredentialStack, 3);
-                    innerGrid.Children.Add(packageBtn, 0, 3);
-                    innerGrid.Children.Add(contactUsBtn, 0, 4);
-                    innerGrid.Children.Add(settingsBtn, 0, 5);
-                    innerGrid.Children.Add(logOutBtn, 0, 6);
-#endif
-#if __ANDROID__
-                    androidNameLbl.Text = $"{androidNameLbl.Text} {user.Name}";
-                    androidEmailLbl.Text = $"{androidEmailLbl.Text} {user.Email}";
-                    androidBeltLbl.Text = $"{androidBeltLbl.Text} {user.Belt}";
-                    userCredentialStack.Children.Add(contentViewNameLbl);
-                    userCredentialStack.Children.Add(contentViewEmailLbl);
-                    userCredentialStack.Children.Add(contentViewBeltLbl);
-
-                    //Building Grid
-                    innerGrid.Children.Clear();
-                    //innerGrid.Children.Add(userCredentialStack, 0, 0);
-                    innerGrid.Children.Add(contentViewNameLbl, 0, 0);
-                    innerGrid.Children.Add(contentViewEmailLbl, 0, 1);
-                    innerGrid.Children.Add(contentViewBeltLbl, 0, 2);
-                    //Grid.SetRowSpan(userCredentialStack, 3);
-                    innerGrid.Children.Add(androidPackageBtn.ToView(), 0, 3);
-                    innerGrid.Children.Add(androidContactUsBtn.ToView(), 0, 4);
-                    innerGrid.Children.Add(androidSettingsBtn.ToView(), 0, 5);
-                    innerGrid.Children.Add(androidLogOutBtn.ToView(), 0, 6);
-#endif
+                    flexLayout.Children.Clear();
+                    flexLayout.Children.Add(nameLbl);
+                    flexLayout.Children.Add(nameTextLbl);
+                    flexLayout.Children.Add(emailLbl);
+                    flexLayout.Children.Add(emailTextLbl);
+                    flexLayout.Children.Add(contactUsBtn);
+                    flexLayout.Children.Add(settingsBtn);
+                    flexLayout.Children.Add(logOutBtn);
+//#if __IOS__
+//                    flexLayout.Children.Add(backBtn);
+//#endif
                 }
                 else
                 {
@@ -504,21 +228,13 @@ namespace MahechaBJJ.Views
             }
             else
             {
-#if __ANDROID__
-                //Building Grid
-                innerGrid.Children.Clear();
-                innerGrid.Children.Add(androidPackageBtn.ToView(), 0, 1);
-                innerGrid.Children.Add(androidContactUsBtn.ToView(), 0, 3);
-                innerGrid.Children.Add(androidLoginBtn.ToView(), 0, 4);
-                innerGrid.Children.Add(androidCreateAccountBtn.ToView(), 0, 5);
-#endif
-#if __IOS__
-                innerGrid.Children.Clear();
-                innerGrid.Children.Add(packageBtn, 0, 1);
-                innerGrid.Children.Add(contactUsBtn, 0, 3);
-                innerGrid.Children.Add(loginBtn, 0, 4);
-                innerGrid.Children.Add(createAccountBtn, 0, 5);
-#endif
+                flexLayout.Children.Clear();
+                flexLayout.Children.Add(contactUsBtn);
+                flexLayout.Children.Add(loginBtn);
+                flexLayout.Children.Add(createAccountBtn);
+//#if __IOS__
+//                flexLayout.Children.Add(backBtn);
+//#endif
             }
 
         }
@@ -529,25 +245,6 @@ namespace MahechaBJJ.Views
             var entryPage = new NavigationPage(new EntryPage());
             NavigationPage.SetHasNavigationBar(entryPage.CurrentPage, false);
             Application.Current.MainPage = entryPage;
-        }
-
-        private async Task SetPackages()
-        {
-            account = _baseViewModel.GetAccountInformation();
-
-            if (account.Properties["Package"].Equals("GiAndNoGi"))
-            {
-                await DisplayAlert("No Packages", "No more packages are available for you to purchase.", "Ok");
-                return;
-            }
-            else if (account.Properties["Package"].Equals("Gi"))
-            {
-                await Navigation.PushModalAsync(new PurchasePage(Package.NoGi, hasAccount));
-            }
-            else
-            {
-                await Navigation.PushModalAsync(new PurchasePage(Package.Gi, hasAccount));
-            }
         }
 
         private async Task LogOutClick()
@@ -584,22 +281,12 @@ namespace MahechaBJJ.Views
 
         private void ToggleButtons()
         {
-#if __ANDROID__
-            androidPackageBtn.Clickable = !androidPackageBtn.Clickable;
-            androidContactUsBtn.Clickable = !androidContactUsBtn.Clickable;
-            androidLogOutBtn.Clickable = !androidLogOutBtn.Clickable;
-            androidLoginBtn.Clickable = !androidLoginBtn.Clickable;
-            androidSettingsBtn.Clickable = !androidSettingsBtn.Clickable;
-            androidCreateAccountBtn.Clickable = !androidCreateAccountBtn.Clickable;
-#endif
-            timeOutLbl.IsEnabled = !timeOutLbl.IsEnabled;
-
-            packageBtn.IsEnabled = !packageBtn.IsEnabled;
             contactUsBtn.IsEnabled = !contactUsBtn.IsEnabled;
             logOutBtn.IsEnabled = !logOutBtn.IsEnabled;
             loginBtn.IsEnabled = !loginBtn.IsEnabled;
             settingsBtn.IsEnabled = !settingsBtn.IsEnabled;
             createAccountBtn.IsEnabled = !createAccountBtn.IsEnabled;
+            backBtn.IsEnabled = !backBtn.IsEnabled;
         }
     }
 }

@@ -5,12 +5,6 @@ using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.Views.CommonPages;
 using Xamarin.Forms;
-#if __ANDROID__
-using MahechaBJJ.Droid;
-using Android.Graphics.Drawables;
-using Xamarin.Forms.Platform.Android;
-using Android.Text.Method;
-#endif
 
 namespace MahechaBJJ.Views.EntryPages
 {
@@ -19,52 +13,35 @@ namespace MahechaBJJ.Views.EntryPages
         private readonly BaseViewModel _baseViewModel;
 
         //declare objects
-        private Grid outerGrid;
-        private Grid innerGrid;
-        private Grid buttonGrid;
-        private Grid emailGrid;
-        private Grid passwordGrid;
+        private FlexLayout flexLayout;
+        private StackLayout buttonStackLayout;
+        private FlexLayout loginSectionFlexLayout;
+        private Frame loginSectionFrame;
         private Image mahechaLogo;
-        private Label emailLbl;
-        private Image emailImg;
         private Entry emailEntry;
-        private Label passwordLbl;
-        private Image passwordImg;
         private Entry passwordEntry;
         private Button loginBtn;
         private Button backBtn;
         private Button forgotPasswordBtn;
         private User user;
-        private ScrollView scrollView;
-        private StackLayout stackLayout;
-        private StackLayout innerStackLayout;
-        private StackLayout buttonLayout;
-        private StackLayout emailLayout;
-        private StackLayout passwordLayout;
-        private Package package;
-#if __ANDROID__
-        private Android.Widget.Button androidLoginBtn;
-        private Android.Widget.Button androidForgotPasswordBtn;
-        private Android.Widget.ImageView androidImageEmail;
-        private Android.Widget.ImageView androidImagePassword;
-        private Android.Widget.EditText androidEmailEntry;
-        private Android.Widget.EditText androidPasswordEntry;
-        private Android.Widget.ImageButton androidForgetPasswordImgBtn;
-#endif
-
+        private double width;
+        private double height;
 
         public LoginPage()
         {
             _baseViewModel = new BaseViewModel();
-            BackgroundColor = Color.FromHex("#F1ECCE");
+            BackgroundColor = Theme.White;
+            Visual = VisualMarker.Material;
 
-#if __ANDROID__
-            Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
-            Padding = new Thickness(10, 10, 10, 10);
-#endif
+            width = this.Width;
+            height = this.Height;
+
+            Padding = Theme.Thickness;
+
             BuildPageObjects();
+            UpdateLayout();
+
+            Content = flexLayout;
         }
 
         //functions
@@ -72,217 +49,67 @@ namespace MahechaBJJ.Views.EntryPages
         {
             var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
             var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-            var entrySize = Device.GetNamedSize(NamedSize.Large, typeof(Entry));
+            var entrySize = Device.GetNamedSize(NamedSize.Medium, typeof(Entry));
 
-            scrollView = new ScrollView();
-            stackLayout = new StackLayout();
-            buttonLayout = new StackLayout();
-            emailLayout = new StackLayout();
-            passwordLayout = new StackLayout();
-            innerStackLayout = new StackLayout();
-            innerStackLayout.Spacing = 50;
-            //View objects
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition {Height = new GridLength(7, GridUnitType.Star)},
-                    new RowDefinition {Height = new GridLength(2, GridUnitType.Star)},
-                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}, 
-                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition {Height = new GridLength(2, GridUnitType.Star)},
-                    new RowDefinition {Height = new GridLength(2, GridUnitType.Star)}
-                }
-            };
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-            buttonGrid = new Grid
-            {
-                ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition {Width = new GridLength(3, GridUnitType.Star)},
-                    new ColumnDefinition {Width = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-            emailGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}
-                },
-                ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition {Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition {Width = new GridLength(3, GridUnitType.Star)}
-                }
+            flexLayout = new FlexLayout();
 
-            };
-            passwordGrid = new Grid
+            buttonStackLayout = new StackLayout();
+            buttonStackLayout.Orientation = StackOrientation.Horizontal;
+
+            loginSectionFlexLayout = new FlexLayout();
+
+            loginSectionFrame = new Frame
             {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition {Height = new GridLength(1, GridUnitType.Star)}
-                },
-                ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition {Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition {Width = new GridLength(3, GridUnitType.Star)}
-                }
+                CornerRadius = 5,
+                Padding = 25,
+                Margin = 0,
+                BackgroundColor = Theme.Red,
+                Content = loginSectionFlexLayout
             };
+
             mahechaLogo = new Image
             {
                 Source = ImageSource.FromResource("mahechabjjlogo.png"),
                 Aspect = Aspect.AspectFit
             };
-            emailImg = new Image
-            {
-                Source = "mail.png",
-                Aspect = Aspect.AspectFit
-            };
-            emailLbl = new Label
-            {
-                Text = "E-Mail Address",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize,
-                Margin = -5,
-#endif
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center
-            };
             emailEntry = new Entry
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
                 Placeholder = "E-Mail Address",
-#endif
                 FontSize = entrySize,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-            };
-            passwordImg = new Image
-            {
-                Source = "password.png",
-                Aspect = Aspect.AspectFit
-            };
-            passwordLbl = new Label
-            {
-                Text = "Password",
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize,
-                Margin = -5,
-#endif
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center
+                BackgroundColor = Theme.Azure,
+                FontFamily = Theme.Font,
+                TextColor = Theme.Black,
+                PlaceholderColor = Theme.Black
             };
             passwordEntry = new Entry
             {
                 IsPassword = true,
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
                 Placeholder = "Password",
-#endif
                 FontSize = entrySize,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                BackgroundColor = Theme.Azure,
+                FontFamily = Theme.Font,
+                TextColor = Theme.Black,
+                PlaceholderColor = Theme.Black,
             };
             loginBtn = new Button
             {
                 Text = "Login",
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 2,
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                Style = Theme.BlueButton,
+                HorizontalOptions = LayoutOptions.CenterAndExpand
             };
             backBtn = new Button
             {
-                Image = "back.png",
-                Style = (Style)Application.Current.Resources["common-red-btn"],
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                ImageSource = "back.png",
+                Style = Theme.RedButton,
+                HorizontalOptions = LayoutOptions.CenterAndExpand
             };
             forgotPasswordBtn = new Button
             {
-                Image= "forgotpassword.png",
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                ImageSource = "forgotpassword.png",
+                Style = Theme.BlueButton,
+                HorizontalOptions = LayoutOptions.CenterAndExpand
             };
 
-#if __ANDROID__
-            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
-            pd.SetCornerRadius(100);
-
-            var pdTwo = new PaintDrawable(Android.Graphics.Color.Rgb(124, 37, 41));
-            pdTwo.SetCornerRadius(100);
-
-            androidLoginBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidLoginBtn.Text = "Login";
-            androidLoginBtn.Typeface = Constants.COMMONFONT;
-            androidLoginBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidLoginBtn.SetBackground(pd);
-            androidLoginBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidLoginBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidLoginBtn.SetAllCaps(false);
-
-            androidForgotPasswordBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidForgotPasswordBtn.Text = "?";
-            androidForgotPasswordBtn.Typeface = Constants.COMMONFONT;
-            androidForgotPasswordBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidForgotPasswordBtn.SetBackground(pdTwo);
-            androidForgotPasswordBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidForgotPasswordBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidForgotPasswordBtn.SetAllCaps(false);
-
-            androidForgetPasswordImgBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
-            androidForgetPasswordImgBtn.SetImageResource(2130837598);
-            androidForgetPasswordImgBtn.SetAdjustViewBounds(true);
-            androidForgetPasswordImgBtn.SetBackground(pdTwo);
-
-            androidEmailEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
-            androidEmailEntry.Typeface = Constants.COMMONFONT;
-            androidEmailEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-            androidEmailEntry.SetPadding(0, 10, 0, 10);
-            androidEmailEntry.SetTextColor(Android.Graphics.Color.Black);
-            androidEmailEntry.InputType = Android.Text.InputTypes.TextVariationEmailAddress;
-
-            androidImageEmail = new Android.Widget.ImageView(MainApplication.ActivityContext);
-            androidImageEmail.SetImageResource(2130837780);
-            androidImageEmail.SetAdjustViewBounds(true);
-
-            androidPasswordEntry = new Android.Widget.EditText(MainApplication.ActivityContext);
-            androidPasswordEntry.Typeface = Constants.COMMONFONT;
-            androidPasswordEntry.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-            androidPasswordEntry.SetPadding(0, 0, 0, 0);
-            androidPasswordEntry.SetTextColor(Android.Graphics.Color.Black);
-            androidPasswordEntry.SetHighlightColor(Android.Graphics.Color.Transparent);
-            androidPasswordEntry.InputType = Android.Text.InputTypes.TextVariationWebPassword;
-            androidPasswordEntry.TransformationMethod = new PasswordTransformationMethod();
-
-            androidImagePassword = new Android.Widget.ImageView(MainApplication.ActivityContext);
-            androidImagePassword.SetImageResource(2130837816);
-            androidImagePassword.SetAdjustViewBounds(true);
-#endif
             //Events
             loginBtn.Clicked += async (object sender, EventArgs e) => {
                 ToggleButtons();
@@ -300,81 +127,39 @@ namespace MahechaBJJ.Views.EntryPages
                 ToggleButtons();
             };
 
-#if __ANDROID__
-            androidLoginBtn.Click += async (object sender, EventArgs e) => {
-                ToggleButtons();
-                await Validate(sender, e);
-                ToggleButtons();
-            };
-            androidForgetPasswordImgBtn.Click += async (object sender, EventArgs e) => {
-                ToggleButtons();
-                await Navigation.PushModalAsync(new ForgotPasswordPage());
-                ToggleButtons();
-            };
-#endif
+            FlexLayout.SetBasis(emailEntry, 1);
+            FlexLayout.SetGrow(emailEntry, 2);
 
+            FlexLayout.SetBasis(passwordEntry, 1);
+            FlexLayout.SetGrow(passwordEntry, 2);
+
+            buttonStackLayout.Children.Clear();
 #if __IOS__
-            buttonLayout.Children.Add(backBtn);
-            buttonLayout.Children.Add(loginBtn);
-            buttonLayout.Children.Add(forgotPasswordBtn);
-            buttonLayout.Orientation = StackOrientation.Horizontal;
-            emailLayout.Children.Add(emailImg);
-            emailLayout.Children.Add(emailEntry);
-            emailLayout.Orientation = StackOrientation.Horizontal;
-            passwordLayout.Children.Add(passwordImg);
-            passwordLayout.Children.Add(passwordEntry);
-            passwordLayout.Orientation = StackOrientation.Horizontal;
-            innerStackLayout.Children.Add(emailLayout);
-            innerStackLayout.Children.Add(passwordLayout);
-            //innerStackLayout.Children.Add(emailImg);
-            //innerStackLayout.Children.Add(emailEntry);
-
-            //innerStackLayout.Children.Add(passwordImg);
-            //innerStackLayout.Children.Add(passwordEntry);
-            innerStackLayout.Children.Add(buttonLayout);
-            stackLayout.Children.Add(mahechaLogo);
-            stackLayout.Children.Add(innerStackLayout);
-            stackLayout.Orientation = StackOrientation.Vertical;
-            stackLayout.VerticalOptions = LayoutOptions.CenterAndExpand;
-            stackLayout.HorizontalOptions = LayoutOptions.CenterAndExpand;
-
-            scrollView.Content = stackLayout;
-            Content = scrollView;
+            buttonStackLayout.Children.Add(backBtn);
 #endif
-#if __ANDROID__
-            buttonGrid.Children.Add(androidLoginBtn.ToView(), 0, 0);
-            buttonGrid.Children.Add(androidForgetPasswordImgBtn.ToView(), 1, 0);
-            emailGrid.Children.Add(androidImageEmail.ToView(), 0, 0);
-            emailGrid.Children.Add(androidEmailEntry.ToView(), 1, 0);
-            emailGrid.Padding = new Thickness(10, 0);
-            passwordGrid.Children.Add(androidImagePassword.ToView(), 0, 0);
-            passwordGrid.Children.Add(androidPasswordEntry.ToView(), 1, 0);
-            passwordGrid.Padding = new Thickness(10, 0);
-            innerGrid.Children.Add(mahechaLogo, 0, 0);
-            innerGrid.Children.Add(emailGrid, 0, 2);
-            innerGrid.Children.Add(passwordGrid, 0, 4);
-            innerGrid.Children.Add(buttonGrid, 0, 6);
+            buttonStackLayout.Children.Add(loginBtn);
+            buttonStackLayout.Children.Add(forgotPasswordBtn);
 
-            outerGrid.Children.Add(innerGrid, 0, 0);
+            loginSectionFlexLayout.Children.Add(emailEntry);
+            loginSectionFlexLayout.Children.Add(passwordEntry);
+            loginSectionFlexLayout.Children.Add(buttonStackLayout);
+            loginSectionFlexLayout.Direction = FlexDirection.Column;
+            loginSectionFlexLayout.JustifyContent = FlexJustify.SpaceEvenly;
+            FlexLayout.SetBasis(loginSectionFrame, 1);
+            FlexLayout.SetGrow(loginSectionFrame, 1);
 
-            Content = outerGrid;
-#endif
+            flexLayout.Children.Add(mahechaLogo);
+            flexLayout.Children.Add(loginSectionFrame);
+            FlexLayout.SetBasis(mahechaLogo, 1);
+            FlexLayout.SetGrow(mahechaLogo, 1);
         }
 
         private async Task Validate(object sender, EventArgs e)
         {
-#if __ANDROID__
-            if (androidEmailEntry.Text != null || androidPasswordEntry.Text != null)
-            {
-                await Login(sender, e);
-            }
-#endif
-#if __IOS__
             if (emailEntry.Text != null || passwordEntry.Text != null)
             {
                 await Login(sender, e);
             }
-#endif
 
             else
             {
@@ -384,12 +169,8 @@ namespace MahechaBJJ.Views.EntryPages
 
         private async Task Login(object sender, EventArgs e)
         {
-#if __ANDROID__
-            user = await _baseViewModel.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, androidEmailEntry.Text.ToLower(), androidPasswordEntry.Text);
-#endif
-#if __IOS__
             user = await _baseViewModel.FindUserByEmailAsync(Constants.FINDUSERBYEMAIL, emailEntry.Text.ToLower(), passwordEntry.Text);
-#endif
+
             if (user == null)
             {
                 await DisplayAlert("User Not Found", "Wrong Email address or Password, please try again.", "Got It");
@@ -452,43 +233,45 @@ namespace MahechaBJJ.Views.EntryPages
 
         private void ToggleButtons()
         {
-#if __ANDROID__
-            androidLoginBtn.Clickable = !androidLoginBtn.Clickable;
-            androidForgetPasswordImgBtn.Clickable = !androidForgetPasswordImgBtn.Clickable;
-#endif
             backBtn.IsEnabled = !backBtn.IsEnabled;
             loginBtn.IsEnabled = !loginBtn.IsEnabled;
             forgotPasswordBtn.IsEnabled = !forgotPasswordBtn.IsEnabled;
         }
 
-#if __IOS__
+        private void UpdateLayout()
+        {
+            if (this.Width > this.Height)
+                LandscapeLayout();
+            else
+                PortraitLayout();
+        }
+
+        private void LandscapeLayout()
+        {
+            //Flexbox
+            flexLayout.Direction = FlexDirection.Row;
+            flexLayout.JustifyContent = FlexJustify.SpaceEvenly;
+        }
+
+        private void PortraitLayout()
+        {
+            //Flexbox
+            flexLayout.Direction = FlexDirection.Column;
+            flexLayout.JustifyContent = FlexJustify.SpaceEvenly;
+        }
 
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height); //must be called
 
-            if (width > height)
+            if (this.width != width || this.height != height)
             {
-#if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
-                Padding = new Thickness(10, 10, 10, 10);
-#endif
-                mahechaLogo.Scale = 0;
-                mahechaLogo.IsVisible = false;
-                stackLayout.Orientation = StackOrientation.Horizontal;
-                buttonLayout.VerticalOptions = LayoutOptions.EndAndExpand;
+                this.width = width;
+                this.height = height;
+
+                UpdateLayout();
             }
-            else
-            {
-                mahechaLogo.Scale = 1;
-                mahechaLogo.IsVisible = true;
-                stackLayout.Orientation = StackOrientation.Vertical;
-                Padding = new Thickness(10, 30, 10, 10);
-            }
-		}
-#endif
+        }
     }
 
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -11,7 +10,6 @@ namespace MahechaBJJ.ViewModel.CommonPages
     public class VideoDetailPageViewModel : INotifyPropertyChanged
     {
 		private UserService _userService;
-		private AccountService _accountService;
 
 		private ObservableCollection<PlayList> _playlist;
 		public ObservableCollection<PlayList> Playlist
@@ -44,7 +42,6 @@ namespace MahechaBJJ.ViewModel.CommonPages
         public VideoDetailPageViewModel()
         {
 			_userService = new UserService();
-			_accountService = new AccountService();
         }
 
 		public async Task GetUserPlaylists(string url, string id)

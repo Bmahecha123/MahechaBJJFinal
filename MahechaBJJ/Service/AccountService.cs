@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 #if __ANDROID__
 using MahechaBJJ.Droid;
@@ -11,49 +12,44 @@ namespace MahechaBJJ.Service
 {
     public class AccountService
     {
-        Account account;
-
         public AccountService()
         {
         }
 
 		public Account GetAccountInformation()
 		{
-#if __IOS__
-			return AccountStore.Create().FindAccountsForService(Constants.AppName).FirstOrDefault();
-#endif
-#if __ANDROID__
-            return AccountStore.Create(MainApplication.ActivityContext).FindAccountsForService(Constants.AppName).FirstOrDefault();
-#endif
-		}
+            try
+            {
+                Account account = new Account();
+                account.Username = Application.Current.Properties[Constants.ACCOUNT_USERNAME].ToString();
+                account.Properties.Add(Constants.ACCOUNT_ID, Application.Current.Properties[Constants.ACCOUNT_ID].ToString());
+                account.Properties.Add(Constants.ACCOUNT_PACKAGE, Application.Current.Properties[Constants.ACCOUNT_PACKAGE].ToString());
+
+                return account;
+            }
+            catch (KeyNotFoundException ex)
+            {
+                Console.WriteLine($"Account not found for {Constants.ACCOUNT_USERNAME}. Returning null.");
+                return null;
+            }
+        }
 
 		public void DeleteCredentials()
 		{
-#if __IOS__
-			account = AccountStore.Create().FindAccountsForService(Constants.AppName).FirstOrDefault();
-			if (account != null)
-			{
-				AccountStore.Create().Delete(account, Constants.AppName);
-			}
-#endif
-#if __ANDROID__
-            account = AccountStore.Create(MainApplication.ActivityContext).FindAccountsForService(Constants.AppName).FirstOrDefault();
-            if (account != null)
-            {
-                AccountStore.Create(MainApplication.ActivityContext).Delete(account, Constants.AppName);
-            }
-#endif
+            //Application.Current.Properties.Clear();
+            Application.Current.Properties.Remove(Constants.ACCOUNT_USERNAME);
+            Application.Current.Properties.Remove(Constants.ACCOUNT_ID);
+            Application.Current.Properties.Remove(Constants.ACCOUNT_PACKAGE);
 		}
 
 		public void SaveCredentials(Account account)
 		{
-#if __IOS__
-			AccountStore.Create().Save(account, Constants.AppName);
-#endif
-#if __ANDROID__
-            AccountStore.Create(MainApplication.ActivityContext).Save(account, Constants.AppName);
-#endif
-		}
+            Application.Current.Properties.Add(Constants.ACCOUNT_USERNAME, account.Username);
 
+            foreach(var item in account.Properties)
+            {
+                Application.Current.Properties.Add(item.Key, item.Value);
+            }
+		}
 	}
 }

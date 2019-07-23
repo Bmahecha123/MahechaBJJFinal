@@ -10,11 +10,6 @@ using MahechaBJJ.Views.PlaylistPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
 using System.Threading.Tasks;
-#if __ANDROID__
-using MahechaBJJ.Droid;
-using Android.Graphics.Drawables;
-using Xamarin.Forms.Platform.Android;
-#endif
 
 namespace MahechaBJJ.Views
 {
@@ -35,45 +30,31 @@ namespace MahechaBJJ.Views
         private Button playBtn;
         private Button addBtn;
         private Button qualityBtn;
-        private Grid innerGrid;
-        private Grid outerGrid;
+        private FlexLayout flexLayout;
+        private StackLayout buttonStackLayout;
+
         private VideoData videoTechnique;
         private bool userHasAccount;
-#if __ANDROID__
-        //TODO IMPLEMENT IMAGE BUTTONS!!!!!!!!
-        private Grid buttonGrid;
-        private Android.Widget.TextView androidVideoNameLbl;
-        private Android.Widget.TextView androidVideoDescriptionLbl;
-        private Android.Widget.ImageButton androidPlayImgBtn;
-        private Android.Widget.Button androidAddBtn;
-        private Android.Widget.Button androidQualityBtn;
-
-        private ContentView contentViewNameLbl;
-        private ContentView contentViewDescriptionLbl;
-        private ContentView contentViewPlayBtn;
-        private ContentView contentViewAddBtn;
-        private ContentView contentViewQualityBtn;
-#endif
 
         public VideoDetailPage(VideoData video)
         {
             _baseViewModel = new BaseViewModel();
             _videoDetailPageViewModel = new VideoDetailPageViewModel();
             userPlaylists = new ObservableCollection<PlayList>();
-            BackgroundColor = Color.FromHex("#F1ECCE");
+
+            BackgroundColor = Theme.White;
+            Padding = Theme.Thickness;
+            Visual = VisualMarker.Material;
 
             videoUrl = video.files[0].link;
-#if __ANDROID__
-            Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
-#endif
 
             Title = video.name;
             videoTechnique = video;
             DoesUserHaveAccount();
+
             SetContent();
+
+            Content = flexLayout;
         }
 
         //Functions
@@ -99,192 +80,44 @@ namespace MahechaBJJ.Views
             var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 
             //view objects
-#if __IOS__
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(3, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                },
-                ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
+            flexLayout = new FlexLayout();
+            flexLayout.Direction = FlexDirection.Column;
+            flexLayout.JustifyContent = FlexJustify.SpaceEvenly;
 
-                }
-            };
-#endif
-#if __ANDROID__
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(4, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-            if (userHasAccount)
-            {
-                buttonGrid = new Grid
-                {
-                    ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-                }
-                };
-            }
-            else
-            {
-                buttonGrid = new Grid
-                {
-                    ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-                }
-                };
-            }
-
-#endif
-
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-
-#if __ANDROID__
-            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
-            pd.SetCornerRadius(100);
-
-            androidVideoNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidVideoNameLbl.Text = videoTechnique.name;
-            androidVideoNameLbl.Typeface = Constants.COMMONFONT;
-            androidVideoNameLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
-            androidVideoNameLbl.SetTextColor(Android.Graphics.Color.Rgb(241, 236, 206));
-            androidVideoNameLbl.Gravity = Android.Views.GravityFlags.Center;
-            androidVideoNameLbl.SetTypeface(androidVideoNameLbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
-
-            androidVideoDescriptionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidVideoDescriptionLbl.Text = videoTechnique.description;
-            androidVideoDescriptionLbl.Typeface = Constants.COMMONFONT;
-            androidVideoDescriptionLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 50);
-            androidVideoDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidVideoDescriptionLbl.Gravity = Android.Views.GravityFlags.Start;
-
-            androidPlayImgBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
-            androidPlayImgBtn.SetAdjustViewBounds(true);
-            androidPlayImgBtn.SetImageResource(2130837817);
-            androidPlayImgBtn.SetBackground(pd);
-            androidPlayImgBtn.Click += async (object sender, EventArgs e) =>
-            {
-                ToggleButtons();
-                await PlayAndroidVideo(sender, e);
-                ToggleButtons();
-            };
-
-            androidAddBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidAddBtn.Text = "+";
-            androidAddBtn.Typeface = Constants.COMMONFONT;
-            androidAddBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidAddBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidAddBtn.SetBackground(pd);
-            androidAddBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidAddBtn.SetAllCaps(false);
-            androidAddBtn.Click += async (object sender, EventArgs e) =>
-            {
-                ToggleButtons();
-                await AddVideoToPlaylist(sender, e);
-                ToggleButtons();
-            };
-
-            androidQualityBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidQualityBtn.Text = "SD";
-            androidQualityBtn.Typeface = Constants.COMMONFONT;
-            androidQualityBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidQualityBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidQualityBtn.SetBackground(pd);
-            androidQualityBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidQualityBtn.SetAllCaps(false);
-            androidQualityBtn.Click += async (object sender, EventArgs e) =>
-            {
-                ToggleButtons();
-                await ChangeVideoQuality(sender, e);
-                ToggleButtons();
-            };
-
-            contentViewNameLbl = new ContentView();
-            contentViewNameLbl.Content = androidVideoNameLbl.ToView();
-            contentViewDescriptionLbl = new ContentView();
-            contentViewDescriptionLbl.Content = androidVideoDescriptionLbl.ToView();
-            contentViewPlayBtn = new ContentView();
-            contentViewPlayBtn.Content = androidPlayImgBtn.ToView();
-            contentViewAddBtn = new ContentView();
-            contentViewAddBtn.Content = androidAddBtn.ToView();
-            contentViewQualityBtn = new ContentView();
-            contentViewQualityBtn.Content = androidQualityBtn.ToView();
-#endif
+            buttonStackLayout = new StackLayout();
+            buttonStackLayout.Orientation = StackOrientation.Horizontal;
 
             backBtn = new Button
             {
-                Image = "back.png",
-                Style = (Style)Application.Current.Resources["common-red-btn"]
+                ImageSource = "back.png",
+                Style = Theme.RedButton
             };
             videoNameLbl = new Label
             {
-                Style = (Style)Application.Current.Resources["common-technique-lbl"],
                 Text = videoTechnique.name,
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = Theme.Font,
                 FontSize = lblSize,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
-#endif
+                TextColor = Theme.Black,
+                LineBreakMode = LineBreakMode.WordWrap,
+                HorizontalTextAlignment = TextAlignment.Center
             };
 
             videoDescription = new Label
             {
                 Text = videoTechnique.description,
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
+                TextColor = Theme.Black,
+                FontFamily = Theme.Font,
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-                TextColor = Color.Black,
-
-#endif
-                VerticalTextAlignment = TextAlignment.Start,
-                HorizontalTextAlignment = TextAlignment.Start,
                 LineBreakMode = LineBreakMode.WordWrap,
-
             };
 
             videoDescriptionScrollView = new ScrollView
             {
                 Padding = 0,
 #if __ANDROID__
-                Content = contentViewDescriptionLbl,
                 IsClippedToBounds = true,
 #endif
-#if __IOS__
                 Content = videoDescription,
-
-#endif
                 Orientation = ScrollOrientation.Vertical
             };
 
@@ -296,38 +129,30 @@ namespace MahechaBJJ.Views
             videoFrame = new Frame
             {
                 Content = videoImage,
-                BorderColor = Color.Black,
-                BackgroundColor = Color.Black,
+                BorderColor = Theme.Black,
+                BackgroundColor = Theme.Black,
                 HasShadow = false,
                 Padding = 3
-
             };
             playBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
-                Image = "play.png"
+                Style = Theme.BlueButton,
+                ImageSource = "play.png",
+                HorizontalOptions = LayoutOptions.CenterAndExpand
             };
             addBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
-                Text = "+",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 3,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize,
-                Margin = -5,
-#endif
+                Style = Theme.BlueButton,
+                ImageSource = "plus.png",
+                HorizontalOptions = LayoutOptions.CenterAndExpand
             };
 
             qualityBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
+                Style = Theme.BlueButton,
+                ImageSource = "gear.png",
                 Text = "SD",
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = btnSize * 2,
+                HorizontalOptions = LayoutOptions.CenterAndExpand
             };
 
             //Events
@@ -361,74 +186,45 @@ namespace MahechaBJJ.Views
             };
 #endif
 
+            FlexLayout.SetAlignSelf(videoNameLbl, FlexAlignSelf.Center);
+
+            FlexLayout.SetBasis(videoFrame, 3);
+            FlexLayout.SetBasis(videoDescriptionScrollView, 3);
+
+            FlexLayout.SetGrow(videoFrame, 3);
+            FlexLayout.SetGrow(videoDescriptionScrollView, 3);
+
             if (userHasAccount)
             {
-                //building grid
-                innerGrid.Children.Add(videoFrame, 0, 0);
+                buttonStackLayout.Children.Clear();
+                buttonStackLayout.Children.Add(playBtn);
+                buttonStackLayout.Children.Add(addBtn);
+                buttonStackLayout.Children.Add(qualityBtn);
+
+                flexLayout.Children.Clear();
+                flexLayout.Children.Add(videoFrame);
+                flexLayout.Children.Add(videoNameLbl);
+                flexLayout.Children.Add(buttonStackLayout);
+                flexLayout.Children.Add(videoDescriptionScrollView);
 #if __IOS__
-                Grid.SetColumnSpan(videoFrame, 4);
-
-                innerGrid.Children.Add(videoNameLbl, 0, 0);
-                Grid.SetColumnSpan(videoNameLbl, 4);
-                innerGrid.Children.Add(playBtn, 0, 1);
-                Grid.SetColumnSpan(playBtn, 2);
-                innerGrid.Children.Add(addBtn, 2, 1);
-                innerGrid.Children.Add(qualityBtn, 3, 1);
-
-                innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-                Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-                innerGrid.Children.Add(backBtn, 0, 3);
-                Grid.SetColumnSpan(backBtn, 4);
-#endif
-#if __ANDROID__
-                buttonGrid.Children.Add(contentViewPlayBtn, 0, 0);
-                buttonGrid.Children.Add(contentViewAddBtn, 1, 0);
-                buttonGrid.Children.Add(contentViewQualityBtn, 2, 0);
-
-                innerGrid.Children.Add(contentViewNameLbl, 0, 0);
-                innerGrid.Children.Add(buttonGrid, 0, 1);
-                innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-                Grid.SetRowSpan(videoDescriptionScrollView, 2);
+                flexLayout.Children.Add(backBtn);
 #endif
             }
             else
             {
-                //building grid
-#if __ANDROID__
-                buttonGrid.Children.Add(contentViewPlayBtn, 0, 0);
-                buttonGrid.Children.Add(contentViewQualityBtn, 1, 0);
+                buttonStackLayout.Children.Clear();
+                buttonStackLayout.Children.Add(playBtn);
+                buttonStackLayout.Children.Add(qualityBtn);
 
-                innerGrid.Children.Add(videoFrame, 0, 0);
-                innerGrid.Children.Add(contentViewNameLbl, 0, 0);
-                innerGrid.Children.Add(buttonGrid, 0, 1);
-                innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-#endif
+                flexLayout.Children.Clear();
+                flexLayout.Children.Add(videoFrame);
+                flexLayout.Children.Add(videoNameLbl);
+                flexLayout.Children.Add(buttonStackLayout);
+                flexLayout.Children.Add(videoDescriptionScrollView);
 #if __IOS__
-                innerGrid.Children.Add(videoFrame, 0, 0);
-                Grid.SetColumnSpan(videoFrame, 4);
-                innerGrid.Children.Add(videoNameLbl, 0, 0);
-                Grid.SetColumnSpan(videoNameLbl, 4);
-                innerGrid.Children.Add(playBtn, 0, 1);
-                Grid.SetColumnSpan(playBtn, 2);
-                innerGrid.Children.Add(qualityBtn, 2, 1);
-                Grid.SetColumnSpan(qualityBtn, 2);
-                innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-                Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-#endif
-#if __ANDROID__
-                Grid.SetRowSpan(videoDescriptionScrollView, 2);
-#endif
-#if __IOS__
-                innerGrid.Children.Add(backBtn, 0, 3);
-                Grid.SetColumnSpan(backBtn, 4);
+                flexLayout.Children.Add(backBtn);
 #endif
             }
-
-
-
-            outerGrid.Children.Add(innerGrid, 0, 0);
-
-            Content = outerGrid;
         }
 
         public void PlayIOSVideo(object sender, EventArgs e)
@@ -447,11 +243,6 @@ namespace MahechaBJJ.Views
 
         public void ToggleButtons()
         {
-#if __ANDROID__
-            androidAddBtn.Clickable = !androidAddBtn.Clickable;
-            androidPlayImgBtn.Clickable = !androidPlayImgBtn.Clickable;
-            androidQualityBtn.Clickable = !androidQualityBtn.Clickable;
-#endif
             backBtn.IsEnabled = !backBtn.IsEnabled;
             addBtn.IsEnabled = !addBtn.IsEnabled;
             playBtn.IsEnabled = !playBtn.IsEnabled;
@@ -527,44 +318,9 @@ namespace MahechaBJJ.Views
 
         public async Task ChangeVideoQuality(object sender, EventArgs e)
         {
-            string result;
-#if __ANDROID__
-            if (androidQualityBtn.Text == "SD")
-            {
-                string[] videoQuality = { "HD" };
-                result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
-
-            }
-            else
-            {
-                string[] videoQuality = { "SD" };
-                result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
-            }
-
-            if (result == "SD")
-            {
-                videoUrl = videoTechnique.files[0].link;
-                androidQualityBtn.Text = "SD";
-            }
-            else if (result == "HD")
-            {
-                videoUrl = videoTechnique.files[1].link;
-                androidQualityBtn.Text = "HD";
-            }
-#endif
-#if __IOS__
-            if (qualityBtn.Text == "SD")
-            {
-                string[] videoQuality = { "HD" };
-                result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
-
-            }
-            else
-            {
-                string[] videoQuality = { "SD" };
-                result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
-            }
-
+            string[] videoQuality = { "SD", "HD" };
+            string result = await DisplayActionSheet("Video Quality", "Cancel", null, videoQuality);
+             
             if (result == "SD")
             {
                 videoUrl = videoTechnique.files[0].link;
@@ -575,112 +331,7 @@ namespace MahechaBJJ.Views
                 videoUrl = videoTechnique.files[1].link;
                 qualityBtn.Text = "HD";
             }
-#endif
         }
-
-#if __IOS__
-        //Orientation
-        protected override void OnSizeAllocated(double width, double height)
-        {
-            base.OnSizeAllocated(width, height); //must be called
-
-            if (width > height)
-            {
-                Padding = new Thickness(10, 10, 10, 10);
-
-                innerGrid.RowDefinitions.Clear();
-                innerGrid.ColumnDefinitions.Clear();
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-
-                if (userHasAccount)
-                {
-                    innerGrid.Children.Clear();
-                    innerGrid.Children.Add(videoFrame, 0, 0);
-                    Grid.SetRowSpan(videoFrame, 2);
-                    Grid.SetColumnSpan(videoFrame, 2);
-                    innerGrid.Children.Add(videoNameLbl, 0, 0);
-                    Grid.SetRowSpan(videoNameLbl, 2);
-                    Grid.SetColumnSpan(videoNameLbl, 2);
-                    innerGrid.Children.Add(backBtn, 2, 1);
-                    innerGrid.Children.Add(playBtn, 3, 1);
-                    innerGrid.Children.Add(addBtn, 4, 1);
-                    innerGrid.Children.Add(qualityBtn, 5, 1);
-                    innerGrid.Children.Add(videoDescriptionScrollView, 2, 0);
-                    Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-                }
-                else
-                {
-                    innerGrid.Children.Clear();
-                    innerGrid.Children.Add(videoFrame, 0, 0);
-                    Grid.SetRowSpan(videoFrame, 2);
-                    Grid.SetColumnSpan(videoFrame, 2);
-                    innerGrid.Children.Add(videoNameLbl, 0, 0);
-                    Grid.SetRowSpan(videoNameLbl, 2);
-                    Grid.SetColumnSpan(videoNameLbl, 2);
-
-                    innerGrid.Children.Add(backBtn, 2, 1);
-                    innerGrid.Children.Add(playBtn, 3, 1);
-                    innerGrid.Children.Add(qualityBtn, 4, 1);
-                    Grid.SetColumnSpan(qualityBtn, 2);
-                    innerGrid.Children.Add(videoDescriptionScrollView, 2, 0);
-                    Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-                }
-            }
-            else
-            {
-                Padding = new Thickness(10, 30, 10, 10);
-
-                innerGrid.RowDefinitions.Clear();
-                innerGrid.ColumnDefinitions.Clear();
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                innerGrid.Children.Clear();
-                if (userHasAccount)
-                {
-                    //building grid
-                    innerGrid.Children.Add(videoFrame, 0, 0);
-                    Grid.SetColumnSpan(videoFrame, 4);
-                    innerGrid.Children.Add(videoNameLbl, 0, 0);
-                    Grid.SetColumnSpan(videoNameLbl, 4);
-                    innerGrid.Children.Add(playBtn, 0, 1);
-                    Grid.SetColumnSpan(playBtn, 2);
-                    innerGrid.Children.Add(addBtn, 2, 1);
-                    innerGrid.Children.Add(qualityBtn, 3, 1);
-                    innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-                    Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-                    innerGrid.Children.Add(backBtn, 0, 3);
-                    Grid.SetColumnSpan(backBtn, 4);
-                }
-                else
-                {
-                    //building grid
-                    innerGrid.Children.Add(videoFrame, 0, 0);
-                    Grid.SetColumnSpan(videoFrame, 4);
-                    innerGrid.Children.Add(videoNameLbl, 0, 0);
-                    Grid.SetColumnSpan(videoNameLbl, 4);
-                    innerGrid.Children.Add(playBtn, 0, 1);
-                    Grid.SetColumnSpan(playBtn, 2);
-                    innerGrid.Children.Add(qualityBtn, 2, 1);
-                    Grid.SetColumnSpan(qualityBtn, 2);
-                    innerGrid.Children.Add(videoDescriptionScrollView, 0, 2);
-                    Grid.SetColumnSpan(videoDescriptionScrollView, 4);
-                    innerGrid.Children.Add(backBtn, 0, 3);
-                    Grid.SetColumnSpan(backBtn, 4);
-                }
-            }
-        }
-#endif
     }
 }
 

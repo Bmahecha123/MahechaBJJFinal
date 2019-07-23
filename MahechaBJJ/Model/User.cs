@@ -17,9 +17,6 @@ namespace MahechaBJJ.Model
 		[JsonProperty("name")]
 		public string Name { get; set; }
 
-        [JsonProperty("belt")]
-        public string Belt { get; set; }
-
         [JsonProperty("secretQuestion")]
         public string SecretQuestion { get; set; }
 
