@@ -126,7 +126,7 @@ namespace MahechaBJJ.Views.EntryPages
             if (selection.Equals(ACCOUNT))
             {
                 await Navigation.PushModalAsync(new SignUpPage(Package.GiAndNoGi));
-            } else
+            } else if (selection.Equals(NOACCOUNT))
             {
                 await Navigation.PushModalAsync(new SummaryPage(Package.GiAndNoGi));
             }
