@@ -2,16 +2,11 @@
 using System.Collections.ObjectModel;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
-using MahechaBJJ.Service;
 using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.PlaylistPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
 using System.Threading.Tasks;
-#if __ANDROID__
-using Xamarin.Forms.Platform.Android;
-using MahechaBJJ.Droid;
-#endif
 
 namespace MahechaBJJ.Views.PlaylistPages
 {
@@ -23,8 +18,8 @@ namespace MahechaBJJ.Views.PlaylistPages
         private ListView playlistView;
         private Grid innerGrid;
         private Grid outerGrid;
+        private FlexLayout flexLayout;
         private Label playlistLbl;
-        private Frame playlistFrame;
         private Button backBtn;
         private StackLayout layout;
         private Account account;
@@ -35,37 +30,29 @@ namespace MahechaBJJ.Views.PlaylistPages
         private ActivityIndicator activityIndicator;
         private ObservableCollection<PlayList> userPlaylist;
         private bool isPressed;
-
-#if __ANDROID__
-        private Android.Widget.TextView androidViewPlaylistLbl;
-
-        private ContentView contentViewAndroidViewPlaylistLbl;
-#endif
+        private double lblSize;
 
         public PlaylistViewPage()
         {
             _playlistViewPageViewModel = new PlaylistViewPageViewModel();
             _baseViewModel = new BaseViewModel();
-            BackgroundColor = Color.FromHex("#F1ECCE");
+            BackgroundColor = Theme.White;
+            Visual = VisualMarker.Material;
 
             Title = "User Playlists";
-#if __IOS__
-                    Padding = new Thickness(10, 30, 10, 10);
-#endif
-#if __ANDROID__
-            Padding = new Thickness(5, 5, 5, 5);
-#endif
+            Padding = Theme.Thickness;
+            lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+
             BuildPageObjects();
             //FindPlaylists();
             SetContent();
+
+            Content = flexLayout;
         }
 
         //Functions
         public void BuildPageObjects()
         {
-            var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
-            var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-
             //View Objects
             innerGrid = new Grid
             {
@@ -84,72 +71,46 @@ namespace MahechaBJJ.Views.PlaylistPages
                 }
             };
 
-#if __ANDROID__
-            androidViewPlaylistLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidViewPlaylistLbl.Text = "View Playlists";
-            androidViewPlaylistLbl.Typeface = Constants.COMMONFONT;
-            androidViewPlaylistLbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 100);
-            androidViewPlaylistLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidViewPlaylistLbl.Gravity = Android.Views.GravityFlags.Center;
-
-            contentViewAndroidViewPlaylistLbl = new ContentView();
-            contentViewAndroidViewPlaylistLbl.Content = androidViewPlaylistLbl.ToView();
-#endif
+            flexLayout = new FlexLayout();
+            flexLayout.Direction = FlexDirection.Column;
+            flexLayout.JustifyContent = FlexJustify.SpaceEvenly;
 
             viewPlaylistLbl = new Label
             {
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
+                FontFamily = Theme.Font,
                 FontSize = lblSize,
-#endif
-                Text = "View Playlists",
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center
+                Text = "Playlists",
+                TextColor = Theme.Black
             };
 
             playlistView = new ListView
             {
                 HasUnevenRows = true,
                 SeparatorVisibility = SeparatorVisibility.None,
-                BackgroundColor = Color.FromHex("#F1ECCE")
+                BackgroundColor = Theme.White
             };
 
             backBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-red-btn"],
-                Image = "back.png"
+                Style = Theme.RedButton,
+                ImageSource = "back.png"
             };
 
             timeOutLbl = new Label
             {
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
+                FontFamily = Theme.Font,
                 Text = "Network Has Timed Out! \n Click To Try Again!",
                 LineBreakMode = LineBreakMode.WordWrap,
                 FontSize = lblSize,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                TextColor = Color.White
+                TextColor = Theme.Azure
             };
             timeOutFrame = new Frame
             {
                 Content = timeOutLbl,
-                BorderColor = Color.Black,
-                BackgroundColor = Color.Black,
+                BorderColor = Theme.Black,
+                BackgroundColor = Theme.Black,
                 HasShadow = false,
-                Padding = 3,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                Padding = 3
             };
             timeOutTap = new TapGestureRecognizer();
             timeOutTap.Tapped += (sender, e) =>
@@ -157,9 +118,13 @@ namespace MahechaBJJ.Views.PlaylistPages
                 SetContent();
             };
             timeOutLbl.GestureRecognizers.Add(timeOutTap);
+
             activityIndicator = new ActivityIndicator
             {
-                Style = (Style)Application.Current.Resources["common-activity-indicator"]
+                Color = Theme.Blue,
+                IsRunning = false,
+                IsVisible = false,
+                IsEnabled = false
             };
 
             //Events
@@ -185,50 +150,44 @@ namespace MahechaBJJ.Views.PlaylistPages
             };
 
             outerGrid.Children.Add(innerGrid, 0, 0);
-
-            Content = outerGrid;
         }
 
         private void SetContent()
         {
-            innerGrid.Children.Clear();
+            flexLayout.Children.Clear();
             activityIndicator.IsRunning = true;
-            innerGrid.Children.Add(activityIndicator, 0, 0);
-            Grid.SetRowSpan(activityIndicator, 3);
+            flexLayout.Children.Add(activityIndicator);
 
             if (_playlistViewPageViewModel.Playlist == null)
             {
                 FindPlaylists();
             }
+
+            FlexLayout.SetAlignSelf(viewPlaylistLbl, FlexAlignSelf.Center);
+            FlexLayout.SetAlignSelf(backBtn, FlexAlignSelf.Center);
+
+            FlexLayout.SetBasis(playlistView, 1);
+            FlexLayout.SetBasis(timeOutFrame, 1);
+
+            FlexLayout.SetGrow(playlistView, 1);
+            FlexLayout.SetGrow(timeOutFrame, 1);
+
             if (_playlistViewPageViewModel.Successful)
             {
-
-                //building grid
-                innerGrid.Children.Clear();
-
-#if __ANDROID__
-                innerGrid.Children.Add(contentViewAndroidViewPlaylistLbl, 0, 0);
-                innerGrid.Children.Add(playlistView, 0, 1);
-                Grid.SetRowSpan(playlistView, 2);
-#endif
+                flexLayout.Children.Clear();
+                flexLayout.Children.Add(viewPlaylistLbl);
+                flexLayout.Children.Add(playlistView);
 #if __IOS__
-                innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
-                innerGrid.Children.Add(playlistView, 0, 1);
-                innerGrid.Children.Add(backBtn, 0, 2);
+                flexLayout.Children.Add(backBtn);
 #endif
 
             }
             else
             {
-                innerGrid.Children.Clear();
-#if __ANDROID__
-                innerGrid.Children.Add(timeOutFrame, 0, 0);
-                Grid.SetRowSpan(timeOutFrame, 3);
-#endif
+                flexLayout.Children.Clear();
+                flexLayout.Children.Add(timeOutFrame);
 #if __IOS__
-                innerGrid.Children.Add(timeOutFrame, 0, 0);
-                Grid.SetRowSpan(timeOutFrame, 2);
-                innerGrid.Children.Add(backBtn, 0, 2);
+                flexLayout.Children.Add(backBtn);
 #endif
 
             }
@@ -250,32 +209,21 @@ namespace MahechaBJJ.Views.PlaylistPages
             {
                 playlistLbl = new Label();
                 playlistLbl.SetBinding(Label.TextProperty, "Name");
-                playlistLbl.Style = (Style)Application.Current.Resources["common-blue-lbl"];
+                playlistLbl.FontFamily = Theme.Font;
+                playlistLbl.FontSize = lblSize;
+                playlistLbl.BackgroundColor = Theme.Blue;
+                playlistLbl.TextColor = Theme.Azure;
                 playlistLbl.LineBreakMode = LineBreakMode.WordWrap;
-#if __IOS__
-                playlistLbl.FontFamily = "AmericanTypewriter-Bold";
-                playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 2;
-#endif
-#if __ANDROID__
-                playlistLbl.FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt";
-                playlistLbl.FontAttributes = FontAttributes.Bold;
-                playlistLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 2;
-#endif
-
-                playlistFrame = new Frame();
-                playlistFrame.BackgroundColor = Color.FromRgb(58, 93, 174);
-                playlistFrame.HasShadow = false;
-                playlistFrame.BorderColor = Color.Black;
-                playlistFrame.Content = playlistLbl;
-                playlistFrame.Padding = new Thickness(10, 10, 10, 10);
+                playlistLbl.Margin = new Thickness(0, 5, 0, 5);
+                playlistLbl.HorizontalTextAlignment = TextAlignment.Center;
+                playlistLbl.VerticalTextAlignment = TextAlignment.Center;
 
                 layout = new StackLayout
                 {
                     Orientation = StackOrientation.Vertical,
-                    Spacing = 0,
-                    Padding = new Thickness(0, 5, 0, 5),
+
                     Children = {
-                            playlistFrame
+                            playlistLbl
                         }
                 };
 
@@ -311,75 +259,6 @@ namespace MahechaBJJ.Views.PlaylistPages
             await vm.GetUserPlaylists(Constants.GETPLAYLIST, id);
             playlistView.ItemsSource = vm.Playlist;
         }
-
-        //Orientation
-        protected override void OnSizeAllocated(double width, double height)
-        {
-            base.OnSizeAllocated(width, height); //must be called
-
-            if (width > height)
-            {
-                if (_playlistViewPageViewModel.Playlist != null)
-                {
-#if __IOS__
-                    Padding = new Thickness(10, 10, 10, 10);
-#endif
-#if __ANDROID__
-                    Padding = new Thickness(5, 5, 5, 5);
-#endif
-                    innerGrid.RowDefinitions.Clear();
-                    innerGrid.ColumnDefinitions.Clear();
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
-                    innerGrid.Children.Clear();
-
-#if __ANDROID__
-                    innerGrid.Children.Add(contentViewAndroidViewPlaylistLbl, 0, 0);
-                    innerGrid.Children.Add(playlistView, 1, 0);
-                    Grid.SetRowSpan(playlistView, 3);  
-#endif
-#if __IOS__
-                    innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
-            innerGrid.Children.Add(backBtn, 0, 2);
-                    innerGrid.Children.Add(playlistView, 1, 0);
-                    Grid.SetRowSpan(playlistView, 3);
-#endif        
-                    
-                }
-            }
-            else
-            {
-                if (_playlistViewPageViewModel.Playlist != null)
-                {
-#if __IOS__
-                    Padding = new Thickness(10, 30, 10, 10);
-#endif
-#if __ANDROID__
-                    Padding = new Thickness(5, 5, 5, 5);
-#endif
-                    innerGrid.RowDefinitions.Clear();
-                    innerGrid.ColumnDefinitions.Clear();
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(7, GridUnitType.Star) });
-                    innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                    innerGrid.Children.Clear();
-#if __IOS__
-                    innerGrid.Children.Add(viewPlaylistLbl, 0, 0);
-                    innerGrid.Children.Add(playlistView, 0, 1);
-                    innerGrid.Children.Add(backBtn, 0, 2);
-#endif
-#if __ANDROID__
-                    innerGrid.Children.Add(contentViewAndroidViewPlaylistLbl, 0, 0);
-                    innerGrid.Children.Add(playlistView, 0, 1);
-                    Grid.SetRowSpan(playlistView, 2);
-#endif
-
-                }
-			}
-		}
     }
 }
 

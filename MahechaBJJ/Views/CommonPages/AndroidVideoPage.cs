@@ -1,11 +1,6 @@
-﻿using System;
-using MahechaBJJ.Model;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 #if __ANDROID__
-using Android.Content;
-using Android.App;
-using Android.Views;
 using MahechaBJJ.Droid;
 using Android.Widget;
 using Xamarin.Forms.Platform.Android;

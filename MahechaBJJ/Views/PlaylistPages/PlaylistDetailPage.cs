@@ -7,11 +7,6 @@ using MahechaBJJ.ViewModel.CommonPages;
 using MahechaBJJ.ViewModel.PlaylistPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
-#if __ANDROID__
-using Xamarin.Forms.Platform.Android;
-using Android.Graphics.Drawables;
-using MahechaBJJ.Droid;
-#endif
 
 namespace MahechaBJJ.Views.PlaylistPages
 {
@@ -25,9 +20,11 @@ namespace MahechaBJJ.Views.PlaylistPages
         private Label playlistDescriptionLbl;
         private ListView videosListView;
         private Button backBtn;
-        private Grid innerGrid;
-        private Grid outerGrid;
         private Grid videoGrid;
+
+        private FlexLayout flexLayout;
+        private StackLayout buttonStackLayout;
+
         private Frame videoFrame;
         private Image videoImage;
         private Label videoLbl;
@@ -35,32 +32,22 @@ namespace MahechaBJJ.Views.PlaylistPages
         private PlayList userPlaylist;
         private ObservableCollection<Video> videos;
         private bool isPressed;
-#if __ANDROID__
-        private Android.Widget.TextView androidPlaylistNameLbl;
-        private Android.Widget.TextView androidPlaylistDescriptionLbl;
-        private Android.Widget.ImageButton androidImgDeleteBtn;
-
-        private ContentView contentViewAndroidPlaylistNameLbl;
-        private ContentView contentViewAndroidPlaylistDescriptionLbl;
-        private ContentView contentViewAndroidDeleteBtn;
-#endif
 
         public PlaylistDetailPage(PlayList playlist)
         {
             _baseViewModel = new BaseViewModel();
             _playListDetailPageViewModel = new PlaylistDetailPageViewModel();
-            BackgroundColor = Color.FromHex("#F1ECCE");
+            BackgroundColor = Theme.White;
 
             Title = playlist.Name;
-#if __ANDROID__
-            Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
-            Padding = new Thickness(10, 30, 10, 10);
-#endif
+            Padding = Theme.Thickness;
+            Visual = VisualMarker.Material;
+
             userPlaylist = playlist;
             FindPlaylist();
             SetContent();
+
+            Content = flexLayout;
         }
 
         //Functions
@@ -70,131 +57,51 @@ namespace MahechaBJJ.Views.PlaylistPages
             var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 
             //View Objects
-            innerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    #if __IOS__
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(10, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-#endif
-#if __ANDROID__
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(10, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-#endif
-                },
-                ColumnDefinitions = new ColumnDefinitionCollection
-                {
-                    #if __ANDROID__
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star)}
-                    #endif
-#if __IOS__
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-#endif
-                }
-            };
+            flexLayout = new FlexLayout();
+            flexLayout.Direction = FlexDirection.Column;
+            flexLayout.JustifyContent = FlexJustify.SpaceEvenly;
 
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection
-                {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                }
-            };
+            buttonStackLayout = new StackLayout();
+            buttonStackLayout.Orientation = StackOrientation.Horizontal;
 
             playlistNameLbl = new Label
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
                 FontSize = lblSize,
-                LineBreakMode = LineBreakMode.TailTruncation,
-#endif
-                Text = userPlaylist.Name,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center
+                FontFamily = Theme.Font,
+                TextColor = Theme.Black,
+                LineBreakMode = LineBreakMode.WordWrap,
+                Text = userPlaylist.Name
             };
 
             playlistDescriptionLbl = new Label
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                LineBreakMode = LineBreakMode.TailTruncation,
-#endif
+                FontFamily = Theme.Font,
+                LineBreakMode = LineBreakMode.WordWrap,
                 Text = userPlaylist.Description,
-                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center
+                TextColor = Theme.Black,
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label))
             };
 
             videosListView = new ListView
             {
                 HasUnevenRows = true,
                 SeparatorVisibility = SeparatorVisibility.None,
-                BackgroundColor = Color.FromHex("#F1ECCE")
+                BackgroundColor = Theme.White
             };
 
             backBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-red-btn"],
-                Image = "back.png"
+                Style = Theme.RedButton,
+                ImageSource = "back.png",
+                HorizontalOptions = LayoutOptions.CenterAndExpand
             };
 
             deleteBtn = new Button
             {
-                Image = "trash.png",
-                BackgroundColor = Color.Red,
-                BorderWidth = 3
+                ImageSource = "trash.png",
+                Style = Theme.RedButton,
+                HorizontalOptions = LayoutOptions.CenterAndExpand
             };
-
-#if __ANDROID__
-            var pd = new PaintDrawable(Android.Graphics.Color.Red);
-            pd.SetCornerRadius(100);
-
-            androidPlaylistNameLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidPlaylistNameLbl.Text = userPlaylist.Name;
-            androidPlaylistNameLbl.Typeface = Constants.COMMONFONT;
-            androidPlaylistNameLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidPlaylistNameLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidPlaylistNameLbl.Gravity = Android.Views.GravityFlags.Center;
-
-            androidPlaylistDescriptionLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidPlaylistDescriptionLbl.Text = userPlaylist.Description;
-            androidPlaylistDescriptionLbl.Typeface = Constants.COMMONFONT;
-            androidPlaylistDescriptionLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidPlaylistDescriptionLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidPlaylistDescriptionLbl.Gravity = Android.Views.GravityFlags.Center;
-
-            androidImgDeleteBtn = new Android.Widget.ImageButton(MainApplication.ActivityContext);
-            androidImgDeleteBtn.SetAdjustViewBounds(true);
-            androidImgDeleteBtn.SetImageResource(2130837823);
-            androidImgDeleteBtn.SetBackground(pd);
-            androidImgDeleteBtn.Click += async (object sender, EventArgs e) =>
-            {
-                ToggleButtons();
-                await DeletePlaylist(sender, e);
-                ToggleButtons();
-            };
-
-            contentViewAndroidPlaylistNameLbl = new ContentView();
-            contentViewAndroidPlaylistNameLbl.Content = androidPlaylistNameLbl.ToView();
-            contentViewAndroidPlaylistDescriptionLbl = new ContentView();
-            contentViewAndroidPlaylistDescriptionLbl.Content = androidPlaylistDescriptionLbl.ToView();
-            contentViewAndroidDeleteBtn = new ContentView();
-            contentViewAndroidDeleteBtn.Content = androidImgDeleteBtn.ToView();
-#endif
 
             //Events
             backBtn.Clicked += async (object sender, EventArgs e) =>
@@ -225,34 +132,21 @@ namespace MahechaBJJ.Views.PlaylistPages
                 ToggleButtons();
             };
 
+            FlexLayout.SetAlignSelf(playlistNameLbl, FlexAlignSelf.Center);
+            FlexLayout.SetAlignSelf(playlistDescriptionLbl, FlexAlignSelf.Center);
 
+            FlexLayout.SetBasis(videosListView, 1);
+
+            FlexLayout.SetGrow(videosListView, 1);
 #if __IOS__
-            //Building Grid
-            innerGrid.Children.Add(playlistNameLbl, 0, 0);
-            Grid.SetColumnSpan(playlistNameLbl, 2);
-            innerGrid.Children.Add(playlistDescriptionLbl, 0, 1);
-            Grid.SetColumnSpan(playlistDescriptionLbl, 2);
-            innerGrid.Children.Add(videosListView, 0, 2);
-            Grid.SetColumnSpan(videosListView, 2);
-
-            innerGrid.Children.Add(backBtn, 0, 3);
-            innerGrid.Children.Add(deleteBtn, 1, 3);
+            buttonStackLayout.Children.Add(backBtn);
 #endif
-#if __ANDROID__
-            //Building Grid
-            innerGrid.Children.Add(contentViewAndroidPlaylistNameLbl, 0, 0);
-            Grid.SetColumnSpan(contentViewAndroidPlaylistNameLbl, 2);
-            innerGrid.Children.Add(contentViewAndroidPlaylistDescriptionLbl, 0, 1);
-            Grid.SetColumnSpan(contentViewAndroidPlaylistDescriptionLbl, 2);
-            innerGrid.Children.Add(videosListView, 0, 2);
-            Grid.SetColumnSpan(videosListView, 2);
-            Grid.SetRowSpan(videosListView, 2);
+            buttonStackLayout.Children.Add(deleteBtn);
 
-            innerGrid.Children.Add(contentViewAndroidDeleteBtn, 0, 3);
-#endif
-            outerGrid.Children.Add(innerGrid, 0, 0);
-
-            Content = outerGrid;
+            flexLayout.Children.Add(playlistNameLbl);
+            flexLayout.Children.Add(playlistDescriptionLbl);
+            flexLayout.Children.Add(videosListView);
+            flexLayout.Children.Add(buttonStackLayout);
         }
 
         public async Task DeletePlaylist(object sender, EventArgs e)
@@ -279,9 +173,6 @@ namespace MahechaBJJ.Views.PlaylistPages
         public void ToggleButtons()
         {
             videosListView.IsEnabled = !videosListView.IsEnabled;
-#if __ANDROID__
-            androidImgDeleteBtn.Clickable = !androidImgDeleteBtn.Clickable;
-#endif
             backBtn.IsEnabled = !backBtn.IsEnabled;
             deleteBtn.IsEnabled = !deleteBtn.IsEnabled;
         }
@@ -293,10 +184,8 @@ namespace MahechaBJJ.Views.PlaylistPages
             {
                 return;
             }
-            //VideoData videoData = new VideoData(video.Name, video.Description, video.Link, video.Image);
             ((ListView)sender).SelectedItem = null;
             await Navigation.PushModalAsync(new PlaylistVideoPage(video, userPlaylist));
-
         }
 
         public async void FindPlaylist()
@@ -306,6 +195,17 @@ namespace MahechaBJJ.Views.PlaylistPages
             await _playListDetailPageViewModel.FindUserPlaylist(Constants.FINDPLAYLIST, id, userPlaylist.Name);
             videos = _playListDetailPageViewModel.Playlist.Videos;
             SetViewContents();
+        }
+
+        //page reloading
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            account = _baseViewModel.GetAccountInformation();
+            id = account.Properties["Id"];
+            PlaylistDetailPageViewModel viewModel = new PlaylistDetailPageViewModel();
+            await viewModel.FindUserPlaylist(Constants.FINDPLAYLIST, id, userPlaylist.Name);
+            videosListView.ItemsSource = viewModel.Playlist.Videos;
         }
 
         public void SetViewContents()
@@ -322,24 +222,17 @@ namespace MahechaBJJ.Views.PlaylistPages
                     videoImage.Aspect = Aspect.Fill;
 
                     videoLbl = new Label();
-#if __IOS__
-                    videoLbl.FontFamily = "AmericanTypewriter-Bold";
+                    videoLbl.FontFamily = Theme.Font;
                     videoLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-                    videoLbl.TextColor = Color.White;
-#endif
-#if __ANDROID__
-                    videoLbl.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
-                    videoLbl.TextColor = Color.AntiqueWhite;
-                    videoLbl.FontFamily = "american_typewriter_bold_bt.ttf#american_typewriter_bold_bt";
-
-#endif
+                    videoLbl.TextColor = Theme.Azure;
                     videoLbl.SetBinding(Label.TextProperty, "Name");
                     videoLbl.VerticalTextAlignment = TextAlignment.Center;
                     videoLbl.HorizontalTextAlignment = TextAlignment.Center;
+
                     videoFrame = new Frame();
                     videoFrame.Content = videoImage;
-                    videoFrame.BorderColor = Color.Black;
-                    videoFrame.BackgroundColor = Color.Black;
+                    videoFrame.BorderColor = Theme.Black;
+                    videoFrame.BackgroundColor = Theme.Black;
                     videoFrame.HasShadow = false;
                     videoFrame.Padding = 3;
 
@@ -359,106 +252,6 @@ namespace MahechaBJJ.Views.PlaylistPages
                         }
                     };
                 });
-        }
-
-
-        //page reloading
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            account = _baseViewModel.GetAccountInformation();
-            id = account.Properties["Id"];
-            PlaylistDetailPageViewModel viewModel = new PlaylistDetailPageViewModel();
-            await viewModel.FindUserPlaylist(Constants.FINDPLAYLIST, id, userPlaylist.Name);
-            videosListView.ItemsSource = viewModel.Playlist.Videos;
-        }
-
-        //Orientation
-        protected override void OnSizeAllocated(double width, double height)
-        {
-            base.OnSizeAllocated(width, height); //must be called
-
-            if (width > height)
-            {
-#if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
-                Padding = new Thickness(10, 10, 10, 10);
-#endif
-                innerGrid.RowDefinitions.Clear();
-                innerGrid.ColumnDefinitions.Clear();
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(4, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
-                innerGrid.Children.Clear();
-#if __ANDROID__
-                innerGrid.Children.Add(contentViewAndroidPlaylistNameLbl, 0, 0);
-                innerGrid.Children.Add(contentViewAndroidDeleteBtn, 0, 2);
-#endif
-#if __IOS__
-                innerGrid.Children.Add(playlistNameLbl, 0, 0);
-                innerGrid.Children.Add(deleteBtn, 0, 1);
-                innerGrid.Children.Add(backBtn, 0, 2);
-#endif
-                innerGrid.Children.Add(videosListView, 1, 0);
-                Grid.SetRowSpan(videosListView, 3);
-            }
-            else
-            {
-#if __ANDROID__
-                Padding = new Thickness(5, 5, 5, 5);
-#endif
-#if __IOS__
-                Padding = new Thickness(10, 30, 10, 10);
-#endif
-                innerGrid.RowDefinitions.Clear();
-                innerGrid.ColumnDefinitions.Clear();
-#if __ANDROID__
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(10, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                innerGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star) });
-#endif
-#if __IOS__
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(10, GridUnitType.Star) });
-                innerGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-#endif
-
-                innerGrid.Children.Clear();
-
-#if __IOS__
-                //Building Grid
-                innerGrid.Children.Add(playlistNameLbl, 0, 0);
-                Grid.SetColumnSpan(playlistNameLbl, 2);
-                innerGrid.Children.Add(playlistDescriptionLbl, 0, 1);
-                Grid.SetColumnSpan(playlistDescriptionLbl, 2);
-                innerGrid.Children.Add(videosListView, 0, 2);
-                Grid.SetColumnSpan(videosListView, 2);
-                innerGrid.Children.Add(backBtn, 0, 3);
-                innerGrid.Children.Add(deleteBtn, 1, 3);
-#endif
-#if __ANDROID__
-
-                //Building Grid
-                innerGrid.Children.Add(contentViewAndroidPlaylistNameLbl, 0, 0);
-                Grid.SetColumnSpan(contentViewAndroidPlaylistNameLbl, 2);
-                innerGrid.Children.Add(contentViewAndroidPlaylistDescriptionLbl, 0, 1);
-                Grid.SetColumnSpan(contentViewAndroidPlaylistDescriptionLbl, 2);
-                innerGrid.Children.Add(videosListView, 0, 2);
-                Grid.SetColumnSpan(videosListView, 2);
-                Grid.SetRowSpan(videosListView, 2);
-
-                innerGrid.Children.Add(contentViewAndroidDeleteBtn, 0, 3);
-#endif
-            }
         }
     }
 }

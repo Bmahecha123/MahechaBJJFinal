@@ -27,11 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Video.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\UserService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\AccountService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\BlogPages\BlogDetailPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\BlogPages\BlogViewPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Service\BlogService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BlogPosts.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BlogPages\BlogViewPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\PlaylistPages\PlaylistCreatePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\PlaylistPages\PlaylistDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\PlaylistPages\PlaylistVideoPage.cs" />
@@ -63,13 +59,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Package.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\SummaryPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\SignUpPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\PackagePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SignUpPages\SummaryPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Album.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\CommonPages\PurchasePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\PurchaseService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainTabPages\PurchasePageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPages\AccountInfoPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources\Theme.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -77,8 +71,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
     <Folder Include="$(MSBuildThisFileDirectory)Service\" />
     <Folder Include="$(MSBuildThisFileDirectory)Resources\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Views\BlogPages\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\BlogPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\PlaylistPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\EntryPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\PlaylistPages\" />
@@ -89,6 +81,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Views\CommonPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\SignUpPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\SignUpPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="$(MSBuildThisFileDirectory)Resources\mahechabjj.png" />

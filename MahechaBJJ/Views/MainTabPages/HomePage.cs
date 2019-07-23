@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Resources;
 using MahechaBJJ.ViewModel.CommonPages;
@@ -8,12 +6,6 @@ using MahechaBJJ.ViewModel.MainTabPages;
 using MahechaBJJ.Views.PlaylistPages;
 using Xamarin.Auth;
 using Xamarin.Forms;
-#if __ANDROID__
-using MahechaBJJ.Droid;
-using Android.Graphics.Drawables;
-using Xamarin.Forms.Platform.Android;
-#endif
-
 
 namespace MahechaBJJ.Views
 {
@@ -24,8 +16,11 @@ namespace MahechaBJJ.Views
         //private String VIMEOURL = "https://api.vimeo.com/me/videos?access_token=5d3d5a50aae149bd4765bbddf7d94952&per_page=2";
         private string vimeoUrl;
         private BaseInfo VimeoInfo;
-        private Grid outerGrid;
-        private Grid innerGrid;
+        private FlexLayout flexLayout;
+        private FlexLayout videoContainterLayout;
+        private StackLayout buttonStackLayout;
+        private Grid video1Grid;
+        private Grid video2Grid;
         private Frame video1Frame;
         private Frame video2Frame;
         private Image video1Image;
@@ -44,38 +39,30 @@ namespace MahechaBJJ.Views
         private ActivityIndicator activityIndicator;
         private Account _account;
         private bool account;
-#if __ANDROID__
-        private Android.Widget.TextView androidVideo1Lbl;
-        private Android.Widget.TextView androidVideo2Lbl;
-        private Android.Widget.TextView androidWhatsNewLbl;
-        private Android.Widget.TextView androidPlayListLbl;
-        private Android.Widget.Button androidAddPlaylistBtn;
-        private Android.Widget.Button androidViewPlaylistBtn;
-        private ContentView contenViewWhatsNewLbl;
-        private ContentView contentViewPlayListLbl;
-        private ContentView contentViewVideo1Lbl;
-        private ContentView contentViewVideo2Lbl;
-#endif
+        private double width;
+        private double height;
 
         public HomePage()
         {
             _baseViewModel = new BaseViewModel();
             _homePageViewModel = new HomePageViewModel();
             _account = _baseViewModel.GetAccountInformation();
-            BackgroundColor = Color.FromHex("#F1ECCE");
+            BackgroundColor = Theme.White;
+            Visual = VisualMarker.Material;
             this.account = true;
-#if __IOS__
-            Icon = "construction.png";
-            Title = "Home";
-            Padding = new Thickness(10, 10, 10, 10);
-#endif
-#if __ANDROID__
-            Icon = "construction.png";
-            Padding = new Thickness(5, 5, 5, 5);
-#endif
+
+            Padding = Theme.Thickness;
+            IconImageSource = "construction.png";
+
+            width = this.Width;
+            height = this.Height;
+
             SetVimeoUrl();
             BuildPageObjects();
-            SetContent(this.account);
+             SetContent(this.account);
+            UpdateLayout();
+
+            Content = flexLayout;
         }
 
         public HomePage(bool hasAccount)
@@ -84,19 +71,21 @@ namespace MahechaBJJ.Views
             _homePageViewModel = new HomePageViewModel();
             _account = _baseViewModel.GetAccountInformation();
             BackgroundColor = Color.FromHex("#F1ECCE");
+            Visual = VisualMarker.Material;
             this.account = hasAccount;
-#if __IOS__
-            Icon = "construction.png";
-            Title = "Home";
-            Padding = new Thickness(10, 10, 10, 10);
-#endif
-#if __ANDROID__
-            Icon = "construction.png";
-            Padding = new Thickness(5, -5, 5, 5);
-#endif
+
+            Padding = Theme.Thickness;
+            IconImageSource = "construction.png";
+
+            width = this.Width;
+            height = this.Height;
+
             SetVimeoUrl();
             BuildPageObjects();
             SetContent(hasAccount);
+            UpdateLayout();
+
+            Content = flexLayout;
         }
 
         //functions
@@ -121,133 +110,40 @@ namespace MahechaBJJ.Views
             var lblSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
             var btnSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
 
+            flexLayout = new FlexLayout();
+            flexLayout.Direction = FlexDirection.Column;
+            flexLayout.JustifyContent = FlexJustify.SpaceEvenly;
 
-            innerGrid = new Grid
+            buttonStackLayout = new StackLayout();
+            buttonStackLayout.Orientation = StackOrientation.Horizontal;
+
+            videoContainterLayout = new FlexLayout();
+            videoContainterLayout.Direction = FlexDirection.Column;
+            videoContainterLayout.JustifyContent = FlexJustify.SpaceEvenly;
+
+            video1Grid = new Grid
             {
-                RowDefinitions = new RowDefinitionCollection {
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(2, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)},
-                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
-                },
-                ColumnDefinitions = new ColumnDefinitionCollection {
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)},
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)}
-                }
-            };
-            outerGrid = new Grid
-            {
-                RowDefinitions = new RowDefinitionCollection {
+                RowDefinitions = new RowDefinitionCollection
+                {
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
                 }
             };
 
-#if __ANDROID__
-            var pd = new PaintDrawable(Android.Graphics.Color.Rgb(58, 93, 174));
-            pd.SetCornerRadius(100);
-
-            androidVideo1Lbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidVideo1Lbl.Text = "Spider Guard Stuff!";
-            androidVideo1Lbl.Typeface = Constants.COMMONFONT;
-            androidVideo1Lbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-            androidVideo1Lbl.SetTextColor(Android.Graphics.Color.Rgb(241, 236, 206));
-            androidVideo1Lbl.Gravity = Android.Views.GravityFlags.Center;
-            androidVideo1Lbl.Click += async (object sender, EventArgs e) =>
+            video2Grid = new Grid
             {
-                ToggleButtons();
-                VideoData video = VimeoInfo.data[0];
-                await Navigation.PushModalAsync(new VideoDetailPage(video));
-                ToggleButtons();
-            };
-            androidVideo1Lbl.SetTypeface(androidVideo1Lbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
-
-            contentViewVideo1Lbl = new ContentView();
-            contentViewVideo1Lbl.Content = androidVideo1Lbl.ToView();
-
-            androidVideo2Lbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidVideo2Lbl.Text = "Spider Guard Stuff!";
-            androidVideo2Lbl.Typeface = Constants.COMMONFONT;
-            androidVideo2Lbl.SetTextSize(Android.Util.ComplexUnitType.Fraction, 75);
-            androidVideo2Lbl.SetTextColor(Android.Graphics.Color.Rgb(241, 236, 206));
-            androidVideo2Lbl.Gravity = Android.Views.GravityFlags.Center;
-            androidVideo2Lbl.Click += async (object sender, EventArgs e) =>
-            {
-                ToggleButtons();
-                VideoData video = VimeoInfo.data[1];
-                await Navigation.PushModalAsync(new VideoDetailPage(video));
-                ToggleButtons();
-            };
-            androidVideo2Lbl.SetTypeface(androidVideo2Lbl.Typeface, Android.Graphics.TypefaceStyle.Bold);
-
-
-            contentViewVideo2Lbl = new ContentView();
-            contentViewVideo2Lbl.Content = androidVideo2Lbl.ToView();
-
-            androidWhatsNewLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidWhatsNewLbl.Text = "What's New";
-            androidWhatsNewLbl.Typeface = Constants.COMMONFONT;
-            androidWhatsNewLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidWhatsNewLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidWhatsNewLbl.Gravity = Android.Views.GravityFlags.Center;
-
-            contenViewWhatsNewLbl = new ContentView();
-            contenViewWhatsNewLbl.Content = androidWhatsNewLbl.ToView();
-
-            androidPlayListLbl = new Android.Widget.TextView(MainApplication.ActivityContext);
-            androidPlayListLbl.Text = "Playlists";
-            androidPlayListLbl.Typeface = Constants.COMMONFONT;
-            androidPlayListLbl.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidPlayListLbl.SetTextColor(Android.Graphics.Color.Black);
-            androidPlayListLbl.Gravity = Android.Views.GravityFlags.Center;
-
-            contentViewPlayListLbl = new ContentView();
-            contentViewPlayListLbl.Content = androidPlayListLbl.ToView();
-
-            androidAddPlaylistBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidAddPlaylistBtn.Text = "Create";
-            androidAddPlaylistBtn.Typeface = Constants.COMMONFONT;
-            androidAddPlaylistBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidAddPlaylistBtn.SetBackground(pd);
-            androidAddPlaylistBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidAddPlaylistBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidAddPlaylistBtn.SetAllCaps(false);
-            androidAddPlaylistBtn.Click += async (object sender, EventArgs e) =>
-            {
-                ToggleButtons();
-                await Navigation.PushModalAsync(new PlaylistCreatePage());
-                ToggleButtons();
+                RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star)}
+                }
             };
 
-            androidViewPlaylistBtn = new Android.Widget.Button(MainApplication.ActivityContext);
-            androidViewPlaylistBtn.Text = "View";
-            androidViewPlaylistBtn.Typeface = Constants.COMMONFONT;
-            androidViewPlaylistBtn.SetAutoSizeTextTypeWithDefaults(Android.Widget.AutoSizeTextType.Uniform);
-            androidViewPlaylistBtn.SetBackground(pd);
-            androidViewPlaylistBtn.SetTextColor(Android.Graphics.Color.Rgb(242, 253, 255));
-            androidViewPlaylistBtn.Gravity = Android.Views.GravityFlags.Center;
-            androidViewPlaylistBtn.SetAllCaps(false);
-            androidViewPlaylistBtn.Click += async (object sender, EventArgs e) =>
-            {
-                ToggleButtons();
-                await Navigation.PushModalAsync(new PlaylistViewPage());
-                ToggleButtons();
-            };
-#endif
             whatsNewLbl = new Label
             {
                 Text = "What's New",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
+                FontFamily = Theme.Font,
                 FontSize = lblSize,
-#endif
-                VerticalTextAlignment = TextAlignment.End,
-                HorizontalTextAlignment = TextAlignment.Center
+                TextColor = Theme.Black,
+                LineBreakMode = LineBreakMode.NoWrap
             };
             video1Image = new Image
             {
@@ -256,25 +152,22 @@ namespace MahechaBJJ.Views
             video1Frame = new Frame
             {
                 Content = video1Image,
-                BorderColor = Color.Black,
-                BackgroundColor = Color.Black,
+                BorderColor = Theme.Black,
+                BackgroundColor = Theme.Black,
                 HasShadow = false,
-                Padding = 3
+                Padding = 3,
+                Margin = new Thickness(0, 0, 0, 10)
 
             };
             video1Lbl = new Label
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = Theme.Font,
                 FontSize = lblSize,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
-#endif
                 Text = "Spider Guard Stuff!",
-                Style = (Style)Application.Current.Resources["common-technique-lbl"]
-
+                TextColor = Theme.Azure,
+                LineBreakMode = LineBreakMode.WordWrap,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center
             };
             video1Tap = new TapGestureRecognizer();
             video1Tap.Tapped += async (sender, e) =>
@@ -284,7 +177,9 @@ namespace MahechaBJJ.Views
                 await Navigation.PushModalAsync(new VideoDetailPage(video));
                 ToggleButtons();
             };
+            video1Image.GestureRecognizers.Add(video1Tap);
             video1Lbl.GestureRecognizers.Add(video1Tap);
+
             video2Image = new Image
             {
                 Aspect = Aspect.AspectFill
@@ -292,24 +187,21 @@ namespace MahechaBJJ.Views
             video2Frame = new Frame
             {
                 Content = video2Image,
-                BorderColor = Color.Black,
-                BackgroundColor = Color.Black,
+                BorderColor = Theme.Black,
+                BackgroundColor = Theme.Black,
                 HasShadow = false,
-                Padding = 3
+                Padding = 3,
+                Margin = new Thickness(0, 0, 0, 10)
             };
             video2Lbl = new Label
             {
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
+                FontFamily = Theme.Font,
                 FontSize = lblSize,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = lblSize * .75,
-#endif
                 Text = "Spider Guard Stuff!",
-                Style = (Style)Application.Current.Resources["common-technique-lbl"]
-
+                TextColor = Theme.Azure,
+                LineBreakMode = LineBreakMode.WordWrap,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center
             };
             video2Tap = new TapGestureRecognizer();
             video2Tap.Tapped += async (sender, e) =>
@@ -319,76 +211,46 @@ namespace MahechaBJJ.Views
                 await Navigation.PushModalAsync(new VideoDetailPage(video));
                 ToggleButtons();
             };
+            video2Image.GestureRecognizers.Add(video2Tap);
             video2Lbl.GestureRecognizers.Add(video2Tap);
 
             playListLbl = new Label
             {
                 Text = "Playlists",
-#if __IOS__
-                FontFamily = "AmericanTypewriter-Bold",
-                FontSize = lblSize * 2,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
+                FontFamily = Theme.Font,
+                LineBreakMode = LineBreakMode.NoWrap,
                 FontSize = lblSize,
-#endif
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
+                TextColor = Theme.Black
             };
 
             addPlaylistBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
+                Style = Theme.BlueButton,
                 Text = "Create",
-#if __IOS__
-                FontSize = btnSize * 1.5,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize * .75,
-                Margin = -5,
-#endif
+                HorizontalOptions = LayoutOptions.CenterAndExpand
             };
             viewPlaylistBtn = new Button
             {
-                Style = (Style)Application.Current.Resources["common-blue-btn"],
+                Style = Theme.BlueButton,
                 Text = "View",
-#if __IOS__
-                FontSize = btnSize * 1.5,
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-                FontSize = btnSize * .75,
-                Margin = -5,
-#endif
+                HorizontalOptions = LayoutOptions.CenterAndExpand
             };
 
             timeOutLbl = new Label
             {
-#if __IOS__
-				FontFamily = "AmericanTypewriter-Bold",
-#endif
-#if __ANDROID__
-                FontFamily = "Roboto Bold",
-#endif
+                FontFamily = Theme.Font,
+                FontSize = lblSize,
                 Text = "Network Has Timed Out! \n Click To Try Again!",
                 LineBreakMode = LineBreakMode.WordWrap,
-                FontSize = lblSize,
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                TextColor = Color.White
+                TextColor = Theme.White
             };
             timeOutFrame = new Frame
             {
                 Content = timeOutLbl,
-                BorderColor = Color.Black,
-                BackgroundColor = Color.Black,
+                BorderColor = Theme.Black,
+                BackgroundColor = Theme.Black,
                 HasShadow = false,
-                Padding = 3,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                Padding = 3
             };
             timeOutTap = new TapGestureRecognizer();
             timeOutTap.Tapped += (sender, e) =>
@@ -416,19 +278,16 @@ namespace MahechaBJJ.Views
                 await Navigation.PushModalAsync(new PlaylistViewPage());
                 ToggleButtons();
             };
-
-            outerGrid.Children.Add(innerGrid, 0, 0);
-            Content = outerGrid;
         }
 
         private async void SetContent(bool userAccount)
         {
             //add activity indicator while contents load
-            innerGrid.Children.Clear();
             activityIndicator.IsRunning = true;
-            innerGrid.Children.Add(activityIndicator, 0, 0);
-            Grid.SetRowSpan(activityIndicator, 5);
-            Grid.SetColumnSpan(activityIndicator, 2);
+
+            flexLayout.Children.Clear();
+            flexLayout.Children.Add(activityIndicator);
+
             if (_homePageViewModel.VimeoInfo == null)
             {
                 await _homePageViewModel.GetVimeo(vimeoUrl);
@@ -437,108 +296,64 @@ namespace MahechaBJJ.Views
             {
                 activityIndicator.IsRunning = false;
                 VimeoInfo = _homePageViewModel.VimeoInfo;
-#if __ANDROID__
-                androidVideo1Lbl.Text = VimeoInfo.data[0].name;
-                androidVideo2Lbl.Text = VimeoInfo.data[1].name;
-#endif
+
                 video1Image.Source = VimeoInfo.data[0].pictures.sizes[4].link;
                 video2Image.Source = VimeoInfo.data[1].pictures.sizes[4].link;
                 video1Lbl.Text = VimeoInfo.data[0].name;
                 video2Lbl.Text = VimeoInfo.data[1].name;
 
+                FlexLayout.SetAlignSelf(whatsNewLbl, FlexAlignSelf.Center);
+                FlexLayout.SetAlignSelf(playListLbl, FlexAlignSelf.Center);
+
+                FlexLayout.SetBasis(videoContainterLayout, 6);
+                FlexLayout.SetBasis(video1Grid, 1);
+                FlexLayout.SetBasis(video2Grid, 1);
+                FlexLayout.SetBasis(timeOutFrame, 1);
+
+                FlexLayout.SetGrow(videoContainterLayout, 6);
+                FlexLayout.SetGrow(video1Grid, 1);
+                FlexLayout.SetGrow(video2Grid, 1);
+                FlexLayout.SetGrow(timeOutFrame, 1);
+
+                FlexLayout.SetShrink(videoContainterLayout, 3);
+
+                video1Grid.Children.Add(video1Frame, 0, 0);
+                video1Grid.Children.Add(video1Lbl, 0, 0);
+
+                video2Grid.Children.Add(video2Frame, 0, 0);
+                video2Grid.Children.Add(video2Lbl, 0, 0);
+
+                videoContainterLayout.Children.Add(video1Grid);
+                videoContainterLayout.Children.Add(video2Grid);
+
+                buttonStackLayout.Children.Add(viewPlaylistBtn);
+                buttonStackLayout.Children.Add(addPlaylistBtn);
+
                 if (userAccount)
                 {
-                    innerGrid.Children.Clear();
-#if __ANDROID__
-                    innerGrid.Children.Add(contenViewWhatsNewLbl, 0, 0);
-                    Grid.SetColumnSpan(contenViewWhatsNewLbl, 2);
-                    innerGrid.Children.Add(video1Frame, 0, 1);
-                    Grid.SetColumnSpan(video1Frame, 2);
-                    innerGrid.Children.Add(contentViewVideo1Lbl, 0, 1);
-                    Grid.SetColumnSpan(contentViewVideo1Lbl, 2);
-                    innerGrid.Children.Add(video2Frame, 0, 2);
-                    Grid.SetColumnSpan(video2Frame, 2);
-                    Grid.SetRowSpan(video2Frame, 2);
-                    innerGrid.Children.Add(contentViewVideo2Lbl, 0, 2);
-                    Grid.SetColumnSpan(contentViewVideo2Lbl, 2);
-                    Grid.SetRowSpan(contentViewVideo2Lbl, 2);
-                    innerGrid.Children.Add(contentViewPlayListLbl, 0, 4);
-                    Grid.SetColumnSpan(contentViewPlayListLbl, 2);
-                    innerGrid.Children.Add(androidViewPlaylistBtn.ToView(), 0, 5);
-                    innerGrid.Children.Add(androidAddPlaylistBtn.ToView(), 1, 5);
-#endif
-#if __IOS__
-                    innerGrid.Children.Add(whatsNewLbl, 0, 0);
-                    Grid.SetColumnSpan(whatsNewLbl, 2);
-                    innerGrid.Children.Add(video1Frame, 0, 1);
-                    Grid.SetColumnSpan(video1Frame, 2);
-                    innerGrid.Children.Add(video1Lbl, 0, 1);
-                    Grid.SetColumnSpan(video1Lbl, 2);
-                    innerGrid.Children.Add(video2Frame, 0, 2);
-                    Grid.SetColumnSpan(video2Frame, 2);
-                    Grid.SetRowSpan(video2Frame, 2);
-                    innerGrid.Children.Add(video2Lbl, 0, 2);
-                    Grid.SetColumnSpan(video2Lbl, 2);
-                    Grid.SetRowSpan(video2Lbl, 2);
-                    innerGrid.Children.Add(playListLbl, 0, 4);
-                    Grid.SetColumnSpan(playListLbl, 2);
-                    innerGrid.Children.Add(viewPlaylistBtn, 0, 5);
-                    innerGrid.Children.Add(addPlaylistBtn, 1, 5);
-#endif
+                    flexLayout.Children.Clear();
+                    flexLayout.Children.Add(whatsNewLbl);
+                    flexLayout.Children.Add(videoContainterLayout);
+                    flexLayout.Children.Add(playListLbl);
+                    flexLayout.Children.Add(buttonStackLayout);
                 }
                 else
                 {
-#if __IOS__
-                    innerGrid.Children.Clear();
-                    innerGrid.Children.Add(whatsNewLbl, 0, 0);
-                    Grid.SetColumnSpan(whatsNewLbl, 2);
-                    innerGrid.Children.Add(video1Frame, 0, 1);
-                    Grid.SetColumnSpan(video1Frame, 2);
-                    Grid.SetRowSpan(video1Frame, 2);
-                    innerGrid.Children.Add(video1Lbl, 0, 1);
-                    Grid.SetColumnSpan(video1Lbl, 2);
-                    Grid.SetRowSpan(video1Lbl, 2);
-                    innerGrid.Children.Add(video2Frame, 0, 3);
-                    Grid.SetColumnSpan(video2Frame, 2);
-                    Grid.SetRowSpan(video2Frame, 3);
-                    innerGrid.Children.Add(video2Lbl, 0, 3);
-                    Grid.SetColumnSpan(video2Lbl, 2);
-                    Grid.SetRowSpan(video2Lbl, 3);
-#endif
-#if __ANDROID__
-                    innerGrid.Children.Clear();
-                    innerGrid.Children.Add(contenViewWhatsNewLbl, 0, 0);
-                    Grid.SetColumnSpan(contenViewWhatsNewLbl, 2);
-                    innerGrid.Children.Add(video1Frame, 0, 1);
-                    Grid.SetColumnSpan(video1Frame, 2);
-                    Grid.SetRowSpan(video1Frame, 2);
-                    innerGrid.Children.Add(contentViewVideo1Lbl, 0, 1);
-                    Grid.SetColumnSpan(contentViewVideo1Lbl, 2);
-                    Grid.SetRowSpan(contentViewVideo1Lbl, 2);
-                    innerGrid.Children.Add(video2Frame, 0, 3);
-                    Grid.SetColumnSpan(video2Frame, 2);
-                    Grid.SetRowSpan(video2Frame, 3);
-                    innerGrid.Children.Add(contentViewVideo2Lbl, 0, 3);
-                    Grid.SetColumnSpan(contentViewVideo2Lbl, 2);
-                    Grid.SetRowSpan(contentViewVideo2Lbl, 3);
-#endif
+                    flexLayout.Children.Clear();
+                    flexLayout.Children.Add(whatsNewLbl);
+                    flexLayout.Children.Add(videoContainterLayout);
                 }
             }
             else
             {
 #if __IOS__
-                innerGrid.Children.Clear();
-                innerGrid.Children.Add(timeOutFrame, 0, 0);
-                Grid.SetRowSpan(timeOutFrame, 5);
-                Grid.SetRowSpan(timeOutLbl, 5);
-                Grid.SetColumnSpan(timeOutFrame, 2);
-                Grid.SetColumnSpan(timeOutLbl, 2);
+                flexLayout.Children.Clear();
+                flexLayout.Children.Add(timeOutFrame);
 #endif
 #if __ANDROID__
                 SetContent(this.account);
 #endif
             }
-
         }
 
         private void ToggleButtons()
@@ -548,13 +363,39 @@ namespace MahechaBJJ.Views
             video1Lbl.IsEnabled = !video1Lbl.IsEnabled;
             video2Lbl.IsEnabled = !video2Lbl.IsEnabled;
             timeOutLbl.IsEnabled = !timeOutLbl.IsEnabled;
+        }
 
-#if __ANDROID__
-            androidAddPlaylistBtn.Clickable = !androidAddPlaylistBtn.Clickable;
-            androidViewPlaylistBtn.Clickable = !androidViewPlaylistBtn.Clickable;
-            androidVideo1Lbl.Clickable = !androidVideo1Lbl.Clickable;
-            androidVideo2Lbl.Clickable = !androidVideo2Lbl.Clickable;
-#endif
+        private void PortraitLayout()
+        {
+            FlexLayout.SetBasis(videoContainterLayout, 6);
+            FlexLayout.SetGrow(videoContainterLayout, 6);
+        }
+
+        private void LandscapeLayout()
+        {
+            FlexLayout.SetBasis(videoContainterLayout, 4);
+            FlexLayout.SetGrow(videoContainterLayout, 4);
+        }
+
+        private void UpdateLayout()
+        {
+            if (this.Width > this.Height)
+                LandscapeLayout();
+            else
+                PortraitLayout();
+        }
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+
+            if (this.width != width || this.height != height)
+            {
+                this.width = width;
+                this.height = height;
+
+                UpdateLayout();
+            }
         }
     }
 }

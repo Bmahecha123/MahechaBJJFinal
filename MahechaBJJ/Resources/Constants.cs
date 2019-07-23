@@ -15,7 +15,11 @@ namespace MahechaBJJ.Resources
         public static string NOGIPACKAGE = "nogi_package";
         public static string GIANDNOGIPACKAGE = "giandnogi_package";
 
-        public static string pivotalHost = "https://mahechabjj.cfapps.io/";
+        public static string ACCOUNT_USERNAME = "Username";
+        public static string ACCOUNT_ID = "Id";
+        public static string ACCOUNT_PACKAGE = "Package";
+
+        public static string pivotalHost = "https://mahechabjj-kotlin.cfapps.io/";
         public static string localHost = "http://localhost:8080/";
         public static string AppName = "mahechabjj";
 
@@ -97,6 +101,6 @@ namespace MahechaBJJ.Resources
         public static Typeface UBUNTUREGULAR = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "Ubuntu-Regular.ttf");
         public static Typeface BERKSHIRE = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "BerkshireSwash-Regular.ttf");
         public static Typeface COMMONFONT = Typeface.CreateFromAsset(MainApplication.ActivityContext.Assets, "american_typewriter_bold_bt.ttf");
-        #endif
+#endif
     }
 }

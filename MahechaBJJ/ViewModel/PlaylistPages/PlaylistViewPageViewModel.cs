@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading;
 using System.Threading.Tasks;
 using MahechaBJJ.Model;
 using MahechaBJJ.Service;
@@ -12,7 +10,6 @@ namespace MahechaBJJ.ViewModel.PlaylistPages
     public class PlaylistViewPageViewModel : INotifyPropertyChanged
     {
         private UserService _userService;
-        private AccountService _accountService;
 
 		private bool _successful;
 		public bool Successful
@@ -46,7 +43,6 @@ namespace MahechaBJJ.ViewModel.PlaylistPages
         {
             _successful = true;
             _userService = new UserService();
-            _accountService = new AccountService();
         }
 
         public async Task GetUserPlaylists(string url, string id)
