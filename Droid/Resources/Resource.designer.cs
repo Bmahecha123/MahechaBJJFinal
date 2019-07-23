@@ -26,6 +26,8 @@ namespace MahechaBJJ.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::PCLCrypto.Resource.String.ApplicationName = global::MahechaBJJ.Droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::MahechaBJJ.Droid.Resource.String.Hello;
 			global::Xamarin.Auth.Resource.Animation.slide_in_right = global::MahechaBJJ.Droid.Resource.Animation.slide_in_right;
 			global::Xamarin.Auth.Resource.Animation.slide_out_left = global::MahechaBJJ.Droid.Resource.Animation.slide_out_left;
 			global::Xamarin.Auth.Resource.Attribute.alpha = global::MahechaBJJ.Droid.Resource.Attribute.alpha;
@@ -10298,6 +10300,12 @@ namespace MahechaBJJ.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f090050
+			public const int ApplicationName = 2131296336;
+			
+			// aapt resource value: 0x7f09004f
+			public const int Hello = 2131296335;
 			
 			// aapt resource value: 0x7f090019
 			public const int abc_action_bar_home_description = 2131296281;
