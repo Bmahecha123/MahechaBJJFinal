@@ -360,7 +360,6 @@ namespace MahechaBJJ.Views.SignUpPages
                 flexLayout.Children.Add(summaryLbl);
                 flexLayout.Children.Add(packageLbl);
                 flexLayout.Children.Add(priceLbl);
-                flexLayout.Children.Add(packageImageFrame);
                 flexLayout.Children.Add(buttonStackLayout);
             }
 
