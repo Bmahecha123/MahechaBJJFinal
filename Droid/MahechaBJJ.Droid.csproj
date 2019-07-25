@@ -42,11 +42,6 @@
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <AndroidTlsProvider>btls</AndroidTlsProvider>
     <NoWarn></NoWarn>
-    <AndroidKeyStore>True</AndroidKeyStore>
-    <AndroidSigningKeyStore>/Users/bmahecha123/Downloads/deployment_cert.der</AndroidSigningKeyStore>
-    <AndroidSigningStorePass>Figure123!</AndroidSigningStorePass>
-    <AndroidSigningKeyAlias>Mahecha BJJ</AndroidSigningKeyAlias>
-    <AndroidSigningKeyPass>Figure123!</AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
