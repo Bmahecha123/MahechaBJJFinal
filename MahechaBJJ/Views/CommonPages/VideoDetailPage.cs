@@ -46,7 +46,7 @@ namespace MahechaBJJ.Views
             Padding = Theme.Thickness;
             Visual = VisualMarker.Material;
 
-            videoUrl = video.files[0].link;
+            videoUrl = video.files[1].link_secure;
 
             Title = video.name;
             videoTechnique = video;
@@ -237,7 +237,7 @@ namespace MahechaBJJ.Views
         public async Task PlayAndroidVideo(object sender, EventArgs e)
         {
 #if __ANDROID__
-            await Navigation.PushModalAsync(new AndroidVideoPage(videoTechnique.files[1].link));
+            await Navigation.PushModalAsync(new AndroidVideoPage(videoUrl));
 #endif
         }
 
@@ -286,7 +286,7 @@ namespace MahechaBJJ.Views
 
         public async Task UpdatePlaylist(ObservableCollection<PlayList> playlists, string playlistName)
         {
-            Video videoToBeAdded = new Video(videoTechnique.name, videoTechnique.pictures.sizes[3].link, videoTechnique.files[0].link, videoTechnique.files[1].link, videoTechnique.description);
+            Video videoToBeAdded = new Video(videoTechnique.name, videoTechnique.pictures.sizes[3].link, videoTechnique.files[1].link, videoTechnique.files[0].link, videoTechnique.description);
             PlayList playlist = playlists.FirstOrDefault(x => x.Name == playlistName);
 
             foreach (Video userVideo in playlist.Videos)
@@ -323,12 +323,12 @@ namespace MahechaBJJ.Views
              
             if (result == "SD")
             {
-                videoUrl = videoTechnique.files[0].link;
+                videoUrl = videoTechnique.files[1].link_secure;
                 qualityBtn.Text = "SD";
             }
             else if (result == "HD")
             {
-                videoUrl = videoTechnique.files[1].link;
+                videoUrl = videoTechnique.files[0].link_secure;
                 qualityBtn.Text = "HD";
             }
         }

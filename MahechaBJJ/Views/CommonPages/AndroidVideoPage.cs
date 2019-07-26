@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using MahechaBJJ.Resources;
 
 #if __ANDROID__
 using MahechaBJJ.Droid;
@@ -18,7 +19,7 @@ namespace MahechaBJJ.Views
         //added string link instead of passing whole video
 		public AndroidVideoPage(string url)
         {
-            BackgroundColor = Color.Black;
+            BackgroundColor = Theme.Black;
             SetContent(url);
 		}
 
