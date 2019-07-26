@@ -69,7 +69,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             mahechaLogo = new Image
             {
-                Source = ImageSource.FromResource("mahechabjjlogo.png"),
+                Source = "mahechabjj.png",
                 Aspect = Aspect.AspectFit
             };
             emailEntry = new Entry
