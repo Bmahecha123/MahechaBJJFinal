@@ -60,7 +60,7 @@ namespace MahechaBJJ.Views.EntryPages
 
             mahechaLogo = new Image
             {
-                Source = ImageSource.FromResource("mahechabjjlogo.png"),
+                Source = "mahechabjj.png",
                 Aspect = Aspect.AspectFit
             };
             var size = Device.GetNamedSize(NamedSize.Large, typeof(Button));
