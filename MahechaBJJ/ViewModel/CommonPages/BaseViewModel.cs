@@ -176,7 +176,6 @@ namespace MahechaBJJ.ViewModel.CommonPages
             _account.Username = user.Email;
             _account.Properties.Add(Constants.ACCOUNT_ID, user.Id);
 
-
             if (user.Packages.GiAndNoGiJiuJitsu)
             {
                 _account.Properties.Add(Constants.ACCOUNT_PACKAGE, "GiAndNoGi");
@@ -246,8 +245,8 @@ namespace MahechaBJJ.ViewModel.CommonPages
         public async Task CheckIfUserHasPackage()
         {
             _hasGiAndNoGiPackage = await _purchaseService.WasPackagePurchased(Constants.GIANDNOGIPACKAGE);
-            _hasGiPackage = await _purchaseService.WasPackagePurchased(Constants.GIPACKAGE);
-            _hasNoGiPackage = await _purchaseService.WasPackagePurchased(Constants.NOGIPACKAGE);
+            //_hasGiPackage = await _purchaseService.WasPackagePurchased(Constants.GIPACKAGE);
+            //_hasNoGiPackage = await _purchaseService.WasPackagePurchased(Constants.NOGIPACKAGE);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

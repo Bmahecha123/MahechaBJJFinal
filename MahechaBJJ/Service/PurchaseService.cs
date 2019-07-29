@@ -42,6 +42,8 @@ namespace MahechaBJJ.Service
             }
             catch (Exception ex)
             {
+                Debug.WriteLine($"Error: {ex}");
+
                 return false;
             }
         }

@@ -69,18 +69,18 @@ namespace MahechaBJJ.ViewModel.SignUpPages
 
             _account = new Account();
             _account.Username = _user.Email;
-            _account.Properties.Add("Id", _user.Id);
+            _account.Properties.Add(Constants.ACCOUNT_ID, _user.Id);
             if (_user.Packages.GiJiuJitsu == true)
             {
-                _account.Properties.Add("Package", "Gi");
+                _account.Properties.Add(Constants.ACCOUNT_PACKAGE, "Gi");
             }
             else if (_user.Packages.NoGiJiuJitsu == true)
             {
-                _account.Properties.Add("Package", "NoGi");
+                _account.Properties.Add(Constants.ACCOUNT_PACKAGE, "NoGi");
             }
             else
             {
-                _account.Properties.Add("Package", "GiAndNoGi");
+                _account.Properties.Add(Constants.ACCOUNT_PACKAGE, "GiAndNoGi");
             }
 
             _accountService.SaveCredentials(_account);
@@ -91,18 +91,21 @@ namespace MahechaBJJ.ViewModel.SignUpPages
             _accountService.DeleteCredentials();
 
             _account = new Account();
-            _account.Username = "NO_ACCOUNT";
+            _account.Username = Constants.NOACCOUNT;
+
+            _account.Properties.Add(Constants.ACCOUNT_ID, _account.Username);
+
             if (package == Package.Gi)
             {
-                _account.Properties.Add("Package", "Gi");
+                _account.Properties.Add(Constants.ACCOUNT_PACKAGE, "Gi");
             }
             else if (package == Package.NoGi)
             {
-                _account.Properties.Add("Package", "NoGi");
+                _account.Properties.Add(Constants.ACCOUNT_PACKAGE, "NoGi");
             }
             else
             {
-                _account.Properties.Add("Package", "GiAndNoGi");
+                _account.Properties.Add(Constants.ACCOUNT_PACKAGE, "GiAndNoGi");
             }
 
             _accountService.SaveCredentials(_account);

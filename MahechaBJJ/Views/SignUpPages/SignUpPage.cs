@@ -272,6 +272,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 packages.GiAndNoGiJiuJitsu = true;
             }
             user.Packages = packages;
+            user.PlayLists = new ObservableCollection<PlayList>();
             user.Password = passWordEntry.Text;
             user.SecretQuestion = secretQuestionPicker.SelectedItem.ToString();
             user.SecretQuestionAnswer = secretQuestionEntry.Text.ToLower();

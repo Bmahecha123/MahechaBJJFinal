@@ -14,6 +14,7 @@ namespace MahechaBJJ.Resources
         public static string GIPACKAGE = "gi_package";
         public static string NOGIPACKAGE = "nogi_package";
         public static string GIANDNOGIPACKAGE = "giandnogi_package";
+        public static string NOACCOUNT = "NO_ACCOUNT";
 
         public static string ACCOUNT_USERNAME = "Username";
         public static string ACCOUNT_ID = "Id";

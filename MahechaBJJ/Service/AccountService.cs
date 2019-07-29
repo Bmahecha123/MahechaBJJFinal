@@ -50,6 +50,11 @@ namespace MahechaBJJ.Service
             {
                 Application.Current.Properties.Add(item.Key, item.Value);
             }
+            foreach (var item in Application.Current.Properties.Keys)
+            {
+                Console.WriteLine($"KEY: {item}");
+                
+            }
 		}
 	}
 }
