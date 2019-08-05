@@ -11,6 +11,9 @@ namespace MahechaBJJ.Views
     {
         public MainTabbedPage(bool hasAccount)
         {
+            ToolbarItem toolbarItem = new ToolbarItem();
+            toolbarItem.Text = "Test";
+
             BarTextColor = Color.FromHex("#F2FDFF");
             BarBackgroundColor = Color.FromRgb(58, 93, 174);
                 

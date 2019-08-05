@@ -177,8 +177,8 @@ namespace MahechaBJJ.Views.EntryPages
             }
             else
             {
-                bool UserMatchesPackages = await CheckIfUserMatchesPackages(user);
-                //bool UserMatchesPackages = true;
+                //bool UserMatchesPackages = await CheckIfUserMatchesPackages(user);
+                bool UserMatchesPackages = true;
                 if (UserMatchesPackages)
                 {
                     _baseViewModel.SaveCredentials(user);

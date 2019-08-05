@@ -88,7 +88,6 @@ namespace MahechaBJJ.Views.CommonPages
             };
 
             FlexLayout.SetAlignSelf(headerLbl, FlexAlignSelf.Center);
-            FlexLayout.SetAlignSelf(emailEntry, FlexAlignSelf.Center);
 
             FlexLayout.SetBasis(headerLbl, 1);
             FlexLayout.SetBasis(emailEntry, 1);
@@ -97,7 +96,9 @@ namespace MahechaBJJ.Views.CommonPages
             FlexLayout.SetGrow(emailEntry, 1);
 
             //building layouts
+#if __IOS__
             buttonStackLayout.Children.Add(backBtn);
+#endif
             buttonStackLayout.Children.Add(nextBtn);
 
             flexLayout.Children.Add(headerLbl);

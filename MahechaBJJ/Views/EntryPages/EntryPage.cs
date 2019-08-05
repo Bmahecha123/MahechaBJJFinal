@@ -77,7 +77,7 @@ namespace MahechaBJJ.Views.EntryPages
             };
             restoreBtn = new Button
             {
-                Text = "Restore Purchase",
+                Text = "Restore",
                 Style = Theme.BlueButton
             };
 

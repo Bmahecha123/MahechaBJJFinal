@@ -266,6 +266,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 }
                 else
                 {
+                    await DisplayAlert("Sign-Up Error", "An unexpected error occurred. Please try again later!", "Ok");
                     _summaryPageViewModel.DeleteUser(user);
                     await Navigation.PopModalAsync();
                 }
@@ -282,6 +283,7 @@ namespace MahechaBJJ.Views.SignUpPages
                 }
                 else
                 {
+                    await DisplayAlert("Sign-Up Error", "An unexpected error occurred. Please try again later!", "Ok");
                     await Navigation.PopModalAsync();
                 }
             }
